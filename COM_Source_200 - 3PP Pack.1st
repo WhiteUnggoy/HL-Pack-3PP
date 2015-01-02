@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Structure">
+
+  <source
+    id="p3PPPack"
+    name="Third Party Products Pack (v1.0)"
+    selectable="no"
+    parent="pComPacks"
+    sortorder="10"
+    description="Everything under this is a Community Pack that was created by the community for the community. Use is allowed for gaming groups only. The XML and HL scripts Copy Righted 2014 Tim Shadow.">
+    </source>
+
+  </document>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author><![CDATA[
+      Author:  Authors: Armidale, Asandir, blzbob, Lord Magus, Poizon37, ShadowChemosh
+      Email: shadowchemosh@yahoo.com
+      ]]>
+      </info_author>
+    <info_history><![CDATA[
+<strong>v1.0  January 2, 2015</strong>
+
+<strong>Bug Fixes</strong>
+<ul>
+<li></li>
+</ul>
+
+<strong>New Features</strong>
+<ul>
+<li></li>
+</ul>
+
+<strong>Data File Authoring</strong>
+<ul>
+<li></li>
+</ul>
+
+
+spCGProPe2->spProtPen2      Protective Penumbra
+spCGDarGr4->spGrDarGr4      Darkvision, Greater
+spCGShaSt4->spShadSte4      Shadow Step
+spCGCloSh1->spCloaSha1      Cloak of Shade
+spCGIciDa1->spIcicDag1      Icicle Dagger
+spCGUnsCh2->spUnshChi2      Unshakable Chill
+spCGColIc6->spColdIce6      Cold Ice Strike
+spCGRivWi4->spRiveWin4      River of Wind
+spCGFicWi5->spFickWin5      Fickle Winds
+spCGScoWi7->spScouWin7      Scouring Winds
+spCGSymSc5->spSymbScr5      Symbol of Scrying
+
+v1.8 - November 17, 2014
+-Changed the unique ID for the feat Touche as the odd character is no longer allowed.
+-File: PFRPG_SGG_Feats of Battle.user (line 230) - Thing - Invalid unique id 'fTouché' for attribute 'id'
+
+v1.7 - November 3, 2014
+-Fixed load error with Pathfinder v10.5
+-File: PFRPG_SGG_Feats of Subterfuge.user (line 14) - Thing - Duplicate record encountered ('fBushwhack')
+
+v1.6 - August 1, 2013
+=ShadowChemosh=
+-Fixed load error with Pathfinder v7.17
+
+v1.5 - 
+=ShadowChemosh=
+Fixed Dragonrider Base class as the dragon mount was not always getting the correct Natural Armor Class bonus from levels.
+
+=Asandir=
+110 Spell Variants vol 2
+Advance Options Witches Hexes
+Air Magic
+Archfiends Phosonith
+Bullet Points 4 Ghostbusting Items
+Bullet Points 13 Witch Hexes
+Crystal Magic
+Feats of Runic Might I
+Krazy Kragnar's Magic Staff Emporium
+Loot for less Volum 9 Bell Book Candle
+Ultimate Options - Bardic Masterpieces
+
+=Poizon37=
+Bullet Points 3 New Supernatural Monster Abilities
+Bullet Points 5 Witch Daggers
+Bullet Points 7 Sword and Board Feat
+Bullet Points 7 Tendril Tentacle Feats
+Bullet Points 10 Monster Feats
+Bullet Points 7 Feats of Sinful Gluttony
+Bullet Points 7 Feats of Sinful Lust
+Bullet Points 7 Feats of Sinful Pride
+Races of Hoof and Horn
+Races of Wind and Wing
+
+
+v1.4 - August 13, 2012
+-Removed the UC requirment from Feats of Runic Might 1 (ShadowChemosh).
+-Fixed some Mage Armor feats (Poizon37).
+
+v1.3 - August 12, 2012
+==Asandir Added==
+-Feats of Runic Might I
+http://paizo.com/products/btpy8ffa?The-Genius-Guide-to-Feats-of-Runic-Might
+-Feats of Runic Might II
+http://paizo.com/products/btpy8ih1?The-Genius-Guide-to-Feats-of-Runic-Might-II
+-Feats of Subterfuge
+http://paizo.com/products/btpy8d4x?The-Genius-Guide-to-Feats-of-Subterfuge
+
+==poizen37 Added==
+-Bullet Points - Antimagic Field Feats
+http://paizo.com/products/btpy8tea?Bullet-Points-6-Antimagic-Field-Feats
+-Bullet Points - Fireball Feats
+http://paizo.com/products/btpy8tby?Bullet-Points-5-Fireball-Feats
+-Bullet Points - Invisibility Feats
+http://paizo.com/products/btpy8tlr?Bullet-Points-4-Feats-for-the-Invisibility-Spell
+-Bullet Points - Lightning Bolt Feats
+http://paizo.com/products/btpy8txk?Bullet-Points-8-Lightning-Bolt-Feats
+-Bullet Points - Mage Armor Feats
+http://paizo.com/products/btpy8tuy?Bullet-Points-10-Mage-Armor-Feats
+-Bullet Points - Magic Missile Feats
+http://paizo.com/products/btpy8t50?Bullet-Points-7-Magic-Missile-Feats
+-Bullet Points - Raise Dead Feats
+http://paizo.com/products/btpy8tr1?Bullet-Points-4-Feats-for-Spells-that-Raise-the-Dead
+-Bullet Points - Shield Spell Feats
+http://paizo.com/products/btpy8u11?Bullet-Points-7-Shield-Spell-Feats
+-Bullet Points - Spiritual Weapon Feats
+http://paizo.com/products/btpy8s4b?Bullet-Points-6-Spiritual-Weapon-Feats
+-Bullet Points - Tendril Tentacle Feats
+http://paizo.com/products/btpy8thn?Bullet-Points-7-Tendril-Tentacle-Spell-Feats
+
+==ShadowChemosh Added==
+-Two new procedures
+http://forums.wolflair.com/showpost.php?p=86799&postcount=17
+-CntMartWea: Which counts the number of martial weapons a character is proficient with.
+-HaveSpell: Which checks to see if a character has a spell or spells on their class spell list.
+
+
+**Package Contains as of June 2, 2013**
+=Misc=
+Adventurer's Handbook: Volume 1
+Krazy Kragnar's Magic Staff Emporium
+Phosonith the Cruel Charmer
+
+=Advanced Options=
+Witches
+
+=Base Classes=
+Death Mage
+Dragonrider
+War Master
+
+=Bullet Points=
+6 Antimagic Field Feats
+7 Cure Light Wounds Feats
+4 Death Mage Feats
+4 Ghostbusting Items
+4 Invisibility Feats
+8 Lightning Bolt Feats
+10 Mage Armor Feats
+7 Magic Missle Feats
+10 Monster Feats
+4 Raise Dead Feats
+7 Shield Spell Feats
+7 Sinful Feats of Gluttony
+7 Sinful Feats of Lust
+7 Sinful Feats of Pride
+6 Spritual Weapon Feats
+3 Supernatural Monster Abilities
+7 Sword and Board Feats
+7 Undead Feats
+13 Witch Hexes
+5 Witch's Daggers
+
+=Feats of=
+Feats of Battle
+Feats of Critical Combat
+Feats of Divine Might
+Feats of Immediate Action
+Feats of Metamagic
+Feats of Psionic Might
+Feats of Runic Might I
+Feats of Runic Might II
+Feats of Spellcasting
+Feats of Subterfuge
+
+=Loot 4 Less
+Volume 9 - Bell, Book, and Candle
+
+=Magic
+110 Spell Variants 1&3
+110 Spell Variants 2
+Air Magic
+Crystal Magic
+Hellfire Magic
+Lore of the First Language
+
+=Races of
+Races of Hoof and Horn
+Races of Wind and Wing
+
+=Ultimate Options
+Bardic Masterpieces
+
+
+
+
+
+
+
+
+
+==Everything Included in the Data Set==
+PFRPG_SGG_BulletPoints_Antimagic Field Feats.user
+http://paizo.com/products/btpy8tea?Bullet-Points-6-Antimagic-Field-Feats
+
+PFRPG_SGG_BulletPoints_FireballFeats.user
+http://paizo.com/products/btpy8tby?Bullet-Points-5-Fireball-Feats
+
+PFRPG_SGG_BulletPoints_InvisibilityFeats.user
+http://paizo.com/products/btpy8tlr?Bullet-Points-4-Feats-for-the-Invisibility-Spell
+
+PFRPG_SGG_BulletPoints_LightningBoltFeats.user
+http://paizo.com/products/btpy8txk?Bullet-Points-8-Lightning-Bolt-Feats
+
+PFRPG_SGG_BulletPoints_MageArmorFeats.user
+http://paizo.com/products/btpy8tuy?Bullet-Points-10-Mage-Armor-Feats
+
+PFRPG_SGG_BulletPoints_MagicMissileFeats.user
+http://paizo.com/products/btpy8t50?Bullet-Points-7-Magic-Missile-Feats
+
+PFRPG_SGG_BulletPoints_RaiseDeadFeats.user
+http://paizo.com/products/btpy8tr1?Bullet-Points-4-Feats-for-Spells-that-Raise-the-Dead
+
+PFRPG_SGG_BulletPoints_ShieldSpellFeats.user
+http://paizo.com/products/btpy8u11?Bullet-Points-7-Shield-Spell-Feats
+
+PFRPG_SGG_BulletPoints_SpiritualWeaponFeats.user
+http://paizo.com/products/btpy8s4b?Bullet-Points-6-Spiritual-Weapon-Feats
+
+PFRPG_SGG_BulletPoints_TendrilTentacleFeats.user
+http://paizo.com/products/btpy8thn?Bullet-Points-7-Tendril-Tentacle-Spell-Feats
+
+PFRPG_SGG_Feats of Runic Might I.user
+http://paizo.com/products/btpy8ffa?The-Genius-Guide-to-Feats-of-Runic-Might
+
+PFRPG_SGG_Feats of Runic Might II.user
+http://paizo.com/products/btpy8ih1?The-Genius-Guide-to-Feats-of-Runic-Might-II
+
+PFRPG_SGG_Feats of Subterfuge.user
+http://paizo.com/products/btpy8d4x?The-Genius-Guide-to-Feats-of-Subterfuge
+
+PFRPG_SGG_Lore of the First Language.user
+http://paizo.com/products/btpy8spt?Power-Word-Spells-Lore-of-the-First-Language
+
+PFRPG_SGG_BulletPoints_Undead_Feats.user
+http://paizo.com/products/btpy8suz?Bullet-Points-7-Feats-for-the-Undead
+
+PFRPG_SGG_BulletPoints_CLW_Feats.user
+http://paizo.com/products/btpy8shi?Bullet-Points-7-Cure-Light-Wounds-Feats
+
+PFRPG_SGG_110 Spell Variants vol 3.user
+http://paizo.com/products/btpy8odq?The-Genius-Guide-to-110-Spell-Variants-Volume-3
+
+PFRPG_SGG_Feats of Psionic Might.user
+http://paizo.com/products/btpy8jsm?The-Genius-Guide-to-Feats-of-Psionic-Might
+
+PFRPG_SGG Hellfire Magic.user
+http://paizo.com/products/btpy8r80?The-Genius-Guide-to-Hellfire-Magic
+
+PFRPG_SGG 110 Spell Variants.user
+http://paizo.com/products/btpy8ka0?The-Genius-Guide-to-110-Spell-Variants
+
+PFRPG_SGG_BulletPoints_Dragonhide_Armor.user - Pre-Req's work but can't get bootstraps to work currently.
+http://paizo.com/products/btpy8jsl?Bullet-Points-5-Abilities-for-Dragonhide-Armor
+
+PFRPG_SGG_DeathMage.user - Fully Implemented incluging the bullet point extra.
+http://paizo.com/products/btpy8d07?The-Genius-Guide-to-the-Death-Mage
+http://paizo.com/products/btpy8qyk?Bullet-Points-4-Death-Mage-Feats
+
+PFRPG_SGG_Dragonrider.user - Fully Implemented.
+http://paizo.com/products/btpy8bia?The-Genius-Guide-to-the-Dragonrider
+
+PFRPG_SGG_Feats of Battle.user - Text and Pre-Reqs only.
+http://paizo.com/products/btpy8dfr?The-Genius-Guide-to-Feats-of-Battle
+
+PFRPG_SGG_Feats of Critical Combat.user - Text and Pre-Reqs only.
+http://paizo.com/products/btpy8hez?The-Genius-Guide-to-Feats-of-Critical-Combat
+
+PFRPG_SGG_Feats of Divine Might.user - Text and Pre-Reqs only.
+http://paizo.com/products/btpy8g50?The-Genius-Guide-to-Feats-of-Divine-Might
+
+PFRPG_SGG_Feats of Immediate Action.user - Text and Pre-Reqs only.
+http://paizo.com/products/btpy8h2x?The-Genius-Guide-to-Feats-of-Immediate-Action
+
+PFRPG_SGG_Feats of Metamagic.user - Text and Pre-Reqs only.
+http://paizo.com/products/btpy8dua?The-Genius-Guide-to-Feats-of-Metamagic
+
+PFRPG_SGG_Feats of Spellcasting.user - Text and Pre-Reqs only.
+http://paizo.com/products/btpy8bxj?The-Genius-Guide-to-Feats-of-Spellcasting
+
+PFRPG_SGG_WarMaster.user - Fully Implemented
+http://paizo.com/products/btpy8dd6?The-Genius-Guide-to-the-War-Master
+
+      ]]></info_history>
+    </fileinfo>
+  </document>
