@@ -11,11 +11,12 @@
 *.stock
 *.db
 !*.user
-!COM_BasicPack*.user
-!COM_Source_001*.user
-!COM_Source_1*.user
 !COM_*.stock
 GREP Backup/
 Version Archives/
 importbackup/
 EMPTY FILES/
+# Ingore Basic Pack files
+COM_Source_001*
+COM_Source_1*
+COM_BasicPack*
