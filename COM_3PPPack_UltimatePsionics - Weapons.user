@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_history>January 30, 2014 - Tim Shadow
+-Merged into the PU package now that official Psionics support has been added to Pathfinder.
+    
+June 15, 2013 - Tim Shadow
+-Created magical versions of the Mind Blade this way a gamer can increase the magical properties of the mind blade weapons.
+
+October 21, 2012 - Tim Shadow
+-Broke this off of the main .user file.</info_history>
+    </fileinfo>
+  <thing id="wMindBlade" name="Mind Blade" description="This weapon Thing is hidden is only used to give a &quot;Global&quot; holder for the different Mind Blade weapons." compset="Weapon">
+    <usesource source="pPsiUn"/>
+    <tag group="wGroup"     tag="cSknMindBl" name="Soulknife Mind Blade"/>
+    <tag group="wCategory"  tag="Melee"/>
+    <tag group="Helper"     tag="NoOutGear"/>
+    <tag group="wCategory"  tag="RangeThrow"/>
+    <tag group="wRangeInc"  tag="20"/>
+    <tag group="Helper"     tag="GearNoSize"/>
+    <tag group="Helper"     tag="Helper"/>
+    </thing>
+  <thing id="wMndBldLt" name="Mind Blade (Light)" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from her own mind.  Regardless of the weapon form a soulknife has chosen, her mind blade does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon A soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. She can also choose her mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with her mind blade, but such feats only work on mind blades in a light weapon form.\n\nThe soulknife chooses the appearance of her mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="Weapon">
+    <usesource source="pPsiUn"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wGroup" tag="cSknMindBl" name="Soulknife Mind Blade"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wFtrGroup" tag="WPMndBld"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="MindBlade" tag="Light"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="IsWeapon" tag="wMindBlade"/>
+    <tag group="Helper" tag="Helper"/>
+    </thing>
+  <thing id="wMndBld1H" name="Mind Blade (One Handed)" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from her own mind.  Regardless of the weapon form a soulknife has chosen, her mind blade does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon A soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. She can also choose her mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with her mind blade, but such feats only work on mind blades in a light weapon form.\n\nThe soulknife chooses the appearance of her mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="Weapon">
+    <usesource source="pPsiUn"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="wGroup" tag="cSknMindBl" name="Soulknife Mind Blade"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wFtrGroup" tag="WPMndBld"/>
+    <tag group="wMain" tag="1d8_6"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="MindBlade" tag="OneHanded"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="IsWeapon" tag="wMindBlade"/>
+    </thing>
+  <thing id="wMndBld2H" name="Mind Blade (Two Handed)" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from her own mind.  Regardless of the weapon form a soulknife has chosen, her mind blade does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon A soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. She can also choose her mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with her mind blade, but such feats only work on mind blades in a light weapon form.\n\nThe soulknife chooses the appearance of her mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="Weapon">
+    <usesource source="pPsiUn"/>
+    <tag group="wClass" tag="TwoHanded"/>
+    <tag group="wGroup" tag="cSknMindBl" name="Soulknife Mind Blade"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wFtrGroup" tag="WPMndBld"/>
+    <tag group="wMain" tag="2d6_104"/>
+    <tag group="wCritMin" tag="19"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="MindBlade" tag="TwoHanded"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="IsWeapon" tag="wMindBlade"/>
+    </thing>
+  <thing id="iPUMndBl1H" name="Mind Blade (One Handed)" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from her own mind.  Regardless of the weapon form a soulknife has chosen, her mind blade does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon A soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. She can also choose her mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with her mind blade, but such feats only work on mind blades in a light weapon form.\n\nThe soulknife chooses the appearance of her mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="MagicWep" buytemplate="BuyMoney" xactspecial="2">
+    <comment>Copying this item to make anything other than a Magical Mind Blade weapon stats for a mind blade is not recommended. There are settings that cannot be changed in the editor, which will be carried along with your copy.</comment>
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="Shadow" name="Shadow" abbrev="Shadow"/>
+    <tag group="Helper" tag="CustomItem" name="CustomItem" abbrev="CustomItem"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="Helper" tag="NoSelect" name="NoSelect" abbrev="NoSelect"/>
+    <eval phase="PreLevel" priority="5000">~ Manually call HL Gizmo setup for magic weapons
+      call iMagWeapon
+      
+      ~ Setup the Mind Blade correctly
+      call SetMindBl</eval>
+    <eval phase="Render" priority="99999999" index="2">~ Correct the Mind Blade name that gets chopped when any
+      ~ item power is added.
+      call NameMindBl</eval>
+    <child entity="gMagWeapon">
+      <tag group="Helper" tag="NoSelChild" name="NoSelChild" abbrev="NoSelChild"/>
+      <bootstrap thing="wMndBld1H">
+        <autotag group="Helper" tag="Forward"/>
+        </bootstrap>
+      </child>
+    </thing>
+  <thing id="iPUMndBlLT" name="Mind Blade (Light)" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from her own mind.  Regardless of the weapon form a soulknife has chosen, her mind blade does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon A soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. She can also choose her mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with her mind blade, but such feats only work on mind blades in a light weapon form.\n\nThe soulknife chooses the appearance of her mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="MagicWep" buytemplate="BuyMoney" xactspecial="2">
+    <comment>Copying this item to make anything other than a Magical Mind Blade weapon stats for a mind blade is not recommended. There are settings that cannot be changed in the editor, which will be carried along with your copy.</comment>
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="Shadow" name="Shadow" abbrev="Shadow"/>
+    <tag group="Helper" tag="CustomItem" name="CustomItem" abbrev="CustomItem"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="Helper" tag="NoSelect" name="NoSelect" abbrev="NoSelect"/>
+    <eval phase="PreLevel" priority="5000">~ Manually call HL Gizmo setup for magic weapons
+      call iMagWeapon
+      
+      ~ Setup the Mind Blade correctly
+      call SetMindBl</eval>
+    <eval phase="Render" priority="99999999" index="2">~ Correct the Mind Blade name that gets chopped when any
+      ~ item power is added.
+      call NameMindBl</eval>
+    <child entity="gMagWeapon">
+      <tag group="Helper" tag="NoSelChild" name="NoSelChild" abbrev="NoSelChild"/>
+      <bootstrap thing="wMndBldLt">
+        <autotag group="Helper" tag="Forward"/>
+        </bootstrap>
+      </child>
+    </thing>
+  <thing id="iPUMndBl2H" name="Mind Blade (Two Handed)" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from her own mind.  Regardless of the weapon form a soulknife has chosen, her mind blade does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon A soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. She can also choose her mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with her mind blade, but such feats only work on mind blades in a light weapon form.\n\nThe soulknife chooses the appearance of her mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="MagicWep" buytemplate="BuyMoney" xactspecial="2">
+    <comment>Copying this item to make anything other than a Magical Mind Blade weapon stats for a mind blade is not recommended. There are settings that cannot be changed in the editor, which will be carried along with your copy.</comment>
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoSelect" name="NoSelect" abbrev="NoSelect"/>
+    <tag group="Helper" tag="Shadow" name="Shadow" abbrev="Shadow"/>
+    <tag group="Helper" tag="CustomItem" name="CustomItem" abbrev="CustomItem"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <eval phase="PreLevel" priority="5000">~ Manually call HL Gizmo setup for magic weapons
+      call iMagWeapon
+      
+      ~ Setup the Mind Blade correctly
+      call SetMindBl</eval>
+    <eval phase="Render" priority="99999999" index="2">~ Correct the Mind Blade name that gets chopped when any
+      ~ item power is added.
+      call NameMindBl</eval>
+    <child entity="gMagWeapon">
+      <tag group="Helper" tag="NoSelChild" name="NoSelChild" abbrev="NoSelChild"/>
+      <bootstrap thing="wMndBld2H">
+        <autotag group="Helper" tag="Forward"/>
+        </bootstrap>
+      </child>
+    </thing>
+  <thing id="wPUXephKni" name="Xephyr Knife" description="This specialized dagger is used by xephs to protect themselves while traveling in more dangerous areas. Its hooked blade is capable of causing deadly wounds, and the weapon is slightly larger than a standard dagger.\n\nA xephyr dagger functions as a normal dagger, except it is an exotic weapon." compset="Weapon">
+    <fieldval field="gWeight" value="1"/>
+    <fieldval field="gSizeCost" value="15"/>
+    <usesource source="pPsiUn"/>
+    <tag group="wClass" tag="Light" name="Light" abbrev="Light"/>
+    <tag group="wCritMin" tag="18"/>
+    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
+    <tag group="wFtrGroup" tag="BladeLight" name="Blades, Light" abbrev="Blades, Light"/>
+    <tag group="wFtrGroup" tag="Thrown" name="Thrown" abbrev="Thrown"/>
+    <tag group="wMain" tag="1d6_5"/>
+    <tag group="wProfReq" tag="Exotic"/>
+    <tag group="wRangeInc" tag="10" name="10" abbrev="10"/>
+    <tag group="wType" tag="P" name="Piercing" abbrev="P"/>
+    <tag group="wType" tag="S" name="Slashing" abbrev="S"/>
+    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
+    <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
+    <tag group="wCategory" tag="RangeThrow" name="Thrown Weapon" abbrev="Thrown"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="IsWeapon" tag="wDagger"/>
+    </thing>
+  <thing id="iPUMndArro" name="Mind Arrow" description="A soul archer can choose to shape her mind blade as a semisolid arrow of psychic energy and forms a mind arrow as a free action. If the soul archer has the ability to make multiple attacks, he can create multiple mind arrows as part of an attack. The soul archer must have one hand free to create and fire a mind arrow.\n\nThe arrow is identical in all ways (except visually) to an arrow shot from a composite longbow of a size appropriate to the soul archer. The soul archer adds his Wisdom modifier to the damage for attacks made with mind arrows, instead of his Strength modifier. The mind arrow receives all the benefits normally applied to the mind blade, including the ability to use psychic strike, any enhancement bonus or weapon special abilities, or feats that apply to the mind blade, although any meleespecific options are non-functional while in mind arrow form. Ranged feats that apply to ranged attacks, such as Point-Blank Shot, apply to the mind arrow. Any weapon special abilities that only work on melee weapons that apply to the mind blade are inactive while in mind arrow form until the soulknife spends the normal amount of time to reassign the special abilities of the mind blade.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="MagicWep" buytemplate="BuyMoney" xactspecial="2">
+    <comment>Copying this item to make anything other than a Magical Mind Blade weapon stats for a mind blade is not recommended. There are settings that cannot be changed in the editor, which will be carried along with your copy.</comment>
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoSelect" name="NoSelect" abbrev="NoSelect"/>
+    <tag group="Helper" tag="Shadow" name="Shadow" abbrev="Shadow"/>
+    <tag group="Helper" tag="CustomItem" name="CustomItem" abbrev="CustomItem"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="IsWeapon" tag="wMindBlade"/>
+    <eval phase="PreLevel" priority="5000">~ Manually call HL Gizmo setup for magic weapons
+      call iMagWeapon
+      
+      ~ Setup the Mind Blade correctly
+      call SetMindBl</eval>
+    <eval phase="Render" priority="99999999" index="2">~ Correct the Mind Blade name that gets chopped when any
+      ~ item power is added.
+      call NameMindBl</eval>
+    <eval phase="PostAttr" priority="10000" index="3">~ Give a damage bonus from Wis
+      field[dmrBonus].value += #attrmod[aWIS]</eval>
+    <child entity="gMagWeapon">
+      <tag group="Helper" tag="NoSelChild" name="NoSelChild" abbrev="NoSelChild"/>
+      <bootstrap thing="wCompLong">
+        <autotag group="Helper" tag="Forward"/>
+        <autotag group="IsWeapon" tag="wMindBlade"/>
+        <autotag group="MindBlade" tag="Arrow"/>
+        </bootstrap>
+      </child>
+    </thing>
+  <thing id="iPUMndDagg" name="Mind Dagger" description="The soulknife may form one or a pair of mind daggers in place of his normal forms. Mind daggers have a range increment of 30 ft when thrown, deal 1d4 points of damage (type assigned in the same manner as other forms) and have a critical range of 19- 20/x2. She may switch between mind daggers and his chosen blade form at will as a free action, including in the middle of full attacks, and it can be done more than once per round (this is an exception to the full-round action normally required to shape a mind blade). She cannot switch between the daggers and the two-handed mind blade form unless only forming a single dagger. Mind daggers have the same enhancement configuration as the soulknife&apos;s current mind blade configuration.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="MagicWep" buytemplate="BuyMoney" xactspecial="2">
+    <comment>Copying this item to make anything other than a Magical Mind Blade weapon stats for a mind blade is not recommended. There are settings that cannot be changed in the editor, which will be carried along with your copy.</comment>
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoSelect" name="NoSelect" abbrev="NoSelect"/>
+    <tag group="Helper" tag="Shadow" name="Shadow" abbrev="Shadow"/>
+    <tag group="Helper" tag="CustomItem" name="CustomItem" abbrev="CustomItem"/>
+    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="IsWeapon" tag="wMindBlade"/>
+    <eval phase="PreLevel" priority="5000">~ Manually call HL Gizmo setup for magic weapons
+      call iMagWeapon
+      
+      ~ Setup the Mind Blade correctly
+      call SetMindBl</eval>
+    <eval phase="Render" priority="99999999" index="2">~ Correct the Mind Blade name that gets chopped when any
+      ~ item power is added.
+      call NameMindBl</eval>
+    <child entity="gMagWeapon">
+      <tag group="Helper" tag="NoSelChild" name="NoSelChild" abbrev="NoSelChild"/>
+      <bootstrap thing="wDagger">
+        <autotag group="Helper" tag="Forward"/>
+        <autotag group="IsWeapon" tag="wMindBlade"/>
+        <autotag group="MindBlade" tag="Dagger"/>
+        </bootstrap>
+      </child>
+    </thing>
+  <thing id="shMTowShld" name="Mind Tower shield" description="This massive wooden shield is nearly as tall as its user. In most situations, it provides the indicated shield bonus to your AC. As a standard action, however, you can use a tower shield to grant you total cover until the beginning of your next turn. When using a tower shield in this way, you must choose one edge of your space. That edge is treated as a solid wall for attacks targeting you only. You gain total cover for attacks that pass through this edge and no cover for attacks that do not pass through this edge (see cover, {i}Core Rulebook{/i} 195). The shield does not, however, provide cover against targeted spells; a spellcaster can cast a spell on you by targeting the shield you are holding. You cannot bash with a tower shield, nor can you use your shield hand for anything else.\n\nWhen employing a tower shield in combat, you take a -2 penalty on attack rolls because of the shield&apos;s encumbrance." compset="Armor">
+    <fieldval field="gWeight" value="45"/>
+    <usesource source="pPsiUn"/>
+    <tag group="ArmorCheck" tag="10" name="10" abbrev="10"/>
+    <tag group="ArmorClass" tag="Tower" name="Tower Shield" abbrev="Tower"/>
+    <tag group="ArmorMaxDx" tag="2" name="2" abbrev="2"/>
+    <tag group="ShldClass" tag="Tower" name="Tower Shield" abbrev="Tower"/>
+    <tag group="ArmorAC" tag="4" name="4" abbrev="4"/>
+    <tag group="ArmorArcFl" tag="50" name="50" abbrev="50"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="AlwaysMast"/>
+    <tag group="Helper" tag="Proficient"/>
+    <tag group="Helper" tag="AutoEquip"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ Work out if we're equipped, or, if we're the child of a magic item, if
+      ~ our parent is equipped
+      if (container.ishero <> 0) then
+        if (field[gIsEquip].value <> 0) then
+          perform hero.assign[Hero.TowAtkPen2]
+          endif
+      else
+        if (parent.field[gIsEquip].value <> 0) then
+          perform hero.assign[Hero.TowAtkPen2]
+          endif
+        endif]]>
+      <before name="Calc wTowerPen"/>
+      </eval>
+    </thing>
+  </document>

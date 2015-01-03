@@ -8,6 +8,7 @@
       </info_author>
     <info_history><![CDATA[
 <strong>v1.0  January 2, 2015</strong>
+This community pack contains all third party packages into one place. This includes Rogue Genius Games, SKR Games, Cubicle 7 Entertainment, Dreamscarred Press, Lengendary Games, and Necomancers of the Northwest.
 
 <strong>Bug Fixes</strong>
 <ul>
@@ -21,7 +22,7 @@
 
 <strong>Data File Authoring</strong>
 <ul>
-<li></li>
+<li>Power Disciplines and Subdisciplines have been moved to the Basic Pack. This allows these global values to be used by the Campaign Pack that has need of setting up campaign specfic powers.</li>
 </ul>
 
 
