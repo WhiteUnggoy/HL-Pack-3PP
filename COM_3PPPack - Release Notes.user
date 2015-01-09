@@ -8,22 +8,51 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
-<strong>v1.0  January 2, 2015</strong>
+<strong>v1.0  January 9, 2015</strong>
 This community pack contains all third party packages into one place. This includes Rogue Genius Games, SKR Games, Cubicle 7 Entertainment, Dreamscarred Press, Lengendary Games, and Necomancers of the Northwest.
 
 <strong>Bug Fixes</strong>
 <ul>
+<li>Ultimate Psionics - Lots of fixes applied to feats.</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 <li></li>
 </ul>
 
 <strong>New Features</strong>
 <ul>
+<li>Ultimate Psionics - Fear in Flesh archetype added.</li>
+<li>Rogue Genius Games - Name changed and merged in all old SGG files into pack.</li>
+<li>Rogue Genius Games - Changed staffs to use official spells instead of duplicated versions.</li>
+<li>Path of War - Merged into pack</li>
+<li>Path of War - Battle Templar PrC added.</li>
+<li>Tome of Secret - Classes and Races from Cubicle 7 Entertainment Tome of Secret merged into pack.</li>
+<li>SKR_Games - Robomancer archetype for summoner merged in.</li>
+<li>Necomancers of the Northwest - Liber Vampyr merged in.</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 <li></li>
 </ul>
 
 <strong>Data File Authoring</strong>
 <ul>
-<li>Power Disciplines and Subdisciplines have been moved to the Basic Pack. This allows these global values to be used by the Campaign Pack that has need of setting up campaign specfic powers.</li>
+<li>Ultimate Psionics - Power Disciplines and Subdisciplines have been moved to the Basic Pack. This allows these global values to be used by the Campaign Pack that has need of setting up campaign specfic powers.</li>
+<li>This pack now REQUIRES the Pathfinder Basic Pack to load.</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 
 
