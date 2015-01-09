@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Archfiends_Phosonith"/>
   <fileinfo>
     <info_author>V1.0
 Asandir
@@ -75,7 +76,7 @@ Initial Input</info_history>
     <bootstrap thing="fVitStr"></bootstrap>
     <bootstrap thing="fQuickSpel">
       <autotag group="Target" tag="spFirebal3"/>
-	  </bootstrap>
+    </bootstrap>
       <bootstrap thing="lCelestial"></bootstrap>
     <bootstrap thing="lDraconic"></bootstrap>
     <bootstrap thing="lInfernal"></bootstrap>

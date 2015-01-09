@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Feats of Immediate Action"/>
   <thing id="fBraceImpt" name="Brace for Impact" description="You are able to brace your weapon against a charging foe.\n\n{b}Prerequisites:{/b} Combat Reflexes.\n\n{b}Benefit:{/b} When charged by a foe, if you are using a weapon with the special feature &#147;brace,&#148; you may use an immediate action to set the weapon to receive the charge and make an attack against the charging foe as if you had readied to do so. You suffer a &#150;2 penalty to attack rolls until the end of your next turn. Resolve your attack and damage before your opponent&#146;s charge attack is resolved.\n\n{b}Action Loss:{/b} This counts as an attack of opportunity in your current round (you must have an attack of opportunity available in order to use Brace For Impact), and it consumes a move action from your next turn." compset="Feat" summary="You are able to brace your weapon against a charging foe." uniqueness="useronce">
     <usesource source="SGG_FOIA"/>
     <tag group="Helper" tag="ShowSpec"/>

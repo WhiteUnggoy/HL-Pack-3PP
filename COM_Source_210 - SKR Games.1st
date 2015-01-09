@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Structure">
-<!--
-December 23, 2014 Tim Shadow
--Renamed file when merged into 3PP community package.
+  <loadonce key="COM_Source_210 - SKR Games"/>
+
+  <!--
+  December 23, 2014 Tim Shadow
+  -Renamed file when merged into 3PP community package.
 
 
--->
+  -->
 
   <!-- ============================================== -->
   <!-- New Parent Sources                             -->

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Feats of Battle"/>
   <fileinfo>
     <info_author>Asandir aka Bill Birchler</info_author>
     <info_history>

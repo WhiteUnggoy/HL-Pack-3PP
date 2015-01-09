@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - 110 Spell Variants"/>
   <fileinfo>
     <info_author>Matthew P. Winn</info_author>
     <info_history>v. 1.0 - 06/08/11

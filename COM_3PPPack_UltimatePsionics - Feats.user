@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_UltimatePsionics - Feats"/>
   <fileinfo>
     <info_author>October 21, 2012 - Tim Shadow
 -Broke this off of the main .user file.</info_author>

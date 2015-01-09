@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Bullet Points Monster Feats"/>
   <fileinfo>
     <info_history>Bullet Point #4: 10 Monster Feats added, many still need eval scripts and pre-reqs added in</info_history>
     <info_todo>* Big Step - Add Reach Requirement

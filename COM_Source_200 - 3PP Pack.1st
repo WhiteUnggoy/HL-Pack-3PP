@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Structure">
+  <loadonce key="COM_Source_200 - 3PP Pack"/>
 
   <source
     id="p3PPPack"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_UltimatePsionics - Weapons"/>
   <fileinfo>
     <info_history>January 30, 2014 - Tim Shadow
 -Merged into the PU package now that official Psionics support has been added to Pathfinder.

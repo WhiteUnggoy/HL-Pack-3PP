@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_UltimatePsionics - Release Notes"/>
+
   <fileinfo>
     <info_author>
       TCArknight, Poizen37, Asvaldson, gatesvp and Tim Shadow (ShadowChemosh)

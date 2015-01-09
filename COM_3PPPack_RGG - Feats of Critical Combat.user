@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Feats of Critical Combat"/>
   <thing id="fAccrCrit" name="Accurate Critical" description="Your critical hits set you up to make even more accurate attacks.\n\n{b}Prerequisite:{/b} Critical Focus, base attack bonus +9. \n\n{b}Benefit:{/b} When you score a critical hit with a melee attack, you gain a +1 circumstance bonus on all your melee attack rolls until the end of your next turn. If your base attack bonus is +16 or higher, the circumstance bonus increases to +2.\n\n{b}Special:{/b}  You can apply the effects of only one critical feat to a given critical hit unless you possess Critical Mastery." compset="Feat" summary="Your critical hits set you up to make even more accurate attacks." uniqueness="useronce">
     <usesource source="SGG_FOCC"/>
     <tag group="Helper" tag="ShowSpec"/>

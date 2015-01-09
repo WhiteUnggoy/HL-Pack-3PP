@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Structure">
+  <loadonce key="COM_3PPPack_SKR_Games - Tags"/>
 <!--
 July 20, 2014 Tim Shadow
 -Created New for the Robomancer Archetype.

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_UltimatePsionics - Helper Things"/>
+
   <fileinfo>
     <info_author>
       Tim Shadow (ShadowChemosh)
@@ -8,7 +10,6 @@
     January 3, 2015 - Tim Shadow
     -Moved release notes over to COM_3PPPack_UltimatePsionics - Release Notes.user file.
     -Changed PUPathSk to not use any string processing logic.
-
     ]]></info_history>
     </fileinfo>
 

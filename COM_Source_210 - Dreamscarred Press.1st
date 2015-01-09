@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Hero Lab Structure">
-<!--
-December 23, 2014 Tim Shadow
--Renamed file when merged into 3PP community package.
--Merged in both Ultimate Psionics and Path of War sources.
+  <loadonce key="COM_Source_210 - Dreamscarred Press"/>
+  <!--
+  December 23, 2014 Tim Shadow
+  -Renamed file when merged into 3PP community package.
+  -Merged in both Ultimate Psionics and Path of War sources.
 
-v2.0 August 13, 2013 Tim Shadow
--Put the parent back in here so that we can use this file in mutliple packages
+  v2.0 August 13, 2013 Tim Shadow
+  -Put the parent back in here so that we can use this file in mutliple packages
 
-v1.8 October 21, 2012 Tim Shadow
--Moved everthing back into PFRPG_Psionics_Unleashed_Sources.1st
+  v1.8 October 21, 2012 Tim Shadow
+  -Moved everthing back into PFRPG_Psionics_Unleashed_Sources.1st
 
-v1.5 October 9, 2012 Tim Shadow
--Added Data Set version number to the source name.
+  v1.5 October 9, 2012 Tim Shadow
+  -Added Data Set version number to the source name.
 
-v1.0 September 22, 2012 TCArknight
--Created New.
+  v1.0 September 22, 2012 TCArknight
+  -Created New.
 
--->
+  -->
   <!-- ============================================== -->
   <!-- New Parent Sources                             -->
   <!-- ============================================== -->
