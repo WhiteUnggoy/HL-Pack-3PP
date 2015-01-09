@@ -1,0 +1,1853 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_PathOfWar - Classes"/>
+  <fileinfo>
+    <info_author>Tim Shadow
+      Email: ShadowChemosh@yahoo.com</info_author>
+    <info_history>October 12, 2014
+      -Added stalker class. (Shatterjack).
+
+      August 13, 2013 - Tim Shadow
+      -Created New</info_history>
+    </fileinfo>
+  <thing id="cHelpPW1" name="Warlord" compset="Class" uniqueness="unique">
+    <comment>Spells Known Per Level controls the Manuevers information.
+
+Array 0 = Maneuvers Known
+Array 1 = Maneuvers Readied
+Array 2 = Stances</comment>
+    <fieldval field="cAbbr" value="War"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cSpecSing" value="Gambit"/>
+    <fieldval field="cHDSides" value="10"/>
+    <arrayval field="cBonFtTot" index="5" value="2"/>
+    <arrayval field="cBonFtTot" index="9" value="3"/>
+    <arrayval field="cBonFtTot" index="13" value="4"/>
+    <arrayval field="cBonFtTot" index="17" value="5"/>
+    <arrayval field="cCustTot" index="0" value="2"/>
+    <arrayval field="cCustTot" index="3" value="3"/>
+    <arrayval field="cCustTot" index="7" value="4"/>
+    <arrayval field="cCustTot" index="11" value="5"/>
+    <arrayval field="cCustTot" index="15" value="6"/>
+    <arrayval field="cCustTot" index="19" value="7"/>
+    <arrayval field="cBonFtTot" index="0" value="1"/>
+    <arrayval field="cKnowTot" index="0" value="6"/>
+    <arrayval field="cKnowTot" index="0" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="0" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="1" value="7"/>
+    <arrayval field="cKnowTot" index="1" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="1" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="2" value="8"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="2" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="3" value="8"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="3" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="4" value="9"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="4" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="5" value="9"/>
+    <arrayval field="cKnowTot" index="5" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="5" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="6" value="10"/>
+    <arrayval field="cKnowTot" index="6" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="6" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="7" value="10"/>
+    <arrayval field="cKnowTot" index="7" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="7" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="8" value="11"/>
+    <arrayval field="cKnowTot" index="8" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="8" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="9" value="11"/>
+    <arrayval field="cKnowTot" index="9" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="9" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="10" value="12"/>
+    <arrayval field="cKnowTot" index="10" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="10" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="11" value="12"/>
+    <arrayval field="cKnowTot" index="11" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="11" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="12" value="13"/>
+    <arrayval field="cKnowTot" index="12" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="12" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="13" value="13"/>
+    <arrayval field="cKnowTot" index="13" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="13" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="14" value="14"/>
+    <arrayval field="cKnowTot" index="14" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="14" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="15" value="14"/>
+    <arrayval field="cKnowTot" index="15" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="15" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="16" value="15"/>
+    <arrayval field="cKnowTot" index="16" column="1" value="10"/>
+    <arrayval field="cKnowTot" index="16" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="17" value="16"/>
+    <arrayval field="cKnowTot" index="17" column="1" value="10"/>
+    <arrayval field="cKnowTot" index="17" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="18" value="17"/>
+    <arrayval field="cKnowTot" index="18" column="1" value="10"/>
+    <arrayval field="cKnowTot" index="18" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="19" value="18"/>
+    <arrayval field="cKnowTot" index="19" column="1" value="11"/>
+    <arrayval field="cKnowTot" index="19" column="2" value="6"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassSkill" tag="skKnowHist"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="skIntim"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="ClassSkill" tag="skDiplo"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ClassSkill" tag="skHandleAn"/>
+    <tag group="ClassSkill" tag="skSenseMot"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="ClassSkill" tag="skPercep"/>
+    <tag group="ClassSkill" tag="skRide"/>
+    <tag group="ClassSkill" tag="skSurvival"/>
+    <tag group="ClassSkill" tag="skSwim"/>
+    <tag group="ClassSkill" tag="skKnowEng"/>
+    <tag group="fCategory" tag="Teamwork"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="Classes" tag="PWWarlord" name="Warlord"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="ClassSkill" tag="skClimb"/>
+    <bootstrap thing="cPW1DulBoo">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPW1Presen">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPW1TacAss">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPW1VicPre">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPW1DuaPre">
+      <autotag group="ClSpecWhen" tag="11"/>
+      </bootstrap>
+    <bootstrap thing="cPW1BatPro">
+      <autotag group="ClSpecWhen" tag="12"/>
+      </bootstrap>
+    <bootstrap thing="cPW1DulBoo">
+      <autotag group="ClSpecWhen" tag="12"/>
+      </bootstrap>
+    <bootstrap thing="cPW1ImpWar">
+      <autotag group="ClSpecWhen" tag="13"/>
+      </bootstrap>
+    <bootstrap thing="cPW1WarPre">
+      <autotag group="ClSpecWhen" tag="15"/>
+      </bootstrap>
+    <bootstrap thing="cPW1MasWar">
+      <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPW1DulBoo">
+      <autotag group="ClSpecWhen" tag="18"/>
+      </bootstrap>
+    <bootstrap thing="cPW1BatPro">
+      <autotag group="ClSpecWhen" tag="19"/>
+      </bootstrap>
+    <bootstrap thing="cPW1DuaSta">
+      <autotag group="ClSpecWhen" tag="20"/>
+      </bootstrap>
+    <bootstrap thing="cPW1Gambit">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPW1Presen">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPW1IndPre">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPW1ForPer">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPW1Warlea">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPW1TacFla">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPW1BatPro">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPW1RalPre">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="cCfgPW1"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fPWBuckPro"></bootstrap>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
+      Call PWsetupIL</eval>
+    </thing>
+  <thing id="cPWWarlord" name="Warlord" description="Dynamos on the field of combat, warlords walk the line of victory and ruin through their determination to achieve glory. Where some may talk tactics, the warlord dives in. Where some may fight in strategic units, the warlord shines alone as an inspirational beacon on the field of combat; to be a warlord is to be a lord of war.{br}{br}{b}Adventures{/b}: Warlords adventure for many reasons, but one reason that will always be prominent is the desire to test their skill against the world&apos;s most dangerous opponents, to show their strength to themselves and to the world. Others may do this for profit, others for fun, others for revenge, but it is always certain that a warlord seeks the glory and honor only a battle well-fought can bring.{br}{br}{b}Characteristics{/b}: Brash arrogance and an irrepressible nature are hallmarks of the warlord. A devil-maycare warrior, many warlords are as fearless as they are fierce, and they both love life and live their lives to the fullest. Hedonists in some extreme cases, the warlord is drawn to combat as a moth to the flame.{br}{br}{b}Alignment{/b}: Any. Warlords can come from any and all ethical backgrounds, though they do tend more towards a chaotic alignment. Lawfully aligned warlords are rarer, and tend to compose their impulses through strict discipline.\n\n{b}Role{/b}: Striker. As a very aggressive class, the warlord seeks to bring martial power to the field in the form of overwhelming force and ferocity. Additionally, warlords make excellent leaders, as they provide some passive benefits from their class features as well as active benefits from discipline choices and their gambits." compset="ClassLevel" maxlimit="20">
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassType" tag="Normal"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <bootstrap thing="cHelpPW1"></bootstrap>
+    <link linkage="helper" thing="cHelpPW1"/>
+    </thing>
+  <thing id="cCfgPW1" name="Warlord Maneuvers" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Maneuvers"/>
+    <fieldval field="cfgObject2" value="Stances"/>
+    <tag group="ClsCountAs" tag="cHelpPW1"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="Discipline" tag="SolarWind"/>
+    <tag group="Discipline" tag="PrimalFury"/>
+    <tag group="Discipline" tag="GoldenLion"/>
+    <tag group="Discipline" tag="ScarletThr"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <tag group="UseAttr" tag="aCHA"/>
+    <eval phase="Final" priority="11000">~ Setup the Warlord Maneuvers
+      Call PWsetupCfg</eval>
+    <eval phase="First" index="2">~ Setup the Warlord Maneuvers
+      perform hero.pushtags[Discipline.?]</eval>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPW1Gambit" name="Warlord’s Gambit" description="At his core, the warlord is a warrior who relies on both skill and daring; without this he is but any other combatant. By setting himself to danger, does his true skill shine, or so the motto of the warlord goes. At 1st level, a warlord selects two gambits as methods by which the warlord can recover expended maneuvers. Each gambit possesses three aspects - a {i}risk{/i}, a {i}rake{/i}, and a {i}reward{/i}.{br}{br}Each gambit&apos;s risk describes an action that the warlord must undertake in order to attempt to recover an expended maneuver. The warlord begins a gambit as a swift action, effectively diving recklessly into the act he is attempting. The warlord then performs the action described in the gambit, and if he is successful, he regains maneuvers (see below). If he is not, he suffers the rake of the gambit and only regains a single maneuver of his choosing. While performing a gambit, the warlord may add his Charisma modifier to the d20 check(s) to aid in accomplishing the gambit as a luck bonus. A warlord may attempt the actions of a gambit, but without declaring the attempt a gambit attempt by spending a swift action to do so, the character does not regain any maneuvers nor does he suffer a rake for failure. The character may initiate a maneuver while performing a gambit (if the maneuver helps him accomplish it) but he may not recover the maneuver used to achieve the gambit as part of the reward. A warlord may use each gambit available to him once per encounter. If at the start of the warlord&apos;s turn he has no available gambits, he regains all uses of his known gambits.{br}{br}A gambit&apos;s rake is the penalty that the warlord suffers if he attempts his gambit and fails, such as failing a trip attempt or failing to strike an opponent with a charge attack. Each gambit possesses a unique reward that the warlord enjoys for succeeding at that gambit. All gambits possess the same rake; the warlord only regains a single expended maneuver and suffers a -2 penalty on all d20 rolls for one round. A warlord who succeeds at fulfilling his gambit immediately recovers a number of expended maneuvers equal to his Charisma modifier (minimum 2) and enjoys the unique reward for each gambit. Allies who would witness the successful gambit and receive benefits must be within 60 ft. of the warlord to receive bonuses and must be able to see him perform the action.{br}{br}At 4th level and every four levels thereafter, the warlord selects adds an additional gambit." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cPW1AcrGam" name="Acrobatic Gambit" description="{i}Risk{/i}: The warlord attempts an Acrobatics check to move through an opponent&apos;s threatened area.{br}{br}{i}Reward{/i}: The warlord&apos;s brash move allows attacks against the opponent or opponents that the warlord evaded this round to inflict an additional 1d6 + his Charisma modifier points of damage damage upon a successful hit. This damage is not multiplied on a critical hit." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1BraGam" name="Brave Gambit" description="{i}Risk{/i}: The warlord attempts to make a successful charge attack against an opponent.{br}{br}{i}Reward{/i}: The warlord&apos;s actions embolden his allies and sets his spirit alight with courage; the warlord and his allies gain a morale bonus to damage equal to the warlord&apos;s Charisma modifier on the next attack they make or until the warlord&apos;s next turn." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1CavGam" name="Cavalry Gambit" description="{i}Risk{/i}: The warlord attempts a successful mounted charge attack or overrun maneuver against a target creature.{br}{br}{i}Reward{/i}: The warlord&apos;s opponent&apos;s defense is unbalanced; the warlord and his allies gain a bonus equal to his Charisma modifier on attacks opportunity against that foe until the warlord&apos;s next turn." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1DasGam" name="Dastardly Gambit" description="{i}Risk{/i}: The warlord attempts a successful dirty trick maneuver against an opponent.{br}{br}{i}Reward{/i}: The warlord and his allies are filled with malicious glee to attack the warlord&apos;s foe, and gain his Charisma modifier to damage rolls to a single attack against this target until the warlord&apos;s next turn." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1DueGam" name="Duelist&apos;s Gambit" description="{i}Risk{/i}: The warlord attempts to successfully use the disarm maneuver against an opponent.{br}{br}{i}Reward{/i}: The warlord&apos;s opponent is disarmed of a weapon and then the warlord may make an immediate attack of opportunity against his foe and gains a damage bonus equal to his Charisma modifier if the attack is successful." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1GatGam" name="Gatecrasher Gambit" description="{i}Risk{/i}: The warlord attempts a successful bull rush maneuver against an opponent.{br}{br}{i}Reward{/i}: The opponent is so rattled by the warlord&apos;s deft bull rush, that he suffers a penalty equal to the warlord&apos;s Charisma modifier for one round on all d20 checks." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1Presen" name="Tactical Presence" description="At 2nd level, the warlord&apos;s innate charisma allows his very presence to aid and assist not only himself but his allies as well, just by his being around. Adopting a presence is a move-equivalent action, and only one presence may be maintained at any given time. At 7th level, the warlord is capable of adopting a presence as a free action." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1WinPre" name="Winsome Presence" description="The native charisma present within the warlord&apos;s devil-may-care nature is quite pleasing to some when the warlord wishes to present himself so pleasantly. At 2nd level, the warlord may add half of his class level to Diplomacy checks (rounding down) as a circumstance bonus while using this presence." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1IntPre" name="Intimidating Presence" description="The skill in battle that a warlord possesses and the stories told of his battles can strike fear in the hearts of those who come into a warlord&apos;s gaze. At 5th level, the warlord may add half of his class level to Intimidate checks (rounding down) as a circumstance bonus." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1Warlea" name="Warleader" description="The warlord excels in the theater of war because he knows how best to work with his allies. At 3rd level, the warlord becomes an ever more capable commander and may share tactics with his allies. First, the warlord gains a teamwork feat as a bonus feat (he must meet the prerequisites for this feat to select it). As a standard action that the warlord performs, the warlord and allies within 30 ft. of him can share teamwork feats that they possess with each other, acting as if they both possessed the teamwork feat that they are sharing. The warlord can only share one teamwork feat at a time, either one his own (with all allies within 30 ft. of him) or an ally&apos;s (in which case only the warlord receives the ability to use the teamwork feat he does not possess). The warlord and allies retain the use of this feat for 3 + the warlord&apos;s Charisma modifier in rounds. The character may use this ability 1 + Charisma modifier times per day at 3rd level (minimum of 1), and one additional time per day for every four warlord levels the character possesses." compset="ClSpecial">
+    <tag group="User" tag="Tracker"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~Set the list name
+      field[listname].text = field[thingname].text & " " & field[xIndex].value & tagnames[Usage.?]
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += field[xCount].value
+      field[trkMax].value += field[abValue].value]]></eval>
+    </thing>
+  <thing id="cPW1IndPre" name="Indomitable Presence" description="At 2nd level, the warlord shines as a beacon to his allies on the field of battle, inspiring them to fight with him to their last breath. All allies within 30 ft. of his position gain the benefits of the Die Hard feat, and may add the warlord&apos;s Charisma modifier to Fortitude saves versus death effects, fatigue or exhaustion effects, or poison effects as a morale bonus." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1GrpGam" name="Grappler Gambit" description="{i}Risk{/i}: The warlord attempts a successful grapple maneuver against an opponent.{br}{br}{i}Reward{/i}: When the warlord has his enemy pinned and he chooses to inflict damage upon him, the warlord adds his Charisma modifier to damage until the foe successfully escapes the grapple." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1OutGam" name="Outrider&apos;s Gambit" description="{i}Risk{/i}: The warlord attempts a successful ranged attack while on a moving mount.{br}{br}{i}Reward{/i}: The warlord success allows for his allies to reap the benefits of his skill; allies who make ranged at{b}6{/b} tacks against this target opponent add the warlord&apos;s Charisma modifier to their next attack roll." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1PinGam" name="Pinhole Gambit" description="{i}Risk{/i}: The warlord attempts to successfully use a ranged attack against an opponent engaged in melee with an ally.{br}{br}{i}Reward{/i}: The successful and surprising attack against the foe shakes the enemy&apos;s confidence and harms its ability to defend itself; the warlord&apos;s Charisma modifier is applied as a penalty to its Armor Class until the warlord&apos;s next turn." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1RasGam" name="Rascal&apos;s Gambit" description="{i}Risk{/i}: The warlord attempts to successfully feint an opponent.{br}{br}{i}Reward{/i}: The warlord throws off his opponents defenses with his feint, and the foe is considered flat-footed until its next turn." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1RavGam" name="Ravager&apos;s Gambit" description="{i}Risk{/i}: The warlord attempts a successful sunder maneuver against an opponent.{br}{br}{i}Reward{/i}: The warlord&apos;s sundering attack ignores a portion of his foe&apos;s weapon&apos;s hardness equal to his Charisma modifier." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1SweGam" name="Sweeping Gambit" description="{i}Risk{/i}: The warlord attempts a successful trip maneuver against an opponent.{br}{br}{i}Reward{/i}: The warlord trips his foe and may make an immediate attack of opportunity against that foe, adding his Charisma modifier to the damage he inflicts if successful." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1UnbGam" name="Unbreakable Gambit" description="{i}Risk{/i}: The warlord attempts to succeed on a Fortitude or Will save against an extraordinary ability, maneuver, power, spell, or spell-like or supernatural ability. Unlike other gambits, this one can be attempted as an immediate action instead of a swift action.\n\n{i}Reward{/i}: The warlord is emboldened by his ability to resist his opponent&apos;s attack, and regains a number of hit points equal to three times his Charisma modifier." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1VicGam" name="Victory Gambit" description="{i}Risk{/i}: The warlord successfully reduces an opponent to 0 or few hit points with a melee or ranged attack on his turn from either a standard attack or full attack action.{br}{br}{i}Reward{/i}: The warlord and his allies gain a bonus on attack rolls equal to his Charisma modifier on their next attack roll." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpPW1"/>
+    </thing>
+  <thing id="cPW1RalPre" name="Rallying Presence" description="The sight of a warlord on the battlefield is enough to strengthen the hearts and wills of those who fight beside him in battle. At 5th level, the warlord may add his Charisma modifier as a morale bonus to Will saves versus fear, death effect, or compulsion effects to all allies within 30 ft. of his position. If the warlord maintaining this presence becomes cowed, frightened, panicked or falls prey to a hostile mind-affecting ability (such as one that would stun or daze him), compulsion or death effect, this presence immediately ends." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1VicPre" name="Victorious Presence" description="The preternatural skill at arms that a warlord of at this level possesses is enough to win any battle. At 9th level, any foe that the warlord brings to 0 or fewer hit points in battle immediately fuels his hunger for the win, granting him and his allies within 30 ft. of his position the character&apos;s class level plus Charisma modifier in temporary hit points. These hit points endure until they are lost or until the end of the encounter, whichever occurs first. Damage inflicted on the warlord is deducted from his temporary hit points first before being deducted from his normal hit point total." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1BatPro" name="Battle Prowess" description="The warlord is a skilled combatant, mixing traditional fighting skills with the skill of his martial discipline training. When the warlord is in a martial stance and wielding a weapon that is a member of a weapon group associated with that martial stance&apos;s discipline (example: a warlord wielding a longsword while in Scarlet Zweihander stance or a longbow while in the Stance of Piercing Rays), the character gets the listed bonus (+1 at 5th level, +2 at 12th level, +3 at 19th level) as a circumstance bonus to attack and damage rolls, CMB rolls, and to his CMD." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)]]></eval>
+    </thing>
+  <thing id="cPW1DulBoo" name="Dual Boost" description="Knowledgeable in the ways of making the best of any situation through pluck and verve, the warlord is capable of applying multiple martial principles simultaneously. At 6th level, once per day the warlord may initiate two boost type maneuvers as part of the same swift action. He may use this an additional time per day at 12th level, and three times per day at 18th level." compset="ClSpecial">
+    <tag group="User" tag="Tracker"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~Set the list name
+      field[listname].text = field[thingname].text & " " & field[xIndex].value & tagnames[Usage.?]
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += field[xCount].value
+      field[trkMax].value += field[abValue].value]]></eval>
+    </thing>
+  <thing id="cPW1TacAss" name="Tactical Assistance" description="At 8th level, the warlord&apos;s gift for helping his allies in combat improves. The character may use the Aid Another action for any single ally within 30 ft. of his position as a move action, and he uses his Charisma modifier for the bonus he grants to his ally&apos;s action (min +2)." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1ImpWar" name="Improved Warleader" description="At 13th level, the warlord&apos;s excellence in battle has enabled him to utilize the tactical skills of his allies as well as his own with greater speed. The warlord may now use his warleader class feature as a move action." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1JacGam" name="Jackpot Gambit" description="At 15th level, the warlord is the undeniable master of his gambits, reaping the greatest rewards for his risks. When the character succeeds on a gambit, he recovers all expended maneuvers instead of the normal allotment equal to his Charisma modifier" compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1DuaPre" name="Dual Tactical Presence" description="At 11th level, the sight of the warlord on a field of combat inspires multiple feelings in those around him. He may select and use two presences, activating them together as a free action." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1DuaSta" name="Dual Stance" description="At 20th level, the warlord&apos;s ability to use his stances improves, allowing him to gain the benefits of two known stances simultaneously from the warlord class. He must still adopt each stance individually, requiring him to expend one swift action for each stance." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Give the abilit to have two stances
+      perform hero.child[cCfgPW1].assign[PathOfWar.StanceUp]]]></eval>
+    </thing>
+  <thing id="cPW1ForPer" name="Force of Personality" description="At 3rd level, the warlord&apos;s forceful personality and bold, headstrong nature assist him in resisting the influence of others. Where others use personal serenity, awareness of the world around them, or plain old sensibility, the warlord gets by with endless nerve. The warlord may add his Charisma modifier to his Wisdom modifier to determine his Will save bonus. If the character is ever able to add his Charisma modifier to his Will save through use of another ability (for example. the paladin&apos;s divine grace) he may only add his Charisma modifier once to his Will save." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cPW1TacFla" name="Tactical Flanker" description="The warlord is exceptionally gifted at working with his allies to bring down opponents and his skills assist any who ally with him. When flanking a target with an allied creature, both the warlord and the ally may use the warlord&apos;s Charisma modifier (min +2) for the bonus they receive on flanking their opponent." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1WarPre" name="Warlord&apos;s Presence" description="At 15th level, the warlord is capable using three of his presences together at the same time, activating them together as a free action." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1MasWar" name="Master Warleader" description="At 17th level, the warlord&apos;s peerless ability in the theater of war has enabled him to utilize the tactical skills of his allies as well as his own with the greatest of speed. The warlord may now use his warleader class feature as a swift action." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW1DeaGam" name="Deadeye Gambit" description="{i}Risk{/i}: The warlord attempts a successful called shot maneuver on a target opponent.{br}{br}{i}Reward{/i}: The warlord&apos;s incredible accuracy livens up his allies and restores to them a measure of spirit; the warlord and his allies regain hit points equal to the warlord&apos;s Charisma modifier, helping them ignore the pains of their injuries and continue the fight." compset="CustomSpec" uniqueness="unique">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPWStalker" name="Stalker" description="An effective warrior wielding both skill and stealth, the stalker is a martial disciple who battles in the deep shadows and the hidden underworld of night. Through rigorous training and deep, intuitive instincts, the stalker is a trained killer whose very art is considered illegal in some places. Part mystic, part warrior, and part assassin, the stalker&apos;s arts are varied, but always deadly.\n\n{b}Adventures:{/b} Stalkers adventure for many reasons, but most do so either as part of a guild of fellow stalkers on a mission, for money and profit, or for deeper, often darker purposes of the heart. Some adventure for the test of their skill, but this is slightly rarer; whatever the reason, the path of the stalker is often a self-absorbed one.\n\n{b}Characteristics:{/b} Stalkers universally are very introspective people, they rely so heavily upon their intuitive reactions to situations and their heightened reflexes through athletic skill that they usually have an air of detachment. Some are braggarts, but many are quiet and calm, paying close attention to their surroundings should they need to use their lethal skills.\n\n{b}Alignment:{/b} Any. Stalkers do not lean to any particular alignment trend, running the gamut of all walks of life.\n\n{b}Role:{/b} Striker. In the party, the stalker follows the heavily armored fighter into combat, using them as shields and distractions so they can inflict maximum damage on their foes. In addition, the stalker can serve quite well as the party scout, finding danger and warning the party before they stumble upon it." compset="ClassLevel" maxlimit="20">
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassType" tag="Normal"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <bootstrap thing="cHelpPW2"></bootstrap>
+    <link linkage="helper" thing="cHelpPW2"/>
+    </thing>
+  <thing id="cCfgPW2" name="Stalker Maneuvers" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Maneuvers"/>
+    <fieldval field="cfgObject2" value="Stances"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="Discipline" tag="SolarWind"/>
+    <tag group="Discipline" tag="VeiledMoon"/>
+    <tag group="Discipline" tag="BrokenBlad"/>
+    <tag group="Discipline" tag="SteelSerp"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <tag group="ClsCountAs" tag="cHelpPW2"/>
+    <eval phase="Final" priority="11000">~ Setup the Warlord Maneuvers
+      Call PWsetupCfg</eval>
+    <eval phase="First" index="2">~ Setup the Warlord Maneuvers
+      perform hero.pushtags[Discipline.?]</eval>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cHelpPW2" name="Stalker" compset="Class" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cSkills" value="6"/>
+    <fieldval field="cSpecSing" value="Stalker Art"/>
+    <fieldval field="cSpecName" value="Stalker Arts"/>
+    <fieldval field="cAbbr" value="Stk"/>
+    <fieldval field="cSpec3rdSi" value="Rogue Talent"/>
+    <arrayval field="cCustTot" index="2" value="2"/>
+    <arrayval field="cCustTot" index="6" value="3"/>
+    <arrayval field="cCustTot" index="10" value="4"/>
+    <arrayval field="cCustTot" index="14" value="5"/>
+    <arrayval field="cCustTot" index="18" value="6"/>
+    <arrayval field="cCustTot" index="0" value="1"/>
+    <arrayval field="cKnowTot" index="0" value="6"/>
+    <arrayval field="cKnowTot" index="0" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="0" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="1" value="7"/>
+    <arrayval field="cKnowTot" index="1" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="1" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="2" value="8"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="2" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="3" value="9"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="3" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="4" value="10"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="4" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="5" value="11"/>
+    <arrayval field="cKnowTot" index="5" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="5" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="6" value="12"/>
+    <arrayval field="cKnowTot" index="6" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="6" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="7" value="13"/>
+    <arrayval field="cKnowTot" index="7" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="7" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="8" value="14"/>
+    <arrayval field="cKnowTot" index="8" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="8" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="9" value="15"/>
+    <arrayval field="cKnowTot" index="9" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="9" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="10" value="16"/>
+    <arrayval field="cKnowTot" index="10" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="10" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="11" value="16"/>
+    <arrayval field="cKnowTot" index="11" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="11" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="12" value="17"/>
+    <arrayval field="cKnowTot" index="12" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="12" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="13" value="17"/>
+    <arrayval field="cKnowTot" index="13" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="13" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="14" value="18"/>
+    <arrayval field="cKnowTot" index="14" column="1" value="10"/>
+    <arrayval field="cKnowTot" index="14" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="15" value="18"/>
+    <arrayval field="cKnowTot" index="15" column="1" value="10"/>
+    <arrayval field="cKnowTot" index="15" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="16" value="19"/>
+    <arrayval field="cKnowTot" index="16" column="1" value="10"/>
+    <arrayval field="cKnowTot" index="16" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="17" value="19"/>
+    <arrayval field="cKnowTot" index="17" column="1" value="11"/>
+    <arrayval field="cKnowTot" index="17" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="18" value="20"/>
+    <arrayval field="cKnowTot" index="18" column="1" value="11"/>
+    <arrayval field="cKnowTot" index="18" column="2" value="7"/>
+    <arrayval field="cKnowTot" index="19" value="21"/>
+    <arrayval field="cKnowTot" index="19" column="1" value="12"/>
+    <arrayval field="cKnowTot" index="19" column="2" value="7"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="ClassSkill" tag="skAppraise"/>
+    <tag group="ClassSkill" tag="skBluff"/>
+    <tag group="ClassSkill" tag="skClimb"/>
+    <tag group="Classes" tag="PWStalker" name="Stalker"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="skEscape"/>
+    <tag group="ClassSkill" tag="skHeal"/>
+    <tag group="ClassSkill" tag="skIntim"/>
+    <tag group="ClassSkill" tag="skKnowLoc"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="ClassSkill" tag="skKnowNat"/>
+    <tag group="ClassSkill" tag="skDisable"/>
+    <tag group="ClassSkill" tag="skDisguise"/>
+    <tag group="ClassSkill" tag="skKnowRel"/>
+    <tag group="ClassSkill" tag="skPercep"/>
+    <tag group="ClassSkill" tag="skSenseMot"/>
+    <tag group="ClassSkill" tag="skStealth"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="cAttack" tag="Medium"/>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="cCfgPW2"></bootstrap>
+    <bootstrap thing="cPW2KiSens">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPW2KiPerc">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DeadSt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPW2KiPool">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPW2CmbtI1">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPW2Dodge">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cUncanny">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DeadSt">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPW2Dodge">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPW2Blend">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPW2KiSavF">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPW2KiSavR">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPW2KiSavW">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPW2CmbtI3">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DeadSt">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPW2Dodge">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DlStrk">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPW2CmbtI4">
+      <autotag group="ClSpecWhen" tag="12"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DeadSt">
+      <autotag group="ClSpecWhen" tag="13"/>
+      </bootstrap>
+    <bootstrap thing="cPW2Dodge">
+      <autotag group="ClSpecWhen" tag="14"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DlStrk">
+      <autotag group="ClSpecWhen" tag="14"/>
+      </bootstrap>
+    <bootstrap thing="cPW2ImBlnd">
+      <autotag group="ClSpecWhen" tag="16"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DeadSt">
+      <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPW2Dodge">
+      <autotag group="ClSpecWhen" tag="18"/>
+      </bootstrap>
+    <bootstrap thing="cPW2CmbtI5">
+      <autotag group="ClSpecWhen" tag="18"/>
+      </bootstrap>
+    <bootstrap thing="cPW2DlStrk">
+      <autotag group="ClSpecWhen" tag="18"/>
+      </bootstrap>
+    <bootstrap thing="cPW2RetKi">
+      <autotag group="ClSpecWhen" tag="20"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
+      Call PWsetupIL</eval>
+    </thing>
+  <thing id="cPW2KiPool" name="Ki Pool" description="At 1st level, a stalker gains a pool of ki points, supernatural energy he can use to accomplish amazing feats. The number of points in the stalker&apos;s ki pool is equal to 1/2 her stalker level + his Wisdom modifier (minimum of 1).\n\nAt 1st level, the stalker may spend 1 point of ki to grant himself a +4 insight bonus to a single Perception or Sense Motive check as an immediate action, as he uses his ki to feel out the vibrations of others and their hidden motives.\n\nAt 5th level, the stalker may use his deadly strikes in conjunction with his combat insight to &quot;read&quot; his opponent&apos;s defenses and deliver devastating blows beyond his foe&apos;s guard. The stalker spends one point of ki as a swift action to read his target opponent, and may apply his deadly strike to all martial strikes initiated by the stalker for a number of rounds equal to his Wisdom modifier against this target. If the stalker scores a successful critical hit against the target while this ability is active, then he activates deadly strike as normal.\n\nAt 7th level, the stalker may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action.\n\nAt 9th level, the stalker can delve into his subconscious in battle and remember key lessons from his training. The stalker envisions potential scenarios where martial abilities he has not readied come into play and gains a momentary burst of martial insight. A number of times per day equal to his Wisdom modifier, the stalker can spend one ki point as a swift action and trade one readied maneuver for another maneuver known of the same level or lower. The new maneuver is immediately readied and accessible for use. The character may initiate this maneuver and recover it as if he had prepared at the beginning of the day (or when ever the stalker readied his maneuvers last) until the end of the combat encounter.\n\nThe ki pool is replenished each day after 8 hours of rest and meditation; these hours do not need to be consecutive. If the stalker possesses levels in another class that grants points to a ki pool, stalker levels stack with the levels of that class to determine the total number of ki points in the combined pool, but only one ability score modifier is added to the total. The choice of which score to use is made when the second class ability is gained, and once made, the choice is set. The stalker can now use ki points from this pool to power the abilities of every class he possesses that grants a ki pool." compset="ClSpecial" summary="You have a ki pool equal to 1/2 your stalker level + your WIS modifier.">
+    <tag group="abAction" tag="None" name="No action" abbrev="None"/>
+    <tag group="abDuration" tag="Constant" name="Constant" abbrev="cons"/>
+    <tag group="abRange" tag="Personal" name="Personal" abbrev="pers"/>
+    <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Tracker"/>
+    <tag group="UseAttr" tag="aWIS"/>
+    <bootstrap thing="aaKiPool"></bootstrap>
+    <eval phase="PostLevel" priority="9000"><![CDATA[
+      ~ only run the rest for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      
+      ~ Meet core Ki Pool pre-reqs
+      perform hero.assign[Ability.cMnkKiPool]
+
+      ~ our maximum uses is 1/2 our stalker level + WIS bonus
+      field[abValue].value = round(field[xAllLev].value/2, 0, -1)
+      
+      ~ If we find the CORE Ki Pool ability then set its attribute to be Wisdom
+      ~ and include our classes half-level bonus to the tracker max.
+      If (hero.haschild[BaseClSpec,"thingid.cMnkKiPool & Helper.ShowSpec"] <> 0) Then
+        ~ Increase base Ki Pool by half-stalker level
+        #trkmax[cMnkKiPool] += field[abValue].value
+        ~ Let the Monk Ki Pool know we use Wisdom
+        perform hero.child[cMnkKiPool].assign[UseAttr.aWIS]
+        ~ Let the our Post-Attribute script know we should NOT run
+        field[abValue5].value += 1
+        ~ Prevent the Stalker Ki Pool from displaying on the In-Play tab
+        perform delete[User.Tracker]
+      Endif]]></eval>
+    <eval phase="PostAttr" priority="10000" index="2"><![CDATA[
+      ~ only run the rest for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If increased the core Ki Pool then get out now!
+      doneif (field[abValue5].value <> 0)
+
+      ~ If we have the "Extra Ki" feat then give two extra uses. We do this
+      ~ here so that the "core" feat still works for us sense we know use
+      ~ a custom Ki Pool.
+      If (hero.childlives[fExtraKi] = 1) Then
+        field[abValue].value += 2
+      Endif
+
+      ~ Set our uses per day to be 1/2 stalker level plus Wisdom
+      field[trkMax].value += field[abValue].value + hero.child[aWIS].field[aBonus].value]]></eval>
+    </thing>
+  <thing id="cPW2DeadSt" name="Deadly Strike" description="The stalker is capable of maximizing his deadliness whenever he lands a critical blow upon his opponent, opening his target up for future punishment as the stalker becomes attuned to his prey. The stalker&apos;s deadly strike activates whenever the stalker scores a successful critical hit against a target, and is active against that target for a number of rounds equal to his Wisdom modifier. Deadly strike inflicts extra damage, to only this target creature, on all of the stalker&apos;s attacks. This extra damage is 1d6 at 1st level, and increases by 1d6 for every four stalker levels thereafter. When the stalker scores a critical hit, this extra damage is not multiplied, it is simply added to the damage. If the stalker scores a successful critical hit during the time his deadly strike is active, the duration of this ability is extended by one round (no more than one extension can be made per round). Ranged attacks can count as deadly strikes only if the target is within 30-ft.. Deadly strike is more effective with weapons with higher critical multipliers, such as scythes and battle axes. Weapons with a x3 critical multiplier inflict damage with deadly strikes using a d8 instead of a d6, and weapons with a critical multiplier of x4 use d10&apos;s. Damage multipliers higher than x4 use d10&apos;s for deadly strikes damage.\n\nDeadly strike may not be used with weapons that inflict non-lethal damage. The stalker must be able to see the target well enough to pick out a vital spot and must be able to reach such a spot. Creatures immune to critical hits or precision damage cannot be targeted by a deadly strike. A stalker cannot deadly strike while attacking a creature who has concealment." compset="ClSpecial" summary="Attacks deal extra damage for WIS rounds after successful crit">
+    <tag group="LvNameApp" tag="DieCntVal" name="&quot;field[abValue].value&quot; dY" abbrev="&quot;field[abValue].value&quot; dY"/>
+    <tag group="LvNameApp" tag="DieSiz6" name="Xd6" abbrev="Xd6"/>
+    <tag group="LvNameApp" tag="SignDieCnt" name="Sign die count" abbrev="Sign die count"/>
+    <tag group="SbNameApp" tag="DieCntVal" name="&quot;field[abValue].value&quot; dY" abbrev="&quot;field[abValue].value&quot; dY"/>
+    <tag group="SbNameApp" tag="DieSiz6" name="Xd6" abbrev="Xd6"/>
+    <tag group="SbNameApp" tag="SignDieCnt" name="Sign die count" abbrev="Sign die count"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="Helper" tag="UseOwnLev" name="UseOwnLev" abbrev="UseOwnLev"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Set duration = WIS mod + 1
+      field[abDuration].value = 1 + #attrmod[aWIS]]]></eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[
+      ~ Build list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value) & "d6"
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += field[xCount].value
+
+      ~ Set the Summary text that only appears on the Specials Tab
+      field[abSumm].text = "Attacks deal +" & field[abValue].value & "d6 damage for " & field[abDuration].value & " rounds after successful crit"
+
+      ~ only run the rest for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      ~ Find all Rogue talents we have and set Sneak Attack Dice 
+      ~ equal to this ability instead.
+      foreach pick in hero from BaseCustSp where "SpecSource.cHelpRog & CustTaken.cHelpPW2"
+        eachpick.field[abValue].value += field[abValue].value
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPW2CmbtI1" name="Combat Insight (WIS to Init/Ref save)" description="At 2nd level, the stalker&apos;s combat sense opens his third eye, granting him defensive reflexes that protect him in combat. The stalker may add his Wisdom modifier to his initiative score and to Reflex saving throws as an insight bonus." compset="ClSpecial">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      
+      ~ Set bonus equal to our Wisdom
+      field[abValue].value += #attrmod[aWIS]
+
+      ~ Give bonus to Initiative and Ref saves
+      #applybonus[BonInsight, hero.child[Initiative], field[abValue].value]
+      #applybonus[BonInsight, hero.child[svRef], field[abValue].value]
+      field[livename].text = "Combat Insight " & signed(field[abValue].value)
+      field[abSumm].text = signed(field[abValue].value) & " to Initiative & Ref Saves."]]></eval>
+    </thing>
+  <thing id="cPW2CbtPcg" name="Combat Precognition" description="The stalker designates his combat senses towards his opponents and gains momentary flashes of insight into how to defend himself against them. Spending one point of ki as an immediate action forces opponents who attack the stalker to roll their attack rolls twice and take the worse of the two results due to the stalker&apos;s precognitive abilities. This art has a duration of 1 + the stalker&apos;s Wisdom modifier in rounds." compset="CustomSpec" summary="Spend 1 ki, enemies must roll twice to attack and take worse roll for 1 + WIS rnds" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="abCategory" tag="StalkerArt" name="Stalker Art"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2AdvStd" name="Advanced Study" description="The stalker&apos;s knowledge of the martial disciplines expands, imparting new maneuvers as if the character had taken the Advanced Study feat. This art may be selected more than once. The stalker must meet the prerequisites of this feat to select this stalker art." compset="CustomSpec">
+    <usesource source="srcPathOfW"/>
+    <tag group="fInclude" tag="fPWAdvStud"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2Alcrty" name="Alacrity" description="A stalker&apos;s land speed is faster than the norm for his race, gaining a +10-ft. enhancement bonus to his base speed and he may add his Wisdom modifier to Acrobatics checks, due to his nimble and finely honed body. The stalker enjoys this benefit only when he is wearing no armor or light armor, not using a shield, and not carrying a medium or heavy load. As a swift action, the character may spend a point of ki to pour extra speed to his step to increase this bonus from 10-ft. to an additional 30-ft. for one minute, but he is fatigued afterward for 1d4 minutes as he catches his breath." compset="CustomSpec" summary="+10 ft. to base speed, spend ki for 30 ft" uniqueness="unique">
+    <fieldval field="actName" value="Ki Pool (+30ft)"/>
+    <fieldval field="actName2" value="Fatigued"/>
+    <fieldval field="abValue" value="10"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="LvNamePar" tag="AppText"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Get our encumbrance level - if we're encumbered by that, or if we're wearing
+      ~ armor or shield, we're disabled.
+      If (hero.tagexpr[Hero.EquipShld | Hero.MedArmor | Hero.HeavyArmor | Encumbered.Medium | Encumbered.Heavy | Encumbered.Overloaded] <> 0) then
+        perform assign[Helper.SpcDisable]
+        done
+      Endif
+
+      ~ If Ki point spent then increase speed to 30ft
+      If (field[abilActive].value = 1) Then
+        field[abValue].value += 20
+      Endif
+    
+      ~ Set speed increase
+      #enhancementbonus[hero.child[Speed], field[abValue].value]
+      ~ Set wisdom bonus     
+      field[abValue2].value = #attrmod[aWIS]
+      ~ Give bonus to acrobatics
+      #skillbonus[skAcrobat] += field[abValue2].value]]>
+      <after name="Encumber Final"/>
+      </eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If Fatigued not activated get out now!
+      doneif (field[abilAct2].value <> 1)
+
+      ~ Set fatigue condition on hero
+      perform hero.assign[Condition.pcnFatigue]]]></eval>
+    </thing>
+  <thing id="cPW2ComArt" name="Combat Art" description="A stalker that selects this art gains a bonus combat feat. The stalker must meet the prerequisites for selecting this feat. This art may be selected more than once." compset="CustomSpec" summary="You gain a bonus combat feat.">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PreLevel" priority="10000">~ Add to combat feats allowed
+      linkage[table].field[cBonFtMax].value +=1</eval>
+    </thing>
+  <thing id="cPW2ConRec" name="Concealed Recovery" description="The stalker may utilize his ki-fueled attunement to the world around him to defend himself while he centers his spirit for martial maneuver recovery. When recovering maneuvers (either as a full round action or as a standard action) the stalker enjoys concealment (with a 20% miss chance). At 11th level, this improves to total concealment (50% miss chance)." compset="CustomSpec" summary="Gain concealment when recovering manuevers" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="abAction" tag="FullRd"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2CritEd" name="Critical Edge" description="The stalker&apos;s deadly efficiency in combat allows him to increase the critical threat range of any weapon he wields by +1. This bonus is applied after abilities such Improved Critical or the keen weapon property and cannot be doubled." compset="CustomSpec" summary="+1 threat range with all weapons" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="Final" priority="50000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Loop through all weapons
+      foreach pick in hero from BaseWep
+        ~ Calc defult range
+        field[abValue].value = 20 - eachpick.tagvalue[wCritMin.?]
+        ~ Keen or Improved Crit change the value to include this
+        If (eachpick.tagis[Helper.Keen] + eachpick.tagis[Broadcast.ImpCrit] <> 0) Then
+          field[abValue].value = (field[abValue].value * 2) + 1
+        Endif
+        ~ Increase amount by one more
+        field[abValue].value += 1
+        ~ Calc new CritMin tag
+        field[abValue2].value = 20 - field[abValue].value
+        ~ Remove Keen and Improved Crit tags
+        perform eachpick.delete[Helper.Keen]
+        perform eachpick.delete[Broadcast.ImpCrit]
+        ~ Remove old Crit tag
+        perform eachpick.delete[wCritMin.?]
+        ~ Assign new tag including any Keen/Improved Crit values
+        ~ and the +1 from the ability
+        If (field[abValue2].value > 0) Then
+          perform eachpick.assignstr["wCritMin." & field[abValue2].value]
+        Endif
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPW2CritTr" name="Critical Training" description="The stalker&apos;s deadly strike damage increases by an additional damage die, and he may treat his class level as his base attack bonus for the purposes of qualify for critical feats. If the stalker possesses fighter levels, he may add his stalker level to his fighter level to qualify for critical feats.\n\n[NOTE: The critical feat qualification has not yet been implemented.]" compset="CustomSpec" summary="1 extra Deadly Strike die, count as fighter for critical feats" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~Increase Deadly Strike dice by one
+      #value[cPW2DeadSt] += 1]]></eval>
+    </thing>
+  <thing id="cPW2DeadAm" name="Deadly Ambush" description="The stalker with this art may now use his deadly strike class feature against flat- footed targets and targets that are being denied the Dexterity modifier to their AC as well as on critical hits and when focusing his ki to read his opponent." compset="CustomSpec" summary="Use Deadly Strike when foe denied DEX to AC" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Deadly Strike required"><![CDATA[#hasability[cPW2DeadSt] <> 0]]></exprreq>
+    </thing>
+  <thing id="cPW2DeadRc" name="Deadly Recovery" description="The stalker&apos;s deadly nature is reflected when he is considered to be most vulnerable. While recovering maneuvers as a full round action, the stalker gains the use of the Combat Reflexes feat (using his Wisdom modifier in place of his Dexterity modifier). He may also add his deadly strike damage to any attacks of opportunity he makes while he is recovering maneuvers." compset="CustomSpec" summary="Gain Combat Reflexes and use Deadly Strike while recovering maneuvers" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="HasAbility" tag="fComRef"/>
+    <tag group="abAction" tag="FullRd"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="SpecSource" tag="cHelpzst"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Deadly Strike required"><![CDATA[#hasability[cPW2DeadSt] <> 0]]></exprreq>
+    </thing>
+  <thing id="cPW2Evas" name="Evasion" description="A stalker can avoid damage from many area-effect attacks by channeling his ki into his reflexes. If a stalker makes a successful Reflex saving throw against an attack that normally deals half damage on a successful Reflex save he instead takes no damage. Evasion can be used only if a stalker is wearing light armor or no armor. A helpless stalker does not gain the benefit of evasion." compset="CustomSpec" summary="If you succeed at a Reflex save for half damage, you take none instead." uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="HasAbility" tag="cEvasion"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2KiVmp" name="Ki Vampirism" description="The stalker&apos;s ki gains a hungry quality that expresses itself through the martial prowess of a disciple of the Path of War. If the stalker reduces a living foe to 0 or less hit points with a martial strike or scores a successful critical hit, then he may regain 1 point of ki as an immediate action. He may not use his ki vampirism more times per day than 3 + his Wisdom modifier. This ability does not function against constructs, undead, or creatures with under 1/2 HD. Minimum stalker level 11th." compset="CustomSpec" uniqueness="unique">
+    <fieldval field="trkMax" value="3"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="User" tag="Tracker"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Uses per day is 3 + Wis
+      field[trkMax].value += #attrmod[aWIS]
+
+      field[abValue].value = field[xAllLev].value]]></eval>
+    <exprreq message="Stalker level 11 required"><![CDATA[#featlevelcount[PWStalker] >= 11]]></exprreq>
+    </thing>
+  <thing id="cPW2MndBnd" name="Mind Bending" description="The stalker&apos;s inner sense learns the workings of another being&apos;s mind, granting him the ability to impose his own will over those weak enough to succumb to this art. As a standard action, the character spends one ki point and must make eye contact with the target creature and begin speaking to them, using his ki to influence his target&apos;s thoughts. The target then must make a Will save (DC 13 + the stalker&apos;s Wisdom modifier) or be subject to a charm monster spell. Minimum stalker level 5th." compset="CustomSpec" summary="Spend ki to charm monster" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="SpInfo" tag="spCharMon3"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="abSave" tag="WillNeg"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Save DC is 13 + WIS mod
+      field[abDC].value = 13 + #attrmod[aWIS]]]></eval>
+    <exprreq message="Stalker level 5 required"><![CDATA[#featlevelcount[PWStalker] >= 5]]></exprreq>
+    </thing>
+  <thing id="cPW2MonWep" name="Monastic Weapon Training" description="The stalker gains the Improved Unarmed Strike feat and gains proficiency with all weapons that are considered monk weapons." compset="CustomSpec" summary="Gain Improved Unarmed Strike and monk proficiencies" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <bootstrap thing="fImpUnarm">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="First" priority="20000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Loop through all monk weapons
+      foreach thing in BaseWep where "wFtrGroup.Monk"
+        perform eachthing.pulltags[WepProf.?]
+      nexteach
+      ~ Push all proficency tags to the hero
+      perform hero.pushtags[WepProf.?]
+      
+      ~ Cycle through and apply the Helper.ExoticProf tag to all examples of 
+      ~ the chosen exotic weapon on the hero. This is important for the Aldori
+      ~ Dueling Sword specifically, and possibly others.
+      var searchexpr as string
+      searchexpr = "wPofReq.Exotic & (" & tagids[WepProf.?,"|"] & ")"
+      foreach pick in hero from BaseWep where searchexpr
+        perform eachpick.assign[Helper.ExoticProf]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPW2MrdIns" name="Murderous Insight" description="The stalker designates his combat senses towards ending the lives of his opponents and gains momentary flashes of insight in how to best accomplish this. By spending one point of ki as a swift action, the stalker makes an attack and rolls twice for that attack and uses the better of the two results due to the stalker&apos;s precognitive abilities. This art has a duration of 1 + the stalker&apos;s Wisdom modifier in rounds." compset="CustomSpec" summary="Roll twice on attack rolls, take better roll" uniqueness="unique">
+    <fieldval field="abText" value="one"/>
+    <fieldval field="abText2" value="two"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)    
+    
+      field[abDuration].value = 1 + #attrmod[aWIS]]]></eval>
+    </thing>
+  <thing id="cPW2Obfusc" name="Obfuscation" description="The stalker knows how to maintain a quiet, innocuous attitude as if he were nothing more than a part of the scenery. The stalker spends a point of ki as a full round action to activate his obfuscation, and as long as he remains in a non- threatening posture (by carrying no weapons in hand moving at half his base speed) the stalker radiates a psychic field that causes others to ignore his presence for a number of minutes equal to the stalker&apos;s Wisdom modifier. Subjects who normally would react to the stalker&apos;s presence in a way that would stop or harm him must make a Will save (DC 15 + the stalker&apos;s Wisdom modifier) or be under the influence of the cloud mind psionic power. For every 2 additional points of ki spent on this art, the saving throw DC increases by +1 to a maximum of the stalker&apos;s Wisdom modifier. Minimum stalker level 7th." compset="CustomSpec" summary="Force others to ignore you" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="abAction" tag="FullRd"/>
+    <tag group="abDuration" tag="Minute"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Save DC is 15 + WIS mod
+      field[abDC].value = 15 + #attrmod[aWIS]
+      ~ Duration is WIS minutes
+      field[abDuration].value = #attrmod[aWIS]]]></eval>
+    <exprreq message="Stalker level 7 required"><![CDATA[#featlevelcount[PWStalker] >= 7]]></exprreq>
+    </thing>
+  <thing id="cPW2PhmRch" name="Phantom Reach" description="The stalker is capable of extending the reach of melee range martial strikes by infusing ki into the maneuver, causing a phantom echo to rush towards the enemy and initiate the attack. As a swift action, the stalker may spend one ki point and initiate a melee martial strike with a range of melee attack as if it instead had a range of close (25-ft. + 5-ft. / 2 levels). Strikes with a range greater than melee attack do not function with this art." compset="CustomSpec" summary="Make martial strikes at range" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abRange].value = 25 + (field[xTotalLev].value/2) * 5]]></eval>
+    </thing>
+  <thing id="cPW2PrcStp" name="Precocious Step" description="By relying on his combat insight to steer him effortlessly through a dangerous spot, the stalker may spend one point of ki as a swift action and move without provoking attacks of opportunity for a number rounds equal to his Wisdom modifier (min 1)." compset="CustomSpec" summary="Spend ki to move without AoO" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Duration is WIS rounds
+      field[abDuration].value += #attrbonus1[aWIS]]]></eval>
+    </thing>
+  <thing id="cPW2RogTal" name="Rogue Talent" description="Some stalkers have learned techniques that are similar to those of the rogue, and may select rogue talents instead of stalker arts. Stalkers may not learn advanced talents, nor can they gain the Ki Pool or Underhanded rogue talents. Talents that apply to a rogue&apos;s sneak attack apply to a stalker&apos;s deadly strike ability." compset="CustomSpec" summary="Gain a rogue talent" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      hero.child[cHelpPW2].field[cGiveSp3rd].value += 1]]></eval>
+    <eval phase="Final" priority="99999999" index="2"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Allow all Rogue Talents (and Ninja Tricks by extension) except advanced talents, and also Ki Pool and Underhanded specifically
+      hero.child[cHelpPW2].field[cCstS3Expr].text = "(SpecSource.cHelpRog | SpecSource.cHelpNin) & !Helper.Secondary & !Helper.Tertiary & !Ability.cRogUnderh & !Ability.cRogKiPoo & !abCategory.RogTalAdv & !abCategory.NinTriMas"]]></eval>
+    </thing>
+  <thing id="cPW2CmbtI2" name="Combat Insight (Uncanny Dodge)" description="At 4th level, the heightened perceptions of the stalker allow him to know when his prey could get the jump on him, granting him the uncanny dodge class feature (see rogue class for details)." compset="ClSpecial" summary="Gain Uncanny Dodge">
+    <tag group="abAction" tag="None"/>
+    <tag group="DescInfo" tag="cUncanny"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2CmbtI3" name="Combat Insight (Critical Focus)" description="At 8th level, the killer&apos;s instinct in the stalker is honed to a razor&apos;s fine edge, allowing him to add his Wisdom modifier as a competence bonus to confirm critical hits. This ability counts as if the character possessed the Critical Focus feat, and for the purposes of taking critical feats that the character qualifies for. The character may not select the Critical Focus feat once he has this ability, and should he have it before he gains this ability, he loses the Critical Focus feat and may select a critical feat in its place.\n\n{B}NOTE:{/b} Taking this Stalker Art will disable the Critical Focus feat&apos;s, but does not remove the feat if present, or prevent you from taking it. It&apos;s up to you to make sure you don&apos;t add Critical Focus to a character with this ability, and to replace it if it&apos;s already present as per the rules text" compset="ClSpecial" summary="+WIS to confirm crits, counts as Critical Focus feat">
+    <tag group="abAction" tag="None"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value = #attrmod[aWIS]
+
+      #situational[hero.childfound[Attack],signed(field[abValue].value) & " competence bonus to confirm critical hits",field[thingname].text]
+
+      ~ Set HasFeat.fCritFoc onto hero to let other feats know we have
+      ~ something that is counted like Critical Focus
+      perform hero.assign[HasFeat.fCritFoc]
+
+      ~ If Critical Focus feat is found then disable it
+      If (hero.childlives[fCritFoc] = 1) Then
+        perform hero.child[fCritFoc].assign[Helper.FtDisable]
+        ~ Give a bonus general feat that should be used to take 
+        ~ another critical feat in its place.
+        #resmax[resFeat] += 1
+      Endif]]></eval>
+    </thing>
+  <thing id="cPW2CmbtI4" name="Combat Insight (Critical Recovery)" description="At 12th level, the stalker&apos;s insight allows him to funnel the ki of his foes into his form with his deadly attacks. The character can recover a single expended maneuver when he scores a successful critical hit against a living creature. This ability does not function against constructs, undead, or creatures with under 1/2 HD." compset="ClSpecial" summary="Recover a maneuver on critical hit">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2CmbtI5" name="Combat Insight (Blindsight)" description="At 18th level, the heightened precognitive abilities of the stalker manifest in his ability to sense things around him that others cannot, granting him blindsight of 30-ft.. This is a supernatural ability." compset="ClSpecial" summary="Gain blindsight 30 ft">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2DlStrk" name="Dual Strike" description="Once per day at 10th level, the stalker&apos;s deadly skill in combat improves, allowing him to initiate two martial strikes as a full round action. The strikes the stalker initiates must have an initiation action of one standard action, and he must have both strikes readied. Boosts may not be applied to a dual strike due to the need to concentrate on two separate martial movements. When a dual strike is used, the action must be declared beforehand when used, both strikes are resolved separately and are expended. At 14th level the character may use dual strike twice per day, and three times per day at 18th level." compset="ClSpecial" summary="Use two martial strikes as a full-round action">
+    <fieldval field="trkMax" value="1"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="abAction" tag="FullRd"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      
+      ~Set the list name
+      field[listname].text = field[thingname].text & " " & field[xIndex].value & tagnames[Usage.?]
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += field[xCount].value
+      field[trkMax].value = field[abValue].value]]></eval>
+    </thing>
+  <thing id="cPW2ImBlnd" name="Improved Blending" description="At 16th level, the stalker&apos;s abilities improve further, and the character is permanently under the effects of a pass without trace spell." compset="ClSpecial" summary="Permanent Pass Without Trace effect">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="MultiCopy"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If 16th level or above, append spell info for Pass Without Trace
+      if (field[xTotalLev].value >= 16) then
+        perform assign[SpInfo.spPasswit1]
+        hero.child[cPW2Blend].field[abSumm].text &= ", pass without trace"
+      endif]]></eval>
+    </thing>
+  <thing id="cPW2RetKi" name="Retributive Ki" description="At 20th level, the stalker&apos;s mystical ki power allows for him to generate a powerful burst of energy to gain retribution on those who would injure him. When the stalker is harmed by an attack, spell, or ability of an enemy, as an immediate action he may spend two ki points to initiate a martial strike that he has readied (with an initiation action of one standard action) in retaliation against that attack. He uses the range of the attacker&apos;s ability as the range of his strike, creating a phantom echo of himself with his ki (as with the phantom reach art) that rushes out and strikes his attacker if they are outside of the stalker&apos;s normal reach. Use of this ability expends his strike as normal, and the strike functions as normal otherwise." compset="ClSpecial" summary="Retaliate with a martial strike, even at range">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPW2KiSens" name="Ki Pool (Sense Motive)" description="At 1st level, the stalker may spend 1 point of ki to grant himself a +4 insight bonus to a single Perception or Sense Motive check as an immediate action, as he uses his ki to feel out the vibrations of others and their hidden motives." compset="ClSpecial" summary="+4 insight to one Sense Motive check">
+    <fieldval field="abValue" value="4"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If not activated get out now!
+      doneif (field[abilActive].value = 0)
+
+      #applybonus[BonInsight, hero.child[skSenseMot], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPW2KiPerc" name="Ki Pool (Perception)" description="At 1st level, the stalker may spend 1 point of ki to grant himself a +4 insight bonus to a single Perception or Sense Motive check as an immediate action, as he uses his ki to feel out the vibrations of others and their hidden motives." compset="ClSpecial" summary="+4 insight to one Perception check">
+    <fieldval field="abValue" value="4"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If not activated get out now!
+      doneif (field[abilActive].value = 0)
+
+      #applybonus[BonInsight, hero.child[skPercep], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPW2KiSavR" name="Ki Pool (Ref Save)" description="At 7th level, the stalker may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action." compset="ClSpecial" summary="+4 insight to one saving throw">
+    <fieldval field="abValue" value="4"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If not activated get out now!
+      doneif (field[abilActive].value = 0)
+
+      #applybonus[BonInsight, hero.child[svRef], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPW2KiSavW" name="Ki Pool (Will Save)" description="At 7th level, the stalker may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action." compset="ClSpecial" summary="+4 insight to one saving throw">
+    <fieldval field="abValue" value="4"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If not activated get out now!
+      doneif (field[abilActive].value = 0)
+
+      #applybonus[BonInsight, hero.child[svWill], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPW2KiSavF" name="Ki Pool (Fort Save)" description="At 7th level, the stalker may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action." compset="ClSpecial" summary="+4 insight to one saving throw">
+    <fieldval field="abValue" value="4"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If not activated get out now!
+      doneif (field[abilActive].value = 0)
+
+      #applybonus[BonInsight, hero.child[svFort], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPW2Blend" name="Blending" description="At 6th level the stalker&apos;s natural attunement to the flow of ki in other people grants him insight in reading others and avoiding their notice. The character gains a +2 insight bonus to Perception, Sense Motive and Stealth checks." compset="ClSpecial" summary="+2 insight to Perception, Stealth, Sense Motive">
+    <fieldval field="abValue" value="2"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="MultiCopy"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Apply skill bonuses (insight to Perception, Sense Motive, Stealth)
+      #applybonus[BonInsight, hero.child[skPercep], field[abValue].value]
+      #applybonus[BonInsight, hero.child[skSenseMot], field[abValue].value]
+      #applybonus[BonInsight, hero.child[skStealth], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPW2Dodge" name="Dodge Bonus" description="The stalker&apos;s heightened perception of danger allows him to defend himself from attacks as they are made against him, anticipating the attacks as they come. A stalker gains a +1 dodge bonus to his Armor Class at 2nd level, which improves by an additional +1 every four stalker levels thereafter. When recovering maneuvers as a full round action, the character may add his Wisdom modifier to his AC as an additional dodge bonus; his defensive precognition being heightened by centering his ki through maneuver recovery." compset="ClSpecial" summary="Dodge bonus to your Armor Class.">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Helper" tag="UseOwnLev" name="UseOwnLev" abbrev="UseOwnLev"/>
+    <tag group="SpecType" tag="Defense" name="Defense" abbrev="Defense"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="20000"><![CDATA[
+      ~Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~if we've been replaced, get out now
+      doneif (tagis[Helper.SpcReplace] <> 0)
+      ~only perform the calculations for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+      field[abSumm].text = "+" & field[abValue].value  & " dodge bonus to your AC."
+
+      ~ If we are medium, heavy encumbered or have a shield equipped 
+      ~ then don't give dodge bonus
+      if (hero.tagis[Encumbered.Medium] + hero.tagis[Encumbered.Heavy] + hero.tagis[Hero.EquipShld] = 0) Then
+         ~ Give dodge bonus to AC
+         hero.child[ArmorClass].field[tACDodge].value += field[abValue].value
+      else
+         perform assign[Helper.SpcDisable]
+      endif]]></eval>
+    </thing>
+  <thing id="cPW2DeadIn" name="Deadly Insight" description="The stalker may use his deadly strikes in conjunction with his combat insight to “read” his opponent’s defenses and effortlessly attack beyond his foe’s guard. The stalker spends one point of ki as a swift action to read his target opponent, and may apply his deadly strike to all of his attacks for a number of rounds equal to his Wisdom modifier against this target. If the stalker scores a successful critical hit against the target while his deadly strike ability is active, the duration of this ability is extended by one round (no more than one extension can be made per round)." compset="CustomSpec" summary="Spend 1 ki to use Deadly Strike with all attacks" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpPW2"/>
+    <tag group="abCategory" tag="StalkerArt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="LvNamePar" tag="IncDurati"/>
+    <eval phase="PostAttr" priority="10000">field[abDuration].value = #attrmod[aWIS]</eval>
+    <exprreq message="Deadly Strike required"><![CDATA[#hasability[cPW2DeadSt] <> 0]]></exprreq>
+    </thing>
+  <thing id="cPWWarder" name="Warder" description="Protective and disciplined warriors, warders are fighting men and women who use their knowledge of warfare, tactics, and strategy combined with superior combat training to accomplish their goals in defending others. Their intellect guides them through battle, and their skill at arms achieves their success.\n\n{b}Adventures:{/b} Warders adventure to further their employer’s missions, to serve on battlefields as protectors and champions, or to protect those that they care about. Some warders adventure to forge kingdoms of their own, battle tyranny, fight others of their kind for honor, or to live simply and by their own code.\n\n{b}Characteristics:{/b} Warders are always protective of people they deem in their care, be it a superior, their friends, or fellow soldiers of fortune. Many warders are proud, intelligent individuals who study tactics and maps as well while training daily with their associates to better suit their style towards their defense.\n\n{b}Alignment:{/b} Any, but most are lawful; the moral portion of their alignment is either up to them or their inclusion in their sect.\n\n{b}Religion:{/b} Many warders are religious, often following gods of war, chivalry, and sacrifice. Some follow gods of tyranny or justice, and others follow gods that stand for the good of their race.\n\n{b}Background:{/b} Warders find their place in their society based upon their line of adventuring. Some warders are regarded with great respect as leaders and guardians while others are feared and hated for their tyrannical ways. Many are respected and treated well in the hopes that if trouble comes, the warder will come to help those who showed them kindness.\n\n{b}Races:{/b} Nearly all humanoid races have warders amongst them. Dwarves, half-orcs, and humans make up the larger majority of warders in more civilized\nsociety, but there are a minority of halflings and gnomes that guard their kind from harm. While elves possess the tactical prowess to make great warders,\ntheir fragile bodies are often not enough for the physical rigors of the profession. While some warders are restrictive to whom they’ll share their secrets, it’s\nlargely agreed that the more monstrous races tend to be excluded. Hobgoblins, of the monstrous races, are by far the largest exception to that stereotype.\n\n{b}Other Classes:{/b} Warders get on well with those of a more orderly and martial bent, naturally befriending paladins, monks, and fighters. Rogues and warders\ndon’t exactly see eye to eye, while rangers and sorcerers might find a warder’s presence restrictive. Wizards and warders appreciate many of their shared\nfacets in learning, and warders widely recognize the importance of clerics in both martial and spiritual matters.\n\n{b}Role:{/b} Defender. Warders are natural guardians and protectors of the weaker members of the party, and are the ones who can take the most damage on\nthe front line. They also double as being coordinators on the battlefield, helping their teammates and providing support for them both defensively and offensively." compset="ClassLevel" maxlimit="20">
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassType" tag="Normal"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <bootstrap thing="cHelpPW3"></bootstrap>
+    <link linkage="helper" thing="cHelpPW3"/>
+    </thing>
+  <thing id="cPW3DefFoc" name="Defensive Focus" description="At 1st level, the defensive prowess of the warder is second to none, allowing her to focus her actions purely on defending himself and her allies in ways that cannot be replicated. The warder gains the Combat Reflexes feat as a bonus feat, using her Intelligence modifier in place of her Dexterity modifier to determine the number of additional attacks of opportunity she may make each round.\n\nWhen recovering maneuvers as a full round action, the warder sets up a defensive perimeter around himself to defend her allies, increasing her threatened area by 5 ft. for every 5 initiator levels she possesses. Until the beginning of her next turn, she may make attacks of opportunity against any opponent in this threatened area that provokes attacks of opportunity. She may move as part of these attacks of opportunity, provided her total movement before her next turn does not exceed her speed (his movement provokes attacks of opportunity as normal). Additionally,while using defensive focus, the warder adds her Intelligence modifier plus her class level to her CMD for the purposes of defending against enemies trying to use the Acrobatics skill to prevent her from getting attacks of opportunity against them." compset="ClSpecial" summary="Gain Combat Reflexes, using INT in place of DEX">
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <bootstrap thing="fComRef"></bootstrap>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ Combat Reflexes: Use INT instead of DEX
+hero.child[fComRef].field[abValue].value = 1 + maximum(hero.child[aINT].field[aModBonus].value, 0)
+
+~ Threatened area while in Defensive Focus: 5ft + 5ft per 5 IL
+var IL as number
+var extraArea as number
+IL = hero.child[cHelpPW3].field[cCasterLev].value
+extraArea = 5 * round(IL/5,0,-1)
+field[abValue].value = 5 + maximum(5, extraArea)
+
+
+~ CMD bonus vs. enemy Acro to avoid AoO: INT + Warder level
+field[abValue2].value = #attrmod[aINT] + field[xAllLev].value
+#situational[hero.childfound[ManeuvDef],signed(field[abValue2].value) & " vs. enemy Acrobatics checks to avoid provoking AoO",field[thingname].text]]]></eval>
+    <eval phase="Render" priority="10000" index="2"><![CDATA[
+      field[sbName].text = field[thingname].text
+      field[livename].text &= " (" & field[abValue].value & "ft)"
+      field[abSumm].text = "Increased threatened area, can move when making AoO, " & signed(field[abValue2].value) & " to CMD vs. Acro to avoid AoO"]]></eval>
+    </thing>
+  <thing id="cPW3ImpDF" name="Improved Defensive Focus" description="At 10th level, the warder&apos;s defensive focus improves further, causing the ground within her melee reach to be treated as if it were difficult terrain, hampering her foes’ movement around him. If a foe tries to move through a space within her reach, the movement through those squares costs double (x2). Additionally, while using her defensive focus to make an attack of opportunity, her movement does not provoke attacks of opportunity." compset="ClSpecial" summary="Threatened squares are diff. terrain, don&apos;t provoke AoO when moving to take own AoO&apos;s">
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
+    </thing>
+  <thing id="cPW3Aegis" name="Aegis" description="At 1st level, the warder’s defensive prowess extends to those who choose to stay near to him. Allies who are within 10 ft. of the warder’s position gain a +1 morale bonus to Armor Class and to Will saves under the warder’s defensive aegis, her presence bolstering and shepherding the defenses of her allies. This bonus improves to +2 at 5th level (+3 at 9th level, +4 at 13th level, and +5 at 17th level). The warder does not receive this bonus, but may receive the benefits of this ability from another warder. If the ally cannot see or hear the warder, then the ally does not gain the benefits of this ability (such as if the warder is concealed or invisible).\n\nAt 6th level, her aegis’ range increases its effective area, growing to a 20 ft. radius. At 12th level, this increases again to 30 ft.." compset="ClSpecial" summary="Morale bonus to nearby allies&apos; AC/Will save">
+    <fieldval field="abValue2" value="10"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="LvNameApp" tag="AppValue"/>
+    <tag group="LvNameApp" tag="SignAppVal"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="LvNamePar" tag="IncRange"/>
+    <bootstrap thing="xPWAegis"></bootstrap>
+    <eval phase="PostLevel" priority="20000"><![CDATA[~Set the list name
+field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
+
+~only perform the calculations for the first copy
+doneif (tagis[Helper.FirstCopy] = 0)
+
+~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] <> 1)
+~ if we've been disabled, get out now
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ AC/save bonus increases by +1 for each copy of this ability
+field[abValue].value += field[xCount].value
+hero.child[xPWAegis].field[abValue].value = field[abValue].value
+
+~ Base radius is 10', but Improved and Greater Aegis each increase that by 10'
+~ We store the initial range in abValue2 so that Improved and Greater can refer to it for display purposes
+field[abRange].value = field[abValue2].value
+if (hero.childfound[cPW3ImpAeg].tagis[Helper.ShowSpec] <> 0) then
+  field[abRange].value += hero.child[cPW3ImpAeg].field[abValue].value
+endif
+if (hero.childfound[cPW3GrtAeg].tagis[Helper.ShowSpec] <> 0) then
+  field[abRange].value += hero.child[cPW3GrtAeg].field[abValue].value
+endif
+
+~notify "Has Improved Aegis: " & #hasfeat[cPW3ImpAeg]
+~notify "Has Greater Aegis: " & hero.tagis[HasAbility.cPW3GrtAeg]
+~notify "Light Armor: " & hero.tagis[Hero.ProfLight]
+~notify "Aegis range is " & field[abRange].value]]></eval>
+    <eval phase="Render" priority="10000" index="2"><![CDATA[~ Update Specials text
+field[sbName].text = field[thingname].text
+field[abSumm].text = signed(field[abValue].value) & " morale bonus to AC and Will saves for allies within " & field[abRangText].text]]></eval>
+    </thing>
+  <thing id="cHelpPW3" name="Warder" compset="Class" uniqueness="unique">
+    <fieldval field="cHDSides" value="12"/>
+    <fieldval field="cAbbr" value="Wdr"/>
+    <fieldval field="cSkills" value="4"/>
+    <arrayval field="cKnowTot" index="0" value="5"/>
+    <arrayval field="cKnowTot" index="0" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="0" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="1" value="6"/>
+    <arrayval field="cKnowTot" index="1" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="1" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="2" value="7"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="2" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="3" value="7"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="3" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="4" value="8"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="4" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="5" value="8"/>
+    <arrayval field="cKnowTot" index="5" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="5" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="6" value="9"/>
+    <arrayval field="cKnowTot" index="6" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="6" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="7" value="9"/>
+    <arrayval field="cKnowTot" index="7" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="7" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="8" value="10"/>
+    <arrayval field="cKnowTot" index="8" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="8" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="9" value="10"/>
+    <arrayval field="cKnowTot" index="9" column="1" value="6"/>
+    <arrayval field="cKnowTot" index="9" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="10" value="11"/>
+    <arrayval field="cKnowTot" index="10" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="10" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="11" value="11"/>
+    <arrayval field="cKnowTot" index="11" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="11" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="12" value="12"/>
+    <arrayval field="cKnowTot" index="12" column="1" value="7"/>
+    <arrayval field="cKnowTot" index="12" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="13" value="12"/>
+    <arrayval field="cKnowTot" index="13" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="13" column="2" value="5"/>
+    <arrayval field="cKnowTot" index="14" value="13"/>
+    <arrayval field="cKnowTot" index="14" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="14" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="15" value="13"/>
+    <arrayval field="cKnowTot" index="15" column="1" value="8"/>
+    <arrayval field="cKnowTot" index="15" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="16" value="14"/>
+    <arrayval field="cKnowTot" index="16" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="16" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="17" value="14"/>
+    <arrayval field="cKnowTot" index="17" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="17" column="2" value="6"/>
+    <arrayval field="cKnowTot" index="18" value="15"/>
+    <arrayval field="cKnowTot" index="18" column="1" value="9"/>
+    <arrayval field="cKnowTot" index="18" column="2" value="7"/>
+    <arrayval field="cKnowTot" index="19" value="16"/>
+    <arrayval field="cKnowTot" index="19" column="1" value="10"/>
+    <arrayval field="cKnowTot" index="19" column="2" value="7"/>
+    <arrayval field="cBonFtTot" index="2" value="1"/>
+    <arrayval field="cBonFtTot" index="7" value="2"/>
+    <arrayval field="cBonFtTot" index="12" value="3"/>
+    <arrayval field="cBonFtTot" index="17" value="4"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassSkill" tag="skHandleAn"/>
+    <tag group="ClassSkill" tag="skIntim"/>
+    <tag group="ClassSkill" tag="skKnowHist"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="ClassSkill" tag="skKnowNobl"/>
+    <tag group="ClassSkill" tag="skRide"/>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="skSurvival"/>
+    <tag group="ClassSkill" tag="skSwim"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="Classes" tag="PWWarder" name="Warder"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="AgeColumn" tag="2"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Teamwork"/>
+    <tag group="ClassSkill" tag="skDiplo"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="skBluff"/>
+    <tag group="ClassSkill" tag="skClimb"/>
+    <tag group="UseAttr" tag="aINT"/>
+    <bootstrap thing="cPW3DefFoc">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="cPW3ImpDF">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPW3Aegis">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPW3Aegis">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPW3Aegis">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPW3Aegis">
+      <autotag group="ClSpecWhen" tag="13"/>
+      </bootstrap>
+    <bootstrap thing="cPW3Aegis">
+      <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ArmMrk">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ArmMrk">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ArmMrk">
+      <autotag group="ClSpecWhen" tag="16"/>
+      </bootstrap>
+    <bootstrap thing="cPW3GrdChl">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="fArmMedium"></bootstrap>
+    <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="fArmBuckl"></bootstrap>
+    <bootstrap thing="cPW3TacAc">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPW3CldStl">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ExtDef">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ExtDef">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ExtDef">
+      <autotag group="ClSpecWhen" tag="11"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ExtDef">
+      <autotag group="ClSpecWhen" tag="14"/>
+      </bootstrap>
+    <bootstrap thing="cPW3ExtDef">
+      <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPW3AdpTac">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
+    <bootstrap thing="fArmTower"></bootstrap>
+    <bootstrap thing="fArmHeavy"></bootstrap>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="cPW3Stlwrt">
+      <autotag group="ClSpecWhen" tag="12"/>
+      </bootstrap>
+    <bootstrap thing="cPW3StlDef">
+      <autotag group="ClSpecWhen" tag="15"/>
+      </bootstrap>
+    <bootstrap thing="cPW3BrnStl">
+      <autotag group="ClSpecWhen" tag="19"/>
+      </bootstrap>
+    <bootstrap thing="cPW3DthDef">
+      <autotag group="ClSpecWhen" tag="20"/>
+      </bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="cCfgPW3"></bootstrap>
+    <bootstrap thing="cPW3ImpAeg">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPW3GrtAeg">
+      <autotag group="ClSpecWhen" tag="12"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
+Call PWsetupIL</eval>
+    </thing>
+  <thing id="cPW3ArmMrk" name="Armiger&apos;s Mark" description="At 2nd level, a warder is trained in how best to control her enemies and how they behave in battle, urging them to throw their all against the warder’s indomitable armor and unyielding shield. With a sharp blade, a clever taunt, or something that otherwise attracts her foe, the warder can direct the attention of enemies towards himself.\n\nWhenever the warder attacks a foe in combat and inflict at least 1 point of damage, as a free action she may mark them as her foe (he may even mark a foe during an attack of opportunity and may make the free action to do so, even though it is not her turn) and attempt to continue to force them to engage the warder only. The target is aware of being marked, and the mark remains for a number of rounds equal to the warder’s Intelligence modifier (minimum of 1). Marked targets suffer a -4 penalty to attack rolls against foes that are not the warder, and arcane spellcasters suffer an increase in arcane spell failure of 10% + 1% per two warder levels until the mark expires. The warder may only maintain a number of marks equal to 3 + her Intelligence modifier at a time, and she may make a number of marks per day equal to ½ warder level + Intelligence modifier.\n\nAt 8th level, this penalty increases to -6, and it increases again to -8 at 16th level. This ability functions on creatures with an Intelligence score of 1 or more, allowing her to mark animals and other beasts as well as sentient beings, but not mindless creatures such as skeletons.  Multiple armiger’s marks overlap (do not stack)." compset="ClSpecial" summary="Marked enemies take a penalty to hit anyone but you">
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="ChargeCalc" tag="LevelHalf"/>
+    <tag group="ChargeCalc" tag="AttrOnly"/>
+    <tag group="ChargeAttr" tag="aINT"/>
+    <tag group="User" tag="Tracker"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="abAction" tag="Free"/>
+    <tag group="LvNamePar" tag="IncDurati"/>
+    <tag group="LvNameApp" tag="AppValue"/>
+    <tag group="LvNameApp" tag="SignAppVal"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="Render" priority="10000" index="2"><![CDATA[field[sbName].text = field[thingname].text
+field[abSumm].text = "Marked enemies get " & signed(field[abValue].value) & " to hit creatures other than you and suffer +" & field[abValue2].value & "% to ASF for " & field[abDuraText].text]]></eval>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ Set the list name
+var idxPen as number
+idxPen = (-2 - (field[xIndex].value * 2))
+field[listname].text = field[thingname].text & " " & idxPen
+
+~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] <> 1)
+~ If we've been Disabled, get out now
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~Calculate to-hit penalty for marked enemies
+field[abValue].value = -2 -(field[xCount].value * 2)
+
+~ Calculate ASF increase
+field[abValue2].value = 10 + round(field[xTotalLev].value,0,-1)
+
+~ Calculate mark duration (INT mod, min 1)
+field[abDuration].value = maximum(1, #attrmod[aINT])]]></eval>
+    </thing>
+  <thing id="cPW3GrdChl" name="Improved Armiger&apos;s Mark" description="At 9th level, the warder may expend two uses of her armiger’s mark to make a grand challenge to all enemies within a 30 ft. radius and mark them with her words alone. Creatures affected must make a Will save (DC 10 + ½ warder level + Intelligence modifier) against the warder’s mark ability or suffer the penalties of being marked for a number of rounds equal to the warder’s Intelligence modifier. This does not count against her normal marking limit. This is a language-dependent ability and does not effect creatures of less than 1 Intelligence." compset="ClSpecial" summary="Damaged enemies take a penalty to hit anyone but you">
+    <fieldval field="abRange" value="30"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="LvNameApp" tag="AppValue"/>
+    <tag group="LvNameApp" tag="SignAppVal"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="abSave" tag="WillNeg"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] <> 1)
+~ If we've been Disabled, get out now
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+
+~ Calculate ASF increase
+field[abDC].value = 10 + round(field[xTotalLev].value,0,-1)
+
+~ Calculate mark duration (INT mod, min 1)
+field[abDuration].value = maximum(1, #attrmod[aINT])]]></eval>
+    <eval phase="Render" priority="10000" index="2"><![CDATA[field[livename].text = "Grand Challenge"
+field[sbName].text = field[thingname].text
+field[abSumm].text = "Spend 2 marks, enemies within " & field[abRangText].text & " must make Will save (DC " & field[abDC].value & ") or be marked for " & field[abDuraText].text]]></eval>
+    </thing>
+  <thing id="cPW3GrtMrk" name="Greater Armiger&apos;s Mark" description="At 16th level, the armiger’s mark improves to allow her to recover an expended maneuver whenever she reduces a marked opponent’s hit points to 0 or less (this can only trigger once per marked opponent)." compset="ClSpecial" summary="Recover a maneuver when you kill a marked foe">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] <> 1)
+~ If we've been Disabled, get out now
+doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
+    </thing>
+  <thing id="cPW3TacAc" name="Tactical Acumen" description="At 4th level, the combat training that the warder has received hones her reflexes. Through her knowledge of tactics, training manuals, and lessons in the histories of war, her wits aid her when her agility may be impaired by her heavy armor. The warder may add her Intelligence modifier to her Reflex saves and to her initiative in place of her Dexterity modifier (using the higher of the two bonuses)." compset="ClSpecial" summary="Use INT for Ref save and Initiative, if higher than DEX">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ Kind of a hacky way to do this IMHO, but I couldn't figure out how to assign INT as the initiative/REF attribute
+if (hero.child[aINT].field[aBonus].value > hero.child[aDEX].field[aBonus].value) then
+      ~figure out the difference between our INT and CHA modifiers
+      field[abValue].value += #attrmod[aINT] - #attrmod[aDEX]
+
+      hero.child[Initiative].field[Bonus].value += field[abValue].value
+      hero.child[svRef].field[Bonus].value += field[abValue].value
+endif]]></eval>
+    </thing>
+  <thing id="cPW3CldStl" name="Clad in Steel" description="Having improved her skill with her armor, the warder is a more capable combatant in it when protecting her allies or cause. The warder may subtract her aegis bonus from her total armor check penalty and increase the maximum Dexterity bonus on her armor by 1 at 6th level, and by 2 at 12th level." compset="ClSpecial" summary="Subtract Aegis bonus from ACP, increase max DEX of armor">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="Render" index="2"><![CDATA[field[abSumm].text = "Armor gets -" & field[abValue].value & " to ACP, " & signed(field[abValue2].value) & " to Max Dex"]]></eval>
+    <eval phase="PostLevel" priority="3000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ Modifier to ACP comes from Aegis (or anything that acts as it)
+field[abValue].value = hero.childfound[xPWAegis].field[abValue].value
+
+~ Calculate modifier to max DEX (1 at lvl 6, 2 at lvl 12)
+field[abValue2].value = 1
+if (field[xTotalLev].value >= 12) then
+ field[abValue2].value += 1
+endif
+
+~ Apply the ACP and Max DEX modifiers to all equipped armor
+foreach pick in hero from BaseArmor where "EquipType.Armor"
+  eachpick.field[arArmorChk].value = minimum(eachpick.field[arArmorChk].value + field[abValue].value, 0)
+  eachpick.field[arMaxDex].value += field[abValue2].value
+nexteach]]></eval>
+    </thing>
+  <thing id="cPW3ExtDef" name="Extended Defense" description="Upon reaching 5th level, the warder becomes ever more skilled at adapting to the flow of combat. Once per day, the warder may activate Extended Defense as an immediate action. When she does, the character chooses a counter she has readied; she may initiate that counter as a free action (even on another’s turn) at will until the beginning of her next turn. At the beginning of her next turn, the chosen counter is expended. Every three levels beyond this (8th, 11th, 14th, and 17th levels), she may use this ability an additional time per day." compset="ClSpecial" summary="Choose a counter and use it as a free action until your next turn.">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="User" tag="Tracker"/>
+    <tag group="Usage" tag="Day"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ Assign uses/day
+field[trkMax].value = field[xCount].value]]></eval>
+    <eval phase="Render" priority="10000" index="2"><![CDATA[~ Set the listname
+field[listname].text = field[thingname].text & " (" & field[xIndex].value & "/day)"]]></eval>
+    </thing>
+  <thing id="cPW3AdpTac" name="Adaptive Tactics" description="A warrior can attempt to plan for everything, but no plan stands against the heat of battle if there is no room for adaptation. At 7th level, the warder can expend one use of her armiger’s mark ability as a full-round action to expend up to her Intelligence modifier in readied maneuvers, then instantly ready an equal amount of maneuvers. The warder may not replace expended maneuvers using this ability; any maneuver she is re-preparing with this ability must be unexpended to be exchanged. She may choose from any of her known maneuvers." compset="ClSpecial" summary="Spend one mark, replace INT readed maneuvers">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="abAction" tag="FullRd"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
+    <eval phase="Render" priority="100--" index="2"><![CDATA[field[abSumm].text = "As a full-round action, spend 1 use of Armiger's Mark to replace " & #attrmod[aINT] & " readied, unexpended maneuvers"]]></eval>
+    </thing>
+  <thing id="cPW3Stlwrt" name="Stalwart" description="At 12th level, a warder can use mental and physical resiliency to avoid certain attacks. If she makes a successful Fortitude or Will saving throw against an attack that has a reduced effect on a successful save, she instead avoids the effect entirely. A helpless warder does not gain the benefit of the stalwart ability." compset="ClSpecial" summary="If you succeed on a Fort or Will save for reduced effect, you suffer no effect instead.">
+    <usesource source="srcPathOfW"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
+    </thing>
+  <thing id="cPW3StlDef" name="Steel Defense" description="At 15th level, the warder is capable of turning an otherwise lethal blow and continue the fight. When an attack that inflicts hit point damage from a natural attack, melee weapon, or ranged weapon would reduce the warder to 0 or fewer hit points, she can make a Fortitude save (DC the attacker’s attack roll) to deflect the attack to her armor or shield (light, heavy, or tower shields only), causing it to suffer the damage in her place (apply item hardness as normal). If this would break the character’s armor, it gains the broken condition until it is repaired. The warder cannot use this ability with broken armor or a broken shield. The warder must be wearing armor or a shield to use this ability." compset="ClSpecial" summary="Make a Fort save vs attack roll when you would be reduced to 0 or fewer HP; success means your armor or shield is damaged in your place.">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
+    </thing>
+  <thing id="cPW3BrnStl" name="Born of Steel" description="At 19th level, the warder is so at home in her armor that it is like a second skin, protecting her with its familiar embrace. When wearing medium or heavy armor, the warder is more resistant to critical hits. When a critical threat is rolled against him, the warder may add her Intelligence modifier to her AC against the critical confirmation roll." compset="ClSpecial" summary="Add INT to AC vs critical hit confirmation.">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ If we're not wearing med/heavy armor, we're disabled.
+doneif (hero.tagexpr[Hero.MedArmor | Hero.HeavyArmor] <> 1)
+
+~ Apply situational AC bonus
+field[abValue].value = #attrmod[aINT]
+#situational[hero.child[ArmorClass],signed(field[abValue].value) & " vs. critical hit confirmation",field[name].text]]]></eval>
+    </thing>
+  <thing id="cPW3DthDef" name="Deathless Defenses" description="At 20th level, the warder can indefinitely hold a position to protect her allies, even if it may cost her her life. The warder must expend two uses of her armiger’s mark ability as an immediate action to activate her deathless defenses. While this ability is active, the warder is capable of maintaining her defensive focus as a move action (but recovers no maneuvers unless she spends a full round to recover) but gains the full bonuses of her defensive focus. Additionally, she receives the benefits of her aegis ability as well. She is unable to die from hit point damage while this effect is in use. She may maintain the use of this ability each round at the cost of one use of her armiger’s mark ability, or she may end it as a free action. Abilities or effects that don’t inflict hit point damage, such as energy drain or ability damage, can still kill the warder. While this effect is in use, she is immune to mind-affecting abilities, as her focus prevents any from tampering with her mind. Once this ability ends, either voluntarily or if the character runs out uses of armiger’s mark (assuming she is not dead), the warder is exhausted and must rest a full 8 hours to recover." compset="ClSpecial" summary="While active, immune to HP death and mind-affecting abilities, can maintain Defensive Focus as move action">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostAttr" priority="10010"><![CDATA[~ If we're not shown, just get out now
+doneif (tagis[Helper.ShowSpec] = 0)
+doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ If we're not activated, get out now
+doneif (field[abilActive].value <> 1)
+
+~ Apply Aegis bonus to AC
+if (hero.tagis[Ability.cPW3Aegis] <> 0) then
+  #applybonus[BonMorale, hero.child[ArmorClass], hero.child[cPW3Aegis].field[abValue].value]
+endif]]></eval>
+    </thing>
+  <thing id="cCfgPW3" name="Warder Maneuvers" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Maneuvers"/>
+    <fieldval field="cfgObject2" value="Stances"/>
+    <tag group="Discipline" tag="PrimalFury" name="Primal Fury" abbrev="Primal Fury"/>
+    <tag group="Discipline" tag="BrokenBlad" name="Broken Blade" abbrev="Broken Blade"/>
+    <tag group="PathOfWar" tag="Config" name="Configurable" abbrev="Configurable"/>
+    <tag group="PathOfWar" tag="StanceUp" name="Stance Allowed Up" abbrev="Stance Allowed Up"/>
+    <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
+    <tag group="ClsCountAs" tag="cHelpPW3" name="Warder" abbrev="Warder"/>
+    <tag group="Discipline" tag="GoldenLion" name="Golden Lion" abbrev="Golden Lion"/>
+    <tag group="Discipline" tag="IronTort" name="Iron Tortoise" abbrev="Iron Tortoise"/>
+    <eval phase="Final" priority="11000">~ Setup the Warder Maneuvers
+      Call PWsetupCfg</eval>
+    <eval phase="First" index="2">~ Setup the Warlord Maneuvers
+      perform hero.pushtags[Discipline.?]</eval>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPW3ImpAeg" name="Improved Aegis" description="At 6th level, the warder&apos;s aegis’ range increases its effective area, growing to a 20 ft. radius." compset="ClSpecial" summary="Aegis radius increases to 20 ft">
+    <fieldval field="abValue" value="10"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="LvNamePar" tag="IncRange"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PostAttr" priority="10010"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Get adjusted Aegis range
+      field[abValue2].value += field[abValue].value + #value2[cPW3Aegis]
+
+      field[listname].text = field[thingname].text & " (" & field[abValue2].value & " feet)"]]></eval>
+    </thing>
+  <thing id="cPW3GrtAeg" name="Greater Aegis" description="At12th level, the warder&apos;s aegis’ range increases its effective area, growing to a 30 ft. radius." compset="ClSpecial" summary="Aegis radius increases to 30 ft">
+    <fieldval field="abValue" value="10"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="LvNamePar" tag="IncRange"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PostAttr" priority="10020"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Get adjusted Aegis range
+      field[abValue2].value += field[abValue].value + #value2[cPW3Aegis]
+
+      ~ If we have Improved Aegis, get its value too
+      field[abValue2].value += #value[cPW3ImpAeg]
+
+      field[listname].text = field[thingname].text & " (" & field[abValue2].value & " feet)"]]></eval>
+    </thing>
+  <thing id="xPWAegis" name="Aegis bonus" compset="Ability" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="pZTEST" name="Armor Check Penalty" description="Select this adjustment to adjust the Armor Check Penalty (ACP) of a specific piece of armor." compset="InPlay">
+    <tag group="Adjustment" tag="YourArmor" name="Current Armor" abbrev="Current Armor"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (field[pIsOn].value = 0)
+      ~if nothing's been chosen, get out now
+      doneif (field[pChosen].ischosen = 0)
+
+      ~ Increase/Decrease ACP but don't let the ACP be lowered
+      ~ to more than zero.
+      field[pChosen].chosen.field[arArmorChk].value = minimum(field[pChosen].chosen.field[arArmorChk].value + field[pAdjust].value, 0)]]></eval>
+    </thing>
+  <thing id="cHelpPWPC1" name="Battle Templar" compset="Class" uniqueness="unique">
+    <fieldval field="cHDSides" value="8"/>
+    <fieldval field="cAbbr" value="BTm"/>
+    <fieldval field="cSkills" value="4"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="Classes" tag="PWBtlTmpl" name="Battle Templar"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="skDiplo"/>
+    <tag group="ClassSkill" tag="skHeal"/>
+    <tag group="ClassSkill" tag="skIntim"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="ClassSkill" tag="skKnowRel"/>
+    <tag group="ClassSkill" tag="skSpellcr"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="PathOfWar" tag="Class"/>
+    </thing>
+  <thing id="cPWBtlTmpl" name="Battle Templar" description="Battle templars serve the role of both divine agent and warrior in times when the state of their religion or church is in danger. Humble priests lay down their peaceful ways and take up the arms and armor of the warrior to defend their flock with sword, shield, and faith. Battle templars come from many religions, but they always come from religions in which the virtues of living a good life are taught, and they rise up to protect their people in times of crisis. Some churches actively recruit members of their faith to serve as protectors and heroes, showing these former priests and priestesses to be pinnacles of their faith and providing something for the youngest to admire and aspire to.\n\nMost battle templar hail from the cleric class, as it has a strong focus in matters of faith. Some are multiclass warder/clerics or single class clerics and paladins." compset="ClassLevel" maxlimit="10">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpPWPC1"></bootstrap>
+    <link linkage="helper" thing="cHelpPWPC1"/>
+    <exprreq message="Spellcraft 5 ranks required"><![CDATA[#skillranks[skSpellcr] >= 5]]></exprreq>
+    <exprreq message="Knowledge (Martial) 2 ranks required"><![CDATA[#skillranks[skPWKnowMa] >= 2]]></exprreq>
+    <exprreq message="Knowledge (Religion) 2 ranks required"><![CDATA[#skillranks[skKnowRel] >= 2]]></exprreq>
+    <exprreq message="Ability to cast 2nd-level Divine spells required."><![CDATA[tagcount[Hero.Divine] >= 2]]></exprreq>
+    <exprreq message="Must know at least one Golden Lion or Iron Tortoise manuever."><![CDATA[tagcount[HasMan.GoldenLion] + tagcount[HasMan.IronTort] > 0]]></exprreq>
+    <exprreq message="Must know at least one Golden Lion or Iron Tortoise stance."><![CDATA[tagcount[HasStance.GoldenLion] + tagcount[HasStance.IronTort] > 0]]></exprreq>
+    <exprreq message="Martial Power feat required."><![CDATA[#hasfeat[fPWMartPow] <> 0]]></exprreq>
+    </thing>
+  </document>

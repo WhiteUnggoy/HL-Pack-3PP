@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_PathOfWar - Procedures"/>
+
+  <fileinfo>
+    <info_author>Tim Shadow
+      Email: ShadowChemosh@yahoo.com</info_author>
+    <info_history>August 13, 2013 - Tim Shadow
+      -Created New</info_history>
+    </fileinfo>
+
+  <procedure id="PWvalidSrc" scripttype="validate"><![CDATA[
+    ~ This procedure builds the Class Search String to be used by other
+    ~ searches for the .setfocus of the Base Class.
+    var s2Search as string
+    s2Search = altpick.tagids[ClsCountAs.?]
+    doneif (empty(s2Search) <> 0)
+    s2Search = "PathOfWar.Class & " & replace(s2Search,"ClsCountAs","thingid",0)
+    ]]></procedure>
+
+  <procedure id="PWpickSrc" context="pick"><![CDATA[
+    ~ This procedure builds the Class Search String to be used by other
+    ~ searches for the .setfocus of the Base Class.
+    var s2Search as string
+    s2Search = tagids[ClsCountAs.?]
+    doneif (empty(s2Search) <> 0)
+    s2Search = "PathOfWar.Class & " & replace(s2Search,"ClsCountAs","thingid",0)
+    ]]></procedure>
+
+  <procedure id="PWsetupMan" context="pick"><![CDATA[
+    ~ If we are maneuver then process here
+    If (tagis[mType.Stance] = 0) Then
+      ~ Setup the user choice array
+      field[usrArray].arraytext[0] = "Not Readied"
+      field[usrArray].arraytext[1] = "Readied"     
+      ~ Create Has Manuever tag
+      perform pulltags[Discipline.?,HasMan]
+      ~ Assign Has Manuever tag to the hero which allows for Prerequisites checking
+      perform forward[HasMan.?]
+      ~ Increase the selected manuever count by one
+      linkage[table].field[cfgSpent1].value += 1
+      ~ If our manuever is readied then turn on tracker
+      If (field[abilActive].value + field[usrIndex].value <> 0) Then
+        ~ Set tags so we display on the In-Play tab for usage
+        perform assign[User.Tracker]
+        perform assign[Helper.ShowSpec]
+        perform assign[User.Activation]
+        field[trkMax].value += 1
+        ~field[actName].text = "Activated"
+        ~ Set readied tag on Configurator
+        perform linkage[table].assign[PathOfWar.ManueverOn]
+      Endif
+
+    ~..If we are a stance process here
+    Else
+      ~ Create Has Stance tag
+      perform pulltags[Discipline.?,HasStance]
+      ~ Assign Has Stance tag to the hero which allows for Prerequisites checking
+      perform forward[HasStance.?]
+      ~ Increase the selected stance count by one
+      linkage[table].field[cfgSpent2].value += 1
+      ~ Set tags so we display on the In-Play tab for usage as a Stance should always display.
+      perform assign[Helper.ShowSpec]
+
+      ~ If our stance is activated then set Stance Activated tag on hero
+      If (field[abilActive].value + field[usrIndex].value <> 0) Then
+        ~ Set activated stance tag on Configurator
+        perform linkage[table].assign[PathOfWar.StanceOn]
+        perform hero.assign[PathOfWar.StanceOn]
+      Endif  
+    Endif
+    ]]></procedure>
+    
+
+  <procedure id="PWsetupCfg" context="pick"><![CDATA[  
+    ~ Set to pull anything that is not a stance
+    field[cfgAllow1].text = "PathOfWar.Manuever & (" & tagids[Discipline.?,"|"] & ")"
+    ~ Set to pull all the stances 
+    field[cfgAllow2].text = "PathOfWar.Stance & (" & tagids[Discipline.?,"|"] & ")"
+
+    var s2X as number
+    var s2Search as string   
+
+    ~ If we are normal class configurable then we will have a class counts
+    ~ as tag. Otherwise assume we came from a special feat and go after it
+    ~ instead.
+    if (tagcount[ClsCountAs.?] <> 0) then
+      ~ Setup the FindChild Search String value
+      Call PWpickSrc
+      ~ Set focus to the Path of War class
+      perform hero.findchild[Class,s2Search].setfocus
+      ~ If we found no hit get out now!
+      doneif (state.isfocus = 0)
+      ~ Calculate the array value which is class level minus one as we start at zero
+      s2X = focus.field[cTotalLev].value - 1
+      ~ Set the configurator's number of manuevers known
+      field[cfgMax1].value += focus.field[cKnowTot].matrixvalue[s2X,0]
+      ~ Set the configurator's number of stances known
+      field[cfgMax2].value += focus.field[cKnowTot].matrixvalue[s2X,2]
+      ~ Set the live name to inform the number of manuevers that can be readied
+      field[livename].text = tagnames[ClsCountAs.?] & " Maneuvers Readied: " & tagcount[PathOfWar.ManueverOn] & " of " & focus.field[cKnowTot].matrixvalue[s2X,1]
+
+    ~..Lets see if we came from a Feat instead
+    elseif (tagcount[HasFeat.?] <> 0) then
+      s2Search = tagids[HasFeat.?]
+      ~ Set focus to the Martial Feat that has our values
+      perform hero.findchild[BaseFeat,s2Search].setfocus
+      ~ If we found no hit get out now!
+      doneif (state.isfocus = 0)
+
+      ~ Set all the values we normally pull from a class from the feat instead.
+      ~ This feat is setup to hold all the "max" values Manuevers, Stances, and Attributes.
+      ~ abValue  = Manuevers Known
+      ~ abValue2 = Maneuvers Allowed to be Readied
+      ~ abValue3 = Stances Known
+      ~ abValue4 = Highest Level Maneuver allowed
+      ~ abValue5 = Initiator level
+
+      ~ Manuevers known
+      field[cfgMax1].value += focus.field[abValue].value
+      ~ Stances known
+      field[cfgMax2].value += focus.field[abValue3].value
+      ~ Initiator Level
+      field[cfgLevel].value += focus.field[abValue5].value
+      
+      ~ Set the Max level of Manuevers and Stances allowed      
+      field[cfgAllow1].text &= " & (" & tagids[mLevel.?,"|"] & ")"
+      field[cfgAllow2].text &= " & (" & tagids[mLevel.?,"|"] & ")"
+
+      ~ Set the live name to inform the number of manuevers that can be readied
+      field[livename].text = " Maneuvers Readied: " & tagcount[PathOfWar.ManueverOn] & " of " & focus.field[abValue2].value
+    Endif
+    ]]></procedure>
+    
+    
+  <procedure id="PWsetupIL" context="pick"><![CDATA[
+    var otherlev as number
+    var S2Config as string
+    ~ Calculate all other levels but our current class level
+    otherlev = herofield[tLevel].value - field[cTotalLev].value
+    ~ Take half of all other classes plus our current class level to get our
+    ~ Initiator Level.
+    field[cCasterLev].value = round( otherlev/2,0,-1) + field[cTotalLev].value
+    ~ Set the Class Counts As tag so we cn locate the configurator
+    S2Config = tagids[ClsCountAs.?,"|"]
+    ~ Set the IL onto the associated configurator to save time for later checks
+    hero.findchild[Configure,S2Config].field[cfgLevel].value += field[cCasterLev].value
+    ]]></procedure>
+
+  <procedure id="PWchgDisc" context="pick"><![CDATA[~ Set focus
+    perform hero.findchild[Configure,linkage[varies].tagids[ClsCountAs.?]].setfocus
+    doneif (state.isfocus = 0)
+
+    perform focus.delete[Discipline.?]
+    perform focus.pushtags[Discipline.?]
+    ]]></procedure>
+
+  <procedure id="ValidManOn" scripttype="validate"><![CDATA[
+    ~ This procedure figures out if the correct number of manuevers has been turned on.
+    ~ ===How to use this Procedure===
+    ~ var ValidManOn as number
+    ~ Call ValidManOn
+    ~ @valid = ValidManOn
+    var s2Search as string
+    var s2X as number
+    var ValidManOn as number
+
+    ~Assum we are valid to start
+    ValidManOn = 1
+
+    ~ If we are normal class configurable then we will have a class counts
+    ~ as tag. Otherwise assume we came from a special feat and go after it
+    ~ instead.
+    if (altpick.tagcount[ClsCountAs.?] <> 0) then
+
+      var s2Search as string
+      ~ Setup the FindChild Search String value
+      Call PWvalidSrc
+      ~ Set focus to the Path of War class
+      perform hero.findchild[Class,s2Search].setfocus
+      ~ If we found no hit get out now!
+      doneif (state.isfocus = 0)
+      ~ Calculate the array value which is class level minus one as we start at zero
+      s2X = focus.field[cTotalLev].value - 1     
+
+      ~ Validate our level vs the number of Readied manuevers allowed
+      If (altpick.tagcount[PathOfWar.ManueverOn] > focus.field[cKnowTot].matrixvalue[s2X,1]) Then
+         ValidManOn = 0
+      Endif
+
+    ~..Lets see if we came from a Feat instead
+    elseif (altpick.tagcount[HasFeat.?] <> 0) then
+      s2Search = altpick.tagids[HasFeat.?]
+      ~ Set focus to the Martial Feat that has our values
+      perform hero.findchild[BaseFeat,s2Search].setfocus
+      ~ If we found no hit get out now!
+      doneif (state.isfocus = 0)
+
+      ~ Validate our level vs the number of Readied manuevers allowed
+      If (altpick.tagcount[PathOfWar.ManueverOn] > focus.field[abValue2].value) Then
+          ValidManOn = 0
+      Endif
+    endif
+    ]]></procedure>
+
+  <procedure id="ValidStaOn" scripttype="validate"><![CDATA[
+    ~ This procedure figures out if the correct number of manuevers has been turned on.
+    ~ ===How to use this Procedure===
+    ~ var ValidStaOn as number
+    ~ Call ValidStaOn
+    ~ @valid = ValidStaOn
+    var s2Search as string
+    var s2X as number
+    var ValidStaOn as number
+
+    ~Assum we are valid to start
+    ValidStaOn = 1 
+
+    ~ Validate the number of stances turned on based on the number we are allowed to have up
+    If (altpick.tagcount[PathOfWar.StanceOn] > altpick.tagcount[PathOfWar.StanceUp]) Then
+       ValidStaOn = 0
+    Endif
+    ]]></procedure>
+
+  <procedure id="ValidManIL" scripttype="validate"><![CDATA[
+    ~ This procedure figures out if the manuevers Initiatior Level is 
+    ~ high enough to have taken the selected manuever.
+    ~ ===How to use this Procedure===
+    ~ var ValidManIL as number
+    ~ Call ValidManIL
+    ~ @valid = ValidManIL
+    var ValidManIL as number
+    var s2ManLevel as number
+    var s2Search   as string
+
+    ~ Default to valid
+    ValidManIL = 1
+
+    ~ We can't validate "level" when in a table so if we are not a pick
+    ~ then just get out of this script now!
+    doneif (@ispick <> 1)
+
+    ~ This builds the Class Search String to be used by
+    ~ searches for the .setfocus of the Base Class.
+    perform hero.findchild[Configure, altpick.tagids[CustTaken.?] ].setfocus
+    ~ If we found no hit get out now!
+    doneif (state.isfocus = 0)
+
+    ~ If we are normal class configurable then we will have a class counts
+    ~ as tag. Otherwise assume we came from a special feat and go after it
+    ~ instead.
+    if (focus.tagcount[ClsCountAs.?] <> 0) then
+      ~ Our highest manuever level is one lower than our current Initiator Level
+      ~ because the array starts at zero.
+      s2ManLevel = focus.field[cfgLevel].value - 1
+
+      ~ Test to see if the level of the manuever is higher than what we can use
+      ~ and if so we are NOT valid.
+      If (altpick.tagvalue[mLevel.?] > hero.child[mechPoW].field[mechFeat].arrayvalue[s2ManLevel]) Then
+        ValidManIL = 0
+      Endif
+
+    ~..Lets see if we came from a Feat instead
+    elseif (focus.tagcount[HasFeat.?] <> 0) then
+      s2Search = focus.tagids[HasFeat.?]
+
+      ~ Set focus to the Feat that has our values
+      perform state.clearfocus
+      perform hero.findchild[BaseFeat,s2Search].setfocus
+      ~ If we found no hit get out now!
+      doneif (state.isfocus = 0)
+
+      ~ Test to see if the level of the manuever is higher than what we can use
+      ~ and if so we are NOT valid.
+      If (altpick.tagvalue[mLevel.?] > focus.field[abValue4].value) Then
+        ValidManIL = 0
+      Endif
+    endif  
+    ]]></procedure>
+
+  <procedure id="ValidManRQ" scripttype="validate"><![CDATA[
+    ~ This procedure figures out if the manuevers Initiatior Level
+    ~ ===How to use this Procedure===
+    ~ var ValidManIL as number
+    ~ Call ValidManIL
+    ~ @valid = ValidManIL
+    var ValidManRQ as number
+    var ValidManTx as string
+    var s2Tag      as string
+    var s2name     as string
+
+    ~ Default to valid
+    ValidManRQ = 1
+
+    ~ If a Thing process here
+    If (@ispick = 0) Then
+      s2Tag = altthing.tagids[Discipline.?]
+      s2Tag = replace(s2Tag,"Discipline","HasMan",0)
+      ~ If we don't have the correct number then we are invalid
+      If (hero.tagcountstr[s2Tag] < altthing.field[mPreReq].value) Then
+        ~ not valid
+        ValidManRQ = 0
+        ~ get discipline name
+        s2name = altthing.tagnames[Discipline.?]
+        ~ generate error message to be passed back
+        ValidManTx = altthing.field[mPreReq].value & " " & s2name & " maneuver(s) required."
+      Endif 
+
+    ~ If a Pick process here
+    ElseIf (@ispick = 1) Then
+      s2Tag = altpick.tagids[Discipline.?]
+      s2Tag = replace(s2Tag,"Discipline","HasMan",0)
+      ~ If we don't have the correct number then we are invalid
+      If (hero.tagcountstr[s2Tag] < altpick.field[mPreReq].value) Then
+        ~ not valid
+        ValidManRQ = 0
+        ~ get discipline name
+        s2name = altpick.tagnames[Discipline.?]
+        ~ generate error message to be passed back
+        ValidManTx = altpick.field[mPreReq].value & " " & s2name & " maneuver(s) required."
+      Endif 
+    Endif
+    ]]></procedure>
+
+
+  <procedure id="PWinDSta" context="pick"><![CDATA[
+    ~ This procedure determines if the hero has an active martial stance from a given discipline (by tag) 
+    var IsInStance as number
+    var targetDisc as string
+    IsInStance = 0
+    foreach pick in hero where "PathOfWar.Stance"
+      if (eachpick.field[abilActive].value <> 0) then
+        if (compare("Discipline." & targetDisc, eachpick.tagids[Discipline.?]) = 0) then
+              IsInStance = 1
+              break
+        endif
+      endif
+    nexteach]]></procedure>
+  <procedure id="PWszUpCMD" context="pick"><![CDATA[
+    ~ This procedure causes the hero to count as the next size up for CMD
+    var curSizeBon as number
+    if (hero.childfound[Maneuver].field[tManSize].value < 0) then
+     if (hero.childfound[Maneuver].field[tManSize].value = -1) then
+        curSizeBon = 0
+      else
+        curSizeBon = hero.childfound[Maneuver].field[tManSize].value / 2
+      endif
+    elseif (hero.childfound[Maneuver].field[tManSize].value = 0) then
+      curSizeBon = 1
+    else
+      curSizeBon = hero.childfound[Maneuver].field[tManSize].value * 2
+    endif
+
+    #applybonus[Bonus, hero.child[ManeuvDef], curSizeBon]]]></procedure>
+  <procedure id="PWszUpCMB" context="pick"><![CDATA[
+    ~ This procedure causes the hero to count as the next size up for CMB
+    var curSizeBon as number
+    if (hero.childfound[Maneuver].field[tManSize].value < 0) then
+     if (hero.childfound[Maneuver].field[tManSize].value = -1) then
+        curSizeBon = 0
+      else
+        curSizeBon = hero.childfound[Maneuver].field[tManSize].value / 2
+      endif
+    elseif (hero.childfound[Maneuver].field[tManSize].value = 0) then
+      curSizeBon = 1
+    else
+      curSizeBon = hero.childfound[Maneuver].field[tManSize].value * 2
+    endif
+
+    #applybonus[Bonus, hero.child[ManeuvBon], curSizeBon]]]></procedure>
+
+  <procedure id="PWsetupDSk" context="pick"><![CDATA[
+    ~ This procedure setups the Discpline Skill
+    perform hero.findchild[BaseSkill,tagids[ClassSkill.?]].pushtags[Discipline.?]
+    ]]></procedure>
+
+  </document>
