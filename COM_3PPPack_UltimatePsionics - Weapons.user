@@ -13,13 +13,14 @@ October 21, 2012 - Tim Shadow
     </fileinfo>
   <thing id="wMindBlade" name="Mind Blade" description="This weapon Thing is hidden is only used to give a &quot;Global&quot; holder for the different Mind Blade weapons." compset="Weapon">
     <usesource source="pPsiUn"/>
-    <tag group="wGroup"     tag="cSknMindBl" name="Soulknife Mind Blade"/>
-    <tag group="wCategory"  tag="Melee"/>
-    <tag group="Helper"     tag="NoOutGear"/>
-    <tag group="wCategory"  tag="RangeThrow"/>
-    <tag group="wRangeInc"  tag="20"/>
-    <tag group="Helper"     tag="GearNoSize"/>
-    <tag group="Helper"     tag="Helper"/>
+    <tag group="wGroup" tag="cSknMindBl" name="Soulknife Mind Blade"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wRangeInc" tag="20"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="ProductId" tag="PUProdID"/>
     </thing>
   <thing id="wMndBldLt" name="Mind Blade (Light)" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from her own mind.  Regardless of the weapon form a soulknife has chosen, her mind blade does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon A soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. She can also choose her mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with her mind blade, but such feats only work on mind blades in a light weapon form.\n\nThe soulknife chooses the appearance of her mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} To ehance your mind blade go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 mindblade or a +1 Flaming mindblade.  Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="Weapon">
     <usesource source="pPsiUn"/>
@@ -240,5 +241,22 @@ October 21, 2012 - Tim Shadow
         endif]]>
       <before name="Calc wTowerPen"/>
       </eval>
+    </thing>
+  <thing id="wMindBld1H" name="Mind Blade (1H)" description="This weapon Thing is hidden is only used to give a &quot;Global&quot; One Handed Holder for the Mind Blade weapons." compset="Weapon">
+    <usesource source="pPsiUn"/>
+    <tag group="wGroup" tag="cSknMindBl" name="Soulknife Mind Blade"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="wCategory" tag="RangeThrow"/>
+    <tag group="wRangeInc" tag="20"/>
+    <tag group="Helper" tag="GearNoSize"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="wClass" tag="OneHanded"/>
+    <tag group="IsWeapon" tag="wMndBld1H"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="wFtrGroup" tag="BladeHeavy"/>
+    <tag group="wType" tag="B"/>
+    <tag group="wType" tag="P"/>
+    <tag group="wType" tag="S"/>
     </thing>
   </document>
