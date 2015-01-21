@@ -8,6 +8,23 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
+<strong>v1.1  January 20, 2015</strong>
+
+<strong>Bug Fixes</strong>
+<ul>
+<li>Fix load errors with those with REALLY old dragonrider addon. PFRPG_Sources.1st(line 4) - Source - Duplicate record encountered('pSGG')</li>
+</ul>
+
+<strong>New Features</strong>
+<ul>
+<li>None</li>
+</ul>
+
+<strong>Data File Authoring</strong>
+<ul>
+<li>None</li>
+</ul>
+
 <strong>v1.0  January 11, 2015</strong>
 
 <strong>Bug Fixes</strong>
