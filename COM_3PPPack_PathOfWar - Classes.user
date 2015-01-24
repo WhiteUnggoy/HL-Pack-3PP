@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
   <loadonce key="COM_3PPPack_PathOfWar - Classes"/>
   <fileinfo>
@@ -223,7 +223,7 @@ Array 2 = Stances</comment>
         @valid = ValidStaOn</validate>
       </prereq>
     </thing>
-  <thing id="cPW1Gambit" name="Warlord’s Gambit" description="At his core, the warlord is a warrior who relies on both skill and daring; without this he is but any other combatant. By setting himself to danger, does his true skill shine, or so the motto of the warlord goes. At 1st level, a warlord selects two gambits as methods by which the warlord can recover expended maneuvers. Each gambit possesses three aspects - a {i}risk{/i}, a {i}rake{/i}, and a {i}reward{/i}.{br}{br}Each gambit&apos;s risk describes an action that the warlord must undertake in order to attempt to recover an expended maneuver. The warlord begins a gambit as a swift action, effectively diving recklessly into the act he is attempting. The warlord then performs the action described in the gambit, and if he is successful, he regains maneuvers (see below). If he is not, he suffers the rake of the gambit and only regains a single maneuver of his choosing. While performing a gambit, the warlord may add his Charisma modifier to the d20 check(s) to aid in accomplishing the gambit as a luck bonus. A warlord may attempt the actions of a gambit, but without declaring the attempt a gambit attempt by spending a swift action to do so, the character does not regain any maneuvers nor does he suffer a rake for failure. The character may initiate a maneuver while performing a gambit (if the maneuver helps him accomplish it) but he may not recover the maneuver used to achieve the gambit as part of the reward. A warlord may use each gambit available to him once per encounter. If at the start of the warlord&apos;s turn he has no available gambits, he regains all uses of his known gambits.{br}{br}A gambit&apos;s rake is the penalty that the warlord suffers if he attempts his gambit and fails, such as failing a trip attempt or failing to strike an opponent with a charge attack. Each gambit possesses a unique reward that the warlord enjoys for succeeding at that gambit. All gambits possess the same rake; the warlord only regains a single expended maneuver and suffers a -2 penalty on all d20 rolls for one round. A warlord who succeeds at fulfilling his gambit immediately recovers a number of expended maneuvers equal to his Charisma modifier (minimum 2) and enjoys the unique reward for each gambit. Allies who would witness the successful gambit and receive benefits must be within 60 ft. of the warlord to receive bonuses and must be able to see him perform the action.{br}{br}At 4th level and every four levels thereafter, the warlord selects adds an additional gambit." compset="ClSpecial">
+  <thing id="cPW1Gambit" name="Warlordâ€™s Gambit" description="At his core, the warlord is a warrior who relies on both skill and daring; without this he is but any other combatant. By setting himself to danger, does his true skill shine, or so the motto of the warlord goes. At 1st level, a warlord selects two gambits as methods by which the warlord can recover expended maneuvers. Each gambit possesses three aspects - a {i}risk{/i}, a {i}rake{/i}, and a {i}reward{/i}.{br}{br}Each gambit&apos;s risk describes an action that the warlord must undertake in order to attempt to recover an expended maneuver. The warlord begins a gambit as a swift action, effectively diving recklessly into the act he is attempting. The warlord then performs the action described in the gambit, and if he is successful, he regains maneuvers (see below). If he is not, he suffers the rake of the gambit and only regains a single maneuver of his choosing. While performing a gambit, the warlord may add his Charisma modifier to the d20 check(s) to aid in accomplishing the gambit as a luck bonus. A warlord may attempt the actions of a gambit, but without declaring the attempt a gambit attempt by spending a swift action to do so, the character does not regain any maneuvers nor does he suffer a rake for failure. The character may initiate a maneuver while performing a gambit (if the maneuver helps him accomplish it) but he may not recover the maneuver used to achieve the gambit as part of the reward. A warlord may use each gambit available to him once per encounter. If at the start of the warlord&apos;s turn he has no available gambits, he regains all uses of his known gambits.{br}{br}A gambit&apos;s rake is the penalty that the warlord suffers if he attempts his gambit and fails, such as failing a trip attempt or failing to strike an opponent with a charge attack. Each gambit possesses a unique reward that the warlord enjoys for succeeding at that gambit. All gambits possess the same rake; the warlord only regains a single expended maneuver and suffers a -2 penalty on all d20 rolls for one round. A warlord who succeeds at fulfilling his gambit immediately recovers a number of expended maneuvers equal to his Charisma modifier (minimum 2) and enjoys the unique reward for each gambit. Allies who would witness the successful gambit and receive benefits must be within 60 ft. of the warlord to receive bonuses and must be able to see him perform the action.{br}{br}At 4th level and every four levels thereafter, the warlord selects adds an additional gambit." compset="ClSpecial">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
     </thing>
@@ -1266,7 +1266,7 @@ Array 2 = Stances</comment>
          perform assign[Helper.SpcDisable]
       endif]]></eval>
     </thing>
-  <thing id="cPW2DeadIn" name="Deadly Insight" description="The stalker may use his deadly strikes in conjunction with his combat insight to “read” his opponent’s defenses and effortlessly attack beyond his foe’s guard. The stalker spends one point of ki as a swift action to read his target opponent, and may apply his deadly strike to all of his attacks for a number of rounds equal to his Wisdom modifier against this target. If the stalker scores a successful critical hit against the target while his deadly strike ability is active, the duration of this ability is extended by one round (no more than one extension can be made per round)." compset="CustomSpec" summary="Spend 1 ki to use Deadly Strike with all attacks" uniqueness="unique">
+  <thing id="cPW2DeadIn" name="Deadly Insight" description="The stalker may use his deadly strikes in conjunction with his combat insight to â€œreadâ€ his opponentâ€™s defenses and effortlessly attack beyond his foeâ€™s guard. The stalker spends one point of ki as a swift action to read his target opponent, and may apply his deadly strike to all of his attacks for a number of rounds equal to his Wisdom modifier against this target. If the stalker scores a successful critical hit against the target while his deadly strike ability is active, the duration of this ability is extended by one round (no more than one extension can be made per round)." compset="CustomSpec" summary="Spend 1 ki to use Deadly Strike with all attacks" uniqueness="unique">
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="SpecSource" tag="cHelpPW2"/>
@@ -1278,7 +1278,7 @@ Array 2 = Stances</comment>
     <eval phase="PostAttr" priority="10000">field[abDuration].value = #attrmod[aWIS]</eval>
     <exprreq message="Deadly Strike required"><![CDATA[#hasability[cPW2DeadSt] <> 0]]></exprreq>
     </thing>
-  <thing id="cPWWarder" name="Warder" description="Protective and disciplined warriors, warders are fighting men and women who use their knowledge of warfare, tactics, and strategy combined with superior combat training to accomplish their goals in defending others. Their intellect guides them through battle, and their skill at arms achieves their success.\n\n{b}Adventures:{/b} Warders adventure to further their employer’s missions, to serve on battlefields as protectors and champions, or to protect those that they care about. Some warders adventure to forge kingdoms of their own, battle tyranny, fight others of their kind for honor, or to live simply and by their own code.\n\n{b}Characteristics:{/b} Warders are always protective of people they deem in their care, be it a superior, their friends, or fellow soldiers of fortune. Many warders are proud, intelligent individuals who study tactics and maps as well while training daily with their associates to better suit their style towards their defense.\n\n{b}Alignment:{/b} Any, but most are lawful; the moral portion of their alignment is either up to them or their inclusion in their sect.\n\n{b}Religion:{/b} Many warders are religious, often following gods of war, chivalry, and sacrifice. Some follow gods of tyranny or justice, and others follow gods that stand for the good of their race.\n\n{b}Background:{/b} Warders find their place in their society based upon their line of adventuring. Some warders are regarded with great respect as leaders and guardians while others are feared and hated for their tyrannical ways. Many are respected and treated well in the hopes that if trouble comes, the warder will come to help those who showed them kindness.\n\n{b}Races:{/b} Nearly all humanoid races have warders amongst them. Dwarves, half-orcs, and humans make up the larger majority of warders in more civilized\nsociety, but there are a minority of halflings and gnomes that guard their kind from harm. While elves possess the tactical prowess to make great warders,\ntheir fragile bodies are often not enough for the physical rigors of the profession. While some warders are restrictive to whom they’ll share their secrets, it’s\nlargely agreed that the more monstrous races tend to be excluded. Hobgoblins, of the monstrous races, are by far the largest exception to that stereotype.\n\n{b}Other Classes:{/b} Warders get on well with those of a more orderly and martial bent, naturally befriending paladins, monks, and fighters. Rogues and warders\ndon’t exactly see eye to eye, while rangers and sorcerers might find a warder’s presence restrictive. Wizards and warders appreciate many of their shared\nfacets in learning, and warders widely recognize the importance of clerics in both martial and spiritual matters.\n\n{b}Role:{/b} Defender. Warders are natural guardians and protectors of the weaker members of the party, and are the ones who can take the most damage on\nthe front line. They also double as being coordinators on the battlefield, helping their teammates and providing support for them both defensively and offensively." compset="ClassLevel" maxlimit="20">
+  <thing id="cPWWarder" name="Warder" description="Protective and disciplined warriors, warders are fighting men and women who use their knowledge of warfare, tactics, and strategy combined with superior combat training to accomplish their goals in defending others. Their intellect guides them through battle, and their skill at arms achieves their success.\n\n{b}Adventures:{/b} Warders adventure to further their employerâ€™s missions, to serve on battlefields as protectors and champions, or to protect those that they care about. Some warders adventure to forge kingdoms of their own, battle tyranny, fight others of their kind for honor, or to live simply and by their own code.\n\n{b}Characteristics:{/b} Warders are always protective of people they deem in their care, be it a superior, their friends, or fellow soldiers of fortune. Many warders are proud, intelligent individuals who study tactics and maps as well while training daily with their associates to better suit their style towards their defense.\n\n{b}Alignment:{/b} Any, but most are lawful; the moral portion of their alignment is either up to them or their inclusion in their sect.\n\n{b}Religion:{/b} Many warders are religious, often following gods of war, chivalry, and sacrifice. Some follow gods of tyranny or justice, and others follow gods that stand for the good of their race.\n\n{b}Background:{/b} Warders find their place in their society based upon their line of adventuring. Some warders are regarded with great respect as leaders and guardians while others are feared and hated for their tyrannical ways. Many are respected and treated well in the hopes that if trouble comes, the warder will come to help those who showed them kindness.\n\n{b}Races:{/b} Nearly all humanoid races have warders amongst them. Dwarves, half-orcs, and humans make up the larger majority of warders in more civilized\nsociety, but there are a minority of halflings and gnomes that guard their kind from harm. While elves possess the tactical prowess to make great warders,\ntheir fragile bodies are often not enough for the physical rigors of the profession. While some warders are restrictive to whom theyâ€™ll share their secrets, itâ€™s\nlargely agreed that the more monstrous races tend to be excluded. Hobgoblins, of the monstrous races, are by far the largest exception to that stereotype.\n\n{b}Other Classes:{/b} Warders get on well with those of a more orderly and martial bent, naturally befriending paladins, monks, and fighters. Rogues and warders\ndonâ€™t exactly see eye to eye, while rangers and sorcerers might find a warderâ€™s presence restrictive. Wizards and warders appreciate many of their shared\nfacets in learning, and warders widely recognize the importance of clerics in both martial and spiritual matters.\n\n{b}Role:{/b} Defender. Warders are natural guardians and protectors of the weaker members of the party, and are the ones who can take the most damage on\nthe front line. They also double as being coordinators on the battlefield, helping their teammates and providing support for them both defensively and offensively." compset="ClassLevel" maxlimit="20">
     <usesource source="srcPathOfW"/>
     <tag group="ClassType" tag="Normal"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -1314,7 +1314,7 @@ field[abValue2].value = #attrmod[aINT] + field[xAllLev].value
       field[livename].text &= " (" & field[abValue].value & "ft)"
       field[abSumm].text = "Increased threatened area, can move when making AoO, " & signed(field[abValue2].value) & " to CMD vs. Acro to avoid AoO"]]></eval>
     </thing>
-  <thing id="cPW3ImpDF" name="Improved Defensive Focus" description="At 10th level, the warder&apos;s defensive focus improves further, causing the ground within her melee reach to be treated as if it were difficult terrain, hampering her foes’ movement around him. If a foe tries to move through a space within her reach, the movement through those squares costs double (x2). Additionally, while using her defensive focus to make an attack of opportunity, her movement does not provoke attacks of opportunity." compset="ClSpecial" summary="Threatened squares are diff. terrain, don&apos;t provoke AoO when moving to take own AoO&apos;s">
+  <thing id="cPW3ImpDF" name="Improved Defensive Focus" description="At 10th level, the warder&apos;s defensive focus improves further, causing the ground within her melee reach to be treated as if it were difficult terrain, hampering her foesâ€™ movement around him. If a foe tries to move through a space within her reach, the movement through those squares costs double (x2). Additionally, while using her defensive focus to make an attack of opportunity, her movement does not provoke attacks of opportunity." compset="ClSpecial" summary="Threatened squares are diff. terrain, don&apos;t provoke AoO when moving to take own AoO&apos;s">
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -1322,7 +1322,7 @@ field[abValue2].value = #attrmod[aINT] + field[xAllLev].value
 doneif (tagis[Helper.ShowSpec] = 0)
 doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW3Aegis" name="Aegis" description="At 1st level, the warder’s defensive prowess extends to those who choose to stay near to him. Allies who are within 10 ft. of the warder’s position gain a +1 morale bonus to Armor Class and to Will saves under the warder’s defensive aegis, her presence bolstering and shepherding the defenses of her allies. This bonus improves to +2 at 5th level (+3 at 9th level, +4 at 13th level, and +5 at 17th level). The warder does not receive this bonus, but may receive the benefits of this ability from another warder. If the ally cannot see or hear the warder, then the ally does not gain the benefits of this ability (such as if the warder is concealed or invisible).\n\nAt 6th level, her aegis’ range increases its effective area, growing to a 20 ft. radius. At 12th level, this increases again to 30 ft.." compset="ClSpecial" summary="Morale bonus to nearby allies&apos; AC/Will save">
+  <thing id="cPW3Aegis" name="Aegis" description="At 1st level, the warderâ€™s defensive prowess extends to those who choose to stay near to him. Allies who are within 10 ft. of the warderâ€™s position gain a +1 morale bonus to Armor Class and to Will saves under the warderâ€™s defensive aegis, her presence bolstering and shepherding the defenses of her allies. This bonus improves to +2 at 5th level (+3 at 9th level, +4 at 13th level, and +5 at 17th level). The warder does not receive this bonus, but may receive the benefits of this ability from another warder. If the ally cannot see or hear the warder, then the ally does not gain the benefits of this ability (such as if the warder is concealed or invisible).\n\nAt 6th level, her aegisâ€™ range increases its effective area, growing to a 20 ft. radius. At 12th level, this increases again to 30 ft.." compset="ClSpecial" summary="Morale bonus to nearby allies&apos; AC/Will save">
     <fieldval field="abValue2" value="10"/>
     <usesource source="srcPathOfW"/>
     <tag group="abRange" tag="Feet"/>
@@ -1547,7 +1547,7 @@ field[abSumm].text = signed(field[abValue].value) & " morale bonus to AC and Wil
     <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
 Call PWsetupIL</eval>
     </thing>
-  <thing id="cPW3ArmMrk" name="Armiger&apos;s Mark" description="At 2nd level, a warder is trained in how best to control her enemies and how they behave in battle, urging them to throw their all against the warder’s indomitable armor and unyielding shield. With a sharp blade, a clever taunt, or something that otherwise attracts her foe, the warder can direct the attention of enemies towards himself.\n\nWhenever the warder attacks a foe in combat and inflict at least 1 point of damage, as a free action she may mark them as her foe (he may even mark a foe during an attack of opportunity and may make the free action to do so, even though it is not her turn) and attempt to continue to force them to engage the warder only. The target is aware of being marked, and the mark remains for a number of rounds equal to the warder’s Intelligence modifier (minimum of 1). Marked targets suffer a -4 penalty to attack rolls against foes that are not the warder, and arcane spellcasters suffer an increase in arcane spell failure of 10% + 1% per two warder levels until the mark expires. The warder may only maintain a number of marks equal to 3 + her Intelligence modifier at a time, and she may make a number of marks per day equal to ½ warder level + Intelligence modifier.\n\nAt 8th level, this penalty increases to -6, and it increases again to -8 at 16th level. This ability functions on creatures with an Intelligence score of 1 or more, allowing her to mark animals and other beasts as well as sentient beings, but not mindless creatures such as skeletons.  Multiple armiger’s marks overlap (do not stack)." compset="ClSpecial" summary="Marked enemies take a penalty to hit anyone but you">
+  <thing id="cPW3ArmMrk" name="Armiger&apos;s Mark" description="At 2nd level, a warder is trained in how best to control her enemies and how they behave in battle, urging them to throw their all against the warderâ€™s indomitable armor and unyielding shield. With a sharp blade, a clever taunt, or something that otherwise attracts her foe, the warder can direct the attention of enemies towards himself.\n\nWhenever the warder attacks a foe in combat and inflict at least 1 point of damage, as a free action she may mark them as her foe (he may even mark a foe during an attack of opportunity and may make the free action to do so, even though it is not her turn) and attempt to continue to force them to engage the warder only. The target is aware of being marked, and the mark remains for a number of rounds equal to the warderâ€™s Intelligence modifier (minimum of 1). Marked targets suffer a -4 penalty to attack rolls against foes that are not the warder, and arcane spellcasters suffer an increase in arcane spell failure of 10% + 1% per two warder levels until the mark expires. The warder may only maintain a number of marks equal to 3 + her Intelligence modifier at a time, and she may make a number of marks per day equal to Â½ warder level + Intelligence modifier.\n\nAt 8th level, this penalty increases to -6, and it increases again to -8 at 16th level. This ability functions on creatures with an Intelligence score of 1 or more, allowing her to mark animals and other beasts as well as sentient beings, but not mindless creatures such as skeletons.  Multiple armigerâ€™s marks overlap (do not stack)." compset="ClSpecial" summary="Marked enemies take a penalty to hit anyone but you">
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="Usage" tag="Day"/>
@@ -1582,7 +1582,7 @@ field[abValue2].value = 10 + round(field[xTotalLev].value,0,-1)
 ~ Calculate mark duration (INT mod, min 1)
 field[abDuration].value = maximum(1, #attrmod[aINT])]]></eval>
     </thing>
-  <thing id="cPW3GrdChl" name="Improved Armiger&apos;s Mark" description="At 9th level, the warder may expend two uses of her armiger’s mark to make a grand challenge to all enemies within a 30 ft. radius and mark them with her words alone. Creatures affected must make a Will save (DC 10 + ½ warder level + Intelligence modifier) against the warder’s mark ability or suffer the penalties of being marked for a number of rounds equal to the warder’s Intelligence modifier. This does not count against her normal marking limit. This is a language-dependent ability and does not effect creatures of less than 1 Intelligence." compset="ClSpecial" summary="Damaged enemies take a penalty to hit anyone but you">
+  <thing id="cPW3GrdChl" name="Improved Armiger&apos;s Mark" description="At 9th level, the warder may expend two uses of her armigerâ€™s mark to make a grand challenge to all enemies within a 30 ft. radius and mark them with her words alone. Creatures affected must make a Will save (DC 10 + Â½ warder level + Intelligence modifier) against the warderâ€™s mark ability or suffer the penalties of being marked for a number of rounds equal to the warderâ€™s Intelligence modifier. This does not count against her normal marking limit. This is a language-dependent ability and does not effect creatures of less than 1 Intelligence." compset="ClSpecial" summary="Damaged enemies take a penalty to hit anyone but you">
     <fieldval field="abRange" value="30"/>
     <usesource source="srcPathOfW"/>
     <tag group="Usage" tag="Day"/>
@@ -1608,7 +1608,7 @@ field[abDuration].value = maximum(1, #attrmod[aINT])]]></eval>
 field[sbName].text = field[thingname].text
 field[abSumm].text = "Spend 2 marks, enemies within " & field[abRangText].text & " must make Will save (DC " & field[abDC].value & ") or be marked for " & field[abDuraText].text]]></eval>
     </thing>
-  <thing id="cPW3GrtMrk" name="Greater Armiger&apos;s Mark" description="At 16th level, the armiger’s mark improves to allow her to recover an expended maneuver whenever she reduces a marked opponent’s hit points to 0 or less (this can only trigger once per marked opponent)." compset="ClSpecial" summary="Recover a maneuver when you kill a marked foe">
+  <thing id="cPW3GrtMrk" name="Greater Armiger&apos;s Mark" description="At 16th level, the armigerâ€™s mark improves to allow her to recover an expended maneuver whenever she reduces a marked opponentâ€™s hit points to 0 or less (this can only trigger once per marked opponent)." compset="ClSpecial" summary="Recover a maneuver when you kill a marked foe">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1658,7 +1658,7 @@ foreach pick in hero from BaseArmor where "EquipType.Armor"
   eachpick.field[arMaxDex].value += field[abValue2].value
 nexteach]]></eval>
     </thing>
-  <thing id="cPW3ExtDef" name="Extended Defense" description="Upon reaching 5th level, the warder becomes ever more skilled at adapting to the flow of combat. Once per day, the warder may activate Extended Defense as an immediate action. When she does, the character chooses a counter she has readied; she may initiate that counter as a free action (even on another’s turn) at will until the beginning of her next turn. At the beginning of her next turn, the chosen counter is expended. Every three levels beyond this (8th, 11th, 14th, and 17th levels), she may use this ability an additional time per day." compset="ClSpecial" summary="Choose a counter and use it as a free action until your next turn.">
+  <thing id="cPW3ExtDef" name="Extended Defense" description="Upon reaching 5th level, the warder becomes ever more skilled at adapting to the flow of combat. Once per day, the warder may activate Extended Defense as an immediate action. When she does, the character chooses a counter she has readied; she may initiate that counter as a free action (even on anotherâ€™s turn) at will until the beginning of her next turn. At the beginning of her next turn, the chosen counter is expended. Every three levels beyond this (8th, 11th, 14th, and 17th levels), she may use this ability an additional time per day." compset="ClSpecial" summary="Choose a counter and use it as a free action until your next turn.">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1673,7 +1673,7 @@ field[trkMax].value = field[xCount].value]]></eval>
     <eval phase="Render" priority="10000" index="2"><![CDATA[~ Set the listname
 field[listname].text = field[thingname].text & " (" & field[xIndex].value & "/day)"]]></eval>
     </thing>
-  <thing id="cPW3AdpTac" name="Adaptive Tactics" description="A warrior can attempt to plan for everything, but no plan stands against the heat of battle if there is no room for adaptation. At 7th level, the warder can expend one use of her armiger’s mark ability as a full-round action to expend up to her Intelligence modifier in readied maneuvers, then instantly ready an equal amount of maneuvers. The warder may not replace expended maneuvers using this ability; any maneuver she is re-preparing with this ability must be unexpended to be exchanged. She may choose from any of her known maneuvers." compset="ClSpecial" summary="Spend one mark, replace INT readed maneuvers">
+  <thing id="cPW3AdpTac" name="Adaptive Tactics" description="A warrior can attempt to plan for everything, but no plan stands against the heat of battle if there is no room for adaptation. At 7th level, the warder can expend one use of her armigerâ€™s mark ability as a full-round action to expend up to her Intelligence modifier in readied maneuvers, then instantly ready an equal amount of maneuvers. The warder may not replace expended maneuvers using this ability; any maneuver she is re-preparing with this ability must be unexpended to be exchanged. She may choose from any of her known maneuvers." compset="ClSpecial" summary="Spend one mark, replace INT readed maneuvers">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1692,7 +1692,7 @@ doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
 doneif (tagis[Helper.ShowSpec] = 0)
 doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW3StlDef" name="Steel Defense" description="At 15th level, the warder is capable of turning an otherwise lethal blow and continue the fight. When an attack that inflicts hit point damage from a natural attack, melee weapon, or ranged weapon would reduce the warder to 0 or fewer hit points, she can make a Fortitude save (DC the attacker’s attack roll) to deflect the attack to her armor or shield (light, heavy, or tower shields only), causing it to suffer the damage in her place (apply item hardness as normal). If this would break the character’s armor, it gains the broken condition until it is repaired. The warder cannot use this ability with broken armor or a broken shield. The warder must be wearing armor or a shield to use this ability." compset="ClSpecial" summary="Make a Fort save vs attack roll when you would be reduced to 0 or fewer HP; success means your armor or shield is damaged in your place.">
+  <thing id="cPW3StlDef" name="Steel Defense" description="At 15th level, the warder is capable of turning an otherwise lethal blow and continue the fight. When an attack that inflicts hit point damage from a natural attack, melee weapon, or ranged weapon would reduce the warder to 0 or fewer hit points, she can make a Fortitude save (DC the attackerâ€™s attack roll) to deflect the attack to her armor or shield (light, heavy, or tower shields only), causing it to suffer the damage in her place (apply item hardness as normal). If this would break the characterâ€™s armor, it gains the broken condition until it is repaired. The warder cannot use this ability with broken armor or a broken shield. The warder must be wearing armor or a shield to use this ability." compset="ClSpecial" summary="Make a Fort save vs attack roll when you would be reduced to 0 or fewer HP; success means your armor or shield is damaged in your place.">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1715,7 +1715,7 @@ doneif (hero.tagexpr[Hero.MedArmor | Hero.HeavyArmor] <> 1)
 field[abValue].value = #attrmod[aINT]
 #situational[hero.child[ArmorClass],signed(field[abValue].value) & " vs. critical hit confirmation",field[name].text]]]></eval>
     </thing>
-  <thing id="cPW3DthDef" name="Deathless Defenses" description="At 20th level, the warder can indefinitely hold a position to protect her allies, even if it may cost her her life. The warder must expend two uses of her armiger’s mark ability as an immediate action to activate her deathless defenses. While this ability is active, the warder is capable of maintaining her defensive focus as a move action (but recovers no maneuvers unless she spends a full round to recover) but gains the full bonuses of her defensive focus. Additionally, she receives the benefits of her aegis ability as well. She is unable to die from hit point damage while this effect is in use. She may maintain the use of this ability each round at the cost of one use of her armiger’s mark ability, or she may end it as a free action. Abilities or effects that don’t inflict hit point damage, such as energy drain or ability damage, can still kill the warder. While this effect is in use, she is immune to mind-affecting abilities, as her focus prevents any from tampering with her mind. Once this ability ends, either voluntarily or if the character runs out uses of armiger’s mark (assuming she is not dead), the warder is exhausted and must rest a full 8 hours to recover." compset="ClSpecial" summary="While active, immune to HP death and mind-affecting abilities, can maintain Defensive Focus as move action">
+  <thing id="cPW3DthDef" name="Deathless Defenses" description="At 20th level, the warder can indefinitely hold a position to protect her allies, even if it may cost her her life. The warder must expend two uses of her armigerâ€™s mark ability as an immediate action to activate her deathless defenses. While this ability is active, the warder is capable of maintaining her defensive focus as a move action (but recovers no maneuvers unless she spends a full round to recover) but gains the full bonuses of her defensive focus. Additionally, she receives the benefits of her aegis ability as well. She is unable to die from hit point damage while this effect is in use. She may maintain the use of this ability each round at the cost of one use of her armigerâ€™s mark ability, or she may end it as a free action. Abilities or effects that donâ€™t inflict hit point damage, such as energy drain or ability damage, can still kill the warder. While this effect is in use, she is immune to mind-affecting abilities, as her focus prevents any from tampering with her mind. Once this ability ends, either voluntarily or if the character runs out uses of armigerâ€™s mark (assuming she is not dead), the warder is exhausted and must rest a full 8 hours to recover." compset="ClSpecial" summary="While active, immune to HP death and mind-affecting abilities, can maintain Defensive Focus as move action">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1759,7 +1759,7 @@ endif]]></eval>
         @valid = ValidStaOn</validate>
       </prereq>
     </thing>
-  <thing id="cPW3ImpAeg" name="Improved Aegis" description="At 6th level, the warder&apos;s aegis’ range increases its effective area, growing to a 20 ft. radius." compset="ClSpecial" summary="Aegis radius increases to 20 ft">
+  <thing id="cPW3ImpAeg" name="Improved Aegis" description="At 6th level, the warder&apos;s aegisâ€™ range increases its effective area, growing to a 20 ft. radius." compset="ClSpecial" summary="Aegis radius increases to 20 ft">
     <fieldval field="abValue" value="10"/>
     <usesource source="srcPathOfW"/>
     <tag group="abRange" tag="Feet"/>
@@ -1778,7 +1778,7 @@ endif]]></eval>
 
       field[listname].text = field[thingname].text & " (" & field[abValue2].value & " feet)"]]></eval>
     </thing>
-  <thing id="cPW3GrtAeg" name="Greater Aegis" description="At12th level, the warder&apos;s aegis’ range increases its effective area, growing to a 30 ft. radius." compset="ClSpecial" summary="Aegis radius increases to 30 ft">
+  <thing id="cPW3GrtAeg" name="Greater Aegis" description="At12th level, the warder&apos;s aegisâ€™ range increases its effective area, growing to a 30 ft. radius." compset="ClSpecial" summary="Aegis radius increases to 30 ft">
     <fieldval field="abValue" value="10"/>
     <usesource source="srcPathOfW"/>
     <tag group="abRange" tag="Feet"/>
@@ -1820,7 +1820,44 @@ endif]]></eval>
     <fieldval field="cHDSides" value="8"/>
     <fieldval field="cAbbr" value="BTm"/>
     <fieldval field="cSkills" value="4"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cMagLevTot" index="3" value="3"/>
+    <arrayval field="cMagLevTot" index="4" value="4"/>
+    <arrayval field="cMagLevTot" index="5" value="5"/>
+    <arrayval field="cMagLevTot" index="6" value="6"/>
+    <arrayval field="cMagLevTot" index="7" value="7"/>
+    <arrayval field="cMagLevTot" index="8" value="8"/>
+    <arrayval field="cKnowTot" index="1" value="1"/>
+    <arrayval field="cKnowTot" index="2" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="3" value="2"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="3" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="4" value="2"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="4" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="5" value="3"/>
+    <arrayval field="cKnowTot" index="5" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="5" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="6" value="3"/>
+    <arrayval field="cKnowTot" index="6" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="6" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="7" value="4"/>
+    <arrayval field="cKnowTot" index="7" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="7" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="8" value="4"/>
+    <arrayval field="cKnowTot" index="8" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="8" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="9" value="5"/>
+    <arrayval field="cKnowTot" index="9" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="9" column="2" value="2"/>
     <usesource source="srcPathOfW"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="ExtraLev1" tag="Divine"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
     <tag group="cWill" tag="Poor"/>
     <tag group="Classes" tag="PWBtlTmpl" name="Battle Templar"/>
     <tag group="cAttack" tag="Medium"/>
@@ -1828,13 +1865,52 @@ endif]]></eval>
     <tag group="ClassSkill" tag="skDiplo"/>
     <tag group="ClassSkill" tag="skHeal"/>
     <tag group="ClassSkill" tag="skIntim"/>
-    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="cRef" tag="Poor"/>
     <tag group="ClassSkill" tag="skKnowRel"/>
     <tag group="ClassSkill" tag="skSpellcr"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="cRef" tag="Poor"/>
-    <tag group="cFort" tag="Good"/>
-    <tag group="PathOfWar" tag="Class"/>
+    <bootstrap thing="fArmShield"></bootstrap>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="fArmHeavy"></bootstrap>
+    <bootstrap thing="cPWP1Man">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1Disc">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cCfgPWPC1"></bootstrap>
+    <bootstrap thing="cPWP1OrdKn">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1RchDv">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1MrtHl">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1DvRec">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1GrdFt">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1ShpFl">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1WrFth">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1DInsp">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1BlChn">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPWP1BfInv">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
+      Call PWsetupIL</eval>
     </thing>
   <thing id="cPWBtlTmpl" name="Battle Templar" description="Battle templars serve the role of both divine agent and warrior in times when the state of their religion or church is in danger. Humble priests lay down their peaceful ways and take up the arms and armor of the warrior to defend their flock with sword, shield, and faith. Battle templars come from many religions, but they always come from religions in which the virtues of living a good life are taught, and they rise up to protect their people in times of crisis. Some churches actively recruit members of their faith to serve as protectors and heroes, showing these former priests and priestesses to be pinnacles of their faith and providing something for the youngest to admire and aspire to.\n\nMost battle templar hail from the cleric class, as it has a strong focus in matters of faith. Some are multiclass warder/clerics or single class clerics and paladins." compset="ClassLevel" maxlimit="10">
     <usesource source="srcPathOfW"/>
@@ -1849,5 +1925,221 @@ endif]]></eval>
     <exprreq message="Must know at least one Golden Lion or Iron Tortoise manuever."><![CDATA[tagcount[HasMan.GoldenLion] + tagcount[HasMan.IronTort] > 0]]></exprreq>
     <exprreq message="Must know at least one Golden Lion or Iron Tortoise stance."><![CDATA[tagcount[HasStance.GoldenLion] + tagcount[HasStance.IronTort] > 0]]></exprreq>
     <exprreq message="Martial Power feat required."><![CDATA[#hasfeat[fPWMartPow] <> 0]]></exprreq>
+    </thing>
+  <thing id="cPWP1Disc" name="Disciplines" description="Choose two martial disciplines (in addition to Golden Lion).  These must be disciplines you already had access to from another source." compset="ClSpecial">
+    <fieldval field="usrCandid1" value="PathOfWar.selDisc &amp; !Discipline.GoldenLion"/>
+    <fieldval field="usrCandid2" value="PathOfWar.selDisc &amp; !Discipline.GoldenLion"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Hide" tag="Statblock"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PostLevel" priority="10000">~ The configurable for Battle Templar starts out with only 
+      ~ Golden Lion, but the user may choose two more disciplines
+      if (field[usrChosen1].ischosen = 1) then
+        perform field[usrChosen1].chosen.pulltags[Discipline.?]
+        perform hero.childfound[cCfgPWPC1].pushtags[Discipline.?]
+      endif
+      if (field[usrChosen2].ischosen = 1) then
+        perform field[usrChosen2].chosen.pulltags[Discipline.?]
+        perform hero.childfound[cCfgPWPC1].pushtags[Discipline.?]
+      endif</eval>
+    </thing>
+  <thing id="cCfgPWPC1" name="Battle Templar Maneuvers" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Maneuvers"/>
+    <fieldval field="cfgObject2" value="Stances"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="Discipline" tag="GoldenLion"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClsCountAs" tag="cHelpPWPC1"/>
+    <eval phase="First" index="2">~ Setup the Maneuvers
+      perform hero.pushtags[Discipline.?]</eval>
+    <eval phase="Final" priority="11000">~ Setup the Maneuvers
+      Call PWsetupCfg</eval>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPWP1Man" name="Maneuvers" description="Select the maneuver list that this class will add to.  Although this class will maintain a separate maneuver list so that discipline restrictions can be enforced, it will inherit the initiator level and attribute modifier from the selected list.  For example, selecting the Warlord list will cause this class&apos;s maneuvers to use your Warlord IL and add your Charisma bonus to save DC." compset="ClSpecial" summary="Select the maneuver list that this class will add to.">
+    <fieldval field="usrCandid1" value="PathOfWar.Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Hide" tag="Statblock"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <eval phase="PostLevel" priority="15"><![CDATA[      ~ I am not fond of this, but I haven't figured out a better way yet.
+      ~ Basically, the issue is that initiating PrC's add maneuvers known/readied as if they were further levels in an existing initiator class.  So theoretically we could just have levels in the PrC add to the known/readied number of another class (or Martial Training).  However, there's a complication: PrC's often have their own discipline list for the known maneuvers they grant.  So we can't just add to another class's maneuvers; we need a separate configurator that can be tagged according to the disciplines allowed by the PrC.  However, we ALSO have to account for the fact that we're still acting as a previous class for the purposes of initiator level and modifier (do we use INT, CHA, etc for setting DC's).  So here, we have the user pick an existing maneuver source (either an initiating class, or Martial Training), and we pull the calculated IL and IM from that source.
+      ~ I REALLY hate this solution, because it means creating phony "class features" to serve as UI elements, not to mention the way false impresssions it generates regarding how PrC maneuvers are handled by the game.
+      ~ The timing is set so that we set the PrC config's level after those are normally calculated by PWSetupIL, but before maneuver IL's are inherited in the field's calc script.
+
+      ~ Stop if no configurable has been chosen
+      doneif (field[usrChosen1].ischosen <> 1)
+     
+      ~ Find the PrC configurable
+      perform hero.findchild[Configure, root.tagids[ClsCountAs.?]].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Inherit the initiating attribute from the other class by pulling its UseAttr tag and pushing it to this class's configurable
+      perform field[usrChosen1].chosen.pulltags[UseAttr.?]
+      perform focus.pushtags[UseAttr.?]
+
+      ~ Also inherit the initiator level from the other class
+      focus.field[cfgLevel].value = field[usrChosen1].chosen.field[cfgLevel].value]]></eval>
+    </thing>
+  <thing id="cPWP1OrdKn" name="Ordained Knight" description="A battle templar fulfills a role special to his religion, and as such, may act both as courageous warriors and as pious priest. He receives a circumstance bonus on Diplomacy checks equal to his class level when dealing with members of his faith. If the character possessed a unique divine ability from a previous class (the class features channel energy, a cleric&apos;s domains, a paladin&apos;s lay on hands, an inquisitor&apos;s bane or inquisitions, or an oracle&apos;s curse), he may add his levels in battle templar to that class to determine their effectiveness. Additionally, should the battle templar possess the aegis class feature (see warder class), the battle templar may add his class level to his warder level to determine the bonus of his aegis class feature." compset="ClSpecial" summary="Continue advancement in certain divine class abilities">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostLevel" priority="1000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Situational bonus to Diplomacy skill
+      #situational[hero.childfound[skDiplo], signed(root.field[cTotalLev].value) & " circumstance bonus when dealing with a member of the same faith", field[thingname].text]]]></eval>
+    <eval phase="PostLevel" priority="10" index="2"><![CDATA[      ~ Our Battle Templar level advances certain other class features as if they were levels in the class that feature came from
+      ~ Some of those features count each level 1-for-1, some use half level
+      var MCL as number
+      var OCL as number
+      var levDiv as number
+      var levAdd as number
+      MCL = field[xTotalLev].value
+
+      ~ Channel energy (full level)
+      OCL = hero.childfound[xChannel].field[abValue].value
+      levDiv = 1
+      call PWOrdKtLev
+      hero.childfound[xChannel].field[abValue].value += levAdd
+
+      ~ Domains/Inquisitions
+      foreach pick in hero from Domain where "Domain.?"
+        OCL = eachpick.field[xTotalLev].value
+        levDiv = 1
+        call PWOrdKtLev
+        eachpick.field[xTotalLev].value += levAdd
+      nexteach
+
+      ~ Lay on Hands (1/2 level)
+      OCL = hero.childfound[cPalLayHnd].field[abValue].value
+      levDiv = 2
+      call PWOrdKtLev
+      hero.childfound[cPalLayHnd].field[abValue].value += levAdd
+
+      ~ Bane
+      OCL = hero.childfound[cInqBane].field[xTotalLev].value
+      levDiv = 1
+      call PWOrdKtLev
+      hero.childfound[cInqBane].field[xTotalLev].value += levAdd
+
+      ~ Aegis
+      OCL = hero.childfound[cPW3Aegis].field[xTotalLev].value
+      levDiv = 1
+      call PWOrdKtLev
+      hero.childfound[cPW3Aegis].field[xTotalLev].value += levAdd
+      
+      ~ Oracle Curses are handled in the pre-levels script]]></eval>
+    <eval phase="PreLevel" priority="11000" index="3"><![CDATA[        ~ Oracle curses already add 1/2 of all non-Oracle classes to determine curse effects, so we'll add 1/2 of our Battle Templar level again.  This is a rare instance of rounding up instead of down, because we want to ensure that odd-numbered class levels get added fully.
+        var bonus as number
+        bonus = round(#levelcount[PWBtlTmpl]/2,0,1)
+        foreach pick in hero from BaseCustSp where "SpecSource.cHelpOra | SpecSource.cHelpClr"
+          eachpick.field[xExtraLev].value += bonus
+        nexteach]]></eval>
+    </thing>
+  <thing id="cPWP1RchDv" name="Reach of the Divine" description="At 2nd level, the battle templar is capable of aiding an ally with every strike of his weapon or bash of his shield through the use of his divine magic. Whenever the battle templar initiates a martial strike, he may cast a divine spell (with a level equal to or less than the level of the strike initiated) on himself or an ally within touch range as a move action. He must cast this defensively if he is casting within a threatened area to avoid provoking attacks of opportunity." compset="ClSpecial" summary="Cast touch spell on self or ally as a move action when you initiate a martial strike">
+    <tag group="abAction" tag="Move"/>
+    <tag group="abRange" tag="Touch"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPWP1MrtHl" name="Martial Healing" description="The battle templar&apos;s divine power is so firmly blended with his martial talents that when he utilizes a martial maneuver, the power of his faith infuses it and aids him and his allies. When the battle templar initiates a martial strike, as a swift action he can heal himself or an ally within close range (25 ft. plus 5 ft. per two initiator levels) for 1d4/maneuver level + the battle templar&apos;s class level in hit points." compset="ClSpecial" summary="Heal self or ally when you initiate a strike">
+    <fieldval field="abValue" value="25"/>
+    <fieldval field="abValue2" value="5"/>
+    <tag group="LvNamePar" tag="AppText"/>
+    <tag group="LvNamePar" tag="IncRange"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="abRange" tag="Feet"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ Range is 25 ft + 5 ft per two initiator levels
+      var halfIL as number
+      var addRange as number
+      field[abRange].value = field[abValue].value
+      halfIL = round(root.field[cCasterLev].value/2, 0, -1)
+      addRange = halfIL * field[abValue2].value
+      field[abRange].value += addRange
+
+      field[abText].text = #levelcount[PWBtlTmpl] & " + 1d4/maneuver level HP"]]></eval>
+    </thing>
+  <thing id="cPWP1DvRec" name="Divine Recovery" description="Beginning at 4th level, a battle templar may channel divine power to recharge his martial maneuvers. As a swift action, the character can recover an expended maneuver by sacrificing a spell with a level equal to or greater than the maneuver&apos;s. If the spell&apos;s level is higher than the maneuver&apos;s level, then additional level &quot;overage&quot; restores 1d8 hit points of damage to the battle templar per excess spell level." compset="ClSpecial" summary="Recover maneuvers by expending spell slots">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cPWP1GrdFt" name="Guardian of the Faith" description="At 5th level, the battle templar learns a signature stance of his calling, and with it he can better protect himself and those he considers his allies. This is a 5th level stance of no particular discipline. To enter this stance, as a swift action the battle templar abandons a martial stance he is currently using. The benefits of this ability end if the battle templar assumes a martial stance. Once within this stance, the battle templar gains damage reduction 10/adamantine, and allies within 20 ft of his position (excluding himself) gain a +4 sacred or profane (alignment dependent) bonus to AC, CMD, and to saving throws." compset="ClSpecial" summary="Martial stance grants DR 10/adamantine, +4 bonus to AC/CMD/saves to allies within 20&apos;">
+    <fieldval field="abValue" value="10"/>
+    <fieldval field="actName" value="Guardian of the Faith Stance"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="mType" tag="Stance"/>
+    <tag group="mLevel" tag="5"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="mDuration" tag="Stance"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Grant damage reduction
+      #applydr[xDamRdAdam, field[abValue].value]
+
+      ~ Apply the PathOfWar.StanceOn tag
+      perform hero.assign[PathOfWar.StanceOn]]]></eval>
+    <evalrule phase="PostAttr" priority="10000" message="Too many stances activated"><![CDATA[      ~ If we're not enabled, do nothing
+      validif (field[abilActive].value = 0)
+
+      ~ Make sure we don't exceed the allowed number of stances
+      validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
+  <thing id="cPWP1ShpFl" name="Shepherd the Flock" description="Those under his care must be protected; a credo of the battle templar. At 6th level, the battle templar&apos;s spells take on a defensive nature as he casts them to protect himself and his allies. Whenever he casts a spell through his Reach of the Divine class feature, the target also gains a +4 sacred or profane (alignment dependent) bonus to their AC for one minute (multiple uses of this ability do not increase the duration or the protection of this ability)." compset="ClSpecial" summary="When you cast a spell through Reach of the Divine, target gets +4 to AC for 1 minute">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cPWP1WrFth" name="Wrath of the Faithful" description="At 7th level, the power of his faith fuses with the martial temper that brews within the battle templar, and when he casts his mighty divine spells, they inspire him to battle. When the battle templar casts a divine spell, the next martial strike he initiates within one minute of casting gains a morale bonus to damage rolls equal to the level of the spell cast." compset="ClSpecial" summary="When you cast a divine spell, your next martial strike gains a damage bonus">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cPWP1DInsp" name="Divine Inspiration" description="At 8th level, the battle templar is capable of utilizing the guidance of his divine magic to enlighten others and restore their martial talents should they be depleted. As an immediate action, the battle templar selects an ally within close range (25 ft. plus an additional 5 ft. per two initiator levels) and expends his divine spell energy to allow the ally to recover a maneuver as if the ally had used the battle templar&apos;s divine recovery class feature." compset="ClSpecial" summary="Use Divine Recovery on allies to restore their maneuvers">
+    <fieldval field="abValue" value="25"/>
+    <fieldval field="abValue2" value="5"/>
+    <tag group="LvNamePar" tag="IncRange"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000">      ~ Range is 25 ft + 5 ft per two initiator levels
+      var halfIL as number
+      var addRange as number
+      field[abRange].value = field[abValue].value
+      halfIL = round(root.field[cCasterLev].value/2, 0, -1)
+      addRange = halfIL * field[abValue2].value
+      field[abRange].value += addRange</eval>
+    </thing>
+  <thing id="cPWP1BlChn" name="Bolstering Channel" description="At 9th level, the battle templar may channel the energy of his god while recovering his martial strength. As a standard action, the battle templar recovers a single maneuver and may channel energy as part of that action." compset="ClSpecial" summary="Recover a maneuver and channel energy as a standard action">
+    <tag group="abAction" tag="Standard"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPWP1BfInv" name="Battlefield Invocation" description="At 10th level, the battle templar has reached a pinnacle of divine power and martial prowess that few ever do, and as such, is capable of amazing feats of skill. The battle templar expends a 4th level or higher spell slot as a free action and initiates a martial strike as normal. Allies (excluding the battle templar) within 60 ft. of his position witnessing this are invigorated by his power, and regain 10 hit points per level of the spell sacrificed to power this ability and a +4 morale bonus to attack and damage rolls for one round. This ability does not combine with the Reach of the Divine or the Shepherd the Flock class features." compset="ClSpecial" summary="Expend a 4th-level or higher spell when you perform a martial strike to heal and empower allies within 60&apos;">
+    <fieldval field="abRange" value="60"/>
+    <fieldval field="abDuration" value="1"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="abAction" tag="Free"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="LvNamePar" tag="IncRange"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   </document>
