@@ -5538,7 +5538,7 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="mSave" tag="WillPart"/>
     <tag group="mTarget" tag="CreatInt1" name="One creature with Intelligence 1 or higher"/>
     </thing>
-  <thing id="manPWTcSnp" name="Tactical Snap" description="The turtle, when it on it’s back, is helpless to defend itself and is immobilized unless it can right itself. The disciple of this discipline learns to use this inspirational creature’s weakness as a potent weapon by making a low and powerful strike that may knock his opponent prone. As part of this maneuver, the initiator makes a single melee attack. If this attack is successful, he may initiate a free trip attempt with a +2 competence bonus against his opponent that does not provoke an attack of opportunity." compset="PWManuever" summary="Successful attack allows free trip at +2" uniqueness="useronce">
+  <thing id="manPWTcSnp" name="Tactical Snap" description="The turtle, when it on its back, is helpless to defend itself and is immobilized unless it can right itself. The disciple of this discipline learns to use this inspirational creature’s weakness as a potent weapon by making a low and powerful strike that may knock his opponent prone. As part of this maneuver, the initiator makes a single melee attack. If this attack is successful, he may initiate a free trip attempt with a +2 competence bonus against his opponent that does not provoke an attack of opportunity." compset="PWManuever" summary="Successful attack allows free trip at +2" uniqueness="useronce">
     <usesource source="srcPathOfW" parent="pDscar"/>
     <tag group="mInitAct" tag="Standard1"/>
     <tag group="mLevel" tag="2"/>
@@ -5721,6 +5721,212 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="mRange" tag="Melee"/>
     <tag group="mTarget" tag="Creature1"/>
     <tag group="PathOfWar" tag="Manuever"/>
+    </thing>
+  <thing id="manPWMTrtS" name="Mithral Tortoise Stance" description="The Iron Tortoise disciple has become so comfortable in his armor that is like a second skin to him, and he is capable of moving better than most while wearing it. While in this stance, the initiator treats armor he is wearing as one type lighter (i.e. heavy armor is treated as medium armor, and this stacks with the mithral material bonus, treating heavy mithral armor as light armor), increases his maximum Dexterity modifier by +2, and his total armor check penalty is halved while in this stance (any armor check penalty from armor, shields, or encumbrance). Finally, due to being stronger from wearing his burden of metal so much, the initiator moves more freely, and gains a +2 dodge bonus to his AC and to his CMD." compset="PWManuever" summary="+2 dodge to AC, and your armor counts as one category lighter, gets +2 to max DEX, 1/2 ACP" uniqueness="useronce">
+    <fieldval field="mPreReq" value="2"/>
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="abValue2" value="2"/>
+    <fieldval field="abValue3" value="2"/>
+    <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.1"/>
+    <tag group="mDuration" tag="Stance" name="Stance" abbrev="Stance"/>
+    <tag group="mInitAct" tag="Swift1" name="1 swift action" abbrev="1 swift action"/>
+    <tag group="mLevel" tag="6"/>
+    <tag group="mRange" tag="Personal" name="Personal" abbrev="Personal"/>
+    <tag group="mTarget" tag="You" name="You" abbrev="You"/>
+    <tag group="mType" tag="Stance" name="Stance" abbrev="Stance"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="PathOfWar" tag="Stance" name="Stance" abbrev="Stance"/>
+    <eval phase="PostAttr" priority="10010"><![CDATA[~ Don't do anything if the stance isn't activated
+doneif (field[abilActive].value = 0)
+
+~ Give a +2 dodge bonus
+hero.child[ArmorClass].field[tACDodge].value += field[abValue].value
+
+foreach pick in hero from BaseArmor where "EquipType.Armor"
+
+  ~ Lighten armor by one category
+    if (eachpick.tagis[ArmorClass.Medium] <> 0) then
+      perform eachpick.delete[ArmorClass.Medium]
+      perform eachpick.assign[ArmorClass.Light]
+      perform eachpick.delete[ArmorCateg.Slows]
+    elseif (eachpick.tagis[ArmorClass.Heavy] <> 0) then
+      perform eachpick.delete[ArmorClass.Heavy]
+      perform eachpick.assign[ArmorClass.Medium]
+    endif
+
+  ~ Add +2 to armor max dex
+  eachpick.field[arMaxDex].value += field[abValue2].value
+
+  ~ Halve armor ACP
+  var newACP as number
+  newACP = eachpick.field[arArmorChk].value / field[abValue3].value
+  newACP = round(newACP,0,-1)
+  eachpick.field[arArmorChk].value = newACP
+  
+nexteach]]></eval>
+    </thing>
+  <thing id="manPWSTRsh" name="Snapping Turtle Rush" description="By charging forward to gain momentum, the martial disciple may make a powerful shield bash that may knock his foes to the ground, crippled with injuries. The martial disciple must make a charge attack using his shield which if successful inflicts an additional 8d6 points of damage and knocks his foe prone on a failed Reflex save (DC 16 + initiation modifier)." compset="PWManuever" summary="Charge attack does +8d6 damage and can knock foe prone." uniqueness="useronce">
+    <fieldval field="mPreReq" value="2"/>
+    <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.1"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="mInitAct" tag="Standard1"/>
+    <tag group="mLevel" tag="6"/>
+    <tag group="mType" tag="Strike"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="mTarget" tag="Creature1"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <tag group="mRange" tag="Charge1" name="One melee charge attack"/>
+    <tag group="mSave" tag="RefPart"/>
+    </thing>
+  <thing id="manPWStShl" name="Steel Shell" description="By steeling himself against an attack behind the wall of his mighty shield, an Iron Tortoise disciple may attempt to negate or reduce an incoming attack. The initiator makes an opposed attack roll using his base attack bonus plus shield bonus to AC against the opponent&apos;s attack roll. If successful, the attack is negated. If the opposed check is failed by the martial disciple, he instead gains DR 20/- to resist the attack." compset="PWManuever" summary="Roll BAB + shield bonus vs incoming attack, success negates attack, failure gives DR 20/- vs attack">
+    <fieldval field="mPreReq" value="2"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="mType" tag="Counter"/>
+    <tag group="mLevel" tag="6"/>
+    <tag group="mInitAct" tag="Immed1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="manPWTShCy" name="Throwing Shell Cyclone" description="The disciple of the Iron Tortoise levels his shield out and spins, releasing it to strike out as his foes in a flurry of clanging steel as it ricochets mercilessly against all within his range and lands firmly back in his waiting hand. The initiator throws his shield and it ricochets between all enemy targets within a 20 ft. burst of his position as a full round action before returning to his hand. This attack inflicts 12d6 points of damage to all targets who fail to make a Reflex save (DC 16 + initiation modifier) for half damage." compset="PWManuever" summary="Thrown shield does 12d6 damage (Ref for half) to all targets in 20-ft radius" uniqueness="useronce">
+    <fieldval field="mPreReq" value="2"/>
+    <fieldval field="mArea" value="20 ft. radius burst, centered on initiator"/>
+    <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.1"/>
+    <tag group="mInitAct" tag="Standard1"/>
+    <tag group="mLevel" tag="6"/>
+    <tag group="mType" tag="Strike"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <tag group="mRange" tag="20"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="mSave" tag="RefHalf"/>
+    </thing>
+  <thing id="manPWCShCr" name="Cyclonic Shell Crush" description="By making a wide, spinning strike with his shield, the Iron Tortoise master may bash all foes who surround him, teaching them that while he may be surrounded, he will not give up without a fight. The initiator makes a shield bash attack against all adjacent foes, each successful attack inflicts an additional +7d6 points of damage and may daze the target on a failed Fortitude save (DC 17 + initiation modifier) for 1d4 rounds." compset="PWManuever" summary="Shield bash all adjacent foes with +7d6 damage, foes must make Fort save or be dazed for 1d4 rnds" uniqueness="useronce">
+    <fieldval field="mPreReq" value="2"/>
+    <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.1"/>
+    <tag group="mLevel" tag="7"/>
+    <tag group="mType" tag="Strike"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="mInitAct" tag="Standard1"/>
+    <tag group="mRange" tag="Melee1"/>
+    <tag group="mTarget" tag="AllAdjEnm"/>
+    <tag group="mSave" tag="FortPart"/>
+    </thing>
+  <thing id="manPWIDRip" name="Iron Defender&apos;s Riposte" description="The Iron Tortoise master is wary of the danger to his charges that his enemies represent, and he is ready to spring into motion to defend them. By using this maneuver when an ally within 20-ft is attacked, the martial disciple may rush up 20 ft. to become adjacent his ally. Once there, he may make an opposed attack roll using his base attack bonus plus his shield bonus to AC to negate the attack to his ally. If successful, the attack is negated and he may make an immediate counter attack against that foe which inflicts an additional +4d6 points of damage and dazes them if the target fails a Fortitude save (DC 17 + initiation modifier)." compset="PWManuever" summary="When ally within 20&apos; is attacked, move up to them and roll BAB + shield bonus vs attack roll, success negates attack and you counter with +4d6 damage and may daze foe" uniqueness="useronce">
+    <fieldval field="mPreReq" value="2"/>
+    <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.1"/>
+    <tag group="mLevel" tag="7"/>
+    <tag group="mType" tag="Counter"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="mInitAct" tag="Immed1"/>
+    <tag group="mRange" tag="Ally20" name="One ally within 20 feet"/>
+    <tag group="mTarget" tag="Creature1"/>
+    <tag group="mSave" tag="FortPart"/>
+    </thing>
+  <thing id="manPWUnlAg" name="Unlimited Aggression" description="By assuming an aggressive posture and taunting his foes, the Iron Tortoise challenges all foes to face him if they dare. All enemies within 60 ft. must make a Will save (DC 17 + initiation modifier) to resist attacking the Iron Tortoise master on their next available action. Victims who fail this saving throw are free to choose how they will attack the Iron Tortoise disciple, but they must attack him." compset="PWManuever" summary="All enemies within 60&apos; must make Will save or attack you">
+    <fieldval field="mPreReq" value="2"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="mLevel" tag="7"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="mSave" tag="WillNeg"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="mType" tag="Boost"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="AllInt60" name="All enemies within 60 ft. with an Intelligence score of 3 or higher" abbrev="Enemies within 60&apos; w/INT 3 or more"/>
+    <tag group="mDescript" tag="MindAffect"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="manPWAdmSh" name="Adamantine Shell" description="By seemingly empowering his shield with his will and perfectly setting himself against an attack, the Iron Tortoise master may attempt to render almost any attack against his person harmless. The initiator makes an opposed attack roll using his base attack bonus plus shield bonus to AC which if successful negates the attack. On a failed opposed attack roll, instead gain DR 40/- against that attack." compset="PWManuever" summary="Roll BAB + shield bonus vs incoming attack, success negates attack, failure gives DR 40/- vs attack">
+    <fieldval field="mPreReq" value="3"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="mType" tag="Counter"/>
+    <tag group="mLevel" tag="8"/>
+    <tag group="mInitAct" tag="Immed1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="manPWGShSh" name="Glorious Shell Shock" description="By sweeping his shield in a deadly arc, the martial disciple may send up to three adjacent foes flying away with bone-shattering force. The initiator makes a single shield bash attempt and applies the attack roll to up to three adjacent foes; any successful attacks to these targets inflict an additional +8d6 points of damage and send them hurtling up to 20 ft. away. The initiator determines which direction his foes are hurled to." compset="PWManuever" summary="Shield bash up to 3 foes with +8d6 damage, send them flying 20 ft" uniqueness="useronce">
+    <fieldval field="mPreReq" value="3"/>
+    <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.1"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="mDuration" tag="Round1"/>
+    <tag group="mInitAct" tag="Standard1"/>
+    <tag group="mLevel" tag="8"/>
+    <tag group="mType" tag="Strike"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="mRange" tag="Melee"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <tag group="mTarget" tag="AdjEnm3" name="Up to three adjacent creatures"/>
+    </thing>
+  <thing id="manPWTGStn" name="Turtle General&apos;s Stance" description="This stance represents the Iron Tortoise warrior&apos;s ability for self sacrifice for the defense of others. While in this stance, the initiator may set his shield against incoming cone and line effects, making an attack roll with his shield against the attack roll or caster level (whichever applies, attack roll for breath weapons for example, or caster level for lightning bolt for another example) which if successful, line attacks immediate end upon the initiator&apos;s shield. Cone effects are negated in a line behind the disciple from the direction of the attack. Additionally, while in this stance the initiator gains a +2 bonus to his shield armor class bonus." compset="PWManuever" summary="Increase shield AC bonus by +2, and you can stop cone/line effects with a shield bash" uniqueness="useronce">
+    <fieldval field="mPreReq" value="3"/>
+    <fieldval field="abValue" value="2"/>
+    <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.1"/>
+    <tag group="PathOfWar" tag="Stance" name="Stance" abbrev="Stance"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="mDuration" tag="Stance" name="Stance" abbrev="Stance"/>
+    <tag group="mInitAct" tag="Swift1" name="1 swift action" abbrev="1 swift action"/>
+    <tag group="mLevel" tag="8"/>
+    <tag group="mRange" tag="Personal" name="Personal" abbrev="Personal"/>
+    <tag group="mTarget" tag="You" name="You" abbrev="You"/>
+    <tag group="mType" tag="Stance" name="Stance" abbrev="Stance"/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <eval phase="Final" priority="10000" index="2"><![CDATA[~ Don't do anything more if the stance isn't activated
+doneif (field[abilActive].value = 0)
+
+~ Add to shield AC bonus
+hero.child[ArmorClass].field[tACShield].value += field[abValue].value]]></eval>
+    </thing>
+  <thing id="manPWInvSh" name="Invulnerable Shell of the Iron Tortoise" description="The ultimate technique of the Iron Tortoise discipline, the master of this discipline learns to use his unbreakable will to bolster his shield to defend himself and his allies from any attack. He plants his feet, holds his shield aloft against the oncoming attacks, and weathers the storm, unbreakable. By initiating this counter, any and all damaging or harmful effects that could effect the initiator and any of his adjacent allies are instantly negated as he and his wards take shelter under his shield and unshakable will. The initiator of this maneuver must be aware of the attack to be able to counter it, thus he must not be caught flat-footed by it. This is a supernatural maneuver." compset="PWManuever" summary="Negate all damaging or harmful effects to you and your allies">
+    <fieldval field="mPreReq" value="4"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="mType" tag="Counter"/>
+    <tag group="mLevel" tag="9"/>
+    <tag group="mInitAct" tag="Immed1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="mTarget" tag="YouAndAll" name="You and all adjacent allies"/>
+    <tag group="mDuration" tag="Instant"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="manPWAgWnd" name="Aggravated Wounds" description="By making aggravating wounds and aggressive, intimidating postures, the disciple&apos;s attacks possess an unusual amount of threatening power. Each successful melee attack the initiator makes causes those hit by those attacks to suffer a -4 cumulative penalty on attack rolls against any target except the initiator himself." compset="PWManuever" summary="Each hit gives foe a stacking -4 penalty to hit anyone but you">
+    <fieldval field="mPreReq" value="1"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="mLevel" tag="4"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="PathOfWar" tag="Manuever"/>
+    <tag group="mDuration" tag="Round1"/>
+    <tag group="mType" tag="Boost"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="AbilType" tag="Extra"/>
     </thing>
   <hidden id="manPWBwTw5"/>
   <hidden id="manPWTaWi1"/>
