@@ -2119,7 +2119,7 @@ endif]]></eval>
     <tag group="abRange" tag="Feet"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="PostLevel" priority="10000">      ~ Range is 25 ft + 5 ft per two initiator levels
+    <eval phase="PostLevel" priority="10000">~ Range is 25 ft + 5 ft per two initiator levels
       var halfIL as number
       var addRange as number
       field[abRange].value = field[abValue].value
@@ -2141,5 +2141,231 @@ endif]]></eval>
     <tag group="LvNamePar" tag="IncRange"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cHelpPWPC2" name="Bladecaster" compset="Class" uniqueness="unique">
+    <fieldval field="cHDSides" value="10"/>
+    <fieldval field="cAbbr" value="Bcs"/>
+    <fieldval field="cSkills" value="4"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cMagLevTot" index="3" value="3"/>
+    <arrayval field="cMagLevTot" index="4" value="4"/>
+    <arrayval field="cMagLevTot" index="5" value="5"/>
+    <arrayval field="cMagLevTot" index="6" value="6"/>
+    <arrayval field="cMagLevTot" index="7" value="7"/>
+    <arrayval field="cMagLevTot" index="8" value="8"/>
+    <arrayval field="cKnowTot" index="1" value="1"/>
+    <arrayval field="cKnowTot" index="2" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="3" value="2"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="3" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="4" value="2"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="4" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="5" value="3"/>
+    <arrayval field="cKnowTot" index="5" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="5" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="6" value="3"/>
+    <arrayval field="cKnowTot" index="6" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="6" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="7" value="4"/>
+    <arrayval field="cKnowTot" index="7" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="7" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="8" value="4"/>
+    <arrayval field="cKnowTot" index="8" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="8" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="9" value="5"/>
+    <arrayval field="cKnowTot" index="9" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="9" column="2" value="2"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="Classes" tag="PWBldcastr"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ExtraLev1" tag="Arcane"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="ClassSkill" tag="skKnowArca"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="ClassSkill" tag="skPercep"/>
+    <tag group="ClassSkill" tag="skSenseMot"/>
+    <tag group="ClassSkill" tag="skSpellcr"/>
+    <tag group="ClassSkill" tag="skStealth"/>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="cPWP1Man">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cCfgPWPC2"></bootstrap>
+    <bootstrap thing="cPWP2MtCst">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP2StaAS">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP2ArcSt">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPWP2ArcRc">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPWP2BcStr">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPWP2ArcRn">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPWP2MrtCS">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3ImpBC">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPWP2ArcAs">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <eval phase="PostLevel" index="2"><![CDATA[        ~ Have the PrC's maneuver configurator inherit the discipline list of the existing initiator class it follows
+        perform hero.childfound[cPWP1Man].field[usrChosen1].chosen.pulltags[Discipline.?]
+        perform hero.childfound[cCfgPWPC2].pushtags[Discipline.?]]]></eval>
+    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
+      Call PWsetupIL</eval>
+    </thing>
+  <thing id="cPWBldcast" name="Bladecaster" description="For some, the technique of blending both the skills of the warrior with the arts of the magic-user is an impossible task, the mind or the body lacking in the strengths needed for such an arduous undertaking. Those rare few who are both strong of arm and quick of mind have to the potential to blend these two differing schools and create a new whole. Using techniques gained from the champions of the fey worlds and taken from their pupils, the elves, the techniques of the bladecaster have spread amongst the races.\n\nBy fortifying the body with arcane might, the bladecaster can force his magic to augment his physical abilities and increase his martial capabilities to supernatural levels. These practices have been mastered by many races, and each race has added something new to the pursuit of martial and arcane supremacy, and the bladecaster in the world today uses techniques that have spread for hundreds of years amongst all civilized races. In the modern day, one can find bladecasters where their talents are most desired: on battlefields and in hot spots where great armies clash. Bladecasters stride as lords of war, arcane energies rippling about them as they sunder the strength of their foes. Most bladecasters are warder/wizards, warder/magus, or warlord/ sorcerers, though some warder/witches are known who traffic with the fey realms.\n\nMost bladecaster are warder/wizards, warder/magus, or warlord/sorcerers, though some warder/witches are known who traffic with the fey realms. Few stalkers pursue this route, and those that do often are multiclassed with magus." compset="ClassLevel" maxlimit="10">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpPWPC2"></bootstrap>
+    <link linkage="helper" thing="cHelpPWPC2"/>
+    <exprreq message="Base Attack Bonus +4 required"><![CDATA[#BAB[] >= 4]]></exprreq>
+    <exprreq message="Knowledge (Martial) 5 ranks required"><![CDATA[#skillranks[skPWKnowMa] >= 5]]></exprreq>
+    <exprreq message="Spellcraft 5 ranks required"><![CDATA[#skillranks[skSpellcr] >= 5]]></exprreq>
+    <exprreq message="Ability to cast 2nd-level arcane spells required."><![CDATA[tagcount[Hero.Arcane] >= 2]]></exprreq>
+    <exprreq message="Must be able to use at least one martial maneuver"><![CDATA[tagcount[PathOfWar.HeroInit] <> 0]]></exprreq>
+    <exprreq message="Combat Casting feat required."><![CDATA[#hasfeat[fComCast] <> 0]]></exprreq>
+    <exprreq message="Improved Counterspell feat required."><![CDATA[#hasfeat[fImpCount] <> 0]]></exprreq>
+    <exprreq message="Must be able to use at least one martial stance."><![CDATA[tagcount[HasStance.?] <> 0]]></exprreq>
+    </thing>
+  <thing id="cCfgPWPC2" name="Bladecaster Maneuvers" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Maneuvers"/>
+    <fieldval field="cfgObject2" value="Stances"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClsCountAs" tag="cHelpPWPC2"/>
+    <eval phase="First" index="2">~ Setup the Maneuvers
+      perform hero.pushtags[Discipline.?]</eval>
+    <eval phase="Final" priority="11000">~ Setup the Maneuvers
+      Call PWsetupCfg</eval>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPWP2MtCst" name="Martial Caster" description="At 1st level, the blending of arcane magic and martial maneuvers begins to flower into an effective and unique fighting style. The bladecaster may select one arcane spellcasting class that he possesses; he may now cast its spells in light armor without suffering interference from arcane spell failure chance." compset="ClSpecial" summary="Cast spells in light armor">
+    <fieldval field="usrCandid1" value="ClassType.? &amp; CasterSrc.Arcane"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ChooseSrc1" tag="Hero"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ Do nothing if a selection hasn't been made
+      doneif (field[usrChosen1].ischosen <> 1)
+
+      perform field[usrChosen1].chosen.assign[CastArmor.Light]]]></eval>
+    </thing>
+  <thing id="cPWP2StaAS" name="Stance of Arcane Steel" description="Beginning at 1st level, the bladecaster learns how to channel his arcane energies to assist his physical abilities in the theater of war. As a swift action, the bladecaster may forgo the use of any stance he is in to assume the stance of arcane steel. This stance is equivalent to a 3rd level stance of no particular discipline. The bladecaster gains the ability to burn his arcane energy to empower his martial abilities. As a free action, the bladecaster may sacrifice uncast spells or spell slots to grant himself one of the following bonuses for one round. At 5th level, these bonuses persist for two rounds, and these bonuses persist for three rounds at 9th level.\n\n[i]Arcane Edge[/i]: The bladecaster gains an insight bonus on attack rolls equal to the spell’s level.\n\n[i]Eldritch Smite[/i]: The bladecaster adds 1d6 points of extra damage per level of the spell. If the weapon possesses an enhancement that inflicts elemental damage (such as flaming) or if the spell possesses an elemental type (such as wall of fire possessing the [Fire] type), then this bonus damage may use that energy type; otherwise it is force damage.\n\n[i]Defensive Field[/i]: The bladecaster gains a bonus to AC equal to the spell’s level.\n\n[i]Grace of the Arcane[/i]: The bladecaster gains an insight bonus on Fortitude and Reflex saving throws equal to the spell’s level.\n\n[i]Energy Shield[/i]: The bladecaster gains resistance to acid, cold, electricity, fire, or sonic equal to 5 × the spell’s level." compset="ClSpecial" summary="Martial stance; expend spells to gain combat bonuses">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="mType" tag="Stance"/>
+    <tag group="mLevel" tag="3"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="mDuration" tag="Stance"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Grant damage reduction
+      #applydr[xDamRdAdam, field[abValue].value]
+
+      ~ Apply the PathOfWar.StanceOn tag
+      perform hero.assign[PathOfWar.StanceOn]]]></eval>
+    <evalrule phase="PostAttr" priority="10000" message="Too many stances activated"><![CDATA[      ~ If we're not enabled, do nothing
+      validif (field[abilActive].value = 0)
+
+      ~ Make sure we don't exceed the allowed number of stances
+      validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
+  <thing id="cPWP2ArcSt" name="Arcane Steel" description="At 2nd level a bladecaster can fortify his body with its very own magic. Whenever a bladecaster casts an arcane spell, he gains a defense field of energy that protects him from harm. The bladecaster gains temporary hit points equal to twice the spell’s level. These defensive field hit points stack with those gained from further casting of other spells using this ability and last until the end of the encounter or until depleted by attacks." compset="ClSpecial" summary="Gain temporary HP when you cast an arcane spell">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cPWP2ArcRc" name="Arcane Recovery" description="At 3rd level, a bladecaster knows how to expend his magic to enhance his fighting and his arcane ability simultaneously. As a free action, the character may expend a prepared spell or spell slot to recover an expended maneuver. The bladecaster sacrifices a prepared arcane spell or spell slot of a level equal to or great than the maneuver level to be recovered, and the maneuver is instantly recovered. While suffused with arcane energies for maneuver recovery, the bladecaster gains a +2 circumstance bonus to his caster level on the next arcane spell he casts (within one minute of using arcane recovery; multiple recoveries do not stack or accrue multiple uses)." compset="ClSpecial" summary="Recover maneuvers by expending spell slots">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Free"/>
+    </thing>
+  <thing id="cPWP2BcStr" name="Battlecaster&apos;s Strike" description="At 4th level, the bladecaster learns techniques that allow him to unleash his offensive magic through the medium of his weapon, delivering magic at melee or range with equal potency. When the bladecaster initiates a martial strike, as a swift action he may cast an arcane spell (with a range of touch and a level equal to or less than the level of the strike initiated) against the same target as the strike. These spells must have a range of touch. If the bladecaster would provoke an attack of opportunity for casting a spell within a threatened square, he may attempt to cast defensively as normal. He may utilize this ability a number of times per day equal to 1 + the bladecaster’s initiator modifier (minimum of 1)." compset="ClSpecial" summary="As a swift action, cast a spell against the target of your martial strike.">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="ChargeCalc" tag="AttrUses1"/>
+    <tag group="ChargeAttr" tag="Minimum1"/>
+    <tag group="User" tag="Tracker"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[      ~ Stop now if we haven't picked a maneuver list
+      doneif (hero.childfound[cPWP1Man].field[usrChosen1].ischosen <> 1)
+      ~Figure out which ability is our initiator modifier
+      var tagstr as string
+      tagstr = root.tagids[ClsCountAs.?]
+      foreach pick in hero from Configure where tagstr
+        perform eachpick.setfocus
+      nexteach
+
+      ~ Assign the ability as the ChargeAttr for this class special
+      tagstr = focus.tagids[UseAttr.?]
+      tagstr = replace(tagstr, "UseAttr", "ChargeAttr", 0)
+      perform this.assignstr[tagstr]]]></eval>
+    </thing>
+  <thing id="cPWP2ArcRn" name="Arcane Ruin" description="At 5th level, the bladecaster brings ruin to his foes with every stroke of his blade and opens their defenses to the power of his arcane magic. A foe damaged by his martial strikes find that it suffers increased difficulties resisting the bladecaster’s magic, suffering a -2 penalty to its Armor Class and saving throws against the bladecaster’s arcane spells on subsequent rounds for the remainder of the encounter, or until the bladecaster recovers his maneuvers." compset="ClSpecial" summary="Foes damaged by your martial strikes suffer -2 to AC and saves vs. your spells">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cPWP2MrtCS" name="Martial Counterspell" description="At 7th level, the bladecaster learns to be able to use a readied counter and his own arcane energies to counter an enemy spellcaster’s magic. If the bladecaster is targeted by or subjected to a spell or spell-like ability, he may as an immediate action expend a readied counter and steel himself against it with a bold act of martial prowess (the expended counter’s effects are lost in the use of this ability) and make a Spellcraft check (DC 15 + the spell’s level) as a free action to identify the spell being used. He may then make an initiator level check (1d20 + the bladecaster’s initiator level) against a DC equal to 11 + the spell’s caster level; if successful, the spell is successfully countered. If he is unsuccessful, the spell functions as normal." compset="ClSpecial" summary="Use a martial counter as a counterspell">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cPWP3ImpBC" name="Improved Battlecasting" description="At 9th level, the bladecaster has become so accomplished at blending his arcane magic with his martial prowess that he may now utilize ranged touch spells against foes with as if they were melee touch spells when utilizing his battlecaster’s strike." compset="ClSpecial" summary="Use ranged touch spells as melee touch spells with Battlecaster&apos;s Strike">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cPWP2ArcAs" name="Arcane Assault" description="At 10th level, the bladecaster is capable of fully blending his arcane abilities with his martial talent. The bladecaster is capable of sculpting his very magic into the implements of war, enabling it to deliver his martial maneuvers. The bladecaster may activate this ability as a free action when he casts a spell that requires an attack roll. He may initiate a strike as a free part of casting that spell, using the spell in place of his normal ranged or melee attack, as appropriate (the spell effectively delivers the maneuver’s effects in place of the bladecaster’s weapon.) The spell’s range is reduced to 30-ft or closer (if the spell’s range is smaller, then use that), and spell resistance or a successful saving throw against the spell effect negates the maneuver being used. Spells that create multiple attacks or that target multiple creatures only have the strike added to the first such attack. This ability may be used a number of times equal to 1 + initiator modifier per day." compset="ClSpecial" summary="Use a martial strike with an attack spell">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Free"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="ChargeCalc" tag="AttrUses1"/>
+    <eval phase="PreAttr" priority="10000"><![CDATA[      ~ Stop now if we haven't picked a maneuver list
+      doneif (hero.childfound[cPWP1Man].field[usrChosen1].ischosen <> 1)
+      ~Figure out which ability is our initiator modifier
+      var tagstr as string
+      tagstr = root.tagids[ClsCountAs.?]
+      foreach pick in hero from Configure where tagstr
+        perform eachpick.setfocus
+      nexteach
+
+      ~ Assign the ability as the ChargeAttr for this class special
+      tagstr = focus.tagids[UseAttr.?]
+      tagstr = replace(tagstr, "UseAttr", "ChargeAttr", 0)
+      perform this.assignstr[tagstr]]]></eval>
     </thing>
   </document>
