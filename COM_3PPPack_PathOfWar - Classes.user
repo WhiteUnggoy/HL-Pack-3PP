@@ -2368,4 +2368,329 @@ endif]]></eval>
       tagstr = replace(tagstr, "UseAttr", "ChargeAttr", 0)
       perform this.assignstr[tagstr]]]></eval>
     </thing>
+  <thing id="cHelpPWPC3" name="Dragon Fury" compset="Class" uniqueness="unique">
+    <fieldval field="cHDSides" value="12"/>
+    <fieldval field="cAbbr" value="DFr"/>
+    <fieldval field="cSkills" value="4"/>
+    <arrayval field="cKnowTot" index="1" value="1"/>
+    <arrayval field="cKnowTot" index="2" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="3" value="2"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="3" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="4" value="2"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="1"/>
+    <arrayval field="cKnowTot" index="4" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="5" value="3"/>
+    <arrayval field="cKnowTot" index="5" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="5" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="6" value="3"/>
+    <arrayval field="cKnowTot" index="6" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="6" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="7" value="4"/>
+    <arrayval field="cKnowTot" index="7" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="7" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="8" value="4"/>
+    <arrayval field="cKnowTot" index="8" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="8" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="9" value="5"/>
+    <arrayval field="cKnowTot" index="9" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="9" column="2" value="2"/>
+    <tag group="ClassSkill" tag="skSenseMot"/>
+    <tag group="ClassSkill" tag="skSurvival"/>
+    <tag group="cFort" tag="Good"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="Classes" tag="PWPC3" name="Dragon Fury"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="skBluff"/>
+    <tag group="ClassSkill" tag="skClimb"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="ClassSkill" tag="skPercep"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <bootstrap thing="cCfgPWPC3"></bootstrap>
+    <bootstrap thing="cPWP1Man">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="cPW3DrFrTr">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFFoc">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFFoc">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFFoc">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFFoc">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3Sharp">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DoTC">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFDef">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFDef">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFDef">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3VicFn">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DFRec">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPWP3DWGD">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
+      Call PWsetupIL</eval>
+    </thing>
+  <thing id="cPWDragFur" name="Dragon Fury" description="The disciple of the Thrashing Dragon discipline knows the controlled fury of the dragon’s rage on the battlefield, the sinuous twists and the lashing claws of that savage beast are engraved in the body of its student. By devoting one’s self to the vicious style, the disciple learns many things on how best to emulate the dragon and its fighting style. The ferocity and grace in each twist of the blade and each leap that he makes hides a fierce power and determination to win. These specialists are known as dragon furies, and a dragon’s deep well of wrath lives within their hearts and pumps its fury to every inch of their body. Most dragon furies hail from the ranks of stalkers and warlords, and some from the occasional bard or ranger. The most terrifying also know of the potency of true primal rage and have a background in the barbarian class." compset="ClassLevel" maxlimit="10">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpPWPC3"></bootstrap>
+    <link linkage="helper" thing="cHelpPWPC3"/>
+    <exprreq message="Base Attack Bonus +4 required"><![CDATA[#BAB[] >= 4]]></exprreq>
+    <exprreq message="Knowledge (Martial) 6 ranks required"><![CDATA[#skillranks[skPWKnowMa] >= 6]]></exprreq>
+    <exprreq message="Acrobatics 6 ranks required"><![CDATA[#skillranks[skAcrobat] >= 6]]></exprreq>
+    <exprreq message="Must be able to use at least one Thrashing Dragon stance"><![CDATA[tagcount[HasStance.ThrashDrag] > 0]]></exprreq>
+    <exprreq message="Two-Weapon Fighting feat required"><![CDATA[#hasfeat[fTwoWep] <> 0]]></exprreq>
+    <prereq message="Must know at least one Thrashing Dragon strike">
+      <validate><![CDATA[foreach pick in hero from PWManuever where "mType.Strike & Discipline.ThrashDrag"
+  @valid = 1
+nexteach]]></validate>
+      </prereq>
+    <prereq message="Must be able to use 3rd-level maneuvers">
+      <validate><![CDATA[foreach pick in hero from PWManuever where "!mType.Stance"
+  validif (eachpick.tagvalue[mLevel.?] >= 3)
+nexteach]]></validate>
+      </prereq>
+    <prereq message="Discipline Focus (Thrashing Dragon) feat required">
+      <validate><![CDATA[foreach pick in hero from BaseFeat where "IsFeat.fPWDiscFoc"
+  validif (eachpick.field[usrChosen1].chosen.tagis[Discipline.ThrashDrag] <> 0)
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cCfgPWPC3" name="Dragon Fury Maneuvers" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Maneuvers"/>
+    <fieldval field="cfgObject2" value="Stances"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClsCountAs" tag="cHelpPWPC3"/>
+    <tag group="Discipline" tag="BrokenBlad"/>
+    <tag group="Discipline" tag="PrimalFury"/>
+    <eval phase="First" index="2">~ Setup the Maneuvers
+      perform hero.pushtags[Discipline.?]</eval>
+    <eval phase="Final" priority="11000">~ Setup the Maneuvers
+      Call PWsetupCfg</eval>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPW3DrFrTr" name="Dragon Fury Training" description="The path of the dragon fury has semi-mystical roots in several different traditions and schools of thought, allowing divergent paths to come together as one in the hands of its practitioners. If the character possesses one of the following abilities: bardic performance, ki pool, or rage; the character may add his class level to the class that offers that ability to determine the number of bardic performance rounds, ki points, or rounds of rage that he may use per day. This does not improve their effectiveness; this only increases the number of uses per day." compset="ClSpecial" summary="Gain daily uses of ki, rage, or bardic perfomance if you already had those features">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000">~ The rules state that our levels in this class ONLY count for uses/day of these other class features, not their effectiveness.  So we have to add to their trkMax instead of their level counts.
+
+      var lev as number
+      var halfLev as number
+      var doubleLev as number
+      lev = field[xTotalLev].value
+      halfLev = round(lev/2,0,-1)
+      doubleLev = lev * 2      
+      
+      ~ Barbarian Rage 
+      #trkmax[cBbnRage] += doubleLev
+
+      ~ Bardic Performance
+      #trkmax[cBrdPerfor] += doubleLev
+
+      ~ Ki Pool
+      #trkmax[cMnkKiPool] += halfLev
+      #trkmax[cPW2KiPool] += halfLev</eval>
+    </thing>
+  <thing id="cPWP3DFFoc" name="Dual Fang Focus" description="The dragon fury is a practitioner of two-weapon fighting styles and suffers fewer penalties when fighting with two weapons or a double weapon. He adds a +1 competence bonus to attack and damage rolls while two-weapon fighting with these weapons at 1st level. This bonus increases by +1 at 4th level, and again at 7th and 10th levels." compset="ClSpecial" summary="Gain bonuses while fighting with two weapons">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~only perform the calculations for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+      field[abSumm].text = signed(field[abValue].value) & " to hit and damage when dual-wielding"
+
+      ~ Stop if we're not dual-wielding or using a double weapon
+      doneif (hero.tagcount[Hero.EquipWep] + hero.tagcount[Hero.EquipDbl] <> 2)
+
+
+      ~ Give to-hit and damage bonus
+      foreach pick in hero from BaseWep where "Hero.MainHand | Hero.OffHand"
+        eachpick.field[BonComp].value += field[abValue].value
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPWP3Sharp" name="Sharp Fang" description="The dragon fury gains the Power Attack feat (even if he does not meet the prerequisites for this feat), and when fighting with two weapons in his hands (or when wielding a double weapon), he treats these weapons as if he were wielding both weapons as main hand weapons for the purposes of calculating the damage bonuses.\n\n[b]NOTE:[/b] Due to a limitation in Hero Lab, this does not work with double weapons." compset="ClSpecial" summary="Gain Power Attack feat, and it counts both weapons as main-hand">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="fPowerAtt">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="PostAttr" priority="50000"><![CDATA[      ~Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~only perform the calculations for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      field[abValue].value += field[xCount].value
+
+      ~ Stop if we're not dual-wielding or using a double weapon
+      doneif (hero.tagcount[Hero.EquipWep] + hero.tagcount[Hero.EquipDbl] <> 2)
+
+      ~ Adding the Double Slice tag removes the offhand damage penalty
+      ~ Wait, reading the text again I don't think this should be done, it's only for Power Attack, leaving this here for now in case I turn out to be wrong.
+      ~perform hero.assign[Hero.DblSlice]
+
+      ~ If we're Power Attacking, we need to adjust the damage bonus for the offhand weapon
+      if (hero.tagis[Activated.fPowerAtt] <> 0) then
+        foreach pick in hero from BaseWep where "Hero.OffHand & !Hero.MainHand"
+            eachpick.field[wDamMelee].value += hero.child[Damage].field[tDamPower].value/2
+        nexteach
+      endif]]></eval>
+    </thing>
+  <thing id="cPWP3DoTC" name="Dance of Thrashing Claws" description="As the buffeting wings and heavy scales of the dragon protect its vital areas in battle, so do the paired weapons of the dragon fury. While one weapon defends the dragon fury, the other one lies waiting to continue the defense and see the martial disciple to victory. While in Thrashing Dragon stance and using a counter of the Broken Blade, Primal Fury, or Thrashing Dragon discipline, the character may use that counter one additional time (if necessary) before his next turn." compset="ClSpecial" summary="Use counter one extra time while in Thrashing Dragon stance">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cPWP3DFDef" name="Dragon Fury Defense" description="Mastering the art of fighting with two weapons in his hands or when wielding a double weapon, the dragon fury learns how to better defend himself with his dual weapons. He gains a +1 shield bonus to his Armor Class at 3rd level. This increases to +2 at 6th level, and to +3 at 9th level. To gain this bonus to his Armor Class, the dragon fury must be fighting with two weapons or a double weapon and must be in a Broken Blade, Primal Fury, or Thrashing Dragon stance." compset="ClSpecial">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~only perform the calculations for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ Stop if we're not dual-wielding or using a double weapon
+      doneif (hero.tagcount[Hero.EquipWep] + hero.tagcount[Hero.EquipDbl] <> 2)
+
+      ~ Stop if we're not in a stance from one the correct disciplines
+      var IsInStance as number
+      var targetDisc as string
+      var staTotal as number
+      staTotal = 0
+      targetDisc = "ThrashDrag"
+      call PWinDSta
+      staTotal += IsInStance
+      targetDisc = "BrokenBlad"
+      call PWinDSta
+      staTotal += IsInStance
+      targetDisc = "PrimalFury"
+      call PWinDSta
+      staTotal += IsInStance
+      doneif (staTotal < 1)
+
+      ~ Apply shield bonus to AC
+      #applybonus[tACShield, hero.child[ArmorClass], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPWP3VicFn" name="Vicious Fang" description="At 5th level, the dragon fury uses Sharp Fang as if both of his wielded weapons were wielded as two-handed weapons (gaining a damage bonus equal to +3 per point of attack bonus subtracted).\n\n[b]NOTE:[/b] Due to a limitation in Hero Lab, this does not work with double weapons." compset="ClSpecial" summary="Power Attack counts both weapons as two-handed">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="50000"><![CDATA[      ~Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~only perform the calculations for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      field[abValue].value += field[xCount].value
+
+      ~ Stop if we're not dual-wielding or using a double weapon
+      doneif (hero.tagcount[Hero.EquipWep] + hero.tagcount[Hero.EquipDbl] <> 2)
+
+      ~ If we're Power Attacking, we need to adjust the damage bonus for the offhand weapon
+      if (hero.tagis[Activated.fPowerAtt] <> 0) then
+        foreach pick in hero from BaseWep where "Hero.OffHand |Hero.MainHand"
+            eachpick.field[wDamMelee].value += hero.child[Damage].field[tDamPower].value/2
+        nexteach
+      endif]]></eval>
+    </thing>
+  <thing id="cPWP3DFRec" name="Deadly Fang Recovery" description="At 8th level, the dragon fury’s ability to rend his foes asunder and continue the fight is nearly unmatched, spurring him to greater martial displays of prowess. Whenever the dragon fury reduces a foe to 0 hit points or fewer in a turn while executing a martial strike of his in-class disciplines or while full attacking an opponent while two-weapon fighting, the character may recover one expended maneuver." compset="ClSpecial" summary="Recover a maneuver when you fell a foe with discipline strikes or TWF">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cPWP3DWGD" name="Dragon War God&apos;s Dance" description="At 10th level, the dragon fury gains a potent stance as the master level of his craft. The dragon fury may abandon a stance he is currently in to assume this stance as a swift action, losing the benefits of the previous stance to gain the benefits of this one. This stance is considered to be a stance of the Broken Blade, Primal Fury, and Thrashing Dragon disciplines. While in the Dragon War God’s Dance, as a full round action the character may move any distance as a free action, so as long as his total movement for the round does not exceed twice his movement speed. He may continue subsequent attacks (up to his maximum number of attacks on a full attack action) after this movement is complete, so long as he has moved at least 10-ft prior to the last attack. Each attack inflicts an additional 4d6 points of damage. Unlike most stances, this stance is particularly strenuous, and may only be maintained for a number of rounds equal to 5 + Constitution modifier, after which he reverts to his previous stance and is fatigued for a number of rounds equal to the number of rounds he was in this stance. Once he has recovered from the Dragon War God’s Dance, he may resume it again if he should so choose." compset="ClSpecial" summary="Martial stance; move as a free action while full-attacking, deal +4d6 damage per hit">
+    <fieldval field="actName2" value="Fatigued"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="mType" tag="Stance"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="mDuration" tag="Stance"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <tag group="Discipline" tag="BrokenBlad"/>
+    <tag group="Discipline" tag="PrimalFury"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="PathOfWar" tag="Stance"/>
+    <tag group="PathOfWar" tag="StanceClSp"/>
+    <tag group="ChargeCalc" tag="AttrUses5"/>
+    <tag group="ChargeAttr" tag="aCON"/>
+    <tag group="User" tag="Tracker"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Apply the PathOfWar.StanceOn tag
+      perform hero.assign[PathOfWar.StanceOn]
+
+      ~ Add extra damage to attacks
+      foreach pick in hero from BaseWep
+        #extradamage[eachpick, "+4d6", field[thingname].text]
+      nexteach]]></eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      if (field[abilAct2].value <> 0) then
+        ~activate the Fatigued condition
+        perform hero.assign[Condition.pcnFatigue]
+        ~we can't enter a rage while fatigued
+        perform assign[Helper.ChgDisab1]
+      endif]]></eval>
+    <evalrule phase="PostAttr" priority="10000" message="Too many stances activated"><![CDATA[      ~ If we're not enabled, do nothing
+      validif (field[abilActive].value = 0)
+
+      ~ Make sure we don't exceed the allowed number of stances
+      validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
   </document>

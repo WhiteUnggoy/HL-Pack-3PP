@@ -28,6 +28,7 @@
     <value id="Stance"      name="Stance"/>
     <value id="StanceOn"    name="Stance Activated"/>    
     <value id="StanceUp"    name="Stance Allowed Up"/>
+	<value id="StanceClSp"	name="Stance From Class Special"/>
   </group>
 
   <!-- Martial Discipline custom tags -->

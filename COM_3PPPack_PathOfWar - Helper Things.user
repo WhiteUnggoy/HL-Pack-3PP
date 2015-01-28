@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
   <fileinfo>
     <info_author>Tim Shadow
@@ -84,7 +84,7 @@
       sBreak = "{br}"
 
       ~ Loop through all the Path of War Maneuvers
-      foreach thing in Ability where "PathOfWar.Manuever|PathOfWar.Stance"
+      foreach thing in Ability where "PathOfWar.Manuever|PathOfWar.Stance & !PathOfWar.StanceClSp"
         sText = "{b}Discipline:{/b} " &eachthing.tagnames[Discipline.?] & " (" & eachthing.tagnames[mType.?] & ")"
 
         ~ If we have a descriptor tag then add it into the header text
@@ -139,238 +139,234 @@
         perform eachthing.amendthing[description,sText]
         perform eachthing.amendthing[name,sName]
       nexteach]]></eval>
-  </thing>
-
+    </thing>
   <thing id="dPWBlkSrph" name="Black Seraph Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="BlackSerph"/>
     </thing>
   <thing id="dPWBrknBld" name="Broken Blade Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="BrokenBlad"/>
     </thing>
   <thing id="dPWCreWin" name="Crescent Wind Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="CresceWind"/>
     </thing>
   <thing id="dPWGolLio" name="Golden Lion Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="GoldenLion"/>
     </thing>
   <thing id="dPWIronTrt" name="Iron Tortoise Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="IronTort"/>
     </thing>
   <thing id="dPWPriFur" name="Primal Fury Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="PrimalFury"/>
     </thing>
   <thing id="dPWScaThr" name="Scarlet Throne Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="ScarletThr"/>
     </thing>
   <thing id="dPWSlvrCrn" name="Silver Crane Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="SilvrCrane"/>
     </thing>
   <thing id="dPWSolWin" name="Solar Wind Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="SolarWind"/>
     </thing>
   <thing id="dPWSteSer" name="Steel Serpent Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="SteelSerp"/>
     </thing>
   <thing id="dPWThraDra" name="Thrashing Dragon Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="ThrashDrag"/>
     </thing>
   <thing id="dPWVldMoon" name="Veiled Moon Discipline" compset="SplSchool">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="Discipline"/>
+    <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="VeiledMoon"/>
     </thing>
-
-
   <thing id="zPWBlkSrph" name="Black Seraph" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="BlackSerph"/>
-    <tag group="HasMan"     tag="BlackSerph"/>
+    <tag group="HasMan" tag="BlackSerph"/>
     <tag group="ClassSkill" tag="skIntim"/>
-    <tag group="wFtrGroup"  tag="Axes"/>
-    <tag group="wFtrGroup"  tag="Flails"/>
-    <tag group="wFtrGroup"  tag="PoleArms"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="Axes"/>
+    <tag group="wFtrGroup" tag="Flails"/>
+    <tag group="wFtrGroup" tag="PoleArms"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWBrknBld" name="Broken Blade" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="BrokenBlad"/>
-    <tag group="HasMan"     tag="BrokenBlad"/>
+    <tag group="HasMan" tag="BrokenBlad"/>
     <tag group="ClassSkill" tag="skAcrobat"/>
-    <tag group="wFtrGroup"  tag="Close"/>
-    <tag group="wFtrGroup"  tag="Monk"/>
-    <tag group="wFtrGroup"  tag="Natural"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="Close"/>
+    <tag group="wFtrGroup" tag="Monk"/>
+    <tag group="wFtrGroup" tag="Natural"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWCreWin" name="Crescent Wind" compset="Simple">
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="CresceWind"/>
-    <tag group="HasMan"     tag="CresceWind"/>
+    <tag group="HasMan" tag="CresceWind"/>
     <tag group="ClassSkill" tag="skIntim"/>
-    <tag group="wFtrGroup"  tag="Axes"/>
-    <tag group="wFtrGroup"  tag="Flails"/>
-    <tag group="wFtrGroup"  tag="PoleArms"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="Axes"/>
+    <tag group="wFtrGroup" tag="Flails"/>
+    <tag group="wFtrGroup" tag="PoleArms"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWGolLio" name="Golden Lion" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="GoldenLion"/>
-    <tag group="HasMan"     tag="GoldenLion"/>
+    <tag group="HasMan" tag="GoldenLion"/>
     <tag group="ClassSkill" tag="skDiplo"/>
-    <tag group="wFtrGroup"  tag="BladeHeavy"/>
-    <tag group="wFtrGroup"  tag="Hammers"/>
-    <tag group="wFtrGroup"  tag="PoleArms"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="BladeHeavy"/>
+    <tag group="wFtrGroup" tag="Hammers"/>
+    <tag group="wFtrGroup" tag="PoleArms"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWIronTrt" name="Iron Tortoise" compset="Simple">
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="IronTort"/>
-    <tag group="HasMan"     tag="IronTort"/>
+    <tag group="HasMan" tag="IronTort"/>
     <tag group="ClassSkill" tag="skBluff"/>
-    <tag group="wFtrGroup"  tag="BladeHeavy"/>
-    <tag group="wFtrGroup"  tag="Axes"/>
-    <tag group="wFtrGroup"  tag="Close"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="BladeHeavy"/>
+    <tag group="wFtrGroup" tag="Axes"/>
+    <tag group="wFtrGroup" tag="Close"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWPriFur" name="Primal Fury" compset="Simple">
     <usesource source="srcPathOfW"/>
     <tag group="Discipline" tag="PrimalFury"/>
-    <tag group="HasMan"     tag="PrimalFury"/>
+    <tag group="HasMan" tag="PrimalFury"/>
     <tag group="ClassSkill" tag="skSurvival"/>
-    <tag group="wFtrGroup"  tag="BladeHeavy"/>
-    <tag group="wFtrGroup"  tag="Axes"/>
-    <tag group="wFtrGroup"  tag="Hammers"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="BladeHeavy"/>
+    <tag group="wFtrGroup" tag="Axes"/>
+    <tag group="wFtrGroup" tag="Hammers"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="PathOfWar" tag="selDisc"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWScaThr" name="Scarlet Throne" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="ScarletThr"/>
-    <tag group="HasMan"     tag="ScarletThr"/>
+    <tag group="HasMan" tag="ScarletThr"/>
     <tag group="ClassSkill" tag="skSenseMot"/>
-    <tag group="wFtrGroup"  tag="BladeHeavy"/>
-    <tag group="wFtrGroup"  tag="BladeLight"/>
-    <tag group="wFtrGroup"  tag="Spears"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="BladeHeavy"/>
+    <tag group="wFtrGroup" tag="BladeLight"/>
+    <tag group="wFtrGroup" tag="Spears"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWSlvrCrn" name="Silver Crane" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="SilvrCrane"/>
-    <tag group="HasMan"     tag="SilvrCrane"/>
+    <tag group="HasMan" tag="SilvrCrane"/>
     <tag group="ClassSkill" tag="skPercep"/>
-    <tag group="wFtrGroup"  tag="Bows"/>
-    <tag group="wFtrGroup"  tag="Hammers"/>
-    <tag group="wFtrGroup"  tag="Spears"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="Bows"/>
+    <tag group="wFtrGroup" tag="Hammers"/>
+    <tag group="wFtrGroup" tag="Spears"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWSolWin" name="Solar Wind" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="SolarWind"/>
-    <tag group="HasMan"     tag="SolarWind"/>
+    <tag group="HasMan" tag="SolarWind"/>
     <tag group="ClassSkill" tag="skPercep"/>
-    <tag group="wFtrGroup"  tag="Bows"/>
-    <tag group="wFtrGroup"  tag="Crossbows"/>
-    <tag group="wFtrGroup"  tag="Firearms"/>
-    <tag group="wFtrGroup"  tag="Thrown"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="Bows"/>
+    <tag group="wFtrGroup" tag="Crossbows"/>
+    <tag group="wFtrGroup" tag="Firearms"/>
+    <tag group="wFtrGroup" tag="Thrown"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWSteSer" name="Steel Serpent" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="SteelSerp"/>
-    <tag group="HasMan"     tag="SteelSerp"/>
+    <tag group="HasMan" tag="SteelSerp"/>
     <tag group="ClassSkill" tag="skHeal"/>
-    <tag group="wFtrGroup"  tag="BladeLight"/>
-    <tag group="wFtrGroup"  tag="Close"/>
-    <tag group="wFtrGroup"  tag="Monk"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="BladeLight"/>
+    <tag group="wFtrGroup" tag="Close"/>
+    <tag group="wFtrGroup" tag="Monk"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
-    </thing> 
+      Call PWsetupDSk</eval>
+    </thing>
   <thing id="zPWThraDra" name="Thrashing Dragon" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="ThrashDrag"/>
-    <tag group="HasMan"     tag="ThrashDrag"/>
+    <tag group="HasMan" tag="ThrashDrag"/>
     <tag group="ClassSkill" tag="skAcrobat"/>
-    <tag group="wFtrGroup"  tag="BladeLight"/>
-    <tag group="wFtrGroup"  tag="Close"/>
-    <tag group="wFtrGroup"  tag="Double"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="BladeLight"/>
+    <tag group="wFtrGroup" tag="Close"/>
+    <tag group="wFtrGroup" tag="Double"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
+      Call PWsetupDSk</eval>
     </thing>
   <thing id="zPWVldMoon" name="Veiled Moon" compset="Simple">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar"  tag="selDisc"/>
+    <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="VeiledMoon"/>
-    <tag group="HasMan"     tag="VeiledMoon"/>
+    <tag group="HasMan" tag="VeiledMoon"/>
     <tag group="ClassSkill" tag="skStealth"/>
-    <tag group="wFtrGroup"  tag="BladeLight"/>
-    <tag group="wFtrGroup"  tag="Double"/>
-    <tag group="wFtrGroup"  tag="Spears"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
-    <eval phase="First" priority="50"><![CDATA[
+    <tag group="wFtrGroup" tag="BladeLight"/>
+    <tag group="wFtrGroup" tag="Double"/>
+    <tag group="wFtrGroup" tag="Spears"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">
       ~ Setup the Disipline Class Skill
-      Call PWsetupDSk]]></eval>
-    </thing>    
-
+      Call PWsetupDSk</eval>
+    </thing>
   <thing id="PWDisLevel" name="Martial Discpline Helper" description="abValue = Max Inititor Level\nabValue2 = Max Disciple Level" compset="Ability" uniqueness="unique">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -384,7 +380,7 @@
       foreach pick in hero from Class where "PathOfWar.Class"
          field[abValue2].value = maximum(field[abValue2].value,eachpick.field[cTotalLev].value)
       nexteach]]></eval>
-    <eval phase="Final" priority="100" index="2"><![CDATA[
+    <eval phase="Final" index="2"><![CDATA[
       ~ If we've been Disabled, get out now
       doneif (tagis[Helper.SpcDisable] <> 0)
       ~ If we have no IL or DL then get out now!
@@ -392,8 +388,6 @@
       
       ~ Set "Can Initiate Maneuvers" tag to hero so that Pre-Reqs can test for this
       ~ tag.
-      perform hero.assign[PathOfWar.HeroInit]
-      ]]></eval>
+      perform hero.assign[PathOfWar.HeroInit]]]></eval>
     </thing>
-    
   </document>

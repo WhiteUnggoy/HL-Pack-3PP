@@ -5928,6 +5928,6 @@ hero.child[ArmorClass].field[tACShield].value += field[abValue].value]]></eval>
     <tag group="mTarget" tag="You"/>
     <tag group="AbilType" tag="Extra"/>
     </thing>
-  <hidden id="manPWBwTw5"/>
   <hidden id="manPWTaWi1"/>
+  <hidden id="manPWBwTw5"/>
   </document>
