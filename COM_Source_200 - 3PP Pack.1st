@@ -7,7 +7,7 @@
     name="Third Party Products Pack (v1.1)"
     selectable="no"
     parent="pComPacks"
-    sortorder="10"
+    sortorder="15"
     description="Everything under this is a Community Pack that was created by the community for the community. Use is allowed for gaming groups only. The XML and HL scripts Copy Righted 2014 Tim Shadow.">
     </source>
 
