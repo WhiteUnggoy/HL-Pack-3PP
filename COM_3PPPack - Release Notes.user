@@ -8,6 +8,26 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
+<strong>v1.2  Feburary 1, 2015</strong>
+<strong>Bug Fixes</strong>
+<ul>
+<li>(TheIronGolem) Path of War - Re-added Iron Tortoise maneuvers that had somehow gone missing (thanks to Twistedsavant on the WL forums for noticing)
+</li>
+</ul>
+
+<strong>New Features</strong>
+<ul>
+<li>(TheIronGolem) Path of War - Added Finished Battle Templar PrC</li>
+<li>(TheIronGolem) Path of War - Added Bladecaster PrC</li>
+<li>(TheIronGolem) Path of War - Added Dragon Fury PrC</li>
+</ul>
+
+<strong>Data File Authoring</strong>
+<ul>
+<li>(TheIronGolem) Path of War - Added PathOfWar.StanceClSp tag, which denotes stances that are gained as class abilities rather than regular stance progresssion</li>
+<li>(TheIronGolem) Path of War - Fixed PWinDSta procedure so that it can correctly deal with stances that have more than one Discipline tag</li>
+</ul>    
+    
 <strong>v1.1  January 20, 2015</strong>
 
 <strong>Bug Fixes</strong>
