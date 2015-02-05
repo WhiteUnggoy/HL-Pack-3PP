@@ -4,7 +4,7 @@
 
   <source
     id="p3PPPack"
-    name="Third Party Products Pack (v1.2)"
+    name="Third Party Products Pack (v1.3)"
     selectable="no"
     parent="pComPacks"
     sortorder="15"

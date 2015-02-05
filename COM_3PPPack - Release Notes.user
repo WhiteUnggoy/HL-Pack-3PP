@@ -8,13 +8,28 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
+<strong>v1.3  Feburary 4, 2015</strong>
+
+<strong>Bug Fixes</strong>
+<ul>
+<li>Updated Basic Pack</li>
+</ul>
+<strong>New Features</strong>
+<ul>
+<li>None</li>
+</ul>
+<strong>Data File Authoring</strong>
+<ul>
+<li>None</li>
+</ul>    
+
 <strong>v1.2  Feburary 1, 2015</strong>
+
 <strong>Bug Fixes</strong>
 <ul>
 <li>(TheIronGolem) Path of War - Re-added Iron Tortoise maneuvers that had somehow gone missing (thanks to Twistedsavant on the WL forums for noticing)
 </li>
 </ul>
-
 <strong>New Features</strong>
 <ul>
 <li>(ShadowChemosh) Pathfinder Basic Pack updated to v3.4.</li>
@@ -22,7 +37,6 @@
 <li>(TheIronGolem) Path of War - Added Bladecaster PrC</li>
 <li>(TheIronGolem) Path of War - Added Dragon Fury PrC</li>
 </ul>
-
 <strong>Data File Authoring</strong>
 <ul>
 <li>(TheIronGolem) Path of War - Added PathOfWar.StanceClSp tag, which denotes stances that are gained as class abilities rather than regular stance progresssion</li>
