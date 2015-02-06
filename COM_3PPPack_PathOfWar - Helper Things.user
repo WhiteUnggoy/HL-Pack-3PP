@@ -390,4 +390,5 @@
       ~ tag.
       perform hero.assign[PathOfWar.HeroInit]]]></eval>
     </thing>
+
   </document>

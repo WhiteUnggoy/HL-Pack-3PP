@@ -115,6 +115,84 @@
 
   </editthing>
 
+
+  <!-- Path of War Class Maneuvers Setup editthing -->
+  <editthing
+    compset="PWManList"
+    name="PoW Class Setup"
+    group="zCommunity"
+    prefix="mHelp"
+    description="Path of War Class Setup"
+    summary="This lets you setup the class maneuvers tab for Path of War classes.">
+
+    <!-- Linkage -->
+    <inputthing
+      name="Class and Manuevers Linkage"
+      helptext="This section allows you to link the Path of War Class to its Configurable where the Manuevers are chosen from.">
+      <it_separator/>
+    </inputthing>    
+    <inputthing
+      name="Class Linkage"
+      helptext="Select the class helper that is to get manuevers and stances.">
+      <it_linkage compset="Class" linkage="powClass"/>
+    </inputthing>
+    <inputthing
+      name="Configurable Linkage"
+      helptext="Select the manuever configurable that was setup new for your class.">
+      <it_linkage compset="Configure" linkage="powCfg"/>
+    </inputthing>
+
+    <!-- Tags -->
+    <inputthing
+      name="Disciplines and Manuevers"
+      helptext="This section allows you to select which Disciplines are allowed and which attribute calculates the DC of maneuvers.">
+      <it_separator/>
+    </inputthing>    
+    <inputthing
+      name="Disciplines Allowed "
+      helptext="Select which disciplines of maneuvers this class is allowed to pick from.">
+      <it_taglist group="Discipline" tag="?"/>
+    </inputthing>
+    <inputthing
+      name="Initiation Attribute"
+      helptext="Select the attribute this class uses to calculate the DC of its maneuvers.">
+      <it_tagpick group="UseAttr" tag="?"/>
+    </inputthing>
+
+    <!-- Arrays -->
+    <inputthing
+      name="Manuevers Lists"
+      helptext="This section allows you to setup the number of Manuevers a class can Know, Ready, and its Stances..">
+      <it_separator/>
+    </inputthing>    
+    <inputthing
+      name="Maneuvers Known"
+      helptext="Setup the list of Maneuvers Known for this class.">
+      <it_field field="cManKnown"/>
+    </inputthing>
+    <inputthing
+      name="Manuevers Readied"
+      helptext="Setup the list of Maneuvers Readied for this class.">
+      <it_field field="cManReady"/>
+    </inputthing>
+    <inputthing
+      name="Stances"
+      helptext="Setup the list of Stances for this class.">
+      <it_field field="cStances"/>
+    </inputthing>
+
+  </editthing>
+
+
+
+
+
+
+
+
+
+
+
   <!-- Path of War Maneuvers editthing 
   <editthing
     compset="PWClsMan"

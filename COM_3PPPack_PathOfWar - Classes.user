@@ -11,11 +11,6 @@
       -Created New</info_history>
     </fileinfo>
   <thing id="cHelpPW1" name="Warlord" compset="Class" uniqueness="unique">
-    <comment>Spells Known Per Level controls the Manuevers information.
-
-Array 0 = Maneuvers Known
-Array 1 = Maneuvers Readied
-Array 2 = Stances</comment>
     <fieldval field="cAbbr" value="War"/>
     <fieldval field="cSkills" value="4"/>
     <fieldval field="cSpecSing" value="Gambit"/>
@@ -31,66 +26,6 @@ Array 2 = Stances</comment>
     <arrayval field="cCustTot" index="15" value="6"/>
     <arrayval field="cCustTot" index="19" value="7"/>
     <arrayval field="cBonFtTot" index="0" value="1"/>
-    <arrayval field="cKnowTot" index="0" value="6"/>
-    <arrayval field="cKnowTot" index="0" column="1" value="4"/>
-    <arrayval field="cKnowTot" index="0" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="1" value="7"/>
-    <arrayval field="cKnowTot" index="1" column="1" value="5"/>
-    <arrayval field="cKnowTot" index="1" column="2" value="2"/>
-    <arrayval field="cKnowTot" index="2" value="8"/>
-    <arrayval field="cKnowTot" index="2" column="1" value="5"/>
-    <arrayval field="cKnowTot" index="2" column="2" value="2"/>
-    <arrayval field="cKnowTot" index="3" value="8"/>
-    <arrayval field="cKnowTot" index="3" column="1" value="5"/>
-    <arrayval field="cKnowTot" index="3" column="2" value="2"/>
-    <arrayval field="cKnowTot" index="4" value="9"/>
-    <arrayval field="cKnowTot" index="4" column="1" value="6"/>
-    <arrayval field="cKnowTot" index="4" column="2" value="3"/>
-    <arrayval field="cKnowTot" index="5" value="9"/>
-    <arrayval field="cKnowTot" index="5" column="1" value="6"/>
-    <arrayval field="cKnowTot" index="5" column="2" value="3"/>
-    <arrayval field="cKnowTot" index="6" value="10"/>
-    <arrayval field="cKnowTot" index="6" column="1" value="6"/>
-    <arrayval field="cKnowTot" index="6" column="2" value="3"/>
-    <arrayval field="cKnowTot" index="7" value="10"/>
-    <arrayval field="cKnowTot" index="7" column="1" value="7"/>
-    <arrayval field="cKnowTot" index="7" column="2" value="3"/>
-    <arrayval field="cKnowTot" index="8" value="11"/>
-    <arrayval field="cKnowTot" index="8" column="1" value="7"/>
-    <arrayval field="cKnowTot" index="8" column="2" value="4"/>
-    <arrayval field="cKnowTot" index="9" value="11"/>
-    <arrayval field="cKnowTot" index="9" column="1" value="7"/>
-    <arrayval field="cKnowTot" index="9" column="2" value="4"/>
-    <arrayval field="cKnowTot" index="10" value="12"/>
-    <arrayval field="cKnowTot" index="10" column="1" value="8"/>
-    <arrayval field="cKnowTot" index="10" column="2" value="4"/>
-    <arrayval field="cKnowTot" index="11" value="12"/>
-    <arrayval field="cKnowTot" index="11" column="1" value="8"/>
-    <arrayval field="cKnowTot" index="11" column="2" value="4"/>
-    <arrayval field="cKnowTot" index="12" value="13"/>
-    <arrayval field="cKnowTot" index="12" column="1" value="8"/>
-    <arrayval field="cKnowTot" index="12" column="2" value="4"/>
-    <arrayval field="cKnowTot" index="13" value="13"/>
-    <arrayval field="cKnowTot" index="13" column="1" value="9"/>
-    <arrayval field="cKnowTot" index="13" column="2" value="5"/>
-    <arrayval field="cKnowTot" index="14" value="14"/>
-    <arrayval field="cKnowTot" index="14" column="1" value="9"/>
-    <arrayval field="cKnowTot" index="14" column="2" value="5"/>
-    <arrayval field="cKnowTot" index="15" value="14"/>
-    <arrayval field="cKnowTot" index="15" column="1" value="9"/>
-    <arrayval field="cKnowTot" index="15" column="2" value="5"/>
-    <arrayval field="cKnowTot" index="16" value="15"/>
-    <arrayval field="cKnowTot" index="16" column="1" value="10"/>
-    <arrayval field="cKnowTot" index="16" column="2" value="5"/>
-    <arrayval field="cKnowTot" index="17" value="16"/>
-    <arrayval field="cKnowTot" index="17" column="1" value="10"/>
-    <arrayval field="cKnowTot" index="17" column="2" value="5"/>
-    <arrayval field="cKnowTot" index="18" value="17"/>
-    <arrayval field="cKnowTot" index="18" column="1" value="10"/>
-    <arrayval field="cKnowTot" index="18" column="2" value="5"/>
-    <arrayval field="cKnowTot" index="19" value="18"/>
-    <arrayval field="cKnowTot" index="19" column="1" value="11"/>
-    <arrayval field="cKnowTot" index="19" column="2" value="6"/>
     <usesource source="srcPathOfW"/>
     <tag group="ClassSkill" tag="skKnowHist"/>
     <tag group="ClassSkill" tag="Craft"/>
@@ -185,8 +120,6 @@ Array 2 = Stances</comment>
     <bootstrap thing="PWDisLevel"></bootstrap>
     <bootstrap thing="fArmMedium"></bootstrap>
     <bootstrap thing="fWepMart"></bootstrap>
-    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
-      Call PWsetupIL</eval>
     </thing>
   <thing id="cPWWarlord" name="Warlord" description="Dynamos on the field of combat, warlords walk the line of victory and ruin through their determination to achieve glory. Where some may talk tactics, the warlord dives in. Where some may fight in strategic units, the warlord shines alone as an inspirational beacon on the field of combat; to be a warlord is to be a lord of war.{br}{br}{b}Adventures{/b}: Warlords adventure for many reasons, but one reason that will always be prominent is the desire to test their skill against the world&apos;s most dangerous opponents, to show their strength to themselves and to the world. Others may do this for profit, others for fun, others for revenge, but it is always certain that a warlord seeks the glory and honor only a battle well-fought can bring.{br}{br}{b}Characteristics{/b}: Brash arrogance and an irrepressible nature are hallmarks of the warlord. A devil-maycare warrior, many warlords are as fearless as they are fierce, and they both love life and live their lives to the fullest. Hedonists in some extreme cases, the warlord is drawn to combat as a moth to the flame.{br}{br}{b}Alignment{/b}: Any. Warlords can come from any and all ethical backgrounds, though they do tend more towards a chaotic alignment. Lawfully aligned warlords are rarer, and tend to compose their impulses through strict discipline.\n\n{b}Role{/b}: Striker. As a very aggressive class, the warlord seeks to bring martial power to the field in the form of overwhelming force and ferocity. Additionally, warlords make excellent leaders, as they provide some passive benefits from their class features as well as active benefits from discipline choices and their gambits." compset="ClassLevel" maxlimit="20">
     <usesource source="srcPathOfW"/>
@@ -196,31 +129,17 @@ Array 2 = Stances</comment>
     <link linkage="helper" thing="cHelpPW1"/>
     </thing>
   <thing id="cCfgPW1" name="Warlord Maneuvers" compset="Configure" uniqueness="unique">
-    <fieldval field="cfgObject1" value="Maneuvers"/>
-    <fieldval field="cfgObject2" value="Stances"/>
-    <tag group="ClsCountAs" tag="cHelpPW1"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
-    <tag group="Discipline" tag="SolarWind"/>
-    <tag group="Discipline" tag="PrimalFury"/>
-    <tag group="Discipline" tag="GoldenLion"/>
-    <tag group="Discipline" tag="ScarletThr"/>
-    <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="Discipline" tag="ThrashDrag"/>
-    <tag group="UseAttr" tag="aCHA"/>
-    <eval phase="Final" priority="11000">~ Setup the Warlord Maneuvers
-      Call PWsetupCfg</eval>
-    <eval phase="First" index="2">~ Setup the Warlord Maneuvers
-      perform hero.pushtags[Discipline.?]</eval>
-    <prereq message="You have too many Manuevers Readied.">
-      <validate>var ValidManOn as number
-        Call ValidManOn
-        @valid = ValidManOn</validate>
-      </prereq>
+    <bootstrap thing="mHelpPW1"></bootstrap>
     <prereq message="You have activated more stances than allowed.">
       <validate>var ValidStaOn as number
         Call ValidStaOn
         @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
       </prereq>
     </thing>
   <thing id="cPW1Gambit" name="Warlord’s Gambit" description="At his core, the warlord is a warrior who relies on both skill and daring; without this he is but any other combatant. By setting himself to danger, does his true skill shine, or so the motto of the warlord goes. At 1st level, a warlord selects two gambits as methods by which the warlord can recover expended maneuvers. Each gambit possesses three aspects - a {i}risk{/i}, a {i}rake{/i}, and a {i}reward{/i}.{br}{br}Each gambit&apos;s risk describes an action that the warlord must undertake in order to attempt to recover an expended maneuver. The warlord begins a gambit as a swift action, effectively diving recklessly into the act he is attempting. The warlord then performs the action described in the gambit, and if he is successful, he regains maneuvers (see below). If he is not, he suffers the rake of the gambit and only regains a single maneuver of his choosing. While performing a gambit, the warlord may add his Charisma modifier to the d20 check(s) to aid in accomplishing the gambit as a luck bonus. A warlord may attempt the actions of a gambit, but without declaring the attempt a gambit attempt by spending a swift action to do so, the character does not regain any maneuvers nor does he suffer a rake for failure. The character may initiate a maneuver while performing a gambit (if the maneuver helps him accomplish it) but he may not recover the maneuver used to achieve the gambit as part of the reward. A warlord may use each gambit available to him once per encounter. If at the start of the warlord&apos;s turn he has no available gambits, he regains all uses of his known gambits.{br}{br}A gambit&apos;s rake is the penalty that the warlord suffers if he attempts his gambit and fails, such as failing a trip attempt or failing to strike an opponent with a charge attack. Each gambit possesses a unique reward that the warlord enjoys for succeeding at that gambit. All gambits possess the same rake; the warlord only regains a single expended maneuver and suffers a -2 penalty on all d20 rolls for one round. A warlord who succeeds at fulfilling his gambit immediately recovers a number of expended maneuvers equal to his Charisma modifier (minimum 2) and enjoys the unique reward for each gambit. Allies who would witness the successful gambit and receive benefits must be within 60 ft. of the warlord to receive bonuses and must be able to see him perform the action.{br}{br}At 4th level and every four levels thereafter, the warlord selects adds an additional gambit." compset="ClSpecial">
@@ -2692,5 +2611,75 @@ nexteach]]></validate>
 
       ~ Make sure we don't exceed the allowed number of stances
       validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
+  <thing id="mHelpPW1" name="Warlord Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="0" value="6"/>
+    <arrayval field="cManKnown" index="1" value="7"/>
+    <arrayval field="cManKnown" index="2" value="8"/>
+    <arrayval field="cManKnown" index="3" value="8"/>
+    <arrayval field="cManKnown" index="4" value="9"/>
+    <arrayval field="cManKnown" index="5" value="9"/>
+    <arrayval field="cManKnown" index="6" value="10"/>
+    <arrayval field="cManKnown" index="7" value="10"/>
+    <arrayval field="cManKnown" index="8" value="11"/>
+    <arrayval field="cManKnown" index="9" value="11"/>
+    <arrayval field="cManKnown" index="10" value="12"/>
+    <arrayval field="cManKnown" index="11" value="12"/>
+    <arrayval field="cManKnown" index="12" value="13"/>
+    <arrayval field="cManKnown" index="13" value="13"/>
+    <arrayval field="cManKnown" index="14" value="14"/>
+    <arrayval field="cManKnown" index="15" value="14"/>
+    <arrayval field="cManKnown" index="16" value="15"/>
+    <arrayval field="cManKnown" index="17" value="16"/>
+    <arrayval field="cManKnown" index="18" value="17"/>
+    <arrayval field="cManKnown" index="19" value="18"/>
+    <arrayval field="cStances" index="0" value="1"/>
+    <arrayval field="cStances" index="1" value="2"/>
+    <arrayval field="cStances" index="2" value="2"/>
+    <arrayval field="cStances" index="3" value="2"/>
+    <arrayval field="cStances" index="4" value="3"/>
+    <arrayval field="cStances" index="5" value="3"/>
+    <arrayval field="cStances" index="6" value="3"/>
+    <arrayval field="cStances" index="7" value="4"/>
+    <arrayval field="cStances" index="8" value="4"/>
+    <arrayval field="cStances" index="9" value="4"/>
+    <arrayval field="cStances" index="10" value="5"/>
+    <arrayval field="cStances" index="11" value="5"/>
+    <arrayval field="cStances" index="12" value="5"/>
+    <arrayval field="cStances" index="13" value="5"/>
+    <arrayval field="cStances" index="14" value="6"/>
+    <arrayval field="cStances" index="15" value="6"/>
+    <arrayval field="cStances" index="16" value="6"/>
+    <arrayval field="cStances" index="17" value="6"/>
+    <arrayval field="cStances" index="18" value="7"/>
+    <arrayval field="cStances" index="19" value="7"/>
+    <arrayval field="cManReady" index="0" value="4"/>
+    <arrayval field="cManReady" index="1" value="5"/>
+    <arrayval field="cManReady" index="2" value="5"/>
+    <arrayval field="cManReady" index="3" value="5"/>
+    <arrayval field="cManReady" index="4" value="6"/>
+    <arrayval field="cManReady" index="5" value="6"/>
+    <arrayval field="cManReady" index="6" value="6"/>
+    <arrayval field="cManReady" index="7" value="7"/>
+    <arrayval field="cManReady" index="8" value="7"/>
+    <arrayval field="cManReady" index="9" value="7"/>
+    <arrayval field="cManReady" index="10" value="8"/>
+    <arrayval field="cManReady" index="11" value="8"/>
+    <arrayval field="cManReady" index="12" value="8"/>
+    <arrayval field="cManReady" index="13" value="9"/>
+    <arrayval field="cManReady" index="14" value="9"/>
+    <arrayval field="cManReady" index="15" value="9"/>
+    <arrayval field="cManReady" index="16" value="10"/>
+    <arrayval field="cManReady" index="17" value="10"/>
+    <arrayval field="cManReady" index="18" value="10"/>
+    <arrayval field="cManReady" index="19" value="11"/>
+    <tag group="UseAttr" tag="aCHA"/>
+    <tag group="Discipline" tag="GoldenLion"/>
+    <tag group="Discipline" tag="PrimalFury"/>
+    <tag group="Discipline" tag="ScarletThr"/>
+    <tag group="Discipline" tag="SolarWind"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <link linkage="powClass" thing="cHelpPW1"/>
+    <link linkage="powCfg" thing="cCfgPW1"/>
     </thing>
   </document>

@@ -128,6 +128,133 @@
   <!-- ************************************************************************ -->
 
 
+  <!-- ==================================================  -->
+  <component
+    id="PWManList"
+    name="Manuever List"
+    autocompset="no"
+    hasshortname="no"
+    ispublic="yes">
+
+    <!-- Arrays -->
+    <field
+      id="cManKnown"
+      name="Manuevers Known"
+      type="derived"
+      style="array"
+      arrayrows="20">
+    </field>
+    <field
+      id="cManReady"
+      name="Manuevers Readied"
+      type="derived"
+      style="array"
+      arrayrows="20">
+    </field>
+    <field
+      id="cStances"
+      name="Stances Allowed"
+      type="derived"
+      style="array"
+      arrayrows="20">
+    </field>
+    <field
+      id="AryLevel"
+      name="Array Class Level"
+      type="derived"
+      maxlength="0">
+    </field>
+    <field
+      id="cIL"
+      name="Initiator Level"
+      type="derived"
+      maxlength="0">
+    </field>
+
+    <!-- 
+      These linkages link the class to its configurable. This allows an easy way to setup the 
+      configurable. It also moves all the logic to background scripts intead. Meaning the 
+      proceadure call can be removed from the Configurables.
+    -->    
+    <linkage linkage="powCfg"/>
+    <linkage linkage="powClass"/>
+
+    <!-- 
+        This does some initial setup of tags.
+    -->
+    <eval phase="First" priority="50" index="1"><![CDATA[
+      ~ Name the custom ability lists
+      linkage[powCfg].field[cfgObject1].text = "Maneuvers"
+      linkage[powCfg].field[cfgObject2].text = "Stances"
+
+      ~ Pull the Class Counts As tag from the class
+      perform linkage[powClass].pulltags[ClsCountAs.?]
+
+      ~ Setup Configurable tags
+      perform linkage[powCfg].pushtags[ClsCountAs.?]
+      perform linkage[powCfg].pushtags[UseAttr.?]
+      perform linkage[powCfg].assign[PathOfWar.StanceUp]
+      perform linkage[powCfg].assign[PathOfWar.Config]
+
+      ~ Push the Discipline tags to the hero so that Maneuvers can
+      ~ validate correctly.
+      perform hero.pushtags[Discipline.?]      
+      ]]></eval>
+
+    <!-- 
+        This setups the IL information on the Configurable
+    -->
+    <eval phase="PostLevel" priority="10" index="2"><![CDATA[
+      var otherlev as number
+      var S2Config as string
+
+      ~ Calculate all other levels but our current class level
+      otherlev = herofield[tLevel].value - linkage[powClass].field[cTotalLev].value
+
+      ~ Take half of all other classes plus our current class level to get our
+      ~ Initiator Level.
+      field[cIL].value = round( otherlev/2,0,-1) + linkage[powClass].field[cTotalLev].value
+
+      ~ Set the IL onto the associated configurator to save time for later checks
+     linkage[powCfg].field[cfgLevel].value += field[cIL].value      
+      ]]></eval>
+
+    <!-- 
+        This sets the correct number of Maneuvers Known, Readied, and Stances onto the Configurable based
+        upon the class we are linked too.
+    -->
+    <eval phase="Final" priority="11000" index="3"><![CDATA[
+      var level as number
+
+      ~ If no disciplines setup then display error and stop!
+      if (tagcount[Discipline.?] = 0) then
+        notify "Your class has no Disciplines defined. Please define Disciplines in the editor 'zCommunity->PoW Class Setup'"
+        done
+      endif
+
+      ~ Set to pull anything that is not a stance
+      linkage[powCfg].field[cfgAllow1].text = "PathOfWar.Manuever & (" & tagids[Discipline.?,"|"] & ")"
+      ~ Set to pull all the stances 
+      linkage[powCfg].field[cfgAllow2].text = "PathOfWar.Stance & (" & tagids[Discipline.?,"|"] & ")"
+
+      ~ Calculate the array value which is class level minus one as we start at zero
+      field[AryLevel].value += linkage[powClass].field[cTotalLev].value - 1     
+      level = field[AryLevel].value
+
+      ~ Set the configurator's number of manuevers known
+      linkage[powCfg].field[cfgMax1].value += field[cManKnown].arrayvalue[level]
+
+      ~ Set the configurator's number of stances known
+      linkage[powCfg].field[cfgMax2].value += field[cStances].arrayvalue[level]
+
+      ~ Set the live name to inform the number of manuevers that can be readied
+      linkage[powCfg].field[livename].text = linkage[powCfg].tagnames[ClsCountAs.?] & " Maneuvers Readied: " & linkage[powCfg].tagcount[PathOfWar.ManueverOn] & " of " & field[cManReady].arrayvalue[level]
+      ]]></eval>
+    
+  </component>
+  <!-- ************************************************************************ -->
+
+
 
   <!-- ==================================================  -->
   <!-- Comment out for now
@@ -187,6 +314,12 @@
     <compref component="SpecialTab"/>
     <compref component="StatblName"/>
     <compref component="Custom"/>
+  </compset>
+
+  <compset
+    id="PWManList">
+    <compref component="PWManList"/>
+    <compref component="Value"/>
   </compset>
 
   <!--
