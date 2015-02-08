@@ -205,18 +205,27 @@
         This setups the IL information on the Configurable
     -->
     <eval phase="PostLevel" priority="10" index="2"><![CDATA[
-      var otherlev as number
-      var S2Config as string
+	~ If this is a prestige class, stop now, because we're going to inherit our IL from another configurable in the next script
+	doneif (linkage[powClass].tagis[ClassType.Prestige] + linkage[powClass].tagis[PathOfWar.Class] = 2)
+	
+    var otherlev as number
+	var miPrc as number
 
-      ~ Calculate all other levels but our current class level
-      otherlev = herofield[tLevel].value - linkage[powClass].field[cTotalLev].value
+	~ Calculate initiator level
+	~ We count initiating prestige classes at full value, all others (besides the current class) at half value
+	foreach pick in hero from Class where "!" & linkage[powClass].tagids[ClassHelp.?]
+	  if (eachpick.tagis[ClassType.Prestige] + eachpick.tagis[PathOfWar.Class] = 2) then
+	    miPrc += eachpick.field[cTotalLev].value
+	  else
+	    otherlev += eachpick.field[cTotalLev].value
+	  endif
+	nexteach
+	
+    ~ Add the PrC levels and half of the other levels to the level of the current class to get our total IL
+	field[cIL].value = miPrc + round( otherlev/2,0,-1) + linkage[powClass].field[cTotalLev].value
 
-      ~ Take half of all other classes plus our current class level to get our
-      ~ Initiator Level.
-      field[cIL].value = round( otherlev/2,0,-1) + linkage[powClass].field[cTotalLev].value
-
-      ~ Set the IL onto the associated configurator to save time for later checks
-     linkage[powCfg].field[cfgLevel].value += field[cIL].value      
+    ~ Set the IL onto the associated configurator to save time for later checks
+    linkage[powCfg].field[cfgLevel].value += field[cIL].value	 
       ]]></eval>
 
     <!-- 
@@ -226,8 +235,16 @@
     <eval phase="Final" priority="11000" index="3"><![CDATA[
       var level as number
 
+	  ~ If we're a prestige class, make sure we have chosen an existing maneuver list to work from, otherwise don't allow picking any maneuvers yet
+	  if (linkage[powClass].tagis[ClassType.Prestige] + hero.childfound[cPWP1Man].field[usrChosen1].ischosen = 1) then
+	    linkage[powCfg].field[cfgMax1].value = 0
+	    linkage[powCfg].field[cfgMax2].value = 0
+	    linkage[powCfg].field[livename].text = linkage[powCfg].tagnames[ClsCountAs.?] & " Maneuvers: Pick Maneuver List on class tab first!"
+	    done
+	  endif
+	  
       ~ If no disciplines setup then display error and stop!
-      if (tagcount[Discipline.?] = 0) then
+	  if (tagcount[Discipline.?] = 0) then
         notify "Your class has no Disciplines defined. Please define Disciplines in the editor 'zCommunity->PoW Class Setup'"
         done
       endif

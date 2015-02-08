@@ -123,14 +123,29 @@
       field[livename].text = " Maneuvers Readied: " & tagcount[PathOfWar.ManueverOn] & " of " & focus.field[abValue2].value
     Endif]]></procedure>
   <procedure id="PWsetupIL" context="pick"><![CDATA[
+    ~ NOTE: This procedure is obsolete; IL setup is now done in the PWManList component
+	
+	~ If this is a prestige class, stop now, because we're going to inherit our IL from another configurable anyway
+	doneif (tagis[ClassType.Prestige] + tagis[PathOfWar.Class] = 2)
+	
     var otherlev as number
+	var miPrc as number
     var S2Config as string
-    ~ Calculate all other levels but our current class level
-    otherlev = herofield[tLevel].value - field[cTotalLev].value
-    ~ Take half of all other classes plus our current class level to get our
-    ~ Initiator Level.
-    field[cCasterLev].value = round( otherlev/2,0,-1) + field[cTotalLev].value
-    ~ Set the Class Counts As tag so we cn locate the configurator
+
+	~ Calculate initiator level
+	~ We count initiating prestige classes at full value, all others (besides the current class) at half value
+	foreach pick in hero from Class where "!" & tagids[ClassHelp.?]
+	  if (eachpick.tagis[ClassType.Prestige] + eachpick.tagis[PathOfWar.Class] = 2) then
+	    miPrc += eachpick.field[cTotalLev].value
+	  else
+	    otherlev += eachpick.field[cTotalLev].value
+	  endif
+	nexteach
+	
+    ~ Add the PrC levels and half of the other levels to the level of the current class to get our total IL
+	field[cCasterLev].value = miPrc + round( otherlev/2,0,-1) + field[cTotalLev].value
+
+    ~ Set the Class Counts As tag so we can locate the configurator
     S2Config = tagids[ClsCountAs.?,"|"]
     ~ Set the IL onto the associated configurator to save time for later checks
     hero.findchild[Configure,S2Config].field[cfgLevel].value += field[cCasterLev].value]]></procedure>
@@ -234,12 +249,16 @@
       ~ Our highest manuever level is one lower than our current Initiator Level
       ~ because the array starts at zero.
       s2ManLevel = focus.field[cfgLevel].value - 1
-
-      ~ Test to see if the level of the manuever is higher than what we can use
-      ~ and if so we are NOT valid.
-      If (altpick.tagvalue[mLevel.?] > hero.child[mechPoW].field[mechFeat].arrayvalue[s2ManLevel]) Then
-        ValidManIL = 0
-      Endif
+	  
+	  ~ Test to see if the level of the manuever is higher than what we can use
+	  ~ and if so we are NOT valid.
+	  if (s2ManLevel < 0) then
+	    ValidManIL = 0
+	  else
+		If (altpick.tagvalue[mLevel.?] > hero.child[mechPoW].field[mechFeat].arrayvalue[s2ManLevel]) Then
+	      ValidManIL = 0
+		Endif
+	  endif
 
     ~..Lets see if we came from a Feat instead
     elseif (focus.tagcount[HasFeat.?] <> 0) then
@@ -381,4 +400,20 @@
           levAdd += round(totalRem / levDiv, 0, -1)
         endif
       endif]]></procedure>
+  <procedure id="PWgetIMod" context="pick"><![CDATA[
+      ~This procedure is used to get the initiation modifier from within a pick
+	  var initMod as number
+	  perform hero.findchild[PWManList,root.tagids[ClsCountAs.?]].setfocus
+      doneif (state.isfocus = 0)
+      initMod = hero.findchild[BaseAttr,focus.tagids[UseAttr.?]].field[aModBonus].value
+  ]]>
+  </procedure>
+    <procedure id="PWgetILvl" context="pick"><![CDATA[
+      ~This procedure is used to get the initiator level from within a pick
+	  var initLvl as number
+	  perform hero.findchild[PWManList,root.tagids[ClsCountAs.?]].setfocus
+      doneif (state.isfocus = 0)
+      initLvl = focus.field[cIL].value
+  ]]>
+  </procedure>
   </document>
