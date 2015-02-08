@@ -124,26 +124,26 @@
     Endif]]></procedure>
   <procedure id="PWsetupIL" context="pick"><![CDATA[
     ~ NOTE: This procedure is obsolete; IL setup is now done in the PWManList component
-	
-	~ If this is a prestige class, stop now, because we're going to inherit our IL from another configurable anyway
-	doneif (tagis[ClassType.Prestige] + tagis[PathOfWar.Class] = 2)
-	
-    var otherlev as number
-	var miPrc as number
-    var S2Config as string
+  
+    ~ If this is a prestige class, stop now, because we're going to inherit our IL from another configurable anyway
+    doneif (tagis[ClassType.Prestige] + tagis[PathOfWar.Class] = 2)
 
-	~ Calculate initiator level
-	~ We count initiating prestige classes at full value, all others (besides the current class) at half value
-	foreach pick in hero from Class where "!" & tagids[ClassHelp.?]
-	  if (eachpick.tagis[ClassType.Prestige] + eachpick.tagis[PathOfWar.Class] = 2) then
-	    miPrc += eachpick.field[cTotalLev].value
-	  else
-	    otherlev += eachpick.field[cTotalLev].value
-	  endif
-	nexteach
-	
+      var otherlev as number
+    var miPrc as number
+      var S2Config as string
+
+    ~ Calculate initiator level
+    ~ We count initiating prestige classes at full value, all others (besides the current class) at half value
+    foreach pick in hero from Class where "!" & tagids[ClassHelp.?]
+      if (eachpick.tagis[ClassType.Prestige] + eachpick.tagis[PathOfWar.Class] = 2) then
+        miPrc += eachpick.field[cTotalLev].value
+      else
+        otherlev += eachpick.field[cTotalLev].value
+      endif
+    nexteach
+
     ~ Add the PrC levels and half of the other levels to the level of the current class to get our total IL
-	field[cCasterLev].value = miPrc + round( otherlev/2,0,-1) + field[cTotalLev].value
+    field[cCasterLev].value = miPrc + round( otherlev/2,0,-1) + field[cTotalLev].value
 
     ~ Set the Class Counts As tag so we can locate the configurator
     S2Config = tagids[ClsCountAs.?,"|"]
@@ -185,7 +185,7 @@
 
       ~ Validate our level vs the number of Readied manuevers allowed
       If (altpick.tagcount[PathOfWar.ManueverOn] > focus.field[cKnowTot].matrixvalue[s2X,1]) Then
-         ValidManOn = 0
+        ValidManOn = 0
       Endif
 
     ~..Lets see if we came from a Feat instead
@@ -198,7 +198,7 @@
 
       ~ Validate our level vs the number of Readied manuevers allowed
       If (altpick.tagcount[PathOfWar.ManueverOn] > focus.field[abValue2].value) Then
-          ValidManOn = 0
+        ValidManOn = 0
       Endif
     endif]]></procedure>
   <procedure id="ValidStaOn" scripttype="validate"><![CDATA[
@@ -249,16 +249,16 @@
       ~ Our highest manuever level is one lower than our current Initiator Level
       ~ because the array starts at zero.
       s2ManLevel = focus.field[cfgLevel].value - 1
-	  
-	  ~ Test to see if the level of the manuever is higher than what we can use
-	  ~ and if so we are NOT valid.
-	  if (s2ManLevel < 0) then
-	    ValidManIL = 0
-	  else
-		If (altpick.tagvalue[mLevel.?] > hero.child[mechPoW].field[mechFeat].arrayvalue[s2ManLevel]) Then
-	      ValidManIL = 0
-		Endif
-	  endif
+    
+    ~ Test to see if the level of the manuever is higher than what we can use
+    ~ and if so we are NOT valid.
+    if (s2ManLevel < 0) then
+      ValidManIL = 0
+    else
+      If (altpick.tagvalue[mLevel.?] > hero.child[mechPoW].field[mechFeat].arrayvalue[s2ManLevel]) Then
+        ValidManIL = 0
+      Endif
+    endif
 
     ~..Lets see if we came from a Feat instead
     elseif (focus.tagcount[HasFeat.?] <> 0) then
@@ -366,54 +366,54 @@
   <procedure id="PWsetupDSk" context="pick">~ This procedure setups the Discpline Skill
     perform hero.findchild[BaseSkill,tagids[ClassSkill.?]].pushtags[Discipline.?]</procedure>
   <procedure id="PWOrdKtLev" context="pick"><![CDATA[      
-      ~ This procedure helps the Ordained Knight class feature from the Battle Templar PrC.
-      ~ levAdd will hold our final result, the number to add to a field for the class feature being advanced.
-      var levAdd as number
-      var totalRem as number
-      levAdd = 0
+    ~ This procedure helps the Ordained Knight class feature from the Battle Templar PrC.
+    ~ levAdd will hold our final result, the number to add to a field for the class feature being advanced.
+    var levAdd as number
+    var totalRem as number
+    levAdd = 0
 
-      ~ Some class features' scripts (like Channel Energy) count the full class level. Others (like Lay on Hands) count some fraction of the levels, but we still need to account for having an odd number of levels in both contributing classes.  We use the levDiv variable to track that divisor (it will usually be 2, but is here in case it ever needs to be anything else)
-      var levDiv as number
+    ~ Some class features' scripts (like Channel Energy) count the full class level. Others (like Lay on Hands) count some fraction of the levels, but we still need to account for having an odd number of levels in both contributing classes.  We use the levDiv variable to track that divisor (it will usually be 2, but is here in case it ever needs to be anything else)
+    var levDiv as number
 
-      ~ MCL = Main Class Level, i.e. the level in the class that is advancing an existing class's feature (Battle Templar)
-      var MCL as number
-      var pMCL as number
-      var MCLrem as number
-      pMCL = round(MCL/levDiv,0,-1)
-      MCLrem = MCL % levDiv
+    ~ MCL = Main Class Level, i.e. the level in the class that is advancing an existing class's feature (Battle Templar)
+    var MCL as number
+    var pMCL as number
+    var MCLrem as number
+    pMCL = round(MCL/levDiv,0,-1)
+    MCLrem = MCL % levDiv
 
-      ~ OCL = Other Class Level, i.e. the level in the class that granted the feature being advanced (Cleric, Paladin, etc)
-      var OCL as number
-      var pOCL as number
-      var OCLrem as number
-      pOCL = round(OCL/levDiv,0,-1)
-      OCLrem = OCL % levDiv
+    ~ OCL = Other Class Level, i.e. the level in the class that granted the feature being advanced (Cleric, Paladin, etc)
+    var OCL as number
+    var pOCL as number
+    var OCLrem as number
+    pOCL = round(OCL/levDiv,0,-1)
+    OCLrem = OCL % levDiv
 
-      ~ If we don't need to deal with partials, just add the MCL and we're done
-      if (levDiv = 1) then
-        levAdd = MCL
-      ~ If we are dealing with partials, we need to make sure any "leftover" levels from the classes can contribute to the class feature, if there are enough of them combined to add to it (for example, a Paladin 7/Battle Templar 3 should Lay on Hands at 5d6, because the 7th Paladin level can combine with the 3rd BT level)
-      else
-        levAdd += pMCL
-        totalRem = MCLrem + OCLrem
-        if (totalRem >= levDiv) then
-          levAdd += round(totalRem / levDiv, 0, -1)
-        endif
-      endif]]></procedure>
+    ~ If we don't need to deal with partials, just add the MCL and we're done
+    if (levDiv = 1) then
+      levAdd = MCL
+    ~ If we are dealing with partials, we need to make sure any "leftover" levels from the classes can contribute to the class feature, if there are enough of them combined to add to it (for example, a Paladin 7/Battle Templar 3 should Lay on Hands at 5d6, because the 7th Paladin level can combine with the 3rd BT level)
+    else
+      levAdd += pMCL
+      totalRem = MCLrem + OCLrem
+      if (totalRem >= levDiv) then
+        levAdd += round(totalRem / levDiv, 0, -1)
+      endif
+    endif]]></procedure>
   <procedure id="PWgetIMod" context="pick"><![CDATA[
-      ~This procedure is used to get the initiation modifier from within a pick
-	  var initMod as number
-	  perform hero.findchild[PWManList,root.tagids[ClsCountAs.?]].setfocus
-      doneif (state.isfocus = 0)
-      initMod = hero.findchild[BaseAttr,focus.tagids[UseAttr.?]].field[aModBonus].value
-  ]]>
+    ~ This procedure is used to get the initiation modifier from within a pick
+    var initMod as number
+    perform hero.findchild[PWManList,root.tagids[ClsCountAs.?]].setfocus
+    doneif (state.isfocus = 0)
+    initMod = hero.findchild[BaseAttr,focus.tagids[UseAttr.?]].field[aModBonus].value
+    ]]>
   </procedure>
-    <procedure id="PWgetILvl" context="pick"><![CDATA[
-      ~This procedure is used to get the initiator level from within a pick
-	  var initLvl as number
-	  perform hero.findchild[PWManList,root.tagids[ClsCountAs.?]].setfocus
-      doneif (state.isfocus = 0)
-      initLvl = focus.field[cIL].value
-  ]]>
+  <procedure id="PWgetILvl" context="pick"><![CDATA[
+    ~ This procedure is used to get the initiator level from within a pick
+    var initLvl as number
+    perform hero.findchild[PWManList,root.tagids[ClsCountAs.?]].setfocus
+    doneif (state.isfocus = 0)
+    initLvl = focus.field[cIL].value
+    ]]>
   </procedure>
   </document>
