@@ -13,7 +13,7 @@
   <!-- Path of War Maneuvers editthing -->
   <editthing
     compset="PWManuever"
-    name="PoW Manuevers"
+    name="PoW maneuvers"
     group="zCommunity"
     prefix="manPW"
     description="Path of War Maneuvers"
@@ -54,7 +54,7 @@
     </inputthing>
     <inputthing
       name="Prerequisite Number"
-      helptext="This is the number of Prerequisite manuevers needed before being allowed to pick this manuever. In example if the manuever says 'Prerequisites: 2 Thrashing Dragon maneuvers' then you would enter 2 here.">
+      helptext="This is the number of Prerequisite maneuvers needed before being allowed to pick this manuever. In example if the manuever says 'Prerequisites: 2 Thrashing Dragon maneuvers' then you would enter 2 here.">
       <it_field field="mPreReq"/>
     </inputthing>
     <inputthing
@@ -127,13 +127,13 @@
 
     <!-- Linkage -->
     <inputthing
-      name="Class and Manuevers Linkage"
-      helptext="This section allows you to link the Path of War Class to its Configurable where the Manuevers are chosen from.">
+      name="Class and maneuvers Linkage"
+      helptext="This section allows you to link the Path of War Class to its Configurable where the maneuvers are chosen from.">
       <it_separator/>
     </inputthing>    
     <inputthing
       name="Class Linkage"
-      helptext="Select the class helper that is to get manuevers and stances.">
+      helptext="Select the class helper that is to get maneuvers and stances.">
       <it_linkage compset="Class" linkage="powClass"/>
     </inputthing>
     <inputthing
@@ -144,7 +144,7 @@
 
     <!-- Tags -->
     <inputthing
-      name="Disciplines and Manuevers"
+      name="Disciplines and maneuvers"
       helptext="This section allows you to select which Disciplines are allowed and which attribute calculates the DC of maneuvers.">
       <it_separator/>
     </inputthing>    
@@ -161,8 +161,8 @@
 
     <!-- Arrays -->
     <inputthing
-      name="Manuevers Lists"
-      helptext="This section allows you to setup the number of Manuevers a class can Know, Ready, and its Stances..">
+      name="maneuvers Lists"
+      helptext="This section allows you to setup the number of maneuvers a class can Know, Ready, and its Stances..">
       <it_separator/>
     </inputthing>    
     <inputthing
@@ -171,7 +171,7 @@
       <it_field field="cManKnown"/>
     </inputthing>
     <inputthing
-      name="Manuevers Readied"
+      name="maneuvers Readied"
       helptext="Setup the list of Maneuvers Readied for this class.">
       <it_field field="cManReady"/>
     </inputthing>
