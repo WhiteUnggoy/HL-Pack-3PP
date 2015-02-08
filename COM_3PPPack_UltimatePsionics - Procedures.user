@@ -102,20 +102,28 @@
     var lvl as number
     ~ If the Path Ability is Primary then set us to level 3
     If (root.field[usrIndex].value = 0) Then
-	   lvl = 3
+      lvl = 3
     ~..If the Path Ability is Secondary then set us to level 11
     else 
-	   lvl = 11
+      lvl = 11
     endif
-	
-	~ If we have levels in the Awakened Blade PrC, those levels count for these abilities
-	lvl -= hero.childfound[cPWP6PthWr].root.field[cTotalLev].value
-	if (lvl < 1) then
-	  lvl = 1
-	endif
-	field[xExtraLev].value += hero.childfound[cPWP6PthWr].root.field[cTotalLev].value
-	
-	perform assignstr["ClSpecWhen." & lvl]
+  
+    ~ If we have levels in the Awakened Blade PrC, those levels count for these abilities
+    lvl -= hero.childfound[cPWP6PthWr].root.field[cTotalLev].value
+    
+    ~ If we come out less then level 1 then force us to be level 1 ability
+    if (lvl < 1) then
+      lvl = 1
+    endif
+    
+    ~ Added safe guard of making sure Pick lives before using it. Sometimes with bootstrapps
+    ~ childfound will not always work corretly. So it never hurts to "make" sure so we don't
+    ~ toss errors at gamers and I get nasty support emails. =)
+    if (hero.childlives[cPWP6PthWr] = 1) then
+      field[xExtraLev].value += hero.childfound[cPWP6PthWr].root.field[cTotalLev].value
+    endif
+
+    perform assignstr["ClSpecWhen." & lvl]
     ]]>
   </procedure>
 
