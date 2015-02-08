@@ -29,6 +29,9 @@
     <value id="StanceOn"    name="Stance Activated"/>    
     <value id="StanceUp"    name="Stance Allowed Up"/>
 	<value id="StanceClSp"	name="Stance From Class Special"/>
+	<value id="ShdwBlade"	name="Shadow Blade"/>
+	<value id="EmbShadow"	name="Embrace the Shadows"/>
+	<value id="StaInnrEye"	name="Stance of the Inner Eye"/>
   </group>
 
   <!-- Martial Discipline custom tags -->

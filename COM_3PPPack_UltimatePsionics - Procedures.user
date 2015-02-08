@@ -99,13 +99,23 @@
   <!-- Setup Psychic Warrior Maneuver/Trance First 10000                  -->
   <!-- ****************************************************************** -->
   <procedure id="PsyWarTrMa" context="pick"><![CDATA[
+    var lvl as number
     ~ If the Path Ability is Primary then set us to level 3
     If (root.field[usrIndex].value = 0) Then
-       perform assign[ClSpecWhen.3]
+	   lvl = 3
     ~..If the Path Ability is Secondary then set us to level 11
     else 
-       perform assign[ClSpecWhen.11]
+	   lvl = 11
     endif
+	
+	~ If we have levels in the Awakened Blade PrC, those levels count for these abilities
+	lvl -= hero.childfound[cPWP6PthWr].root.field[cTotalLev].value
+	if (lvl < 1) then
+	  lvl = 1
+	endif
+	field[xExtraLev].value += hero.childfound[cPWP6PthWr].root.field[cTotalLev].value
+	
+	perform assignstr["ClSpecWhen." & lvl]
     ]]>
   </procedure>
 

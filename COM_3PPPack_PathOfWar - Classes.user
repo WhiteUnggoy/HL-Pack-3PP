@@ -50,9 +50,7 @@
     <tag group="Classes" tag="PWWarlord" name="Warlord"/>
     <tag group="cAttack" tag="Good"/>
     <tag group="ClassSkill" tag="skClimb"/>
-    <bootstrap thing="cPW1DulBoo">
-      <autotag group="ClSpecWhen" tag="6"/>
-      </bootstrap>
+    <tag group="AgeColumn" tag="2"/>
     <bootstrap thing="cPW1Presen">
       <autotag group="ClSpecWhen" tag="7"/>
       </bootstrap>
@@ -116,10 +114,13 @@
     <bootstrap thing="fSimple"></bootstrap>
     <bootstrap thing="cCfgPW1"></bootstrap>
     <bootstrap thing="fArmLight"></bootstrap>
-    <bootstrap thing="fPWBuckPro"></bootstrap>
     <bootstrap thing="PWDisLevel"></bootstrap>
     <bootstrap thing="fArmMedium"></bootstrap>
     <bootstrap thing="fWepMart"></bootstrap>
+    <bootstrap thing="cPW1DulBoo">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="fArmShield"></bootstrap>
     </thing>
   <thing id="cPWWarlord" name="Warlord" description="Dynamos on the field of combat, warlords walk the line of victory and ruin through their determination to achieve glory. Where some may talk tactics, the warlord dives in. Where some may fight in strategic units, the warlord shines alone as an inspirational beacon on the field of combat; to be a warlord is to be a lord of war.{br}{br}{b}Adventures{/b}: Warlords adventure for many reasons, but one reason that will always be prominent is the desire to test their skill against the world&apos;s most dangerous opponents, to show their strength to themselves and to the world. Others may do this for profit, others for fun, others for revenge, but it is always certain that a warlord seeks the glory and honor only a battle well-fought can bring.{br}{br}{b}Characteristics{/b}: Brash arrogance and an irrepressible nature are hallmarks of the warlord. A devil-maycare warrior, many warlords are as fearless as they are fierce, and they both love life and live their lives to the fullest. Hedonists in some extreme cases, the warlord is drawn to combat as a moth to the flame.{br}{br}{b}Alignment{/b}: Any. Warlords can come from any and all ethical backgrounds, though they do tend more towards a chaotic alignment. Lawfully aligned warlords are rarer, and tend to compose their impulses through strict discipline.\n\n{b}Role{/b}: Striker. As a very aggressive class, the warlord seeks to bring martial power to the field in the form of overwhelming force and ferocity. Additionally, warlords make excellent leaders, as they provide some passive benefits from their class features as well as active benefits from discipline choices and their gambits." compset="ClassLevel" maxlimit="20">
     <usesource source="srcPathOfW"/>
@@ -332,8 +333,6 @@
     <link linkage="helper" thing="cHelpPW2"/>
     </thing>
   <thing id="cCfgPW2" name="Stalker Maneuvers" compset="Configure" uniqueness="unique">
-    <fieldval field="cfgObject1" value="Maneuvers"/>
-    <fieldval field="cfgObject2" value="Stances"/>
     <usesource source="srcPathOfW"/>
     <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="Discipline" tag="SolarWind"/>
@@ -344,19 +343,16 @@
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Discipline" tag="ThrashDrag"/>
     <tag group="ClsCountAs" tag="cHelpPW2"/>
-    <eval phase="Final" priority="11000">~ Setup the Warlord Maneuvers
-      Call PWsetupCfg</eval>
-    <eval phase="First" index="2">~ Setup the Warlord Maneuvers
-      perform hero.pushtags[Discipline.?]</eval>
-    <prereq message="You have activated more stances than allowed.">
-      <validate>var ValidStaOn as number
-        Call ValidStaOn
-        @valid = ValidStaOn</validate>
-      </prereq>
+    <bootstrap thing="mHelpPW2"></bootstrap>
     <prereq message="You have too many Manuevers Readied.">
       <validate>var ValidManOn as number
         Call ValidManOn
         @valid = ValidManOn</validate>
+      </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
       </prereq>
     </thing>
   <thing id="cHelpPW2" name="Stalker" compset="Class" uniqueness="unique">
@@ -458,7 +454,7 @@
     <tag group="cFort" tag="Poor"/>
     <tag group="cWill" tag="Good"/>
     <tag group="cAttack" tag="Medium"/>
-    <bootstrap thing="PWDisLevel"></bootstrap>
+    <tag group="AgeColumn" tag="3"/>
     <bootstrap thing="fArmLight"></bootstrap>
     <bootstrap thing="fWepMart"></bootstrap>
     <bootstrap thing="fSimple"></bootstrap>
@@ -544,8 +540,7 @@
     <bootstrap thing="cPW2RetKi">
       <autotag group="ClSpecWhen" tag="20"/>
       </bootstrap>
-    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
-      Call PWsetupIL</eval>
+    <bootstrap thing="PWDisLevel"></bootstrap>
     </thing>
   <thing id="cPW2KiPool" name="Ki Pool" description="At 1st level, a stalker gains a pool of ki points, supernatural energy he can use to accomplish amazing feats. The number of points in the stalker&apos;s ki pool is equal to 1/2 her stalker level + his Wisdom modifier (minimum of 1).\n\nAt 1st level, the stalker may spend 1 point of ki to grant himself a +4 insight bonus to a single Perception or Sense Motive check as an immediate action, as he uses his ki to feel out the vibrations of others and their hidden motives.\n\nAt 5th level, the stalker may use his deadly strikes in conjunction with his combat insight to &quot;read&quot; his opponent&apos;s defenses and deliver devastating blows beyond his foe&apos;s guard. The stalker spends one point of ki as a swift action to read his target opponent, and may apply his deadly strike to all martial strikes initiated by the stalker for a number of rounds equal to his Wisdom modifier against this target. If the stalker scores a successful critical hit against the target while this ability is active, then he activates deadly strike as normal.\n\nAt 7th level, the stalker may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action.\n\nAt 9th level, the stalker can delve into his subconscious in battle and remember key lessons from his training. The stalker envisions potential scenarios where martial abilities he has not readied come into play and gains a momentary burst of martial insight. A number of times per day equal to his Wisdom modifier, the stalker can spend one ki point as a swift action and trade one readied maneuver for another maneuver known of the same level or lower. The new maneuver is immediately readied and accessible for use. The character may initiate this maneuver and recover it as if he had prepared at the beginning of the day (or when ever the stalker readied his maneuvers last) until the end of the combat encounter.\n\nThe ki pool is replenished each day after 8 hours of rest and meditation; these hours do not need to be consecutive. If the stalker possesses levels in another class that grants points to a ki pool, stalker levels stack with the levels of that class to determine the total number of ki points in the combined pool, but only one ability score modifier is added to the total. The choice of which score to use is made when the second class ability is gained, and once made, the choice is set. The stalker can now use ki points from this pool to power the abilities of every class he possesses that grants a ki pool." compset="ClSpecial" summary="You have a ki pool equal to 1/2 your stalker level + your WIS modifier.">
     <tag group="abAction" tag="None" name="No action" abbrev="None"/>
@@ -1377,7 +1372,6 @@ field[abSumm].text = signed(field[abValue].value) & " morale bonus to AC and Wil
     <tag group="ClassSkill" tag="Craft"/>
     <tag group="ClassSkill" tag="skBluff"/>
     <tag group="ClassSkill" tag="skClimb"/>
-    <tag group="UseAttr" tag="aINT"/>
     <bootstrap thing="cPW3DefFoc">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -1414,7 +1408,6 @@ field[abSumm].text = signed(field[abValue].value) & " morale bonus to AC and Wil
       </bootstrap>
     <bootstrap thing="fArmMedium"></bootstrap>
     <bootstrap thing="fWepMart"></bootstrap>
-    <bootstrap thing="fArmBuckl"></bootstrap>
     <bootstrap thing="cPW3TacAc">
       <autotag group="ClSpecWhen" tag="4"/>
       </bootstrap>
@@ -1463,8 +1456,6 @@ field[abSumm].text = signed(field[abValue].value) & " morale bonus to AC and Wil
     <bootstrap thing="cPW3GrtAeg">
       <autotag group="ClSpecWhen" tag="12"/>
       </bootstrap>
-    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
-Call PWsetupIL</eval>
     </thing>
   <thing id="cPW3ArmMrk" name="Armiger&apos;s Mark" description="At 2nd level, a warder is trained in how best to control her enemies and how they behave in battle, urging them to throw their all against the warder’s indomitable armor and unyielding shield. With a sharp blade, a clever taunt, or something that otherwise attracts her foe, the warder can direct the attention of enemies towards himself.\n\nWhenever the warder attacks a foe in combat and inflict at least 1 point of damage, as a free action she may mark them as her foe (he may even mark a foe during an attack of opportunity and may make the free action to do so, even though it is not her turn) and attempt to continue to force them to engage the warder only. The target is aware of being marked, and the mark remains for a number of rounds equal to the warder’s Intelligence modifier (minimum of 1). Marked targets suffer a -4 penalty to attack rolls against foes that are not the warder, and arcane spellcasters suffer an increase in arcane spell failure of 10% + 1% per two warder levels until the mark expires. The warder may only maintain a number of marks equal to 3 + her Intelligence modifier at a time, and she may make a number of marks per day equal to ½ warder level + Intelligence modifier.\n\nAt 8th level, this penalty increases to -6, and it increases again to -8 at 16th level. This ability functions on creatures with an Intelligence score of 1 or more, allowing her to mark animals and other beasts as well as sentient beings, but not mindless creatures such as skeletons.  Multiple armiger’s marks overlap (do not stack)." compset="ClSpecial" summary="Marked enemies take a penalty to hit anyone but you">
     <usesource source="srcPathOfW"/>
@@ -1653,8 +1644,6 @@ if (hero.tagis[Ability.cPW3Aegis] <> 0) then
 endif]]></eval>
     </thing>
   <thing id="cCfgPW3" name="Warder Maneuvers" compset="Configure" uniqueness="unique">
-    <fieldval field="cfgObject1" value="Maneuvers"/>
-    <fieldval field="cfgObject2" value="Stances"/>
     <tag group="Discipline" tag="PrimalFury" name="Primal Fury" abbrev="Primal Fury"/>
     <tag group="Discipline" tag="BrokenBlad" name="Broken Blade" abbrev="Broken Blade"/>
     <tag group="PathOfWar" tag="Config" name="Configurable" abbrev="Configurable"/>
@@ -1663,19 +1652,16 @@ endif]]></eval>
     <tag group="ClsCountAs" tag="cHelpPW3" name="Warder" abbrev="Warder"/>
     <tag group="Discipline" tag="GoldenLion" name="Golden Lion" abbrev="Golden Lion"/>
     <tag group="Discipline" tag="IronTort" name="Iron Tortoise" abbrev="Iron Tortoise"/>
-    <eval phase="Final" priority="11000">~ Setup the Warder Maneuvers
-      Call PWsetupCfg</eval>
-    <eval phase="First" index="2">~ Setup the Warlord Maneuvers
-      perform hero.pushtags[Discipline.?]</eval>
-    <prereq message="You have too many Manuevers Readied.">
-      <validate>var ValidManOn as number
-        Call ValidManOn
-        @valid = ValidManOn</validate>
-      </prereq>
+    <bootstrap thing="mHelpPW3"></bootstrap>
     <prereq message="You have activated more stances than allowed.">
       <validate>var ValidStaOn as number
         Call ValidStaOn
         @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
       </prereq>
     </thing>
   <thing id="cPW3ImpAeg" name="Improved Aegis" description="At 6th level, the warder&apos;s aegis’ range increases its effective area, growing to a 20 ft. radius." compset="ClSpecial" summary="Aegis radius increases to 20 ft">
@@ -1723,18 +1709,6 @@ endif]]></eval>
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     </thing>
-  <thing id="pZTEST" name="Armor Check Penalty" description="Select this adjustment to adjust the Armor Check Penalty (ACP) of a specific piece of armor." compset="InPlay">
-    <tag group="Adjustment" tag="YourArmor" name="Current Armor" abbrev="Current Armor"/>
-    <eval phase="PreLevel" priority="10000"><![CDATA[
-      ~ If we're not enabled, get out now
-      doneif (field[pIsOn].value = 0)
-      ~if nothing's been chosen, get out now
-      doneif (field[pChosen].ischosen = 0)
-
-      ~ Increase/Decrease ACP but don't let the ACP be lowered
-      ~ to more than zero.
-      field[pChosen].chosen.field[arArmorChk].value = minimum(field[pChosen].chosen.field[arArmorChk].value + field[pAdjust].value, 0)]]></eval>
-    </thing>
   <thing id="cHelpPWPC1" name="Battle Templar" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="8"/>
     <fieldval field="cAbbr" value="BTm"/>
@@ -1747,31 +1721,6 @@ endif]]></eval>
     <arrayval field="cMagLevTot" index="6" value="6"/>
     <arrayval field="cMagLevTot" index="7" value="7"/>
     <arrayval field="cMagLevTot" index="8" value="8"/>
-    <arrayval field="cKnowTot" index="1" value="1"/>
-    <arrayval field="cKnowTot" index="2" value="1"/>
-    <arrayval field="cKnowTot" index="2" column="1" value="1"/>
-    <arrayval field="cKnowTot" index="2" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="3" value="2"/>
-    <arrayval field="cKnowTot" index="3" column="1" value="1"/>
-    <arrayval field="cKnowTot" index="3" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="4" value="2"/>
-    <arrayval field="cKnowTot" index="4" column="1" value="1"/>
-    <arrayval field="cKnowTot" index="4" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="5" value="3"/>
-    <arrayval field="cKnowTot" index="5" column="1" value="2"/>
-    <arrayval field="cKnowTot" index="5" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="6" value="3"/>
-    <arrayval field="cKnowTot" index="6" column="1" value="2"/>
-    <arrayval field="cKnowTot" index="6" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="7" value="4"/>
-    <arrayval field="cKnowTot" index="7" column="1" value="2"/>
-    <arrayval field="cKnowTot" index="7" column="2" value="2"/>
-    <arrayval field="cKnowTot" index="8" value="4"/>
-    <arrayval field="cKnowTot" index="8" column="1" value="3"/>
-    <arrayval field="cKnowTot" index="8" column="2" value="2"/>
-    <arrayval field="cKnowTot" index="9" value="5"/>
-    <arrayval field="cKnowTot" index="9" column="1" value="3"/>
-    <arrayval field="cKnowTot" index="9" column="2" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="cFort" tag="Good"/>
     <tag group="PathOfWar" tag="Class"/>
@@ -1828,8 +1777,6 @@ endif]]></eval>
     <bootstrap thing="cPWP1BfInv">
       <autotag group="ClSpecWhen" tag="10"/>
       </bootstrap>
-    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
-      Call PWsetupIL</eval>
     </thing>
   <thing id="cPWBtlTmpl" name="Battle Templar" description="Battle templars serve the role of both divine agent and warrior in times when the state of their religion or church is in danger. Humble priests lay down their peaceful ways and take up the arms and armor of the warrior to defend their flock with sword, shield, and faith. Battle templars come from many religions, but they always come from religions in which the virtues of living a good life are taught, and they rise up to protect their people in times of crisis. Some churches actively recruit members of their faith to serve as protectors and heroes, showing these former priests and priestesses to be pinnacles of their faith and providing something for the youngest to admire and aspire to.\n\nMost battle templar hail from the cleric class, as it has a strong focus in matters of faith. Some are multiclass warder/clerics or single class clerics and paladins." compset="ClassLevel" maxlimit="10">
     <usesource source="srcPathOfW"/>
@@ -1855,39 +1802,34 @@ endif]]></eval>
       ~ Golden Lion, but the user may choose two more disciplines
       if (field[usrChosen1].ischosen = 1) then
         perform field[usrChosen1].chosen.pulltags[Discipline.?]
-        perform hero.childfound[cCfgPWPC1].pushtags[Discipline.?]
+        perform hero.childfound[mHelpPWPC1].pushtags[Discipline.?]
       endif
       if (field[usrChosen2].ischosen = 1) then
         perform field[usrChosen2].chosen.pulltags[Discipline.?]
-        perform hero.childfound[cCfgPWPC1].pushtags[Discipline.?]
+        perform hero.childfound[mHelpPWPC1].pushtags[Discipline.?]
       endif</eval>
     </thing>
   <thing id="cCfgPWPC1" name="Battle Templar Maneuvers" compset="Configure" uniqueness="unique">
-    <fieldval field="cfgObject1" value="Maneuvers"/>
-    <fieldval field="cfgObject2" value="Stances"/>
     <usesource source="srcPathOfW"/>
     <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="Discipline" tag="GoldenLion"/>
     <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ClsCountAs" tag="cHelpPWPC1"/>
-    <eval phase="First" index="2">~ Setup the Maneuvers
-      perform hero.pushtags[Discipline.?]</eval>
-    <eval phase="Final" priority="11000">~ Setup the Maneuvers
-      Call PWsetupCfg</eval>
-    <prereq message="You have activated more stances than allowed.">
-      <validate>var ValidStaOn as number
-        Call ValidStaOn
-        @valid = ValidStaOn</validate>
-      </prereq>
+    <bootstrap thing="mHelpPWPC1"></bootstrap>
     <prereq message="You have too many Manuevers Readied.">
       <validate>var ValidManOn as number
         Call ValidManOn
         @valid = ValidManOn</validate>
       </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
     </thing>
-  <thing id="cPWP1Man" name="Maneuvers" description="Select the maneuver list that this class will add to.  Although this class will maintain a separate maneuver list so that discipline restrictions can be enforced, it will inherit the initiator level and attribute modifier from the selected list.  For example, selecting the Warlord list will cause this class&apos;s maneuvers to use your Warlord IL and add your Charisma bonus to save DC." compset="ClSpecial" summary="Select the maneuver list that this class will add to.">
-    <fieldval field="usrCandid1" value="PathOfWar.Config"/>
+  <thing id="cPWP1Man" name="Maneuver List" description="Select the maneuver list that this class will add to.  Although this class will maintain a separate maneuver list so that discipline restrictions can be enforced, it will inherit the initiator level and attribute modifier from the selected list.  For example, selecting the Warlord list will cause this class&apos;s maneuvers to use your Warlord IL and add your Charisma bonus to their save DC." compset="ClSpecial" summary="Select the maneuver list that this class will add to.">
+    <fieldval field="usrCandid1" value="component.PWManList"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Hide" tag="Statblock"/>
     <tag group="Helper" tag="SpecUp"/>
@@ -1896,7 +1838,7 @@ endif]]></eval>
       ~ I REALLY hate this solution, because it means creating phony "class features" to serve as UI elements, not to mention the way false impresssions it generates regarding how PrC maneuvers are handled by the game.
       ~ The timing is set so that we set the PrC config's level after those are normally calculated by PWSetupIL, but before maneuver IL's are inherited in the field's calc script.
 
-      ~ Stop if no configurable has been chosen
+      ~ Stop if no maneuver list has been chosen
       doneif (field[usrChosen1].ischosen <> 1)
      
       ~ Find the PrC configurable
@@ -1908,7 +1850,16 @@ endif]]></eval>
       perform focus.pushtags[UseAttr.?]
 
       ~ Also inherit the initiator level from the other class
-      focus.field[cfgLevel].value = field[usrChosen1].chosen.field[cfgLevel].value]]></eval>
+      focus.field[cfgLevel].value = field[usrChosen1].chosen.field[cIL].value
+
+      ~ Finally, set the IL for the actual maneuver list
+      perform hero.findchild[PWManList, root.tagis[ClsCountAs.?]].setfocus
+      doneif (state.isfocus = 0)
+      perform field[usrChosen1].chosen.pulltags[UseAttr.?]
+      perform focus.pushtags[UseAttr.?]
+      focus.field[cIL].value = field[usrChosen1].chosen.field[cIL].value]]></eval>
+    <eval phase="First" index="2"><![CDATA[      ~ Make sure we can't select the configurable of the class this special is attached to
+      field[usrCandid1].text &= " & !" & root.tagids[ClsCountAs.?]]]></eval>
     </thing>
   <thing id="cPWP1OrdKn" name="Ordained Knight" description="A battle templar fulfills a role special to his religion, and as such, may act both as courageous warriors and as pious priest. He receives a circumstance bonus on Diplomacy checks equal to his class level when dealing with members of his faith. If the character possessed a unique divine ability from a previous class (the class features channel energy, a cleric&apos;s domains, a paladin&apos;s lay on hands, an inquisitor&apos;s bane or inquisitions, or an oracle&apos;s curse), he may add his levels in battle templar to that class to determine their effectiveness. Additionally, should the battle templar possess the aegis class feature (see warder class), the battle templar may add his class level to his warder level to determine the bonus of his aegis class feature." compset="ClSpecial" summary="Continue advancement in certain divine class abilities">
     <tag group="ProductId" tag="HLCommunit"/>
@@ -1920,7 +1871,12 @@ endif]]></eval>
 
       ~ Situational bonus to Diplomacy skill
       #situational[hero.childfound[skDiplo], signed(root.field[cTotalLev].value) & " circumstance bonus when dealing with a member of the same faith", field[thingname].text]]]></eval>
-    <eval phase="PostLevel" priority="10" index="2"><![CDATA[      ~ Our Battle Templar level advances certain other class features as if they were levels in the class that feature came from
+    <eval phase="PostLevel" priority="10" index="2"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Our Battle Templar level advances certain other class features as if they were levels in the class that feature came from
       ~ Some of those features count each level 1-for-1, some use half level
       var MCL as number
       var OCL as number
@@ -1961,7 +1917,12 @@ endif]]></eval>
       hero.childfound[cPW3Aegis].field[xTotalLev].value += levAdd
       
       ~ Oracle Curses are handled in the pre-levels script]]></eval>
-    <eval phase="PreLevel" priority="11000" index="3"><![CDATA[        ~ Oracle curses already add 1/2 of all non-Oracle classes to determine curse effects, so we'll add 1/2 of our Battle Templar level again.  This is a rare instance of rounding up instead of down, because we want to ensure that odd-numbered class levels get added fully.
+    <eval phase="PreLevel" priority="11000" index="3"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+        ~ Oracle curses already add 1/2 of all non-Oracle classes to determine curse effects, so we'll add 1/2 of our Battle Templar level again.  This is a rare instance of rounding up instead of down, because we want to ensure that odd-numbered class levels get added fully.
         var bonus as number
         bonus = round(#levelcount[PWBtlTmpl]/2,0,1)
         foreach pick in hero from BaseCustSp where "SpecSource.cHelpOra | SpecSource.cHelpClr"
@@ -1982,7 +1943,12 @@ endif]]></eval>
     <tag group="AbilType" tag="Super"/>
     <tag group="abAction" tag="Swift"/>
     <tag group="abRange" tag="Feet"/>
-    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ Range is 25 ft + 5 ft per two initiator levels
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Range is 25 ft + 5 ft per two initiator levels
       var halfIL as number
       var addRange as number
       field[abRange].value = field[abValue].value
@@ -1996,6 +1962,10 @@ endif]]></eval>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abAction" tag="Swift"/>
     <tag group="AbilType" tag="Super"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
   <thing id="cPWP1GrdFt" name="Guardian of the Faith" description="At 5th level, the battle templar learns a signature stance of his calling, and with it he can better protect himself and those he considers his allies. This is a 5th level stance of no particular discipline. To enter this stance, as a swift action the battle templar abandons a martial stance he is currently using. The benefits of this ability end if the battle templar assumes a martial stance. Once within this stance, the battle templar gains damage reduction 10/adamantine, and allies within 20 ft of his position (excluding himself) gain a +4 sacred or profane (alignment dependent) bonus to AC, CMD, and to saving throws." compset="ClSpecial" summary="Martial stance grants DR 10/adamantine, +4 bonus to AC/CMD/saves to allies within 20&apos;">
     <fieldval field="abValue" value="10"/>
@@ -2009,7 +1979,12 @@ endif]]></eval>
     <tag group="mRange" tag="Personal"/>
     <tag group="mTarget" tag="You"/>
     <tag group="mDuration" tag="Stance"/>
-    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not enabled, get out now
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not enabled, get out now
       doneif (field[abilActive].value = 0)
 
       ~ Grant damage reduction
@@ -2038,18 +2013,27 @@ endif]]></eval>
     <tag group="abRange" tag="Feet"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="PostLevel" priority="10000">~ Range is 25 ft + 5 ft per two initiator levels
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Range is 25 ft + 5 ft per two initiator levels
       var halfIL as number
       var addRange as number
       field[abRange].value = field[abValue].value
       halfIL = round(root.field[cCasterLev].value/2, 0, -1)
       addRange = halfIL * field[abValue2].value
-      field[abRange].value += addRange</eval>
+      field[abRange].value += addRange]]></eval>
     </thing>
   <thing id="cPWP1BlChn" name="Bolstering Channel" description="At 9th level, the battle templar may channel the energy of his god while recovering his martial strength. As a standard action, the battle templar recovers a single maneuver and may channel energy as part of that action." compset="ClSpecial" summary="Recover a maneuver and channel energy as a standard action">
     <tag group="abAction" tag="Standard"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
   <thing id="cPWP1BfInv" name="Battlefield Invocation" description="At 10th level, the battle templar has reached a pinnacle of divine power and martial prowess that few ever do, and as such, is capable of amazing feats of skill. The battle templar expends a 4th level or higher spell slot as a free action and initiates a martial strike as normal. Allies (excluding the battle templar) within 60 ft. of his position witnessing this are invigorated by his power, and regain 10 hit points per level of the spell sacrificed to power this ability and a +4 morale bonus to attack and damage rolls for one round. This ability does not combine with the Reach of the Divine or the Shepherd the Flock class features." compset="ClSpecial" summary="Expend a 4th-level or higher spell when you perform a martial strike to heal and empower allies within 60&apos;">
     <fieldval field="abRange" value="60"/>
@@ -2060,6 +2044,10 @@ endif]]></eval>
     <tag group="LvNamePar" tag="IncRange"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
   <thing id="cHelpPWPC2" name="Bladecaster" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="10"/>
@@ -2148,9 +2136,7 @@ endif]]></eval>
       </bootstrap>
     <eval phase="PostLevel" index="2"><![CDATA[        ~ Have the PrC's maneuver configurator inherit the discipline list of the existing initiator class it follows
         perform hero.childfound[cPWP1Man].field[usrChosen1].chosen.pulltags[Discipline.?]
-        perform hero.childfound[cCfgPWPC2].pushtags[Discipline.?]]]></eval>
-    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
-      Call PWsetupIL</eval>
+        perform hero.childfound[mHelpPWPC2].pushtags[Discipline.?]]]></eval>
     </thing>
   <thing id="cPWBldcast" name="Bladecaster" description="For some, the technique of blending both the skills of the warrior with the arts of the magic-user is an impossible task, the mind or the body lacking in the strengths needed for such an arduous undertaking. Those rare few who are both strong of arm and quick of mind have to the potential to blend these two differing schools and create a new whole. Using techniques gained from the champions of the fey worlds and taken from their pupils, the elves, the techniques of the bladecaster have spread amongst the races.\n\nBy fortifying the body with arcane might, the bladecaster can force his magic to augment his physical abilities and increase his martial capabilities to supernatural levels. These practices have been mastered by many races, and each race has added something new to the pursuit of martial and arcane supremacy, and the bladecaster in the world today uses techniques that have spread for hundreds of years amongst all civilized races. In the modern day, one can find bladecasters where their talents are most desired: on battlefields and in hot spots where great armies clash. Bladecasters stride as lords of war, arcane energies rippling about them as they sunder the strength of their foes. Most bladecasters are warder/wizards, warder/magus, or warlord/ sorcerers, though some warder/witches are known who traffic with the fey realms.\n\nMost bladecaster are warder/wizards, warder/magus, or warlord/sorcerers, though some warder/witches are known who traffic with the fey realms. Few stalkers pursue this route, and those that do often are multiclassed with magus." compset="ClassLevel" maxlimit="10">
     <usesource source="srcPathOfW"/>
@@ -2168,26 +2154,21 @@ endif]]></eval>
     <exprreq message="Must be able to use at least one martial stance."><![CDATA[tagcount[HasStance.?] <> 0]]></exprreq>
     </thing>
   <thing id="cCfgPWPC2" name="Bladecaster Maneuvers" compset="Configure" uniqueness="unique">
-    <fieldval field="cfgObject1" value="Maneuvers"/>
-    <fieldval field="cfgObject2" value="Stances"/>
     <usesource source="srcPathOfW"/>
     <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ClsCountAs" tag="cHelpPWPC2"/>
-    <eval phase="First" index="2">~ Setup the Maneuvers
-      perform hero.pushtags[Discipline.?]</eval>
-    <eval phase="Final" priority="11000">~ Setup the Maneuvers
-      Call PWsetupCfg</eval>
-    <prereq message="You have activated more stances than allowed.">
-      <validate>var ValidStaOn as number
-        Call ValidStaOn
-        @valid = ValidStaOn</validate>
-      </prereq>
+    <bootstrap thing="mHelpPWPC2"></bootstrap>
     <prereq message="You have too many Manuevers Readied.">
       <validate>var ValidManOn as number
         Call ValidManOn
         @valid = ValidManOn</validate>
+      </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
       </prereq>
     </thing>
   <thing id="cPWP2MtCst" name="Martial Caster" description="At 1st level, the blending of arcane magic and martial maneuvers begins to flower into an effective and unique fighting style. The bladecaster may select one arcane spellcasting class that he possesses; he may now cast its spells in light armor without suffering interference from arcane spell failure chance." compset="ClSpecial" summary="Cast spells in light armor">
@@ -2195,7 +2176,12 @@ endif]]></eval>
     <tag group="AbilType" tag="Extra"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ Do nothing if a selection hasn't been made
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Do nothing if a selection hasn't been made
       doneif (field[usrChosen1].ischosen <> 1)
 
       perform field[usrChosen1].chosen.assign[CastArmor.Light]]]></eval>
@@ -2210,7 +2196,12 @@ endif]]></eval>
     <tag group="mTarget" tag="You"/>
     <tag group="mDuration" tag="Stance"/>
     <tag group="AbilType" tag="Super"/>
-    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not enabled, get out now
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not enabled, get out now
       doneif (field[abilActive].value = 0)
 
       ~ Grant damage reduction
@@ -2232,28 +2223,30 @@ endif]]></eval>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abAction" tag="Free"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
   <thing id="cPWP2BcStr" name="Battlecaster&apos;s Strike" description="At 4th level, the bladecaster learns techniques that allow him to unleash his offensive magic through the medium of his weapon, delivering magic at melee or range with equal potency. When the bladecaster initiates a martial strike, as a swift action he may cast an arcane spell (with a range of touch and a level equal to or less than the level of the strike initiated) against the same target as the strike. These spells must have a range of touch. If the bladecaster would provoke an attack of opportunity for casting a spell within a threatened square, he may attempt to cast defensively as normal. He may utilize this ability a number of times per day equal to 1 + the bladecaster’s initiator modifier (minimum of 1)." compset="ClSpecial" summary="As a swift action, cast a spell against the target of your martial strike.">
-    <tag group="ProductId" tag="HLCommunit"/>
+    <fieldval field="trkMax" value="1"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abAction" tag="Swift"/>
     <tag group="Usage" tag="Day"/>
-    <tag group="ChargeCalc" tag="AttrUses1"/>
-    <tag group="ChargeAttr" tag="Minimum1"/>
     <tag group="User" tag="Tracker"/>
-    <eval phase="PreAttr" priority="10000"><![CDATA[      ~ Stop now if we haven't picked a maneuver list
-      doneif (hero.childfound[cPWP1Man].field[usrChosen1].ischosen <> 1)
-      ~Figure out which ability is our initiator modifier
-      var tagstr as string
-      tagstr = root.tagids[ClsCountAs.?]
-      foreach pick in hero from Configure where tagstr
-        perform eachpick.setfocus
-      nexteach
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-      ~ Assign the ability as the ChargeAttr for this class special
-      tagstr = focus.tagids[UseAttr.?]
-      tagstr = replace(tagstr, "UseAttr", "ChargeAttr", 0)
-      perform this.assignstr[tagstr]]]></eval>
+      ~ Stop now if we haven't picked a maneuver list
+      doneif (hero.childfound[cPWP1Man].field[usrChosen1].ischosen <> 1)
+
+      ~ Add initiator modifier to uses/day
+      var initMod as number
+      Call PWgetIMod
+      field[trkMax].value += initMod]]></eval>
     </thing>
   <thing id="cPWP2ArcRn" name="Arcane Ruin" description="At 5th level, the bladecaster brings ruin to his foes with every stroke of his blade and opens their defenses to the power of his arcane magic. A foe damaged by his martial strikes find that it suffers increased difficulties resisting the bladecaster’s magic, suffering a -2 penalty to its Armor Class and saving throws against the bladecaster’s arcane spells on subsequent rounds for the remainder of the encounter, or until the bladecaster recovers his maneuvers." compset="ClSpecial" summary="Foes damaged by your martial strikes suffer -2 to AC and saves vs. your spells">
     <tag group="ProductId" tag="HLCommunit"/>
@@ -2268,54 +2261,29 @@ endif]]></eval>
     <tag group="AbilType" tag="Super"/>
     </thing>
   <thing id="cPWP2ArcAs" name="Arcane Assault" description="At 10th level, the bladecaster is capable of fully blending his arcane abilities with his martial talent. The bladecaster is capable of sculpting his very magic into the implements of war, enabling it to deliver his martial maneuvers. The bladecaster may activate this ability as a free action when he casts a spell that requires an attack roll. He may initiate a strike as a free part of casting that spell, using the spell in place of his normal ranged or melee attack, as appropriate (the spell effectively delivers the maneuver’s effects in place of the bladecaster’s weapon.) The spell’s range is reduced to 30-ft or closer (if the spell’s range is smaller, then use that), and spell resistance or a successful saving throw against the spell effect negates the maneuver being used. Spells that create multiple attacks or that target multiple creatures only have the strike added to the first such attack. This ability may be used a number of times equal to 1 + initiator modifier per day." compset="ClSpecial" summary="Use a martial strike with an attack spell">
-    <tag group="ProductId" tag="HLCommunit"/>
+    <fieldval field="trkMax" value="1"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abAction" tag="Free"/>
     <tag group="Usage" tag="Day"/>
-    <tag group="ChargeCalc" tag="AttrUses1"/>
-    <eval phase="PreAttr" priority="10000"><![CDATA[      ~ Stop now if we haven't picked a maneuver list
-      doneif (hero.childfound[cPWP1Man].field[usrChosen1].ischosen <> 1)
-      ~Figure out which ability is our initiator modifier
-      var tagstr as string
-      tagstr = root.tagids[ClsCountAs.?]
-      foreach pick in hero from Configure where tagstr
-        perform eachpick.setfocus
-      nexteach
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Tracker"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-      ~ Assign the ability as the ChargeAttr for this class special
-      tagstr = focus.tagids[UseAttr.?]
-      tagstr = replace(tagstr, "UseAttr", "ChargeAttr", 0)
-      perform this.assignstr[tagstr]]]></eval>
+      ~ Stop now if we haven't picked a maneuver list
+      doneif (hero.childfound[cPWP1Man].field[usrChosen1].ischosen <> 1)
+
+      ~ Add initiator modifier to uses/day
+      var initMod as number
+      Call PWgetIMod
+      field[trkMax].value += initMod]]></eval>
     </thing>
   <thing id="cHelpPWPC3" name="Dragon Fury" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="12"/>
     <fieldval field="cAbbr" value="DFr"/>
     <fieldval field="cSkills" value="4"/>
-    <arrayval field="cKnowTot" index="1" value="1"/>
-    <arrayval field="cKnowTot" index="2" value="1"/>
-    <arrayval field="cKnowTot" index="2" column="1" value="1"/>
-    <arrayval field="cKnowTot" index="2" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="3" value="2"/>
-    <arrayval field="cKnowTot" index="3" column="1" value="1"/>
-    <arrayval field="cKnowTot" index="3" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="4" value="2"/>
-    <arrayval field="cKnowTot" index="4" column="1" value="1"/>
-    <arrayval field="cKnowTot" index="4" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="5" value="3"/>
-    <arrayval field="cKnowTot" index="5" column="1" value="2"/>
-    <arrayval field="cKnowTot" index="5" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="6" value="3"/>
-    <arrayval field="cKnowTot" index="6" column="1" value="2"/>
-    <arrayval field="cKnowTot" index="6" column="2" value="1"/>
-    <arrayval field="cKnowTot" index="7" value="4"/>
-    <arrayval field="cKnowTot" index="7" column="1" value="2"/>
-    <arrayval field="cKnowTot" index="7" column="2" value="2"/>
-    <arrayval field="cKnowTot" index="8" value="4"/>
-    <arrayval field="cKnowTot" index="8" column="1" value="3"/>
-    <arrayval field="cKnowTot" index="8" column="2" value="2"/>
-    <arrayval field="cKnowTot" index="9" value="5"/>
-    <arrayval field="cKnowTot" index="9" column="1" value="3"/>
-    <arrayval field="cKnowTot" index="9" column="2" value="2"/>
     <tag group="ClassSkill" tag="skSenseMot"/>
     <tag group="ClassSkill" tag="skSurvival"/>
     <tag group="cFort" tag="Good"/>
@@ -2374,8 +2342,6 @@ endif]]></eval>
     <bootstrap thing="cPWP3DWGD">
       <autotag group="ClSpecWhen" tag="10"/>
       </bootstrap>
-    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
-      Call PWsetupIL</eval>
     </thing>
   <thing id="cPWDragFur" name="Dragon Fury" description="The disciple of the Thrashing Dragon discipline knows the controlled fury of the dragon’s rage on the battlefield, the sinuous twists and the lashing claws of that savage beast are engraved in the body of its student. By devoting one’s self to the vicious style, the disciple learns many things on how best to emulate the dragon and its fighting style. The ferocity and grace in each twist of the blade and each leap that he makes hides a fierce power and determination to win. These specialists are known as dragon furies, and a dragon’s deep well of wrath lives within their hearts and pumps its fury to every inch of their body. Most dragon furies hail from the ranks of stalkers and warlords, and some from the occasional bard or ranger. The most terrifying also know of the potency of true primal rage and have a background in the barbarian class." compset="ClassLevel" maxlimit="10">
     <usesource source="srcPathOfW"/>
@@ -2405,8 +2371,6 @@ nexteach]]></validate>
       </prereq>
     </thing>
   <thing id="cCfgPWPC3" name="Dragon Fury Maneuvers" compset="Configure" uniqueness="unique">
-    <fieldval field="cfgObject1" value="Maneuvers"/>
-    <fieldval field="cfgObject2" value="Stances"/>
     <usesource source="srcPathOfW"/>
     <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="Discipline" tag="ThrashDrag"/>
@@ -2415,24 +2379,26 @@ nexteach]]></validate>
     <tag group="ClsCountAs" tag="cHelpPWPC3"/>
     <tag group="Discipline" tag="BrokenBlad"/>
     <tag group="Discipline" tag="PrimalFury"/>
-    <eval phase="First" index="2">~ Setup the Maneuvers
-      perform hero.pushtags[Discipline.?]</eval>
-    <eval phase="Final" priority="11000">~ Setup the Maneuvers
-      Call PWsetupCfg</eval>
-    <prereq message="You have activated more stances than allowed.">
-      <validate>var ValidStaOn as number
-        Call ValidStaOn
-        @valid = ValidStaOn</validate>
-      </prereq>
+    <bootstrap thing="mHelpPWPC3"></bootstrap>
     <prereq message="You have too many Manuevers Readied.">
       <validate>var ValidManOn as number
         Call ValidManOn
         @valid = ValidManOn</validate>
       </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
     </thing>
   <thing id="cPW3DrFrTr" name="Dragon Fury Training" description="The path of the dragon fury has semi-mystical roots in several different traditions and schools of thought, allowing divergent paths to come together as one in the hands of its practitioners. If the character possesses one of the following abilities: bardic performance, ki pool, or rage; the character may add his class level to the class that offers that ability to determine the number of bardic performance rounds, ki points, or rounds of rage that he may use per day. This does not improve their effectiveness; this only increases the number of uses per day." compset="ClSpecial" summary="Gain daily uses of ki, rage, or bardic perfomance if you already had those features">
     <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="PostLevel" priority="10000">~ The rules state that our levels in this class ONLY count for uses/day of these other class features, not their effectiveness.  So we have to add to their trkMax instead of their level counts.
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ The rules state that our levels in this class ONLY count for uses/day of these other class features, not their effectiveness.  So we have to add to their trkMax instead of their level counts.
 
       var lev as number
       var halfLev as number
@@ -2449,12 +2415,17 @@ nexteach]]></validate>
 
       ~ Ki Pool
       #trkmax[cMnkKiPool] += halfLev
-      #trkmax[cPW2KiPool] += halfLev</eval>
+      #trkmax[cPW2KiPool] += halfLev]]></eval>
     </thing>
   <thing id="cPWP3DFFoc" name="Dual Fang Focus" description="The dragon fury is a practitioner of two-weapon fighting styles and suffers fewer penalties when fighting with two weapons or a double weapon. He adds a +1 competence bonus to attack and damage rolls while two-weapon fighting with these weapons at 1st level. This bonus increases by +1 at 4th level, and again at 7th and 10th levels." compset="ClSpecial" summary="Gain bonuses while fighting with two weapons">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
-    <eval phase="PostLevel" priority="10000"><![CDATA[      ~Set the list name
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~Set the list name
       field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
 
       ~ If we're not shown, just get out now
@@ -2508,11 +2479,20 @@ nexteach]]></validate>
   <thing id="cPWP3DoTC" name="Dance of Thrashing Claws" description="As the buffeting wings and heavy scales of the dragon protect its vital areas in battle, so do the paired weapons of the dragon fury. While one weapon defends the dragon fury, the other one lies waiting to continue the defense and see the martial disciple to victory. While in Thrashing Dragon stance and using a counter of the Broken Blade, Primal Fury, or Thrashing Dragon discipline, the character may use that counter one additional time (if necessary) before his next turn." compset="ClSpecial" summary="Use counter one extra time while in Thrashing Dragon stance">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
   <thing id="cPWP3DFDef" name="Dragon Fury Defense" description="Mastering the art of fighting with two weapons in his hands or when wielding a double weapon, the dragon fury learns how to better defend himself with his dual weapons. He gains a +1 shield bonus to his Armor Class at 3rd level. This increases to +2 at 6th level, and to +3 at 9th level. To gain this bonus to his Armor Class, the dragon fury must be fighting with two weapons or a double weapon and must be in a Broken Blade, Primal Fury, or Thrashing Dragon stance." compset="ClSpecial">
     <tag group="AbilType" tag="Extra"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="PostAttr" priority="10000"><![CDATA[      ~Set the list name
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~Set the list name
       field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
 
       ~ If we're not shown, just get out now
@@ -2548,7 +2528,12 @@ nexteach]]></validate>
   <thing id="cPWP3VicFn" name="Vicious Fang" description="At 5th level, the dragon fury uses Sharp Fang as if both of his wielded weapons were wielded as two-handed weapons (gaining a damage bonus equal to +3 per point of attack bonus subtracted).\n\n[b]NOTE:[/b] Due to a limitation in Hero Lab, this does not work with double weapons." compset="ClSpecial" summary="Power Attack counts both weapons as two-handed">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
-    <eval phase="PostAttr" priority="50000"><![CDATA[      ~Set the list name
+    <eval phase="PostAttr" priority="50000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~Set the list name
       field[listname].text = field[thingname].text & " " & signed(field[xIndex].value)
 
       ~ If we're not shown, just get out now
@@ -2571,6 +2556,10 @@ nexteach]]></validate>
   <thing id="cPWP3DFRec" name="Deadly Fang Recovery" description="At 8th level, the dragon fury’s ability to rend his foes asunder and continue the fight is nearly unmatched, spurring him to greater martial displays of prowess. Whenever the dragon fury reduces a foe to 0 hit points or fewer in a turn while executing a martial strike of his in-class disciplines or while full attacking an opponent while two-weapon fighting, the character may recover one expended maneuver." compset="ClSpecial" summary="Recover a maneuver when you fell a foe with discipline strikes or TWF">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
   <thing id="cPWP3DWGD" name="Dragon War God&apos;s Dance" description="At 10th level, the dragon fury gains a potent stance as the master level of his craft. The dragon fury may abandon a stance he is currently in to assume this stance as a swift action, losing the benefits of the previous stance to gain the benefits of this one. This stance is considered to be a stance of the Broken Blade, Primal Fury, and Thrashing Dragon disciplines. While in the Dragon War God’s Dance, as a full round action the character may move any distance as a free action, so as long as his total movement for the round does not exceed twice his movement speed. He may continue subsequent attacks (up to his maximum number of attacks on a full attack action) after this movement is complete, so long as he has moved at least 10-ft prior to the last attack. Each attack inflicts an additional 4d6 points of damage. Unlike most stances, this stance is particularly strenuous, and may only be maintained for a number of rounds equal to 5 + Constitution modifier, after which he reverts to his previous stance and is fatigued for a number of rounds equal to the number of rounds he was in this stance. Once he has recovered from the Dragon War God’s Dance, he may resume it again if he should so choose." compset="ClSpecial" summary="Martial stance; move as a free action while full-attacking, deal +4d6 damage per hit">
     <fieldval field="actName2" value="Fatigued"/>
@@ -2590,7 +2579,12 @@ nexteach]]></validate>
     <tag group="ChargeCalc" tag="AttrUses5"/>
     <tag group="ChargeAttr" tag="aCON"/>
     <tag group="User" tag="Tracker"/>
-    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not enabled, get out now
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not enabled, get out now
       doneif (field[abilActive].value = 0)
 
       ~ Apply the PathOfWar.StanceOn tag
@@ -2600,7 +2594,12 @@ nexteach]]></validate>
       foreach pick in hero from BaseWep
         #extradamage[eachpick, "+4d6", field[thingname].text]
       nexteach]]></eval>
-    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      if (field[abilAct2].value <> 0) then
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      if (field[abilAct2].value <> 0) then
         ~activate the Fatigued condition
         perform hero.assign[Condition.pcnFatigue]
         ~we can't enter a rage while fatigued
@@ -2681,5 +2680,1360 @@ nexteach]]></validate>
     <tag group="Discipline" tag="ThrashDrag"/>
     <link linkage="powClass" thing="cHelpPW1"/>
     <link linkage="powCfg" thing="cCfgPW1"/>
+    </thing>
+  <thing id="cPWMageHtn" name="Mage Hunter" description="The path of the mage hunter is a dangerous one, combining skill at arms and stealth with a brand of sorcery that serves a singular purpose: slaying mages.\n\nMage hunters come from a long history of those who both protect and slay wizards, serving as assassins, bodyguards, and champions in many events of ancient wizard kingdoms in days gone by. In current times, it is a rare practice that is both dangerous and in high demand by those in the know, with the deadly mage hunter selling his skills for the wealthiest purse. Some are not without honor, but if one thing unites all present day mage hunters it is their devotion to their profession and the power and respect it affords them. \n\nMage hunters hail from a number of different classes, but all share the ability to initiate martial maneuvers and they must have base knowledge in both combat and in stealth skills. Lastly, all mage hunters must learn from either a mentor or an ancient grimoire known as the {i}Grimoire Serpentis Ferra{/i} to learn their highly prized skills. All mage hunters learn sorcerous arts that aid them in their missions through ancient meditative practices, martial tradition, and mystical trials passed down by masters to students or from copies of the {i}Grimoire Serpentis Ferra{/i} itself." compset="ClassLevel" maxlimit="10">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpPWPC4"></bootstrap>
+    <link linkage="helper" thing="cHelpPWPC4"/>
+    <exprreq message="Acrobatics 2 ranks required"><![CDATA[#skillranks[skAcrobat] >= 2]]></exprreq>
+    <exprreq message="Heal 2 ranks required"><![CDATA[#skillranks[skHeal] >= 2]]></exprreq>
+    <exprreq message="Stealth 2 ranks required"><![CDATA[#skillranks[skStealth] >= 2]]></exprreq>
+    <exprreq message="Step Up feat required"><![CDATA[#hasfeat[fStepUp] <> 0]]></exprreq>
+    <exprreq message="Improved Initiative feat required."><![CDATA[#hasfeat[fImpInit] <> 0]]></exprreq>
+    <exprreq message="Spellcraft 5 ranks required"><![CDATA[#skillranks[skSpellcr] >= 5]]></exprreq>
+    <exprreq message="Base Attack Bonus +3 required"><![CDATA[#BAB[] >= 3]]></exprreq>
+    <exprreq message="Draconic language required"><![CDATA[hero.tagis[SpeakLang.lDraconic] <> 0]]></exprreq>
+    <exprreq message="Must know at least one martial stance"><![CDATA[tagcount[HasStance.?] > 0]]></exprreq>
+    <prereq message="Must be able to use at least 2nd-level maneuvers">
+      <validate><![CDATA[foreach pick in hero from PWManuever
+  validif (eachpick.tagvalue[mLevel.?] >= 2)
+nexteach]]></validate>
+      </prereq>
+    <prereq message="Must know at least one martial strike">
+      <validate><![CDATA[foreach pick in hero from PWManuever where "mType.Strike"
+  @valid = 1
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cHelpPWPC4" name="Mage Hunter" compset="Class" uniqueness="unique">
+    <fieldval field="cAbbr" value="MHt"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cSplMaxLvl" value="6"/>
+    <fieldval field="cHDSides" value="8"/>
+    <arrayval field="cCastTot" index="1" column="1" value="3"/>
+    <arrayval field="cCastTot" index="1" column="2" value="1"/>
+    <arrayval field="cCastTot" index="2" column="1" value="3"/>
+    <arrayval field="cCastTot" index="2" column="2" value="2"/>
+    <arrayval field="cCastTot" index="3" column="1" value="4"/>
+    <arrayval field="cCastTot" index="3" column="2" value="2"/>
+    <arrayval field="cCastTot" index="3" column="3" value="1"/>
+    <arrayval field="cCastTot" index="4" column="1" value="4"/>
+    <arrayval field="cCastTot" index="4" column="2" value="3"/>
+    <arrayval field="cCastTot" index="4" column="3" value="2"/>
+    <arrayval field="cCastTot" index="5" column="1" value="5"/>
+    <arrayval field="cCastTot" index="5" column="2" value="3"/>
+    <arrayval field="cCastTot" index="5" column="3" value="2"/>
+    <arrayval field="cCastTot" index="5" column="4" value="1"/>
+    <arrayval field="cCastTot" index="6" column="1" value="5"/>
+    <arrayval field="cCastTot" index="6" column="2" value="4"/>
+    <arrayval field="cCastTot" index="6" column="3" value="3"/>
+    <arrayval field="cCastTot" index="6" column="4" value="2"/>
+    <arrayval field="cCastTot" index="7" column="1" value="5"/>
+    <arrayval field="cCastTot" index="7" column="2" value="4"/>
+    <arrayval field="cCastTot" index="7" column="3" value="3"/>
+    <arrayval field="cCastTot" index="7" column="4" value="2"/>
+    <arrayval field="cCastTot" index="7" column="5" value="1"/>
+    <arrayval field="cCastTot" index="8" column="1" value="5"/>
+    <arrayval field="cCastTot" index="8" column="2" value="5"/>
+    <arrayval field="cCastTot" index="8" column="3" value="4"/>
+    <arrayval field="cCastTot" index="8" column="4" value="3"/>
+    <arrayval field="cCastTot" index="8" column="5" value="2"/>
+    <arrayval field="cCastTot" index="9" column="1" value="5"/>
+    <arrayval field="cCastTot" index="9" column="2" value="5"/>
+    <arrayval field="cCastTot" index="9" column="3" value="4"/>
+    <arrayval field="cCastTot" index="9" column="4" value="3"/>
+    <arrayval field="cCastTot" index="9" column="5" value="3"/>
+    <arrayval field="cCastTot" index="9" column="6" value="1"/>
+    <arrayval field="cCastTot" index="0" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="0" value="3"/>
+    <arrayval field="cKnowTot" index="0" column="1" value="2"/>
+    <arrayval field="cKnowTot" index="1" value="3"/>
+    <arrayval field="cKnowTot" index="1" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="1" column="2" value="1"/>
+    <arrayval field="cKnowTot" index="2" value="3"/>
+    <arrayval field="cKnowTot" index="2" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="2" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="3" value="4"/>
+    <arrayval field="cKnowTot" index="3" column="1" value="3"/>
+    <arrayval field="cKnowTot" index="3" column="2" value="2"/>
+    <arrayval field="cKnowTot" index="3" column="3" value="1"/>
+    <arrayval field="cKnowTot" index="4" value="4"/>
+    <arrayval field="cKnowTot" index="4" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="4" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="4" column="3" value="2"/>
+    <arrayval field="cKnowTot" index="5" value="4"/>
+    <arrayval field="cKnowTot" index="5" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="5" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="5" column="3" value="2"/>
+    <arrayval field="cKnowTot" index="5" column="4" value="1"/>
+    <arrayval field="cKnowTot" index="6" value="4"/>
+    <arrayval field="cKnowTot" index="6" column="1" value="4"/>
+    <arrayval field="cKnowTot" index="6" column="2" value="3"/>
+    <arrayval field="cKnowTot" index="6" column="3" value="3"/>
+    <arrayval field="cKnowTot" index="6" column="4" value="2"/>
+    <arrayval field="cKnowTot" index="7" value="5"/>
+    <arrayval field="cKnowTot" index="7" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="7" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="7" column="3" value="3"/>
+    <arrayval field="cKnowTot" index="7" column="4" value="2"/>
+    <arrayval field="cKnowTot" index="7" column="5" value="1"/>
+    <arrayval field="cKnowTot" index="8" value="5"/>
+    <arrayval field="cKnowTot" index="8" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="8" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="8" column="3" value="3"/>
+    <arrayval field="cKnowTot" index="8" column="4" value="3"/>
+    <arrayval field="cKnowTot" index="8" column="5" value="2"/>
+    <arrayval field="cKnowTot" index="9" value="5"/>
+    <arrayval field="cKnowTot" index="9" column="1" value="5"/>
+    <arrayval field="cKnowTot" index="9" column="2" value="4"/>
+    <arrayval field="cKnowTot" index="9" column="3" value="4"/>
+    <arrayval field="cKnowTot" index="9" column="4" value="3"/>
+    <arrayval field="cKnowTot" index="9" column="5" value="2"/>
+    <arrayval field="cKnowTot" index="9" column="6" value="1"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassSkill" tag="skPercep"/>
+    <tag group="ClassSkill" tag="skStealth"/>
+    <tag group="ClassSkill" tag="skUseMagic"/>
+    <tag group="Classes" tag="PWPC4" name="Mage Hunter"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="sClass" tag="cHelpMag"/>
+    <tag group="CasterType" tag="SpontKnow"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="CasterSrc" tag="Arcane"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="ClassSkill" tag="skPWKnowMa"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="Classes" tag="PWPC4"/>
+    <tag group="CastInfini" tag="0"/>
+    <tag group="cAttack" tag="Medium"/>
+    <tag group="ClassSkill" tag="Craft"/>
+    <tag group="ClassSkill" tag="skHeal"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="ClassSkill" tag="skSpellcr"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassSkill" tag="skBluff"/>
+    <tag group="ClassSkill" tag="skKnowArca"/>
+    <tag group="ClassSkill" tag="skClimb"/>
+    <tag group="ClassSkill" tag="skDisguise"/>
+    <tag group="ClassSkill" tag="skEscape"/>
+    <bootstrap thing="cPWP4MArtD">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4MArtS">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4AncPt">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4StDis">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4ArcEn">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4StaMK">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4MHCon">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4TthPt">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4StrMR">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPWP4MHrSt">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="cPWP1Man">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cCfgPWPC4"></bootstrap>
+    <bootstrap thing="cPW4ArcTen">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="1000" index="2"><![CDATA[      ~ Stop if we haven't chosen our maneuver source
+      doneif (hero.child[cPWP1Man].field[usrChosen1].ischosen <> 1)
+
+      ~ Get the initiator mod from the class or feat that granted our previous maneuvers
+      perform hero.child[cPWP1Man].field[usrChosen1].chosen.setfocus
+      doneif (state.isfocus = 0)
+
+      ~ If we came from a previous initiator class, use its attribute
+      if (focus.tagcount[ClsCountAs.?] <> 0) then
+        doneif (focus.tagcount[UseAttr.?] < 1)
+        perform focus.pulltags[UseAttr.?,SplAttr]
+        perform focus.pulltags[UseAttr.?,MaxSplAttr]
+      ~ If we came from the Martial Training feat chain, use INT
+      elseif (focus.tagcount[HasFeat.?] <> 0) then
+        perform assign[SplAttr.aINT]
+        perform assign[MaxSplAttr.aINT]
+      else
+        done
+      endif]]></eval>
+    </thing>
+  <thing id="cCfgPWPC4" name="Mage Hunter Maneuvers" compset="Configure" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClsCountAs" tag="cHelpPWPC4"/>
+    <tag group="Discipline" tag="ScarletThr"/>
+    <tag group="Discipline" tag="SolarWind"/>
+    <tag group="Discipline" tag="SteelSerp"/>
+    <tag group="Discipline" tag="VeiledMoon"/>
+    <bootstrap thing="mHelpPWPC4"></bootstrap>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPW4ArcTen" name="Arcane Tenacity" description="A mage hunter’s spells are particularly difficult to dispel; add 6 to the DC required to dispel the character’s mage hunter spells." compset="ClSpecial" summary="Your spells get +6 to dispel DC">
+    <fieldval field="abValue" value="6"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~Nothing happens here, this is just a placeholder in case we ever get a "dispel DC" field that we can modify]]></eval>
+    </thing>
+  <thing id="cPWP4MArtD" name="Martial Arcanist (Disruptive)" description="At 1st level, a mage hunter’s practice merging spellcasting and swordplay allows him to cast spells without arcane spell failure wearing light armor or bucklers. At 8th level, this ability improves further to allow unhindered spellcasting in medium armor. This class feature only functions when the character is casting a mage hunter spell. Lastly, a mage hunter gains the Disruptive feat at 1st level. At 8th level, the mage hunter also gains the Spellbreaker feat. He does not need to meet the prerequisites for these feats." compset="ClSpecial" summary="Gain Disruptive as bonus feat; cast in light armor and bucklers with no ASF">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="fDisruptiv">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="PostLevel"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Mark us as being able to cast in light armor with no ASF
+      perform root.assign[CastArmor.Light]
+
+      ~ There's no tag for buckler-only ASF-free casting, only for shields as a whole.  So we'll check to make sure that no non-buckler shield is equipped, then assign the CastArmor.Shield tag.
+      var shldOK as number
+      shldOK = 1
+      foreach pick in hero from BaseArmor where "Helper.CurrShield & !IsArmor.shBuckler"
+        shldOK = 0
+      nexteach
+      if (shldOK <> 0) then
+        perform root.assign[CastArmor.Shield]
+      endif]]></eval>
+    </thing>
+  <thing id="cPWP4MArtS" name="Martial Arcanist (Spellbreaker)" description="At 1st level, a mage hunter’s practice merging spellcasting and swordplay allows him to cast spells without arcane spell failure wearing light armor or bucklers. At 8th level, this ability improves further to allow unhindered spellcasting in medium armor. This class feature only functions when the character is casting a mage hunter spell. Lastly, a mage hunter gains the Disruptive feat at 1st level. At 8th level, the mage hunter also gains the Spellbreaker feat. He does not need to meet the prerequisites for these feats." compset="ClSpecial" summary="Gain Spellbreaker as bonus feat; cast in medium armor with no ASF">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <bootstrap thing="fSpellbr">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="PostLevel"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Mark us as being able to cast in medium armor with no ASF
+      perform root.assign[CastArmor.Medium]]]></eval>
+    </thing>
+  <thing id="cPWP4AncPt" name="Anchoring Point" description="The mage hunter’s foes are often known to use magical means to escape from him, and the {i}Grimoire Serpentis Ferra{/i} has taught him a few tricks to prevent his foes from escaping so easily. As part of a successful martial strike, the mage hunter expends a 1st or higher-level spell slot as a free action and may attempt to target the foe with a {i}dimensional anchor{/i} effect as a supernatural ability. Anchoring point lasts for a number of minutes equal to the level of the expended spell slot." compset="ClSpecial" summary="Expend a spell as a free action with a martial strike to cast {i}dimensional anchor{/i}">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Free"/>
+    <tag group="SpInfo" tag="spDimeAnc3"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
+    </thing>
+  <thing id="cPWP4StDis" name="Strike of Dispelling" description="The tactics and skills learned from the {i}Grimoire Serpentis Ferra{/i} instruct disciples how to defeat the defenses and items of their primary foes: spellcasters. With this in mind, the mage hunter learns how to channel his own innate magic and blend it with the martial disciplines of the Path of War. The mage hunter initiating this strike may expend a readied strike to use this strike in its place, and he makes an attack against a target. If the attack hits, the mage hunter may immediately make a dispel check with a caster level equal to his initiator level as if he had cast a targeted {i}dispel magic{/i} in addition to doing normal damage. Each effect that is dispelled using this strike inflicts an additional 1d6 points of damage to the target. This strike is treated as a supernatural ability." compset="ClSpecial" summary="Expend a strike to attack and cast {i}dispel magic{/i} on hit, successful dispel deals 1d6 damage per effect dispelled">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPWP4ArcEn" name="Arcane Endurance" description="At 4th level, a mage hunter knows how to extend the duration of spells that he casts on himself or his allies. The duration of any of his mage hunter spells is doubled, as if affected by the Extend Spell feat (but without any adjustments to the spell’s effective level or casting time). Spells that do not have a target entry are unaffected by this power, even if the mage hunter is the only one affected." compset="ClSpecial" summary="All your targeted spells gain benefit of Extend Spell feat for free">
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
+    </thing>
+  <thing id="cPWP4StaMK" name="Stance of the Mage Killer" description="Upon reaching 5th level, the mage hunter gains a potent stance based upon the instructions within the {i}Grimoire Serpentis Ferra{/i}. This is a 5th level stance of no particular discipline. To enter this stance, the mage hunter abandons a martial stance he is currently using as a swift action. The benefits of this ability end if the mage hunter assumes a martial stance until or unless the mage hunter abandons his stance as a swift action. Once within this stance, the mage hunter may cast one mage hunter spell as a swift action per round as part of a martial strike. Also while in this stance, if the mage hunter successfully makes a saving throw against an effect that has a reduced or partial effect on a successful saving throw (such as half damage on a {i}fireball{/i}), the mage hunter instead is unaffected by the effect." compset="ClSpecial" summary="Martial stance; swift-action cast with a strike, successful saves negate partial effects">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="mType" tag="Stance"/>
+    <tag group="mLevel" tag="5"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="mDuration" tag="Stance"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Apply the PathOfWar.StanceOn tag
+      perform hero.assign[PathOfWar.StanceOn]]]></eval>
+    <evalrule phase="PostAttr" priority="10000" message="Too many stances activated"><![CDATA[      ~ If we're not enabled, do nothing
+      validif (field[abilActive].value = 0)
+
+      ~ Make sure we don't exceed the allowed number of stances
+      validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
+  <thing id="cPWP4MHCon" name="Mage Hunter Concentration" description="At 6th level, the mage hunter has learned to focus his mind on both steel and spell, granting him a +4 competence bonus to attempts to cast mage hunter spells defensively, and a +2 insight bonus to saves against spells." compset="ClSpecial" summary="+4 to cast defensively, +2 save vs spells">
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="abValue2" value="4"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Extra"/>
+    <eval phase="PostLevel" priority="1000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Insight bonus vs spells
+      #situational[hero.child[svAll], signed(field[abValue].value) & " insight vs. spells", field[thingname].text]]]></eval>
+    </thing>
+  <thing id="cPWP4TthPt" name="Tethering Point" description="At 7th level, the mage hunter’s repertoire in dealing with his chosen prey has expanded to allow him to bind a little piece of his energies to his foe, allowing him to follow it anywhere it goes. As part of a successful martial strike, the mage hunter expends a 1st or higher-level spell slot as a free action and may attempt to target the foe with a magical leash-like effect as a supernatural ability. Tethering point lasts for a number of minutes equal to the level of the expended spell slot. If the target of this ability were to utilize an effect, power, or spell with the (Teleportation) type, the mage hunter may either attempt to make a Will save against the effect (as if he were making a saving throw to resist an effect cast upon him) to cause the target’s attempt to flee to fail, or he may voluntarily go along for the ride and teleport with his quarry to the same location. The mage hunter does not count against any limit the teleportation effect might have, such as number of creatures or total weight teleported." compset="ClSpecial" summary="Block a struck foe&apos;s teleportation, or teleport with them">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Free"/>
+    </thing>
+  <thing id="cPWP4StrMR" name="Strike of Magic Rending" description="The pinnacle combat maneuver taught by the {i}Grimoire Serpentis Ferra{/i} to its students is the strike of magic rending. By readying this maneuver, the mage hunter proves his dedication to this ancient art. The strike of magic rending replaces the strike of dispelling. The mage hunter initiating this strike may expend a readied strike to use this strike in its place, and he makes an attack against a target. If the attack hits, the mage hunter may immediately make a dispel check with a caster level equal to his initiator level as if he cast a targeted {i}greater dispel magic{/i} in addition to doing normal damage. Additionally, if the mage hunter chooses to, anyone within 10 ft. of the mage hunter (excluding the mage hunter) is also affected as if they were hit by an area {i}dispel magic{i}. Each effect that is dispelled using this strike inflicts an additional 2d6 points of damage to the target or targets of this ability. This strike is treated as a supernatural ability." compset="ClSpecial" summary="Strike of Dispelling deals 2d6 damage per effect dispelled, acts as {i}greater dispel magic{/i} and can affect an area">
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostLevel" priority="1000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~This replaces Strike of Dispelling, so hide that ability
+      perform hero.childfound[cPWP4StDis].delete[Helper.ShowSpec]]]></eval>
+    </thing>
+  <thing id="cPWP4MHrSt" name="Mage Harrier Stance" description="The final technique that the {i}Grimoire Serpentis Ferra{/i} can teach its students is the Mage Harrier Stance, allowing him to cripple the ability of the mage within close range to him. This is a 6th level stance of no particular discipline. To enter this stance, as a swift action the mage hunter abandons a martial stance he is currently using. The benefits of this ability end if the mage hunter assumes a martial stance until or unless the mage hunter abandons his stance as a swift action. Once within this stance, the mage hunter prevents magic-users from being able to cast defensively under any condition if they are within his melee reach; his knowledge of combating them allows him to disrupt their delicate spellcasting needs. Enemies affected by this stance can make a Knowledge (martial) or Spellcraft check (DC 21) to identify the stance and know that they would be vulnerable to it (allowing them to attempt to cast defensively once more). Additionally, while in this stance he gains spell resistance equal to 15 + his initiator level, and spells that fail against his spell resistance or that he successfully saves against grant a number of temporary hit points equal to twice the spell level cast against him to the mage hunter, as his strength is restored as the mage’s strength fades. Temporary hit points last until used or until the end of the encounter." compset="ClSpecial" summary="Martial stance; prevent defensive casting, gain Spell Resistance, gain temp HP when your SR defeats spells">
+    <fieldval field="abValue" value="15"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="mType" tag="Stance"/>
+    <tag group="mLevel" tag="6"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="mDuration" tag="Stance"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Find the configurable that has our IL
+      perform hero.findchild[Configure,root.tagids[ClsCountAs.?]].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Apply the PathOfWar.StanceOn tag
+      perform hero.assign[PathOfWar.StanceOn]
+
+      ~ Add IL to our SR value
+      field[abValue].value += focus.field[cfgLevel].value
+
+      ~ Apply spell resistance
+      #applysr[field[abValue].value]]]></eval>
+    <evalrule phase="PostAttr" priority="10000" message="Too many stances activated"><![CDATA[      ~ If we're not enabled, do nothing
+      validif (field[abilActive].value = 0)
+
+      ~ Make sure we don't exceed the allowed number of stances
+      validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
+  <thing id="cPWUmbrBld" name="Umbral Blade" description="The discipline of Veiled Moon is one steeped in mystery and legend, and much of its origins are hearsay at best. Some never experience the darker parts of the discipline, and those who have touched upon them often wish they had not. For every moon has a dark side, the legend says, and in that darkness there is something that is waiting for those who are daring enough to tread upon that perilous path. By entering the shadow of the Veiled Moon, the so-called Umbral Blades find that this darkness possesses power at a price, and by making a deal with it, that power can be bought. By the pact and the darkness made manifest in their weapons and in their very flesh, the umbral blade is a force that few dare to harness.\n\nMost umbral blades are stalkers or the occasional warder who has delved too deeply into forgotten secrets. Some ninjas and rogues with the Martial Training feat round out the nature of this path, but are considerably rarer." compset="ClassLevel" maxlimit="10">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpPWPC5"></bootstrap>
+    <link linkage="helper" thing="cHelpPWPC5"/>
+    <exprreq message="Base Attack Bonus +4 required"><![CDATA[#BAB[] >= 4]]></exprreq>
+    <exprreq message="Stealth 6 ranks required"><![CDATA[#skillranks[skStealth] >= 6]]></exprreq>
+    <exprreq message="Knowledge (Planes) 6 ranks required"><![CDATA[#skillranks[skKnowPlan] >= 6]]></exprreq>
+    <prereq message="Must be able to use at least 3rd-level Veiled Moon maneuvers">
+      <validate><![CDATA[foreach pick in hero from PWManuever where "Discipline.VeiledMoon"
+  validif (eachpick.tagvalue[mLevel.?] >= 3)
+nexteach]]></validate>
+      </prereq>
+    <prereq message="Discipline Focus (Veiled Moon) required">
+      <validate><![CDATA[foreach pick in hero from BaseFeat where "thingid.fPWDiscFoc"
+  validif (eachpick.field[usrChosen1].chosen.tagis[Discipline.VeiledMoon] <> 0)
+nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cHelpPWPC5" name="Umbral Blade" compset="Class" uniqueness="unique">
+    <comment>Spells Known Per Level controls the Manuevers information.
+
+Array 7 = Maneuvers Known
+Array 8 = Maneuvers Readied
+Array 9 = Stances</comment>
+    <fieldval field="cAbbr" value="UBl"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cHDSides" value="10"/>
+    <arrayval field="cKnowTot" index="1" column="7" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="7" value="1"/>
+    <arrayval field="cKnowTot" index="2" column="8" value="1"/>
+    <arrayval field="cKnowTot" index="3" column="7" value="2"/>
+    <arrayval field="cKnowTot" index="3" column="8" value="1"/>
+    <arrayval field="cKnowTot" index="4" column="7" value="2"/>
+    <arrayval field="cKnowTot" index="4" column="8" value="1"/>
+    <arrayval field="cKnowTot" index="4" column="9" value="1"/>
+    <arrayval field="cKnowTot" index="5" column="7" value="3"/>
+    <arrayval field="cKnowTot" index="5" column="8" value="2"/>
+    <arrayval field="cKnowTot" index="5" column="9" value="1"/>
+    <arrayval field="cKnowTot" index="6" column="7" value="3"/>
+    <arrayval field="cKnowTot" index="6" column="8" value="2"/>
+    <arrayval field="cKnowTot" index="6" column="9" value="1"/>
+    <arrayval field="cKnowTot" index="7" column="7" value="4"/>
+    <arrayval field="cKnowTot" index="7" column="8" value="2"/>
+    <arrayval field="cKnowTot" index="7" column="9" value="1"/>
+    <arrayval field="cKnowTot" index="8" column="7" value="4"/>
+    <arrayval field="cKnowTot" index="8" column="8" value="3"/>
+    <arrayval field="cKnowTot" index="8" column="9" value="1"/>
+    <arrayval field="cKnowTot" index="9" column="7" value="5"/>
+    <arrayval field="cKnowTot" index="9" column="8" value="3"/>
+    <arrayval field="cKnowTot" index="9" column="9" value="1"/>
+    <usesource source="srcPathOfW"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="cWill" tag="Poor"/>
+    <tag group="Classes" tag="PWPC5" name="Umbral Blade"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="cRef" tag="Good"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassSkill" tag="skIntim"/>
+    <tag group="ClassSkill" tag="skKnowLoc"/>
+    <tag group="ClassSkill" tag="skKnowPlan"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="ClassSkill" tag="skPercep"/>
+    <tag group="ClassSkill" tag="skStealth"/>
+    <tag group="Classes" tag="PWPC4" name="Mage Hunter"/>
+    <tag group="AlgnForbid" tag="Good"/>
+    <bootstrap thing="cPWP1Man">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="cCfgPWPC5"></bootstrap>
+    <bootstrap thing="cPWP5ShdBl">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5UmbSt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5BldNt">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5BldNt">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5BldNt">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5EmShd">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5ShdC1">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5ShdC2">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5ShdC3">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5ShdwB">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5TitDk">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPWP5OwtDk">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10">~ Setup Initiator Level into field[cCasterLev]
+      Call PWsetupIL</eval>
+    <eval phase="First" priority="300" index="2"><![CDATA[      ~ don't do this if the Perfect Self ability is replaced
+      doneif (hero.tagis[AbReplace.cPWP5OwtDk] <> 0)
+
+      ~ find our 10th level class level pick, and have it change the character type
+      perform hero.findchild[ClassSort,"thingid.cPWUmbrBld & fieldval:cThisIndex = 10"].assign[TypeAndAug.tpOutsider]]]></eval>
+    </thing>
+  <thing id="cCfgPWPC5" name="Umbral Blade Maneuvers" compset="Configure" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="Discipline" tag="BlackSerph"/>
+    <tag group="Discipline" tag="VeiledMoon"/>
+    <tag group="Discipline" tag="SteelSerp"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <tag group="ClsCountAs" tag="cHelpPWPC5"/>
+    <bootstrap thing="mHelpPWPC5"></bootstrap>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPWP5ShdBl" name="Shadow Blade" description="The umbral blade’s mind is permanently connected to the Plane of Shadow by his bond with the essence of a creature of darkness and fear. His soul is profoundly affected by this, and his pact with this force is bound to his very flesh. Whenever he wields a weapon from the associated weapon groups of the Veiled Moon discipline, as a swift action the blade may be changed and altered by his promise to this darkness, resulting in it becoming a blade of ephemeral shadow and writhing smoke (when wielding multiple weapons or using a double weapon, both weapons or both weapon ends are enveloped with this darkness when it is called as the same swift action). This supernatural shadow blade inflicts an additional 1d6 points of cold damage when used. In other aspects it functions as a traditional weapon. As the shadow blade is comprised of his soul’s dark energies and the energies that he wields as a Veiled Moon disciple, he may add his initiation modifier to the weapon’s damage in place of his Strength modifier, and may always use Weapon Finesse with his shadow blade due to its lightened weight from its ephemeral nature. This effect ends when the umbral blade is no longer wielding an enveloped weapon or at will (a thrown shadow blade weapon will retain its properties until after it has been thrown, discharging when it comes to rest)." compset="ClSpecial">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Swift"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Get our init modifier
+      perform hero.findchild[Configure,root.tagids[ClsCountAs.?]].pulltags[UseAttr.?,DamageOpt]
+
+      ~ Get all equipped Veiled Moon weapons on the hero
+      foreach pick in hero from BaseWep where "(Hero.MainHand | Hero.OffHand) & (" & hero.childfound[zPWVldMoon].tagids[wFtrGroup.?, "|"] & ")"
+        ~Add cold damage
+        #extradamage[eachpick, "+1d6 Cold", field[thingname].text]
+
+        ~Make weapon Finessable if it isn't already
+        if (eachpick.tagcount[Helper.Finesse] = 0) then
+          perform eachpick.assign[Helper.Finesse]
+        endif
+
+        ~Allow hero to use their init modifier for damage
+        perform eachpick.pushtags[DamageOpt.?]
+
+        ~Mark this weapon as a "shadow blade"
+        perform eachpick.assign[PathOfWar.ShdwBlade]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPWP5UmbSt" name="Umbral Sight" description="The umbral blade gains the ability to see in darkness as a true creature of the night. He gains darkvision out to 60 ft. If the character already possesses darkvision, its range increases by 30 ft." compset="ClSpecial" summary="Gain darkvision">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="raDarkVis">
+      <assignval field="abValue" value="60"/>
+      <assignval field="abValue2" value="30"/>
+      </bootstrap>
+    </thing>
+  <thing id="cPWP5BldNt" name="Blade of Night" description="As the umbral blade’s shadow blade becomes a conduit for darkness and shadow, he is capable of opening a dread gateway within his soul to cause this darkness to surge through him and through the open conduit that is his weapon. The umbral blade may charge his shadow blade (be it a single weapon, double weapon, or paired weapons) with this power as a move action, and later when needed, he may release this power as a free action as part of an attack or martial strike. This hungry and chilling darkness inflicts cold damage, and Blade of Night’s bonus cold damage is added to each attack that the character makes during the round it is activated on." compset="ClSpecial" summary="Charge your Shadow Blades to deal extra cold damage">
+    <fieldval field="actName" value="Shadow Blades charged"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Move"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[
+      ~Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value) & "d8"
+
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value) & "d8"
+      field[abSumm].text = "+" & field[abValue].value  & "d8 cold damage with charged weapon"
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~if we've been replaced, get out now
+      doneif (tagis[Helper.SpcReplace] <> 0)
+      ~only perform the calculations for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      foreach pick in hero from BaseWep where "PathOfWar.ShdwBlade"
+        #extradamage[eachpick, signed(field[abValue].value) & "d8 cold", field[thingname].text]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPWP5EmShd" name="Embrace the Shadows" description="At 3rd level, the umbral blade learns a signature stance of his new existence being half in shadow. This ability is a supernatural ability and a Veiled Moon stance of 3rd level. To enter this stance requires a swift action, and the character forgoes any stance that the character currently is using to use Embrace the Shadows. While in this stance, the character’s form and features change, his skin becoming mottled heavily with inky black shadow and his eyes, hair, nails, and teeth turn pitch black. Maneuvers of the Steel Serpent, Thrashing Dragon, and Veiled Moon disciplines have their saving throw DC’s increased by 2. He gains a +2 profane bonus per umbral blade level to his Intimidate checks due to his fearsome appearance and he automatically fails any Handle Animal check he makes due to his unnatural form. Additionally, this stance improves the umbral blade’s natural armor bonus to AC by +2, and he gains a +2 profane bonus to saving throws as his form becomes very resilient. Lastly, he gains a +2 profane bonus to Stealth checks per umbral blade level while in this stance. This stance is tiring for the mind to maintain, however, as the strain of maintaining one’s sanity while having a shadowy alien consciousness so close to one’s own mind challenges the umbral blade. He may only maintain this stance for a number of rounds equal to his initiation modifier +5 per encounter (minimum of 6); if this is exceeded, the character does not release from this stance but instead acts as if under a {i}confusion{/i} spell until the end of the encounter." compset="ClSpecial" summary="Martial stance; bonus to Stealth, Intimidate, AC, saves, and maneuver DC&apos;s">
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="abValue2" value="2"/>
+    <fieldval field="abValue3" value="2"/>
+    <fieldval field="abValue4" value="2"/>
+    <fieldval field="abDuration" value="5"/>
+    <fieldval field="actName2" value="Confused"/>
+    <tag group="mDuration" tag="Stance"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="mType" tag="Stance"/>
+    <tag group="mLevel" tag="3"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="Discipline" tag="VeiledMoon"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="User" tag="Tracker"/>
+    <tag group="mTarget" tag="You"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Get our initiation modifier (min 1) and add it to duration
+      var initMod as number
+      call PWgetIMod
+      if (initMod < 1) then
+        initMod = 1
+      endif
+      field[abDuration].value += initMod
+      field[trkMax].value = field[abDuration].value
+
+      ~ If we're not enabled, get out now
+      doneif (hero.tagis[PathOfWar.EmbShadow] = 0)
+
+      ~ Apply the PathOfWar.StanceOn tag
+      perform hero.assign[PathOfWar.StanceOn]
+
+      ~ Maneuver DC increase
+      foreach pick in hero from PWManuever where "Discipline.ThrashDrag | Discipline.VeiledMoon | Discipline.SteelSerp"
+        eachpick.field[mDC].value += field[abValue].value
+      nexteach
+
+      ~ Intimidate and Stealth bonuses (profane)
+      #applybonus[BonProfane, hero.child[skIntim], field[abValue2].value * field[xTotalLev].value]
+      #applybonus[BonProfane, hero.child[skStealth], field[abValue2].value * field[xTotalLev].value]
+
+      ~ Note that we auto-fail Handle Animal checks
+      #situational[hero.child[skHandleAn], "You fail ALL checks with this skill due to your unnatural form", field[thingname].text]
+
+      ~ Natural AC bonus
+      #applybonus[tACNatural, hero.child[ArmorClass], field[abValue3].value]
+
+      ~ Save bonus (profane)
+      #applybonus[BonProfane, hero.child[svAll], field[abValue4].value]
+
+      ~ The second checkbox is for setting the Confused status when we overstay the duration
+      if (field[abilAct2].value <> 0) then
+          perform hero.assign[Condition.pcnConfuse]
+      endif]]></eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Assign the tag that lets us know the ability is active.
+      ~ We use this tag because this class's capstone turns this from a stance into a constant effect, so it works by assigning the tag whether or not we are activated.  Also, the Shadow Consumption abilities check for the tag to see if they should grant their benefits.
+      perform hero.assign[PathOfWar.EmbShadow]]]></eval>
+    <evalrule phase="PostAttr" priority="10000" message="Too many stances activated"><![CDATA[      ~ If we're not enabled, do nothing
+      validif (field[abilActive].value = 0)
+
+      ~ Make sure we don't exceed the allowed number of stances
+      validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
+  <thing id="cPWP5ShdC1" name="Shadow Consumption I" description="As the umbral blade continues to further his delving into the darkness of the Shadow Plane through the open conduit in his mind, his form becomes infused with its essence. While in Embrace the Shadow stance, as the umbral blade’s connection to the Shadow Plane intensifies so does the merits he receives.\n\nAt 4th level, his vital processes become suspended partially, transmuting his blood into thick, shadowy fluid. He uses his initiation modifier in place of his Constitution modifier for hit points and Fortitude saves. Embrace the Shadows is now a 4th level stance." compset="ClSpecial" summary="Use your initiation modifier instead of CON for HP and Fort saves">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PreAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Make Embrace the Shadows a 4th-level stance
+      perform hero.childfound[cPWP5EmShd].delete[mLevel.?]
+      perform hero.childfound[cPWP5EmShd].assign[mLevel.4]
+
+      ~ If Embrace The Shadows not enabled, get out now
+      doneif (hero.tagis[PathOfWar.EmbShadow] = 0)
+
+      ~ Replace CON with our initiation attribute for bonus HP
+      perform hero.findchild[Configure,root.tagids[ClsCountAs.?]].pulltags[UseAttr.?,AttrHP]
+      foreach pick in hero from ClassList
+        perform eachpick.delete[AttrHP.aCON]
+        perform eachpick.pushtags[AttrHP.?]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPWP5ShdC2" name="Shadow Consumption II" description="As the umbral blade continues to further his delving into the darkness of the Shadow Plane through the open conduit in his mind, his form becomes infused with its essence. While in Embrace the Shadow stance, as the umbral blade’s connection to the Shadow Plane intensifies so does the merits he receives.\n\nAt 7th level, his flesh becomes more insubstantial, allowing him to slip through reality ever so slightly to appear and disappear at his discretion; the umbral blade gains the use of the {i}blink{/i} spell at will as a spell-like ability. Embrace the Shadows is now a 5th level stance." compset="ClSpecial" summary="{i}Blink{/i} at will as a spell-like ability">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="SpInfo" tag="spBlink3"/>
+    <eval phase="PreAttr" priority="11100"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Make Embrace the Shadows a 5th-level stance
+      perform hero.childfound[cPWP5EmShd].delete[mLevel.?]
+      perform hero.childfound[cPWP5EmShd].assign[mLevel.5]]]></eval>
+    </thing>
+  <thing id="cPWP5ShdC3" name="Shadow Consumption III" description="As the umbral blade continues to further his delving into the darkness of the Shadow Plane through the open conduit in his mind, his form becomes infused with its essence. While in Embrace the Shadow stance, as the umbral blade’s connection to the Shadow Plane intensifies so does the merits he receives.\n\nAt 9th level, the umbral blade gains the ability to gain the incorporeal subtype as an at will standard action as his flesh takes on the ephemeral nature of shadow itself. Embrace the Shadows is now a 6th-level stance." compset="ClSpecial" summary="Become incorporeal at will while in Embrace the Shadows">
+    <fieldval field="actName" value="Incorporeal"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="Standard"/>
+    <bootstrap thing="stIncorpor">
+      <containerreq phase="First" priority="550"><![CDATA[fieldval:abilActive <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="PreAttr" priority="11200"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Make Embrace the Shadows a 6th-level stance
+      perform hero.childfound[cPWP5EmShd].delete[mLevel.?]
+      perform hero.childfound[cPWP5EmShd].assign[mLevel.6]
+
+      if (hero.tagis[PathOfWar.EmbShadow] = 0 ) then
+        perform assign[Helper.ChgDisab1]
+      endif]]></eval>
+    </thing>
+  <thing id="cPWP5ShdwB" name="Shadowblind" description="The umbral blade pulls concealing shadow to bend perception around him, and may hide in plain sight in areas of dim illumination or darker. This allows the umbral blade to roll a Stealth check in dim illumination or darker, even while being observed." compset="ClSpecial" summary="You can always make Stealth checks in dim illumination or darker">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="cPWP5TitDk" name="Terror in the Dark" description="The umbral blade’s power lies in his ability to strike with shadow and fear both, rending mind and body with his actions to feed the entity the terror it craves. The umbral blade may use the Stealth skill to hide as a swift action." compset="ClSpecial" summary="Use Stealth to hide as a swift action">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPWP5OwtDk" name="One with the Dark" description="Upon reaching 10th level, the umbral blade’s bond to the Plane of Shadow is complete, as the shadow that he controls consumes him, reshaping him as a being of that world. The shadowy, alien force that has been intruding into his own mind has formed an understanding at last, and the danger to the umbral blade’s sanity is gone. The character’s type changes to Outsider (native), and he gains the benefits of being in his Embrace the Shadow stance at all times (he loses Embrace the Shadows as a stance and gains its abilities and his shadow consumption abilities as racial traits instead, without fear of sanity loss). Additionally, he gains cold resistance of 10 and DR 10/silver. He is considered a native of both his home plane and of the Plane of Shadow." compset="ClSpecial" summary="You become an Outsider, and Embrace the Shadow is permanent">
+    <fieldval field="abValue" value="10"/>
+    <fieldval field="abValue2" value="10"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ The type change to Outsider is handled in a script on the class, much like the Monk's Perfect Self
+
+      ~ Cold Resistance
+      #applydr[xDamRsCold,field[abValue].value]
+      
+      ~ Damage Reduction
+      #applydr[xDamRdSil,field[abValue2].value]
+
+      ~ Look for the Embrace of Shadows special, because we're going to do stuff to it
+      perform hero.childfound[cPWP5EmShd].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Add the same tag that Embrace the Shadows normally adds when activated, making its effect constant
+      perform hero.assign[PathOfWar.EmbShadow]
+
+      ~ Embrace the Shadows stops being a stance, so we strip the relevant tags from it
+      perform focus.delete[mDuration.?]
+      perform focus.delete[mType.?]
+      perform focus.delete[mLevel.?]
+      perform focus.delete[mInitAct.?]
+      perform focus.delete[Discipline.?]
+      perform focus.delete[mRange.?]
+      perform focus.delete[mTarget.?]]]></eval>
+    </thing>
+  <thing id="cHelpPWPC6" name="Awakened Blade" compset="Class" uniqueness="unique">
+    <fieldval field="cAbbr" value="ABl"/>
+    <fieldval field="cSkills" value="4"/>
+    <fieldval field="cHDSides" value="10"/>
+    <arrayval field="cMagLevTot" index="1" value="1"/>
+    <arrayval field="cMagLevTot" index="2" value="2"/>
+    <arrayval field="cMagLevTot" index="3" value="3"/>
+    <arrayval field="cMagLevTot" index="4" value="4"/>
+    <arrayval field="cMagLevTot" index="6" value="5"/>
+    <arrayval field="cMagLevTot" index="7" value="6"/>
+    <arrayval field="cMagLevTot" index="8" value="7"/>
+    <arrayval field="cMagLevTot" index="9" value="8"/>
+    <arrayval field="cBonFtTot" index="3" value="1"/>
+    <arrayval field="cBonFtTot" index="7" value="2"/>
+    <tag group="ClassSkill" tag="skPUKnwPsi"/>
+    <tag group="ClassSkill" tag="skSpellcr"/>
+    <tag group="ClassSkill" tag="skStealth"/>
+    <tag group="cFort" tag="Poor"/>
+    <tag group="cRef" tag="Poor"/>
+    <tag group="cWill" tag="Good"/>
+    <tag group="Classes" tag="PWPC6" name="Awakened Blade"/>
+    <tag group="cAttack" tag="Good"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="ClassSkill" tag="skPUAhypno"/>
+    <tag group="ExtraLev1" tag="Manifester"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Psionic"/>
+    <tag group="ClassSkill" tag="skDiplo"/>
+    <tag group="ClassSkill" tag="skIntim"/>
+    <bootstrap thing="cPWP6StAw2">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6StAw3">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6DFoc">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6PthWr">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6StaIE">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="PWDisLevel"></bootstrap>
+    <bootstrap thing="cPWP1Man">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6BonFt">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6BonFt">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cCfgPWPC6"></bootstrap>
+    <bootstrap thing="cPWP6StAw1">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6PcgDf">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6Hypcg">
+      <autotag group="ClSpecWhen" tag="6"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6ClrCn">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6PcMnd">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <eval phase="PostLevel" priority="10"><![CDATA[        ~ Have the PrC's maneuver configurator inherit the discipline list of the existing initiator class it follows
+        perform hero.childfound[cPWP1Man].field[usrChosen1].chosen.pulltags[Discipline.?]
+        perform hero.childfound[mHelpPWPC6].pushtags[Discipline.?]]]></eval>
+    </thing>
+  <thing id="cPWAwkBld" name="Awakened Blade" description="Some wielders of psychic power seek to extend and stretch the depths of their psionic power to assist their abilities in many different ways. Some small select few, those who are quite gifted in the clairsentient arts, find that they are able to distil certain psionic powers into a fighting style of extreme potency. The style is a deadly mix of precognition abilities coupled with martial techniques that when utilized together, allows for its user to react to danger faster and defend himself while simultaneously mapping out his foe’s defenses for maximum effect. Awakened blades, as they are called, learn to use their precognitive mastery as both offense and defense in pursuit of greater psionic knowledge and personal glory or power." compset="ClassLevel" maxlimit="10">
+    <usesource source="srcPathOfW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassType" tag="Prestige"/>
+    <bootstrap thing="cHelpPWPC6"></bootstrap>
+    <link linkage="helper" thing="cHelpPWPC6"/>
+    <exprreq message="Acrobatics 5 ranks required"><![CDATA[#skillranks[skAcrobat] >= 5]]></exprreq>
+    <exprreq message="Autohypnosis 4 ranks required"><![CDATA[#skillranks[skPUAhypno] >= 4]]></exprreq>
+    <exprreq message="Knowledge (Martial) 3 ranks required"><![CDATA[#skillranks[skPWKnowMa] >= 3]]></exprreq>
+    <exprreq message="Knowledge (Psionics) 3 ranks required"><![CDATA[#skillranks[skPUKnwPsi] >= 3]]></exprreq>
+    <exprreq message="Must know at least one martial stance"><![CDATA[hero.tagcount[HasStance.?] <> 0]]></exprreq>
+    <exprreq message="Psionic Body feat required"><![CDATA[#hasfeat[fPUPsiBody] <> 0]]></exprreq>
+    <exprreq message="Psionic Meditation feat required"><![CDATA[#hasfeat[fPUPsiMed] <> 0]]></exprreq>
+    <prereq message="Must be able to manifest {i}offensive precognition{/i}">
+      <validate><![CDATA[validif (hero.childfound[puPrecogO1].tagis[thing.user_added] <> 0.)]]></validate>
+      </prereq>
+    <prereq message="Must be able to use 2nd-level martial maneuvers">
+      <validate><![CDATA[foreach pick in hero from PWManuever where "!mType.Stance"
+  validif (eachpick.tagvalue[mLevel.?] >= 2)
+nexteach]]></validate>
+      </prereq>
+    <prereq message="Must be able to manifest {i}defensive precognition{/i}">
+      <validate><![CDATA[validif (hero.childfound[puPrecogD1].tagis[thing.user_added] <> 0.)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cCfgPWPC6" name="Awakened Blade Maneuvers" compset="Configure" uniqueness="unique">
+    <usesource source="srcPathOfW"/>
+    <tag group="PathOfWar" tag="StanceUp"/>
+    <tag group="PathOfWar" tag="Config"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClsCountAs" tag="cHelpPWPC6"/>
+    <bootstrap thing="mHelpPWPC6"></bootstrap>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    </thing>
+  <thing id="cPWP6StAw1" name="Situational Awareness" description="At 1st level, awakened blades open their minds to the myriad of potential futures that could lead to his victory in battle and to his continued defense. Similar in effect to the danger sense psionic power, the character adds half his class level (rounded down, minimum of +1) to his initiative rolls as an insight bonus. He may also add this bonus to his AC as a dodge bonus or Reflex saves to avoid traps and their attacks. This bonus stacks with bonuses gained from the trap sense class feature. At 3rd level, the character gains the benefits of the uncanny dodge ability. At 9th level, the character gains the improved uncanny dodge ability." compset="ClSpecial" summary="Bonus to initiative and AC/Ref vs. traps equal to 1/2 your class level.">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Bonus is 1/2 class level
+      field[abValue].value = round(field[xAllLev].value/2, 0, -1)
+
+      ~ Initiative bonus
+      #applybonus[BonInsight, hero.child[Initiative], field[abValue].value]
+
+      if (hero.childfound[cTrapSense].tagis[Helper.ShowSpec] <> 0) then
+        hero.child[cTrapSense].field[abValue].value += field[abValue].value
+        hero.child[cTrapSense].field[abValue2].value += field[abValue].value
+      else
+        #situational_nonstatblock[hero.child[svRef],signed(field[abValue].value) & " bonus vs. traps",field[thingname].text]
+        #situational_nonstatblock[hero.child[ArmorClass],signed(field[abValue].value) & " bonus vs. traps",field[thingname].text]
+      endif]]></eval>
+    </thing>
+  <thing id="cPWP6StAw2" name="Situational Awareness (uncanny dodge)" description="At 3rd level, the character gains the benefits of the uncanny dodge ability." compset="ClSpecial" summary="Gain Uncanny Dodge">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="raUncanny"></bootstrap>
+    </thing>
+  <thing id="cPWP6StAw3" name="Situational Awareness (improved uncanny dodge)" description="At 9th level, the character gains the improved uncanny dodge ability." compset="ClSpecial" summary="Gain Improved Uncanny Dodge">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="raImpUncan"></bootstrap>
+    </thing>
+  <thing id="cPWP6DFoc" name="Deep Focus" description="The character gains the Deep Focus psionic feat as a bonus feat at 1st level." compset="ClSpecial" summary="Gain Deep Focus as a bonus feat">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="fPUDeepFoc">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    </thing>
+  <thing id="cPWP6PthWr" name="Path of the Warrior" description="The awakened blade’s trip along the Path of War is one of constant devotion, and for those with a focused aptitude in the field of war with the psionic arts, their discipline is rewarded. If the character possesses levels in psychic warrior, then he adds his class level to his psychic warrior level for the purposes of determining the trance and maneuver abilities of his path abilities. If the character possessed levels in the soulknife base class, then the awakened blade counts all levels in this class as +1 to existing manifester level with regards to a soulknife’s mind blade enhancement bonus." compset="ClSpecial" summary="Continue to advance in trance/maneuver abilities and/or mind blade enhancement">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[      ~ We're earlier than the normal test for whether we've reached the correct level, so we'll recreate that test here
+      doneif (root.field[cTotalLev].value + field[xExtraLev].value + field[xEffectLev].value < tagvalue[ClSpecWhen.?])
+
+      ~ Increase the enhanced mind blade class feature
+      hero.childfound[cSknEnhMB].field[xExtraLev].value += (root.field[cTotalLev].value -1)]]></eval>
+    </thing>
+  <thing id="cPWP6StaIE" name="Stance of the Inner Eye" description="At 2nd level, the awakened blade’s precognitive abilities blend with his martial prowess to unlock an inner eye within his mind, all-seeing and hyper-aware of the dangers that surround him and ways to combat them. This inner sense allows the awakened blade to react to danger quickly, guide his attacks around the defenses of his enemies, and to land fierce blows as his mind traces out the myriad scenarios that could play out between himself and his foes. To enter this stance, as a swift action the awakened blade abandons a martial stance he is currently using. While in this stance, the character gains a +1 insight bonus for every three initiator levels he possesses (minimum +1) to his AC, attack and damage rolls, CMB checks, and to all saving throws. If caught in a situation where the character would be denied his Dexterity bonus, these bonuses do not apply. The character inflicts an additional 1d6 points of damage while in this stance at 2nd level, and this damage bonus improves to 2d6 points of damage at 7th level. This bonus damage is precision based, and creatures not subject to critical hits are immune to this additional damage." compset="ClSpecial" summary="Martial stance; grants insight bonuses and extra damage">
+    <fieldval field="abValue" value="1"/>
+    <fieldval field="abValue2" value="1"/>
+    <tag group="mType" tag="Stance"/>
+    <tag group="mInitAct" tag="Swift1"/>
+    <tag group="mRange" tag="Personal"/>
+    <tag group="mTarget" tag="You"/>
+    <tag group="mDuration" tag="Stance"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not enabled, get out now
+      doneif (hero.tagis[PathOfWar.StaInnrEye] = 0)
+
+      ~ Apply the PathOfWar.StanceOn tag
+      perform hero.assign[PathOfWar.StanceOn]
+
+      ~ Set bonus amount to 1/3 of our initiator level (min 1)
+      var initLvl as number
+      Call PWgetILvl
+      field[abValue].value = maximum(1, round(initLvl/3,0,-1))
+
+      ~ Add our bonus to AC, attack, damage, CMB, and saves
+      #applybonus[BonInsight, hero.child[ArmorClass], field[abValue].value]
+      #applybonus[BonInsight, hero.child[Attack], field[abValue].value]
+      #applybonus[BonInsight, hero.child[Damage], field[abValue].value]
+      #applybonus[BonInsight, hero.child[svAll], field[abValue].value]
+
+      ~ Add another damage die at 7th level
+      if (field[xTotalLev].value >= 7) then
+        field[abValue2].value += 1
+      endif
+
+      ~ Apply bonus damage
+      foreach pick in hero from BaseWep
+        #extradamage[eachpick, signed(field[abValue2].value) & "d6 precision", field[thingname].text]
+      nexteach]]></eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not enabled, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Assign the tag that lets us know the ability is active.
+      ~ We use this tag because this class's capstone turns this from a stance into a constant effect, so it works by assigning the tag whether or not we are activated.
+      perform hero.assign[PathOfWar.StaInnrEye]]]></eval>
+    <evalrule phase="PostAttr" priority="10000" message="Too many stances activated"><![CDATA[      ~ If we're not enabled, do nothing
+      validif (field[abilActive].value = 0)
+
+      ~ Make sure we don't exceed the allowed number of stances
+      validif (hero.tagcount[PathOfWar.StanceOn] <= hero.tagcount[PathOfWar.StanceUp])]]></evalrule>
+    </thing>
+  <thing id="mHelpPW2" name="Stalker Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="0" value="6"/>
+    <arrayval field="cManKnown" index="1" value="7"/>
+    <arrayval field="cManKnown" index="2" value="8"/>
+    <arrayval field="cManKnown" index="3" value="9"/>
+    <arrayval field="cManKnown" index="4" value="10"/>
+    <arrayval field="cManKnown" index="5" value="11"/>
+    <arrayval field="cManKnown" index="6" value="12"/>
+    <arrayval field="cManKnown" index="7" value="13"/>
+    <arrayval field="cManKnown" index="8" value="14"/>
+    <arrayval field="cManKnown" index="9" value="15"/>
+    <arrayval field="cManKnown" index="10" value="16"/>
+    <arrayval field="cManKnown" index="11" value="16"/>
+    <arrayval field="cManKnown" index="12" value="17"/>
+    <arrayval field="cManKnown" index="13" value="17"/>
+    <arrayval field="cManKnown" index="14" value="18"/>
+    <arrayval field="cManKnown" index="15" value="18"/>
+    <arrayval field="cManKnown" index="16" value="19"/>
+    <arrayval field="cManKnown" index="17" value="19"/>
+    <arrayval field="cManKnown" index="18" value="20"/>
+    <arrayval field="cManKnown" index="19" value="21"/>
+    <arrayval field="cManReady" index="0" value="4"/>
+    <arrayval field="cManReady" index="1" value="4"/>
+    <arrayval field="cManReady" index="2" value="5"/>
+    <arrayval field="cManReady" index="3" value="5"/>
+    <arrayval field="cManReady" index="4" value="6"/>
+    <arrayval field="cManReady" index="5" value="6"/>
+    <arrayval field="cManReady" index="6" value="6"/>
+    <arrayval field="cManReady" index="7" value="7"/>
+    <arrayval field="cManReady" index="8" value="7"/>
+    <arrayval field="cManReady" index="9" value="8"/>
+    <arrayval field="cManReady" index="10" value="8"/>
+    <arrayval field="cManReady" index="11" value="8"/>
+    <arrayval field="cManReady" index="12" value="9"/>
+    <arrayval field="cManReady" index="13" value="9"/>
+    <arrayval field="cManReady" index="14" value="10"/>
+    <arrayval field="cManReady" index="15" value="10"/>
+    <arrayval field="cManReady" index="16" value="10"/>
+    <arrayval field="cManReady" index="17" value="11"/>
+    <arrayval field="cManReady" index="18" value="11"/>
+    <arrayval field="cManReady" index="19" value="12"/>
+    <arrayval field="cStances" index="0" value="1"/>
+    <arrayval field="cStances" index="1" value="2"/>
+    <arrayval field="cStances" index="2" value="2"/>
+    <arrayval field="cStances" index="3" value="2"/>
+    <arrayval field="cStances" index="4" value="3"/>
+    <arrayval field="cStances" index="5" value="3"/>
+    <arrayval field="cStances" index="6" value="3"/>
+    <arrayval field="cStances" index="7" value="4"/>
+    <arrayval field="cStances" index="8" value="4"/>
+    <arrayval field="cStances" index="9" value="4"/>
+    <arrayval field="cStances" index="10" value="5"/>
+    <arrayval field="cStances" index="11" value="5"/>
+    <arrayval field="cStances" index="12" value="5"/>
+    <arrayval field="cStances" index="13" value="5"/>
+    <arrayval field="cStances" index="14" value="6"/>
+    <arrayval field="cStances" index="15" value="6"/>
+    <arrayval field="cStances" index="16" value="6"/>
+    <arrayval field="cStances" index="17" value="6"/>
+    <arrayval field="cStances" index="18" value="7"/>
+    <arrayval field="cStances" index="19" value="7"/>
+    <tag group="Discipline" tag="BrokenBlad"/>
+    <tag group="Discipline" tag="SteelSerp"/>
+    <tag group="Discipline" tag="VeiledMoon"/>
+    <tag group="UseAttr" tag="aWIS"/>
+    <tag group="Discipline" tag="SolarWind"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <link linkage="powCfg" thing="cCfgPW2"/>
+    <link linkage="powClass" thing="cHelpPW2"/>
+    </thing>
+  <thing id="mHelpPW3" name="Warder Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="0" value="5"/>
+    <arrayval field="cManKnown" index="1" value="6"/>
+    <arrayval field="cManKnown" index="2" value="7"/>
+    <arrayval field="cManKnown" index="3" value="7"/>
+    <arrayval field="cManKnown" index="4" value="8"/>
+    <arrayval field="cManKnown" index="5" value="8"/>
+    <arrayval field="cManKnown" index="6" value="9"/>
+    <arrayval field="cManKnown" index="7" value="9"/>
+    <arrayval field="cManKnown" index="8" value="10"/>
+    <arrayval field="cManKnown" index="9" value="10"/>
+    <arrayval field="cManKnown" index="10" value="11"/>
+    <arrayval field="cManKnown" index="11" value="11"/>
+    <arrayval field="cManKnown" index="12" value="12"/>
+    <arrayval field="cManKnown" index="13" value="12"/>
+    <arrayval field="cManKnown" index="14" value="13"/>
+    <arrayval field="cManKnown" index="15" value="13"/>
+    <arrayval field="cManKnown" index="16" value="14"/>
+    <arrayval field="cManKnown" index="17" value="14"/>
+    <arrayval field="cManKnown" index="18" value="15"/>
+    <arrayval field="cManKnown" index="19" value="16"/>
+    <arrayval field="cStances" index="0" value="1"/>
+    <arrayval field="cStances" index="1" value="2"/>
+    <arrayval field="cStances" index="2" value="2"/>
+    <arrayval field="cStances" index="3" value="2"/>
+    <arrayval field="cStances" index="4" value="3"/>
+    <arrayval field="cStances" index="5" value="3"/>
+    <arrayval field="cStances" index="6" value="3"/>
+    <arrayval field="cStances" index="7" value="4"/>
+    <arrayval field="cStances" index="8" value="4"/>
+    <arrayval field="cStances" index="9" value="4"/>
+    <arrayval field="cStances" index="10" value="5"/>
+    <arrayval field="cStances" index="11" value="5"/>
+    <arrayval field="cStances" index="12" value="5"/>
+    <arrayval field="cStances" index="13" value="5"/>
+    <arrayval field="cStances" index="14" value="6"/>
+    <arrayval field="cStances" index="15" value="6"/>
+    <arrayval field="cStances" index="16" value="6"/>
+    <arrayval field="cStances" index="17" value="6"/>
+    <arrayval field="cStances" index="18" value="7"/>
+    <arrayval field="cStances" index="19" value="7"/>
+    <arrayval field="cManReady" index="0" value="3"/>
+    <arrayval field="cManReady" index="1" value="4"/>
+    <arrayval field="cManReady" index="2" value="4"/>
+    <arrayval field="cManReady" index="3" value="4"/>
+    <arrayval field="cManReady" index="4" value="5"/>
+    <arrayval field="cManReady" index="5" value="5"/>
+    <arrayval field="cManReady" index="6" value="5"/>
+    <arrayval field="cManReady" index="7" value="6"/>
+    <arrayval field="cManReady" index="8" value="6"/>
+    <arrayval field="cManReady" index="9" value="6"/>
+    <arrayval field="cManReady" index="10" value="7"/>
+    <arrayval field="cManReady" index="11" value="7"/>
+    <arrayval field="cManReady" index="12" value="7"/>
+    <arrayval field="cManReady" index="13" value="8"/>
+    <arrayval field="cManReady" index="14" value="8"/>
+    <arrayval field="cManReady" index="15" value="8"/>
+    <arrayval field="cManReady" index="16" value="9"/>
+    <arrayval field="cManReady" index="17" value="9"/>
+    <arrayval field="cManReady" index="18" value="9"/>
+    <arrayval field="cManReady" index="19" value="10"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="Discipline" tag="PrimalFury"/>
+    <tag group="Discipline" tag="BrokenBlad"/>
+    <tag group="UseAttr" tag="aINT"/>
+    <tag group="Discipline" tag="GoldenLion"/>
+    <link linkage="powCfg" thing="cCfgPW3"/>
+    <link linkage="powClass" thing="cHelpPW3"/>
+    </thing>
+  <thing id="mHelpPWPC6" name="Awakened Blade Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="1" value="1"/>
+    <arrayval field="cManKnown" index="2" value="1"/>
+    <arrayval field="cManKnown" index="3" value="2"/>
+    <arrayval field="cManKnown" index="4" value="2"/>
+    <arrayval field="cManKnown" index="5" value="3"/>
+    <arrayval field="cManKnown" index="6" value="3"/>
+    <arrayval field="cManKnown" index="7" value="4"/>
+    <arrayval field="cManKnown" index="8" value="4"/>
+    <arrayval field="cManKnown" index="9" value="5"/>
+    <arrayval field="cManReady" index="2" value="1"/>
+    <arrayval field="cManReady" index="3" value="1"/>
+    <arrayval field="cManReady" index="4" value="1"/>
+    <arrayval field="cManReady" index="5" value="2"/>
+    <arrayval field="cManReady" index="6" value="2"/>
+    <arrayval field="cManReady" index="7" value="2"/>
+    <arrayval field="cManReady" index="8" value="3"/>
+    <arrayval field="cManReady" index="9" value="3"/>
+    <arrayval field="cStances" index="2" value="1"/>
+    <arrayval field="cStances" index="3" value="1"/>
+    <arrayval field="cStances" index="4" value="1"/>
+    <arrayval field="cStances" index="5" value="1"/>
+    <arrayval field="cStances" index="6" value="1"/>
+    <arrayval field="cStances" index="7" value="2"/>
+    <arrayval field="cStances" index="8" value="2"/>
+    <arrayval field="cStances" index="9" value="2"/>
+    <link linkage="powClass" thing="cHelpPWPC6"/>
+    <link linkage="powCfg" thing="cCfgPWPC6"/>
+    </thing>
+  <thing id="mHelpPWPC1" name="Battle Templar Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="1" value="1"/>
+    <arrayval field="cManKnown" index="2" value="1"/>
+    <arrayval field="cManKnown" index="3" value="2"/>
+    <arrayval field="cManKnown" index="4" value="2"/>
+    <arrayval field="cManKnown" index="5" value="3"/>
+    <arrayval field="cManKnown" index="6" value="3"/>
+    <arrayval field="cManKnown" index="7" value="4"/>
+    <arrayval field="cManKnown" index="8" value="4"/>
+    <arrayval field="cManKnown" index="9" value="5"/>
+    <arrayval field="cManReady" index="2" value="1"/>
+    <arrayval field="cManReady" index="3" value="1"/>
+    <arrayval field="cManReady" index="4" value="1"/>
+    <arrayval field="cManReady" index="5" value="2"/>
+    <arrayval field="cManReady" index="6" value="2"/>
+    <arrayval field="cManReady" index="7" value="2"/>
+    <arrayval field="cManReady" index="8" value="3"/>
+    <arrayval field="cManReady" index="9" value="3"/>
+    <arrayval field="cStances" index="2" value="1"/>
+    <arrayval field="cStances" index="3" value="1"/>
+    <arrayval field="cStances" index="4" value="1"/>
+    <arrayval field="cStances" index="5" value="1"/>
+    <arrayval field="cStances" index="6" value="1"/>
+    <arrayval field="cStances" index="7" value="2"/>
+    <arrayval field="cStances" index="8" value="2"/>
+    <arrayval field="cStances" index="9" value="2"/>
+    <tag group="Discipline" tag="GoldenLion"/>
+    <link linkage="powClass" thing="cHelpPWPC1"/>
+    <link linkage="powCfg" thing="cCfgPWPC1"/>
+    </thing>
+  <thing id="mHelpPWPC3" name="Dragon Fury Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="1" value="1"/>
+    <arrayval field="cManKnown" index="2" value="1"/>
+    <arrayval field="cManKnown" index="3" value="2"/>
+    <arrayval field="cManKnown" index="4" value="2"/>
+    <arrayval field="cManKnown" index="5" value="3"/>
+    <arrayval field="cManKnown" index="6" value="3"/>
+    <arrayval field="cManKnown" index="7" value="4"/>
+    <arrayval field="cManKnown" index="8" value="4"/>
+    <arrayval field="cManKnown" index="9" value="5"/>
+    <arrayval field="cManReady" index="2" value="1"/>
+    <arrayval field="cManReady" index="3" value="1"/>
+    <arrayval field="cManReady" index="4" value="1"/>
+    <arrayval field="cManReady" index="5" value="2"/>
+    <arrayval field="cManReady" index="6" value="2"/>
+    <arrayval field="cManReady" index="7" value="2"/>
+    <arrayval field="cManReady" index="8" value="3"/>
+    <arrayval field="cManReady" index="9" value="3"/>
+    <arrayval field="cStances" index="2" value="1"/>
+    <arrayval field="cStances" index="3" value="1"/>
+    <arrayval field="cStances" index="4" value="1"/>
+    <arrayval field="cStances" index="5" value="1"/>
+    <arrayval field="cStances" index="6" value="1"/>
+    <arrayval field="cStances" index="7" value="2"/>
+    <arrayval field="cStances" index="8" value="2"/>
+    <arrayval field="cStances" index="9" value="2"/>
+    <tag group="Discipline" tag="BrokenBlad"/>
+    <tag group="Discipline" tag="PrimalFury"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <link linkage="powCfg" thing="cCfgPWPC3"/>
+    <link linkage="powClass" thing="cHelpPWPC3"/>
+    </thing>
+  <thing id="mHelpPWPC2" name="Bladecaster Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="1" value="1"/>
+    <arrayval field="cManKnown" index="2" value="1"/>
+    <arrayval field="cManKnown" index="3" value="2"/>
+    <arrayval field="cManKnown" index="4" value="2"/>
+    <arrayval field="cManKnown" index="5" value="3"/>
+    <arrayval field="cManKnown" index="6" value="3"/>
+    <arrayval field="cManKnown" index="7" value="4"/>
+    <arrayval field="cManKnown" index="8" value="4"/>
+    <arrayval field="cManKnown" index="9" value="5"/>
+    <arrayval field="cManReady" index="2" value="1"/>
+    <arrayval field="cManReady" index="3" value="1"/>
+    <arrayval field="cManReady" index="4" value="1"/>
+    <arrayval field="cManReady" index="5" value="2"/>
+    <arrayval field="cManReady" index="6" value="2"/>
+    <arrayval field="cManReady" index="7" value="2"/>
+    <arrayval field="cManReady" index="8" value="3"/>
+    <arrayval field="cManReady" index="9" value="3"/>
+    <arrayval field="cStances" index="2" value="1"/>
+    <arrayval field="cStances" index="3" value="1"/>
+    <arrayval field="cStances" index="4" value="1"/>
+    <arrayval field="cStances" index="5" value="1"/>
+    <arrayval field="cStances" index="6" value="1"/>
+    <arrayval field="cStances" index="7" value="2"/>
+    <arrayval field="cStances" index="8" value="2"/>
+    <arrayval field="cStances" index="9" value="2"/>
+    <link linkage="powClass" thing="cHelpPWPC2"/>
+    <link linkage="powCfg" thing="cCfgPWPC2"/>
+    </thing>
+  <thing id="mHelpPWPC4" name="Mage Hunter Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="1" value="1"/>
+    <arrayval field="cManKnown" index="2" value="1"/>
+    <arrayval field="cManKnown" index="3" value="2"/>
+    <arrayval field="cManKnown" index="4" value="2"/>
+    <arrayval field="cManKnown" index="5" value="3"/>
+    <arrayval field="cManKnown" index="6" value="3"/>
+    <arrayval field="cManKnown" index="7" value="4"/>
+    <arrayval field="cManKnown" index="8" value="4"/>
+    <arrayval field="cManKnown" index="9" value="5"/>
+    <arrayval field="cManReady" index="2" value="1"/>
+    <arrayval field="cManReady" index="3" value="1"/>
+    <arrayval field="cManReady" index="4" value="1"/>
+    <arrayval field="cManReady" index="5" value="2"/>
+    <arrayval field="cManReady" index="6" value="2"/>
+    <arrayval field="cManReady" index="7" value="2"/>
+    <arrayval field="cManReady" index="8" value="3"/>
+    <arrayval field="cManReady" index="9" value="3"/>
+    <arrayval field="cStances" index="2" value="1"/>
+    <arrayval field="cStances" index="3" value="1"/>
+    <arrayval field="cStances" index="4" value="1"/>
+    <arrayval field="cStances" index="5" value="1"/>
+    <arrayval field="cStances" index="6" value="1"/>
+    <arrayval field="cStances" index="7" value="2"/>
+    <arrayval field="cStances" index="8" value="2"/>
+    <arrayval field="cStances" index="9" value="2"/>
+    <tag group="Discipline" tag="ScarletThr"/>
+    <tag group="Discipline" tag="SolarWind"/>
+    <tag group="Discipline" tag="SteelSerp"/>
+    <tag group="Discipline" tag="VeiledMoon"/>
+    <link linkage="powClass" thing="cHelpPWPC4"/>
+    <link linkage="powCfg" thing="cCfgPWPC4"/>
+    </thing>
+  <thing id="mHelpPWPC5" name="Umbral Blade Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="1" value="1"/>
+    <arrayval field="cManKnown" index="2" value="1"/>
+    <arrayval field="cManKnown" index="3" value="2"/>
+    <arrayval field="cManKnown" index="4" value="2"/>
+    <arrayval field="cManKnown" index="5" value="3"/>
+    <arrayval field="cManKnown" index="6" value="3"/>
+    <arrayval field="cManKnown" index="7" value="4"/>
+    <arrayval field="cManKnown" index="8" value="4"/>
+    <arrayval field="cManKnown" index="9" value="5"/>
+    <arrayval field="cManReady" index="2" value="1"/>
+    <arrayval field="cManReady" index="3" value="1"/>
+    <arrayval field="cManReady" index="4" value="1"/>
+    <arrayval field="cManReady" index="5" value="2"/>
+    <arrayval field="cManReady" index="6" value="2"/>
+    <arrayval field="cManReady" index="7" value="2"/>
+    <arrayval field="cManReady" index="8" value="3"/>
+    <arrayval field="cManReady" index="9" value="3"/>
+    <arrayval field="cStances" index="4" value="1"/>
+    <arrayval field="cStances" index="5" value="1"/>
+    <arrayval field="cStances" index="6" value="1"/>
+    <arrayval field="cStances" index="7" value="1"/>
+    <arrayval field="cStances" index="8" value="1"/>
+    <arrayval field="cStances" index="9" value="1"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <tag group="Discipline" tag="SteelSerp"/>
+    <tag group="Discipline" tag="VeiledMoon"/>
+    <tag group="Discipline" tag="BlackSerph"/>
+    <link linkage="powCfg" thing="cCfgPWPC5"/>
+    <link linkage="powClass" thing="cHelpPWPC5"/>
+    </thing>
+  <thing id="cPWP6BonFt" name="Bonus Feat" description="The awakened blade gains a bonus combat feat or psionic feat of his choice at 4th level. He gains an additional bonus combat feat or psionic feat of his choice at 8th level. The character must meet all prerequisites for this feat to select it." compset="ClSpecial" summary="Gain a bonus combat or psionic feat">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Hide" tag="Statblock"/>
+    <tag group="Helper" tag="SpecUp"/>
+    </thing>
+  <thing id="cPWP6PcgDf" name="Precognitive Defenses" description="At 5th level, the mind’s eye within the awakened blade’s defensive senses is capable of reacting to multiple dangerous scenarios at the same time. The character may expend his psionic focus as a free action to initiate a readied counter, even if he has already used his immediate or swift action this round. This specifically allows for the use of a free action on another creature’s turn." compset="ClSpecial" summary="Expend psionic focus to use a counter as a free action">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abAction" tag="Free"/>
+    </thing>
+  <thing id="cPWP6Hypcg" name="Hypercognitive Focus" description="At 6th level, an awakened blade’s mind is able to anticipate his needs and subconsciously works to further his effectiveness. Whenever the character recovers one or more maneuvers, he may regain psionic focus as a free action as part of his maneuver recovery. He may only do this one time in a given round. Alternately, the character may expend his psionic focus when manifesting a psionic power and recover an expended maneuver." compset="ClSpecial" summary="Regain psionic focus when you recover a maneuver">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="Free"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cPWP6ClrCn" name="Clairsentient Counter" description="By anticipating the attack before the attacker ever considers making it, the awakened blade using this martial technique may act faster than his opponent can even think. To use this ability, the character expends a readied maneuver and his psionic focus as an immediate action; the clairsentient counter is used in response to attack against him of any sort (be it a melee or ranged attack, spell, power, or other spell-like or supernatural effect) and grants the character a standard or move action that he must use as part of this counter. This movement occurs before the attack is resolved but after the attack is made." compset="ClSpecial" summary="Spend a maneuver and your focus, gain a standard or move action with a counter">
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPWP6PcMnd" name="Pretercognitive Mind" description="At 10th level, the awakened blade’s reactive capabilities are so intense that his subconscious mind must manage them for him as they otherwise would never give him a moment’s rest. While psionically focused, the character is considered to have the benefits of the Stance of the Inner Eye without needing to initiate the stance. He may continue to gain these benefits while he adopts any other martial stance that he knows and gain the benefits of both stances." compset="ClSpecial" summary="Stance of the Inner Eye is always on">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Look for the Stance of the Inner Eye special, because we're going to do stuff to it
+      perform hero.childfound[cPWP6StaIE].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Add the same tag that Stance of the Inner Eye normally adds when activated, making its effect constant
+      perform hero.assign[PathOfWar.StaInnrEye]
+
+      ~ Stance of the Inner Eye stops being a stance, so we strip the relevant tags from it
+      perform focus.delete[mDuration.?]
+      perform focus.delete[mType.?]
+      perform focus.delete[mLevel.?]
+      perform focus.delete[mInitAct.?]
+      perform focus.delete[Discipline.?]
+      perform focus.delete[mRange.?]
+      perform focus.delete[mTarget.?]
+
+      ~ Since the stance doesn't need to be activated anymore, just remove its activation checkbox
+      perform focus.delete[User.Activation]]]></eval>
     </thing>
   </document>
