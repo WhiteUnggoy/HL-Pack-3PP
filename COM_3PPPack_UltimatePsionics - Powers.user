@@ -3730,7 +3730,7 @@
     <tag group="sResist" tag="No"/>
     <tag group="sDuration" tag="Instant"/>
     </thing>
-  <thing id="puNatHeal1" name="Natural Healing" description="You rapidly accelerate your natural healing ability.  You heal 3 hit points of damage.\n\n{b}Augment:{/b} For every 2 additional power points you spend, this power heals an additional 3 hit points." compset="PsiPower" summary="Heal 3 hit points of damage.">
+  <thing id="puNatHeal1" name="Natural Healing" description="You rapidly accelerate your natural healing ability.  You heal 3 hit points of damage.\n\n{b}Augment:{/b} For every 1 additional power points you spend, this power heals an additional 3 hit points." compset="PsiPower" summary="Heal 3 hit points of damage.">
     <fieldval field="sRange" value="Personal"/>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sTarget" value="You"/>
