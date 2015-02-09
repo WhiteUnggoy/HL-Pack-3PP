@@ -134,12 +134,16 @@
     <inputthing
       name="Class Linkage"
       helptext="Select the class helper that is to get maneuvers and stances.">
-      <it_linkage compset="Class" linkage="powClass"/>
+      <it_linkage compset="Class" linkage="powClass">
+        <match><![CDATA[PathOfWar.Class]]></match>
+      </it_linkage>
     </inputthing>
     <inputthing
       name="Configurable Linkage"
       helptext="Select the manuever configurable that was setup new for your class.">
-      <it_linkage compset="Configure" linkage="powCfg"/>
+      <it_linkage compset="Configure" linkage="powCfg">
+        <match><![CDATA[PathOfWar.Config]]></match>
+      </it_linkage>
     </inputthing>
 
     <!-- Tags -->
