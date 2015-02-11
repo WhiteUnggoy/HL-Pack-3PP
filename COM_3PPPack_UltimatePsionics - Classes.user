@@ -1196,7 +1196,7 @@ Endif]]></eval>
       <containerreq phase="First" priority="99">hero#MindBlade.Dagger</containerreq>
       </bootstrap>
     </thing>
-  <thing id="cSknBSMShl" name="Mind Shield" description="The soulknife gains a +2 shield bonus to armor class, as long as her mind blade is not in a twohanded form." compset="CustomSpec" uniqueness="unique">
+  <thing id="cSknBSMShl" name="Mind Shield" description="Mind Shield: The soulknife gains a +2 shield bonus to armor class, as long as she has a hand free." compset="CustomSpec" uniqueness="unique">
     <fieldval field="abValue" value="2"/>
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
