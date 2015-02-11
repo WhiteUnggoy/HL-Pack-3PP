@@ -135,7 +135,6 @@
       name="Class Linkage"
       helptext="Select the class helper that is to get maneuvers and stances.">
       <it_linkage compset="Class" linkage="powClass">
-        <match><![CDATA[PathOfWar.Class]]></match>
       </it_linkage>
     </inputthing>
     <inputthing
