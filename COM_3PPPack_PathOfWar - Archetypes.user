@@ -44,13 +44,13 @@
       </bootstrap>
     <link linkage="varies" thing="cHelpPW3"/>
     <eval phase="First" priority="5000"><![CDATA[~ Grant access to Solar Wind discipline
-perform hero.child[cCfgPW3].assign[Discipline.SolarWind]
+perform hero.child[mHelpPW3].assign[Discipline.SolarWind]
 
 ~ Remove access to Primal Fury discipline (unless it came from more than one source, such as multiclassing into another class that grants it)
 var ITcount as number
 ITcount = hero.tagcount[Discipline.PrimalFury]
 if (ITcount < 2) then
-  perform hero.child[cCfgPW3].delete[Discipline.PrimalFury] 
+  perform hero.child[mHelpPW3].delete[Discipline.PrimalFury] 
 endif]]></eval>
     </thing>
   <thing id="cPW3RnDfFc" name="Ranged Defensive Focus" description="The hawkguard is a deadly opponent as he focuses on protecting his allies and himself while planning his next moves. This functions as the normal warder defensive focus, except for the following changes. When taking a full-round action to recover maneuvers the warder threatens an area within 15 ft. of himself, except for adjacent squares. The bowman threatens this space only if he&#146;s wielding a ranged weapon, and may make attacks of opportunity with ranged weapons as long as Ranged Defensive Focus is active. This modifies and changes the warder&#146;s defensive focus class feature." compset="ClSpecial" summary="Threaten 15-ft area and make AoO&apos;s with a ranged weapon">
@@ -292,13 +292,13 @@ doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
       </bootstrap>
     <link linkage="varies" thing="cHelpPW3"/>
     <eval phase="First" priority="500"><![CDATA[~ Grant access to Scarlet Throne discipline
-perform hero.child[cCfgPW3].assign[Discipline.ScarletThr]
+perform hero.child[mHelpPW3].assign[Discipline.ScarletThr]
 
 ~ Remove access to Broken Blade discipline (unless it came from more than one source, such as multiclassing into another class that grants it)
 var BBcount as number
 BBcount = hero.tagcount[Discipline.BrokenBlad]
 if (BBcount < 2) then
-  perform hero.child[cCfgPW3].delete[Discipline.BrokenBlad] 
+  perform hero.child[mHelpPW3].delete[Discipline.BrokenBlad] 
 endif]]></eval>
     </thing>
   <thing id="cPW3PunDef" name="Punishing Defenses" description="At 12th level, the warder has gained a great deal of skill in using offense as his best defense. When making an attack of opportunity or when making an attack against a foe as part of a counter, he inflicts an additional 2d6 points of damage. This damage is not multiplied if the character scores a successful critical hit. This replaces his greater aegis class feature." compset="ClSpecial" summary="+2d6 damage on AoO&apos;s and counters">
@@ -1610,18 +1610,18 @@ endif]]></eval>
       </bootstrap>
     <link linkage="varies" thing="cHelpPW1"/>
     <eval phase="Final" priority="5000" index="2"><![CDATA[~ Grant access to Steel Serpent and Broken Blade disciplines
-perform hero.child[cCfgPW1].assign[Discipline.SteelSerp]
-perform hero.child[cCfgPW1].assign[Discipline.BrokenBlad]
+perform hero.child[mHelpPW1].assign[Discipline.SteelSerp]
+perform hero.child[mHelpPW1].assign[Discipline.BrokenBlad]
 
-~ Remove access to Primal Fury discipline (unless it came from more than one source, such as multiclassing into another class that grants it)
+~ Remove access to Primal Fury and Scarlet Throne disciplines (unless they came from more than one source, such as multiclassing into another class that grants them)
 var ITcount as number
 ITcount = hero.tagcount[Discipline.PrimalFury]
 if (ITcount < 2) then
-  perform hero.child[cCfgPW1].delete[Discipline.PrimalFury] 
+  perform hero.child[mHelpPW1].delete[Discipline.PrimalFury] 
 endif
 ITcount = hero.tagcount[Discipline.ScarletThr]
 if (ITcount < 2) then
-  perform hero.child[cCfgPW1].delete[Discipline.ScarletThr] 
+  perform hero.child[mHelpPW1].delete[Discipline.ScarletThr] 
 endif]]></eval>
     <eval phase="Final" priority="99999999" index="3"><![CDATA[      doneif (islinkage[varies] = 0)
 
@@ -1822,14 +1822,14 @@ hero.childfound[Maneuver].field[tManSize].value = curSizeBon]]></eval>
       <autotag group="ClSpecWhen" tag="8"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPW1"/>
-    <eval phase="Final" priority="5000"><![CDATA[~ Grant access to Solar Wind discipline
-perform hero.child[cCfgPW1].assign[Discipline.IronTort]
+    <eval phase="Final" priority="5000"><![CDATA[~ Grant access to Iron Tortoise discipline
+perform hero.child[mHelpPW1].assign[Discipline.IronTort]
 
-~ Remove access to Primal Fury discipline (unless it came from more than one source, such as multiclassing into another class that grants it)
+~ Remove access to Solar Wind discipline (unless it came from more than one source, such as multiclassing into another class that grants it)
 var ITcount as number
 ITcount = hero.tagcount[Discipline.SolarWind]
 if (ITcount < 2) then
-  perform hero.child[cCfgPW1].delete[Discipline.SolarWind] 
+  perform hero.child[mHelpPW1].delete[Discipline.SolarWind] 
 endif]]></eval>
     </thing>
   <thing id="cPW1GrdGam" name="Guardian&apos;s Gambit" description="{i}Risk{/i}: The warlord attempts a successful charging\nshield bash attack against an opponent.\n\n{i}Reward{/i}: If the shield bash attempt is successful, the\nwarlord and all allies within 30-ft. may make a free\n5-ft. step, even if they have already made one this\nturn." compset="ClSpecial">
@@ -1964,13 +1964,13 @@ endif]]></eval>
 ~endif
 
 ~ Grant access to Thrashing Dragon discipline
-perform hero.child[cCfgPW3].assign[Discipline.ThrashDrag]
+perform hero.child[mHelpPW3].assign[Discipline.ThrashDrag]
 
 ~ Remove access to Iron Tortoise discipline (unless it came from more than one source, such as multiclassing into another class that grants it)
 var ITcount as number
 ITcount = hero.tagcount[Discipline.IronTort]
 if (ITcount < 2) then
-  perform hero.child[cCfgPW3].delete[Discipline.IronTort] 
+  perform hero.child[mHelpPW3].delete[Discipline.IronTort] 
 endif]]></eval>
     </thing>
   <thing id="cPW3TWD" name="Two-Weapon Defense" description="While not all dervish defenders fight in the same manner, most do and all are extensively trained in these fighting philosophies. While wearing light armor or no armor, wielding a weapon in each hand (or using a double weapon), and not using a shield heavier than a buckler, the warder may add her Intelligence bonus (if any) to her Armor Class. She retains this bonus even against touch attacks or when flat-footed, but loses this bonus should she be rendered helpless by any means." compset="ClSpecial" summary="Gain INT to AC when dual-wielding and wearing light or no armor and no shield.">

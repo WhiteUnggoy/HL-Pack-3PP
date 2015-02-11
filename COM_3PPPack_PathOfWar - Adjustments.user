@@ -6,14 +6,13 @@
 November 27, 2014</info_author>
     </fileinfo>
   <thing id="pPWRemDisc" name="Remove Martial Discipline from Class" description="Select this adjustment to revoke an initiating class&apos;s access to a particular martial discipline that is normally on its list.  For example, you could use this to remove the Iron Tortoise discipline from a Warder." compset="InPlay">
-    <fieldval field="pCandExpr" value="component.Configure &amp; PathOfWar.Config"/>
+    <fieldval field="pCandExpr" value="component.PWManList"/>
     <fieldval field="pCandExpr2" value="PathOfWar.selDisc"/>
     <usesource source="srcPathOfW"/>
     <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ChooseSrc1" tag="Thing" name="All Things" abbrev="All Things"/>
-    <eval phase="First" priority="5000">
-      ~ Do nothing if not activated, or if either selection not made
+    <eval phase="First" priority="5000">~ Do nothing if not activated, or if either selection not made
       doneif (field[pIsOn].value = 0)
       doneif (field[pChosen].ischosen = 0)
       doneif (field[pChosen2].ischosen = 0)
@@ -24,14 +23,13 @@ November 27, 2014</info_author>
       perform field[pChosen].chosen.deletestr[remDisc]</eval>
     </thing>
   <thing id="pPWAddDisc" name="Add Martial Discipline to Class" description="Select this adjustment to grant an initiating class access to a particular martial discipline that isn&apos;t normally on its list.  For example, you could use this to grant the Iron Tortoise discipline to a Stalker." compset="InPlay">
-    <fieldval field="pCandExpr" value="component.Configure &amp; PathOfWar.Config"/>
+    <fieldval field="pCandExpr" value="component.PWManList"/>
     <fieldval field="pCandExpr2" value="PathOfWar.selDisc"/>
     <usesource source="srcPathOfW"/>
     <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ChooseSrc1" tag="Thing" name="All Things" abbrev="All Things"/>
-    <eval phase="First" priority="5000">
-      ~ Do nothing if not activated, or if either selection not made
+    <eval phase="First" priority="5000">~ Do nothing if not activated, or if either selection not made
       doneif (field[pIsOn].value = 0)
       doneif (field[pChosen].ischosen = 0)
       doneif (field[pChosen2].ischosen = 0)
@@ -91,6 +89,4 @@ November 27, 2014</info_author>
         #extradamage[eachpick, signed(field[pAdjust].value) & "d6",field[thingname].text]
       nexteach]]></eval>
     </thing>
-
-
   </document>
