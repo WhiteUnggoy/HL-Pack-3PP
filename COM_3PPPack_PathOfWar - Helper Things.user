@@ -75,6 +75,7 @@
     <bootstrap thing="zPWVldMoon"></bootstrap>
     <bootstrap thing="zPWBlkSrph"></bootstrap>
     <bootstrap thing="zPWSlvrCrn"></bootstrap>
+    <bootstrap thing="zPWIronTrt"></bootstrap>
     <eval phase="First" priority="25000"><![CDATA[
       ~ Set text fields
       var sBreak  as string
