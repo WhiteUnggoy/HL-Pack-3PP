@@ -12,6 +12,7 @@ November 27, 2014</info_author>
     <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ChooseSrc1" tag="Thing" name="All Things" abbrev="All Things"/>
+    <tag group="OthAdjCat" tag="Class"/>
     <eval phase="First" priority="5000">~ Do nothing if not activated, or if either selection not made
       doneif (field[pIsOn].value = 0)
       doneif (field[pChosen].ischosen = 0)
@@ -29,7 +30,9 @@ November 27, 2014</info_author>
     <tag group="Helper" tag="NoIncr" name="NoIncr" abbrev="NoIncr"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ChooseSrc1" tag="Thing" name="All Things" abbrev="All Things"/>
-    <eval phase="First" priority="5000">~ Do nothing if not activated, or if either selection not made
+    <tag group="OthAdjCat" tag="Class"/>
+    <eval phase="First" priority="5000">      
+      ~ Do nothing if not activated, or if either selection not made
       doneif (field[pIsOn].value = 0)
       doneif (field[pChosen].ischosen = 0)
       doneif (field[pChosen2].ischosen = 0)
