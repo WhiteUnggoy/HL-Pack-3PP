@@ -3776,7 +3776,7 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="User" tag="Activation"/>
     <tag group="AbilType" tag="Extra"/>
     </thing>
-  <thing id="staPWBodNt" name="Body of the Night" description="A wielder of the secrets of Steel Serpent knows his body and how to use it effectively in the art of stealth. By learning to manipulate his ki flows to obscure his movements from sight and hearing, using his bodycontrol to mask the signs of his passage. The disciple may add his ranks in the Heal skill to his ranks in the Stealth skill when making a Stealth check while in this stance as a competence bonus. While in this stance, when making an attack against a flat-footed opponent or one that has been denied its Dexterity bonus to AC, the disciple gains a +4 competence bonus to attack rolls and inflicts an additional 1d6 points of damage. This is a supernatural ability." compset="PWManuever" summary="Stance - Add your ranks in Heal to your Stealth, bonus to attack against flat-footed foes." uniqueness="useronce">
+  <thing id="staPWBodNt" name="Body of the Night" description="A wielder of the secrets of Steel Serpent knows his body and how to use it effectively in the art of stealth. By learning to manipulate his ki flows to obscure his movements from sight and hearing, using his body control to mask the signs of his passage. The disciple may add his ranks in the Heal skill to his ranks in the Stealth skill when making a Stealth check while in this stance as a competence bonus. While in this stance, when making an attack against a flat-footed opponent or one that has been denied its Dexterity bonus to AC, the disciple gains a +4 competence bonus to attack rolls and inflicts an additional 1d6 points of damage. This is a supernatural ability." compset="PWManuever" summary="Stance - Add your ranks in Heal to your Stealth, bonus to attack against flat-footed foes." uniqueness="useronce">
     <usesource source="srcPathOfW" parent="pDscar" name="Path of War v1.2a"/>
     <tag group="Discipline" tag="SteelSerp"/>
     <tag group="PathOfWar" tag="Stance" name="Stance" abbrev="Stance"/>
@@ -3787,7 +3787,7 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="mTarget" tag="You" name="You" abbrev="You"/>
     <tag group="mType" tag="Stance" name="Stance" abbrev="Stance"/>
     <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
-    <eval phase="PostAttr" priority="15000" index="2"><![CDATA[
+    <eval phase="PostAttr" priority="15000"><![CDATA[
       ~ Don't do anything if the stance isn't activated
       doneif (field[abilActive].value = 0)
 
@@ -3805,6 +3805,9 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="mTarget" tag="You" name="You" abbrev="You"/>
     <tag group="mType" tag="Stance" name="Stance" abbrev="Stance"/>
     <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <bootstrap thing="raPoiUse">
+      <containerreq phase="First" priority="100"><![CDATA[fieldval:abilActive <> 0]]></containerreq>
+      </bootstrap>
     </thing>
   <thing id="staPWStCls" name="Steel Coils" description="In this stance, the movements and motions of the disciple become more sinuous and deliberate, as if he were a serpent coiled to strike. While in this stance, the disciple may make grapple attempts without provoking attacks of opportunity, and if the disciple successfully grapples a foe, he may constrict his opponent to inflict 4d6 + his Strength modifier in damage. The manner in which he must carry himself in this stance, muscles taught and stiffened, grants him some degree of protection, adding a +4 bonus to his natural armor." compset="PWManuever" summary="Stance - Constrict for 4d6+Dexterity modifier damage while grappling and +4 to natural armor." uniqueness="useronce">
     <fieldval field="abValue" value="4"/>
@@ -5444,15 +5447,14 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="mTarget" tag="You" name="You" abbrev="You"/>
     <tag group="mType" tag="Stance" name="Stance" abbrev="Stance"/>
     <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
-    <eval phase="PostAttr" priority="15000" index="2"><![CDATA[
-      ~ Don't do anything more if the stance isn't activated
-      doneif (field[abilActive].value = 0)
-
-      ~ Calculate # of bonus damage dice
+    <eval phase="PostAttr" priority="15000" index="2"><![CDATA[      ~ Calculate # of bonus damage dice
       field[abValue].value = 1
       var il as number
       il = field[mIL].value - 1
       field[abValue].value += round(il/8,0,-1)
+
+      ~ Don't do anything more if the stance isn't activated
+      doneif (field[abilActive].value = 0)
 
       ~ Modify all shield bashes.
       foreach pick in hero from BaseWep where "IsWeapon.wShLight | IsWeapon.wShHeavy"
@@ -5460,7 +5462,7 @@ doneif (field[abilActive].value = 0)]]></eval>
       nexteach]]></eval>
     <eval phase="Render" priority="15000" index="3"><![CDATA[
       field[abSumm].text = signed(field[abValue].value) & "d6 damage with shield bashes, retain shield AC bonus when bashing"]]></eval>
-    <eval phase="PreLevel" priority="5000"><![CDATA[
+    <eval phase="First" priority="5000"><![CDATA[
       ~ Don't do anything if the stance isn't activated
       doneif (field[abilActive].value = 0)
 
@@ -5478,15 +5480,14 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="mTarget" tag="You" name="You" abbrev="You"/>
     <tag group="mType" tag="Stance" name="Stance" abbrev="Stance"/>
     <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
-    <eval phase="Final" priority="15000"><![CDATA[
-      ~ Don't do anything more if the stance isn't activated
-      doneif (field[abilActive].value = 0)
-
-      ~ Calculate # of bonus damage dice
+    <eval phase="PostAttr" priority="15000"><![CDATA[      ~ Calculate bonus amount
       field[abValue].value = 1
       var il as number
       il = field[mIL].value - 1
       field[abValue].value += round(il/4,0,-1)
+
+      ~ Don't do anything more if the stance isn't activated
+      doneif (field[abilActive].value = 0)
 
       ~ Add value to shield AC bonus
       hero.child[ArmorClass].field[tACShield].value += field[abValue].value]]></eval>
@@ -5699,7 +5700,10 @@ doneif (field[abilActive].value = 0)]]></eval>
     <tag group="mType" tag="Stance" name="Stance" abbrev="Stance"/>
     <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
     <tag group="Discipline" tag="IronTort"/>
-    <eval phase="Final" priority="15000"><![CDATA[
+    <bootstrap thing="raImpUncan">
+      <containerreq phase="First" priority="100"><![CDATA[fieldval:abilActive <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="PostAttr" priority="15000"><![CDATA[
       ~ Don't do anything if the stance isn't activated
       doneif (field[abilActive].value = 0)
 
@@ -5928,6 +5932,6 @@ hero.child[ArmorClass].field[tACShield].value += field[abValue].value]]></eval>
     <tag group="mTarget" tag="You"/>
     <tag group="AbilType" tag="Extra"/>
     </thing>
-  <hidden id="manPWTaWi1"/>
   <hidden id="manPWBwTw5"/>
+  <hidden id="manPWTaWi1"/>
   </document>

@@ -43,6 +43,7 @@
     <value id="SteelSerp"   name="Steel Serpent"/>
     <value id="ThrashDrag"  name="Thrashing Dragon"/>
     <value id="VeiledMoon"  name="Veiled Moon"/>
+	<value id="IronTort"	name="Iron Tortoise"/>
     <value id="BrokenBlad"  name="Broken Blade"/>
     <value id="BlackSerph"  name="Black Seraph"/>
     <value id="SilvrCrane"  name="Silver Crane"/>

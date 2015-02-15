@@ -334,7 +334,6 @@
     </thing>
   <thing id="cCfgPW2" name="Stalker Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="Discipline" tag="SolarWind"/>
     <tag group="Discipline" tag="VeiledMoon"/>
     <tag group="Discipline" tag="BrokenBlad"/>
@@ -1647,7 +1646,6 @@ endif]]></eval>
     <tag group="Discipline" tag="PrimalFury" name="Primal Fury" abbrev="Primal Fury"/>
     <tag group="Discipline" tag="BrokenBlad" name="Broken Blade" abbrev="Broken Blade"/>
     <tag group="PathOfWar" tag="Config" name="Configurable" abbrev="Configurable"/>
-    <tag group="PathOfWar" tag="StanceUp" name="Stance Allowed Up" abbrev="Stance Allowed Up"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
     <tag group="ClsCountAs" tag="cHelpPW3" name="Warder" abbrev="Warder"/>
     <tag group="Discipline" tag="GoldenLion" name="Golden Lion" abbrev="Golden Lion"/>
@@ -1811,7 +1809,6 @@ endif]]></eval>
     </thing>
   <thing id="cCfgPWPC1" name="Battle Templar Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="Discipline" tag="GoldenLion"/>
     <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -2155,7 +2152,6 @@ endif]]></eval>
     </thing>
   <thing id="cCfgPWPC2" name="Bladecaster Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ClsCountAs" tag="cHelpPWPC2"/>
@@ -2372,7 +2368,6 @@ nexteach]]></validate>
     </thing>
   <thing id="cCfgPWPC3" name="Dragon Fury Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="Discipline" tag="ThrashDrag"/>
     <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -2878,7 +2873,6 @@ nexteach]]></validate>
     </thing>
   <thing id="cCfgPWPC4" name="Mage Hunter Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ClsCountAs" tag="cHelpPWPC4"/>
@@ -3179,7 +3173,6 @@ Array 9 = Stances</comment>
     </thing>
   <thing id="cCfgPWPC5" name="Umbral Blade Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="Discipline" tag="BlackSerph"/>
     <tag group="Discipline" tag="VeiledMoon"/>
     <tag group="Discipline" tag="SteelSerp"/>
@@ -3543,7 +3536,6 @@ nexteach]]></validate>
     </thing>
   <thing id="cCfgPWPC6" name="Awakened Blade Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW"/>
-    <tag group="PathOfWar" tag="StanceUp"/>
     <tag group="PathOfWar" tag="Config"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ClsCountAs" tag="cHelpPWPC6"/>

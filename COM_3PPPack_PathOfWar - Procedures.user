@@ -55,6 +55,7 @@
       linkage[table].field[cfgSpent2].value += 1
       ~ Set tags so we display on the In-Play tab for usage as a Stance should always display.
       perform assign[Helper.ShowSpec]
+	  perform assign[User.Activation]
 
       ~ If our stance is activated then set Stance Activated tag on hero
       If (field[abilActive].value + field[usrIndex].value <> 0) Then
