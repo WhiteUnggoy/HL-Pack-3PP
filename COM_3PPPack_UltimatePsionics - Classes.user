@@ -3,7 +3,9 @@
   <loadonce key="COM_3PPPack_UltimatePsionics - Classes"/>
   <fileinfo>
     <info_author>TCArknight</info_author>
-    <info_history>
+    <info_history>February 16, 2015 - Thomas Clegg (TCArknight)
+- Soulknife: Nimble Blade Archetype
+
 January 3, 2015 - Tim Shadow
 -Merged in Classes 2 file into this one.
     
@@ -1353,10 +1355,11 @@ perform hero.childfound[iPUMndBl2H].assign[wCategory.RangeThrow]]]></eval>
     <tag group="Helper" tag="UseOwnLev" name="UseOwnLev" abbrev="UseOwnLev"/>
     <tag group="AbilType" tag="Super"/>
     <eval phase="Final" priority="10000"><![CDATA[
-      field[abValue].value += field[xCount].value
-      field[livename].text = "Enhanced Mind Blade +" & field[abValue].value
-      field[abSumm].text = "You can enhance your Mind Blade with a total enhancement bonus of +" & field[abValue].value & "."
-      field[listname].text = "Enhanced Mind Blade +" & field[xIndex].value]]></eval>
+field[abValue].value += field[xCount].value
+
+field[livename].text = "Enhanced Mind Blade +" & field[abValue].value
+field[abSumm].text = "You can enhance your Mind Blade with a total enhancement bonus of +" & field[abValue].value & "."
+field[listname].text = "Enhanced Mind Blade +" & field[xIndex].value]]></eval>
     </thing>
   <thing id="cSknMBMas" name="Mind Blade Mastery" description="At 20th level, a soulknife reaches the pinnacle of her art and her connection to her blade is so strong it cannot be severed. She no longer requires a Will save to maintain her mind blade in a null psionics field, although it still loses any enhancement bonus and special abilities. In addition, she may change the configurations of her mind blade&apos;s special abilities at will as a fullround action, which also resets any penalties that may have accrued from the Fluid Form and Improved Fluid Form blade skills." compset="ClSpecial">
     <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
@@ -4684,8 +4687,6 @@ endif]]></eval>
     <exprreq message="Tower Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSTowM] <> 0]]></exprreq>
     <exprreq message="Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSMShl] <> 0]]></exprreq>
     </thing>
-
-
   <thing id="cPUSurPPri" name="Survivor&apos;s Path" description="Survivor Path {i}You are capable of surviving in harsh environments and enduring deadly assaults. You recognize the power of the body&apos;s ability to overcome even the most deadly of afflictions.\n\n{/i}{b}Powers:{/b} {i}Catfall{/i}, {i}vigor{/i}\n\n{b}Skills:{/b} Autohypnosis, Heal, Survival \n\n{b}Bonus class skill:{/b} Survival\n\n{b}Note:{/b} You need to correctly set one of the Path&apos;s selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Survivor&apos;s Path" uniqueness="unique">
     <arrayval field="usrArray" index="1" value="Secondary"/>
     <arrayval field="usrArray" index="0" value="Primary"/>
@@ -13204,5 +13205,74 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
       if (empty(hero.childfound[cEidolon].minion.actorname) = 0) then
         field[sbName].text = lowercase(field[thingname].text) & " (named " & hero.childfound[cEidolon].minion.actorname & ")"
         endif]]></eval>
+    </thing>
+  <thing id="arPUNimBla" name="Nimble Blade" description="Raw power is not the only way to overcome enemies in melee, and nimble blades are the proof of that. These soulknives value finesse instead of power to make deadly melee attacks." compset="ClassVary" uniqueness="unique">
+    <fieldval field="srcPageNum" value="283"/>
+    <arrayval field="cvCustTot" index="1" value="-1"/>
+    <arrayval field="cvCustTot" index="3" value="-1"/>
+    <arrayval field="cvCustTot" index="5" value="-1"/>
+    <arrayval field="cvCustTot" index="7" value="-1"/>
+    <arrayval field="cvCustTot" index="9" value="-1"/>
+    <arrayval field="cvCustTot" index="11" value="-1"/>
+    <arrayval field="cvCustTot" index="13" value="-1"/>
+    <arrayval field="cvCustTot" index="15" value="-1"/>
+    <arrayval field="cvCustTot" index="17" value="-1"/>
+    <arrayval field="cvCustTot" index="19" value="-1"/>
+    <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <usesource source="pPsiUn"/>
+    <tag group="fDisable" tag="fArmShield"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="fDisable" tag="fArmMedium"/>
+    <bootstrap thing="cPUNBMinFi">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUNBWFin">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUNBPirSt">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPUNBAgBla">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPUNBAdaFo">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <link linkage="varies" thing="cHelpSkn"/>
+    <eval phase="PreLevel" priority="100000"><![CDATA[~ Disable the 7th level Enhanced Mind Blade only
+perform hero.findchild[BaseClSpec,"thingid.cSknEnhMB & SpecSource.cHelpSkn & ClSpecWhen.7"].assign[Helper.SpcDisable]
+perform hero.findchild[BaseClSpec,"thingid.cSknEnhMB & SpecSource.cHelpSkn & ClSpecWhen.7"].assign[Helper.SpcReplace]]]></eval>
+    </thing>
+  <thing id="cPUNBWFin" name="Weapon Finesse" description="A nimble blade gains the Weapon Finesse feat as a bonus feat at 1st level. This replaces the bonus feat normally gained at 1st level." compset="ClSpecial">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <bootstrap thing="fWepFin"></bootstrap>
+    </thing>
+  <thing id="cPUNBMinFi" name="Mind Blade Finesse" description="A 1st level nimble blade gains the Mind Blade Finesse blade skill*. This replaces proficiency with shields and medium armor." compset="ClSpecial">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <bootstrap thing="cSknBSMinF">
+      <autotag group="CustTaken" tag="cHelpSkn"/>
+      <autotag group="SpecSource" tag="cHelpSkn"/>
+      </bootstrap>
+    </thing>
+  <thing id="cPUNBPirSt" name="Piranha Strike" description="A nimble blade gains the Weapon Finesse feat as a bonus feat at 1st level. This replaces the bonus feat normally gained at 1st level." compset="ClSpecial">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <bootstrap thing="fPiranStr">
+      <containerreq phase="First" priority="500"><![CDATA[count:Classes.Soulknife >= 2]]></containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cPUNBAgBla" name="Agile Blade" description="A nimble blade of 7th level treats his mind blade as if it had the agile weapon special ability. This does not count toward the nimble blade’s mind blade’s enhancement bonus. This replaces the mind blade enhancement increase gained at 7th level." compset="ClSpecial">
+    <usesource source="pPsiUn"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[~ If the hero doesn't have this ability, ignore the following.
+doneif (tagis[Helper.ShowSpec] = 0)
+
+foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
+  perform eachpick.assign[DamageOpt.aDEX]
+  nexteach]]></eval>
+    </thing>
+  <thing id="cPUNBAdaFo" name="Adaptive Form" description="Once a nimble blade has reached 10th level, he has learned how to rapidly alter his use of the mind blade to adapt to any particular situation. As an immediate action and by expending psionic focus, the nimble blade can select any one blade skill whose requirements he meets and be treated as having that blade skill. The effect of the blade skill selected lasts until he expends his psionic focus as an immediate action to change it. This replaces the blade skill normally gained at 10th level." compset="ClSpecial">
+    <usesource source="pPsiUn"/>
     </thing>
   </document>
