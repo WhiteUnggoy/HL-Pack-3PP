@@ -131,7 +131,7 @@
   <!-- ==================================================  -->
   <component
     id="PWManList"
-    name="Manuever List"
+    name="Maneuver List"
     autocompset="no"
     hasshortname="no"
     ispublic="yes">
@@ -139,14 +139,14 @@
     <!-- Arrays -->
     <field
       id="cManKnown"
-      name="Manuevers Known"
+      name="Maneuvers Known"
       type="derived"
       style="array"
       arrayrows="20">
     </field>
     <field
       id="cManReady"
-      name="Manuevers Readied"
+      name="Maneuvers Readied"
       type="derived"
       style="array"
       arrayrows="20">
@@ -158,6 +158,13 @@
       style="array"
       arrayrows="20">
     </field>
+    <field
+	  id="cMaxManLvl"
+	  name="Max Maneuver Level"
+	  type="derived"
+	  style="array"
+      arrayrows="20">
+	</field>
     <field
       id="AryLevel"
       name="Array Class Level"
@@ -220,8 +227,8 @@
         ~ Add the PrC levels and half of the other levels to the level of the current class to get our total IL
       field[cIL].value = miPrc + round( otherlev/2,0,-1) + linkage[powClass].field[cTotalLev].value
 
-        ~ Set the IL onto the associated configurator to save time for later checks
-        linkage[powCfg].field[cfgLevel].value += field[cIL].value  
+      ~ Set the IL onto the associated configurator to save time for later checks
+      linkage[powCfg].field[cfgLevel].value += field[cIL].value  
       ]]></eval>
 
     <!-- 
@@ -240,8 +247,11 @@
       endif
     
       ~ If no disciplines setup then display error and stop!
+	  ~ But don't display the error if this class has to choose disciplines (like the Pathwalker archetype)
       if (tagcount[Discipline.?] = 0) then
-        notify "Your class has no Disciplines defined. Please define Disciplines in the editor 'zCommunity->PoW Class Setup'"
+	    if (linkage[powClass].tagis[PathOfWar.selDisc] = 0) then
+          notify "Your class has no Disciplines defined. Please define Disciplines in the editor 'zCommunity->PoW Class Setup'"
+		endif
         done
       endif
 
@@ -249,11 +259,23 @@
       linkage[powCfg].field[cfgAllow1].text = "PathOfWar.Manuever & (" & tagids[Discipline.?,"|"] & ")"
       ~ Set to pull all the stances 
       linkage[powCfg].field[cfgAllow2].text = "PathOfWar.Stance & (" & tagids[Discipline.?,"|"] & ")"
-
+  	  
+	  ~ Enforce maximum maneuver level, if we have a custom progression
+	  if (tagis[PathOfWar.CstManProg] <> 0) then
+	    linkage[powCfg].field[cfgAllow1].text &= " & (mLevel.0"
+	    var i as number
+	    i = 1
+	    while (i <= field[cMaxManLvl].arrayvalue[field[cIL].value - 1])
+		  linkage[powCfg].field[cfgAllow1].text &= " | mLevel." & i
+		  i += 1
+	    loop
+	    linkage[powCfg].field[cfgAllow1].text &= ")"
+	  endif
+	  
       ~ Calculate the array value which is class level minus one as we start at zero
       field[AryLevel].value += linkage[powClass].field[cTotalLev].value - 1     
       level = field[AryLevel].value
-
+	  
       ~ Set the configurator's number of manuevers known
       linkage[powCfg].field[cfgMax1].value += field[cManKnown].arrayvalue[level]
 
