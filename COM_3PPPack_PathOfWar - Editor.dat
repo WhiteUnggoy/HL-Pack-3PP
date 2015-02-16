@@ -2,7 +2,7 @@
 
 <!-- This file contains the definitions of how the Editor should handle all the
       various publicly accessible objects (i.e. component sets) within the game
-      system. A separate "editthing" elemenet is defined for each component set,
+      system. A separate "editthing" element is defined for each component set,
       along with the appropriate details for how to configure each facet via
       "inputthing" elements.
 -->
@@ -23,7 +23,7 @@
     <!-- Manuever or Stance? -->
     <inputthing
       name="Manuever?"
-      helptext="If this is a manuever then check mark this box. Do not check mark both Manuever and Stance.">
+      helptext="If this is a maneuver then check mark this box. Do not check mark both Maneuver and Stance.">
       <it_tagcheck group="PathOfWar" tag="Manuever"/>
       </inputthing>
     <inputthing
@@ -43,12 +43,12 @@
       <it_tagpick group="mType" tag="?" />
     </inputthing>
     <inputthing
-      name="Manuever Descriptor"
+      name="Maneuver Descriptor"
       helptext="Select any maneuver descriptors here. In example if a maneuver lists [Mind Affecting] then you would select Mind Affecting here.">
       <it_taglist group="mDescript" tag="?" />
     </inputthing>
     <inputthing
-      name="Manuever Level"
+      name="Maneuver Level"
       helptext="Select the level this maneuver is.">
       <it_tagpick group="mLevel" tag="?" />
     </inputthing>
@@ -89,7 +89,7 @@
     </inputthing>
     <inputthing
       name="Duration"
-      helptext="Select the Druation of this maneuver.">
+      helptext="Select the Duration of this maneuver.">
       <it_tagpick group="mDuration" tag="?" />
     </inputthing>
     <inputthing
@@ -109,7 +109,7 @@
     </inputthing>
     <inputthing
       name="Ability Type"
-      helptext="Select the abilty type of this Maneuver(ie Ex, Su, Ps, Sp). By default most maneuvers are Ex but some are Su.">
+      helptext="Select the ability type of this Maneuver(ie Ex, Su, Ps, Sp). By default most maneuvers are Ex but some are Su.">
       <it_taglist group="AbilType" tag="?" deftag="Extra"/>
     </inputthing>
 
@@ -127,7 +127,7 @@
 
     <!-- Linkage -->
     <inputthing
-      name="Class and maneuvers Linkage"
+      name="Class and Maneuvers Linkage"
       helptext="This section allows you to link the Path of War Class to its Configurable where the maneuvers are chosen from.">
       <it_separator/>
     </inputthing>    
@@ -139,7 +139,7 @@
     </inputthing>
     <inputthing
       name="Configurable Linkage"
-      helptext="Select the manuever configurable that was setup new for your class.">
+      helptext="Select the maneuver configurable that was setup new for your class.">
       <it_linkage compset="Configure" linkage="powCfg">
         <match><![CDATA[PathOfWar.Config]]></match>
       </it_linkage>
@@ -147,7 +147,7 @@
 
     <!-- Tags -->
     <inputthing
-      name="Disciplines and maneuvers"
+      name="Disciplines and Maneuvers"
       helptext="This section allows you to select which Disciplines are allowed and which attribute calculates the DC of maneuvers.">
       <it_separator/>
     </inputthing>    
@@ -161,11 +161,16 @@
       helptext="Select the attribute this class uses to calculate the DC of its maneuvers.">
       <it_tagpick group="UseAttr" tag="?"/>
     </inputthing>
-
+    <!--<inputthing
+      name="Max Maneuver Level"
+      helptext="Select the highest level of maneuvers this class can initiate.">
+      <it_tagpick group="mLevel" tag="?" />
+    </inputthing>-->
+	
     <!-- Arrays -->
     <inputthing
-      name="maneuvers Lists"
-      helptext="This section allows you to setup the number of maneuvers a class can Know, Ready, and its Stances..">
+      name="Maneuvers List"
+      helptext="This section allows you to setup the number of maneuvers a class can Know, Ready, and its Stances.">
       <it_separator/>
     </inputthing>    
     <inputthing
@@ -174,7 +179,7 @@
       <it_field field="cManKnown"/>
     </inputthing>
     <inputthing
-      name="maneuvers Readied"
+      name="Maneuvers Readied"
       helptext="Setup the list of Maneuvers Readied for this class.">
       <it_field field="cManReady"/>
     </inputthing>
@@ -182,6 +187,16 @@
       name="Stances"
       helptext="Setup the list of Stances for this class.">
       <it_field field="cStances"/>
+    </inputthing>
+	<inputthing
+	  name="Custom Maneuver Progression"
+	  helptext="Check this if this class uses its own progression of maximum maneuver level per initiator level.  If left unchecked, it will use the standard progression defined on page 26 of Path of War">
+	  <it_tagcheck group="PathOfWar" tag="CstManProg"/>
+	</inputthing>
+	<inputthing
+      name="Max Maneuver Level"
+      helptext="Setup the highest level of maneuvers this class can initiate at each initiator (not class) level. This will be ignored unless you check 'Custom Maneuver Progression'.">
+      <it_field field="cMaxManLvl"/>
     </inputthing>
 
   </editthing>

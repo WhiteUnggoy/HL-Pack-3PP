@@ -203,7 +203,7 @@
       Endif
     endif]]></procedure>
   <procedure id="ValidStaOn" scripttype="validate"><![CDATA[
-    ~ This procedure figures out if the correct number of manuevers has been turned on.
+    ~ This procedure figures out if the correct number of stances has been turned on.
     ~ ===How to use this Procedure===
     ~ var ValidStaOn as number
     ~ Call ValidStaOn
@@ -212,15 +212,16 @@
     var s2X as number
     var ValidStaOn as number
 
-    ~Assum we are valid to start
+    ~Assume we are valid to start
     ValidStaOn = 1 
 
     ~ Validate the number of stances turned on based on the number we are allowed to have up
     If (altpick.tagcount[PathOfWar.StanceOn] > altpick.tagcount[PathOfWar.StanceUp]) Then
        ValidStaOn = 0
+
     Endif]]></procedure>
   <procedure id="ValidManIL" scripttype="validate"><![CDATA[
-    ~ This procedure figures out if the manuevers Initiatior Level is 
+    ~ This procedure figures out if the manuevers Initiator Level is 
     ~ high enough to have taken the selected manuever.
     ~ ===How to use this Procedure===
     ~ var ValidManIL as number

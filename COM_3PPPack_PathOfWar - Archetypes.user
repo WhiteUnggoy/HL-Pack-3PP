@@ -1959,11 +1959,7 @@ endif]]></eval>
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPW3"/>
-    <eval phase="Final" priority="5000"><![CDATA[~if (hero.child[cCfgPW3]) then
-~  debug "warder maneuvers found"cfgObject1
-~endif
-
-~ Grant access to Thrashing Dragon discipline
+    <eval phase="Final" priority="5000"><![CDATA[~ Grant access to Thrashing Dragon discipline
 perform hero.child[mHelpPW3].assign[Discipline.ThrashDrag]
 
 ~ Remove access to Iron Tortoise discipline (unless it came from more than one source, such as multiclassing into another class that grants it)
@@ -2104,5 +2100,855 @@ doneif (hero.tagexpr[Hero.MedArmor | Hero.HeavyArmor] <> 0)
 ~ Apply situational AC bonus
 field[abValue].value = #attrmod[aINT]
 #situational[hero.child[ArmorClass],signed(field[abValue].value) & " vs. critical hit confirmation",field[name].text]]]></eval>
+    </thing>
+  <thing id="arPWPthWlk" name="Pathwalker" description="The psychic warrior is a force to be reckoned with, a talented combatant with skill in both the realm of battle and the mind. Some psychic warriors focus more strongly on their martial talents, and they discover that the martial disciplines along the Path of War are capable of strong philosophical insights. These insights lead to additional warrior paths for the psychic warrior to travel, and they are known as pathwalkers." compset="ClassVary" uniqueness="unique">
+    <arrayval field="cvBonFtMod" index="1" value="-1"/>
+    <arrayval field="cvBonFtMod" index="2" value="-1"/>
+    <arrayval field="cvBonFtMod" index="3" value="-1"/>
+    <arrayval field="cvBonFtMod" index="4" value="-1"/>
+    <arrayval field="cvBonFtMod" index="5" value="-1"/>
+    <arrayval field="cvBonFtMod" index="6" value="-1"/>
+    <arrayval field="cvBonFtMod" index="7" value="-1"/>
+    <arrayval field="cvBonFtMod" index="8" value="-1"/>
+    <arrayval field="cvBonFtMod" index="9" value="-1"/>
+    <arrayval field="cvBonFtMod" index="10" value="-2"/>
+    <arrayval field="cvBonFtMod" index="11" value="-2"/>
+    <arrayval field="cvBonFtMod" index="12" value="-2"/>
+    <arrayval field="cvBonFtMod" index="13" value="-2"/>
+    <arrayval field="cvBonFtMod" index="14" value="-2"/>
+    <arrayval field="cvBonFtMod" index="15" value="-2"/>
+    <arrayval field="cvBonFtMod" index="16" value="-2"/>
+    <arrayval field="cvBonFtMod" index="17" value="-2"/>
+    <arrayval field="cvBonFtMod" index="18" value="-2"/>
+    <arrayval field="cvBonFtMod" index="19" value="-2"/>
+    <tag group="ClVaryName" tag="AppParen"/>
+    <tag group="AbReplace" tag="cPWaPathwe"/>
+    <tag group="PathOfWar" tag="Class"/>
+    <tag group="Helper" tag="OverCustS1"/>
+    <bootstrap thing="cCfgPthwk"></bootstrap>
+    <bootstrap thing="cPWPthWDis">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <link linkage="varies" thing="cHelpPWa"/>
+    <eval phase="First" priority="1000"><![CDATA[      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Disable the Path Skills gained at 7th and 13th level
+      foreach pick in hero from Ability where "Ability.cPWaPathSk"
+        if (eachpick.tagis[ClSpecWhen.7] + eachpick.tagis[ClSpecWhen.13] > 0) then
+          perform eachpick.assign[Helper.SpcDisable]
+          perform eachpick.assign[Helper.SpcReplace]
+        endif
+      nexteach]]></eval>
+    <eval phase="Final" priority="999999999999999999" index="2"><![CDATA[      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Restrict our Warrior's Path choices to the ones matching our selected disciplines
+      perform hero.childfound[mHelpPthwk].pulltags[Discipline.?]
+      if (tagis[Discipline.?] = 0) then
+        linkage[varies].field[cCstSpExpr].text &= " & !Discipline.?"
+      else
+        linkage[varies].field[cCstSpExpr].text &= " & (" & tagids[Discipline.?, " | "] & ")"
+      endif]]></eval>
+    </thing>
+  <thing id="cCfgPthwk" name="Pathwalker Maneuvers" compset="Configure" uniqueness="unique">
+    <usesource source="srcPathOfW" parent="pDscar" name="DSP - Path of War"/>
+    <tag group="PathOfWar" tag="Config" name="Configurable" abbrev="Configurable"/>
+    <tag group="PathOfWar" tag="StanceUp" name="Stance Allowed Up" abbrev="Stance Allowed Up"/>
+    <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
+    <bootstrap thing="mHelpPthwk"></bootstrap>
+    <prereq message="You have activated more stances than allowed.">
+      <validate>var ValidStaOn as number
+        Call ValidStaOn
+        @valid = ValidStaOn</validate>
+      </prereq>
+    <prereq message="You have too many Manuevers Readied.">
+      <validate>var ValidManOn as number
+        Call ValidManOn
+        @valid = ValidManOn</validate>
+      </prereq>
+    </thing>
+  <thing id="mHelpPthwk" name="Pathwalker Manuevers" compset="PWManList">
+    <arrayval field="cManKnown" index="0" value="3"/>
+    <arrayval field="cManKnown" index="1" value="4"/>
+    <arrayval field="cManKnown" index="2" value="5"/>
+    <arrayval field="cManKnown" index="3" value="5"/>
+    <arrayval field="cManKnown" index="4" value="6"/>
+    <arrayval field="cManKnown" index="5" value="6"/>
+    <arrayval field="cManKnown" index="6" value="7"/>
+    <arrayval field="cManKnown" index="7" value="7"/>
+    <arrayval field="cManKnown" index="8" value="8"/>
+    <arrayval field="cManKnown" index="9" value="8"/>
+    <arrayval field="cManKnown" index="10" value="9"/>
+    <arrayval field="cManKnown" index="11" value="9"/>
+    <arrayval field="cManKnown" index="12" value="10"/>
+    <arrayval field="cManKnown" index="13" value="10"/>
+    <arrayval field="cManKnown" index="14" value="11"/>
+    <arrayval field="cManKnown" index="15" value="11"/>
+    <arrayval field="cManKnown" index="16" value="12"/>
+    <arrayval field="cManKnown" index="17" value="12"/>
+    <arrayval field="cManKnown" index="18" value="13"/>
+    <arrayval field="cManKnown" index="19" value="13"/>
+    <arrayval field="cManReady" index="0" value="3"/>
+    <arrayval field="cManReady" index="1" value="3"/>
+    <arrayval field="cManReady" index="2" value="3"/>
+    <arrayval field="cManReady" index="3" value="4"/>
+    <arrayval field="cManReady" index="4" value="4"/>
+    <arrayval field="cManReady" index="5" value="4"/>
+    <arrayval field="cManReady" index="6" value="4"/>
+    <arrayval field="cManReady" index="7" value="4"/>
+    <arrayval field="cManReady" index="8" value="4"/>
+    <arrayval field="cManReady" index="9" value="5"/>
+    <arrayval field="cManReady" index="10" value="5"/>
+    <arrayval field="cManReady" index="11" value="5"/>
+    <arrayval field="cManReady" index="12" value="5"/>
+    <arrayval field="cManReady" index="13" value="5"/>
+    <arrayval field="cManReady" index="14" value="6"/>
+    <arrayval field="cManReady" index="15" value="6"/>
+    <arrayval field="cManReady" index="16" value="6"/>
+    <arrayval field="cManReady" index="17" value="6"/>
+    <arrayval field="cManReady" index="18" value="6"/>
+    <arrayval field="cManReady" index="19" value="7"/>
+    <arrayval field="cStances" index="0" value="1"/>
+    <arrayval field="cStances" index="1" value="1"/>
+    <arrayval field="cStances" index="2" value="1"/>
+    <arrayval field="cStances" index="3" value="2"/>
+    <arrayval field="cStances" index="4" value="2"/>
+    <arrayval field="cStances" index="5" value="2"/>
+    <arrayval field="cStances" index="6" value="2"/>
+    <arrayval field="cStances" index="7" value="2"/>
+    <arrayval field="cStances" index="8" value="2"/>
+    <arrayval field="cStances" index="9" value="3"/>
+    <arrayval field="cStances" index="10" value="3"/>
+    <arrayval field="cStances" index="11" value="3"/>
+    <arrayval field="cStances" index="12" value="3"/>
+    <arrayval field="cStances" index="13" value="3"/>
+    <arrayval field="cStances" index="14" value="4"/>
+    <arrayval field="cStances" index="15" value="4"/>
+    <arrayval field="cStances" index="16" value="4"/>
+    <arrayval field="cStances" index="17" value="4"/>
+    <arrayval field="cStances" index="18" value="4"/>
+    <arrayval field="cStances" index="19" value="4"/>
+    <arrayval field="cMaxManLvl" index="0" value="1"/>
+    <arrayval field="cMaxManLvl" index="1" value="1"/>
+    <arrayval field="cMaxManLvl" index="2" value="1"/>
+    <arrayval field="cMaxManLvl" index="3" value="2"/>
+    <arrayval field="cMaxManLvl" index="4" value="2"/>
+    <arrayval field="cMaxManLvl" index="5" value="2"/>
+    <arrayval field="cMaxManLvl" index="6" value="3"/>
+    <arrayval field="cMaxManLvl" index="7" value="3"/>
+    <arrayval field="cMaxManLvl" index="8" value="4"/>
+    <arrayval field="cMaxManLvl" index="9" value="4"/>
+    <arrayval field="cMaxManLvl" index="10" value="5"/>
+    <arrayval field="cMaxManLvl" index="11" value="5"/>
+    <arrayval field="cMaxManLvl" index="12" value="6"/>
+    <arrayval field="cMaxManLvl" index="13" value="6"/>
+    <arrayval field="cMaxManLvl" index="14" value="6"/>
+    <arrayval field="cMaxManLvl" index="15" value="6"/>
+    <arrayval field="cMaxManLvl" index="16" value="6"/>
+    <arrayval field="cMaxManLvl" index="17" value="6"/>
+    <arrayval field="cMaxManLvl" index="18" value="6"/>
+    <arrayval field="cMaxManLvl" index="19" value="6"/>
+    <tag group="Discipline" tag="PrimalFury"/>
+    <tag group="Discipline" tag="ScarletThr"/>
+    <tag group="Discipline" tag="SolarWind"/>
+    <tag group="Discipline" tag="ThrashDrag"/>
+    <tag group="UseAttr" tag="aWIS"/>
+    <tag group="Discipline" tag="BrokenBlad"/>
+    <tag group="Discipline" tag="IronTort"/>
+    <tag group="PathOfWar" tag="CstManProg"/>
+    <link linkage="powCfg" thing="cCfgPthwk"/>
+    <link linkage="powClass" thing="cHelpPWa"/>
+    </thing>
+  <thing id="cPWPthWDis" name="Pathwalker Disciplines" description="Choose two martial disciplines." compset="ClSpecial">
+    <fieldval field="usrCandid1" value="PathOfWar.selDisc &amp; (Discipline.BrokenBlad | Discipline.IronTort | Discipline.PrimalFury |  Discipline.SolarWind |  Discipline.ScarletThr | Discipline.ThrashDrag)"/>
+    <fieldval field="usrCandid2" value="PathOfWar.selDisc &amp; (Discipline.BrokenBlad | Discipline.IronTort | Discipline.PrimalFury |  Discipline.SolarWind |  Discipline.ScarletThr | Discipline.ThrashDrag)"/>
+    <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="Hide" tag="Statblock" name="Statblock" abbrev="Statblock"/>
+    <eval phase="PostLevel" priority="10000" index="2">perform hero.childfound[mHelpPthwk].delete[Discipline.?]
+
+      ~ Assign chosen disciplines
+      if (field[usrChosen1].ischosen = 1) then
+        perform field[usrChosen1].chosen.pulltags[Discipline.?]
+        perform hero.childfound[mHelpPthwk].pushtags[Discipline.?]
+      endif
+      if (field[usrChosen2].ischosen = 1) then
+        perform field[usrChosen2].chosen.pulltags[Discipline.?]
+        perform hero.childfound[mHelpPthwk].pushtags[Discipline.?]
+      endif</eval>
+    <eval phase="First">~ Let the PWManlist component know that this class has to choose disciplines
+      perform root.linkage[varies].assign[PathOfWar.selDisc]</eval>
+    </thing>
+  <thing id="cPWPthwBBP" name="Broken Blade Path" description="Psychic warriors that value the strength of body as well as the strength of the mind gravitate toward the path of the Broken Blade. By realizing his potential through steel and iron, or by flesh and bone, the psychic warrior on this path turns his body into a living weapon.\n\n{b}Powers:{/b} {i}Biofeedback{/i}, {i}tactical precognition{/i}* \n\n{b}Skills:{/b} Acrobatics, Intimidate, Sense Motive\n\n{b}Bonus Class Skill:{/b} Acrobatics\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Broken Blade Path" uniqueness="unique">
+    <comment><![CDATA[Add Biofeedback and Tactical Precognition powers to list
+    
+    PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
+
+ClassSkill - This tag group is used to setup the skills that will become the Bonus Ckass Skills.
+
+ClsAllowPs - This tag group is used to setup the Powers that this Path grants. You will also still need to bootstrap the same powers onto this Thing with the "Hide.Power" and "PsyWarrior.PathPower" tags.]]></comment>
+    <arrayval field="usrArray" index="0" value="Primary"/>
+    <arrayval field="usrArray" index="1" value="Secondary"/>
+    <usesource source="pPsiUn" parent="pDscar" name="DSP - Ultimate Psionics"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="PathSkill" tag="skAcrobat" name="Acrobatics" abbrev="Acrobatics"/>
+    <tag group="PathSkill" tag="skIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="PathSkill" tag="skSenseMot" name="Sense Motive" abbrev="Sense Motive"/>
+    <tag group="ClsAllowPs" tag="puBiofeed1" name="Biofeedback" abbrev="Biofeedback"/>
+    <tag group="ClsAllowPs" tag="puPreTa1" name="Tactical Precognition" abbrev="Tactical Precognition"/>
+    <tag group="Discipline" tag="BrokenBlad" name="Broken Blade"/>
+    <tag group="SpecSource" tag="arPWPthWlk"/>
+    <tag group="ClassSkill" tag="skAcrobat"/>
+    <bootstrap thing="puBiofeed1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="cPWaTraBBP"></bootstrap>
+    <bootstrap thing="cPWaManBBP"></bootstrap>
+    <bootstrap thing="puPreTa1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <eval phase="First">~ Setup the Psychic Warrior Path
+Call PsyWarPath</eval>
+    <evalrule phase="Validation" priority="10000" message="You must select Broken Blade as one of your disciplines to use this path">validif (hero.childfound[mHelpPthwk].tagis[Discipline.BrokenBlad] = 1)</evalrule>
+    </thing>
+  <thing id="cPWaTraBBP" name="Trance (Broken Blade Path)" description="Beginning at 3rd level, while maintaining psionic focus and while in a Broken Blade stance, the psychic warrior gains a +1 bonus to damage while fighting with weapons associated with the Broken Blade discipline. This bonus increases by 1 every four psychic warrior levels thereafter." compset="ClSpecial" summary="When psi-focused you gain a competence bonus to ranged or thrown weapons">
+    <fieldval field="actName" value="Active"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="10000" index="2">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Set the level bonus
+      field[abValue].value += 1
+      If (field[xTotalLev].value >= 7) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 11) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 15) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 19) Then
+        field[abValue].value += 1
+      Endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If Not psionically focused get out now
+      doneif (hero.tagis[Hero.PsiFocus] <> 1)
+
+      ~ If not active get out now
+      doneif (field[abilActive].value <> 1)
+
+      ~ If not in a Broken Blade stance then get out now
+      var IsInStance as number
+      var targetDisc as string
+      targetDisc = "BrokenBlad"
+      call PWinDSta
+      doneif (IsInStance = 0)
+
+      ~ Give bonus to damage rolls for Broken Blade weapons
+      ~var sTags as string
+      ~sTags = hero.childfound[zPWBrknBld].tagids[wFtrGroup.?,"|"]
+      foreach pick in hero from BaseWep where hero.childfound[zPWBrknBld].tagids[wFtrGroup.?,"|"]
+        eachpick.field[wDamBonus].value += field[abValue].value
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPWaManBBP" name="Maneuver (Broken Blade Path)" description="Beginning at 3rd level, as an immediate action, the psychic warrior can expend his psionic focus to gain a +2 bonus to CMB checks to use the dirty trick, grapple, or trip combat maneuvers. This bonus increases by 1 for every five psychic warrior levels possessed." compset="ClSpecial">
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="actName" value="Active (must expend psionic focus)"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="Immediate"/>
+    <eval phase="Render" priority="50000" index="3"><![CDATA[      field[abSumm].text = signed(field[abValue].value) & " to trip/grapple/dirty trick when you expend psi focus"]]></eval>
+    <eval phase="First" priority="10000">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ Calculate bonus amount
+      field[abValue].value += round(field[xTotalLev].value/5,0,-1)
+      
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not activated then get out now
+      doneif (field[abilActive].value <> 1)
+
+      ~ Add bonus to CMB for Dirty Trick, Grapple, and Trip maneuvers
+      hero.childfound[manDirtTri].field[Bonus].value += field[abValue].value
+      hero.childfound[manGrapple].field[Bonus].value += field[abValue].value
+      hero.childfound[manTrip].field[Bonus].value += field[abValue].value]]></eval>
+    </thing>
+  <thing id="cPWPthwITP" name="Iron Tortoise Path" description="A stout shield and defensive nature are hallmarks of psychic warriors who follow the path of the Iron Tortoise. The methods of these warriors is slow and steady like the discipline’s namesake, and enduring as stone. A mountain of martial power, the Iron Tortoise weathers all blows without animosity and retaliates in kind.\n\n{b}Powers:{/b} {i}Expansion{/i}, {i}Stomp{/i}* \n\n{b}Skills:{/b} Bluff, Intimidate, Perception\n\n{b}Bonus Class Skill:{/b} Bluff\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Iron Tortoise Path" uniqueness="unique">
+    <comment><![CDATA[Add Expansion and Stomp powers to list
+    
+    PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
+
+ClassSkill - This tag group is used to setup the skills that will become the Bonus Ckass Skills.
+
+ClsAllowPs - This tag group is used to setup the Powers that this Path grants. You will also still need to bootstrap the same powers onto this Thing with the "Hide.Power" and "PsyWarrior.PathPower" tags.]]></comment>
+    <arrayval field="usrArray" index="0" value="Primary"/>
+    <arrayval field="usrArray" index="1" value="Secondary"/>
+    <usesource source="pPsiUn" parent="pDscar" name="DSP - Ultimate Psionics"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="PathSkill" tag="skBluff" name="Bluff" abbrev="Bluff"/>
+    <tag group="PathSkill" tag="skIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="PathSkill" tag="skPercep" name="Perception" abbrev="Perception"/>
+    <tag group="ClsAllowPs" tag="puExpand1" name="Expansion" abbrev="Expansion"/>
+    <tag group="ClsAllowPs" tag="puStomp1" name="Stomp" abbrev="Stomp"/>
+    <tag group="Discipline" tag="IronTort" name="Iron Tortoise"/>
+    <tag group="SpecSource" tag="arPWPthWlk"/>
+    <tag group="ClassSkill" tag="skBluff" name="Bluff" abbrev="Bluff"/>
+    <bootstrap thing="puStomp1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="cPWaTraITP"></bootstrap>
+    <bootstrap thing="cPWaManITP"></bootstrap>
+    <bootstrap thing="puExpand1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <eval phase="First">~ Setup the Psychic Warrior Path
+Call PsyWarPath</eval>
+    <evalrule phase="Validation" priority="10000" message="You must select Iron Tortoise as one of your disciplines to use this path">validif (hero.childfound[mHelpPthwk].tagis[Discipline.IronTort] = 1)</evalrule>
+    </thing>
+  <thing id="cPWaManITP" name="Maneuver (Iron Tortoise Path)" description="Beginning at 3rd level, as a swift action, the pathwalker can expend his psionic focus to use the reposition combat maneuver against a foe he has successfully attacked with his shield (either by shield bashing or through a maneuver) with a +2 competence bonus to his CMB check. This attempt does not provoke attacks of opportunity. This bonus to his CMB increases by 1 for every five psychic warrior levels possessed." compset="ClSpecial">
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="actName" value="Active (must expend psionic focus)"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="Swift"/>
+    <eval phase="First" priority="10000">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ Calculate bonus amount
+      field[abValue].value += round(field[xTotalLev].value/5,0,-1)
+      
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not activated then get out now
+      doneif (field[abilActive].value <> 1)
+
+      ~ Add bonus to CMB for Reposition maneuver
+      hero.childfound[manReposit].field[Bonus].value += field[abValue].value]]></eval>
+    </thing>
+  <thing id="cPWaTraITP" name="Trance (Iron Tortoise Path)" description="Beginning at 3rd level, while maintaining psionic focus and using a shield while in an Iron Tortoise stance, the pathwalker gains damage reduction 2/adamantine. This damage reduction increases by 2 every four psychic warrior levels thereafter." compset="ClSpecial" summary="Gain DR when using a shield in an Iron Tortoise stance and psi-focused">
+    <fieldval field="actName" value="Active"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="10000" index="2">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Set the level bonus
+      field[abValue].value += 2
+      If (field[xTotalLev].value >= 7) Then
+        field[abValue].value += 2
+      Endif
+      If (field[xTotalLev].value >= 11) Then
+        field[abValue].value += 2
+      Endif
+      If (field[xTotalLev].value >= 15) Then
+        field[abValue].value += 2
+      Endif
+      If (field[xTotalLev].value >= 19) Then
+        field[abValue].value += 2
+      Endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If Not psionically focused get out now
+      doneif (hero.tagis[Hero.PsiFocus] <> 1)
+
+      ~ If not active get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ If not using a shield then get out now
+      doneif (hero.tagis[Hero.EquipShld] = 0)
+
+      ~ If not in an Iron Tortoise stance then get out now
+      var IsInStance as number
+      var targetDisc as string
+      targetDisc = "IronTort"
+      call PWinDSta
+      doneif (IsInStance = 0)
+
+      ~Grant DR
+      #applydr[xDamRdAdam, field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPWPthwPFP" name="Primal Fury Path" description="Psychic warriors who feel the call of Primal Fury’s power are rugged, individualistic hunters who feel the wildness of nature within their mind, body, and soul. They’re prone to passionate reaction, quick tempers granting great power and fierce offensive power.\n\n{b}Powers:{/b} {i}Ticken skin{/i}, {i}Vigor{/i}* \n\n{b}Skills:{/b} Intimidate, Survival, Swim\n\n{b}Bonus Class Skill:{/b} Survival\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Primal Fury Path" uniqueness="unique">
+    <comment><![CDATA[Add Thicken skin and Vigor powers to list
+    
+    PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
+
+ClassSkill - This tag group is used to setup the skills that will become the Bonus Ckass Skills.
+
+ClsAllowPs - This tag group is used to setup the Powers that this Path grants. You will also still need to bootstrap the same powers onto this Thing with the "Hide.Power" and "PsyWarrior.PathPower" tags.]]></comment>
+    <arrayval field="usrArray" index="0" value="Primary"/>
+    <arrayval field="usrArray" index="1" value="Secondary"/>
+    <usesource source="pPsiUn" parent="pDscar" name="DSP - Ultimate Psionics"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="PathSkill" tag="skSwim" name="Swim" abbrev="Swim"/>
+    <tag group="PathSkill" tag="skIntim" name="Intimidate" abbrev="Intimidate"/>
+    <tag group="PathSkill" tag="skSurvival" name="Survival" abbrev="Survival"/>
+    <tag group="ClsAllowPs" tag="puThickSk1" name="Thicken Skin" abbrev="Thicken Skin"/>
+    <tag group="ClsAllowPs" tag="puPVigor1" name="Vigor" abbrev="Vigor"/>
+    <tag group="Discipline" tag="PrimalFury" name="Primal Fury"/>
+    <tag group="SpecSource" tag="arPWPthWlk"/>
+    <tag group="ClassSkill" tag="skSurvival" name="Survival" abbrev="Survival"/>
+    <bootstrap thing="puThickSk1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="puPVigor1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="cPWaManPFP"></bootstrap>
+    <bootstrap thing="cPWaTraPFP"></bootstrap>
+    <eval phase="First">~ Setup the Psychic Warrior Path
+Call PsyWarPath</eval>
+    <evalrule phase="Validation" priority="10000" message="You must select Primal Fury as one of your disciplines to use this path">validif (hero.childfound[mHelpPthwk].tagis[Discipline.PrimalFury] = 1)</evalrule>
+    </thing>
+  <thing id="cPWaManPFP" name="Maneuver (Primal Fury Path)" description="Beginning at 3rd level, the pathwalker may expend his psionic focus as part of a charge attack and he may make a full attack at the end of this charge. At 8th level and every five levels after, attacks made during this charge attack inflict an additional 2 points of damage." compset="ClSpecial">
+    <fieldval field="actName" value="Active (must charge and expend psionic focus)"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="FullRd"/>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ Calculate bonus amount
+      if (field[xTotalLev].value >= 8) then
+        field[abValue].value = 2
+        var amt as number
+        amt = field[xTotalLev].value - 8
+        amt = round(amt/5,0,-1)
+        field[abValue].value += amt*2
+      endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not activated then get out now
+      doneif (field[abilActive].value <> 1)
+      ~ If we're not charging then get out now
+      doneif (hero.childfound[pstChargin].field[pIsOn].value <> 1)
+
+      ~ Add damage bonus
+      hero.child[Damage].field[Bonus].value += field[abValue].value]]></eval>
+    <eval phase="First" priority="10000">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    </thing>
+  <thing id="cPWaTraPFP" name="Trance (Primal Fury Path)" description="Beginning at 3rd level, while maintaining psionic focus and while using a stance of the Primal Fury discipline, the pathwalker gains an additional 10-ft of movement speed. Additionally, he gains a +1 competence bonus to Fortitude saves. This Fortitude save bonus improves by 1 and his speed increases by +5-ft every four psychic warrior levels after this." compset="ClSpecial">
+    <fieldval field="actName" value="Active"/>
+    <fieldval field="abValue" value="10"/>
+    <fieldval field="abValue2" value="1"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="10000" index="2">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Calculate bonus amount
+      if (field[xTotalLev].value >= 7) then
+        var amt as number
+        amt = field[xTotalLev].value - 7
+        amt = round(amt/4,0,-1)
+        field[abValue].value += amt*5
+        field[abValue2].value += amt
+      endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue2].value) & "/" & signed(field[abValue].value) & "ft."
+
+      ~ If Not psionically focused get out now
+      doneif (hero.tagis[Hero.PsiFocus] <> 1)
+
+      ~ If not active get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ If not in a Primal Fury stance then get out now
+      var IsInStance as number
+      var targetDisc as string
+      targetDisc = "PrimalFury"
+      call PWinDSta
+      doneif (IsInStance = 0)
+
+      ~ Grant speed bonus
+      hero.child[Speed].field[Bonus].value += field[abValue].value
+
+      ~ Grant Fort save bonus
+      #applybonus[BonComp, hero.child[svFort], field[abValue2].value]]]></eval>
+    </thing>
+  <thing id="cPWPthwSTP" name="Scarlet Throne Path" description="Pathwalkers who walked the blood-drenched road that leads to the Scarlet Throne are often haughty, proud, arrogant warriors. They feel their mental prowess and skill at arms causes them to rise above the rank and file soldiers that fall so easily to their skill. This pride is well-earned, and their foes cry silently from the graves that the psychic warrior left them in.\n\n{b}Powers:{/b} {i}Offensive precognition{/i}, {i}offensive prescience{/i}*\n\n{b}Skills:{/b} Diplomacy, Knowledge (nobility), Sense\nMotive\n\n{b}Bonus Class Skill:{/b} Sense Motive\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Scarlet Throne Path" uniqueness="unique">
+    <comment><![CDATA[Add Offensive Precognition and Offensive Prescience powers to list
+    
+    PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
+
+ClassSkill - This tag group is used to setup the skills that will become the Bonus Ckass Skills.
+
+ClsAllowPs - This tag group is used to setup the Powers that this Path grants. You will also still need to bootstrap the same powers onto this Thing with the "Hide.Power" and "PsyWarrior.PathPower" tags.]]></comment>
+    <arrayval field="usrArray" index="0" value="Primary"/>
+    <arrayval field="usrArray" index="1" value="Secondary"/>
+    <usesource source="pPsiUn" parent="pDscar" name="DSP - Ultimate Psionics"/>
+    <tag group="PathSkill" tag="skSenseMot" name="Sense Motive"/>
+    <tag group="PathSkill" tag="skKnowNobl" name="Knowledge (Nobility)"/>
+    <tag group="PathSkill" tag="skDiplo" name="Diplomacy" abbrev="Diplomacy"/>
+    <tag group="ClsAllowPs" tag="puPrecogO1" name="Offensive Precognition"/>
+    <tag group="ClsAllowPs" tag="puPresOff1" name="Offensive Prescience"/>
+    <tag group="Discipline" tag="ScarletThr" name="Scarlet Throne"/>
+    <tag group="SpecSource" tag="arPWPthWlk"/>
+    <tag group="ClassSkill" tag="skSenseMot" name="Sense Motive"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="puPrecogO1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="puPresOff1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="cPWaTraSTP"></bootstrap>
+    <bootstrap thing="cPWaManSTP"></bootstrap>
+    <eval phase="First">~ Setup the Psychic Warrior Path
+Call PsyWarPath</eval>
+    <evalrule phase="Validation" priority="10000" message="You must select Scarlet Throne as one of your disciplines to use this path">validif (hero.childfound[mHelpPthwk].tagis[Discipline.ScarletThr] = 1)</evalrule>
+    </thing>
+  <thing id="cPWaTraSTP" name="Trance (Scarlet Throne Path)" description="Beginning at 3rd level, while maintaining psionic focus and while maintaining a Scarlet Throne stance, the pathwalker gains a +1 dodge bonus to his AC. This bonus increases by 1 every four psychic warrior levels possessed." compset="ClSpecial">
+    <fieldval field="actName" value="Active"/>
+    <fieldval field="abValue" value="1"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="10000" index="2">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Calculate bonus amount
+      If (field[xTotalLev].value >= 7) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 11) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 15) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 19) Then
+        field[abValue].value += 1
+      Endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If Not psionically focused get out now
+      doneif (hero.tagis[Hero.PsiFocus] <> 1)
+
+      ~ If not active get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ If not in a Scarlet Throne stance then get out now
+      var IsInStance as number
+      var targetDisc as string
+      targetDisc = "ScarletThr"
+      call PWinDSta
+      doneif (IsInStance = 0)
+
+      ~ Grant dodge bonus to AC
+      #applybonus[tACDodge, hero.child[ArmorClass], field[abValue].value]]]></eval>
+    </thing>
+  <thing id="cPWaManSTP" name="Maneuver (Scarlet Throne Path)" description="Beginning at 3rd level, as a standard action the pathwalker may expend his psionic focus to move up to his base speed and then make a single attack at his full base attack bonus upon a foe within his range. At 8th level, he gains a +1 competence bonus to attack and damage rolls. This bonus increases by 1 every five psychic warrior levels thereafter." compset="ClSpecial" summary="Spend psi-focus to move and attack as a standard action">
+    <fieldval field="actName" value="Active (must expend psionic focus)"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="Standard"/>
+    <eval phase="First" priority="10000">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ Calculate bonus amount
+      if (field[xTotalLev].value >= 8) then
+        field[abValue].value = 2
+        var amt as number
+        amt = field[xTotalLev].value - 8
+        amt = round(amt/5,0,-1)
+        field[abValue].value += amt
+      endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not activated then get out now
+      doneif (field[abilActive].value <> 1)
+
+      ~ Add to-hit and damage bonus
+      hero.child[Attack].field[Bonus].value += field[abValue].value
+      hero.child[Damage].field[Bonus].value += field[abValue].value]]></eval>
+    </thing>
+  <thing id="cPWPthwSWP" name="Solar Wind Path" description="Perceptive and keen of mind, Solar Wind adherents are often watchful and wary of danger. Their minds provide additional might towards their martial talents in the form of additional psychokinetic flames to their attacks. Skilled marksmen and talented game hunters, these psychic warriors blend their mental powers with martial skill to form their arts of war.\n\n{b}Powers:{/b} {i}Foxhole,{/i}, {i}inevitable strike{/i}*\n\n{b}Skills:{/b} Knowledge (nature), Perception, Survival\n\n{b}Bonus Class Skill:{/b} Perception\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Solar Wind Path" uniqueness="unique">
+    <comment><![CDATA[Add Foxhole and Inevitable Strike powers to list
+    
+    PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
+
+ClassSkill - This tag group is used to setup the skills that will become the Bonus Ckass Skills.
+
+ClsAllowPs - This tag group is used to setup the Powers that this Path grants. You will also still need to bootstrap the same powers onto this Thing with the "Hide.Power" and "PsyWarrior.PathPower" tags.]]></comment>
+    <arrayval field="usrArray" index="0" value="Primary"/>
+    <arrayval field="usrArray" index="1" value="Secondary"/>
+    <usesource source="pPsiUn" parent="pDscar" name="DSP - Ultimate Psionics"/>
+    <tag group="PathSkill" tag="skPercep" name="Perception"/>
+    <tag group="PathSkill" tag="skKnowNat" name="Knowledge (Nature)"/>
+    <tag group="PathSkill" tag="skSurvival" name="Survival" abbrev="Survival"/>
+    <tag group="ClsAllowPs" tag="puPrecogO1" name="Offensive Precognition"/>
+    <tag group="ClsAllowPs" tag="puPresOff1" name="Offensive Prescience"/>
+    <tag group="Discipline" tag="SolarWind" name="Solar Wind"/>
+    <tag group="SpecSource" tag="arPWPthWlk"/>
+    <tag group="ClassSkill" tag="skPercep" name="Perception"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="puFoxho1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="puInvSt1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="cPWaManSWP"></bootstrap>
+    <bootstrap thing="cPWaTraSWP"></bootstrap>
+    <eval phase="First">~ Setup the Psychic Warrior Path
+Call PsyWarPath</eval>
+    <evalrule phase="Validation" priority="10000" message="You must select Solar Wind as one of your disciplines to use this path">validif (hero.childfound[mHelpPthwk].tagis[Discipline.SolarWind] = 1)</evalrule>
+    </thing>
+  <thing id="cPWaManSWP" name="Maneuver (Solar Wind Path)" description="Beginning at 3rd level, any time the pathwalker successfully strikes an enemy with a Solar Wind strike, he may expend his psionic focus to inflict an additional 2d6 points of fire damage. For every five psychic warrior levels possessed by the character after this, the bonus fire damage increases by +1d6." compset="ClSpecial" summary="Spend psi-focus to add fire damage to a Solar Wind strike">
+    <fieldval field="actName" value="Active (must expend psionic focus)"/>
+    <fieldval field="abValue" value="2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ Calculate bonus amount
+      if (field[xTotalLev].value >= 8) then
+        field[abValue].value = 3
+        var amt as number
+        amt = field[xTotalLev].value - 8
+        amt = round(amt/5,0,-1)
+        field[abValue].value += amt
+      endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value) & "d6"
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not activated then get out now
+      doneif (field[abilActive].value <> 1)]]></eval>
+    <eval phase="Render" priority="15000" index="3"><![CDATA[field[abSumm].text = "Spend psi-focus to add " & field[abValue].value & "d6 fire damage to a Solar Wind strike"]]></eval>
+    <eval phase="First" priority="10000">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    </thing>
+  <thing id="cPWaTraSWP" name="Trance (Solar Wind Path)" description="Beginning at 3rd level, while maintaining psionic focus, the pathwalker gains an additional +1 bonus to attack rolls and he inflicts an additional 1 point of fire damage on all ranged attacks using a Solar Wind associated weapon while maintaining a stance of that discipline. This bonus increases by 1 every four psychic warrior levels thereafter." compset="ClSpecial">
+    <fieldval field="actName" value="Active"/>
+    <fieldval field="abValue" value="1"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="10000" index="2">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Calculate bonus amount
+      If (field[xTotalLev].value >= 7) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 11) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 15) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 19) Then
+        field[abValue].value += 1
+      Endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If Not psionically focused get out now
+      doneif (hero.tagis[Hero.PsiFocus] <> 1)
+
+      ~ If not active get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ If not in a Solar Wind stance then get out now
+      var IsInStance as number
+      var targetDisc as string
+      targetDisc = "SolarWind"
+      call PWinDSta
+      doneif (IsInStance = 0)
+
+      ~ Add attack bonus and fire damage to ranged attacks with Solar Wind weapons
+      foreach pick in hero from BaseWep where hero.childfound[zPWSolWin].tagids[wFtrGroup.?, " | "]
+        eachpick.field[atrBonus].value += field[abValue].value
+        #extradamage[eachpick, signed(field[abValue].value) & " Fire", field[thingname].text]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPWPthwTDP" name="Thrashing Dragon Path" description="Deadly and graceful, the Thrashing Dragon pathwalkers are as swift and vicious as the draconic beings who have inspired their martial talents. Psychic warriors of this martial path push their mental powers to their psychometabolic limits through acrobatic assaults and terrific feats of daring to overtake foes and prove their martial superiority.\n\n{b}Powers:{/b} {i}Dazzling swordplay{/i}, {i}metaphysical weapon{/i}*\n\n{b}Skills:{/b} Acrobatics, Fly, Intimidate\n\n{b}Bonus Class Skill:{/b} Acrobatics\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Thrashing Dragon Path" uniqueness="unique">
+    <comment><![CDATA[Add Dazzling Swordplay and Metaphysical Weapon powers to list
+    
+    PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
+
+ClassSkill - This tag group is used to setup the skills that will become the Bonus Ckass Skills.
+
+ClsAllowPs - This tag group is used to setup the Powers that this Path grants. You will also still need to bootstrap the same powers onto this Thing with the "Hide.Power" and "PsyWarrior.PathPower" tags.]]></comment>
+    <arrayval field="usrArray" index="0" value="Primary"/>
+    <arrayval field="usrArray" index="1" value="Secondary"/>
+    <usesource source="pPsiUn" parent="pDscar" name="DSP - Ultimate Psionics"/>
+    <tag group="PathSkill" tag="skAcrobat" name="Acrobatics"/>
+    <tag group="PathSkill" tag="skFly" name="Fly"/>
+    <tag group="PathSkill" tag="skIntim" name="Intimidate"/>
+    <tag group="ClsAllowPs" tag="puDazSw1" name="Dazzling Swordplay"/>
+    <tag group="ClsAllowPs" tag="puMetaPhW1" name="Metaphysical Weapon"/>
+    <tag group="Discipline" tag="ThrashDrag" name="Thrashing Dragon"/>
+    <tag group="SpecSource" tag="arPWPthWlk"/>
+    <tag group="ClassSkill" tag="skAcrobat" name="Acrobatics"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="puDazSw1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="puMetaPhW1">
+      <autotag group="Hide" tag="Power"/>
+      <autotag group="PsyWarrior" tag="PathPower"/>
+      <autotag group="SpellType" tag="cHelpPWa"/>
+      </bootstrap>
+    <bootstrap thing="cPWaTraTDP"></bootstrap>
+    <bootstrap thing="cPWaManTDP"></bootstrap>
+    <eval phase="First">~ Setup the Psychic Warrior Path
+Call PsyWarPath</eval>
+    <evalrule phase="Validation" priority="10000" message="You must select Thrashing Dragon as one of your disciplines to use this path">validif (hero.childfound[mHelpPthwk].tagis[Discipline.ThrashDrag] = 1)</evalrule>
+    </thing>
+  <thing id="cPWaTraTDP" name="Trance (Thrashing Dragon Path)" description="Beginning at 3rd level, while maintaining psionic focus, the pathwalker inflicts an additional 2 points of damage when two-weapon fighting with weapons associated with the Thrashing Dragon discipline and maintaining a stance of that discipline. This bonus increases by 1 every four psychic warrior levels thereafter." compset="ClSpecial" summary="Increase damage with Thrashing Dragon weapons">
+    <fieldval field="actName" value="Active"/>
+    <fieldval field="abValue" value="2"/>
+    <tag group="User" tag="Activation" name="Activation" abbrev="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="10000" index="2">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Calculate bonus amount
+      If (field[xTotalLev].value >= 7) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 11) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 15) Then
+        field[abValue].value += 1
+      Endif
+      If (field[xTotalLev].value >= 19) Then
+        field[abValue].value += 1
+      Endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+
+      ~ If Not psionically focused get out now
+      doneif (hero.tagis[Hero.PsiFocus] <> 1)
+
+      ~ If not active get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ If not dual-wielding then get out now
+
+      ~ If not in a Thrashing Dragon stance then get out now
+      var IsInStance as number
+      var targetDisc as string
+      targetDisc = "ThrashDrag"
+      call PWinDSta
+      doneif (IsInStance = 0)
+
+      ~ Add attack bonus and fire damage to Thrashing Dragon weapons
+      foreach pick in hero from BaseWep where hero.childfound[zPWThraDra].tagids[wFtrGroup.?, " | "]
+        eachpick.field[wDamBonus].value += field[abValue].value
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPWaManTDP" name="Maneuver (Thrashing Dragon Path)" description="Beginning at 3rd level, any time that the pathwalker strikes an enemy with two wielded weapons, he may expend his psionic focus to rend the enemy for an additional 2d6 points of damage. For every five psychic warrior levels possessed by the character after this, the bonus rending damage increases by +1d6." compset="ClSpecial" summary="Spend psi-focus to rend for bonus damage">
+    <fieldval field="actName" value="Active (must expend psionic focus)"/>
+    <fieldval field="abValue" value="2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[      ~ Calculate bonus amount
+      if (field[xTotalLev].value >= 8) then
+        field[abValue].value = 3
+        var amt as number
+        amt = field[xTotalLev].value - 8
+        amt = round(amt/5,0,-1)
+        field[abValue].value += amt
+      endif
+
+      ~ Set live name
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value) & "d6"
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not activated then get out now
+      doneif (field[abilActive].value <> 1)]]></eval>
+    <eval phase="Render" priority="15000" index="3"><![CDATA[field[abSumm].text = "Spend psi-focus to rend for " & field[abValue].value & "d6 bonus damage"]]></eval>
+    <eval phase="First" priority="10000">~ Setup this Maneuver or Trance for the Psy Warrior
+Call PsyWarTrMa</eval>
     </thing>
   </document>
