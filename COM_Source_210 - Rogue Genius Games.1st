@@ -3,6 +3,9 @@
   <loadonce key="COM_Source_210 - Rogue Genius Games"/>
 
   <!-- 
+  February 16, 2015 - W Birchler/Asandir/Sethvir
+  -Added 110 Spell Variants v4.
+  
   January 31, 2015 - Tim Shadow
   -Made a new Parent version of the file.
   
@@ -204,7 +207,7 @@
     sortorder="0"
     description="SGG Feats of Subterfuge.">
     </source>
-<source
+  <source
     id="SGG_FORMI"
     name="RGG - Feats of Runic Might I"
     selectable="yes"
@@ -212,13 +215,21 @@
     sortorder="0"
     description="SGG Feats of Runic Might I.">
     </source>
-<source
+  <source
     id="SGG_FORMII"
     name="RGG - Feats of Runic Might II"
     selectable="yes"
     parent="SGGFeatOf"
     sortorder="0"
     description="SGG Feats of Runic Might II.">
+    </source>
+  <source
+    id="110SPV4"
+    name="RGG - 110 Spell Variants 4"
+    selectable="yes"
+    parent="SGGMagic"
+    sortorder="0"
+    description="SGG 110 Spell Variants Volume 4.">
     </source>
 
   <!-- New child source of SGG for Bullet Points -->
