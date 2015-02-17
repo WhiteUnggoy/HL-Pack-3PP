@@ -13244,8 +13244,8 @@ perform hero.findchild[BaseClSpec,"thingid.cSknEnhMB & SpecSource.cHelpSkn & ClS
 perform hero.findchild[BaseClSpec,"thingid.cSknEnhMB & SpecSource.cHelpSkn & ClSpecWhen.7"].assign[Helper.SpcReplace]]]></eval>
     </thing>
   <thing id="cPUNBWFin" name="Weapon Finesse" description="A nimble blade gains the Weapon Finesse feat as a bonus feat at 1st level. This replaces the bonus feat normally gained at 1st level." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
     <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="ProductId" tag="PUProdID"/>
     <bootstrap thing="fWepFin"></bootstrap>
     </thing>
   <thing id="cPUNBMinFi" name="Mind Blade Finesse" description="A 1st level nimble blade gains the Mind Blade Finesse blade skill*. This replaces proficiency with shields and medium armor." compset="ClSpecial">
@@ -13256,15 +13256,15 @@ perform hero.findchild[BaseClSpec,"thingid.cSknEnhMB & SpecSource.cHelpSkn & ClS
       <autotag group="SpecSource" tag="cHelpSkn"/>
       </bootstrap>
     </thing>
-  <thing id="cPUNBPirSt" name="Piranha Strike" description="A nimble blade gains the Weapon Finesse feat as a bonus feat at 1st level. This replaces the bonus feat normally gained at 1st level." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
+  <thing id="cPUNBPirSt" name="Piranha Strike" description="At 2nd level nimble blade gains the Piranha Strike* feat as a bonus feat. This replaces the blade skill normally gained at 2nd level." compset="ClSpecial">
     <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
-    <bootstrap thing="fPiranStr">
+    <tag group="ProductId" tag="PUProdID"/>
+    <bootstrap thing="fPUPiranha">
       <containerreq phase="First" priority="500"><![CDATA[count:Classes.Soulknife >= 2]]></containerreq>
       </bootstrap>
     </thing>
   <thing id="cPUNBAgBla" name="Agile Blade" description="A nimble blade of 7th level treats his mind blade as if it had the agile weapon special ability. This does not count toward the nimble blade’s mind blade’s enhancement bonus. This replaces the mind blade enhancement increase gained at 7th level." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
+    <tag group="ProductId" tag="PUProdID"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[~ If the hero doesn't have this ability, ignore the following.
 doneif (tagis[Helper.ShowSpec] = 0)
 
@@ -13273,6 +13273,6 @@ foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
   nexteach]]></eval>
     </thing>
   <thing id="cPUNBAdaFo" name="Adaptive Form" description="Once a nimble blade has reached 10th level, he has learned how to rapidly alter his use of the mind blade to adapt to any particular situation. As an immediate action and by expending psionic focus, the nimble blade can select any one blade skill whose requirements he meets and be treated as having that blade skill. The effect of the blade skill selected lasts until he expends his psionic focus as an immediate action to change it. This replaces the blade skill normally gained at 10th level." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
+    <tag group="ProductId" tag="PUProdID"/>
     </thing>
   </document>
