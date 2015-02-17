@@ -136,8 +136,8 @@ April 10, 2014 - Tim Shadow
         nexteach]]></validate>
       </prereq>
     </thing>
-  <thing id="fPWExtrReM" name="Extra Readied Maneuver" description="You have learned how to increase your ability to maintain martial forms in your mind.\n\n{b}Prerequisites{/b}: The ability to initiate a martial maneuver \n\n{b}Benefit{/b}: You may ready an additional martial maneuver from your maneuvers known." compset="Feat" summary="Ready an additional martial maneuver from your maneuvers known." uniqueness="useronce">
-    <fieldval field="usrCandid1" value="component.Class &amp; PathOfWar.Class"/>
+  <thing id="fPWExtrReM" name="Extra Readied Maneuver" description="{b}Prerequisites:{/b} Ability to initiate a martial maneuver.\n\n{b}Benefit:{/b} Select a martial maneuver using class that you possess one or more levels in. You may ready an additional martial maneuver from your maneuvers known from that class.\n\n{b}Special:{/b} You may select this feat multiple times, applying it to multiple classes (if you possess multiple initiator classes) or multiple times to single class. This feat may not alter maneuvers readied from the Martial Training feat chain." compset="Feat" summary="Ready an additional martial maneuver from your maneuvers known.">
+    <fieldval field="usrCandid1" value="component.PWManList"/>
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="fCategory" tag="Combat"/>
@@ -152,9 +152,10 @@ April 10, 2014 - Tim Shadow
       var iX as number
       ~ Calculate the array value which is class level minus one 
       ~ as we start at zero
-      iX = field[usrChosen1].chosen.field[cTotalLev].value - 1
+      iX = field[usrChosen1].chosen.linkage[powClass].field[cTotalLev].value - 1
+
       ~ Increase class ready number by one
-      field[usrChosen1].chosen.field[cKnowTot].matrixvalue[iX,1] += 1]]></eval>
+      field[usrChosen1].chosen.field[cManReady].arrayvalue[iX] += 1]]></eval>
     <exprreq message="Ability to initiate a martial maneuver required."><![CDATA[hero.tagcount[HasMan.?] <> 0]]></exprreq>
     </thing>
   <thing id="fPWFuseSty" name="Fuse Styles" description="You are capable of mingling mundane and martial combat styles.\n\n{b}Prerequisites{/b}: One style feat, one stance known \n\n{b}Benefit{/b}: You can enter a fighting Style and a martial stance with the same swift action." compset="Feat" summary="You can enter a fighting Style and a martial stance with the same swift action." uniqueness="useronce">
