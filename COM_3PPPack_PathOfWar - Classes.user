@@ -2569,7 +2569,6 @@ nexteach]]></validate>
     <tag group="Discipline" tag="PrimalFury"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="PathOfWar" tag="Stance"/>
     <tag group="PathOfWar" tag="StanceClSp"/>
     <tag group="ChargeCalc" tag="AttrUses5"/>
     <tag group="ChargeAttr" tag="aCON"/>
