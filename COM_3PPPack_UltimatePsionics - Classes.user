@@ -1794,8 +1794,9 @@ doneif (field[abilActive].value <> 1)
   <thing id="fcPUPwrPnt" name="+1 Power Point" description="+1 Power Point" compset="FavClass" uniqueness="unique">
     <comment><![CDATA[This is bootstrapped to the "Psionic Aptitude" racial ability. This way when the racial ability is bootstrapped to a race this FC comes along for the ride. It then allows for the ability to select +1 Power Point.
 
-This should allow for people making custom races to have it work correctly for them also.]]></comment>
-    <usesource source="pPsiUn"/>
+This should allow for people making custom races to have it work correctly for them also.
+
+Note: This does not work correctly if it is source marked.]]></comment>
     <tag group="ProductId" tag="PUProdID"/>
     <tag group="Helper" tag="Bootstrap"/>
     <eval phase="PostLevel" priority="10000">field[abValue].value += field[fcCount].value    
@@ -4717,8 +4718,7 @@ Call PsyWarTrMa</eval>
       </bootstrap>
     <bootstrap thing="cPWaTraSur"></bootstrap>
     <bootstrap thing="cPWaManSur"></bootstrap>
-    <eval phase="First">
-      ~ Setup the Psychic Warrior Path
+    <eval phase="First">~ Setup the Psychic Warrior Path
       Call PsyWarPath</eval>
     </thing>
   <thing id="cHelpPU0" name="Aegis" compset="Class" uniqueness="unique">
@@ -4879,8 +4879,7 @@ Call PsyWarTrMa</eval>
       </bootstrap>
     <bootstrap thing="cPUAegHelp"></bootstrap>
     <link linkage="psiattr" thing="aINT"/>
-    <eval phase="PostLevel" priority="600" index="2">
-      var myLevel as number
+    <eval phase="PostLevel" priority="600" index="2">var myLevel as number
 
       myLevel += field[cTotalLev].value
 
@@ -4926,8 +4925,7 @@ Call PsyWarTrMa</eval>
       elseif (myLevel = 20) then
         hero.childfound[cPUAegHelp].field[abValue2].value += 26
       endif</eval>
-    <eval phase="PostLevel" priority="500">
-      ~Set Aegis level in abValue1 on Aegis Helper Class Special for Configurable reference later
+    <eval phase="PostLevel" priority="500">~Set Aegis level in abValue1 on Aegis Helper Class Special for Configurable reference later
       hero.childfound[cPUAegHelp].field[abValue].value += field[cTotalLev].value</eval>
     </thing>
   <thing id="cPUAegis" name="Aegis" description="While the shaper is the master of manipulating ectoplasm and creating any manner of item, the aegis has learned to take ectoplasm and form it into a suit to be worn around his body, granting him a variety of benefits.\n\nThe aegis can shape his astral suit into several different forms and is capable of altering its abilities to suit his needs.\n\n{b}Role:{/b} An aegis is a front-line combatant. His astral suit allows him significant flexibility in handling combat and non-combat situations, and his defensive abilities are considerable.\n\n{b}Alignment:{/b} Any." compset="ClassLevel" maxlimit="20">
@@ -4937,8 +4935,7 @@ Call PsyWarTrMa</eval>
     <tag group="Custom" tag="AegisLvls"/>
     <bootstrap thing="cHelpPU0"></bootstrap>
     <link linkage="helper" thing="cHelpPU0"/>
-    <eval phase="First" priority="50">
-      ~ Assign Class helper tag very early on the hero for
+    <eval phase="First" priority="50">~ Assign Class helper tag very early on the hero for
       ~ testing on the Bootstrap armor Thing.
       perform hero.assign[Custom.AegisLvls]</eval>
     </thing>
