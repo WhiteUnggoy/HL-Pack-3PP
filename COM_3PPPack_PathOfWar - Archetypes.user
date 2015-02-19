@@ -757,9 +757,9 @@ field[listname].text = field[thingname].text & " (" & field[abDuraText].text & "
     <tag group="abDuration" tag="Round"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="User" tag="Activation"/>
-    <bootstrap thing="xPWDRGoCha"></bootstrap>
-    <bootstrap thing="xPWDREvCha"></bootstrap>
-    <bootstrap thing="xPWDREvLaw"></bootstrap>
+    <bootstrap thing="xxDRGooCha"></bootstrap>
+    <bootstrap thing="xxDREviCha"></bootstrap>
+    <bootstrap thing="xxDREviLaw"></bootstrap>
     <eval phase="Render" priority="10000" index="2"><![CDATA[field[listname].text = field[thingname].text & " DR " & field[abValue].value & field[abText].text
 
 field[livename].text &= " DR " & field[abValue].value & field[abText].text
@@ -784,10 +784,10 @@ else
   if (herofield[tGoodVEvil].value = 2) then
     ~ If we're LG, DR is /evil or chaotic
     if (herofield[tLawVChaos].value = 2) then
-      perform hero.child[xPWDREvCha].setfocus
+      perform hero.child[xxDREviCha].setfocus
     ~ If we're CG, DR is /evil or lawful
     elseif (herofield[tLawVChaos].value = 8) then
-      perform hero.childfound[xPWDREvLaw].setfocus
+      perform hero.childfound[xxDREviLaw].setfocus
     ~ If we're NG, DR is /evil
     else
       perform hero.childfound[xDamRdEvil].setfocus
@@ -795,7 +795,7 @@ else
   elseif (herofield[tGoodVEvil].value = 8) then
     ~ If we're LE, DR is /good or chaotic
     if (herofield[tLawVChaos].value = 2) then
-      perform hero.childfound[xPWDRGoCha].setfocus
+      perform hero.childfound[xxDRGooCha].setfocus
     ~ If we're CE, DR is /good or lawful
     elseif (herofield[tLawVChaos].value = 8) then
       perform hero.childfound[xDamRdGoLa].setfocus
@@ -823,51 +823,6 @@ if (field[abilActive].value = 1) then
   focus.field[abValue].value = field[abValue].value
   perform focus.tagreplace[Hide.Special,Helper.ShowSpec]
 endif]]></eval>
-    </thing>
-  <thing id="xPWDRGoCha" name="Damage Reduction, Good or Chaotic" description="You have Damage Reduction against all except Good or Chaotic attacks." compset="Ability" uniqueness="unique">
-    <fieldval field="shortname" value="good or chaotic"/>
-    <usesource source="srcPathOfW"/>
-    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
-    <tag group="Universal" tag="Universal" name="Universal Monster Ability or Core Rulebook ability" abbrev="Universal Monster Ability or Core Rulebook ability"/>
-    <tag group="Helper" tag="BaseAbil" name="Base Ability" abbrev="Base Ability"/>
-    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="Final" priority="10000"><![CDATA[
-      call CalcValue
-
-      ~ Use our value field as the amount of damage we can resist
-      field[livename].text = "Damage Reduction (" & field[abValue].value & "/good or chaotic)"
-      field[shortname].text = field[abValue].value & "/good or chaotic"]]></eval>
-    </thing>
-  <thing id="xPWDREvLaw" name="Damage Reduction, Evil or Lawful" description="You have Damage Reduction against all except Evil or Lawful attacks." compset="Ability" uniqueness="unique">
-    <fieldval field="shortname" value="evil or lawful"/>
-    <usesource source="srcPathOfW"/>
-    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
-    <tag group="Universal" tag="Universal" name="Universal Monster Ability or Core Rulebook ability" abbrev="Universal Monster Ability or Core Rulebook ability"/>
-    <tag group="Helper" tag="BaseAbil" name="Base Ability" abbrev="Base Ability"/>
-    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="Final" priority="10000"><![CDATA[
-      call CalcValue
-
-      ~ Use our value field as the amount of damage we can resist
-      field[livename].text = "Damage Reduction (" & field[abValue].value & "/evil or lawful)"
-      field[shortname].text = field[abValue].value & "/evil or lawful"]]></eval>
-    </thing>
-  <thing id="xPWDREvCha" name="Damage Reduction, Evil or Chaotic" description="You have Damage Reduction against all except Evil or Chaotic attacks." compset="Ability" uniqueness="unique">
-    <fieldval field="shortname" value="evil or chaotic"/>
-    <usesource source="srcPathOfW"/>
-    <tag group="SpecType" tag="DR" name="Damage Reduction" abbrev="Damage Reduction"/>
-    <tag group="Universal" tag="Universal" name="Universal Monster Ability or Core Rulebook ability" abbrev="Universal Monster Ability or Core Rulebook ability"/>
-    <tag group="Helper" tag="BaseAbil" name="Base Ability" abbrev="Base Ability"/>
-    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="Final" priority="10000"><![CDATA[
-      call CalcValue
-
-      ~ Use our value field as the amount of damage we can resist
-      field[livename].text = "Damage Reduction (" & field[abValue].value & "/evil or chaotic)"
-      field[shortname].text = field[abValue].value & "/evil or chaotic"]]></eval>
     </thing>
   <thing id="cPW2GrdJdg" name="Guarded Judgment" description="The judge’s senses protect him from the vile taint of his foes, granting a +1 insight bonus on all saving throws. This bonus increases by +1 for every five judge levels he possesses. At 10th level, the bonus is doubled against curses, diseases, and poisons." compset="ClSpecial" summary="Insight bonus to saving throws">
     <usesource source="srcPathOfW"/>
@@ -910,9 +865,9 @@ field[sbName].text = field[livename].text]]></eval>
     <tag group="AbilType" tag="Super"/>
     <tag group="User" tag="Activation"/>
     <tag group="fShowWhat" tag="Energy"/>
-    <bootstrap thing="xPWDREvCha"></bootstrap>
-    <bootstrap thing="xPWDREvLaw"></bootstrap>
-    <bootstrap thing="xPWDRGoCha"></bootstrap>
+    <bootstrap thing="xxDREviCha"></bootstrap>
+    <bootstrap thing="xxDREviLaw"></bootstrap>
+    <bootstrap thing="xxDRGooCha"></bootstrap>
     <eval phase="PostLevel" priority="10000"><![CDATA[~ If we're not shown, just get out now
 doneif (tagis[Helper.ShowSpec] = 0)
 
@@ -955,9 +910,9 @@ field[sbName].text = field[livename].text]]></eval>
     <tag group="abDuration" tag="Round"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="User" tag="Activation"/>
-    <bootstrap thing="xPWDREvCha"></bootstrap>
-    <bootstrap thing="xPWDREvLaw"></bootstrap>
-    <bootstrap thing="xPWDRGoCha"></bootstrap>
+    <bootstrap thing="xxDREviCha"></bootstrap>
+    <bootstrap thing="xxDREviLaw"></bootstrap>
+    <bootstrap thing="xxDRGooCha"></bootstrap>
     <eval phase="PostLevel" priority="10000"><![CDATA[~ If we're not shown, just get out now
 doneif (tagis[Helper.ShowSpec] = 0)
 
@@ -1125,9 +1080,9 @@ endif]]></eval>
     <tag group="LvNamePar" tag="IncDurati"/>
     <tag group="SbNamePar" tag="IncDurati"/>
     <tag group="SpecType" tag="SpellLike"/>
-    <bootstrap thing="xPWDRGoCha"></bootstrap>
-    <bootstrap thing="xPWDREvCha"></bootstrap>
-    <bootstrap thing="xPWDREvLaw"></bootstrap>
+    <bootstrap thing="xxDRGooCha"></bootstrap>
+    <bootstrap thing="xxDREviCha"></bootstrap>
+    <bootstrap thing="xxDREviLaw"></bootstrap>
     <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
 doneif (tagis[Helper.ShowSpec] = 0)
 
@@ -1144,9 +1099,9 @@ field[listname].text = field[thingname].text & " (" & field[abDuraText].text & "
     <tag group="abAction" tag="Standard"/>
     <tag group="SpInfo" tag="spDispMag5"/>
     <tag group="AbilType" tag="Super"/>
-    <bootstrap thing="xPWDREvLaw"></bootstrap>
-    <bootstrap thing="xPWDRGoCha"></bootstrap>
-    <bootstrap thing="xPWDREvCha"></bootstrap>
+    <bootstrap thing="xxDREviLaw"></bootstrap>
+    <bootstrap thing="xxDRGooCha"></bootstrap>
+    <bootstrap thing="xxDREviCha"></bootstrap>
     <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're not shown, just get out now
 doneif (tagis[Helper.ShowSpec] = 0)
 
