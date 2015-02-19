@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
   <loadonce key="COM_3PPPack_PathOfWar - Archetypes"/>
   <thing id="arPWHwkgrd" name="Hawkguard" description="Not all warders are comfortable with a sword and shield, but take their role as a defender no less seriously. While not as robust in the realm of melee combat, the hawkguard takes his skills to a preternatural extreme, being able to defend as well as a stout shield with a bow and quiver, a trusty crossbow, or a bandolier of throwing weapons." compset="ClassVary" uniqueness="unique">
@@ -53,7 +53,7 @@ if (ITcount < 2) then
   perform hero.child[mHelpPW3].delete[Discipline.PrimalFury] 
 endif]]></eval>
     </thing>
-  <thing id="cPW3RnDfFc" name="Ranged Defensive Focus" description="The hawkguard is a deadly opponent as he focuses on protecting his allies and himself while planning his next moves. This functions as the normal warder defensive focus, except for the following changes. When taking a full-round action to recover maneuvers the warder threatens an area within 15 ft. of himself, except for adjacent squares. The bowman threatens this space only if he&#146;s wielding a ranged weapon, and may make attacks of opportunity with ranged weapons as long as Ranged Defensive Focus is active. This modifies and changes the warder&#146;s defensive focus class feature." compset="ClSpecial" summary="Threaten 15-ft area and make AoO&apos;s with a ranged weapon">
+  <thing id="cPW3RnDfFc" name="Ranged Defensive Focus" description="The hawkguard is a deadly opponent as he focuses on protecting his allies and himself while planning his next moves. This functions as the normal warder defensive focus, except for the following changes. When taking a full-round action to recover maneuvers the warder threatens an area within 15 ft. of himself, except for adjacent squares. The bowman threatens this space only if he’s wielding a ranged weapon, and may make attacks of opportunity with ranged weapons as long as Ranged Defensive Focus is active. This modifies and changes the warder’s defensive focus class feature." compset="ClSpecial" summary="Threaten 15-ft area and make AoO&apos;s with a ranged weapon">
     <fieldval field="abDuration" value="1"/>
     <fieldval field="abValue" value="15"/>
     <usesource source="srcPathOfW"/>
@@ -175,7 +175,7 @@ doneif (field[abilActive].value <> 1)]]></eval>
       </bootstrap>
     <link linkage="varies" thing="cHelpPW3"/>
     </thing>
-  <thing id="cPW3Grdshp" name="Guardianship" description="At 1st level, the sworn protector may select a ward, a person whom she must protect no matter what the cost. When in combat and the sworn protector&#146;s ward is within 10ft of their ward&#146;s position, the ward gains a +1 morale bonus to their AC and savings throws. This bonus increases by +1 at 5th level, and every four levels after that (9th, 13th, and 17th level). Additionally, the sworn protector may add her guardianship bonus to her attack and damage rolls as a morale bonus if the ward is within the sworn protector&#146;s guardianship range. This radius increases by 10ft at 6th and again at 12th level. A sworn protector may only have one ward at a time at 1st level; they may then select a second ward at 8th level and a 3rd ward at 15th level. To select a ward, the sworn protector must take ten minutes discussing tactics and practicing with his ward so that he may learn how best to protect him, and from there on he practices those tactics when he readies his maneuvers. A sworn protector may dismiss a creature as his ward at anytime as a free action. This augments and replaces the aegis class feature, and if an ability uses the warder&#146;s aegis bonus for anything, then substitute with his guardianship bonus instead." compset="ClSpecial" summary="Morale bonus to AC and saves for your ward(s), attack and damage bonus for you">
+  <thing id="cPW3Grdshp" name="Guardianship" description="At 1st level, the sworn protector may select a ward, a person whom she must protect no matter what the cost. When in combat and the sworn protector’s ward is within 10ft of their ward’s position, the ward gains a +1 morale bonus to their AC and savings throws. This bonus increases by +1 at 5th level, and every four levels after that (9th, 13th, and 17th level). Additionally, the sworn protector may add her guardianship bonus to her attack and damage rolls as a morale bonus if the ward is within the sworn protector’s guardianship range. This radius increases by 10ft at 6th and again at 12th level. A sworn protector may only have one ward at a time at 1st level; they may then select a second ward at 8th level and a 3rd ward at 15th level. To select a ward, the sworn protector must take ten minutes discussing tactics and practicing with his ward so that he may learn how best to protect him, and from there on he practices those tactics when he readies his maneuvers. A sworn protector may dismiss a creature as his ward at anytime as a free action. This augments and replaces the aegis class feature, and if an ability uses the warder’s aegis bonus for anything, then substitute with his guardianship bonus instead." compset="ClSpecial" summary="Morale bonus to AC and saves for your ward(s), attack and damage bonus for you">
     <usesource source="srcPathOfW"/>
     <tag group="User" tag="Activation"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -241,7 +241,7 @@ doneif (field[abilActive].value <> 1)]]></eval>
       ~ Set activation name with range
       field[actName].text = field[sbName].text & ": Ward within " & field[abRangText].text]]></eval>
     </thing>
-  <thing id="cPW3DefInt" name="Defensive Intercept" description="With swift speed and trained instincts, a sworn protector is capable of sudden bursts of speed in the defense of a chosen ward. A number of times per day equal to 1 + the sworn protector&#146;s Intelligence bonus she may leap to her ward&#146;s defense with lightning speed. As an immediate action, the sworn protector moves up to her base speed to a space within 10 ft. of a ward who is being subjected to an attack or effect that would cause harm, to thereby grant her guardianship benefits. This movement is subject to attacks of opportunity. If the sworn protector is too distant to reach her ward, she cannot use this ability." compset="ClSpecial" summary="Move to defend your ward as an immediate action">
+  <thing id="cPW3DefInt" name="Defensive Intercept" description="With swift speed and trained instincts, a sworn protector is capable of sudden bursts of speed in the defense of a chosen ward. A number of times per day equal to 1 + the sworn protector’s Intelligence bonus she may leap to her ward’s defense with lightning speed. As an immediate action, the sworn protector moves up to her base speed to a space within 10 ft. of a ward who is being subjected to an attack or effect that would cause harm, to thereby grant her guardianship benefits. This movement is subject to attacks of opportunity. If the sworn protector is too distant to reach her ward, she cannot use this ability." compset="ClSpecial" summary="Move to defend your ward as an immediate action">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -254,7 +254,7 @@ doneif (field[abilActive].value <> 1)]]></eval>
 doneif (tagis[Helper.ShowSpec] = 0)
 doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW3ShrCnt" name="Shared Counter" description="At 3rd level, the warder&#146;s ability to protect those around him expands to allow him to use readied counters with a range of personal to protect another as long as he is adjacent to their position. If the counter is unsuccessful, then the protected ally must rely on their own defenses. He may use this with no daily limit, but only as often as he has an immediate action to initiate a counter. Additionally, in the defense of a ward she may use her defensive intercept ability as part of the same immediate action to use a shared counter. This ability functions with the Extended Defense class feature. This replaces the bonus feat gained at 3rd level." compset="ClSpecial" summary="Use a personal counter to defend an adjacent ally">
+  <thing id="cPW3ShrCnt" name="Shared Counter" description="At 3rd level, the warder’s ability to protect those around him expands to allow him to use readied counters with a range of personal to protect another as long as he is adjacent to their position. If the counter is unsuccessful, then the protected ally must rely on their own defenses. He may use this with no daily limit, but only as often as he has an immediate action to initiate a counter. Additionally, in the defense of a ward she may use her defensive intercept ability as part of the same immediate action to use a shared counter. This ability functions with the Extended Defense class feature. This replaces the bonus feat gained at 3rd level." compset="ClSpecial" summary="Use a personal counter to defend an adjacent ally">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -370,42 +370,18 @@ foreach pick in hero from BaseWep where "Hero.MainHand & Hero.OffHand & (wClass.
   done
 nexteach]]></eval>
     </thing>
-  <thing id="wPWArmShBs" name="Armament Shield Bash" description="This &quot;shield bash&quot; appears when you equip a two-handed weapon or a one-handed weapon in both hands, and is granted by the Armament Shield Bash class feature.\n\n{b}Note:{/b} This weapon can only be equipped in your off-hand to represent two-weapon fighting with a two-handed weapon and a shield." compset="Weapon" holdable="no">
-    <comment>This item is not actually selected by the user anywhere. It is a helper object, that the weapon stats for the shields attach as a gizmo, so they can retrieve its stats</comment>
-    <usesource source="srcPathOfW"/>
-    <tag group="Helper" tag="Helper" name="Helper" abbrev="Helper"/>
-    <tag group="Helper" tag="NoSelect" name="NoSelect" abbrev="NoSelect"/>
-    <tag group="IsWeapon" tag="wShLight" name="Shield, Light" abbrev="Shield, Light"/>
-    <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
-    <tag group="wClass" tag="Light" name="Light" abbrev="Light"/>
-    <tag group="wCritMin" tag="20" name="20" abbrev="20"/>
-    <tag group="wCritMult" tag="2" name="2" abbrev="2"/>
-    <tag group="wFtrGroup" tag="Close" name="Close" abbrev="Close"/>
-    <tag group="wMain" tag="1d3_3" name="1d3" abbrev="1d3"/>
-    <tag group="wProfReq" tag="Martial" name="Martial" abbrev="Martial"/>
-    <tag group="wType" tag="B" name="Bludgeoning" abbrev="B"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
-    <tag group="Helper" tag="NoOutGear"/>
-    <tag group="Helper" tag="NoHandWeap"/>
-    <evalrule phase="Validation" priority="10000" message="May only be equipped in off-hand" summary="May only be equipped in off-hand">validif (field[gIsEquip].value = 0)</evalrule>
-    </thing>
-  <thing id="arPWBnnrmn" name="Bannerman" description="Some warlords find their place in the theater of war when they find the method of combat that best expresses their nature and daring in combat. A bannerman finds his place with a sword in one hand and his company&#146;s banner in the other, barking inspirational orders to his allies while slaying his foes between breaths." compset="ClassVary" uniqueness="unique">
+  <thing id="arPWBnnrmn" name="Bannerman" description="Some warlords find their place in the theater of war when they find the method of combat that best expresses their nature and daring in combat. A bannerman finds his place with a sword in one hand and his company’s banner in the other, barking inspirational orders to his allies while slaying his foes between breaths." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="130"/>
     <arrayval field="cvBonFtMod" index="5" value="-1"/>
     <arrayval field="cvBonFtMod" index="9" value="-1"/>
     <arrayval field="cvBonFtMod" index="13" value="-1"/>
     <arrayval field="cvBonFtMod" index="17" value="-1"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
-    <tag group="AbReplace" tag="cPW1BatPro"/>
+    <usesource source="srcPathOfW"/>
     <tag group="AbReplace" tag="cPW1DulBoo"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPWCrgsDef">
-      <autotag group="ClSpecWhen" tag="8"/>
-      </bootstrap>
-    <bootstrap thing="cPWCrgsDef">
-      <autotag group="ClSpecWhen" tag="12"/>
-      </bootstrap>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbReplace" tag="cPW1BatPro"/>
     <bootstrap thing="cPWCrgsDef">
       <autotag group="ClSpecWhen" tag="16"/>
       </bootstrap>
@@ -441,6 +417,12 @@ nexteach]]></eval>
       </bootstrap>
     <bootstrap thing="cPWCrgsDef">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPWCrgsDef">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cPWCrgsDef">
+      <autotag group="ClSpecWhen" tag="12"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPW1"/>
     </thing>
@@ -500,7 +482,7 @@ nexteach]]></eval>
          perform assign[Helper.SpcDisable]
       endif]]></eval>
     </thing>
-  <thing id="cPW2JgKiPl" name="Ki Pool" description="At 1st level, a judge gains a pool of ki points, supernatural energy he can use to accomplish amazing feats. The number of points in the stalker&apos;s ki pool is equal to 1/2 her stalker level + his Wisdom modifier (minimum of 1).Unless listed here, a judge&#146;s ki pool abilities are the same as a normal stalker.\n\nAt 1st level, the judge&#146;s ki attunes him to the vibrations of falsehood and truths that are uttered by those around him, gaining a +4 insight bonus to Bluff or Sense Motive checks.\n\nAt 5th level, the judge may spend 1 point of ki and attune himself to morality of those around him, gaining the benefits of the see alignment spell for one round per two class levels.\n\nAt 7th level, the judge may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action.\n\nAt 9th level, the judge can delve into his subconscious in battle and remember key lessons from his training. The judge envisions potential scenarios where martial abilities he has not readied come into play and gains a momentary burst of martial insight. A number of times per day equal to his Wisdom modifier, the character spends one ki point as a swift action to trade an unexpended readied maneuver for a maneuver known of the same level or lower and have it immediately readied and accessible for his use. The character may initiate this maneuver and recover it as if he had prepared at the beginning of the day (or whenever the stalker readied his maneuvers last).\n\nThis augments the stalker ki pool class feature." compset="ClSpecial" summary="You have a ki pool equal to 1/2 your judge level + your WIS modifier.">
+  <thing id="cPW2JgKiPl" name="Ki Pool" description="At 1st level, a judge gains a pool of ki points, supernatural energy he can use to accomplish amazing feats. The number of points in the stalker&apos;s ki pool is equal to 1/2 her stalker level + his Wisdom modifier (minimum of 1).Unless listed here, a judge’s ki pool abilities are the same as a normal stalker.\n\nAt 1st level, the judge’s ki attunes him to the vibrations of falsehood and truths that are uttered by those around him, gaining a +4 insight bonus to Bluff or Sense Motive checks.\n\nAt 5th level, the judge may spend 1 point of ki and attune himself to morality of those around him, gaining the benefits of the see alignment spell for one round per two class levels.\n\nAt 7th level, the judge may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action.\n\nAt 9th level, the judge can delve into his subconscious in battle and remember key lessons from his training. The judge envisions potential scenarios where martial abilities he has not readied come into play and gains a momentary burst of martial insight. A number of times per day equal to his Wisdom modifier, the character spends one ki point as a swift action to trade an unexpended readied maneuver for a maneuver known of the same level or lower and have it immediately readied and accessible for his use. The character may initiate this maneuver and recover it as if he had prepared at the beginning of the day (or whenever the stalker readied his maneuvers last).\n\nThis augments the stalker ki pool class feature." compset="ClSpecial" summary="You have a ki pool equal to 1/2 your judge level + your WIS modifier.">
     <fieldval field="abValue2" value="4"/>
     <usesource source="srcPathOfW"/>
     <tag group="User" tag="Tracker" name="Modern Action Points" abbrev="Modern Action Points"/>
@@ -691,7 +673,7 @@ nexteach]]></eval>
       ~ apply that as a damage bonus
         #applybonus[BonInsight, hero.child[Attack], field[abValue].value]]]></eval>
     </thing>
-  <thing id="cPW2BldJdg" name="Bloody Judgment" description="The judge inflicts horrible, bleeding wounds that gush with his deity&#146;s rage. After a successful attack upon the target who has been targeted by this judgment, the target suffers 1d6 points of bleed damage on its turn for a number of rounds equal to 1 + the judge&#146;s Wisdom modifier (minimum of 1 rounds). Bleed damage can be stopped by a DC 15 Heal skill check or through any magical healing." compset="ClSpecial" summary="Attacks deal 1d6 bleed damage">
+  <thing id="cPW2BldJdg" name="Bloody Judgment" description="The judge inflicts horrible, bleeding wounds that gush with his deity’s rage. After a successful attack upon the target who has been targeted by this judgment, the target suffers 1d6 points of bleed damage on its turn for a number of rounds equal to 1 + the judge’s Wisdom modifier (minimum of 1 rounds). Bleed damage can be stopped by a DC 15 Heal skill check or through any magical healing." compset="ClSpecial" summary="Attacks deal 1d6 bleed damage">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Custom" tag="ActiveJudg"/>
@@ -768,7 +750,7 @@ field[listname].text = field[thingname].text & " (" & field[abDuraText].text & "
       <before name="Jurist checks for ActiveJudg"/>
       </eval>
     </thing>
-  <thing id="cPW2EndJdg" name="Enduring Judgment" description="This judgment makes the judge resistant to harm, granting DR 1/magic. This DR increases by 1 for every five levels he possesses. At 10th level, this DR changes from magic to an alignment (chaotic, evil, good, or lawful) that is opposite the judge&#146;s. If he is neutral, the judge does not receive this increase." compset="ClSpecial" summary="Gain damage reduction">
+  <thing id="cPW2EndJdg" name="Enduring Judgment" description="This judgment makes the judge resistant to harm, granting DR 1/magic. This DR increases by 1 for every five levels he possesses. At 10th level, this DR changes from magic to an alignment (chaotic, evil, good, or lawful) that is opposite the judge’s. If he is neutral, the judge does not receive this increase." compset="ClSpecial" summary="Gain damage reduction">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Custom" tag="ActiveJudg"/>
@@ -887,7 +869,7 @@ endif]]></eval>
       field[livename].text = "Damage Reduction (" & field[abValue].value & "/evil or chaotic)"
       field[shortname].text = field[abValue].value & "/evil or chaotic"]]></eval>
     </thing>
-  <thing id="cPW2GrdJdg" name="Guarded Judgment" description="The judge&#146;s senses protect him from the vile taint of his foes, granting a +1 insight bonus on all saving throws. This bonus increases by +1 for every five judge levels he possesses. At 10th level, the bonus is doubled against curses, diseases, and poisons." compset="ClSpecial" summary="Insight bonus to saving throws">
+  <thing id="cPW2GrdJdg" name="Guarded Judgment" description="The judge’s senses protect him from the vile taint of his foes, granting a +1 insight bonus on all saving throws. This bonus increases by +1 for every five judge levels he possesses. At 10th level, the bonus is doubled against curses, diseases, and poisons." compset="ClSpecial" summary="Insight bonus to saving throws">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Custom" tag="ActiveJudg"/>
@@ -1002,7 +984,7 @@ endif]]></eval>
 field[livename].text &= " " & signed(field[abValue].value)
 field[sbName].text = field[livename].text]]></eval>
     </thing>
-  <thing id="cPW2WrtJdg" name="Wrathful Judgment" description="This judgment bathes the judge&#146;s weapons in a divine sheen of deific rage. The judge&#146;s weapons count as magic for the purposes of bypassing damage reduction. At 6th level, the judge&#146;s weapons also count as one alignment type (chaotic, evil, good, or lawful) for the purpose of bypassing damage reduction. The type selected must match one of the judge&#146;s alignments. If the judge is neutral, he does not receive this bonus. At 10th level, the judge&#146;s weapons also count as adamantine for the purpose of overcoming damage reduction (but not for reducing hardness)." compset="ClSpecial" summary="Your weapons count as magic for bypassing DR">
+  <thing id="cPW2WrtJdg" name="Wrathful Judgment" description="This judgment bathes the judge’s weapons in a divine sheen of deific rage. The judge’s weapons count as magic for the purposes of bypassing damage reduction. At 6th level, the judge’s weapons also count as one alignment type (chaotic, evil, good, or lawful) for the purpose of bypassing damage reduction. The type selected must match one of the judge’s alignments. If the judge is neutral, he does not receive this bonus. At 10th level, the judge’s weapons also count as adamantine for the purpose of overcoming damage reduction (but not for reducing hardness)." compset="ClSpecial" summary="Your weapons count as magic for bypassing DR">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Custom" tag="ActiveJudg"/>
@@ -1025,7 +1007,7 @@ field[abText].text &= ")"]]></eval>
 field[livename].text &= " " & field[abText].text
 field[sbName].text = field[livename].text]]></eval>
     </thing>
-  <thing id="cPW2JdgDom" name="Domain" description="Like a cleric&#146;s deity, a judge&#146;s deity influences his alignment, what magic he can perform, and his values. Although not as tied to the tenets of the deity as a cleric, a judge must still hold such guidelines in high regard, despite that fact he can go against them if it serves the greater good of the faith. A judge can select one domain from among those belonging to his deity. He can select an alignment domain only if his alignment matches that domain. With the GM&#146;s approval, a judge can be devoted to an ideal instead of a deity, selecting one domain to represent his personal inclination and abilities. The restriction on alignment domains still applies. Judges also have access to Inquisitions, which are similar to Domains but do not include Domain spells. If he so chooses, he may use an inquisition instead of a domain.\n\nEach domain grants a number of domain powers, depending on the level of the judge. A judge does not gain the bonus spells listed for each domain, nor does he gain bonus spell slots. The judge uses his level as his effective cleric level when determining the power and effect of his domain powers. If the judge has access to domains as a cleric or inquisitor, at least one of his domain selections must be the same domain selected as a judge; if he has an inquisition instead of a domain, he may choose two domains as normal. Levels of cleric and judge stack for the purpose of determining domain powers and abilities, but not for bonus spells or for inquisitions unless the inquisition is taken in the place of a domain for the non martial disciple class. This replaces the stalker art gained at 3rd level." compset="ClSpecial" summary="Choose a domain offered by deity">
+  <thing id="cPW2JdgDom" name="Domain" description="Like a cleric’s deity, a judge’s deity influences his alignment, what magic he can perform, and his values. Although not as tied to the tenets of the deity as a cleric, a judge must still hold such guidelines in high regard, despite that fact he can go against them if it serves the greater good of the faith. A judge can select one domain from among those belonging to his deity. He can select an alignment domain only if his alignment matches that domain. With the GM’s approval, a judge can be devoted to an ideal instead of a deity, selecting one domain to represent his personal inclination and abilities. The restriction on alignment domains still applies. Judges also have access to Inquisitions, which are similar to Domains but do not include Domain spells. If he so chooses, he may use an inquisition instead of a domain.\n\nEach domain grants a number of domain powers, depending on the level of the judge. A judge does not gain the bonus spells listed for each domain, nor does he gain bonus spell slots. The judge uses his level as his effective cleric level when determining the power and effect of his domain powers. If the judge has access to domains as a cleric or inquisitor, at least one of his domain selections must be the same domain selected as a judge; if he has an inquisition instead of a domain, he may choose two domains as normal. Levels of cleric and judge stack for the purpose of determining domain powers and abilities, but not for bonus spells or for inquisitions unless the inquisition is taken in the place of a domain for the non martial disciple class. This replaces the stalker art gained at 3rd level." compset="ClSpecial" summary="Choose a domain offered by deity">
     <usesource source="srcPathOfW"/>
     <tag group="abRange" tag="Personal"/>
     <tag group="abDuration" tag="Constant"/>
@@ -1124,7 +1106,7 @@ elseif (herofield[tLawVChaos].value = 8) then
   linkage[varies].field[cCstS2Expr].text &= " & !HasDomain.cdLaw"
 endif]]></eval>
     </thing>
-  <thing id="cPW2FinJdg" name="Final Judgment" description="A judge with this potent art can bring deadly judgment to foes that are unaware of their impending doom. To attempt to levy final judgment on a target, the judge must first study his target for three full rounds before making the final judgment. On the following round, if the judge initiates a maneuver against the target and the target is denied its Dexterity bonus to AC, the maneuver has the additional effect of possibly killing the target. This attempt automatically fails if the target recognizes the judge as an enemy. If the attack is successful and the target of this attack fails a Fortitude save, it dies. The DC of this save is equal to 10 + 1/2 the judge&#146;s level + the judge&#146;s Wisdom modifier. If the save is successful, the target still suffers the effects of the maneuver as normal, but it is immune to that judge&#146;s final judgment ability for 1 day. The character&#146;s judge level must be 15th level or higher to select this art." compset="CustomSpec" summary="Instantly kill an enemy with a maneuver" uniqueness="unique">
+  <thing id="cPW2FinJdg" name="Final Judgment" description="A judge with this potent art can bring deadly judgment to foes that are unaware of their impending doom. To attempt to levy final judgment on a target, the judge must first study his target for three full rounds before making the final judgment. On the following round, if the judge initiates a maneuver against the target and the target is denied its Dexterity bonus to AC, the maneuver has the additional effect of possibly killing the target. This attempt automatically fails if the target recognizes the judge as an enemy. If the attack is successful and the target of this attack fails a Fortitude save, it dies. The DC of this save is equal to 10 + 1/2 the judge’s level + the judge’s Wisdom modifier. If the save is successful, the target still suffers the effects of the maneuver as normal, but it is immune to that judge’s final judgment ability for 1 day. The character’s judge level must be 15th level or higher to select this art." compset="CustomSpec" summary="Instantly kill an enemy with a maneuver" uniqueness="unique">
     <usesource source="srcPathOfW"/>
     <tag group="abCategory" tag="StalkerArt"/>
     <tag group="abSave" tag="FortNeg"/>
@@ -1133,7 +1115,7 @@ endif]]></eval>
     <tag group="SpecSource" tag="arPWJudge"/>
     <exprreq message="Judge level 15 required"><![CDATA[#featlevelcount[PWStalker] >= 15]]></exprreq>
     </thing>
-  <thing id="cPW2Trthsk" name="Truthseeker" description="The judge must be able to make swift decisions in his line of work, and by using his ki to feel out disturbances caused by lies in a target&#146;s soul. By spending a point of ki as a standard action and clearly viewing a subject within close range, the judge gains the effects of a discern lies spell for a number of rounds equal to his Wisdom modifier. This ability works exactly as the spell in all other respects. This replaces the blending class feature." compset="ClSpecial" summary="Spend 1 ki to cast Discern Lies">
+  <thing id="cPW2Trthsk" name="Truthseeker" description="The judge must be able to make swift decisions in his line of work, and by using his ki to feel out disturbances caused by lies in a target’s soul. By spending a point of ki as a standard action and clearly viewing a subject within close range, the judge gains the effects of a discern lies spell for a number of rounds equal to his Wisdom modifier. This ability works exactly as the spell in all other respects. This replaces the blending class feature." compset="ClSpecial" summary="Spend 1 ki to cast Discern Lies">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abDuration" tag="Round"/>
@@ -1156,7 +1138,7 @@ field[abDuration].value = #attrmod[aWIS]]]></eval>
     <eval phase="Render" priority="10000" index="2"><![CDATA[~ Add duration to listname
 field[listname].text = field[thingname].text & " (" & field[abDuraText].text & ")"]]></eval>
     </thing>
-  <thing id="cPW2DivAbl" name="Divine Abolishment" description="The strengths of an enemy wither in the face of the judge&#146;s divinely mandated execution of his deity&#146;s will. When initiating a martial strike while using a judgment, the judge may expend a point of ki from his ki pool to strip away the magical protections of his foe. This functions as a targeted greater dispel magic using his initiator level as his caster level, and this targets spells or spell-like abilities functioning on a target (with a duration of one round or longer), and may target a number of ongoing effects equal to his Wisdom modifier. This replaces the improved blending class feature." compset="ClSpecial" summary="Spend 1 ki to cast Greater Dispel Magic with a maneuver">
+  <thing id="cPW2DivAbl" name="Divine Abolishment" description="The strengths of an enemy wither in the face of the judge’s divinely mandated execution of his deity’s will. When initiating a martial strike while using a judgment, the judge may expend a point of ki from his ki pool to strip away the magical protections of his foe. This functions as a targeted greater dispel magic using his initiator level as his caster level, and this targets spells or spell-like abilities functioning on a target (with a duration of one round or longer), and may target a number of ongoing effects equal to his Wisdom modifier. This replaces the improved blending class feature." compset="ClSpecial" summary="Spend 1 ki to cast Greater Dispel Magic with a maneuver">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abAction" tag="Standard"/>
@@ -1246,7 +1228,7 @@ elseif (herofield[tLawVChaos].value = 8) then
   linkage[varies].field[cCstS2Expr].text &= " & !HasDomain.cdLaw"
 endif]]></eval>
     </thing>
-  <thing id="cPW2Soulbn" name="Soulburning" description="When combating his target, the soul hunter can use his ki to cause disharmony within a Claimed creature&#146;s very life energy, causing the foe&#146;s own ki to erupt into life-destroying energy. Some describe the pain experienced as being the worst that any could endure, like something was inside their very spirit and devouring it whole. When making an attack or initiating a martial maneuver against his Claimed target, the soul hunter may force this subtle disharmony to become a geyser of agony, as the soul hunter&#146;s ki causes the target&#146;s life energies to ignite. This inflicts an additional 1d6 points of damage at 1st level upon a successful attack, and this damage increases by an additional 1d6 points of damage every four soul hunter levels. Stalker arts that utilize deadly strikes use soulburning instead, and function as written with the following caveat: Soulburning cannot be done against targets that do not have vital forces (this includes constructs, oozes, and undead with an Intelligence score of 0.) This replaces the stalker&#146;s deadly strikes ability." compset="ClSpecial" summary="Attacks deal extra damage to Claimed targets">
+  <thing id="cPW2Soulbn" name="Soulburning" description="When combating his target, the soul hunter can use his ki to cause disharmony within a Claimed creature’s very life energy, causing the foe’s own ki to erupt into life-destroying energy. Some describe the pain experienced as being the worst that any could endure, like something was inside their very spirit and devouring it whole. When making an attack or initiating a martial maneuver against his Claimed target, the soul hunter may force this subtle disharmony to become a geyser of agony, as the soul hunter’s ki causes the target’s life energies to ignite. This inflicts an additional 1d6 points of damage at 1st level upon a successful attack, and this damage increases by an additional 1d6 points of damage every four soul hunter levels. Stalker arts that utilize deadly strikes use soulburning instead, and function as written with the following caveat: Soulburning cannot be done against targets that do not have vital forces (this includes constructs, oozes, and undead with an Intelligence score of 0.) This replaces the stalker’s deadly strikes ability." compset="ClSpecial" summary="Attacks deal extra damage to Claimed targets">
     <usesource source="srcPathOfW"/>
     <tag group="Helper" tag="UseOwnLev" name="UseOwnLev" abbrev="UseOwnLev"/>
     <tag group="LvNameApp" tag="DieCntVal" name="&quot;field[abValue].value&quot; dY" abbrev="&quot;field[abValue].value&quot; dY"/>
@@ -1289,7 +1271,7 @@ endif]]></eval>
       ~ If we're disabled, just get out now
       doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW2SlClm" name="Soul Claiming" description="A soul hunter is capable of attuning his own ki to a foe&#146;s vital energies, making it difficult for quarry to elude or escape him. As a swift action, the soul hunter stalker may Claim a target creature that he has inflicted damage upon. A Claimed target&#146;s position is known to the soul hunter, even if they have total concealment against him (though he still suffers the normal miss chance if his target is concealed, and is denied his Dexterity bonus if the Claimed target attacks him). Additionally, the target of his Claiming provokes attacks of opportunity from the soul hunter when using the withdraw action to escape him. A soul hunter may not Claim more than his Wisdom modifier in creatures at any given time; a creature remains Claimed until the soul hunter withdraws his Claim (a free action) or until the target is slain. If the Claimed target is slain (reduced to 0 or fewer hit points) by the Claiming soul hunter, then he may recover his Wisdom modifier in expended maneuvers. A soul hunter may not Claim a target creature with fewer than &#189; HD. This replaces the stalker&#146;s standard recovery method." compset="ClSpecial">
+  <thing id="cPW2SlClm" name="Soul Claiming" description="A soul hunter is capable of attuning his own ki to a foe’s vital energies, making it difficult for quarry to elude or escape him. As a swift action, the soul hunter stalker may Claim a target creature that he has inflicted damage upon. A Claimed target’s position is known to the soul hunter, even if they have total concealment against him (though he still suffers the normal miss chance if his target is concealed, and is denied his Dexterity bonus if the Claimed target attacks him). Additionally, the target of his Claiming provokes attacks of opportunity from the soul hunter when using the withdraw action to escape him. A soul hunter may not Claim more than his Wisdom modifier in creatures at any given time; a creature remains Claimed until the soul hunter withdraws his Claim (a free action) or until the target is slain. If the Claimed target is slain (reduced to 0 or fewer hit points) by the Claiming soul hunter, then he may recover his Wisdom modifier in expended maneuvers. A soul hunter may not Claim a target creature with fewer than ½ HD. This replaces the stalker’s standard recovery method." compset="ClSpecial">
     <usesource source="srcPathOfW"/>
     <tag group="abAction" tag="Swift"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
@@ -1300,7 +1282,7 @@ endif]]></eval>
       ~ If we're disabled, just get out now
       doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW2SHKiPl" name="Ki Pool" description="A soul hunter is more in-tune with his own native rhythms so he may better hunt his chosen prey. The soul hunter stalker&#146;s base ki pool is increased by 2 additional points of ki at first level. Additionally, the use of his ki pool affords him several other abilities.\n\nAt 5th level, the soul hunter may use his soulburning on Claimed targets within 30 ft. of his position. The stalker spends 1 point of ki as a move action and all Claimed targets suffer his soulburning damage.\n\nAt 7th level, the stalker may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action.\n\nAt 9th level, the stalker can delve into his subconscious in battle and remember key lessons from his training. The stalker envisions potential scenarios where martial abilities he has not readied come into play and gains a momentary burst of martial insight. A number of times per day equal to his Wisdom modifier, the character spends one ki point as a swift action to trade an unexpended readied maneuver for a maneuver known of the same level or lower and have it immediately readied and accessible for his use. The character may initiate this maneuver and recover it as if he had prepared at the beginning of the day (or whenever the stalker readied his maneuvers last).\n\nThis alters the ki pool class feature of the soul hunter, which otherwise functions identically to a normal stalker." compset="ClSpecial" summary="You have a ki pool equal to 2 + 1/2 your Soul Hunter level + your WIS modifier.">
+  <thing id="cPW2SHKiPl" name="Ki Pool" description="A soul hunter is more in-tune with his own native rhythms so he may better hunt his chosen prey. The soul hunter stalker’s base ki pool is increased by 2 additional points of ki at first level. Additionally, the use of his ki pool affords him several other abilities.\n\nAt 5th level, the soul hunter may use his soulburning on Claimed targets within 30 ft. of his position. The stalker spends 1 point of ki as a move action and all Claimed targets suffer his soulburning damage.\n\nAt 7th level, the stalker may spend 1 point from his ki pool to gain a +4 insight bonus on a saving throw as an immediate action.\n\nAt 9th level, the stalker can delve into his subconscious in battle and remember key lessons from his training. The stalker envisions potential scenarios where martial abilities he has not readied come into play and gains a momentary burst of martial insight. A number of times per day equal to his Wisdom modifier, the character spends one ki point as a swift action to trade an unexpended readied maneuver for a maneuver known of the same level or lower and have it immediately readied and accessible for his use. The character may initiate this maneuver and recover it as if he had prepared at the beginning of the day (or whenever the stalker readied his maneuvers last).\n\nThis alters the ki pool class feature of the soul hunter, which otherwise functions identically to a normal stalker." compset="ClSpecial" summary="You have a ki pool equal to 2 + 1/2 your Soul Hunter level + your WIS modifier.">
     <fieldval field="abValue" value="4"/>
     <usesource source="srcPathOfW"/>
     <tag group="User" tag="Tracker" name="Modern Action Points" abbrev="Modern Action Points"/>
@@ -1415,7 +1397,7 @@ endif]]></eval>
       ~ If we're disabled, just get out now
       doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW2StHnt1" name="Sight of the Hunter (Clairvoyance)" description="The soul hunter learns ways to be able to hunt his prey with his extrasensory abilities. At 6th level, the soul hunter may spend 1 ki and use the spell clairaudience &#150; clairvoyance (clairvoyance only) as a spell-like ability, using his stalker level as his caster level for the effect. He may spend an additional ki point to Claim a target seen in such a way.\n\nThis replaces the blending class feature." compset="ClSpecial" summary="Spend 1 ki to cast Clairvoyance, additional ki to Claim targets seen through it">
+  <thing id="cPW2StHnt1" name="Sight of the Hunter (Clairvoyance)" description="The soul hunter learns ways to be able to hunt his prey with his extrasensory abilities. At 6th level, the soul hunter may spend 1 ki and use the spell clairaudience – clairvoyance (clairvoyance only) as a spell-like ability, using his stalker level as his caster level for the effect. He may spend an additional ki point to Claim a target seen in such a way.\n\nThis replaces the blending class feature." compset="ClSpecial" summary="Spend 1 ki to cast Clairvoyance, additional ki to Claim targets seen through it">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
     <tag group="SpInfo" tag="spClairau3"/>
@@ -1462,7 +1444,7 @@ endif]]></eval>
 
       field[abSumm].text = signed(field[abValue].value) & " to Bluff, Diplomacy, Intimidate, and Sense Motive"]]></eval>
     </thing>
-  <thing id="cPW1FrPres" name="Fearsome Presence" description="At 13th level, the bannerman&#146;s reputation in battle precedes him and an aura of his many victories inspires dread in his foes. Enemies of the bannerman within 30-ft. of his position are filled with dread as if under a fear spell (use the bannerman&#146;s Charisma modifier for the Will save DC and his initiator level as his caster level). Foes that succeed the saving throw are unaffected by the bannerman&#146;s fearsome presence for 24 hours." compset="ClSpecial" summary="Gain effects of a Fear spell within 30 ft">
+  <thing id="cPW1FrPres" name="Fearsome Presence" description="At 13th level, the bannerman’s reputation in battle precedes him and an aura of his many victories inspires dread in his foes. Enemies of the bannerman within 30-ft. of his position are filled with dread as if under a fear spell (use the bannerman’s Charisma modifier for the Will save DC and his initiator level as his caster level). Foes that succeed the saving throw are unaffected by the bannerman’s fearsome presence for 24 hours." compset="ClSpecial" summary="Gain effects of a Fear spell within 30 ft">
     <fieldval field="abRange" value="30"/>
     <usesource source="srcPathOfW"/>
     <tag group="SpInfo" tag="spFear3"/>
@@ -1476,7 +1458,7 @@ endif]]></eval>
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW1ComPrs" name="Commander&apos;s Presence" description="At 17th level, the bannerman is a true commander amongst warlords, allowing him to lend a readied maneuver to an ally within 30-ft. as a swift action. When he lends this maneuver, the maneuver is expended until the recipient initiates this maneuver (using the recipient&#146;s initiator level and Charisma modifier to determine the saving throw DC; if the recipient&#146;s initiator level is too low to initiate the maneuver, then the bannerman cannot lend the maneuver). He can only lend one maneuver at a time when using this presence, and if the bannerman stops using this presence, then the effect ends immediately (but the maneuver remains expended until recovered)." compset="ClSpecial" summary="Lend a readied maneuver to an ally">
+  <thing id="cPW1ComPrs" name="Commander&apos;s Presence" description="At 17th level, the bannerman is a true commander amongst warlords, allowing him to lend a readied maneuver to an ally within 30-ft. as a swift action. When he lends this maneuver, the maneuver is expended until the recipient initiates this maneuver (using the recipient’s initiator level and Charisma modifier to determine the saving throw DC; if the recipient’s initiator level is too low to initiate the maneuver, then the bannerman cannot lend the maneuver). He can only lend one maneuver at a time when using this presence, and if the bannerman stops using this presence, then the effect ends immediately (but the maneuver remains expended until recovered)." compset="ClSpecial" summary="Lend a readied maneuver to an ally">
     <fieldval field="abRange" value="30"/>
     <usesource source="srcPathOfW"/>
     <tag group="SpInfo" tag="spFear3"/>
@@ -1491,7 +1473,7 @@ endif]]></eval>
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.SpcDisable] <> 0)]]></eval>
     </thing>
-  <thing id="cPW1InspBn" name="Inspiring Banner" description="At 5th level, a bannerman&#146;s banner becomes a symbol of inspiration to his allies and companions. As long as the bannerman&#146;s banner is clearly visible and he is in a Golden Lion stance, all allies within 60 feet receive a +2 morale bonus on saving throws against fear and fatigue and a +2 morale bonus on attack and damage rolls. At 12th level, and at 19th level, these bonuses increase by +1. If the Golden Lion stance he is using grants a similarly typed bonus to attack, damage, or saving throws, then increase that bonus by the amount of the inspiring banner&#146;s bonus. The banner must be at least Small or larger and must be carried or displayed by the bannerman or his mount to function, and can be held while using a buckler. This replaces the warlord&#146;s battle prowess class feature." compset="ClSpecial">
+  <thing id="cPW1InspBn" name="Inspiring Banner" description="At 5th level, a bannerman’s banner becomes a symbol of inspiration to his allies and companions. As long as the bannerman’s banner is clearly visible and he is in a Golden Lion stance, all allies within 60 feet receive a +2 morale bonus on saving throws against fear and fatigue and a +2 morale bonus on attack and damage rolls. At 12th level, and at 19th level, these bonuses increase by +1. If the Golden Lion stance he is using grants a similarly typed bonus to attack, damage, or saving throws, then increase that bonus by the amount of the inspiring banner’s bonus. The banner must be at least Small or larger and must be carried or displayed by the bannerman or his mount to function, and can be held while using a buckler. This replaces the warlord’s battle prowess class feature." compset="ClSpecial">
     <fieldval field="abRange" value="60"/>
     <usesource source="srcPathOfW"/>
     <tag group="abRange" tag="Feet"/>
@@ -1529,7 +1511,7 @@ endif]]></eval>
       #applybonus[BonMorale, hero.child[Attack], field[abValue].value]
       #applybonus[BonMorale, hero.child[Damage], field[abValue].value]]]></eval>
     </thing>
-  <thing id="cPW1ShrBst" name="Share Boost" description="At 6th level, the bannerman&#146;s ability to inspire his troops allows him to share some of his martial prowess with an ally on occasion. Once per day he is able to initiate a boost as an immediate action to utilize a boost for an ally who is initiating a maneuver or making an attack that qualifies for the use of that boost. The boost shared uses the bannerman&#146;s initiator level and saving throw DC (if applicable). He can use this ability one additional time per day at 12th level and again at 18th level. This replaces the dual boost class feature." compset="ClSpecial">
+  <thing id="cPW1ShrBst" name="Share Boost" description="At 6th level, the bannerman’s ability to inspire his troops allows him to share some of his martial prowess with an ally on occasion. Once per day he is able to initiate a boost as an immediate action to utilize a boost for an ally who is initiating a maneuver or making an attack that qualifies for the use of that boost. The boost shared uses the bannerman’s initiator level and saving throw DC (if applicable). He can use this ability one additional time per day at 12th level and again at 18th level. This replaces the dual boost class feature." compset="ClSpecial">
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
@@ -1753,7 +1735,7 @@ endif]]></eval>
           hero.child[skStealth].field[Bonus].value += chabon
       endif]]></eval>
     </thing>
-  <thing id="cPW1PowPug" name="Powerful Pugilist" description="At 8th level, the steelfist commando&#146;s skill allows him to better utilize his unarmed strikes to their fullest potential. When using his unarmed strike, he is considered one size category larger when determining his unarmed strike damage and when determining his CMB and CMD. If his target is flat-footed, he inflicts an additional 2d6 points of damage against his foe; this is precision damage and if a target would be immune to sneak attack, they are immune to this effect. This replaces the bonus feat gained at 10th level." compset="ClSpecial" summary="Your unarmed strikes count as one size larger, deal +2d6 damage to flat-footed  enemies.">
+  <thing id="cPW1PowPug" name="Powerful Pugilist" description="At 8th level, the steelfist commando’s skill allows him to better utilize his unarmed strikes to their fullest potential. When using his unarmed strike, he is considered one size category larger when determining his unarmed strike damage and when determining his CMB and CMD. If his target is flat-footed, he inflicts an additional 2d6 points of damage against his foe; this is precision damage and if a target would be immune to sneak attack, they are immune to this effect. This replaces the bonus feat gained at 10th level." compset="ClSpecial" summary="Your unarmed strikes count as one size larger, deal +2d6 damage to flat-footed  enemies.">
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
@@ -1786,15 +1768,15 @@ hero.childfound[Maneuver].field[tManSize].value = curSizeBon]]></eval>
   <thing id="arPWVanCom" name="Vanguard Commander" description="Leading the front of the assault, some warlords opt for heavier armor and the protection of a shield to lead their troops to battle. These warlords are often referred to as vanguards due to their bravery in the theater of war, marching in first and waving the flag to victory." compset="ClassVary" uniqueness="unique">
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
     <arrayval field="cvCustTot" index="0" value="-1"/>
-    <tag group="ClassSkill" tag="skBluff"/>
+    <usesource source="srcPathOfW"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="NotClassSk" tag="skPercep"/>
     <tag group="AbReplace" tag="cPW1ForPer"/>
     <tag group="AbReplace" tag="cPW1BatPro"/>
     <tag group="AbReplace" tag="cPW1DulBoo"/>
     <tag group="AbReplace" tag="cPW1TacAss"/>
-    <bootstrap thing="fArmLight"></bootstrap>
-    <bootstrap thing="fImpShBash"></bootstrap>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassSkill" tag="skBluff"/>
     <bootstrap thing="fArmMedium"></bootstrap>
     <bootstrap thing="cPW1GrdGam">
       <autotag group="ClSpecWhen" tag="1"/>
@@ -1821,6 +1803,8 @@ hero.childfound[Maneuver].field[tManSize].value = curSizeBon]]></eval>
     <bootstrap thing="cPW1VanShd">
       <autotag group="ClSpecWhen" tag="8"/>
       </bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fImpShBash"></bootstrap>
     <link linkage="varies" thing="cHelpPW1"/>
     <eval phase="Final" priority="5000"><![CDATA[~ Grant access to Iron Tortoise discipline
 perform hero.child[mHelpPW1].assign[Discipline.IronTort]
@@ -1836,7 +1820,7 @@ endif]]></eval>
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
     </thing>
-  <thing id="cPW1DarDef" name="Daring Defense" description="The vanguard commander rushes the enemy lines, heedless of personal danger, with bold charges and bolder personality. This headstrong determination gives rise to vanguard commanders having an almost uncanny luck at avoiding dangers. The vanguard commander may add his Charisma modifier to his Dexterity modifier to determine his Reflex save bonus. If the character is ever able to add his Charisma modifier to his Reflex save through use of another ability (for example. the paladin&#146;s divine grace) he may only add his Charisma modifier once to his Reflex save. This replaces force of personality." compset="ClSpecial" summary="Add Charisma bonus to Reflex saves">
+  <thing id="cPW1DarDef" name="Daring Defense" description="The vanguard commander rushes the enemy lines, heedless of personal danger, with bold charges and bolder personality. This headstrong determination gives rise to vanguard commanders having an almost uncanny luck at avoiding dangers. The vanguard commander may add his Charisma modifier to his Dexterity modifier to determine his Reflex save bonus. If the character is ever able to add his Charisma modifier to his Reflex save through use of another ability (for example. the paladin’s divine grace) he may only add his Charisma modifier once to his Reflex save. This replaces force of personality." compset="ClSpecial" summary="Add Charisma bonus to Reflex saves">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1916,7 +1900,7 @@ endif]]></eval>
       ~if we've been replaced, get out now
       doneif (tagis[Helper.SpcReplace] <> 0)]]></eval>
     </thing>
-  <thing id="cPW1VanShd" name="Vanguard&#146;s Shield" description="The vanguard commander is lightning fast with his shield for both defense and offense. Whenever the vanguard initiates a melee strike or uses a counter to defend against an attack from an adjacent foe, he may make a shield bash attempt as free action at his full base attack bonus against that creature. This replaces the tactical assistance class feature." compset="ClSpecial" summary="Shield bash as a free action after initiating a strike or counter">
+  <thing id="cPW1VanShd" name="Vanguard’s Shield" description="The vanguard commander is lightning fast with his shield for both defense and offense. Whenever the vanguard initiates a melee strike or uses a counter to defend against an attack from an adjacent foe, he may make a shield bash attempt as free action at his full base attack bonus against that creature. This replaces the tactical assistance class feature." compset="ClSpecial" summary="Shield bash as a free action after initiating a strike or counter">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit" name="HLCommunit" abbrev="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1995,10 +1979,10 @@ endif
 ~ Apply the hero's INT mod to AC (untyped bonus)
 #applybonus[Bonus, hero.child[ArmorClass], field[abValue].value]]]></eval>
     </thing>
-  <thing id="cPW3DrvDef" name="Dervish Defense" description="A dervish defender is capable of an aggressive defense, attacking even as they defend. At 4th level, the dervish defender may use a counter against an enemy&#146;s attack and if she successfully counters it, she may make an immediate attack of opportunity against that foe. This replaces the tactical acumen class feature." compset="ClSpecial" summary="Gain an AoO on successful counter">
+  <thing id="cPW3DrvDef" name="Dervish Defense" description="A dervish defender is capable of an aggressive defense, attacking even as they defend. At 4th level, the dervish defender may use a counter against an enemy’s attack and if she successfully counters it, she may make an immediate attack of opportunity against that foe. This replaces the tactical acumen class feature." compset="ClSpecial" summary="Gain an AoO on successful counter">
     <tag group="AbilType" tag="Extra"/>
     </thing>
-  <thing id="cPW3ShldBl" name="Shield of Blades" description="At 6th level, when fighting unarmed or with a weapon from the light blades, double weapon or close weapon weapon group in each hand, the dervish defender improves her shield bonus to AC by an amount equal to her aegis bonus. As an immediate action, the dervish defender may lose her shield bonus to armor class until the beginning of her next turn and grant an adjacent creature an equivalent shield bonus to armor class until the beginning of the dervish defender&#146;s next turn. This replaces the clad in steel class feature." compset="ClSpecial" summary="Gain Aegis bonus as shield bonus when using double weapon or dual-wielding light blades or close weapons">
+  <thing id="cPW3ShldBl" name="Shield of Blades" description="At 6th level, when fighting unarmed or with a weapon from the light blades, double weapon or close weapon weapon group in each hand, the dervish defender improves her shield bonus to AC by an amount equal to her aegis bonus. As an immediate action, the dervish defender may lose her shield bonus to armor class until the beginning of her next turn and grant an adjacent creature an equivalent shield bonus to armor class until the beginning of the dervish defender’s next turn. This replaces the clad in steel class feature." compset="ClSpecial" summary="Gain Aegis bonus as shield bonus when using double weapon or dual-wielding light blades or close weapons">
     <tag group="AbilType" tag="Extra"/>
     <eval phase="Final" priority="10000"><![CDATA[~ If we're not shown, just get out now
 doneif (tagis[Helper.ShowSpec] = 0)
@@ -2024,7 +2008,7 @@ nexteach
 ~ Add value to shield AC bonus
 hero.child[ArmorClass].field[tACShield].value += field[abValue].value]]></eval>
     </thing>
-  <thing id="cPW3GrcBld" name="Grace of Blades" description="At 15th level the dervish defender gains mastery over her two-weapon style. Whenever the dervish defender makes an attack with one weapon while holding two or more weapons or using a double weapon (such as during a full attack during which she is not two-weapon fighting, or using a strike that includes a melee attack) she increases that attack&#146;s damage by an amount equal to one of her off-hand weapons&#146; damage (including any extraordinary and magical enhancements) plus one-half her Strength modifier. Whenever the dervish defender makes an attack with more than one weapon (such as when making a full attack while two-weapon fighting or a strike that includes an attack with two or more weapons) she increases the damage of her weapons (and their enhancements) by one die step (as if increasing in size). This replaces the steel defense class feature." compset="ClSpecial" summary="Add offhand weapon damage when attacking only with main weapon, or increase both weapons&apos; damage die when attacking with both.">
+  <thing id="cPW3GrcBld" name="Grace of Blades" description="At 15th level the dervish defender gains mastery over her two-weapon style. Whenever the dervish defender makes an attack with one weapon while holding two or more weapons or using a double weapon (such as during a full attack during which she is not two-weapon fighting, or using a strike that includes a melee attack) she increases that attack’s damage by an amount equal to one of her off-hand weapons’ damage (including any extraordinary and magical enhancements) plus one-half her Strength modifier. Whenever the dervish defender makes an attack with more than one weapon (such as when making a full attack while two-weapon fighting or a strike that includes an attack with two or more weapons) she increases the damage of her weapons (and their enhancements) by one die step (as if increasing in size). This replaces the steel defense class feature." compset="ClSpecial" summary="Add offhand weapon damage when attacking only with main weapon, or increase both weapons&apos; damage die when attacking with both.">
     <fieldval field="actName" value="Grace of Blades - Attacking with primary weapon only"/>
     <tag group="User" tag="Activation"/>
     <tag group="AbilType" tag="Extra"/>
@@ -2121,25 +2105,17 @@ field[abValue].value = #attrmod[aINT]
     <arrayval field="cvBonFtMod" index="17" value="-2"/>
     <arrayval field="cvBonFtMod" index="18" value="-2"/>
     <arrayval field="cvBonFtMod" index="19" value="-2"/>
-    <tag group="ClVaryName" tag="AppParen"/>
+    <usesource source="srcPathOfW"/>
     <tag group="AbReplace" tag="cPWaPathwe"/>
     <tag group="PathOfWar" tag="Class"/>
     <tag group="Helper" tag="OverCustS1"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cCfgPthwk"></bootstrap>
     <bootstrap thing="cPWPthWDis">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPWa"/>
-    <eval phase="First" priority="1000"><![CDATA[      ~ If we've been Disabled, get out now
-      doneif (tagis[Helper.SpcDisable] <> 0)
-
-      ~ Disable the Path Skills gained at 7th and 13th level
-      foreach pick in hero from Ability where "Ability.cPWaPathSk"
-        if (eachpick.tagis[ClSpecWhen.7] + eachpick.tagis[ClSpecWhen.13] > 0) then
-          perform eachpick.assign[Helper.SpcDisable]
-          perform eachpick.assign[Helper.SpcReplace]
-        endif
-      nexteach]]></eval>
     <eval phase="Final" priority="999999999999999999" index="2"><![CDATA[      ~ If we've been Disabled, get out now
       doneif (tagis[Helper.SpcDisable] <> 0)
 
@@ -2150,6 +2126,16 @@ field[abValue].value = #attrmod[aINT]
       else
         linkage[varies].field[cCstSpExpr].text &= " & (" & tagids[Discipline.?, " | "] & ")"
       endif]]></eval>
+    <eval phase="First" priority="1000"><![CDATA[      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Disable the Path Skills gained at 7th and 13th level
+      foreach pick in hero from Ability where "Ability.cPWaPathSk"
+        if (eachpick.tagis[ClSpecWhen.7] + eachpick.tagis[ClSpecWhen.13] > 0) then
+          perform eachpick.assign[Helper.SpcDisable]
+          perform eachpick.assign[Helper.SpcReplace]
+        endif
+      nexteach]]></eval>
     </thing>
   <thing id="cCfgPthwk" name="Pathwalker Maneuvers" compset="Configure" uniqueness="unique">
     <usesource source="srcPathOfW" parent="pDscar" name="DSP - Path of War"/>
@@ -2392,7 +2378,7 @@ Call PsyWarTrMa</eval>
       hero.childfound[manGrapple].field[Bonus].value += field[abValue].value
       hero.childfound[manTrip].field[Bonus].value += field[abValue].value]]></eval>
     </thing>
-  <thing id="cPWPthwITP" name="Iron Tortoise Path" description="A stout shield and defensive nature are hallmarks of psychic warriors who follow the path of the Iron Tortoise. The methods of these warriors is slow and steady like the discipline’s namesake, and enduring as stone. A mountain of martial power, the Iron Tortoise weathers all blows without animosity and retaliates in kind.\n\n{b}Powers:{/b} {i}Expansion{/i}, {i}Stomp{/i}* \n\n{b}Skills:{/b} Bluff, Intimidate, Perception\n\n{b}Bonus Class Skill:{/b} Bluff\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Iron Tortoise Path" uniqueness="unique">
+  <thing id="cPWPthwITP" name="Iron Tortoise Path" description="A stout shield and defensive nature are hallmarks of psychic warriors who follow the path of the Iron Tortoise. The methods of these warriors is slow and steady like the disciplineâ€™s namesake, and enduring as stone. A mountain of martial power, the Iron Tortoise weathers all blows without animosity and retaliates in kind.\n\n{b}Powers:{/b} {i}Expansion{/i}, {i}Stomp{/i}* \n\n{b}Skills:{/b} Bluff, Intimidate, Perception\n\n{b}Bonus Class Skill:{/b} Bluff\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Iron Tortoise Path" uniqueness="unique">
     <comment><![CDATA[Add Expansion and Stomp powers to list
     
     PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
@@ -2501,7 +2487,7 @@ Call PsyWarTrMa</eval>
       ~Grant DR
       #applydr[xDamRdAdam, field[abValue].value]]]></eval>
     </thing>
-  <thing id="cPWPthwPFP" name="Primal Fury Path" description="Psychic warriors who feel the call of Primal Fury’s power are rugged, individualistic hunters who feel the wildness of nature within their mind, body, and soul. They’re prone to passionate reaction, quick tempers granting great power and fierce offensive power.\n\n{b}Powers:{/b} {i}Ticken skin{/i}, {i}Vigor{/i}* \n\n{b}Skills:{/b} Intimidate, Survival, Swim\n\n{b}Bonus Class Skill:{/b} Survival\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Primal Fury Path" uniqueness="unique">
+  <thing id="cPWPthwPFP" name="Primal Fury Path" description="Psychic warriors who feel the call of Primal Furyâ€™s power are rugged, individualistic hunters who feel the wildness of nature within their mind, body, and soul. Theyâ€™re prone to passionate reaction, quick tempers granting great power and fierce offensive power.\n\n{b}Powers:{/b} {i}Ticken skin{/i}, {i}Vigor{/i}* \n\n{b}Skills:{/b} Intimidate, Survival, Swim\n\n{b}Bonus Class Skill:{/b} Survival\n\n{b}Note:{/b} You need to correctly set one of the Paths selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Primal Fury Path" uniqueness="unique">
     <comment><![CDATA[Add Thicken skin and Vigor powers to list
     
     PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
@@ -2968,9 +2954,11 @@ Call PsyWarTrMa</eval>
     <arrayval field="cvCustTot" index="17" value="-2"/>
     <arrayval field="cvCustTot" index="18" value="-2"/>
     <arrayval field="cvCustTot" index="19" value="-2"/>
-    <tag group="ClVaryName" tag="AppParen"/>
+    <usesource source="srcPathOfW"/>
     <tag group="ClassSkill" tag="skSenseMot"/>
     <tag group="AbReplace" tag="cSknPsyStr"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPWWSMBRec">
       <autotag group="ClSpecWhen" tag="4"/>
       </bootstrap>
@@ -3088,7 +3076,7 @@ Call PsyWarTrMa</eval>
         @valid = ValidStaOn</validate>
       </prereq>
     </thing>
-  <thing id="cPWWSBBAtt" name="Broken Blade Attitude" description="While maintaining psionic focus and manifesting his mind blade, the war soul’s combat intuition focuses him towards the deadly end that the Broken Blade adherent pushes for. While in a Broken Blade stance, the character gains a +1 dodge bonus to his AC for every five class levels (minimum of +1), and may use his Wisdom modifier in place of his Dexterity modifier when using the Acrobatics skill or making a Reflex save. The war soul must be wearing medium or lighter armor." compset="CustomSpec" summary="Gain AC bonus and may use WIS for Acrobatics and Ref saves while in a Broken Blade stance" uniqueness="unique">
+  <thing id="cPWWSBBAtt" name="Broken Blade Attitude" description="While maintaining psionic focus and manifesting his mind blade, the war soulâ€™s combat intuition focuses him towards the deadly end that the Broken Blade adherent pushes for. While in a Broken Blade stance, the character gains a +1 dodge bonus to his AC for every five class levels (minimum of +1), and may use his Wisdom modifier in place of his Dexterity modifier when using the Acrobatics skill or making a Reflex save. The war soul must be wearing medium or lighter armor." compset="CustomSpec" summary="Gain AC bonus and may use WIS for Acrobatics and Ref saves while in a Broken Blade stance" uniqueness="unique">
     <tag group="SpecSource" tag="arPWWarsol"/>
     <tag group="abAction" tag="None"/>
     <tag group="AbilType" tag="Super"/>
@@ -3129,7 +3117,7 @@ Call PsyWarTrMa</eval>
         perform hero.child[svRef].assign[SaveAbil.aWIS]
       endif]]></eval>
     </thing>
-  <thing id="cPWWSDBShp" name="Discipline Blade Shapes" description="The martial knowledge of the war soul supplements his ability to generate his mind blade. The war soul may manifest his mind blade into the shape of a weapon from a known discipline’s associated weapon groups, and he may shift between these discipline forms as a move action or as part of a swift action when assuming a stance of that weapon’s discipline. While in the shape of a discipline weapon, the mind blade functions exactly like that weapon and gains the weapons damage, damage type, special properties (such as brace or reach), and critical range and multiplier for a weapon sized appropriately for the war soul. The war soul is always considered to be proficient with his mind blade, regardless of its form. Ranged weapons that use ammunition generate their own standard ammunition out of the mind blade’s current shape, or may use non-psychically generated ammunition as normal." compset="CustomSpec" summary="Form your mind blade into a discipline weapon" uniqueness="unique">
+  <thing id="cPWWSDBShp" name="Discipline Blade Shapes" description="The martial knowledge of the war soul supplements his ability to generate his mind blade. The war soul may manifest his mind blade into the shape of a weapon from a known disciplineâ€™s associated weapon groups, and he may shift between these discipline forms as a move action or as part of a swift action when assuming a stance of that weaponâ€™s discipline. While in the shape of a discipline weapon, the mind blade functions exactly like that weapon and gains the weapons damage, damage type, special properties (such as brace or reach), and critical range and multiplier for a weapon sized appropriately for the war soul. The war soul is always considered to be proficient with his mind blade, regardless of its form. Ranged weapons that use ammunition generate their own standard ammunition out of the mind bladeâ€™s current shape, or may use non-psychically generated ammunition as normal." compset="CustomSpec" summary="Form your mind blade into a discipline weapon" uniqueness="unique">
     <tag group="SpecSource" tag="arPWWarsol"/>
     <tag group="abAction" tag="None"/>
     <tag group="AbilType" tag="Super"/>
@@ -3158,12 +3146,12 @@ nexteach
 expr &= ")"
 field[usrCandid1].text &= expr]]></eval>
     </thing>
-  <thing id="cPWWSThrMB" name="Martial Throw Mind Blade" description="A mind blade is the perfect expression of a war soul’s martial talent and desire for a perfect weapon. With a mighty throw and a powerful will empowering it, the character may expend his psionic focus while throwing his mind blade to initiate a martial maneuver with a range of melee as a ranged attack instead, and resolve the maneuver as per normal at close range (25-ft + 5-ft / 2 initiator levels)." compset="CustomSpec" summary="Throw your mind blade to use a martial strike at range" uniqueness="unique">
+  <thing id="cPWWSThrMB" name="Martial Throw Mind Blade" description="A mind blade is the perfect expression of a war soulâ€™s martial talent and desire for a perfect weapon. With a mighty throw and a powerful will empowering it, the character may expend his psionic focus while throwing his mind blade to initiate a martial maneuver with a range of melee as a ranged attack instead, and resolve the maneuver as per normal at close range (25-ft + 5-ft / 2 initiator levels)." compset="CustomSpec" summary="Throw your mind blade to use a martial strike at range" uniqueness="unique">
     <tag group="SpecSource" tag="arPWWarsol"/>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="ProductId" tag="HLCommunit"/>
     </thing>
-  <thing id="cPWWSSWMnt" name="Solar Wind Mentality" description="The war soul’s mind blade is infused with the light and fire that is the hallmark of the Solar Wind discipline. Whenever using the mind blade as a ranged weapon in a Solar Wind stance, the mind blade gains the {i}flaming{/i} weapon property, and increases its range increment by +10-ft. Finally, the war soul may use his mind blade to generate light as a torch when manifested. The warsoul must be 4th level to select this blade skill.\n\n{b}NOTE:{/b} Currently, this does not automatically add the {i}flaming{/i} property to the mind blade; you will need to add it yourself by clicking the hammer-and-wrench icon on the weapon and selecting &quot;Flaming&quot; on the special ability menu." compset="CustomSpec" summary="When in a Solar Wind stance, your mind blade gains {i}flaming{/i}." uniqueness="unique">
+  <thing id="cPWWSSWMnt" name="Solar Wind Mentality" description="The war soulâ€™s mind blade is infused with the light and fire that is the hallmark of the Solar Wind discipline. Whenever using the mind blade as a ranged weapon in a Solar Wind stance, the mind blade gains the {i}flaming{/i} weapon property, and increases its range increment by +10-ft. Finally, the war soul may use his mind blade to generate light as a torch when manifested. The warsoul must be 4th level to select this blade skill.\n\n{b}NOTE:{/b} Currently, this does not automatically add the {i}flaming{/i} property to the mind blade; you will need to add it yourself by clicking the hammer-and-wrench icon on the weapon and selecting &quot;Flaming&quot; on the special ability menu." compset="CustomSpec" summary="When in a Solar Wind stance, your mind blade gains {i}flaming{/i}." uniqueness="unique">
     <tag group="SpecSource" tag="arPWWarsol"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abCategory" tag="PUBladeSk"/>

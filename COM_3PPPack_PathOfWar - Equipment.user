@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_PathOfWar - Equipment"/>
+  <thing id="wPWArmShBs" name="Armament Shield Bash" description="This &quot;shield bash&quot; appears when you equip a two-handed weapon or a one-handed weapon in both hands, and is granted by the Armament Shield Bash class feature.\n\n{b}Note:{/b} This weapon can only be equipped in your off-hand to represent two-weapon fighting with a two-handed weapon and a shield." compset="Weapon" holdable="no">
+    <comment>This item is not actually selected by the user anywhere. It is a helper object, that the weapon stats for the shields attach as a gizmo, so they can retrieve its stats</comment>
+    <usesource source="srcPathOfW"/>
+    <tag group="Helper" tag="Helper"/>
+    <tag group="Helper" tag="NoSelect"/>
+    <tag group="IsWeapon" tag="wShLight"/>
+    <tag group="wCategory" tag="Melee"/>
+    <tag group="wClass" tag="Light"/>
+    <tag group="wCritMin" tag="20"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wFtrGroup" tag="Close"/>
+    <tag group="wMain" tag="1d3_3"/>
+    <tag group="wProfReq" tag="Martial"/>
+    <tag group="wType" tag="B"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="EquipType" tag="Metal"/>
+    <tag group="Helper" tag="NoOutGear"/>
+    <tag group="Helper" tag="NoHandWeap"/>
+    <evalrule phase="Validation" priority="10000" message="May only be equipped in off-hand" summary="May only be equipped in off-hand">validif (field[gIsEquip].value = 0)</evalrule>
+    </thing>
+  </document>
