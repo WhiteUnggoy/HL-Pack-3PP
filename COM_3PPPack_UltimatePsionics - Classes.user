@@ -4616,10 +4616,10 @@ Call PsyWarTrMa</eval>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
-    <eval phase="PreLevel" priority="10000"><![CDATA[  ~ We want to cycle through all weapons on the hero. If that weapon matches our Custom.MindBlade tag, then apply Helper.Finesse to make that a Finessable weapon
+    <eval phase="PreLevel" priority="10000"><![CDATA[  ~ We want to cycle through all weapons on the hero. If that weapon matches our Custom.MindBlade tag, then apply MelAttOpt.aDEX to apply Finesse
 
   foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
-    perform eachpick.assign[Helper.Finesse]
+    perform eachpick.assign[MelAttOpt.aDEX]
     nexteach]]></eval>
     </thing>
   <thing id="cSknBSRefB" name="Reflective Blade" description="A soulknife may expend his psychic strike as an immediate action to reflect a spell or power that would strike his back at the caster. The spell or power must be a touch attack spell or power, either ranged or melee, and the level of the spell or power reflected cannot exceed the number of dice of damage expended by psychic strike. The soulknife makes a ranged touch attack to determine if the spell successfully strikes the target. The soulknife must be at least 14th level and have the absorbing blade blade skill to select this blade skill." compset="CustomSpec" uniqueness="unique">
