@@ -4616,11 +4616,13 @@ Call PsyWarTrMa</eval>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
-    <eval phase="PreLevel" priority="10000"><![CDATA[  ~ We want to cycle through all weapons on the hero. If that weapon matches our Custom.MindBlade tag, then apply MelAttOpt.aDEX to apply Finesse
-
-  foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
-    perform eachpick.assign[MelAttOpt.aDEX]
-    nexteach]]></eval>
+    <eval phase="PreLevel" priority="10000"><![CDATA[  
+      ~ We want to cycle through all weapons on the hero. 
+      ~ If that weapon matches our Custom.MindBlade tag, 
+      ~ then apply MelAttOpt.aDEX to apply Finesse
+      foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
+        perform eachpick.assign[MelAttOpt.aDEX]
+      nexteach]]></eval>
     </thing>
   <thing id="cSknBSRefB" name="Reflective Blade" description="A soulknife may expend his psychic strike as an immediate action to reflect a spell or power that would strike his back at the caster. The spell or power must be a touch attack spell or power, either ranged or melee, and the level of the spell or power reflected cannot exceed the number of dice of damage expended by psychic strike. The soulknife makes a ranged touch attack to determine if the spell successfully strikes the target. The soulknife must be at least 14th level and have the absorbing blade blade skill to select this blade skill." compset="CustomSpec" uniqueness="unique">
     <usesource source="pPsiUn"/>
@@ -4629,7 +4631,8 @@ Call PsyWarTrMa</eval>
     <tag group="abCategory" tag="PUBladeSk"/>
     <exprreq message="Absorbing Blade Blade Skill required."><![CDATA[#hasability[cSknBSAbsB] <> 0]]></exprreq>
     <prereq message="Soulknife Level 14+ required">
-      <validate><![CDATA[        var classcheck as string
+      <validate><![CDATA[        
+        var classcheck as string
         var levels as number
 
         classcheck = "Soulknife"
@@ -4645,7 +4648,8 @@ Call PsyWarTrMa</eval>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
     <prereq message="Soulknife Level 8+ required">
-      <validate><![CDATA[        var classcheck as string
+      <validate><![CDATA[        
+        var classcheck as string
         var levels as number
 
         classcheck = "Soulknife"
@@ -4678,12 +4682,13 @@ Call PsyWarTrMa</eval>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
-    <eval phase="PreLevel" priority="10000"><![CDATA[if (hero.childlives[shMTowShld] <> 0) then
-  field[abValue].value += 1
-  ~ Increase/Decrease ACP but don't let the ACP be lowered
-  ~ to more than zero.
-  hero.child[shMTowShld].field[arArmorChk].value = minimum  (hero.child[shMTowShld].field[arArmorChk].value + field[abValue].value, 0)
-endif]]></eval>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      if (hero.childlives[shMTowShld] <> 0) then
+        field[abValue].value += 1
+        ~ Increase/Decrease ACP but don't let the ACP be lowered
+        ~ to more than zero.
+        hero.child[shMTowShld].field[arArmorChk].value = minimum(hero.child[shMTowShld].field[arArmorChk].value + field[abValue].value, 0)
+      endif]]></eval>
     <exprreq message="Tower Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSTowM] <> 0]]></exprreq>
     <exprreq message="Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSMShl] <> 0]]></exprreq>
     </thing>
@@ -4712,8 +4717,9 @@ endif]]></eval>
       </bootstrap>
     <bootstrap thing="cPWaTraSur"></bootstrap>
     <bootstrap thing="cPWaManSur"></bootstrap>
-    <eval phase="First">~ Setup the Psychic Warrior Path
-Call PsyWarPath</eval>
+    <eval phase="First">
+      ~ Setup the Psychic Warrior Path
+      Call PsyWarPath</eval>
     </thing>
   <thing id="cHelpPU0" name="Aegis" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="10"/>
@@ -4873,55 +4879,56 @@ Call PsyWarPath</eval>
       </bootstrap>
     <bootstrap thing="cPUAegHelp"></bootstrap>
     <link linkage="psiattr" thing="aINT"/>
-    <eval phase="PostLevel" priority="600" index="2">var myLevel as number
+    <eval phase="PostLevel" priority="600" index="2">
+      var myLevel as number
 
-myLevel += field[cTotalLev].value
+      myLevel += field[cTotalLev].value
 
-~Set configurable points on Aegis Helper in abValue2 field
-if (myLevel = 1) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 3
-elseif (myLevel = 2) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 4
-elseif (myLevel = 3) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 5
-elseif (myLevel = 4) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 7
-elseif (myLevel = 5) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 8
-elseif (myLevel = 6) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 9
-elseif (myLevel = 7) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 10
-elseif (myLevel = 8) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 11
-elseif (myLevel = 9) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 13
-elseif (myLevel = 10) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 14
-elseif (myLevel = 11) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 15
-elseif (myLevel = 12) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 16
-elseif (myLevel = 13) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 17
-elseif (myLevel = 14) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 19
-elseif (myLevel = 15) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 20
-elseif (myLevel = 16) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 21
-elseif (myLevel = 17) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 22
-elseif (myLevel = 18) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 23
-elseif (myLevel = 19) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 25
-elseif (myLevel = 20) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 26
-endif</eval>
-    <eval phase="PostLevel" priority="500">~Set Aegis level in abValue1 on Aegis Helper Class Special for Configurable reference later
- 
-hero.childfound[cPUAegHelp].field[abValue].value += field[cTotalLev].value</eval>
+      ~Set configurable points on Aegis Helper in abValue2 field
+      if (myLevel = 1) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 3
+      elseif (myLevel = 2) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 4
+      elseif (myLevel = 3) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 5
+      elseif (myLevel = 4) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 7
+      elseif (myLevel = 5) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 8
+      elseif (myLevel = 6) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 9
+      elseif (myLevel = 7) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 10
+      elseif (myLevel = 8) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 11
+      elseif (myLevel = 9) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 13
+      elseif (myLevel = 10) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 14
+      elseif (myLevel = 11) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 15
+      elseif (myLevel = 12) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 16
+      elseif (myLevel = 13) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 17
+      elseif (myLevel = 14) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 19
+      elseif (myLevel = 15) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 20
+      elseif (myLevel = 16) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 21
+      elseif (myLevel = 17) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 22
+      elseif (myLevel = 18) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 23
+      elseif (myLevel = 19) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 25
+      elseif (myLevel = 20) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 26
+      endif</eval>
+    <eval phase="PostLevel" priority="500">
+      ~Set Aegis level in abValue1 on Aegis Helper Class Special for Configurable reference later
+      hero.childfound[cPUAegHelp].field[abValue].value += field[cTotalLev].value</eval>
     </thing>
   <thing id="cPUAegis" name="Aegis" description="While the shaper is the master of manipulating ectoplasm and creating any manner of item, the aegis has learned to take ectoplasm and form it into a suit to be worn around his body, granting him a variety of benefits.\n\nThe aegis can shape his astral suit into several different forms and is capable of altering its abilities to suit his needs.\n\n{b}Role:{/b} An aegis is a front-line combatant. His astral suit allows him significant flexibility in handling combat and non-combat situations, and his defensive abilities are considerable.\n\n{b}Alignment:{/b} Any." compset="ClassLevel" maxlimit="20">
     <usesource source="pPsiUn"/>
@@ -4930,9 +4937,10 @@ hero.childfound[cPUAegHelp].field[abValue].value += field[cTotalLev].value</eval
     <tag group="Custom" tag="AegisLvls"/>
     <bootstrap thing="cHelpPU0"></bootstrap>
     <link linkage="helper" thing="cHelpPU0"/>
-    <eval phase="First" priority="50">~ Assign Class helper tag very early on the hero for
-~ testing on the Bootstrap armor Thing.
-perform hero.assign[Custom.AegisLvls]</eval>
+    <eval phase="First" priority="50">
+      ~ Assign Class helper tag very early on the hero for
+      ~ testing on the Bootstrap armor Thing.
+      perform hero.assign[Custom.AegisLvls]</eval>
     </thing>
   <thing id="cHelpPU1" name="Cryptic" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="8"/>
