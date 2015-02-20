@@ -12,9 +12,9 @@
 
 <strong>Bug Fixes</strong>
 <ul>
-<li>Path of War - (ShatterJack) Warlords are now correctly marked as proficient with shields (not just bucklers).</li>
-<li>Path of War - (ShatterJack) Initiating prestige classes now correctly add their full level to IL of existing initiating classes.</li>
-<li>Path of War - (ShatterJack) Fixed a bug that allowed initiating PrC's to select their own configurables for IL calculation.</li>
+<li>Path of War - (TheIronGolem) Warlords are now correctly marked as proficient with shields (not just bucklers).</li>
+<li>Path of War - (TheIronGolem) Initiating prestige classes now correctly add their full level to IL of existing initiating classes.</li>
+<li>Path of War - (TheIronGolem) Fixed a bug that allowed initiating PrC's to select their own configurables for IL calculation.</li>
 <li>Ultimate Psionics - (psych777) Fixed Mind Shield as it wasn't removing AC bonus when 2H mindblade equipped.</li>
 <li>Ultimate Psionics - (psych777) Absorbing Blade - added summary text.</li>
 <li>Ultimate Psionics - (psych777) Dazzling Blade - added DC.</li>
@@ -36,18 +36,18 @@
 <li>(ShadowChemosh) Script review of new changes and bug fixes. Merged in manually the UP changes from psych777 into github.</li>
 <li>Ultimate Psionics - (psych777) Autohypnosis skill description updated to full text. Changed to be manually added to characters instead of always being on all characters. So if you want this skill on your character you will need to add it again after this update.</li>
 <li>Ultimate Psionics - (psych777) Added text entries for: Advanced Talents, Deadly Shield, Evasion, Flurry of Fists, Flurry of Fists, Improved Flurry of Fists, Greater Grasping Shield, Improved Armor, Improved Evasion, Interupting Throw, Mental Power, Ranged Shield Block, Rogue Talent, Shield Block, Trapfinder, & Whiplash.</li>
-<li>Ultimate Psionics - (ShatterJack) Added the War Soul (Soulknife Archetype)</li>
+<li>Ultimate Psionics - (TheIronGolem) Added the War Soul (Soulknife Archetype)</li>
 <li>Ultimate Psionics - (TCArknight) Added the Nimble Blade (Soulknife Archetype)</li>
-<li>Path of War - (ShatterJack) Added the Umbral Blade prestige class.</li>
-<li>Path of War - (ShatterJack) Added the Awakened Blade prestige class.</li>
-<li>Path of War - (ShatterJack) Added the Pathwalker archetype.</li>
+<li>Path of War - (TheIronGolem) Added the Umbral Blade prestige class.</li>
+<li>Path of War - (TheIronGolem) Added the Awakened Blade prestige class.</li>
+<li>Path of War - (TheIronGolem) Added the Pathwalker archetype.</li>
 </ul>
 
 <strong>Data File Authoring</strong>
 <ul>
-<li>Path of War - (IronGolem) Added "PathOfWar.ShdwBlade" tag, for denoting when a weapon is affected by the Umbral Blade's Shadow Blade ability.</li>
-<li>Path of War - (IronGolem) Added "PathOfWar.EmbShadow" and "PathOfWar.StaInnrEye" tags, which is used by the Embrace the Shadows and Stance of the Inner Eye class specials, and others that interact with them.</li>
-<li>Path of War - (IronGolem) Added the PWgetIMod and PWgetIlvl procedures, so class specials can easily fetch the initiator level or modifier for whatever class they come from</li>
+<li>Path of War - (TheIronGolem) Added "PathOfWar.ShdwBlade" tag, for denoting when a weapon is affected by the Umbral Blade's Shadow Blade ability.</li>
+<li>Path of War - (TheIronGolem) Added "PathOfWar.EmbShadow" and "PathOfWar.StaInnrEye" tags, which is used by the Embrace the Shadows and Stance of the Inner Eye class specials, and others that interact with them.</li>
+<li>Path of War - (TheIronGolem) Added the PWgetIMod and PWgetIlvl procedures, so class specials can easily fetch the initiator level or modifier for whatever class they come from</li>
 <li>Path of War - (ShadowChemosh) Built a new component (PWManList) that can hold the Maneuver/Stance array values for PoW classes. Several of the procedures used on PoW classes and Configurables are now deprecated as the logic was moved to the new background component. PWManList will hold not only array values but Initiator Level and the attribute used to calculate maneuver DC values. This allows for future classes that use both PoW maneuvers and spellcasting to work.</li>
 <li>Path of War - (ShadowChemosh) Built new editor tab (zCommunity->PoW Class Setup) that allows a very easy method of linking the PoW Class to its PoW Configurable. It also allows for setting up which Disciplines the class has access to.</li>
 </ul>       
