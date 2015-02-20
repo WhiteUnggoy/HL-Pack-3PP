@@ -25,7 +25,8 @@
 <li>Ultimate Psionics - (psych777) Lightning Arc - added DC.</li>
 <li>Ultimate Psionics - (psych777) Mark of the Challenger - corrected description.</li>
 <li>Ultimate Psionics - (psych777) Thunder Blade - added DC.</li>
-<li>Tome of Secrets - (ShadowChemosh) Added (ToS) in front of the Tome of Secrets classes. As the names are similar to other popular classes.</li>
+<li>Tome of Secrets - (ShadowChemosh) Added [ToS] in front of the Tome of Secrets classes. As the names are similar to other popular classes.</li>
+<li>Tome of Secrets - (ShadowChemosh) Did misc changes/fixes to the Tome of Secrets classes: Knight and Priest.</li>
 </ul>
 
 <strong>New Features</strong>
@@ -33,9 +34,9 @@
 <li>(ShadowChemosh) Basic Pack updated to v3.6.</li>
 <li>(ShadowChemosh) Script review of new changes and bug fixes. Merged in manually the UP changes from psych777 into github.</li>
 <li>Ultimate Psionics - (psych777) Autohypnosis skill description updated to full text. Changed to be manually added to characters instead of always being on all characters. So if you want this skill on your character you will need to add it again after this update.</li>
+<li>Ultimate Psionics - (psych777) Added text entries for: Advanced Talents, Deadly Shield, Evasion, Flurry of Fists, Flurry of Fists, Improved Flurry of Fists, Greater Grasping Shield, Improved Armor, Improved Evasion, Interupting Throw, Mental Power, Ranged Shield Block, Rogue Talent, Shield Block, Trapfinder, & Whiplash.</li>
 <li>Path of War - (IronGolem) Added the Umbral Blade prestige class.</li>
 <li>Path of War - (IronGolem) Added the Awakened Blade prestige class.</li>
-<li>Ultimate Psionics - (psych777) Added text entries for: Advanced Talents, Deadly Shield, Evasion, Flurry of Fists, Flurry of Fists, Improved Flurry of Fists, Greater Grasping Shield, Improved Armor, Improved Evasion, Interupting Throw, Mental Power, Ranged Shield Block, Rogue Talent, Shield Block, Trapfinder, & Whiplash.</li>
 </ul>
 
 <strong>Data File Authoring</strong>
