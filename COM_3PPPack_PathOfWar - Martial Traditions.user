@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_PathOfWar - Martial Traditions"/>
   <thing id="facPWBlkTh" name="Black Thorn Knights" description="{b}Alignment:{/b} Lawful neutral, lawful evil, or neutral evil\n\n{b}Symbol:{/b} An iron gate with thorny vines growing over it; the vines bloom with black roses.\n\n{b}Discipline:{/b} A Black Thorn Knight may trade access to one martial discipline of his choice for access to the Black Seraph discipline.\n\n{b}Oath:{/b} During the course of their training, potential Black Thorn Knights are tasked with growing a rose bush; the flower blooms black and vibrant and is watered repeatedly with the Knight’s own blood. When the Knight is deemed ready by the order, a devil (traditionally an erinyes) is summoned to accept his oath. The fiend hears the Knight’s oath and swears a counteroath on the behalf of Hell, vowing to provide all due support and power to aid the Black Thorn Knight in his mission. A single rose is plucked from the bush the Knight grew and rooted in soil watered with blood from both the Knight and the devil; that rose is spirited away to Hell, there to be kept by the fiend as the visible symbol of his fealty.\n\n  {i}“By my blood and soul do I swear myself as an ally to Hell against the many-faced forces of Chaos. I will revenge myself against those who wrong me, with an eye for an eye and blood for blood, and teach those who come to me seeking the tools to avenge themselves. From me my enemies shall experience neither mercy nor redemption, and I shall drive Chaos before me as the wolf drives the herd to stampede, until the day that I die or its taint is removed from the world.”{/i}\n\n{b}Allegiance Benefit:{/b} In addition to access to the Black Seraph discipline (exchanging a discipline of their choice), Black Thorn Knights enjoy a +2 profane bonus on saving throws vs. spells and abilities that originate from chaotic beings, as well as a +2 profane bonus on saving throws vs. mind-affecting spells and abilities.\n\n  A Black Thorn Knight who violates his oath (see above) loses access to his saving throw bonuses until he atones by sacrificing a sapient being to Hell, or else by punishing himself with fasting and flagellation for seven days. A Black Thorn Knight who ceases to meet the alignment requirements of his order, or who violates his oath and fails to atone within thirty days is in breach of his infernal contract - they lose access to the Black Seraph discipline, the rose kept in Hell withers and dies, and the Black Thorn Knight is marked for life as a debtor to Hell. Any lawful-aligned outsider or Black Thorn Knight in good standing who sees the Knight instantly knows them for an oathbreaker, and devils in particular know the nature of their crime.\n\n  A Black Thorn Knight may still leave the organization in one of two ways. He may breach his infernal contract (see above), or he may invoke the exit clause to leave peacefully, requiring (1000 x level) gold pieces worth of service to the Black Thorn or an equivalent donation. Leaving peacefully in this fashion does not guarantee further peaceful relations; indeed, most would-be retirees of the Black Thorns rightly fear death at the hands of their compatriots or agents of Hell.\n\n[More information available in {i}Path of War{/i}, page 153]" compset="Faction" uniqueness="unique">
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -17,8 +18,9 @@
       <assignval field="livename" value="mind-affecting spells and abilities (profane bonus)"/>
       </bootstrap>
     <prereq message="Lawful neutral, lawful evil, or neutral evil alignment required">
-      <validate><![CDATA[validif (hero.tagexpr[Alignment.Lawful & !Alignment.Good] = 1)
-validif (hero.tagexpr[Alignment.NeutralLC & Alignment.Evil] = 1)]]></validate>
+      <validate><![CDATA[
+        validif (hero.tagexpr[Alignment.Lawful & !Alignment.Good] = 1)
+        validif (hero.tagexpr[Alignment.NeutralLC & Alignment.Evil] = 1)]]></validate>
       </prereq>
     </thing>
   <thing id="raPWBlkSph" name="Black Seraph" description="You trade access to one of your existing disciplines for the Black Seraph discipline." compset="RaceSpec">
@@ -182,7 +184,8 @@ validif (hero.tagexpr[Alignment.NeutralLC & Alignment.Evil] = 1)]]></validate>
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <eval phase="PostLevel" priority="10000">      ~ Fort save bonus
+    <eval phase="PostLevel" priority="10000">      
+      ~ Fort save bonus
       #competencebonus[hero.child[svFort], field[abValue].value]
 
       ~ Knowledge bonuses
@@ -206,7 +209,8 @@ validif (hero.tagexpr[Alignment.NeutralLC & Alignment.Evil] = 1)]]></validate>
     <usesource source="srcPathOfW"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ Will save bonus
+    <eval phase="PostLevel" priority="10000"><![CDATA[      
+      ~ Will save bonus
       #competencebonus[hero.child[svWill], field[abValue].value]
 
       ~ Situational bonus vs compulsion
