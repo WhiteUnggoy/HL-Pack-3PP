@@ -33,6 +33,7 @@
 	<value id="EmbShadow"	name="Embrace the Shadows"/>
 	<value id="StaInnrEye"	name="Stance of the Inner Eye"/>
 	<value id="CstManProg"	name="Custom Maneuver Progression"/>
+	<value id="MartTrad"	name="Martial Tradition"/>
   </group>
 
   <!-- Martial Discipline custom tags -->

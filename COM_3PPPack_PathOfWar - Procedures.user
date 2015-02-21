@@ -418,4 +418,30 @@
     initLvl = focus.field[cIL].value
     ]]>
   </procedure>
+  <procedure id="PWsetupMT" context="pick"><![CDATA[
+      ~ This procedure is called from the abilities bootstrapped to the Martial Tradition factions, and sets up the discipline trade mechanism
+	  
+      ~ Stop if we haven't picked a maneuver list
+      doneif (field[usrChosen1].ischosen = 0)
+
+	  ~ Can't trade away the same discipline we're trading for...
+	  field[usrCandid2].text &= " & !" & tagids[Discipline.?, " & !"]
+	  
+	  ~ Limit the tradeaway selection to disciplines gained by the chosen maneuver list
+	  field[usrCandid2].text &= " & ("
+	  field[usrCandid2].text &= field[usrChosen1].chosen.tagids[Discipline.?, " | "]
+	  field[usrCandid2].text &= ")"
+	  
+	  ~ Stop if we haven't picked a discipline to trade
+	  doneif (field[usrChosen2].ischosen = 0)
+			
+      ~ Get the discipline tag from the chosen field, and remove it from the chosen maneuver list
+      var remDisc as string
+      remDisc = field[usrChosen2].chosen.tagids[Discipline.?]
+      perform field[usrChosen1].chosen.deletestr[remDisc]
+
+      ~ Grant access to this tradition's discipline
+      perform field[usrChosen1].chosen.pushtags[Discipline.?]
+	  ]]>
+  </procedure>
   </document>
