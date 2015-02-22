@@ -961,23 +961,11 @@ Endif]]></eval>
         #extradamage[eachpick,signed(field[abValue].value) & "d" & field[abValue2].value & " psy",field[name].text]
       nexteach]]></eval>
     </thing>
-  <thing id="cSknBSAltB" name="Alter Mind Blade" description="The soulknife gains the ability to shape her mind blade into different weapon forms. She may change her blade&apos;s form to the light weapon, one-handed weapon, or two-handed weapon forms any time she forms her mind blade. Additionally, the soulknife may choose to form her mind blade into a one-handed weapon and a light weapon instead of two light weapons." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSAltB" name="Alter Mind Blade" description="The soulknife gains the ability to shape her mind blade into different weapon forms. She may change her blade&apos;s form to the light weapon, one-handed weapon, or two-handed weapon forms any time she forms her mind blade. Additionally, the soulknife may choose to form her mind blade into a one-handed weapon and a light weapon instead of two light weapons." compset="CustomSpec" summary="You can reshape your mind blade any time you form it" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
-    <eval phase="First" priority="498"><![CDATA[if (hero.child[cSknMindBl].field[usrChosen1].ischosen <> 0) then
-  if (hero.child[cSknMindBl].field[usrChosen1].chosen.tagis[thingid.wMndBldLt] <> 0) then
-    perform hero.assign[MindBlade.OneHanded]
-    perform hero.assign[MindBlade.TwoHanded]
-  elseif (hero.child[cSknMindBl].field[usrChosen1].chosen.tagis[thingid.wMndBld1H] <> 0) then
-    perform hero.assign[MindBlade.Light]
-    perform hero.assign[MindBlade.TwoHanded]
-  elseif (hero.child[cSknMindBl].field[usrChosen1].chosen.tagis[thingid.iPUMndBl2H] <> 0) then
-    perform hero.assign[MindBlade.Light]
-    perform hero.assign[MindBlade.OneHanded]
-    endif
-  endif]]></eval>
     </thing>
   <thing id="cSknBSBlds" name="Bladestorm" description="As a full attack, when wielding her mind blade, the soulknife can give up her regular attacks and instead throw one mind blade at her full attack bonus at all opponents within 30 feet, ignoring the normal range increments for throwing a mind blade. Regardless of the number of attacks she makes, she only provokes attacks of opportunity as though she made a single ranged attack. The soulknife must possess the Bladewind blade skill to take this ability, this ability may not be used if the mind blade is in a two-handed weapon form, and the soulknife must be at least 16th level to choose this blade skill." compset="CustomSpec" uniqueness="unique">
     <usesource source="pPsiUn"/>
@@ -13581,32 +13569,13 @@ field[livename].text = "Enhanced Mind Bolt +" & field[abValue].value
 field[abSumm].text = "You can enhance your Mind Bolt with a total enhancement bonus of +" & field[abValue].value & "."
 field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
     </thing>
-  <thing id="cPUAltMBlt" name="Alter Mind Bolt" description="A soulbolt gains the ability to shape her mind bolt into different weapon forms. She may change her blade&apos;s form to the long range weapon, medium range weapon, or short range weapon forms any time she forms her mind bolt." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cPUAltMBlt" name="Alter Mind Bolt" description="A soulbolt gains the ability to shape her mind bolt into different weapon forms. She may change her blade&apos;s form to the long range weapon, medium range weapon, or short range weapon forms any time she forms her mind bolt." compset="CustomSpec" summary="You can reshape your mind bolt any time you form it" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
     <tag group="SpecSource" tag="arPUSlbolt"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <eval phase="First" priority="498"><![CDATA[      ~ Leaving this disabled until I figure out why this script even needs to exist...
-      done
-
-      ~ Stop now if a mind bolt type hasn't been chosen
-      doneif (hero.child[cPUSbMndBt].field[usrChosen1].ischosen = 0)
-
-      perform hero.child[cPUSbMndBt].field[usrChosen1].chosen.setfocus
-      doneif (state.isfocus = 0)
-
-      if (focus.tagis[thingid.zPUMndBlt1] <> 0) then
-        perform hero.assign[MindBlade.BoltMed]
-        perform hero.assign[MindBlade.BoltShort]
-      elseif (focus.tagis[thingid.zPUMndBlt2] <> 0) then
-        perform hero.assign[MindBlade.Light]
-        perform hero.assign[MindBlade.BoltShort]
-      elseif (focus.tagis[thingid.zPUMndBlt3] <> 0) then
-        perform hero.assign[MindBlade.Light]
-        perform hero.assign[MindBlade.BoltMed]
-      endif]]></eval>
     </thing>
   <thing id="cPWArrShot" name="Arresting Shot" description="As a standard action, the soulbolt can make a ranged reposition attempt against an enemy within one range increment. If the attempt is successful, the enemy is repositioned to directly adjacent to the soulbolt, occupying the space in the most direct path from the target to the soulbolt. The soulbolt must have the wrenching special ability applied to her mind bolt to use this blade skill. The soulbolt must be at least 12th level to select this blade skill." compset="CustomSpec" summary="Ranged reposition puts the target next to you." uniqueness="useronce">
     <usesource source="pPsiUn"/>
