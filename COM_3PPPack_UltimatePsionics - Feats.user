@@ -2125,4 +2125,22 @@ nexteach]]></eval>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="Race" tag="rXeph"/>
     </thing>
+  <thing id="fWepFocMBt" name="Weapon Focus (Mind Bolt)" description="{b}Benefit{/b}: You gain a +1 bonus on all attack rolls you make using the Mind Bolt." compset="Feat" summary="You gain a +1 bonus on all attack rolls you make using the Mind Blade.">
+    <usesource source="pPsiUn"/>
+    <tag group="fCategory" tag="Combat" name="Combat" abbrev="Combat"/>
+    <tag group="HasFeat" tag="fWepFoc"/>
+    <bootstrap thing="fWepFoc">
+      <autotag group="Target" tag="wMindBlade"/>
+      <autotag group="Helper" tag="NoRootName"/>
+      </bootstrap>
+    <eval phase="PostAttr" priority="1000" index="2"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~If we've already been taken, hide us
+      perform assign[Helper.FtHide]
+
+      hero.child[fWepFoc].field[actName].text = "Weapon Focus: MindBolt"]]></eval>
+    <exprreq message="Weapon Focus: Mind Bolt already taken.">hero.tagis[WepFocus.wMindBlade] = @ispick</exprreq>
+    </thing>
   </document>

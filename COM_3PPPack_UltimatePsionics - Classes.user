@@ -837,7 +837,7 @@ field[abSumm].text = "Last Respite {i}Mind Switch{/i} save DC " & lrDC & " vs Wi
     <link linkage="helper" thing="cHelpSkn"/>
     </thing>
   <thing id="cSknMindBl" name="Form Mind Blade" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from his own mind.\n\nA soulknife must choose the form of his mind blade at 1st level. He can either form it into a light weapon, a one-handed weapon, or a two-handed weapon. Once chosen, his mind blade stays in this form every time the soulknife forms his mind blade. The light weapon deals 1d6 points of damage, the one-handed weapon deals 1d8 points of damage, and the two-handed weapon deals 2d6 points of damage. All damages are based on a Mediumsized creature wielding Medium-sized weapons; adjust the weapon damage as appropriate for different sized weapons. In all forms, the mind blade has a critical range of 19-20/x2. A soulknife with powerful build or any similar ability forms an appropriately-sized mind blade dealing the size-appropriate amount of damage.\n\nIf the soulknife&apos;s chosen form is a light weapon, he may choose to form two light weapons when forming his mind blade if he so chooses, but he suffers the standard penalties for two-weapon fighting.\n\nRegardless of the weapon form a soulknife has chosen, his mind blade does not have a set damage type. When shaping his weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on his next move action. The moment he relinquishes his grip on his blade, it dissipates (unless he intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon.\n\nA soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. He can also choose his mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with his mind blade, but such feats only work on mind blades in a light weapon form.\n\nEven in places where psionic effects do not normally function (such as within a {i}null psionics field{/i}), a soulknife can attempt to sustain his mind blade by making a DC 20 Will save. On a successful save, the soulknife maintains his mind blade for a number of rounds equal to his class level before he needs to check again, although the mind blade is treated for all purposes as a non-magical, masterwork weapon while in a place where psionic effects do not normally function. On an unsuccessful attempt, the mind blade vanishes.\n\nAs a move action on her turn, the soulknife can attempt a new Will save to rematerialize his mind blade while he remains within the psionics-negating effect. He gains a bonus on Will saves made to maintain or form his mind blade equal to the total enhancement bonus of his mind blade (see below).\n\nThe soulknife chooses the appearance of his mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} From the two drop down menus you must pick the type of mind blade (ie Light, one-handed, or two-handed) and its damage type (ie Bludgeoning, Piercing, or Slashing). Because these values can be changed often and in combat they display now on the In-Play tab also." compset="ClSpecial" summary="Form a semi-solid weapon composed of psychic energy distilled from your own mind.">
-    <fieldval field="usrCandid1" value="component.Simple &amp; MindBlade.?"/>
+    <fieldval field="usrCandid1" value="component.Simple &amp; MindBlade.? &amp; !MindBlade.Bolt?"/>
     <arrayval field="usrArray" index="0" value="Bludgeoning"/>
     <arrayval field="usrArray" index="1" value="Piercing"/>
     <arrayval field="usrArray" index="2" value="Slashing"/>
@@ -905,7 +905,7 @@ field[abSumm].text = "Last Respite {i}Mind Switch{/i} save DC " & lrDC & " vs Wi
       <containerreq phase="First" priority="499">!Hero.Psionic</containerreq>
       </bootstrap>
     </thing>
-  <thing id="cSknShaMB" name="Shape Mind Blade" description="The soulknife&apos;s mind blade retains the last chosen form every time it is formed until the soulknife reshapes it. If the soulknife chooses to reshape his blade, it requires a full-round action to do so. She may also re-assign the type of damage dealt as part of reshaping his mind blade if he so chooses.{br}{br}A soulknife can reassign the ability or abilities he has added to his mind blade; see below. To do so, he must first spend 8 hours in concentration. These cannot be the normal 8 hours used for rest, even if the soulknife does not require sleep. After that period, the mind blade materializes with the new ability or abilities selected by the soulknife." compset="ClSpecial"></thing>
+  <thing id="cSknShaMB" name="Shape Mind Blade" description="The soulknife&apos;s mind blade retains the last chosen form every time it is formed until the soulknife reshapes it. If the soulknife chooses to reshape his blade, it requires a full-round action to do so. She may also re-assign the type of damage dealt as part of reshaping his mind blade if he so chooses.{br}{br}A soulknife can reassign the ability or abilities he has added to his mind blade; see below. To do so, he must first spend 8 hours in concentration. These cannot be the normal 8 hours used for rest, even if the soulknife does not require sleep. After that period, the mind blade materializes with the new ability or abilities selected by the soulknife." compset="ClSpecial" summary="Change the form of your mind blade, or reassign its abilities"></thing>
   <thing id="cSknThrMB" name="Throw Mind Blade" description="All soulknives have some knowledge of how to throw their mind blades, though the range increment varies by form and the largest of blade forms cannot be thrown. Light weapon mind blades have a range increment of 20 ft. One-handed weapon mind blades have a range increment of 15 ft. Two-handed weapon mind blades cannot be thrown without the Two-Handed Throw blade skill. Whether or not the attack hits, a thrown mind blade then dissipates." compset="ClSpecial" summary="Light 20ft, 1H 15ft, and 2H can&apos;t be thrown.">
     <eval phase="PreLevel" priority="10000"><![CDATA[
 ~we're earlier than the normal test for whether we've reached the correct level, so we'll recreate that test here
@@ -961,7 +961,7 @@ Endif]]></eval>
         #extradamage[eachpick,signed(field[abValue].value) & "d" & field[abValue2].value & " psy",field[name].text]
       nexteach]]></eval>
     </thing>
-  <thing id="cSknBSAltB" name="Alter Blade" description="The soulknife gains the ability to shape her mind blade into different weapon forms. She may change her blade&apos;s form to the light weapon, one-handed weapon, or two-handed weapon forms any time she forms her mind blade. Additionally, the soulknife may choose to form her mind blade into a one-handed weapon and a light weapon instead of two light weapons." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSAltB" name="Alter Mind Blade" description="The soulknife gains the ability to shape her mind blade into different weapon forms. She may change her blade&apos;s form to the light weapon, one-handed weapon, or two-handed weapon forms any time she forms her mind blade. Additionally, the soulknife may choose to form her mind blade into a one-handed weapon and a light weapon instead of two light weapons." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
@@ -13283,5 +13283,297 @@ foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
     </thing>
   <thing id="cPUNBAdaFo" name="Adaptive Form" description="Once a nimble blade has reached 10th level, he has learned how to rapidly alter his use of the mind blade to adapt to any particular situation. As an immediate action and by expending psionic focus, the nimble blade can select any one blade skill whose requirements he meets and be treated as having that blade skill. The effect of the blade skill selected lasts until he expends his psionic focus as an immediate action to change it. This replaces the blade skill normally gained at 10th level." compset="ClSpecial">
     <tag group="ProductId" tag="PUProdID"/>
+    </thing>
+  <thing id="arPUSlbolt" name="Soulbolt" description="Some soulknives choose to focus on ranged attacks, launching a mind bolt at their enemies instead of wielding a blade of energy." compset="ClassVary" uniqueness="unique">
+    <usesource source="pPsiUn"/>
+    <tag group="ClVaryName" tag="AppParen"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="fInclude" tag="fPointBlnk"/>
+    <tag group="fExclude" tag="fPowerAtt"/>
+    <tag group="fExclude" tag="fTwoWep"/>
+    <tag group="fExclude" tag="fWepFocMB"/>
+    <tag group="fInclude" tag="fWepFocMBt"/>
+    <tag group="AbReplace" tag="cSknMindBl"/>
+    <tag group="AbReplace" tag="cSknShaMB"/>
+    <tag group="AbReplace" tag="cSknThrMB"/>
+    <tag group="AbReplace" tag="cSknEnhMB"/>
+    <bootstrap thing="cPUSbMndBt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPULnchMB">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="11"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="13"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="15"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="19"/>
+      </bootstrap>
+    <bootstrap thing="cPUShpMBlt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <link linkage="varies" thing="cHelpSkn"/>
+    <eval phase="Final" priority="999999999999999999999"><![CDATA[      ~ Disallow certain blade skills: Alter Mind Blade, Bladestorm, Bladewind, Dual Imbue, Extended Strike, Furious Charge (and Improved), Gruesome Riposte, Multiple Throw, Reaching Blade, Rending Blades, Trade Blows, Twin Strike, and Two-handed Throw
+      ~ We also disallow Mind Daggers because the Soulbolt has a different version of that ability
+      linkage[varies].field[cCstSpExpr].text &= " & !Ability.cSknBSAltB & !Ability.cSknBSBlds & !Ability.cSknBSBldw & !Ability.cSknBSDua & !Ability.cSknBSExS & !Ability.cSknBSFurC & !Ability.cSknBSFuCI & !Ability.cSknBSGruR & !Ability.cSknBSMulT & !Ability.cSknBSReaB & !Ability.cSknBSRend & !Ability.cSknBSTrad & !Ability.cSknBSTwin & !Ability.cSknBS2HTr & !Ability.cSknBSMDag"]]></eval>
+    </thing>
+  <thing id="cPUSbMndBt" name="Form Mind Bolt" description="At 1st level, as a move action, a soulbolt can form a semi-solid ranged weapon composed of psychic energy distilled from her own mind. This mind bolt appears inside of or enveloping the soulbolt&apos;s hand.\n\nA soulbolt must choose the form of her mind bolt at 1st level. She can either form it into a short range, medium range, or long range bolt which determines the weapon&apos;s range increment and base damage. Once chosen, her mind bolt stays in this form every time the soulknife forms her mind bolt. The long range bolt form is the smallest of forms and deals 1d6 points of damage and has a 100 ft. range increment. The medium range bolt form deals 1d8 points of damage, with a 60 ft. range increment, and the short range bolt form is the largest and heaviest form and deals 1d10 points of damage with a 20 ft. range increment. A soulbolt adds her Strength modifier to damage rolls when using the mind bolt in the short range form. All damages are based on a Medium-sized creature wielding Medium-sized weapons; adjust the weapon damage as appropriate for different sized weapons. A soulbolt with powerful build or any similar ability forms an appropriately-sized mind bolt dealing the size-appropriate amount of damage. Regardless of form, the mind bolt has a 19-20 critical threat range, has a maximum range of 10 range increments, and is treated as a projectile.\n\nThe form of the soulbolt&apos;s mind bolt also determines how many hands must be used to form and manipulate the mind bolt. If the mind bolt is in long range form, both of the soulbolt&apos;s hands remain free to hold other items such as a shield or a weapon. If the mind bolt is in medium range form, the soulbolt must have at least one hand free to form and manipulate the mind bolt. If the mind bolt is in short range form, the soulbolt must have both hands free to wield and launch the mind bolt.\n\nA soulbolt can wield a buckler without penalty regardless of the form of her mind bolt.\n\nRegardless of the weapon form a soulbolt has chosen, her mind bolt does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulbolt chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulbolt may change the damage type of an existing mind bolt, or may summon a new mind bolt with a different damage type, as a full-round action; otherwise, the mind bolt retains the last damage type chosen every time it is summoned.\n\nThe bolt can be broken (it has hardness 10 and 10 hit points); however, a soulbolt can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind bolt is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon.\n\nA soulbolt can use feats such as Rapid Shot or Precise Shot in conjunction with the mind bolt just as if it were a normal ranged weapon. She can also choose her mind bolt for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical. Powers or spells that upgrade weapons can be used on a mind bolt. The soulbolt can use feats such as Weapon Finesse that work on light weapons with her mind bolt, but such feats only work on mind bolts in a light weapon form, such as using the Mind Daggers blade skill.\n\nEven in places where psionic effects do not normally function (such as within a null psionics field), a soulbolt can attempt to sustain her mind bolt by making a DC 20 Will save. On a successful save, the soulbolt maintains her mind bolt for a number of rounds equal to her class level before she needs to check again, although the mind bolt is treated for all purposes as a non-magical, masterwork ranged weapon while in a place where psionic effects do not normally function. On an unsuccessful attempt, the mind bolt vanishes. As a move action on her turn, the soulbolt can attempt a new Will save to rematerialize her mind bolt while she remains within the psionics-negating effect. She gains a bonus on Will saves made to maintain or form her mind bolt equal to the total enhancement bonus of her mind bolt (see below).\n\nThe soulbolt chooses the appearance of her mind bolt, although its shape must reflect the selections the soulbolt has chosen: a bludgeoning mind bolt would be blunt, slashing would have an edge, etc.\n\nThis ability replaces the Form Mind Blade class feature normally gained by soulknives." compset="ClSpecial" summary="Form a semi-solid weapon composed of psychic energy distilled from your own mind.">
+    <fieldval field="usrCandid1" value="component.Simple &amp; MindBlade.Bolt?"/>
+    <arrayval field="usrArray" index="0" value="Bludgeoning"/>
+    <arrayval field="usrArray" index="1" value="Piercing"/>
+    <arrayval field="usrArray" index="2" value="Slashing"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ChooseSrc1" tag="Hero"/>
+    <tag group="Helper" tag="ActivMenu"/>
+    <bootstrap thing="iPUMndBtMR">
+      <containerreq phase="First" priority="99">hero#MindBlade.BoltMed</containerreq>
+      </bootstrap>
+    <bootstrap thing="iPUMndBtSR">
+      <containerreq phase="First" priority="99">hero#MindBlade.BoltShort</containerreq>
+      </bootstrap>
+    <bootstrap thing="iPUMndBtLR">
+      <containerreq phase="First" priority="99">hero#MindBlade.BoltLong</containerreq>
+      </bootstrap>
+    <bootstrap thing="zPUMndBlt1"></bootstrap>
+    <bootstrap thing="zPUMndBlt2"></bootstrap>
+    <bootstrap thing="zPUMndBlt3"></bootstrap>
+    <eval phase="First" priority="50" name="Add Mind Blade Tags"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If nothing chosen get out now!
+      doneif (field[usrChosen1].ischosen <> 1)
+
+      perform field[usrChosen1].chosen.pulltags[MindBlade.?]
+      perform hero.pushtags[MindBlade.?]]]></eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we've not chosen anything, get out
+      doneif (field[usrChosen1].ischosen = 0)
+
+      ~ Bludgeoning      
+      if (field[usrIndex].value = 0) then
+        perform assign[wType.B]
+      ~ Piercing
+      elseif (field[usrIndex].value = 1) then
+        perform assign[wType.P]
+      ~ Slashing
+      elseif (field[usrIndex].value = 2) then
+        perform assign[wType.S]
+      endif
+
+      ~ Find all Mindblades and set the damage type tag      
+      foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
+        perform eachpick.delete[wType.?]
+        perform eachpick.gizmo.delete[wType.?]
+        perform eachpick.pushtags[wType.?]
+        perform eachpick.gizmo.pushtags[wType.?]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPUShpMBlt" name="Shape Mind Bolt" description="The soulbolt&apos;s mind bolt retains the last chosen form every time it is formed until the soulbolt reshapes it. If the soulbolt chooses to reshape her bolt, it requires a full-round action to do so. She may also reassign the type of damage dealt as part of reshaping her mind bolt if she so chooses. A soulbolt can reassign the ability or abilities she has added to her mind bolt; see below. To do so, she must first spend 8 hours in concentration. These cannot be the normal 8 hours used for rest, even if the soulbolt does not require sleep. After that period, the mind bolt materializes with the new ability or abilities selected by the soulbolt. This ability replaces the Shape Mind Blade class feature normally gained by soulknives." compset="ClSpecial" summary="Change the form of your mind bolt, or reassign its abilities">
+    <tag group="ProductId" tag="GreenRonin"/>
+    </thing>
+  <thing id="cPULnchMB" name="Launch Mind Bolt" description="Soulbolts are greater masters at making ranged attacks with their weapon than their soulknife counterparts. Unlike a soulknife, a soulbolt does not need to reform her mind bolt after throwing it. This means that the soulbolt can make use of all iterative attacks available, or multiple attacks such as those gained from Rapid Shot, without the need for abilities such as the Multiple Throw blade skill.\n\nThis ability replaces the Throw Mind Blade class feature normally gained by soulknives." compset="ClSpecial" summary="Make iterative attacks with your Mind Bolt">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPUEnhMBlt" name="Enhanced Mind Bolt" description="A soulbolt&apos;s mind bolt improves as the character gains higher levels. At 3rd level and every odd level thereafter, the mind bolt gains a cumulative +1 enhancement bonus that she may spend on an actual enhancement bonus or on weapon special abilities. A soulbolt&apos;s maximum enhancement bonus follows the same progression as a soulknife. The soulbolt may (and must, when her total enhancement is higher than her maximum bonus) apply any special ability from the table below instead of an enhancement bonus, as long as she meets the level requirements. A soulbolt can choose any combination of weapon special abilities and/or enhancement bonus that does not exceed the total allowed by the soulbolt&apos;s level, but she must assign at least a +1 enhancement bonus before assigning any special abilities. If the soulbolt shapes her mind bolt into two items, such as using the Mind Daggers blade skill, the enhancement bonus of her mind bolt (if any) is reduced by 1 (to a minimum of 0). If this would reduce the enhancement bonus on the mind bolt to 0 and weapon special abilities are applied, the soulbolt must reshape her mind bolt to make the options valid. Both mind bolts have the same selection of enhancement bonus and weapon special abilities (if any).\n\n{b}Note:{/b} To ehance your Mind Bolt, go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 Mind Bolt or a +1 Flaming Mind Bolt. Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="ClSpecial" summary="You can enhance your mind bolt with extra power.">
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="UseOwnLev" name="UseOwnLev" abbrev="UseOwnLev"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+field[abValue].value += field[xCount].value
+
+field[livename].text = "Enhanced Mind Bolt +" & field[abValue].value
+field[abSumm].text = "You can enhance your Mind Bolt with a total enhancement bonus of +" & field[abValue].value & "."
+field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
+    </thing>
+  <thing id="cPUAltMBlt" name="Alter Mind Bolt" description="A soulbolt gains the ability to shape her mind bolt into different weapon forms. She may change her blade&apos;s form to the long range weapon, medium range weapon, or short range weapon forms any time she forms her mind bolt." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <eval phase="First" priority="498"><![CDATA[      ~ Leaving this disabled until I figure out why this script even needs to exist...
+      done
+
+      ~ Stop now if a mind bolt type hasn't been chosen
+      doneif (hero.child[cPUSbMndBt].field[usrChosen1].ischosen = 0)
+
+      perform hero.child[cPUSbMndBt].field[usrChosen1].chosen.setfocus
+      doneif (state.isfocus = 0)
+
+      if (focus.tagis[thingid.zPUMndBlt1] <> 0) then
+        perform hero.assign[MindBlade.BoltMed]
+        perform hero.assign[MindBlade.BoltShort]
+      elseif (focus.tagis[thingid.zPUMndBlt2] <> 0) then
+        perform hero.assign[MindBlade.Light]
+        perform hero.assign[MindBlade.BoltShort]
+      elseif (focus.tagis[thingid.zPUMndBlt3] <> 0) then
+        perform hero.assign[MindBlade.Light]
+        perform hero.assign[MindBlade.BoltMed]
+      endif]]></eval>
+    </thing>
+  <thing id="cPWArrShot" name="Arresting Shot" description="As a standard action, the soulbolt can make a ranged reposition attempt against an enemy within one range increment. If the attempt is successful, the enemy is repositioned to directly adjacent to the soulbolt, occupying the space in the most direct path from the target to the soulbolt. The soulbolt must have the wrenching special ability applied to her mind bolt to use this blade skill. The soulbolt must be at least 12th level to select this blade skill." compset="CustomSpec" summary="Ranged reposition puts the target next to you." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <prereq message="Soulbolt level 12+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 12)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cPUChgShot" name="Charged Shot" description="As a standard action, the soulbolt can make a single ranged attack with her mind bolt. If the attack is successful, the mind bolt bursts with psionic energy upon impact, dealing its base weapon damaging to all creatures within a 5-ft. radius of the creature struck. A successful Reflex save (DC 10 + 1/2 soulbolt level + Wisdom modifier) halves the damage taken." compset="CustomSpec" summary="Successful attack damages all within 5 ft of target" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="abSave" tag="RefHalf"/>
+    <tag group="StandardDC" tag="aWIS"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUClRngEx" name="Close-Range Expert" description="When making ranged attacks with her mind bolt, a soulknife does not provoke attacks of opportunity as long as she maintains psionic focus." compset="CustomSpec" summary="When psi-focused, your mind bolts do not provoke AoO&apos;s." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUCRExpIm" name="Close-Range Expert, Improved" description="The soulbolt threatens adjacent squares when wielding her mind bolt and does not need to maintain psionic focus to gain the benefit of the Close-Range Expert blade skill. The soulbolt must have the Close-Range Expert blade skill and must be at least 12th level to select this blade skill." compset="CustomSpec" summary="Close-Range Expert no longer requires focus, and you threaten squares with your mind bolts." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <pickreq thing="cPUClRngEx"/>
+    <prereq message="Soulbolt level 12+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 12)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cPUDblShot" name="Double Shot" description="As a standard action, a soulbolt can expend her psychic strike to make two ranged attacks with her mind bolt. The attacks do not deal the additional damage from psychic strike." compset="CustomSpec" summary="Make two mind bolt attacks as a standard action." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUFrzBolt" name="Freezing Bolt" description="The soulbolt may, as a free action, have her mind bolt deal cold damage instead of its selected damage type. In this form, the mind bolt bypasses any damage reduction, although it is subject to resistance to cold damage, and is similarly augmented by cold vulnerability. If the mind bolt successfully deals cold damage, the target must make a Fortitude save (DC 10 + 1/2 soulbolt level + Wisdom modifier) or have its speed reduced by half for one round. Multiple attacks with a freezing bolt in the same round do not extend this duration." compset="CustomSpec" summary="Mind bolts can deal cold damage and reduce their target&apos;s speed" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="abSave" tag="RefHalf"/>
+    <tag group="StandardDC" tag="aWIS"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUSkMndDg" name="Mind Daggers" description="If a soulbolt selects the Mind Daggers blade skill, she gains the option to form her mind bolt into dagger form, dealing 1d4 points of damage, with a critical threat range of 19-20, a critical multiplier of x2, and a range increment of 30 ft. When making ranged attacks with the mind bolt in dagger form, a soulbolt adds her Strength modifier to damage rolls. When forming her mind bolt into dagger form, the soulbolt may either make a single mind bolt or a pair of mind bolts, so long as both are in dagger form. The mind bolt suffers the standard penalty for forming two items. The soulbolt may additionally use the mind bolt in dagger form to make melee attacks, but this may render some of the mind bolt&apos;s weapon special abilities non-functioning if they do not apply to melee attacks (such as the Distance special ability; see Enhanced Mind Bolt below)." compset="CustomSpec" summary="The soulbolt may form one or a pair of mind daggers in place of her normal forms" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <bootstrap thing="iPUMndDagg">
+      <containerreq phase="First" priority="99">hero#MindBlade.Dagger</containerreq>
+      </bootstrap>
+    <bootstrap thing="zPUMndBld5"></bootstrap>
+    <bootstrap thing="iPUMndDagg">
+      <containerreq phase="First" priority="99">hero#MindBlade.Dagger</containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cPURainArr" name="Rain of Arrows" description="As a standard action, the soulbolt may fire off her mind bolt and have deal damage to all creatures within a 10 ft. cube within one range increment. A successful Reflex save (DC 10 + 1/2 soulbolt level + Wis modifier) halves the damage. A soulbolt must have the charged shot blade skill and be at least 10th level in order to select this blade skill." compset="CustomSpec" summary="Deal mind bolt damage to all targets in 10-ft cube" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="abSave" tag="RefHalf"/>
+    <tag group="StandardDC" tag="aWIS"/>
+    <tag group="SpecType" tag="Attack"/>
+    <pickreq thing="cPUChgShot"/>
+    <prereq message="Soulbolt level 10+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 10)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cPU1000Bld" name="Thousand Blades" description="When making a full attack, the soulbolt may expend her psychic strike. She deals no psychic strike damage, but all of her attacks use her highest base attack bonus before factoring in other modifiers to attack rolls. A soulbolt must be at least 12th level in order to select this blade skill." compset="CustomSpec" summary="Make all attacks at highest BAB" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="abAction" tag="FullRd"/>
+    <prereq message="Soulbolt level 12+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 12)]]></validate>
+      </prereq>
     </thing>
   </document>
