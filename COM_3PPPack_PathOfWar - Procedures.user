@@ -13,7 +13,9 @@
     var s2Search as string
     s2Search = altpick.tagids[ClsCountAs.?]
     doneif (empty(s2Search) <> 0)
-    s2Search = "PathOfWar.Class & " & replace(s2Search,"ClsCountAs","thingid",0)]]></procedure>
+	s2Search = replace(s2Search,"ClsCountAs","thingid",0)
+	s2Search = replace(s2Search,"cHelp","mHelp",0)
+	]]></procedure>
   <procedure id="PWpickSrc" context="pick"><![CDATA[
     ~ This procedure builds the Class Search String to be used by other
     ~ searches for the .setfocus of the Base Class.
@@ -177,15 +179,18 @@
       var s2Search as string
       ~ Setup the FindChild Search String value
       Call PWvalidSrc
+
       ~ Set focus to the Path of War class
-      perform hero.findchild[Class,s2Search].setfocus
+	  perform hero.findchild[PWManList,s2Search].setfocus
       ~ If we found no hit get out now!
       doneif (state.isfocus = 0)
       ~ Calculate the array value which is class level minus one as we start at zero
-      s2X = focus.field[cTotalLev].value - 1     
+      s2X = focus.field[cIL].value - 1
+      doneif (s2X < 0)	  
 
       ~ Validate our level vs the number of Readied manuevers allowed
-      If (altpick.tagcount[PathOfWar.ManueverOn] > focus.field[cKnowTot].matrixvalue[s2X,1]) Then
+      ~If (altpick.tagcount[PathOfWar.ManueverOn] > focus.field[cKnowTot].matrixvalue[s2X,1]) Then
+	  If (altpick.tagcount[PathOfWar.ManueverOn] > focus.field[cManReady].arrayvalue[s2X]) Then
         ValidManOn = 0
       Endif
 
