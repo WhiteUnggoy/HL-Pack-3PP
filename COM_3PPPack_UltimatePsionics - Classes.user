@@ -1784,11 +1784,16 @@ doneif (field[abilActive].value <> 1)
 
 This should allow for people making custom races to have it work correctly for them also.
 
-Note: This does not work correctly if it is source marked.]]></comment>
+Note: This does not work correctly if it is source marked.
+Note2: DO NOT CLICK the "All Characters?" option.]]></comment>
     <tag group="ProductId" tag="PUProdID"/>
-    <tag group="Helper" tag="Bootstrap"/>
-    <eval phase="PostLevel" priority="10000">field[abValue].value += field[fcCount].value    
-#resmax[resPowerPt] += field[abValue].value</eval>
+    <eval phase="PostLevel" priority="10000">
+      ~ Give a bonus to Power Points each time we are taken
+      field[abValue].value += field[fcCount].value    
+      #resmax[resPowerPt] += field[abValue].value
+
+      ~ To correctly show up we need to apply this helper tag
+      perform assign[Helper.Bootstrap]</eval>
     </thing>
   <thing id="arPsicryPs" name="Psicrystal" description="Deprecated" compset="ClassVary" uniqueness="unique">
     <comment>Deprecated</comment>
