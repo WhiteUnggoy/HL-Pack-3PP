@@ -1805,15 +1805,16 @@ Note: This does not work correctly if it is source marked.]]></comment>
   <thing id="arPsicryPs" name="Psicrystal" description="Deprecated" compset="ClassVary" uniqueness="unique">
     <comment>Deprecated</comment>
     <fieldval field="cvArcFStar" value="1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="Helper" tag="NoCompList"/>
     <tag group="Helper" tag="MinionINT6"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="CompList" tag="arPsicryst"/>
-    <bootstrap thing="cArcFClass"></bootstrap>
+    <tag group="Helper" tag="NoCompList"/>
     <bootstrap thing="cArcFNear">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
+    <bootstrap thing="cArcFClass"></bootstrap>
     <link linkage="varies" thing="cHelpPsi"/>
     <exprreq message="Requires Psicrystal Affinity"><![CDATA[#hasfeat[fPUPsicry] <> 0]]></exprreq>
     </thing>
@@ -9721,20 +9722,21 @@ ClsAllowPs - This tag group is used to setup the Powers that this Path grants. Y
     </thing>
   <thing id="arPUTraceu" name="Traceur" description="You are a mobile fighter and you use techniques that allow you to make the most out of your momentum and your speed. Where many psychic warriors rely on their physical power or agility, you have learned that motion is just as powerful a tool at your disposal." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="277"/>
-    <arrayval field="cvBonFtMod" index="7" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvBonFtMod" index="1" value="-1"/>
+    <arrayval field="cvBonFtMod" index="7" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPWaPathSk"/>
     <tag group="fDisable" tag="fArmLight"/>
     <tag group="fDisable" tag="fArmHeavy"/>
     <tag group="ProductId" tag="PUProdID"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="fDisable" tag="fArmMedium"/>
-    <bootstrap thing="cPUChargeT">
-      <autotag group="ClSpecWhen" tag="2"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPWaPathSk"/>
     <bootstrap thing="cPUQuickSt">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUChargeT">
+      <autotag group="ClSpecWhen" tag="2"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPWa"/>
     </thing>
@@ -10739,24 +10741,25 @@ field[CustDesc].text = "Transfer Wounds (" & field[abValue].value & "d6)"]]></ev
     </thing>
   <thing id="arPUEnlMnk" name="Enlightened Monk" description="A monk&apos;s ki and psionic power have long thought to be linked. Enlightened monks learn how to use their ki to fuel their psionic abilities and ways to harness their psionic power.{br}{br}{b}Class Skills:{/b} The enlightened monk adds Autohypnosis (Wis) as a class skill." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="292"/>
-    <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvBonFtMod" index="1" value="-1"/>
     <arrayval field="cvBonFtMod" index="5" value="-2"/>
     <arrayval field="cvBonFtMod" index="9" value="-2"/>
     <arrayval field="cvBonFtMod" index="13" value="-2"/>
     <arrayval field="cvBonFtMod" index="17" value="-2"/>
+    <arrayval field="cvBonFtMod" index="0" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClassSkill" tag="skPUAhypno"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cMnkSlow"/>
-    <bootstrap thing="cPUPsiTra">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="ClassSkill" tag="skPUAhypno"/>
     <bootstrap thing="cPUAugStFi">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
     <bootstrap thing="cPUKiPsion">
       <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPUPsiTra">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpMnk"/>
     <eval phase="PreLevel" priority="10000"><![CDATA[~ Append additional text onto the Monk's Stunning Fist
@@ -10786,16 +10789,14 @@ field[CustDesc].text = "Transfer Wounds (" & field[abValue].value & "d6)"]]></ev
     </thing>
   <thing id="arPUCerInf" name="Cerebral Infiltrator" description="Tapping into psionic power can give rogues insight into the behavior of others as well as the ability to assault the sensory input of their opponents. Cerebral infiltrators focus more on dealing with people and less on dealing with traps and mechanical devices.\n\n{b}Class Skills:{/b} The cerebral infiltrator adds Autohypnosis (Wis) as a class skill.\n\n{b}Recommended Talents:{/b} Major psionics*, minor psionics*, psionic feat* \n\n{b}Recommended Advanced Talents:{/b} Slippery mind, vanish*" compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="291"/>
-    <arrayval field="cvBonFtMod" index="6" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <arrayval field="cvBonFtMod" index="6" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cRogTrapfn"/>
     <tag group="AbReplace" tag="cTrapSense"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="ClassSkill" tag="skPUAhypno"/>
-    <bootstrap thing="cPUCripSen">
-      <autotag group="ClSpecWhen" tag="3"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cRogTrapfn"/>
     <bootstrap thing="cPUCripSen">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
@@ -10807,6 +10808,9 @@ field[CustDesc].text = "Transfer Wounds (" & field[abValue].value & "d6)"]]></ev
       </bootstrap>
     <bootstrap thing="cPUEnSeRog">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUCripSen">
+      <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpRog"/>
     </thing>
@@ -10949,17 +10953,15 @@ hero.childfound[cfgPUPsFtR].field[cfgMaxF1].value += 1</eval>
     </thing>
   <thing id="arPUGaean" name="Gaean" description="Tapping into psionic power can give rogues insight into the behavior of others as well as the ability to assault the sensory input of their opponents. Cerebral infiltrators focus more on dealing with people and less on dealing with traps and mechanical devices.\n\n{b}Class Skills:{/b} The cerebral infiltrator adds Autohypnosis (Wis) as a class skill.\n\n{b}Recommended Talents:{/b} Major psionics*, minor psionics*, psionic feat* \n\n{b}Recommended Advanced Talents:{/b} Slippery mind, vanish*" compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="292"/>
-    <arrayval field="cvBonFtMod" index="6" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <arrayval field="cvBonFtMod" index="6" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cDrdThous"/>
     <tag group="AbReplace" tag="cDrdResNat"/>
     <tag group="AbReplace" tag="cWildEmp"/>
     <tag group="ClassSkill" tag="skPUAhypno"/>
-    <bootstrap thing="cPUGaeaRev">
-      <autotag group="ClSpecWhen" tag="13"/>
-      </bootstrap>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPUStrGaea">
       <autotag group="ClSpecWhen" tag="4"/>
       </bootstrap>
@@ -10968,6 +10970,9 @@ hero.childfound[cfgPUPsFtR].field[cfgMaxF1].value += 1</eval>
       </bootstrap>
     <bootstrap thing="cPUGaeComm">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUGaeaRev">
+      <autotag group="ClSpecWhen" tag="13"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpDrd"/>
     </thing>
@@ -11035,15 +11040,13 @@ hero.child[ArmorClass].field[tACNatural].value += round(armorbonus,0,-1)</eval>
     </thing>
   <thing id="arPUAberra" name="Aberrant" description="Using ectoplasm is the way a typical aegis protects and enhances the physical body. Others have discovered that by directly altering the body, they can achieve similar results, although they might have a more grisly appearance. These aberrants often have misshapen or twisted forms, yet they are equally deadly." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="261"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUCraftsm"/>
     <tag group="AbReplace" tag="cPUMastCr"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cPUAstSuit"/>
     <tag group="AbReplace" tag="cPUAstrRep"/>
-    <bootstrap thing="cPUVim">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUCraftsm"/>
     <bootstrap thing="cPUTranBod">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -11052,6 +11055,9 @@ hero.child[ArmorClass].field[tACNatural].value += round(armorbonus,0,-1)</eval>
       </bootstrap>
     <bootstrap thing="cPUPsiForm">
       <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPUVim">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
     </thing>
@@ -11823,14 +11829,12 @@ else
     </thing>
   <thing id="arPUCryWar" name="Crystal Warrior" description="Some aegii have learned to form a psicrystal and shape their astral suit around the small creature, creating a sentient suit of armor that grants them many benefits at the cost of some flexibility." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="262"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUAstrRep"/>
     <tag group="AbReplace" tag="cPUInvigSu"/>
     <tag group="AbReplace" tag="cPUCanniSu"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPUMissive">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUAstrRep"/>
     <bootstrap thing="cPUPsicryC">
       <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
@@ -11858,13 +11862,16 @@ else
     <bootstrap thing="cPUPsiAff">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
+    <bootstrap thing="cPUMissive">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
-    <eval phase="Final" priority="9999"><![CDATA[#appenddesc[cPUAstSuit,"{b}Modification from Crystal Warrior{/b}: To gain the benefits of some of the additional class features detailed below, the aegis's psicrystal must be physically touching the aegis when the aegis forms his astral suit, and the psicrystal is consumed by the astral suit while the astral suit is active.{br}{br}When the psicrystal is consumed in this fashion, it still grants all the normal benefits for being within 5 ft. of the aegis (Alertness, etc), but the aegis does not gain any of the psicrystal's special abilities (natural armor, hardness, etc.) The aegis may still form his astral suit normally, but he loses those abilities detailed below that rely upon the psicrystal being consumed by the astral suit.{br}{br}In addition, the aegis gains the ranged attack customization as a bonus customization."]
-
-hero.childfound[cPUPerfMer].field[CustDesc].text = "An aegis of 20th level has learned to become one with his suit. His suit cannot be dispelled or removed against his will by any means, although his astral suit ability still does not function within areas where psionics do not work, such as a null psionics field.{br}{br}In addition, the aegis can spend two daily uses of his reconfigure ability, to alter all of the customizations on his astral suit."]]></eval>
     <eval phase="PreLevel" priority="100000" index="2"><![CDATA[~ Disable the 7th level Reconfigure only
 perform hero.findchild[BaseClSpec,"thingid.cPUReconfi & SpecSource.cHelpPU0 & ClSpecWhen.7"].assign[Helper.SpcDisable]
 perform hero.findchild[BaseClSpec,"thingid.cPUReconfi & SpecSource.cHelpPU0 & ClSpecWhen.7"].assign[Helper.SpcReplace]]]></eval>
+    <eval phase="Final" priority="9999"><![CDATA[#appenddesc[cPUAstSuit,"{b}Modification from Crystal Warrior{/b}: To gain the benefits of some of the additional class features detailed below, the aegis's psicrystal must be physically touching the aegis when the aegis forms his astral suit, and the psicrystal is consumed by the astral suit while the astral suit is active.{br}{br}When the psicrystal is consumed in this fashion, it still grants all the normal benefits for being within 5 ft. of the aegis (Alertness, etc), but the aegis does not gain any of the psicrystal's special abilities (natural armor, hardness, etc.) The aegis may still form his astral suit normally, but he loses those abilities detailed below that rely upon the psicrystal being consumed by the astral suit.{br}{br}In addition, the aegis gains the ranged attack customization as a bonus customization."]
+
+hero.childfound[cPUPerfMer].field[CustDesc].text = "An aegis of 20th level has learned to become one with his suit. His suit cannot be dispelled or removed against his will by any means, although his astral suit ability still does not function within areas where psionics do not work, such as a null psionics field.{br}{br}In addition, the aegis can spend two daily uses of his reconfigure ability, to alter all of the customizations on his astral suit."]]></eval>
     </thing>
   <thing id="cPUPsiAff" name="Psicrystal Affinity" description="The aegis gains the Psicrystal Affinity feat as a bonus feat at 1st level. For the purposes of his psicrystal&apos;s abilities and the feat&apos;s prerequisites, the aegis&apos;s class level counts as his manifester level. This ability replaces one of the customization points gained at 1st level." compset="ClSpecial">
     <fieldval field="actName" value="Psicrystal Subsumed"/>
@@ -12016,17 +12023,15 @@ field[livename].text = "Tactical Suit (ML: " & myLvl & ")(" & field[abValue].val
     </thing>
   <thing id="arPUEctArt" name="Ectopic Artisan" description="A shaper and an aegis both use ectoplasm to achieve their desired goals. The rare aegis has learned to blend the tools of the shaper into his own skills, but by doing so he reduces the power of his astral suit. These ectopic artisans gain allies formed of ectoplasm to aid them in battle.{br}{br}{b}Class Skills:{/b} The ectopic adept gains Disable Device as a class skill." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="263"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUAstrRep"/>
     <tag group="AbReplace" tag="cPUAegDR"/>
     <tag group="AbReplace" tag="cPUReconfi"/>
     <tag group="AbReplace" tag="cPUCanniSu"/>
     <tag group="AbReplace" tag="cPUMastCr"/>
     <tag group="ClassSkill" tag="skDisable"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPUAstrMan">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUAstrRep"/>
     <bootstrap thing="cPUAstWarr">
       <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
@@ -12050,6 +12055,9 @@ field[livename].text = "Tactical Suit (ML: " & myLvl & ")(" & field[abValue].val
       </bootstrap>
     <bootstrap thing="cPEctopCre">
       <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPUAstrMan">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
     <eval phase="Final" priority="9999"><![CDATA[hero.childfound[cPUPerfMer].field[CustDesc].text = "An aegis of 20th level has learned to become one with his suit. His suit cannot be dispelled or removed against his will by any means, although his astral suit ability still does not function within areas where psionics do not work, such as a null psionics field.{br}{br}In addition, the aegis can spend two daily uses of his reconfigure ability, to alter all of the customizations on his astral suit."]]></eval>
@@ -12145,17 +12153,15 @@ field[livename].text = "Astral Swarm (" & field[abValue].value & "/day)"]]></eva
     </thing>
   <thing id="arPUTrailb" name="Trailblazer" description="The trailblazer develops skills to aid him in tracking prey and avoiding obstacles, rather than in the learning how to manipulate and craft psionic items. He uses his astral suit to improve his ability to move and handle varied environments, in addition to its use as a form of protection. Where other hunters might find armor to be a hindrance, the trailblazer&apos;s astral suit is an asset, helping him to blend in with his surroundings.{br}{br}{b}Class Skills:{/b} A trailblazer adds Survival as a class skill, but does not count Use Magic Device as a class skill." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="264"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClassSkill" tag="skSurvival"/>
     <tag group="NotClassSk" tag="skUseMagic"/>
     <tag group="AbReplace" tag="cPUCraftsm"/>
     <tag group="AbReplace" tag="cPUReconfi"/>
     <tag group="AbReplace" tag="cPUAugSuit"/>
     <tag group="AbReplace" tag="cPUMastCr"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPURapAdj">
-      <autotag group="ClSpecWhen" tag="3"/>
-      </bootstrap>
+    <tag group="ClassSkill" tag="skSurvival"/>
     <bootstrap thing="cPUUndTra">
       <autotag group="ClSpecWhen" tag="4"/>
       </bootstrap>
@@ -12164,6 +12170,9 @@ field[livename].text = "Astral Swarm (" & field[abValue].value & "/day)"]]></eva
       </bootstrap>
     <bootstrap thing="cPUAegTrk">
       <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPURapAdj">
+      <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
     </thing>
@@ -12306,20 +12315,21 @@ perform hero.child[xFly].assign[Maneuver.Perfect]]]></eval>
     </thing>
   <thing id="arPUBruDis" name="Brutal Disruptor" description="Brutal disruptors do not simply see patterns, they focus their skills on destroying them. These cryptics tend to be imposing in demeanor and understand the patterns of their opponents to strike fear into their foes.\n\n{b}Skills:{/b} The brutal disruptor adds Intimidate (Cha) as a class skill and loses Disable Device." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="264"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClassSkill" tag="skIntim"/>
     <tag group="NotClassSk" tag="skDisable"/>
     <tag group="AbReplace" tag="cRogTrapfn"/>
     <tag group="AbReplace" tag="cPUTrapmak"/>
     <tag group="AbReplace" tag="cPUSwiftTr"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPUIntPatt">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="ClassSkill" tag="skIntim"/>
     <bootstrap thing="cPUUnnerDi">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
     <bootstrap thing="cPUChanDis">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUIntPatt">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
@@ -12344,7 +12354,7 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
     </thing>
   <thing id="arPUCryDis" name="Distorter" description="Distorters understand that altering perception can truly alter reality if done right. These cryptics change the nature of the patterns around them to alter how other creatures see and interact with the world, rather than relying on mental manipulation like a telepath." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="264"/>
-    <arrayval field="cvCustTot" index="5" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="7" value="-1"/>
     <arrayval field="cvCustTot" index="9" value="-2"/>
     <arrayval field="cvCustTot" index="11" value="-2"/>
@@ -12353,14 +12363,12 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
     <arrayval field="cvCustTot" index="17" value="-2"/>
     <arrayval field="cvCustTot" index="19" value="-2"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
+    <arrayval field="cvCustTot" index="5" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="NotClassSk" tag="skDisable"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="ClassSkill" tag="skIntim"/>
     <tag group="AbReplace" tag="cPUScribTa"/>
-    <bootstrap thing="cPUBlurPa">
-      <autotag group="ClSpecWhen" tag="14"/>
-      </bootstrap>
+    <tag group="NotClassSk" tag="skDisable"/>
     <bootstrap thing="cPUSilPat">
       <autotag group="ClSpecWhen" tag="10"/>
       </bootstrap>
@@ -12369,6 +12377,9 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
       </bootstrap>
     <bootstrap thing="cPUAltApp">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUBlurPa">
+      <autotag group="ClSpecWhen" tag="14"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     </thing>
@@ -12392,7 +12403,7 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
   <thing id="arPUCryGra" name="Grammaton" description="For some cryptics, the way bullets travel through the air is a special pattern that can be used and manipulated for deadly attacks and abilities. These grammatons use handguns to destroy patterns and enemies alike.\n\n{b}Weapon and Armor Proficiency:{/b} Grammatons are proficient with all simple weapons, firearms, plus the rapier and shortbow. Grammatons are proficient with light armor but not with shields." compset="ClassVary" uniqueness="unique">
     <fieldval field="cvSpec5thS" value="Deed"/>
     <fieldval field="srcPageNum" value="265"/>
-    <arrayval field="cvCustTot" index="5" value="-2"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="7" value="-2"/>
     <arrayval field="cvCustTot" index="9" value="-2"/>
     <arrayval field="cvCustTot" index="11" value="-2"/>
@@ -12416,13 +12427,11 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
     <arrayval field="cvPsiPowTo" index="18" value="-1"/>
     <arrayval field="cvPsiPowTo" index="19" value="-1"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
+    <arrayval field="cvCustTot" index="5" value="-2"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cPUCrHideP"/>
     <tag group="AbReplace" tag="cPUScribTa"/>
-    <bootstrap thing="cPUGunKata">
-      <autotag group="ClSpecWhen" tag="10"/>
-      </bootstrap>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPUAvoAtt">
       <autotag group="ClSpecWhen" tag="19"/>
       </bootstrap>
@@ -12455,6 +12464,9 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
       </bootstrap>
     <bootstrap thing="cPUAvoAtt">
       <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPUGunKata">
+      <autotag group="ClSpecWhen" tag="10"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     <eval phase="PreLevel" priority="10000"><![CDATA[#appenddesc[cPUDisPatt,"{b}Grammaton:{/b} The grammaton is only able to use the disrupt pattern ability when making ranged attacks with a handgun."]]]></eval>
@@ -12645,7 +12657,7 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     </thing>
   <thing id="arPULstMnd" name="Lost Mind" description="You have seen the patterns inherent in the void, the meaning that hides inside the emptiness of every pattern. Your gaze has lingered upon the twisting tunnels of nothingness that permeates the space between the stars, and you have gazed upon a terrible beauty. In your mind stands a forest of dark trees, endless, their glass-leaves glittering with untold secrets, their bark the wishful thinking of the mad. You are lost in a maze of wonders, their inconceivable, unbelievable notions made real. You tug at the patterns that hold the world together and laugh as it all unravels in a beautiful dance of destruction.\n\n{b}Powers Known:{/b} The lost mind gains {i}know direction and location{/i} as a talent at 1st level." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="265"/>
-    <arrayval field="cvPsiPowTo" index="12" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvPsiPowTo" index="13" value="-1"/>
     <arrayval field="cvPsiPowTo" index="14" value="-1"/>
     <arrayval field="cvPsiPowTo" index="15" value="-1"/>
@@ -12659,14 +12671,12 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     <arrayval field="cvCustTot" index="17" value="-1"/>
     <arrayval field="cvCustTot" index="19" value="-1"/>
     <arrayval field="cvPsiPowTo" index="11" value="-1"/>
+    <arrayval field="cvPsiPowTo" index="12" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUTrapmak"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cRogTrapfn"/>
     <tag group="AbReplace" tag="cPUCrHideP"/>
-    <bootstrap thing="cPUInsMadm">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUTrapmak"/>
     <bootstrap thing="cPUDecSec">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -12678,6 +12688,9 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
       </bootstrap>
     <bootstrap thing="puKnowDL1">
       <autotag group="SpellType" tag="cHelpPU1"/>
+      </bootstrap>
+    <bootstrap thing="cPUInsMadm">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     </thing>
@@ -12935,7 +12948,7 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     </thing>
   <thing id="arPUPattBr" name="Pattern Breaker" description="A pattern is only as strong as its weakest link, and pattern breakers have learned to find that link and exploit it. These cryptics excel at disabling patterns or destroying them entirely." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="266"/>
-    <arrayval field="cvCustTot" index="1" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
     <arrayval field="cvCustTot" index="5" value="-1"/>
     <arrayval field="cvCustTot" index="7" value="-1"/>
@@ -12945,13 +12958,11 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     <arrayval field="cvCustTot" index="15" value="-2"/>
     <arrayval field="cvCustTot" index="17" value="-2"/>
     <arrayval field="cvCustTot" index="19" value="-2"/>
+    <arrayval field="cvCustTot" index="1" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cPUHiddenP"/>
     <tag group="AbReplace" tag="cPUSwiftTr"/>
-    <bootstrap thing="cPUDisLock">
-      <autotag group="ClSpecWhen" tag="2"/>
-      </bootstrap>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPUDisWA">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
@@ -12960,6 +12971,9 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
       </bootstrap>
     <bootstrap thing="cPUDisAura">
       <autotag group="ClSpecWhen" tag="16"/>
+      </bootstrap>
+    <bootstrap thing="cPUDisLock">
+      <autotag group="ClSpecWhen" tag="2"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     </thing>
@@ -13369,7 +13383,7 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     </thing>
   <thing id="arPUNimBla" name="Nimble Blade" description="Raw power is not the only way to overcome enemies in melee, and nimble blades are the proof of that. These soulknives value finesse instead of power to make deadly melee attacks." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="283"/>
-    <arrayval field="cvCustTot" index="1" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
     <arrayval field="cvCustTot" index="5" value="-1"/>
     <arrayval field="cvCustTot" index="7" value="-1"/>
@@ -13380,13 +13394,11 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     <arrayval field="cvCustTot" index="17" value="-1"/>
     <arrayval field="cvCustTot" index="19" value="-1"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <arrayval field="cvCustTot" index="1" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="fDisable" tag="fArmShield"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="fDisable" tag="fArmMedium"/>
-    <bootstrap thing="cPUNBMinFi">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="fDisable" tag="fArmShield"/>
     <bootstrap thing="cPUNBWFin">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -13398,6 +13410,9 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
       </bootstrap>
     <bootstrap thing="cPUNBAdaFo">
       <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPUNBMinFi">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpSkn"/>
     <eval phase="PreLevel" priority="100000"><![CDATA[~ Disable the 7th level Enhanced Mind Blade only
@@ -13437,9 +13452,9 @@ foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
     <tag group="ProductId" tag="PUProdID"/>
     </thing>
   <thing id="arPUSlbolt" name="Soulbolt" description="Some soulknives choose to focus on ranged attacks, launching a mind bolt at their enemies instead of wielding a blade of energy." compset="ClassVary" uniqueness="unique">
+    <fieldval field="srcPageNum" value="283"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClVaryName" tag="AppParen"/>
-    <tag group="ProductId" tag="HLCommunit"/>
     <tag group="fInclude" tag="fPointBlnk"/>
     <tag group="fExclude" tag="fPowerAtt"/>
     <tag group="fExclude" tag="fTwoWep"/>
@@ -13449,12 +13464,8 @@ foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
     <tag group="AbReplace" tag="cSknShaMB"/>
     <tag group="AbReplace" tag="cSknThrMB"/>
     <tag group="AbReplace" tag="cSknEnhMB"/>
-    <bootstrap thing="cPUSbMndBt">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
-    <bootstrap thing="cPULnchMB">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPUEnhMBlt">
       <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
@@ -13483,6 +13494,12 @@ foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
       <autotag group="ClSpecWhen" tag="19"/>
       </bootstrap>
     <bootstrap thing="cPUShpMBlt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUSbMndBt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPULnchMB">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpSkn"/>
