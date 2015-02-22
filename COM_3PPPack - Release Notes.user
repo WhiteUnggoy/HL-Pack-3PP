@@ -15,6 +15,7 @@
 <li>Path of War - (TheIronGolem) Warlords are now correctly marked as proficient with shields (not just bucklers).</li>
 <li>Path of War - (TheIronGolem) Initiating prestige classes now correctly add their full level to IL of existing initiating classes.</li>
 <li>Path of War - (TheIronGolem) Fixed a bug that allowed initiating PrC's to select their own configurables for IL calculation.</li>
+<li>Ultimate Psionics - (TCArknight) Enlightened Monk - Fixed Monk bonus feat progression</li>
 <li>Ultimate Psionics - (psych777) Fixed Mind Shield as it wasn't removing AC bonus when 2H mindblade equipped.</li>
 <li>Ultimate Psionics - (psych777) Absorbing Blade - added summary text.</li>
 <li>Ultimate Psionics - (psych777) Dazzling Blade - added DC.</li>

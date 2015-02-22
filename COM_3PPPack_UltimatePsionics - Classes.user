@@ -10587,20 +10587,24 @@ field[CustDesc].text = "Transfer Wounds (" & field[abValue].value & "d6)"]]></ev
     </thing>
   <thing id="arPUEnlMnk" name="Enlightened Monk" description="A monk&apos;s ki and psionic power have long thought to be linked. Enlightened monks learn how to use their ki to fuel their psionic abilities and ways to harness their psionic power.{br}{br}{b}Class Skills:{/b} The enlightened monk adds Autohypnosis (Wis) as a class skill." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="292"/>
-    <arrayval field="cvBonFtMod" index="6" value="-1"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <arrayval field="cvBonFtMod" index="1" value="-1"/>
+    <arrayval field="cvBonFtMod" index="5" value="-2"/>
+    <arrayval field="cvBonFtMod" index="9" value="-2"/>
+    <arrayval field="cvBonFtMod" index="13" value="-2"/>
+    <arrayval field="cvBonFtMod" index="17" value="-2"/>
     <usesource source="pPsiUn"/>
     <tag group="ClassSkill" tag="skPUAhypno"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cMnkSlow"/>
+    <bootstrap thing="cPUPsiTra">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
     <bootstrap thing="cPUAugStFi">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
     <bootstrap thing="cPUKiPsion">
       <autotag group="ClSpecWhen" tag="4"/>
-      </bootstrap>
-    <bootstrap thing="cPUPsiTra">
-      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpMnk"/>
     <eval phase="PreLevel" priority="10000"><![CDATA[~ Append additional text onto the Monk's Stunning Fist
