@@ -16,7 +16,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level (D)"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -41,7 +41,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="Yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="3" name="3" abbrev="3"/>
@@ -65,7 +65,7 @@ Initial functionailty</info_history>
     <fieldval field="sRange" value="personal"/>
     <fieldval field="sTarget" value="you"/>
     <fieldval field="sDuration" value="10 minutes/level"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V"/>
     <tag group="sLevel" tag="1"/>
     <tag group="sComp" tag="MorDF"/>
@@ -86,7 +86,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 min./level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="See text"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="6" name="6" abbrev="6"/>
     <tag group="sResist" tag="SeeText" name="See Text" abbrev="See Text"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
@@ -109,7 +109,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 min./level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="See text"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="5"/>
     <tag group="sResist" tag="SeeText" name="See Text" abbrev="See Text"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
@@ -131,7 +131,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min/level (D)"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -157,7 +157,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min/level (D)"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="4"/>
     <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
@@ -183,7 +183,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Fortitude negates (harmless)"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sClass" tag="cHelpMag"/>
     <tag group="sClass" tag="cHelpSor"/>
     <tag group="sComp" tag="V"/>
@@ -211,7 +211,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Fortitude negates (harmless)"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="M"/>
     <tag group="sLevel" tag="1"/>
     <tag group="sRange" tag="Close"/>
@@ -234,7 +234,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 day/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -259,7 +259,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="Force" name="Force" abbrev="Force"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
@@ -284,7 +284,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="Force" name="Force" abbrev="Force"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
@@ -308,7 +308,7 @@ Initial functionailty</info_history>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sRange" value="Long (400 ft. + 40 ft./level)"/>
     <fieldval field="sArea" value="20-ft.-radius-spread"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sCastTime" tag="Action1" name="1 action" abbrev="1 action"/>
     <tag group="sClass" tag="cHelpWit" name="Witch" abbrev="Witch"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
@@ -336,7 +336,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Permanent until discharged (D)"/>
     <fieldval field="sSave" value="Reflex half; see text"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Permanent" name="Permanent" abbrev="Permanent"/>
     <tag group="sDuration" tag="UntilTrig" name="Until Used" abbrev="Until Used"/>
     <tag group="sLevel" tag="3"/>
@@ -361,7 +361,7 @@ Initial functionailty</info_history>
     <fieldval field="sCompDesc" value="a piece of the creature whose form you plan to assume"/>
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="1 min./level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
@@ -383,7 +383,7 @@ Initial functionailty</info_history>
     <fieldval field="sCompDesc" value="a piece of the creature whose form you plan to assume"/>
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="1 min./level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
@@ -405,7 +405,7 @@ Initial functionailty</info_history>
     <fieldval field="sRange" value="touch"/>
     <fieldval field="sTarget" value="animal touched"/>
     <fieldval field="sDuration" value="1 round/level (D); see text"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V"/>
     <tag group="sComp" tag="S"/>
     <tag group="sComp" tag="DF"/>
@@ -427,7 +427,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
     <fieldval field="sCompDesc" value="V, S, M (brass flash worth 100 gp)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
@@ -448,7 +448,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Reflex partial (see text)"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDescript" tag="Fire" name="Fire" abbrev="Fire"/>
     <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
@@ -474,7 +474,7 @@ Initial functionailty</info_history>
     <fieldval field="sTarget" value="one creature/level, no two of which can be more than 30 ft. apart"/>
     <fieldval field="sSave" value="Fortitude negates (harmless)"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSchool" tag="Transmutat"/>
     <tag group="sClass" tag="cHelpDrd"/>
     <tag group="sClass" tag="cHelpWit"/>
@@ -499,7 +499,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="Will negates; see text"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="2"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
@@ -526,7 +526,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 minute/level"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V"/>
     <tag group="sComp" tag="S"/>
     <tag group="sLevel" tag="4"/>
@@ -553,7 +553,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 day/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="4" name="4" abbrev="4"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -579,7 +579,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
     <fieldval field="sRange" value="touch"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
     <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
     <tag group="sSchool" tag="Air" name="Air Elemental" abbrev="Air Elemental"/>
@@ -603,7 +603,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
     <fieldval field="sRange" value="touch"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
     <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
     <tag group="sSchool" tag="Air" name="Air Elemental" abbrev="Air Elemental"/>
@@ -623,7 +623,7 @@ Initial functionailty</info_history>
   <thing id="spSGChldlk" name="Childlike" description="As {i}disguise self{/i}, but only to disguise yourself as an adolescent member of a race one or two  size categories bigger than yourself.\n\n{i}Disguise Self{/i}:\nYou make yourself - including clothing, armor, weapons, and equipment - look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your creature type (although you can appear as another subtype). Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person or gender. The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment. If you use this spell to create a disguise, you get a +10 bonus on the Disguise check. A creature that interacts with the glamer gets a Will save to recognize it as an illusion." compset="Spell" summary="Changes your appearance.">
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="10 min./level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
@@ -649,7 +649,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="2" name="2" abbrev="2"/>
@@ -676,7 +676,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Abjur" name="Abjuration" abbrev="Abjur"/>
@@ -696,7 +696,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="6"/>
@@ -719,7 +719,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="8"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -743,7 +743,7 @@ Initial functionailty</info_history>
     <fieldval field="sTarget" value="creature touched"/>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sRange" value="touch"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="M" name="Material" abbrev="{ref s_M}M{ref}"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
@@ -767,7 +767,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 min./level (D)"/>
     <fieldval field="sSave" value="See text"/>
     <fieldval field="sResist" value="See text"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="Light" name="Light" abbrev="Light"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
@@ -792,7 +792,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Concentration, up to 10 min./level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="2"/>
@@ -813,7 +813,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
@@ -833,7 +833,7 @@ Initial functionailty</info_history>
     <fieldval field="sFocusCost" value="25"/>
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="Instantaneous"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
     <tag group="sLevel" tag="4"/>
@@ -854,7 +854,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Concentration, up to 1 minute/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="1" name="1" abbrev="1"/>
@@ -877,7 +877,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 minutes/level"/>
     <fieldval field="sTarget" value="one creature"/>
     <fieldval field="sSave" value="Fort negates"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="MorDF" name="Material or Divine Focus" abbrev="{ref s_M}M{ref}/{ref s_DF}DF{ref}"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
@@ -902,7 +902,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level (D); see text"/>
     <fieldval field="sSave" value="Will negates; see text"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="MindAffect" name="Mind-Affecting" abbrev="Mind-Affecting"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -929,7 +929,7 @@ Initial functionailty</info_history>
   <thing id="spSGFairFc" name="Fair of Face" description="As {i}disguise self{/i}, but you can only look like a more attractive, idealized version of yourself. You gain a +5 competence bonus to Charisma-based ability and skill checks for the duration of the spell.\n\n{i}Disguise Self{/i}:\nYou make yourself - including clothing, armor, weapons, and equipment - look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your creature type (although you can appear as another subtype). Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person or gender. The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment. If you use this spell to create a disguise, you get a +10 bonus on the Disguise check. A creature that interacts with the glamer gets a Will save to recognize it as an illusion." compset="Spell" summary="Changes your appearance.">
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="10 min./level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
@@ -950,7 +950,7 @@ Initial functionailty</info_history>
     <fieldval field="sTarget" value="one living creature"/>
     <fieldval field="sSave" value="Reflex negates (harmless)"/>
     <fieldval field="sResist" value="yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="SpellEff" tag="BuffSkill"/>
     <tag group="sClass" tag="cHelpBrd"/>
     <tag group="sClass" tag="cHelpInq"/>
@@ -975,7 +975,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Permanent"/>
     <fieldval field="sSave" value="none"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Necromancy" name="Necromancy" abbrev="Necro"/>
@@ -995,7 +995,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 min./level (D)"/>
     <fieldval field="sSave" value="None; see text"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="7"/>
@@ -1021,7 +1021,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sEffect" value="all the target’s spells to deal average damage."/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="2" name="2" abbrev="2"/>
@@ -1047,7 +1047,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sEffect" value="all the target’s spells to deal average damage."/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="1"/>
     <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -1071,7 +1071,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Concentration, up to 1 min./level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sClass" tag="cHelpSor" name="Sorcerer" abbrev="Sorcerer"/>
     <tag group="sClass" tag="cHelpSum" name="Summoner" abbrev="Summoner"/>
     <tag group="sClass" tag="cHelpWit" name="Witch" abbrev="Witch"/>
@@ -1102,7 +1102,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="60 days or until discharged"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="UntilTrig" name="Until Used" abbrev="Until Used"/>
     <tag group="sLevel" tag="5" name="5" abbrev="5"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
@@ -1126,7 +1126,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Permanent until discharged (D)"/>
     <fieldval field="sSave" value="Reflex half; see text"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="Fire" name="Fire" abbrev="Fire"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Permanent" name="Permanent" abbrev="Permanent"/>
@@ -1155,7 +1155,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="2"/>
     <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
@@ -1176,7 +1176,7 @@ Initial functionailty</info_history>
     <fieldval field="sRange" value="personal"/>
     <fieldval field="sTarget" value="you"/>
     <fieldval field="sDuration" value="1 minute"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V"/>
     <tag group="sComp" tag="S"/>
     <tag group="sComp" tag="M"/>
@@ -1195,7 +1195,7 @@ Initial functionailty</info_history>
     <fieldval field="sCompDesc" value="a potion of bull&apos;s strength, which you drink and whose effects are subsumed by the spell effects"/>
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="1 minute/level"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sClass" tag="cHelpWit" name="Witch" abbrev="Witch"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
@@ -1217,7 +1217,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
     <fieldval field="sCompDesc" value="0(rare inks and parchment with a cost equal to have the cost of copying the spellbook’s spells into a new spellbook)   "/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
@@ -1239,7 +1239,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
     <fieldval field="sCompDesc" value="0(rare inks and parchment with a cost equal to have the cost of copying the spellbook’s spells into a new spellbook)   "/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
@@ -1260,7 +1260,7 @@ Initial functionailty</info_history>
     <fieldval field="sRange" value="personal"/>
     <fieldval field="sTarget" value="you"/>
     <fieldval field="sDuration" value="1 hour/level or until triggered, then 1 round/level"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V"/>
     <tag group="sComp" tag="S"/>
     <tag group="sComp" tag="M"/>
@@ -1282,7 +1282,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Permanent until discharged (D)"/>
     <fieldval field="sSave" value="None or Will Negates; See Text"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Permanent" name="Permanent" abbrev="Permanent"/>
@@ -1310,7 +1310,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="3" name="3" abbrev="3"/>
@@ -1335,7 +1335,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="4"/>
     <tag group="sRange" tag="Long" name="Long (400 + 40 ft./level)" abbrev="{ref s_Long}Long{ref}"/>
@@ -1358,7 +1358,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="4"/>
     <tag group="sRange" tag="Long" name="Long (400 + 40 ft./level)" abbrev="{ref s_Long}Long{ref}"/>
@@ -1382,7 +1382,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Permanent until discharged (D)"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="4" name="4" abbrev="4"/>
     <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -1409,7 +1409,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="6"/>
@@ -1436,7 +1436,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None and Will negates (object)"/>
     <fieldval field="sResist" value="No and yes (object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
     <tag group="sSubschool" tag="Teleport" name="Teleportation" abbrev="Teleportation"/>
@@ -1457,7 +1457,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None and Will negates (object)"/>
     <fieldval field="sResist" value="No and yes (object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
     <tag group="sSubschool" tag="Teleport" name="Teleportation" abbrev="Teleportation"/>
@@ -1478,7 +1478,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 minutes/level"/>
     <fieldval field="sSave" value="See text"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
     <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
@@ -1504,7 +1504,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level (D); see text"/>
     <fieldval field="sSave" value="Will negates; see text"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="MindAffect" name="Mind-Affecting" abbrev="Mind-Affecting"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -1528,7 +1528,7 @@ Initial functionailty</info_history>
   <thing id="spSGMkySut" name="Monkey Suit" description="As {i}glibness{/i}, but you increase the level of formality of the target’s appearance. The effect of this spell gives the target a bonus equal to your caster level on a single Charisma-based skill check or Charisma ability check of the target’s choice made within the spell’s duration.\n\n{i}Glibness{/i}:\nYour speech becomes fluent and more believable, causing those who hear you to believe every word you say. You gain a +20 bonus on Bluff checks made to convince another of the truth of your words. This bonus doesn&apos;t apply to other uses of the Bluff skill, such as feinting in combat, creating a diversion to hide, or communicating a hidden message via innuendo. If a magical effect is used against you that would detect your lies or force you to speak the truth, the user of the effect must succeed on a caster level check (1d20 + caster level) against a DC of 15 + your caster level to succeed. Failure means the effect does not detect your lies or force you to speak only the truth." compset="Spell" summary="You gain +20 bonus on Bluff checks, and your lies can escape magical discernment.">
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="10 min./level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -1548,7 +1548,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
@@ -1570,7 +1570,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="2" name="2" abbrev="2"/>
     <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
@@ -1593,7 +1593,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="2 hours/level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="Good" name="Good" abbrev="Good"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -1619,7 +1619,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Permanent"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="SpellEff" tag="NegWill" name="Decrease Will Save Bonus" abbrev="Decrease Will Save Bonus"/>
     <tag group="sCastTime" tag="Action1" name="1 action" abbrev="1 action"/>
     <tag group="sClass" tag="cHelpClr" name="Cleric" abbrev="Cleric"/>
@@ -1647,7 +1647,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="4"/>
     <tag group="sRange" tag="Medium" name="Medium (100 + 10 ft./level)" abbrev="{ref s_Medium}Med{ref}"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
@@ -1670,7 +1670,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
     <fieldval field="sTarget" value="steed touched"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
@@ -1696,7 +1696,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
     <fieldval field="sTarget" value="1 steed/2 levels, no two of which may be more than 30 feet apart"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
@@ -1722,7 +1722,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
@@ -1746,7 +1746,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
     <tag group="sSchool" tag="Conjur" name="Conjuration" abbrev="Conjur"/>
@@ -1768,7 +1768,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSchool" tag="Enchant"/>
     <tag group="sSubschool" tag="Compulsion"/>
     <tag group="sSubschool" tag="MindAffect"/>
@@ -1793,7 +1793,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round\level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="5"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -1817,7 +1817,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round\level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="2"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -1837,7 +1837,7 @@ Initial functionailty</info_history>
   <thing id="spSGRapSht" name="Rap Sheet" description="As {i}innocence{/i} but skill bonus applies to Knowledge (local) checks to know about someone’s past crimes (if any).\n\n{i}Innocence{/i}:\nYou surround yourself with an aura of innocence and trustworthiness. You gain a +10 competence bonus on Bluff skill checks to convince others of your innocence. They find it difficult to believe you capable of any wrongdoing. This bonus does not apply to other uses of the Bluff skill, such as feinting in combat, creating a diversion to hide, or communicating secret messages via innuendo, nor does it apply to any use of the skill to convince anyone of anything other than your complete innocence and blamelessness." compset="Spell" summary="Gain +10 on Bluff checks to seem innocent.">
     <fieldval field="sTarget" value="you"/>
     <fieldval field="sDuration" value="1 minute/level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
@@ -1880,7 +1880,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
     <tag group="sLevel" tag="4"/>
     <tag group="sRange" tag="Medium" name="Medium (100 + 10 ft./level)" abbrev="{ref s_Medium}Med{ref}"/>
@@ -1903,7 +1903,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="See text"/>
     <fieldval field="sSave" value="Fortitude negates (object); see text"/>
     <fieldval field="sResist" value="Yes (object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="SeeText" name="See Text" abbrev="See Text"/>
     <tag group="sLevel" tag="8" name="8" abbrev="8"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -1929,7 +1929,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
     <fieldval field="sRange" value="close (25 ft. +5 ft./2 levels)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
     <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
     <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
@@ -1954,7 +1954,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
     <fieldval field="sRange" value="close (25 ft. +5 ft./2 levels)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
     <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>
     <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
@@ -1978,7 +1978,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="instantiations"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSchool" tag="Conjur"/>
     <tag group="sSubschool" tag="Teleport"/>
     <tag group="sComp" tag="V"/>
@@ -1999,7 +1999,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="6"/>
@@ -2022,7 +2022,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sSave" value="Reflex negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDescript" tag="Fire" name="Fire" abbrev="Fire"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -2049,7 +2049,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level (D)"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="F" name="Focus" abbrev="{ref s_F}F{ref}"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
@@ -2079,7 +2079,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Will partial"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="Fire" name="Fire" abbrev="Fire"/>
     <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
     <tag group="sLevel" tag="3"/>
@@ -2103,7 +2103,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level (D)"/>
     <fieldval field="sSave" value="Will disbelief (if interacted with)"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="6"/>
@@ -2129,7 +2129,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level (D)"/>
     <fieldval field="sSave" value="Will disbelief (if interacted with)"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="7"/>
@@ -2154,7 +2154,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="See text"/>
     <fieldval field="sSave" value="Will disbelief (if interacted with); varies; see text;"/>
     <fieldval field="sResist" value="Yes; see text"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
     <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
     <tag group="sSchool" tag="Illusion" name="Illusion" abbrev="Illu"/>
@@ -2176,7 +2176,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Permanent (D)"/>
     <fieldval field="sSave" value="Fortitude negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Permanent" name="Permanent" abbrev="Permanent"/>
     <tag group="sLevel" tag="2" name="2" abbrev="2"/>
     <tag group="sRange" tag="Medium" name="Medium (100 + 10 ft./level)" abbrev="{ref s_Medium}Med{ref}"/>
@@ -2200,7 +2200,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Will negates (object)"/>
     <fieldval field="sResist" value="Yes (object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
     <tag group="sSchool" tag="Transmutat" name="Transmutation" abbrev="Trans"/>
     <tag group="sCastTime" tag="Action1" name="1 action" abbrev="1 action"/>
@@ -2222,7 +2222,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sRange" tag="Medium" name="Medium (100 + 10 ft./level)" abbrev="{ref s_Medium}Med{ref}"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
@@ -2243,7 +2243,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="3"/>
@@ -2266,7 +2266,7 @@ Initial functionailty</info_history>
     <fieldval field="sTarget" value="creature touched"/>
     <fieldval field="sDuration" value="1 hour/level (D)"/>
     <fieldval field="sRange" value="touch"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -2289,7 +2289,7 @@ Initial functionailty</info_history>
     <fieldval field="sRange" value="touch"/>
     <fieldval field="sTarget" value="creature touched"/>
     <fieldval field="sResist" value="yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="10Minute"/>
     <tag group="sDuration" tag="PerLevel"/>
     <tag group="sCastTime" tag="Action1"/>
@@ -2311,7 +2311,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="1" name="1" abbrev="1"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -2334,7 +2334,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="2" name="2" abbrev="2"/>
@@ -2359,7 +2359,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="3" name="3" abbrev="3"/>
@@ -2383,7 +2383,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="4" name="4" abbrev="4"/>
@@ -2408,7 +2408,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="5" name="5" abbrev="5"/>
@@ -2433,7 +2433,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="6" name="6" abbrev="6"/>
@@ -2458,7 +2458,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="7" name="7" abbrev="7"/>
@@ -2483,7 +2483,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="8" name="8" abbrev="8"/>
@@ -2508,7 +2508,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round 2/levels"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="9" name="9" abbrev="9"/>
@@ -2532,7 +2532,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
     <tag group="sSave" tag="WillNeg" name="Will Negates" abbrev="Will Negates"/>
@@ -2553,7 +2553,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level or until imbibed"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="Yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="2"/>
@@ -2581,7 +2581,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level or until imbibed"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="Yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="3"/>
@@ -2609,7 +2609,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level or until imbibed"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="Yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="4"/>
@@ -2637,7 +2637,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level or until imbibed"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="Yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="5"/>
@@ -2664,7 +2664,7 @@ Initial functionailty</info_history>
     <fieldval field="sTarget" value="You"/>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sSave" value="Will partial (see text)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="4"/>
     <tag group="sRange" tag="Personal" name="Personal" abbrev="{ref s_Pers}Pers{ref}"/>
@@ -2686,7 +2686,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="2" name="2" abbrev="2"/>
@@ -2712,7 +2712,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Reflex half"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
     <tag group="sSave" tag="RefHalf" name="Reflex Half" abbrev="Reflex Half"/>
     <tag group="sSchool" tag="Evocation" name="Evocation" abbrev="Evoc"/>
@@ -2736,7 +2736,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
     <fieldval field="sArea" value="cylinder (20-ft. radius, 40 ft. high)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="None" name="None" abbrev="None"/>
@@ -2760,7 +2760,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 min./level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -2786,7 +2786,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="10 min./level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="7"/>
     <tag group="sRange" tag="Close" name="Close (25 + 5 ft./2 levels)" abbrev="{ref s_Close}Cls{ref}"/>
@@ -2813,7 +2813,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="Yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="3" name="3" abbrev="3"/>
@@ -2842,7 +2842,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Fortitude partial (see text) "/>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sTarget" value="1 living creature per 2 levels, no  two of which may be more than 30 feet apart "/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDescript" tag="Fire" name="Fire" abbrev="Fire"/>
     <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
     <tag group="sLevel" tag="5"/>
@@ -2868,7 +2868,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Fortitude partial (see text) "/>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sTarget" value="1 living creature per 2 levels, no  two of which may be more than 30 feet apart "/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sRange" tag="Long" name="Long (400 + 40 ft./level)" abbrev="{ref s_Long}Long{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -2893,7 +2893,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 min./level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Minute" name="1+ Minutes" abbrev="1+ Minutes"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="5"/>
@@ -2922,7 +2922,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="2 hours/level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDescript" tag="Good" name="Good" abbrev="Good"/>
@@ -2951,7 +2951,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="2 hours/level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDescript" tag="Good" name="Good" abbrev="Good"/>
@@ -2982,7 +2982,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Will negates; see text"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -3009,7 +3009,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="Will negates; see text"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Instant" name="Instantaneous" abbrev="Instantaneous"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -3034,7 +3034,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="1" name="1" abbrev="1"/>
@@ -3058,7 +3058,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 hour/level"/>
     <fieldval field="sSave" value="Will negates (harmless, object)"/>
     <fieldval field="sResist" value="Yes (harmless, object)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Hour" name="1+ Hours" abbrev="1+ Hours"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sLevel" tag="4" name="4" abbrev="4"/>
@@ -3084,7 +3084,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless);"/>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sTarget" value="creature touched"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDescript" tag="Air" name="Air" abbrev="Air"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -3110,7 +3110,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates (harmless);"/>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sTarget" value="creature touched"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -3137,7 +3137,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="See text"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sRange" tag="Medium" name="Medium (100 + 10 ft./level)" abbrev="{ref s_Medium}Med{ref}"/>
     <tag group="sResist" tag="No" name="No" abbrev="No"/>
     <tag group="sSave" tag="SeeText" name="See Text" abbrev="See Text"/>
@@ -3161,7 +3161,7 @@ Initial functionailty</info_history>
     <fieldval field="sEffect" value="1 conjuration (healing) spell cast delayed"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sRange" tag="Touch"/>
     <tag group="sSchool" tag="Divination"/>
     <tag group="sLevel" tag="6"/>
@@ -3183,7 +3183,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sSave" value="Will negates (harmless), but see below"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S"/>
     <tag group="sClass" tag="cHelpWiz"/>
     <tag group="sRange" tag="Close"/>
@@ -3206,7 +3206,7 @@ Initial functionailty</info_history>
     <fieldval field="sCompDesc" value="a spool of thread or string"/>
     <fieldval field="sTarget" value="you"/>
     <fieldval field="sDuration" value="1 day/level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Day" name="1+ Days" abbrev="1+ Days"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -3225,7 +3225,7 @@ Initial functionailty</info_history>
     <fieldval field="sCompDesc" value="a spool of thread or string"/>
     <fieldval field="sTarget" value="you"/>
     <fieldval field="sDuration" value="1 day/level (D)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sDuration" tag="Day" name="1+ Days" abbrev="1+ Days"/>
     <tag group="sDuration" tag="Dismiss" name="Dismissable" abbrev="Dismissable"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -3248,7 +3248,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="1 round/level"/>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
     <tag group="sDuration" tag="Round" name="1+ Rounds" abbrev="1+ Rounds"/>
@@ -3279,7 +3279,7 @@ Initial functionailty</info_history>
     <fieldval field="sSave" value="Will negates"/>
     <fieldval field="sResist" value="Yes"/>
     <fieldval field="sRange" value="short (25 ft. +5 ft./2 levels)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sCastTime" tag="Action1" name="1 action" abbrev="1 action"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
@@ -3307,7 +3307,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="2 hours/level"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="No"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDescript" tag="Good" name="Good" abbrev="Good"/>
@@ -3335,7 +3335,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="instantaneous"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sSubschool" tag="Teleport"/>
     <tag group="sComp" tag="V"/>
     <tag group="sComp" tag="S"/>
@@ -3360,7 +3360,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="instantaneous"/>
     <fieldval field="sSave" value="Will negates (harmless)"/>
     <fieldval field="sResist" value="yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="S"/>
     <tag group="sComp" tag="DF"/>
     <tag group="sCastTime" tag="Action1"/>
@@ -3383,7 +3383,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Concentration + 1 round/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sClass" tag="cHelpWiz" name="Wizard" abbrev="Wizard"/>
     <tag group="sComp" tag="S" name="Somatic" abbrev="{ref s_S}S{ref}"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
@@ -3409,7 +3409,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Concentration + 1 round/level (D)"/>
     <fieldval field="sSave" value="None"/>
     <fieldval field="sResist" value="Yes"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sComp" tag="V" name="Verbal" abbrev="{ref s_V}V{ref}"/>
     <tag group="sDescript" tag="MindAffect" name="Mind-Affecting" abbrev="Mind-Affecting"/>
     <tag group="sDuration" tag="PerLevel" name="Level-based" abbrev="Level-based"/>
@@ -3435,7 +3435,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None, see text"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sLevel" tag="6"/>
     <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
@@ -3463,7 +3463,7 @@ Initial functionailty</info_history>
     <fieldval field="sDuration" value="Instantaneous"/>
     <fieldval field="sSave" value="None, see text"/>
     <fieldval field="sResist" value="Yes (harmless)"/>
-    <usesource source="110SPV4"/>
+    <usesource source="src110SPV4"/>
     <tag group="sRange" tag="Touch" name="Touch" abbrev="{ref s_Touch}Tch{ref}"/>
     <tag group="sResist" tag="Yes" name="Yes" abbrev="Yes"/>
     <tag group="sSave" tag="Harmless" name="Harmless" abbrev="Harmless"/>

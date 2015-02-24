@@ -115,6 +115,15 @@
     sortorder="10"
     description="Krazy Kragnar&apos;s Magic Staff Emporium (PFRPG) PDF ">
     </source>
+  <source
+    id="KKBlkMagic"
+    name="RGG - Krazy Kragnar's Black Market Magic Items"
+    selectable="yes"
+    parent="pSGG"
+    sortorder="10"
+    description="Krazy Kragnar&apos;s Black Market Magic Items (PFRPG) PDF ">
+    </source>	
+
 
   <!-- New child source of SGG for Classes -->
   <source
@@ -224,12 +233,28 @@
     description="SGG Feats of Runic Might II.">
     </source>
   <source
-    id="110SPV4"
+    id="src110SPV4"
     name="RGG - 110 Spell Variants 4"
     selectable="yes"
     parent="SGGMagic"
     sortorder="0"
     description="SGG 110 Spell Variants Volume 4.">
+    </source>
+  <source
+    id="SGG_HOverP"
+    name="RGG - Horrifically Overpowered Feats"
+    selectable="yes"
+    parent="SGGFeatOf"
+    sortorder="0"
+    description="SGG - Horrifically Overpowered Feats.">
+    </source>
+  <source
+    id="SGG_MOverP"
+    name="RGG - More Horrifically Overpowered Feats"
+    selectable="yes"
+    parent="SGGFeatOf"
+    sortorder="0"
+    description="SGG - More Horrifically Overpowered Feats.">
     </source>
 
   <!-- New child source of SGG for Bullet Points -->
@@ -417,6 +442,14 @@
     sortorder="0"
     description="Bullet Points: 10 Monster Feats (PFRPG) PDF">
     </source>
+ <source
+    id="BP9AlcBomb"
+    name="RGG - Alchemical Bomb Discoveries (9)"
+    selectable="yes"
+    parent="SGGBullet"
+    sortorder="0"
+    description="Bullet Points: 9 Alchemical Bomb Discoveries (PFRPG) PDF">
+    </source>
 
   <!-- New child source of SGG for Magic or Spells -->
   <source
@@ -466,6 +499,14 @@
     parent="SGGMagic"
     sortorder="0"
     description="The Genius Guide to Crystal Magic PDF">
+    </source>
+  <source
+    id="13EvilSpl"
+    name="RGG - 13 Evil Spells from The Forge"
+    selectable="yes"
+    parent="SGGMagic"
+    sortorder="0"
+    description="RGG - 13 Evil Spells from The Forge PDF">
     </source>
 
   <!-- Advanced child sources -->
