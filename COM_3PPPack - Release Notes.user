@@ -8,8 +8,52 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
-<strong>v1.4 February 8, 2015</strong>
+<strong>v1.5 February 22, 2015</strong>
 
+<strong>Bug Fixes</strong>
+<ul>
+<li>Path of War (TheIronGolem) Too many Maneuvers readied error #24 issue fixed.</li>
+<li>Path of War (TheIronGolem) Fixed adjustments and archetypes that added or removed disciplines.</li>
+<li>Path of War (TheIronGolem) Fixed missing bootstrap for Iron Tortoise discipline</li>
+<li>Path of War (TheIronGolem) Extra Readied Maneuver feat fixed to reflect changes since playtest (selectable more than once)</li>
+<li>Path of War (ShadowChemosh) Added Archetype headers for the PoW classes.</li>
+<li>Path of War (ShadowChemosh) Fix load issue with .por files that cause them to gain an extra temp Skill Point. http://forums.wolflair.com/showthread.php?t=52245</li>
+<li>Path of War (TheIrongGolem) Fixed the "Too many Maneuvers readied" error.</li>
+<li>Tome of Secrets (ShadowChemosh) Added [ToS] in front of the Tome of Secrets classes. The new logic will remove the [ToS] once you add the class so strange results do not happen.</li>
+<li>Tome of Secrets (ShadowChemosh) Did misc changes/fixes including latest errata to the Tome of Secrets classes: Knight and Priest.</li>
+<li>Ultimate Psionics (TCArknight) Enlightened Monk - Fixed Monk bonus feat progression</li>
+<li>Ultimate Psionics (psych777) Mind Blade Finesse fixed.</li>
+<li>Ultimate Psionics (TheIronGolem) Added the Soulbolt archetype.</li>
+<li>Ultimate Psionics (phlidwsn) Natural Healing errata fix, issue# 3 </li>
+<li>Ultimate Psionics (phlidwsn) Mind Shield errata update for Soulknife as per http://dreamscarredpress.com/dragonfly/ForumsPro/viewtopic/t=979.html</li>
+<li>Ultimate Psionics (ShadowChemosh) Added scripts to the Piranha Strike feat so that it can now be activated on the In-Play tab.</li>
+<li>Ultimate Psionics (psych777) Updated the text of feat Shared Power. Also changed feat to be only selected once.</li>
+<li>Ultimate Psionics (TCArknight) Enlightened Monk - fixed Monk bonus feat progression.</li>
+<li>Ultimate Psionics (ShadowChemosh) Added source book text to all UP archetypes. Now when doing "File->Output Hero Statblock" the class and page number will display correctly.</li>
+</ul>
+<strong>New Features</strong>
+<ul>
+<li>Basic Pack updated to v3.7 (ShadowChemosh)</li>
+<li>Path of War (TheIronGolem) Added the Umbral Blade prestige class.</li>
+<li>Path of War (TheIronGolem) Added the Awakened Blade prestige class.</li>
+<li>Path of War (TheIronGolem) Added the Pathwalker archetype.</li>
+<li>Path of War (TheIronGolem) Added Martial Traditions.</li>
+<li>Ultimate Psionics/Path of War (TheIronGolem) Added the War Soul (Soulknife Archetype)</li>
+<li>Ultimate Psionics (TCArknight) Added the Nimble Blade (Soulknife Archetype)</li>
+<li>Ultimate Psionics (TheIronGolem) Added the Soulbolt archetype.</li>
+</ul>
+<strong>Data File Authoring</strong>
+<ul>
+<li>Path of War (TheIronGolem) Make sure that all stances get the User.Activation tag, as some stances were not receiving it for some reason and thus not being activatable. Fixed a couple of Iron Tortoise stances that weren't applying effects in time. Added bootstraps to Body of the Night and Turtle Knight's Stance, so that they grant Poison Use and Improved Uncanny Dodge, respectively. Removed the now-superfluous StanceUp tags from PoW class configurables, which was allowing one extra stance to be on without validation errors.</li>
+<li>Path of War (ShadowChemosh) Aligned scripts. Changed the pushing of Discipline Tags to a much later timing.   Added sort tags to adjustments so they sort correctly.</li>
+<li>Path of War (TheIronGolem) Added a "max maneuver level" array to PWManList component, which enforces custom maneuver-level-by-IL restrictions.  This is only needed for classes/archetypes that have a nonstandard progression. Added the PathOfWar.CstManProg tag, which designates a maneuver list as using the custom maneuver progression described above. Some minor spelling corrections.</li>
+<li>Path of War (TheIronGolem) Removed PathOfWar.Stance tag from Dragon War God's Dance, so that it doesn't show up as available for stance selection.</li>
+<li>Path of War (TheIronGolem) Path of War: Removed "trkMax" fieldval assignments from maneuvers, as this was causing maneuvers to display as being usable twice per encounter.</li>
+<li>Ultimate Psionics (ShadowChemosh) Removed the "Source" from Class Specials as they are not needed. Added "Community Psionics" Product ID tag instead.</li>
+<li>Ultimate Psionics (TheIronGolem) Removed unnecessary scripts from Alter Mind Blade and Alter Mind Bolt.</li>
+</ul>       
+
+<strong>v1.4 February 8, 2015</strong>
 <strong>Bug Fixes</strong>
 <ul>
 <li>Path of War - (IronGolem) Warlords are now correctly marked as proficient with shields (not just bucklers).</li>
@@ -27,7 +71,6 @@
 <li>Ultimate Psionics - (psych777) Thunder Blade - added DC.</li>
 <li>Tome of Secrets - (ShadowChemosh) Added (ToS) in front of the Tome of Secrets classes. As the names are similar to other popular classes.</li>
 </ul>
-
 <strong>New Features</strong>
 <ul>
 <li>(ShadowChemosh) Basic Pack updated to v3.6.</li>
@@ -37,7 +80,6 @@
 <li>Path of War - (IronGolem) Added the Awakened Blade prestige class.</li>
 <li>Ultimate Psionics - (psych777) Added text entries for: Advanced Talents, Deadly Shield, Evasion, Flurry of Fists, Flurry of Fists, Improved Flurry of Fists, Greater Grasping Shield, Improved Armor, Improved Evasion, Interupting Throw, Mental Power, Ranged Shield Block, Rogue Talent, Shield Block, Trapfinder, & Whiplash.</li>
 </ul>
-
 <strong>Data File Authoring</strong>
 <ul>
 <li>Path of War - (IronGolem) Added "PathOfWar.ShdwBlade" tag, for denoting when a weapon is affected by the Umbral Blade's Shadow Blade ability.</li>
@@ -45,7 +87,7 @@
 <li>Path of War - (IronGolem) Added the PWgetIMod and PWgetIlvl procedures, so class specials can easily fetch the initiator level or modifier for whatever class they come from</li>
 <li>Path of War - (ShadowChemosh) Built a new component (PWManList) that can hold the Maneuver/Stance array values for PoW classes. Several of the procedures used on PoW classes and Configurables are now deprecated as the logic was moved to the new background component. PWManList will hold not only array values but Initiator Level and the attribute used to calculate maneuver DC values. This allows for future classes that use both PoW maneuvers and spellcasting to work.</li>
 <li>Path of War - (ShadowChemosh) Built new editor tab (zCommunity->PoW Class Setup) that allows a very easy method of linking the PoW Class to its PoW Configurable. It also allows for setting up which Disciplines the class has access to.</li>
-</ul>       
+</ul> 
 
 <strong>v1.3  Feburary 4, 2015</strong>
 

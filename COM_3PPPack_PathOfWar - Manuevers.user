@@ -26,7 +26,6 @@ August 13, 2013 - Tim Shadow
 -Created New]]></info_history>
     </fileinfo>
   <thing id="manPWAlWi7" name="Alacrity on Wing" description="With reflexes honed from many combats, the disciple may react to danger with speed so great he may even attack multiple times while he evades the unlucky attacker. The initiator makes an opposed Acrobatics check against the target&apos;s attack roll; if successful the attack is negated and the initiator may make a melee attack for two wielded weapons or unarmed strikes with an additional +2d6 points of damage." compset="PWManuever" summary="Counter: Make an opposed Acrobatics check against an opponent&apos;s attack roll, evade the attack and you may make an attack against the target with both weapons with +2d6 damage as part of this immediate action." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -40,7 +39,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWAlRo8" name="Alpha&apos;s Roar" description="With an awesome cry for victory and bravery from his allies, the Golden Lion disciple bolsters the defenses and attacks for a moment as his allies cannot help themselves but to win. Allies within 30ft of the disciple gain a +4 morale bonus to their savings throws and increase to the DC&apos;s of their abilities (maneuvers, spells, powers, etc) for one round." compset="PWManuever" summary="Boost: The disciple releases an awesome call and grants a +4 moral bonus to all allies&apos; saving throws for the round and increases the DC&apos;s of allies abilities by 4." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -54,7 +52,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWAnFa3" name="Ancient&apos;s Fang" description="With a powerful overhand throw, the Thrashing Dragon disciple hurls one of his blades into his foe&apos;s form with the force and power rivaling the snapping jaws of an ancient dragon. The initiator must make a ranged attack against a target by throwing a weapon with a range increment (such as a dart, dagger or shuriken) or an improvised throwing weapon (normal rules and penalties apply for improvised weapons). If this attack is successful, the attack inflicts an additional 4d6 points of damage." compset="PWManuever" summary="Strike: Thrown weapon inflicts an additional 4d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -68,7 +65,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWAuBr8" name="Aurora Break" description="The Solar Wind disciple masters the light of the sky and burns with a nimbus of colors from sunset to the far northern lights. All ranged attacks made by the initiator inflict an additional 8d6 points of fire damage for the round. This is a supernatural ability." compset="PWManuever" summary="Boost: All ranged attacks gain +5d6 points of fire damage for the round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -84,7 +80,6 @@ August 13, 2013 - Tim Shadow
   <thing id="manPWBwTw5" name="Bend With The Wind" description="This ability was turned into a STANCE in the final book.  Please remove from your character." compset="PWManuever" uniqueness="useronce">
     <comment>*HIDDEN</comment>
     <fieldval field="mPreReq" value="3"/>
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -97,7 +92,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWBlBr1" name="Blade of Breaking" description="A Scarlet Throne disciple knows that sometimes to defeat the beast, you must remove its claws. By clashing blades with a foe to set their weapon vibrating, the disciple then delivers a final smashing blow in an attempt to shatter it or knock it from their grasp. The disciple may make a disarm or sunder attempt with a +4 competence bonus against his foe&apos;s weapon without provoking attacks of opportunity." compset="PWManuever" summary="Strike: Make a melee attack against an opponent&apos;s weapon without provoking attacks of opportunity." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -110,7 +104,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWBlFu6" name="Blade of Fury" description="The disciple taps into hidden reserves of fury within himself to pour his all into this strike. The initiator expends a swift action to use this boost as part of a charge attack, adding twice his initiator level to the damage roll as a circumstance bonus." compset="PWManuever" summary="Boost - Add twice your initiator level to damage rolls on a charge attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -124,7 +117,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWBlPe6" name="Blade of Perfection" description="In an instant of perfect clarity, the disciple finds his moment to strike true. The disciple simply strikes the opponent with deadly swiftness, penetrating defenses as if they were not even there. This attack automatically hits its target and ignores damage reduction. For the purposes of counters that have systems that oppose an attack roll, treat this attack as if the disciple had rolled a natural 20." compset="PWManuever" summary="Stance: Melee attack unerringly hits and ignores damage reduction." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -138,7 +130,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWBlBc3" name="Blade-Breaking Counter" description="An opponent cannot hurt you with his weapon if a weapon does not exist to do it. The Primal Fury disciple takes this to heart with a powerful parrying blow designed to shatter the weapon that his opponent uses before it can strike him. When being attacked, this counter is initiated after a successful hit but before damage is inflicted. The initiator then makes an immediate sunder attempt with a +2 circumstance bonus on his foe&apos;s weapon (which does not provoke attacks of opportunity), and if the weapon is reduced to half of its hit points, then it gains the broken condition and the disciple takes half damage from the attack. If this sunder attempt reduces the opponent&apos;s weapon to 0 hit points, then the weapon shatters and the disciple takes no damage. If the initiator possesses the Greater Sunder feat, excess damage is applied to the target as per normal." compset="PWManuever" summary="Counter - Make an immediate sunder attempt against an attacker&apos;s weapon when they attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -152,7 +143,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWBlRS3" name="Blinding Ray Shot" description="The disciple wraps incandescent light with the brightness of the midday sun around his weapon and lets fly at an opponent. The initiator makes an attack against a target creature and if successful, the target is blinded for 1d4 rounds. This is a supernatural ability." compset="PWManuever" summary="Stance: Ranged attack becomes infused with blinding light." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -167,7 +157,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1d4"/>
     </thing>
   <thing id="manPWBlBu5" name="Blinding The Bull" description="When a Solar Wind disciple finds the perfect shot, he makes sure that the attack is as destructive as a tornado on the plains. The initiator may use this boost to automatically confirm a critical threat he has made on a ranged attack." compset="PWManuever" summary="Boost: Automatically confirm a critical threat on a missile weapon attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -181,7 +170,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWBlRi2" name="Bloody Riposte" description="Stoking the furnace of rage within him upon receiving injury, the disciple uses the momentary lapse in his attacker&apos;s defenses when struck in combat to make a vicious riposte. Upon being struck in combat by an enemy, the initiator may make an immediate counter attack at his full base attack bonus that inflicts an additional 2d6 points of damage." compset="PWManuever" summary="Counter - Make a counter attack as an immediate action after being struck in melee combat with a +2d6 damage bonus." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -195,7 +183,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWBlSt7" name="Blood-Spray Strike" description="The Primal Fury disciple makes a chest-ruining arterial strike on his foe, causing the enemy to suffer grievous amounts of injury. The character makes an attack against a target foe and if successful, inflicts an additional 8d6 points of damage and inflicts 2d4 points of Constitution damage due to striking vital areas and organs. If the target is immune to critical hits, the target does not suffer this Constitution damage." compset="PWManuever" summary="Strike: Melee attack adds 8d6 damage and inflicts 2d4 points of Constitution damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -209,7 +196,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWBuBr6" name="Burning Break" description="The burning wrath of the sun itself takes root in the disciple&apos;s ammunition as he lets loose the wrath of the Solar Wind. All ranged attacks made by the initiator this round inflict an additional 5d6 points of fire damage. This is a supernatural ability." compset="PWManuever" summary="Boost: All ranged attacks gain +5d6 points of fire damage for the round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -223,7 +209,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWCaAc2" name="Call to Action" description="With a mighty blow, the disciple aids an ally by providing an opening in combat to move by an opponent. The character makes a melee attack, inflicting an additional 2d6 points of damage and granting an adjacent ally an immediate move action." compset="PWManuever" summary="Strike: Attack inflicts an additional 2d6 points of damage, grant adjacent ally an immediate move action." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -237,7 +222,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWChBC4" name="Charge of the Battle Cat" description="Like the charge of the mighty lion as he takes his prey to the ground, the Golden Lion disciple charges into battle, heedless of his enemies, to crash into his chosen foe with a mighty strike, knocking him to the ground at his feet. The character makes a charge attack, inflicting an additional 4d6 points of damage. Additionally, the foe must make a Reflex save (DC equal to 14 + primary initiator attribute modifier) or be knocked prone from the strike." compset="PWManuever" summary="Strike: Make a charge attack which does not provoke attacks of opportunity. If successful, then the charge inflicts an additional 4d6 points of damage and has a chance to knock target prone." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -252,7 +236,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefPart"/>
     </thing>
   <thing id="manPWChBP6" name="Charge of the Battle Panthera" description="With a running start that ends in a blood-drenched finish, the disciple mimics the final moments of the hunting tiger as he delivers the death blow to his prey. The character makes a charge attack against a target, and if successful he inflicts an additional 12d6 points of damage and the target must make a Reflex save (DC 16 + primary attribute modifier) or be knocked prone." compset="PWManuever" summary="Strike: Charge attack that adds an additional 12d6 to damage and potentially knocked prone." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -267,7 +250,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefPart"/>
     </thing>
   <thing id="manPWCiPr3" name="Circling the Prey" description="With practiced precision and a quick shout, the disciple and his allies move in unison for better strategic advantage. The character&apos;s shout grants himself and his allies a free 5ft step that must be taken when this boost is used." compset="PWManuever" summary="Boost: Grant all allies within 60-ft a free 5-ft step." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -281,7 +263,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWCoFS5" name="Cornered Frenzy Strike" description="As an animal cornered lashes out at all comers, so does the Primal Fury disciple when he finds himself surrounded. By using his intuition and striking where he feels a foe to be, he uses his instincts as a powerful weapon. As a full attack action, the initiator makes an attack roll at full base attack bonus against each target within his reach with each weapon he is currently wielding (including natural attacks; armor and shield spikes always count as wielded weapons), and each successful attack inflicts an additional 4d6 points of damage. After initiating this maneuver, the initiator&apos;s focus on offense causes his AC to suffer a -2 penalty until his next turn." compset="PWManuever" summary="Stance: Make a melee attack with all wielded weapons against all threatened foes and inflicts an additional 4d6 damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -295,7 +276,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWCrSt2" name="Crippling Strike" description="By specifically targeting a victim&apos;s most vulnerable areas, the disciple is capable of rending arterial injuries upon his foe. The character initiating this maneuver inflicts an additional 2d6 points of damage upon a successful melee attack, and his victim gains the bleeding condition suffering 1d3 points of damage per round until the application of any spell or effect that cures hit point damage or someone staunches the blood with a DC 15 Heal check." compset="PWManuever" summary="Strike: Melee attack that adds +2d6 points of damage and the enemy gains the bleeding condition." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -309,7 +289,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWCrBl1" name="Crushing Blow" description="By bringing his weapon high and bringing it down with ferocious finality, the disciple&apos;s forceful blow is enough to weaken the defenses of his foe momentarily. The initiator makes an attack and if successful, the strike inflicts an additional 1d6 points of damage and may potentially render his foe flat-footed until its next turn on a failed Fortitude save (DC 11 + initiation modifier)." compset="PWManuever" summary="Stance: A powerful overhand blow that inflicts an additional +1d6 points of damage, enemy is left flat-footed until their next turn." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -323,7 +302,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWCuRS1" name="Curving Ray Shot" description="The disciple&apos;s keen eyes allow him to fire his weapon around his foe&apos;s cover. The character makes an opposed Perception check against target&apos;s Armor Class before making a single ranged attack; if successful then the foe&apos;s cover is negated." compset="PWManuever" summary="Strike: Roll Perception check against target&apos;s AC, negate cover for this attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -337,7 +315,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDaAt3" name="Dazing Attack" description="The swiftness of the Scarlet Throne disciple&apos;s blade is a thing of terrific power, and by initiating this strike he demonstrates this potency. The disciple makes a melee attack against a target which if successful inflicts an additional 3d6 points of damage and upon a failed Fortitude save (DC 13 + initiation modifier) dazes the opponent for one round." compset="PWManuever" summary="Stance: Make a melee attack, strike inflicts +2d6 points of damage and may daze enemy." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -353,7 +330,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWDaSF4" name="Dazzling Solar Flare" description="With swift and deadly precision, the disciple attacks with the force of the scorching sun. The character makes a ranged attack against a foe, and if successful the attack inflicts an additional 4d6 points of fire damage and dazes the target on a failed Fortitude saving throw (DC 14 + primary initiator attribute modifier.) This is a supernatural ability." compset="PWManuever" summary="Strike: Make a ranged attack against a foe, inflicts +4d6 points of fire damage and chance of dazing." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -368,7 +344,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWDeDS9" name="Deadly Dragon Strike" description="Upon reaching mastery of the Thrashing Dragon discipline, the disciple learns the truth of his deadly war dance; at its center is a deadly calm. It is in this calm that he discovers the true nature of his art and that one perfect blow can spell instant death for a foe. The disciple analyzes his foes in the blur of combat and finds his perfect moment and strikes for the heart and pierces it through. The initiator makes an attack roll against one or two foes using his two weapons (both attacks made through this strike are made at full attack bonus) and if these attacks are successful, his weapon perfectly and precisely pierces the foe&apos;s heart or other vital zone, killing it instantly on a failed Fortitude save (DC 19 + initiation modifier). Even if the creature successful saves, the strike inflicts his weapon&apos;s damage plus an additional 12d6 points of damage from the trauma of the blow. The initiator can use this strike to attack the same target with both attacks, forcing the target to make two Fortitude saves as above. Creatures immune to precision damage are not subject to the death effects of this strike." compset="PWManuever" summary="Stance: Make an attack with both main and off hand weapon against one or two targets; attack strikes to the heart of a target may cause instant death or 12d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="4"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -383,7 +358,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWDePr2" name="Defending the Pride" description="With a cry to defend themselves from incoming attacks, the inspirational words of the disciple aid his allies in their defense. As a swift action, the initiator grants all allies within 60-ft. a +4 morale bonus to their AC for one round." compset="PWManuever" summary="Boost - Grant all allies within 60 ft. a +4 bonus to AC for one round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -396,7 +370,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWDeRo1" name="Demoralizing Roar" description="With a shout of rage and defiance, the Golden Lion disciple wades into battle with fearless determination, shattering the resolve of his foes. As a swift action the character&apos;s attacks become filled with the dread of defeat, causing his target opponent to be shaken for one round (Will save DC 11 + primary initiator attribute negates)." compset="PWManuever" summary="Boost - Any target struck by you in melee is shaken for 1 round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -411,7 +384,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="WillNeg"/>
     </thing>
   <thing id="manPWDeSS8" name="Descending Sunset Strike" description="With a downward swing of his blade, the Scarlet Throne adapt proves his mastery of the discipline by shattering the will of the enemy to fight. The disciple makes a Sense Motive check in place of his normal attack roll (he may add any enhancement bonus from the weapon or feats that apply from the use of his weapon to this Sense Motive check as well), and if this Sense Motive check equals or exceeds the target&apos;s armor class, the attack deals quadruple damage. If this check does not meet or exceed the target&apos;s armor class, then the attack fails and the disciple misses." compset="PWManuever" summary="Strike: Make a Sense Motive check, strike does quadruple damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -425,7 +397,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDeMo7" name="Devastating Momentum" description="The charging Primal Fury disciple throws his full weight and momentum behind a blow, showing all who see it who the most powerful combatant on the field of battle truly is. Upon making a successful charge attack, the character may add an additional 40 points of damage to the attack as a swift action, and this attack ignores the target&apos;s damage reduction. Additionally, the character must make a successful Fortitude save (DC 17 + primary initiator attribute) to resist being stunned for 1 round (this effect does not stack on a maneuver that also has the potential to daze or stun an opponent; the initiator must choose which effect to use)." compset="PWManuever" summary="Boost: Add an additional 40 points of damage on a successful charge attack and the attack ignores the target&apos;s damage reduction and potentially stuns the target." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -440,7 +411,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWDeRu2" name="Devastating Rush" description="The disciple performing this attack executes a powerful attack that rushes in past a foe&apos;s defenses to shatter them completely. The initiator inflicts an additional 2d6 points of damage upon a successful attack and his strike ignores the damage reduction of a subject or the hardness of an object he is attacking." compset="PWManuever" summary="Stance: Make an attack that inflicts an additional 2d6 damage and ignores damage reduction and hardness." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -453,7 +423,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDiPr4" name="Direct the Pride" description="Cooperation and teamwork form the backbone of tactical warfare, and through his knowledge of all of these things, the Golden Lion disciple may help direct the actions of his ally to greater effectiveness. As a swift action, the character targets an adjacent ally who has not yet acted this turn. That character may now act immediately following the Golden Lion disciple&apos;s action as if his initiative result was one lower than the disciple. The following round, the target of this boost returns to his previous initiative result." compset="PWManuever" summary="Boost - Target adjacent ally who has not acted this turn, move his initiative directly after yours for this turn, the following turn he returns to his former initiative." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -467,7 +436,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWRaTP3" name="Disparity Blow" description="With a powerful upswing, the Primal Fury disciple brings his weapon in low and with his attack drives his opponent to the ground as he raises it high to show his superiority. The initiator makes a melee attack and if successful, inflicts an additional 2d6 points of damage and may make an immediate trip attack against the target with a +4 circumstance bonus. This trip attempt does not provoke attacks of opportunity." compset="PWManuever" summary="Strike - Make a melee attack against a target, if successful inflicts an additional 2d6 damage and make a trip attempt without provoking attacks of opportunity." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -481,7 +449,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDiSt2" name="Distracting Strike" description="By attracting the attentions of a foe with a well-placed and vicious blow, the disciple of the Golden Lion may distract and weaken his foe to the predations of his allies. Upon a successful attack when using this strike, the character inflicts an additional 2d6 points of damage and the target creature is left flat-footed until its next turn. Creatures immune to critical hits are not left flat-footed." compset="PWManuever" summary="Strike: Make attack against a target, inflicting an additional 2d6 points of damage and leave the foe flatfooted until his next turn." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -495,7 +462,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="NextTurnTa"/>
     </thing>
   <thing id="manPWDiBl5" name="Dizzying Blow" description="The disciple of the Primal Fury rockets across the battlefield to unleash a powerful strike to the vitals of his foe, leaving him agonized and sick with pain. The initiator makes a charge attack against a target creature, if successful the attack inflicts an additional 10d6 points of damage and the target must make a Fortitude save (DC 15 + initiation modifier) or be nauseated for 1d4 rounds." compset="PWManuever" summary="Strike - A powerful charge inflicting an additional 10d6 points of damage and potentially leaves the enemy nauseated." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -510,7 +476,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWDeRo4" name="Devastation Roll" description="The martial disciple&apos;s movements are so quick and precise, his deadly strikes are hard to evade. With a sudden twist and jump through the opponent&apos;s defenses, the disciple strikes hard into the exposed and undefended foe. The initiator must move at least 10-ft. through two spaces that his opponent threatens and make a Acrobatics check equal to the target&apos;s CMD (this roll counts as both a check to use the maneuver as well as to negate potential attacks of opportunity from moving through a threatened area). If successful, make an attack against the target&apos;s flat-footed Armor Class, and the attack inflicts an additional 6d6 points of damage." compset="PWManuever" summary="Strike - Move by an opponent and make a successful Acrobatics check against the target&apos;s AC, if successful, make an attack against the target&apos;s flat-footed AC and the attack inflicts an additional 6d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -524,7 +489,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWDiGu4" name="Disarming Gust" description="A swift breeze and an explosion of agony is what the enemy of the disciple knows when this strike is used in battle as his sword hand is struck by the disciple&apos;s skillful attack. The character makes a ranged attack against the target&apos;s CMD using his primary initiator attribute modifier to calculate his CMB with a +2 circumstance bonus to the check. If successful, he inflicts 3d6 points of damage and the target is successfully disarmed." compset="PWManuever" summary="Strike: Make a ranged disarming attack the inflicts 3d6 points of damage to the target and disarms them." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -538,7 +502,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDotP5" name="Discipline of the Pride" description="Through training with his allies, the disciple has taught them the basics of his military skill that they may call upon in times of duress. As a swift action, the initiator may grant one of his combat feats to any of his allies within 30 ft. for 3 rounds. No initiator can benefit from this ability more than once at a time." compset="PWManuever" summary="Boost: Grant all allies within 30 ft. one feat that you possess for three rounds." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -552,7 +515,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round3"/>
     </thing>
   <thing id="manPWDoTa8" name="Doom Talon" description="When a potentially deadly strike occurs, the Thrashing Dragon disciple knows how to make the blow count. When the initiator makes an attack roll that scores a critical threat, as a swift action the initiator may automatically confirm this critical hit and inflict an additional 4d6 points of damage. Creatures immune to critical hits may still be affected by this strike, not taking the normal double damage but still suffering the additional 4d6 points of damage." compset="PWManuever" summary="Boost - Upon scoring a critical hit, initiation of this maneuver confirms the critical hit and inflicts an additional 4d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -566,7 +528,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDoSR5" name="Double Solar Reflection" description="The disciple of the Solar Wind may bend and reflect his missile weapons as an illusionist may bend and reflect light with mirrors. The initiator makes a single ranged attack roll and if this roll is successful, he may apply this same attack roll against another opponent within 20-ft. of the first, and if this is also successful, he may use the same attack roll to strike a third target no farther than 20-ft. away (but not the original target). This strike inflicts an additional +4d6 points to the first target, +2d6 points of damage to the second, and normal damage to the third target. Each reflection attack is considered a separate attack for the purposes of determining the effectiveness of single attack boosting abilities, such as boosts that affect one attack or spells like {i}true strike.{/i} If the ammunition had special properties, the ammunition retains its properties on each attack until the strike ends." compset="PWManuever" summary="Strike - Shot strikes three targets with one attack roll. First target takes +4d6 damage, second takes +2d6 damage, third just takes weapon damage. No two targets can be more than 20 ft. apart." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -581,7 +542,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDrAs4" name="Dragon Assault" description="By unleashing their full wrath against their enemies, a Thrashing Dragon disciple is capable of inflicting incredible powerful blows that get more potent per successive hit. The initiator makes a full round attack against a target(s), the first successful hit inflicting normal damage. Each subsequent successful attack inflicts an additional 1d6 points of damage that carry over to the next attack, the third attack inflicting +2d6 damage, the fourth +3d6 damage and so on to a maximum of +5d6." compset="PWManuever" summary="Strike: Make a full round attack, each successive melee attack inflicts an additional 1d6 points of damage more than the previous one (maximum +5d6 per successful attack)." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -595,7 +555,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWDrRu4" name="Dragon Rush" description="With the ferocity of a dragon, the disciple follows through a successful attack with a vicious kick to his foe to keep the punishing the fool who would stand before the might of a Thrashing Dragon. Upon successfully striking a foe as part of an attack, martial strike, or a full attack, he may as a swift action use this maneuver to deliver a vicious kick at his full attack bonus for his unarmed strike. This attack inflicts an additional 3d6 points of damage." compset="PWManuever" summary="Boost: Upon a successful attack, make an immediate kick which inflicts an additional 3d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -609,7 +568,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWEnRo1" name="Encouraging Roar" description="The disciple lets out shouts of encouragement to bolster his allies in battle. All allies within 30ft of the Golden Lion disciple gain a +2 morale bonus to attack and damage rolls for one round." compset="PWManuever" summary="Boost - Until next turn, all allies gain a +2 morale bonus to all attacks and damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -623,7 +581,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWEnSt6" name="Endurance of the Strong" description="Allies falling in combat weakens the core of the unit, so when an ally is injured, it is up to the commanding presence of the Golden Lion disciple to bolster his fallen comrades. When an ally is struck in combat and injured and within 30ft of the character, he may shout words of inspiration and encouragement to restore some fortitude to his ally. The target of this counter immediately has twice the disciple&apos;s initiator level in hit points restored to his total." compset="PWManuever" summary="Counter: When an ally within 30ft is struck in combat and injured, the disciple may make an immediate shout of inspiration to restore some of the ally&apos;s flagging strength, restoring twice the disciple&apos;s initiator level in hit points." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -637,7 +594,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWFaSL3" name="Fangs Strike Low" description="By forcing an opponent&apos;s guard up, the Thrashing Dragon spins low and attacks at the legs of the target to reduce his mobility and cause deep, flensing wounds.{br}{br}Upon successfully striking a target in melee combat with this maneuver, in addition to weapon damage the initiator&apos;s attack halves the target&apos;s land speed and inflicts 1d6 points of bleed damage per round for three rounds or until the target has been healed (magically or by a successful DC 15 Heal check)." compset="PWManuever" summary="Strike: Make two successful attack rolls, halve target&apos;s land speed and inflicts 1d6 bleed damage per round for 3 rounds or until healed." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -651,7 +607,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round3"/>
     </thing>
   <thing id="manPWFeWi2" name="Feel the Wind" description="By studying the wind and air around him, the Solar Wind disciple learns to overcome his surrounding&apos;s difficulties when using ranged weapons and may fire true. The character may ignore environmental variables such as high winds and storm and rain that would cause the character to suffer penalties to his attack rolls, magically created (such as {i}wall of wind{/i} or {i}control weather{/i} or naturally caused such as in a gale force wind), when making ranged attacks for one round. This is a supernatural ability." compset="PWManuever" summary="Boost: Overcome environmental difficulties for ranged combat." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -665,7 +620,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWFiBl6" name="Final Blow" description="Mercy has a place on the battlefield, a disciple of Scarlet Throne understands, as does the benefit of an honorable and swift death. By showing his enemy a merciful, swift death in battle, the disciple may continue to his next victory while letting both keep their honor. The disciple makes a melee attack against an injured foe, and if the foe is under 25% of his maximum hit points, the attack is treated as a coup de grace (without provoking attacks of opportunity). The attack does damage as normal, and the foe must make a Fortitude save with a DC equal to the damage inflicted. If the foe is above 25% of his maximum hit points, then this maneuver has no effect and normal damage is rolled. disciples with this maneuver readied have keen senses in knowing where his enemy&apos;s strength stands, and may make a Heal check as a free action (DC 20) to gauge if his opponent is capable of being finished by this maneuver." compset="PWManuever" summary="Strike- Make a melee attack; if foe is below 25% of maximum hit points, target is slain." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -679,7 +633,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWFlKi3" name="Flash Kick" description="As part of a full attack action, the disciple may make a powerful and swift kick while his blades strike. The initiator makes an additional unarmed strike against a target as part of his full attack action at -2 penalty, if this attack hits then the attack inflicts an additional 2d6 points of damage. The character does not provoke attacks of opportunity for not possessing the Improved Unarmed Strike feat when using this strike, but damage is only considered lethal if the character does possess that feat." compset="PWManuever" summary="Strike: Make an additional unarmed attack as part of a full attack action at a -2 penalty to hit but the attack gains +2d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -693,7 +646,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWFotW2" name="Flick of the Wrist" description="With two rapid slaps from his blades, the Thrashing Dragon disciple&apos;s ferocity puts an opponent off balance and with a flick of the wrist; the disciple takes away the weapon of his foe. The initiator makes two rapid attack rolls at his full base attack bonus against the target&apos;s AC with a +2 bonus, if both attacks successful; the target is disarmed of his primary weapon (no roll needed). Resolve damage from the two attacks made as part of this strike as normal. If the target only is using natural attacks or the target has a locked gauntlet, then this maneuver is ineffective for disarming a foe." compset="PWManuever" summary="Strike: Make at least two successful attack rolls with two weapons on a full attack action with a +2 bonus, if successful gain a free disarm attempt." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -707,7 +659,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWFoSL5" name="Focused Solar Lance" description="The disciple raises his deadly weapon and lets loose an attack so powerful as to pin a target to the ground with a hurricane force wind. The initiator makes a ranged attack on a target and if successful, inflicts an additional 4d6 points of damage from the excessive force of the hit. Additionally, upon a successful hit, the initiator may make an immediate CMB check using his initiation modifier in place of Strength or Dexterity with a +2 circumstance bonus against the target&apos;s CMD. If this check is successful, the target is either pinned to the ground beneath him and is knocked prone and considered pinned, or is attached to a wall or tree or other object within a straight line of fire from the initiator and is considered pinned there if the target is within 5-ft. of said object or wall. Targets may not be pinned to other creatures. This maneuver does not function against flying targets." compset="PWManuever" summary="Strike - Make an attack that if successful, inflicts an additional 5d6 points of damage and potentially pins target." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -721,7 +672,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWFrSt3" name="Frenzy Strike" description="By emulating the ferocious assault of a raging great cat, the disciple&apos;s knowledge of the natural world and the way its predators operate assists him in combat with a furious set of attacks. The initiator makes one attack with each weapon he has wielded (or with both heads of a double weapon; this includes natural attacks and armor or shield spikes) at his full base attack bonus. Upon a each successful attack, the initiator inflicts an additional 2d6 points of damage." compset="PWManuever" summary="Strike - Make a melee attack with all wielded weapons against a single target and inflicts an additional 2d6 damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -735,7 +685,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWFuPW4" name="Furious Primal Wrath" description="The disciple&apos;s attacks grow strong with practiced fury and primal power, forgoing accuracy for pure deadly force. The initiator suffers a -4 penalty to his attack roll, and makes an attack against a target creature. If successful, this attack inflicts an additional 20 points of damage, or 35 if the weapon is wielded in two hands." compset="PWManuever" summary="Strike - A vicious strike that suffers a -4 penalty to attack rolls but adds an additional 20 points of damage or an additional 35 points of damage if the weapon is wielded twohanded." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -749,7 +698,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWGaLa2" name="Garnet Lance" description="With a sudden and powerful thrust, the disciple penetrates the defenses of his foe with devastating alacrity. The character must make a melee attack against a target creature, and if successful the attack inflicts an additional 2d6 points of damage and the attack automatically bypasses the target&apos;s damage reduction." compset="PWManuever" summary="Strike: Melee attack inflicts an additional 2d6 points of damage and ignores damage reduction." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -763,7 +711,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWGoGV7" name="Golden General’s Victory" description="The power and majesty of the lion lords of the wild lives within the disciple, so much so that his victories are a victory for all of his allies. When the character reduces a foe to 0 hit points or below he may initiate this boost; his allies are then bolstered and their hearts are re-dedicated to victory. All allies within 60ft of the character have a number of hit points equal to the disciple&apos;s initiator level restored." compset="PWManuever" summary="Boost: Upon felling a foe, all allies within 60ft are healed a number of hit points equal to the disciple&apos;s initiator level." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -778,7 +725,6 @@ August 13, 2013 - Tim Shadow
     </thing>
   <thing id="manPWGoSw4" name="Golden Swipe" description="With a series of furious blows again his foe, the Golden Lion disciple batters his opponent into the waiting blades of his allies. The character makes a melee attack, inflicting an additional 6d6 points of damage and forcing his foe to make a 10ft movement (if the target is capable of moving) from the square he is currently occupying in a direction of his choosing. This movement provokes attacks of opportunity to those capable of making them against the target." compset="PWManuever" summary="Strike: Melee attack inflicts an additional 6d6 points of damage and moves the opponent 10-ft in a direction of your choosing." uniqueness="useronce">
     <fieldval field="mPreReq" value="1"/>
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -792,7 +738,6 @@ August 13, 2013 - Tim Shadow
     </thing>
   <thing id="manPWGrWF6" name="Great Wyrm&apos;s Fang" description="By focusing his will into one of his blades, the Thrashing Dragon disciple wields the power of a mighty great wyrm in the palm of his hand. The initiator must make a ranged attack against a target by throwing a light weapon with a range increment (such as a dagger) or a signature Thrashing Dragon weapon. If this attack is successful, the attack inflicts an additional 9d6 points of damage." compset="PWManuever" summary="Strike - Thrown weapon inflicts an additional 9d6 points of damage." uniqueness="useronce">
     <fieldval field="mPreReq" value="2"/>
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -805,7 +750,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWGuPr5" name="Guard the Pride" description="By trusting the awareness of the celestial realm, the discipline trusts in his heavenly sense of the battle around him to see where the next attack is coming and move away from danger. As an immediate action, the initiator grants a circumstance bonus to the target adjacent ally&apos;s Armor Class for one round equal to half the disciple&apos;s initiator level." compset="PWManuever" summary="Counter - Grant an adjacent ally +4 circumstance bonus to AC for one round as an immediate action." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -819,7 +763,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWHaPr6" name="Harry the Prey" description="Through coordinated tactics, the comrades at a Golden Lion disciple&apos;s side may act as one. The initiator makes an attack against a foe, and all allies within 30-ft. may make an immediate attack against any one foe that they can reach with their attacks (melee or ranged within the first range increment) at their full attack bonus." compset="PWManuever" summary="Strike - Make an attack, all allies within 30 ft. may make an immediate attack against any foe they are capable of attacking." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <fieldval field="mTarget" value="Allies (except the initiator)"/>
     <usesource source="srcPathOfW"/>
@@ -834,7 +777,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWHbST9" name="Heavenly Blade of the Scarlet Throne" description="The supreme technique of the Scarlet Throne, the disciple who knows of it is the lord of all battlefields and marks his name amongst the legends of war. The disciple makes a melee attack, if successful, then the disciple makes a Sense Motive check, adding three times the result of this roll to his weapon&apos;s damage. The target must then make a Will save (DC 19 + primary initiator attribute modifier) to resist becoming paralyzed for 1d4 minutes. If the save is successful, the target is stunned for 1 round." compset="PWManuever" summary="Strike: Make a melee attack, if successful, make a Sense Motive check; add three times your Sense Motive check&apos;s result to your weapon damage and enemy is left paralyzed." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="4"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -849,7 +791,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="WillPart"/>
     </thing>
   <thing id="manPWHoWL1" name="Horizon Wind Lancet" description="The tenets of the Solar Wind have taught the disciple how to place more force behind his attacks. The initiator inflicts an additional 1d6 points of damage on a single ranged attack he makes this round. If the initiator is making multiple attacks in this round, this bonus applies to the first attack the initiator makes." compset="PWManuever" summary="Boost: Give a single ranged attack a +1d6 damage bonus." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -863,7 +804,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWHuPa1" name="Hunting Party" description="When two or more soldiers converge on a single target, the odds of victory increase and the disciple with the knowledge of this strike can assist his comrade&apos;s potential lethality. When this strike is initiated, a successful melee attack may grant one adjacent ally who is attacking the same target an attack of opportunity against that target." compset="PWManuever" summary="Strike: Make an attack, grant an adjacent ally an attack of opportunity against the same enemy." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -877,7 +817,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWHuFa5" name="Hurricane of Fangs" description="Utilizing this technique, a Thrashing Dragon disciple is capable of hurling multiple blades at a target in rapid succession with brutal power and incredible accuracy and range. For one round, the range of thrown weapons with range increments (such as daggers) or thrown weapons from an associated Thrashing Dragon weapon group (improvised weapon penalties apply as applicable) is increased by +30-ft.. Additionally, these thrown weapons strike with deadly force, inflicting an additional amount of damage equal to the initiator&apos;s initiator level." compset="PWManuever" summary="Boost - Thrown weapons for the round have their range increased by 30 ft. and inflict an additional damage equal to initiator level." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -891,7 +830,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWImSt4" name="Impaling Strike" description="The disciple who has reached this level of mastery in the art of the Primal Fury has learned that by striking to a foe&apos;s heart and center with a singular but powerful blow, it causes the foe&apos;s ability to withstand punishment to falter. The character makes an attack against his target and if successful, inflicts an additional 4d6 points of damage to this attack which ignores damage reduction. The target must make a Fortitude save (DC 14 + primary initiator modifier) or suffer an additional 1d4 points of Constitution damage from being hit in a vital area. Targets immune to critical hits are not subject to this Constitution damage." compset="PWManuever" summary="Strike: Melee attack adds +4d6 damage and ignores damage reduction and hardness and inflicts 1d4 points of Constitution damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -906,7 +844,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWInSh2" name="Intercepting Shade" description="Sometimes a good offense can be used as a good defense, so the Solar Wind discipline learns, as he shoots projectiles out of the air by his sheer skill. The character makes an opposed attack roll against his foe&apos;s attack roll on an incoming ranged weapon attack (such as an arrow or thrown weapon, but not a spell or similar attack) targeting himself or an ally he can see within his weapon&apos;s first range increment; if successful then the attack is negated." compset="PWManuever" summary="Counter: Make an opposed attack against an incoming ranged weapon attack, success negates the attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -921,7 +858,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWKiWo3" name="Kill the Wounded" description="The Golden Lion disciple makes a ferocious assault on his foe, opening the enemy&apos;s defenses to the attacks of his allies. The character makes a melee attack against a foe and if successful, subsequent attacks made by the character&apos;s allies inflict an additional 2d6 points of damage per successful attack until the initiator&apos;s next turn." compset="PWManuever" summary="Stance: Target of this strike takes an additional 2d6 points of damage on attacks made upon him by allies." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -935,7 +871,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWLiSt5" name="Lightning Step" description="Once a tiger has found its prey, the light-footed and graceful cat is capable of nearly ignoring hazards in his path to run it down. The disciple has learned this and is capable of negotiating a battlefield with ease. As a swift action the character may make one turn of up to 90 degrees mid-charge and ignore terrain difficulties along his charge path." compset="PWManuever" summary="Boost: Change direction once during a charge and negate the movement penalty for harsh terrain." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -949,7 +884,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWLiLA8" name="Lion Lord&apos;s Agony" description="With a fury born of desperation and determination for victory, the Golden Lion disciple pours his pain into his swings so that the enemy may drink deeply of it. The character makes a melee attack, and in lieu of the weapon&apos;s damage the attack instead inflicts a number of points of damage equal to the character&apos;s maximum hit points minus his current hit points (example, if the disciple has 200 maximum hit points and has been wounded down to 54 remaining hit points, this attack inflicts 146 points of damage). The initiator is shaken for 1 round after using this strike." compset="PWManuever" summary="Strike: Strike inflicts additional damage equal to the hit point damage the disciple has received." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -963,7 +897,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWLiFe6" name="Lion&apos;s Feast" description="As the thrill of a successful hunt invigorates a pride of lions on the plains, so does the thrill of victory over foe invigorate the disciple&apos;s allies. By initiating this boost as a swift action, enemies that are reduced to 0 or fewer hit points within 20ft of the character initiating this boost grant all adjacent allies to the initiator temporary hit points equal to the fallen enemy&apos;s Hit Dice." compset="PWManuever" summary="Boost: For one round any enemies that are slain in combat within 20ft of you grant any adjacent allies to you temporary hit points equal that creatures Hit Dice." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -977,7 +910,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWLoPr9" name="Lord of the Pridelands" description="Proving he is the undisputed master of war, the Golden Lion master calls for absolute and crushing victory through overwhelming force of numbers. This ability is greatly feared by the master&apos;s enemies, because this can turn even the most green of soldier into a capable warrior. For every ally within the 60ft range of this boost, the character and each of these allies gains a +2 morale bonus to hit, damage, AC, and saving throws for one round (to a maximum of +10)." compset="PWManuever" summary="You and your allies gain +2 to hit, damage, AC, and saves for each and every ally within 60-ft for one round (maximum +10)." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="4"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -990,7 +922,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWMeCo5" name="Meteoric Collision" description="The disciple makes a charge at an opponent within the theater of war with the power and force of a falling meteor, striking hard and bowling his opponent over. The initiator makes a bull rush attempt as part of a charge with a +4 bonus, and if the initiator successfully bull rushes his opponent, the fury of his strike inflicts 7d6 points of damage to his target as he bull rushes him. This bull rush attempt does not provoke attacks of opportunity." compset="PWManuever" summary="Strike: While performing a bull rush as part of a charge, the enemy suffers 6d6 points of damage in addition to the effects of the bull rush attempt." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1004,7 +935,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWMeCr8" name="Meteoric Crash" description="By rushing at a foe like a blazing comet through the sky, the Primal Fury disciple crashes through an opponent to sculpt the battlefield into a field of carnage. The initiator makes a bull rush attempt as part of a charge with a +4 bonus (this bonus stacks with the +2 bonus from making a charge); if successful, the initiator inflicts 10d6 points of damage to the target as part of the bull rush and if the target is pushed back more than 10-ft., they are knocked prone on a failed Reflex save (DC 18 + initiation modifier) and he may make an immediate attack of opportunity against his prone foe. In initiator must be able to follow or reach the target to make this attack of opportunity." compset="PWManuever" summary="Strike: While performing a bull rush as part of a charge, the enemy suffers 10d6 points of damage in addition to the effects of the bull rush attempt; if the foe is bull rushed more than 10ft then he may be knocked prone." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1019,7 +949,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefPart"/>
     </thing>
   <thing id="manPWMoCr2" name="Momentum Crash" description="By putting his fury into a charging attack, the disciple is capable of using the momentum of his charge to increase his killing power with a twist of his body upon connecting. Upon a successful charge attack, the initiator&apos;s charge attack inflicts an additional 10 points of damage in addition to the normal +2 to hit." compset="PWManuever" summary="Boost: Add an additional 10 points of damage to a successful charge attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1033,7 +962,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWMoCr4" name="Momentum Crush" description="With a powerful overhand flourish at the end of his charge, the disciple is capable of delivering additional force to his already devastating charges. The initiator makes a charge attack against a target foe and if successful, he may spend a swift action to add an addition 20 points of damage to that single attack and ignores the target&apos;s damage reduction." compset="PWManuever" summary="Boost: Add an additional 20 points of damage on a successful charge attack and the attack ignores the target&apos;s damage reduction." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1047,7 +975,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWNoBl4" name="Noble Blade" description="Scarlet Throne practitioners who know the Noble Blade may use their battle focus to add additional force to their strikes. For a single attack, the disciple may add a +5 insight bonus to his attack roll and +2d8 insight bonus to damage rolls to a single melee attack made during this turn." compset="PWManuever" summary="Boost: +5 to attack roll and +2d8 to damage roll on a single melee attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1061,7 +988,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWOfRo1" name="Offensive Roll" description="As the disciple moves by his opponent, he may drop into a tumbling roll by them and strike at them at a surprising angle. The initiator must move at least 10 ft. along side an enemy (which will provoke attacks of opportunity unless the initiator is Tumbling) and make a Acrobatics check with a DC equal to the target&apos;s Armor Class. If successful, the target is considered flat-footed and the strike inflicts an additional 1d6 points of damage. The character initiating this maneuver may move up to his full base speed, making the attack along any point of the moment." compset="PWManuever" summary="Strike: Move by an opponent and make a Acrobatics check against target&apos;s AC, if successful, the target is flat-footed and the strike inflicts +1d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1074,7 +1000,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWOrSw7" name="Orichalcum Swipe" description="A Golden Lion disciple shapes the very nature of war, and this technique allows him to direct his foes through his allies&apos; blades as easily as a knife through bread. With a mighty cry and a tremendously potent attack, the disciple ruins his foe. The character makes a melee attack inflicting an additional 12d6 points of damage, and forces the foe to move up to twice the target&apos;s base speed in the direction of the initiator&apos;s choosing (which provokes attacks of opportunity if the target moves through threatened areas) in a straight line." compset="PWManuever" summary="Strike: Melee attack inflicts an additional 12d6 points of damage, target makes up to a full move in a direction of your choosing." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1088,7 +1013,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWPaPo3" name="Pack Pounce" description="By capitalizing on the opportunities granted by the presence of his allies who are attacking his foe, the lethality of the Golden Lion disciple increases dramatically due to his knowledge of pack tactics. The character must be attacking a target that one or more of his allies are also engaged in melee with, and upon successfully attacking a qualifying target, the character receives a +5 circumstance bonus to damage rolls against that target per ally (to a maximum of an additional 15 points of damage for three allies.)" compset="PWManuever" summary="Strike: Make an attack while adjacent to an ally, gain a +5 damage per adjacent allies to that enemy.(Max +15)" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1102,7 +1026,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWPaHu1" name="Panthera on the Hunt" description="With a deep breath and the tightening of honed muscles, the Primal Fury disciple may launch off into a lightning-fast charge. The initiator initiating this maneuver gains +2 circumstance bonus to attack and damage rolls on his charge attack, and ignores attacks of opportunity from moving through threatened squares." compset="PWManuever" summary="Strike: The martial disciple gains a +2 damage bonus on a charge attack, and ignores attacks of opportunity" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1115,7 +1038,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWPhSu7" name="Phantom Sunstorm" description="The disciple draws back one weapon and lets loose with a hundred. The initiator creates dozens of phantom weapons that cause very real injuries in addition to the one real weapon used in the attack. The initiator initiates this boost as part of an attack or strike. If the attack is successful, then it inflicts maximum damage. This is a supernatural ability." compset="PWManuever" summary="Boost: Creates a hail of quasi-real weapons that strike with the real one, causing maximum damage on a single attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1129,7 +1051,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWPhWR3" name="Phantom Wind Ray" description="The disciple&apos;s knowledge of the desert mirages caused by the sun grants him the ability to obfuscate his attacks within the holes of a foe&apos;s perception. The target must make a Perception check opposed by the character&apos;s next attack roll against the target; if the Perception check fails then he is caught flat-footed against the attack and the attack is resolved against his flatfooted armor class. This is a supernatural ability." compset="PWManuever" summary="Boost: Next ranged attack is sheathed in dazzling light to obscure it, target must make an opposed Perception check to the attack roll or be caught flat-footed." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Super"/>
@@ -1143,7 +1064,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWPrMo1" name="Pride Movement" description="By having a watchful eye on the flow of combat, the disciple knows when to spur an ally into a better position. As a swift action, the character may grant a move action to a target adjacent ally. This ally must then use this move action immediately to move up to his base speed to a location of his choosing within his range." compset="PWManuever" summary="Boost: Grant an adjacent ally a move action." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1156,7 +1076,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWPrFr7" name="Primal Frenzy" description="The disciple becomes a whirling dervish of hellish weapon blows as he descends into a blood-drenched frenzy of strikes against his surrounding foes, relying on his killer instincts to see him through the fight. As a full attack action, the initiator makes an attack roll at full base attack bonus against each target within his reach with each weapon he is currently wielding (including natural attacks and armor or shield spikes), and each successful attack inflicts an additional 6d6 points of damage. After initiating this maneuver, the initiator&apos;s focus on offense causes his AC to suffer a -2 penalty until his next turn." compset="PWManuever" summary="Strike: Make a melee attack with all wielded weapons against all threatened foes and inflicts an additional 7d6 + initiator modifier in damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1170,7 +1089,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWPrWr1" name="Primal Wrath" description="A wild but powerful strike is better than a frail and accurate one, says the disciple of Primal Fury. By sacrificing accuracy for potency, the disciple achieves his desired result. The initiator inflicts an additional 4 points of damage upon a successful attack, or an additional 6 points of damage if the initiator is wielding the weapon in two hands." compset="PWManuever" summary="Strike: A forceful strike that suffers a -2 penalty to hit but adds +4 to damage, or +6 to damage if used with a two-handed weapon." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1183,7 +1101,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWPrAt1" name="Prince&apos;s Attitude" description="The Scarlet Throne disciple knows that he is nobility in the savagery of war, and conducts himself as such when moving through melee. The initiator gains a +4 dodge bonus to his Armor Class when he moves through threatened areas and provokes attacks of opportunity and a +2 competence bonus to Reflex and Will saves until his next turn." compset="PWManuever" summary="Boost: +4 AC against attacks of opportunity while moving, +2 bonus to Reflex saves and Initiative." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1196,7 +1113,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWPySt2" name="Pyrite Strike" description="With a powerful strike, the Golden Lion disciple pushes his foe into the waiting arms of his allies and their hungry blades. The initiator makes a melee attack that inflicts an additional 1d6 points of damage and forces his foe to make a 5-ft. movement (of the initiator&apos;s choice) from the square he is currently occupying. If the target is incapable of movement, then the target simply takes the damage as normal. This movement provokes attacks of opportunity to all those capable of making them against the target except for the initiator of this maneuver." compset="PWManuever" summary="Strike: Strike inflicts an additional 1d6 points of damage and moves an opponent 5-ft in a direction of your choosing." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1209,7 +1125,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWRaTP2" name="Raging Hunter Pounce" description="With the ferocity of a raging great cat, the disciple of Primal Fury provides the very real fear that users of this discipline are known to inspire with their reckless assault techniques of offense over all. The initiator makes a charge attack and makes a full attack at the end of the charge against the target creature. He must focus all of these attacks against a single target, and if the target is brought to 0 or fewer hit points, then remaining attacks are lost as the initiator savages the foe&apos;s body with the remaining attacks." compset="PWManuever" summary="Strike: Charge at a target and make a full attack on the target." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1223,7 +1138,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWReZD4" name="Red Zephyr&apos;s Dance" description="The Red Zephyr&apos;s Dance allows the disciple to step confidently through a battlefield, his blade leading the way in decisive sweeps as a gracefully as a ballroom dance. The disciple makes a melee attack at his full attack bonus against a target, and if successful, the disciple moves 10 ft. (no more or no less) and may +make another attack at his next highest attack bonus. He may not make more attacks in a round that his maximum main-hand number of attacks, nor may he move farther than his normal maximum speed. (For example, if a warlord with a base attack bonus of +13 initiated this maneuver, he would make one attack at +13, move 10 ft., make his second attack at +8, then move 10 ft. again, and make a final attack at +3.)" compset="PWManuever" summary="Strike: Each successful melee attack allows the martial disciple to move 10 ft. and make an additional attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1237,7 +1151,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWReZF6" name="Red Zephyr&apos;s Fleetness" description="The combat focus of a Scarlet Throne disciple lends itself to the analogy of the coiled spring; when necessary, the spring can rapidly unfold and launch with incredible celerity. With this principle adapted to the royal court of battle, the disciple may launch himself with alacrity across the field. The disciple may add 30 ft. to his base speed until his next turn, and his opponents suffer a 50% miss chance when attacking him due to his incredible speed." compset="PWManuever" summary="Boost: Add +30 ft. to your movement for the round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1251,7 +1164,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWReZS1" name="Red Zephyr&apos;s Strike" description="With swiftness born of skill, an initiate of the Scarlet Throne learns how to move through the battlefield as lord among warriors. The disciple makes an attack against a foe, and if successful, he may make an immediate 10ft movement which does not provoke attacks of opportunity." compset="PWManuever" summary="Strike: Make a melee attack, then make an immediate 10ft movement." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1265,7 +1177,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWReTw2" name="Reflexive Twist" description="With his athletic abilities and reflexes honed to a razor&apos;s edge, the Thrashing Dragon disciple may incorporate reflexive evasions into his fighting dance at a moment&apos;s notice to defend himself from danger. When making a Reflex save, the initiator may instead make an Acrobatics check in place of his Reflex saving throw bonus to determine his success." compset="PWManuever" summary="Counter: Make an Acrobatics check in place of a Reflex save." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1279,7 +1190,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWReBl2" name="Regal Blade" description="A disciple of the Scarlet Throne learns that in moments of precise focus, a single stroke of the blade can fell a potent enemy. For a single attack, the disciple may add a +2 insight bonus to his attack roll and +1d8 insight bonus to damage rolls to a single melee attack made during this turn." compset="PWManuever" summary="Boost: Add +2 to attack roll and +1d8 to damage roll on a single melee attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1293,7 +1203,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWReCl6" name="Rending Claws" description="When both of his blades strike home, the Thrashing Dragon disciple may rend and tear with his blades to cause excruciatingly painful and deadly injuries. As a swift action after having made two successful attacks with two wielded weapons (which inflict either piercing or slashing damage) or natural weapons that do slashing or piercing damage against a single target, the initiator may rend his opponent inflicting an additional 8d6 points of damage." compset="PWManuever" summary="Boost: Make two successful melee attacks with wielded weapons, automatically rend victim for an additional 8d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1307,7 +1216,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWReTh5" name="Reversing Thrust" description="By watching the form of the enemy attacking him, the disciple may expertly twist and dodge way from the attack while making an attack on his foe in return. The initiator makes an opposed Acrobatics check against the target&apos;s attack roll. If successful, the disciple evades and negates his foe&apos;s attack and may make an immediate counter attack at his full attack bonus." compset="PWManuever" summary="Counter: Make a successful opposed Acrobatics check against a target&apos;s attack roll; evade the attack and then make an immediate counter-attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1321,7 +1229,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWRiIr5" name="Riddle of Iron" description="With a flourishing of his blade, the Scarlet Throne disciple confuses the senses of his foe as he lands a strike from an unexpected angle. The character must make a melee attack against a foe, and if successful the strike inflicts an additional 5d6 points of damage and dazes the target for one round on a failed Will save (DC 15 + primary initiator attribute modifier)." compset="PWManuever" summary="Strike: Melee attack that inflicts an additional 5d6 points of damage and dazes a target for one round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1336,7 +1243,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWRiSt8" name="Riddle of Steel" description="With a swift and deadly strike, the disciple is capable of disabling a foe&apos;s senses for a few moments, effectively eliminating the threat. The disciple makes a melee attack against his opponent which if successful deals an additional 10d6 points of damage and stuns his opponent for 1d4 rounds on a failed Will save (DC 18 + initiation modifier)." compset="PWManuever" summary="Strike: Make a melee attack, strike inflicts an additional 6d6 points of damage and stuns target for 1d4 rounds." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1351,7 +1257,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="WillPart"/>
     </thing>
   <thing id="manPWRiZS2" name="Rising Zenith Strike" description="With supreme focus, comes great insight into the workings of a foe&apos;s defenses. When the moment is right, the disciple releases his attack in a vicious upward swing. The disciple makes a Sense Motive check in place of his normal attack roll (he may add any enhancement bonus from the weapon or feats that apply to the use of this weapon to this roll as well), and if this Sense Motive check equals or exceeds the target&apos;s armor class, the attack deals double damage. If this check does not meet or exceed the target&apos;s armor class, then the attack fails and the disciple misses." compset="PWManuever" summary="Strike: Make a Sense Motive check, strike does double damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1365,7 +1270,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWRoBa5" name="Roar of Battle" description="The Golden Lion disciple delivers a telling blow, shattering bones and piercing defenses alike as he presses the foe into opening vital places for his allies to gain purchase. The character makes an attack inflicting an additional 6d6 points of damage. Allies who attack the target of this maneuver inflict an additional 3d6 points of damage on successful attacks for one round." compset="PWManuever" summary="Strike: Make an attack that inflicts an additional 6d6 points of damage, all other allies that attack the target inflict an additional 3d6 points of damage on successful attacks." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1379,7 +1283,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWRoBl7" name="Royal Blade" description="As a true king of battle, the disciple brings his mastery of Scarlet Throne to the battlefield to the despair of his foes. By initiating this maneuver, his show of majestic force proves his claim to power. The disciple may add a +5 insight bonus to his attack roll and +5d8 insight bonus to damage rolls on a single melee attack made during this turn. Additionally targets who&apos;ve been struck by an attack augmented with this boost must make a Will save (DC 17 + initiator modifier) or be left cowering for 1 round." compset="PWManuever" summary="Boost: +5 to attack roll and +5d8 to damage roll on a single melee attack, potentially cowering foe." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1394,7 +1297,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="WillNeg"/>
     </thing>
   <thing id="manPWRBLS7" name="Ruby Battle Lord&apos;s Strike" description="Perfection in combat is the true goal of any disciple of Scarlet Throne, and to become a true master of this discipline is to know how to strike perfectly with each and every attack. The disciple initiating Ruby Battle Lord&apos;s Strike must make a full attack against a target, each attack using his full base attack bonus with a +2 insight bonus instead of the normal -5 reduction of each consecutive attacks (i.e. an initiator with a base attack bonus of +16, who normally has four attacks in a full attack action, would make each attack using this maneuver using his full +16 base attack bonus with a +2 insight bonus in addition)." compset="PWManuever" summary="Strike: Make a full attack at a single target using full base attack bonus for each attack with a +2 insight bonus." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1408,7 +1310,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWRuZS5" name="Ruby Zenith Strike" description="The focus of battle teaches that in a single hair&apos;s breadth of time, a warrior may strike down a foe in a single blow. The disciple makes a Sense Motive check in place of his normal attack roll (he may add any enhancement bonus from the weapon or feats that apply from the use of his weapon to this Sense Motive check as well), and if this Sense Motive check equals or exceeds the target&apos;s armor class, the attack deals triple damage. If this check does not meet or exceed the target&apos;s armor class, then the attack fails and the disciple misses." compset="PWManuever" summary="Strike: Make a Sense Motive check, strike does triple damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1422,7 +1323,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSaBa2" name="Sanguine Barrier" description="The focus required in battle allows the disciple to anticipate incoming attacks. The disciple makes a Sense Motive check and add a +2 competence bonus to the roll, opposing a single melee or non-spell or spell-like ability ranged attack. If successful, the disciple negates the attack." compset="PWManuever" summary="Counter: Make a Sense Motive check to block an attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1436,7 +1336,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSaPe5" name="Sanguine Perfection" description="The supreme clarity of mind and focus of form allows a disciple of Scarlet Throne of this skill to simply overcome any obstacle placed upon them, albeit for the short term. The disciple calls upon his supreme will and focus and may delay or stop a number of negative conditions placed upon him through the use of this maneuver for a number of rounds equal to the disciple&apos;s initiator modifier. Conditions that are subjected to this maneuver are: blinded, confused, cowering, dazed, dazzled, deafened, disabled, dying (though he still suffers hit point damage each round), energy drained, exhausted, fascinated, fatigued, frightened, helpless, nauseated, panicked, paralyzed, petrified, shaken, sickened, staggered, stunned, or unconscious. If the condition has a duration that would expire before the use of this maneuver, then the effect is negated. If there effect would have continue to have effect after the duration of this maneuver expires, then the subject suffers the remaining duration of that effect as normal after the maneuver ends." compset="PWManuever" summary="Counter: Temporarily overcome negative condition ailments." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1450,7 +1349,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="AttrRounds"/>
     </thing>
   <thing id="manPWSaPe4" name="Sanguine Perseverance" description="The focus of battle that a disciple of Scarlet Throne has allows him to react to danger before he actively knows it is present, his senses acknowledging peril before his mind would know of it. A disciple may initiate this counter when made to make a saving throw, the disciple makes a Sense Motive check and uses the result of this check in place of his normal saving throw." compset="PWManuever" summary="Counter: Use Sense Motive in place of relevant save on saving throw." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1464,7 +1362,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSaPr7" name="Sanguine Proclamation" description="With a mighty overhand swing the Scarlet Throne disciple puts his foe in their place; on their knees before the majesty of a prince of warriors. The initiator must make a melee attack against a target creature, if successful the attack inflicts an additional 10d6 points of damage and the initiator must make a successful Will save (DC 17 + initiator modifier) to resist being driven to their knees and considered knocked prone." compset="PWManuever" summary="Strike: Powerful attack that inflicts an additional 10d6 points of damage and potentially knocks the target prone." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1480,7 +1377,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="WillNeg"/>
     </thing>
   <thing id="manPWScEP3" name="Scarlet Eye&apos;s Perception" description="By watching his opponent&apos;s defenses and waiting for the hole in them to open, the Scarlet Throne disciple strikes with the speed of the gods. The initiator&apos;s next melee attack against that target is resolved as a touch attack." compset="PWManuever" summary="Boost: Next melee attack is resolved as a touch attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1494,7 +1390,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWScRi5" name="Scarlet Riposte" description="Within the focus of the disciple&apos;s mind, pathways to victory form with which he uses to sculpt and mold the outcome of the battle. When an enemy&apos;s attack threatens to unravel these pathways, a supreme act of will can restore order to them. The disciple makes a Sense Motive check with a +4 competence bonus opposing his enemy&apos;s melee attack roll, if successful, the attack is blocked and he may make an immediate counter attack against that opponent at his full attack bonus and inflict an additional 3d6 points of damage." compset="PWManuever" summary="Counter: Make a Sense Motive check opposing an enemy&apos;s attack roll, if successful, block the attack then make an immediate counter attack inflicting an additional 3d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1508,7 +1403,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWScSt1" name="Scything Strike" description="The principles of the Scarlet Throne teach its disciples that every swing must be made with precision and excellence; no movement is wasted and no attack should fruitless. The disciple may make a single attack against two adjacent enemies as a standard action using the same attack roll, resolving the attack separately as two attacks." compset="PWManuever" summary="Strike: Make a melee attack on two adjacent enemies as a single attack." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1522,7 +1416,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSeBr5" name="Searing Break" description="By binding the light of the sun&apos;s rays into his weapons, the disciple of the Solar Wind may attack with the sun&apos;s burning heat. As a swift action, the initiator may add an additional 3d6 points of fire damage on all ranged attack for one round. This is a supernatural ability." compset="PWManuever" summary="Boost: All ranged attacks gain +3d6 points of fire damage for the round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Super"/>
@@ -1536,7 +1429,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWShTa4" name="Sharpened Talons" description="By quickly scraping his blades together to create metallic burrs along their edges, he quickly sharpens them for his next attack. When two-weapon fighting with light bladed weapons (or with natural attacks that inflict slashing damage) the disciple&apos;s attacks with those weapons inflict an additional 2d6 points of damage for the round." compset="PWManuever" summary="Boost: When two-weapon fighting with light weapons, the disciple inflicts an additional 2d6 points of damage for one round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1550,7 +1442,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWShSt6" name="Shield-breaking Strike" description="By removing the protection of his prey, the disciple of the Primal Fury shreds leather and metal equally as a tiger&apos;s claws would tear animal hide. The character makes an attack against a foe and if successful, inflicts damage as normal to the target and inflicts the broken condition on a target piece or suit armor or shield and imposes a -4 penalty to their armor or shield bonus (not to exceed the total armor or shield bonus) until the item is repaired. If the item is magical, this maneuver is resolved as a normal sunder attempt as a free action as part of the strike (which does not provoke attacks of opportunity) and the character gains a +2 bonus to his CMB check for this attempt." compset="PWManuever" summary="Strike: Make a melee attack against a target, and in lieu of damage inflict the broken condition on their armor or shield and subtract 4 from their armor or shield bonus to AC (not to exceed the total armor or shield bonus) until it is repaired." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1564,7 +1455,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWShRu1" name="Shoulder Rush" description="The disciple of Primal Fury uses his aggression to take opportunities whenever possible, and a solid shoulder into a foe at an opportune moment can tip the scales of war in the disciple&apos;s favor. As a standard action, the initiator may make a bull rush or overrun attempt with a +4 circumstance bonus, and this attempt does not provoke attacks of opportunity." compset="PWManuever" summary="Strike: Make a bull rush or overrun attempt with a +4 bonus; attempt does not provoke AoO." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1578,7 +1468,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWShIO4" name="Shrug It Off" description="By relying on his instincts to protect him in the theater of war, the disciple twists and dodges to escape injury in the same manner as an animal can sense danger before it strikes. The character makes an opposed Survival check against the attacker&apos;s melee or ranged attack roll; if the character&apos;s attack roll equals or exceeds the attack roll, then the attack is negated." compset="PWManuever" summary="Counter: Make an opposed Survival check against a foe&apos;s attack roll to negate an attack that inflicts hit point damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1592,7 +1481,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSoFl2" name="Solar Flare" description="The disciple of the Solar Wind wraps the force of a hurricane around his weapon before launching it high into the air to have it crash down amongst his enemies, scattering them to the ground. The initiator makes an attack against either a target creature inflicting an additional 6d6 damage to the target or at the ground at a target creature&apos;s feet. The 5-ft. square that the target occupies or the targeted 5-ft. space itself immediately sets of a powerful wave of air that potentially knocks enemies prone within a 15-ft. radius of the target on a failed Fortitude saving throw (DC 16 + initiation modifier; this including the target, who suffers a -4 penalty to this saving throw). This is a supernatural ability." compset="PWManuever" summary="Strike: Make a ranged attack against a foe, if successful the target takes an additional +8d6 points of damage and has a chance of being stunned." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1605,7 +1493,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSoLa2" name="Solar Lance" description="The disciple focuses his energies into his weapon and lets loose a powerful shot in a gusting wind. The character makes a ranged attack against his foe and if successful, the attack inflicts an additional 2d6 points of damage. The force of the wind that accompanies this blow is enough to potentially bull rush an opponent, allowing the initiator to make a free bull rush attempt as part of this attack, using his primary initiator attribute modifier to calculate his CMB for the attempt with a +2 circumstance bonus. This is a supernatural ability." compset="PWManuever" summary="Strike: Strike with a single arrow or thrown weapon, create a phantom line of arrows which inflict an additional 2d4 points of damage and allows for a bull rush attempt as part of the strike." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Super"/>
@@ -1619,7 +1506,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSoMB6" name="Solar Meteor Blow" description="The disciple of the Solar Wind wraps the force of a hurricane around his weapon before launching it high into the air to have it crash down amongst his enemies, scattering them to the ground. The initiator makes an attack against either a target creature inflicting an additional 6d6 damage to the target or at the ground at a target creature&apos;s feet. The 5ft square that the target occupies or the targeted 5ft space itself immediately sets of a powerful wave of air that potentially knocks enemies prone within a 15ft radius of the target on a failed Fortitude saving throw (DC 16 + primary initiator attribute modifier; this including the target, who suffers a -4 penalty to this saving throw). This is a supernatural ability." compset="PWManuever" summary="Strike: High fired shot that when it lands on target inflicting +4d6 points of damage and creates a massive gust of wind capable of knocking surrounding foes down." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <fieldval field="mTarget" value="One creature or space, then a 15ft radius for the air blast"/>
     <usesource source="srcPathOfW"/>
@@ -1635,7 +1521,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortNeg"/>
     </thing>
   <thing id="manPWSoRe3" name="Solar Reflection" description="As reflective surfaces bounce the rays of the sun, so can the Solar Wind disciple ricochet a missile weapon from one target to another. The character makes a single ranged attack roll and if this roll is successful, he may apply this same attack roll against another opponent within 20ft of the first. This strike inflicts an additional 2d6 points of damage to the first target, and normal damage to the second target. Each reflection attack is considered a separate attack for the purposes of determining the effectiveness of single attack boosting abilities, such as boosts that affect one attack or spells like {i}true strike.{/i}" compset="PWManuever" summary="Strike: Make a ranged attack at a foe with a +2d6 damage bonus, if this attack is successful you can ricochet the shot to another enemy within 20ft using the same attack roll (no bonus damage)." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1650,7 +1535,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSoSt1" name="Solar Sting" description="The Solar Wind disciple readies his attack and launches it into the sky. The weapon crashes down into the targeted area and creates a semi-real field of phantom caltrops. The character chooses a target area within range of his ranged attack, and makes an attack roll to hit that location (AC 5 plus any range penalties). The target area (one 10ft by 10ft square) becomes covered with phantom caltrops of softly glowing light that cause the area to be considered difficult terrain and act as vicious caltrops, using the character&apos;s primary initiator attribute modifier as their attack bonus and inflicting 1d2 points of damage and halving the base speed of any they manage to attack. Targets are denied their armor bonus, shield bonus, and deflection bonus to AC against this attack, but if they&apos;re wearing boots or heavy foot gear they have a +2 armor bonus to their AC against this attack." compset="PWManuever" summary="Strike: Turn a piece of ammunition or a ranged weapon into a field of caltrops." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1665,7 +1549,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="PerLevel2"/>
     </thing>
   <thing id="manPWSoSt4" name="Solar Storm" description="By wrapping the winds of tornadic force around his weapon and attacking a foe or the ground at a target&apos;s feet, the Solar Wind disciple may cause a brief tornado to wrap around a target and both shield and limit their abilities. The initiator makes an attack against either a target creature (inflicting damage as normal) or at the ground at a target creature&apos;s feet (friend or foe). The 5-ft. square that the target occupies or the targeted 5-ft. space itself becomes wrapped in a sheath of swirling tornado-like winds. The subject of this cannot be targeted by missile weapons of any kind (but spells can target him as normal) nor can the initiator make ranged attacks out of this storm (but spells may be cast as normal). If the creature tries to leave the area of effect of this maneuver, he must make a Reflex save (DC 14 + initiation modifier) or be forced to stay in that space, unable to make a move action or free 5-ft. step out of that space. If he succeeds or if the duration of 1d6 rounds expires, then the winds are dispersed and the target may act as normal. This is a supernatural ability." compset="PWManuever" summary="Strike: Make a ranged attack at target creature or at the space it occupies, creates a brief but fierce cyclone that protects against and prevents ranged attacks." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Super"/>
@@ -1682,7 +1565,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefNeg"/>
     </thing>
   <thing id="manPWSoWL4" name="Solar Wind Lancet" description="With the mighty force of the Solar Wind, the disciple lets loose a missile with breath-stealing, devastating force. Upon initiating this boost, the next ranged attack that the initiator makes inflicts an additional 4d6 points of damage upon a successful attack and potentially knocks his target prone (a successful DC 15 + initiation modifier Fortitude save negates being knocked prone). This is a supernatural ability." compset="PWManuever" summary="Boost - Next ranged attack gains +4d6 points of damage for the round, potentially knocks foe down." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Super"/>
@@ -1697,7 +1579,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWSoWN9" name="Solar Wind Nova" description="The true champion and master of the Solar Wind may unleash this devastating attack against all of his foes by unleashing his attack towards the sky where it splits apart into a deadly rain of phantom weapons and brilliant sunlight. The initiator picks a target creature or area as if he were using a grenade like weapon and a 20ft burst of burning phantom ammunition crashes down on this area, inflicting 10d6 points of damage and 10d6 points of fire damage. The targets in the area of effect may make a Reflex save (DC 19 + primary initiator attribute modifier) to reduce the damage by half. On a failed save, the target is knocked prone from the force of the attack. This maneuver creates its own ammunition, or if the initiator chooses to, can use special ammunition if the initiator desires." compset="PWManuever" summary="Strike: Fire a phantom volley of burning arrows into a 20ft burst hitting all targets within its area, inflicting 10d6 damage and 10d6 fire damage and may leave targets knocked prone." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <fieldval field="mArea" value="20ft burst effect on targeted area or creature"/>
     <fieldval field="mTarget" value="All targets within area of effect"/>
@@ -1713,7 +1594,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefPart"/>
     </thing>
   <thing id="manPWSoWT8" name="Solar Wind Tsunami" description="The disciple holds aloft a glowing weapon which burns with the wrath of the Solar Wind, and lets it loose against his foes in a wave of destruction. The initiator creates a 60ft cone-shaped burst of quasi-real missiles that tear his foes to shreds. The attack inflicts 15d6 + initiator level (max +20) points of damage to all within the area of effect. Targets within may make a Reflex save (DC 18 + primary initiator attribute modifier) to take half damage. The initiator need not loose his projectile weapon as part of this attack, retaining it to use at a later time. This is a supernatural ability." compset="PWManuever" summary="Strike: With a single arrow or thrown weapon, generate a phantom wave of arrows in a 60ft cone, inflicts 15d6 + IL (+20 max) points of damage to all in the area of effect." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <fieldval field="mArea" value="Cone shaped"/>
     <usesource source="srcPathOfW"/>
@@ -1728,7 +1608,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefHalf"/>
     </thing>
   <thing id="manPWStHa1" name="Steady Hand" description="The disciple&apos;s limbs and muscles are strong and wise with the knowledge of weapons in flight. As a swift action, the initiator may increase the range of his ranged attacks by an additional 30 ft. for the first range increment (first increment only) for one round." compset="PWManuever" summary="Boost: Increase the range on a ranged attacks by +30ft." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1742,7 +1621,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Round1"/>
     </thing>
   <thing id="manPWStBl5" name="Strategic Blow" description="With a tremendous strike, the disciple confuses the enemy and creates an opening for an ally to reposition himself. The character makes a melee attack inflicting an additional 8d6 points of damage; additionally an ally within 10ft of the character that he chooses may make a move action immediately." compset="PWManuever" summary="Strike: Make a successful melee attack on a target, strike inflicts 8d6 points of additional damage and grants an ally within 10ft of the disciple a move action." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1756,7 +1634,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWStDe3" name="Strike of Defeat" description="&apos;A dead foe is a foe that can trouble you no more,&apos; is an old adage of the Scarlet Throne disciple. An injured foe is easy prey, but is still a foe nonetheless. By utilizing this swift executioner&apos;s strike, the Scarlet Throne disciple removes a potential threat and obstacle from his path. The disciple makes an attack against a foe, if successful this strike deals additional damage determined by the state of the enemy&apos;s health. If the enemy has more than 75% of his total health, this strike does no additional damage. If the foe has less than 75% health, this strike inflicts an additional 4d6 points of damage. If the foe has less than 25% of his total health, this strike inflicts an additional 8d6 points of damage." compset="PWManuever" summary="Strike: Make a melee attack against a foe, deals additional damage based on current hit points." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1770,7 +1647,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWStSF7" name="Stunning Solar Flare" description="The Solar Wind disciple can steal the fight from an enemy from a target with a single attack, such is his great skill. The initiator makes a ranged attack against a foe, if successful the attack inflicts an additional 8d6 points of damage and stuns the opponent on a failed Fortitude save (DC 17 + primary initiator attribute modifier) for 1d3 rounds." compset="PWManuever" summary="Strike: Make a ranged attack against a foe, if successful the target takes an additional +8d6 points of damage and has a chance of being stunned." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1785,7 +1661,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWSuDL2" name="Sun Dips Low" description="With a sudden, darting movement the Thrashing Dragon disciple may dodge an attack and protect himself from harm, if perfectly timed. The disciple opposes an enemy&apos;s attack roll by making an Acrobatics check; if successful then he successfully evades the attack. If not, he is struck by the blow as normal." compset="PWManuever" summary="Counter: Make an opposed Acrobatics check against an attack to negate it." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1799,7 +1674,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSwTa2" name="Sweeping Tail" description="Within his battle dance, the disciple dips low and sweeps his leg out to knock an opponent down. The disciple makes a trip attempt which does not provoke attacks of opportunity, and he gains a +4 bonus to this check. Creatures successfully tripped suffer 2d6 + the initiator&apos;s initiation modifier in damage from the heavy fall." compset="PWManuever" summary="Strike: Make a trip attack against a foe with a +4 bonus to the attempt., inflicts 2d6 + initiation modifier damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1812,7 +1686,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWSwCl1" name="Swift Claws" description="The Thrashing Dragon disciple&apos;s skill with his dual weapons allows him to strike with practiced speed and alacrity, allowing him to make an attack with two wielded weapons (or unarmed strikes), using the same attack roll, as a single attack action. Creatures with more than two arms may still only strike with two wielded weapons." compset="PWManuever" summary="Strike: Attack a single target with two wielded weapons." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1826,7 +1699,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWTaSt1" name="Tactical Strike" description="Any commander knows that in battle, footwork is key. By utilizing this theory, the Golden Lion disciple helps his comrades to understand this. The disciple makes a melee attack against a foe; if successful, any ally he designates within 10-ft. of his position may make an immediate free 10-ft. movement without provoking attacks of opportunity." compset="PWManuever" summary="Strike: Make an attack, grant nearby ally the ability to move up to 10 ft." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1840,7 +1712,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWTaSl6" name="Tail Slap" description="As the true dragon fights and employs all of its mighty limbs in combat, so does the disciple that emulates their graceful and deadly style. As part of this strike, the initiator makes a normal melee attack and if successful, the disciple makes an additional powerful spinning kick, landing a heavy blow to his foe which may temporarily rob it of its senses. The initiator makes an attack against a foe at full base attack bonus. If successful, the attack inflicts additional damage equal his unarmed strike damage plus an additional 6d6 points of damage and potentially stuns his foe. On a failed Fortitude saving throw (DC 16 + initiation modifier) the foe is stunned for 1d4 rounds. If the saving throw is successful, the foe is merely dazed for one round. The character does not provoke attacks of opportunity for not possessing the Improved Unarmed Strike feat when using this strike, but additional damage from this strike inflicts non-lethal damage unless the character possesses that feat." compset="PWManuever" summary="Stance: Unleash a powerful kick which inflicts an additional 6d6 points of damage and stuns an opponent for up to 1d4 rounds." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1856,7 +1727,6 @@ August 13, 2013 - Tim Shadow
     </thing>
   <thing id="manPWTaWi1" name="Talon on the Wing" description="This manuever was removed in the last printing of the book." compset="PWManuever" summary="REMOVED" uniqueness="useronce">
     <comment>*HIDDEN</comment>
-    <fieldval field="trkMax" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="PathOfWar" tag="Manuever"/>
@@ -1869,7 +1739,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Attack1"/>
     </thing>
   <thing id="manPWThBl8" name="Thrashing Blades" description="With the speed and ferocity of a rampaging dragon, the disciple rends his foe to ribbons with his furious onslaught as he turns the quickening principles of fighting many opponents to fight only one. The initiator may make a full attack action at his foe, each attack at full attack bonus (with no reduction from iterative attacks), with both wielded weapons and any natural attacks or unarmed strikes the initiator possesses. Each of these attacks inflicts an additional 2d6 points of damage due to the sheer ferocity of the attack. The price for this ferocity is that the initiator must leave himself open to some attack; until his next turn the initiator suffers a -4 penalty to his AC." compset="PWManuever" summary="Strike: Make a full round attack as a standard action, each attack (including any unarmed or natural secondary attacks) at full attack bonus plus an additional 2d6 points of damage, suffer:4 penalty to AC." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1883,7 +1752,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWThDF7" name="Thrashing Dragon Frenzy" description="By focusing on the principles of both speed and power, the Thrashing Dragon disciple explodes into motion, making a vicious flurry of strikes against all nearby attackers in a deadly dance of death. Make two attacks with two-wielded weapons (making two attack rolls with both weapons, effectively making two attacks on each target with both weapons) against each adjacent enemy that surround the initiator. If the initiator is capable of making an unarmed strike or natural attack (through Improved Unarmed Strike feat or natural weapons) then the initiator may add in an additional two attacks per target for use of this unarmed or natural attack." compset="PWManuever" summary="Strike: Make two melee attacks with two wielded weapons (two attacks per weapon) against each adjacent enemy surrounding the initiator." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1897,7 +1765,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWThDT5" name="Thrashing Dragon Twist" description="Like a coiled spring, the disciple of the Thrashing Dragon twists his body and with powerful recoil, he spins to swipe at all of his available targets. The initiator attacks surrounding foes while fighting with two weapons, making an attack roll with both wielded weapons against each target at full base attack bonus (effectively making two attacks on each target, one with each weapon) against each adjacent enemy that surrounds the initiator. If the initiator is capable of making an unarmed strike or natural attack (through Improved Unarmed Strike feat or natural weapons) then the initiator may add in an additional attack per target for use of this unarmed or natural attack, also at full base attack bonus." compset="PWManuever" summary="Strike: Make an attack with two wielded weapons (one attack per weapon) against each adjacent enemy surrounding the initiator." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1911,7 +1778,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWTrSR7" name="Triple Solar Reflection" description="The Solar Wind disciple has mastered the art of the ricochet shot and may target up to four attackers. The initiator makes a single ranged attack roll and if this roll is successful, he may apply this same attack roll against another opponent within 20ft of the first, and if this is also successful, he may use the same attack roll to strike a third target no farther than 20ft away (but not the original target), and again on a fourth target no farther than 20ft from the last. This strike inflicts an additional +6d6 points to the first target, +4d6 points of damage to the second, +2d6 on the third, and normal damage to the fourth, and final, target. Each reflection attack is considered a separate attack for the purposes of determining the effectiveness of single attack boosting abilities, such as boosts that affect one attack or spells like {i}true strike.{/i}" compset="PWManuever" summary="Strike: Shot strikes four targets with one attack roll. First target takes +6d6 damage, second takes +4d6 damage, third takes +2d6 damage, and the fourth attack takes normal damage. No two targets can be more than 20ft apart" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1926,7 +1792,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWTwWS6" name="Twisting Wind Shot" description="The keen vision of the Solar Wind disciple allows him to pick out the vulnerable spots on a foe&apos;s form and plant a missile directly into them. Make an attack roll against a foe which if successful inflicts damage as if the weapon had scored a critical hit, multiplying damage accordingly. This strike does count as a critical hit for the purposes of applying bonuses that activate with a successful critical hit, such as with critical feats. If the initiator scores a successful critical hit when initiating this strike, then the target is dazed for one round from the power of the attack." compset="PWManuever" summary="Stance: Make a ranged attack, successful attack is treated as a critical hit." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1940,7 +1805,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWUnPG8" name="Unbreakable Panthera Guard" description="In the flow of battle, a master of the Primal Fury discipline finds nothing more invigorating than a near miss that was avoided through sheer instinct. The initiator makes an opposed Survival check against an opponent&apos;s attack roll which if successful the initiator negates the attack and gains a number of temporary hit points equal to twice the disciple&apos;s initiator level for one minute." compset="PWManuever" summary="Counter - Make an opposed Survival check against a foe&apos;s attack roll to negate an attack that inflicts hit point damage and gain temporary hit points equal to twice the disciple&apos;s initiator level." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1954,7 +1818,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWUnTa6" name="Unbreakable Talons" description="Using his superior skill and speed, the disciple knows where and how to strike for maximum effectiveness. By striking at the right angle, the disciple&apos;s blades set off discordant harmonies within the target for increased destructive potential. When two-weapon fighting with bladed weapons or with natural attacks that inflict slashing damage, the disciple&apos;s attacks with those weapons inflict an additional 4d6 points of damage for the round and strike as if they were adamantine weapons for the purposes of overcoming damage reduction or sundering items." compset="PWManuever" summary="Boost - When two-weapon fighting with light weapons, the disciple&apos;s attacks strike as adamantine and inflict an additional 4d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1968,7 +1831,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Turn1"/>
     </thing>
   <thing id="manPWViSw3" name="Vicious Swipe" description="The disciple&apos;s combat style allows him to get in close to a target and strike beneath its guard, dealing a powerful blow and potentially knocking it senseless for a few moments. The initiator makes a melee attack, and if successful the attack inflicts an additional 3d6 points of damage and potentially dazes the opponent for 1d4 rounds (Fortitude save DC 13 + initiation modifier negates the dazed condition)." compset="PWManuever" summary="Stance: Make a successful melee attack, attack inflicts an additional +3d6 and potentially dazes opponent." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1983,7 +1845,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWWaLC7" name="War Lion&apos;s Charge" description="With the ferocity of an angered lion, the Golden Lion disciple races across the battlefield ignoring secondary targets to bear down on a single enemy and reduce him to dust. The initiator makes a charge attack against a foe (which does not provoke attacks of opportunity) and this attack inflicts an additional 14d6 points of damage. The foe must also make a Fortitude save (DC 17 + initiation modifier) or be stunned for one round." compset="PWManuever" summary="Stance: Make a charge attack against a foe which does not provoke attacks of opportunity, if successful the attack inflicts an additional 14d6 points of damage and potentially stuns the opponent for one round." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -1998,7 +1859,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWWaRo2" name="Warning Roar" description="Witnessing a clear and present danger to an ally, the disciple shouts out a well-timed warning and aids his ally in defending against an attack. The character makes a Diplomacy check opposing an opponent&apos;s attack roll made on an ally, if successful then the attack is negated." compset="PWManuever" summary="Counter: Make an opposing Diplomacy check to negate an enemy&apos;s attack on a nearby ally." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -2012,7 +1872,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWWeSR4" name="Weeping Scarlet Razor" description="Even the basest common soldier knows that there are places on a man&apos;s body where if he were to be stabbed, then he would bleed out in minutes. The Scarlet Throne disciple takes this knowledge and arms himself with his superior skill to utilize this arterial strike against his foes. The initiator makes a melee attack against a target creature, and if successful, this attack inflicts an additional 4d6 points of damage and the target begins to bleed profusely, inflicting 4 points of bleed damage per round until a successful Heal check (DC 20) or a spell or effect that cures hit point damage has been administered to the target." compset="PWManuever" summary="Stance: Arterial strike that inflicts an additional 4d6 points of damage and grants the bleeding condition on the target." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -2026,7 +1885,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Special"/>
     </thing>
   <thing id="manPWWrPH9" name="Wrath of the Primal Hunter" description="The true master of Primal Fury art is the disciple who brings the full ferocity of this discipline against a foe with a titanic charge that ends with ringing iron and spraying blood as his weapons do their deadly work. The initiator performs a charge attack against his foe, and makes a full attack at the end of this charge attempt. Each successful attack ignores damage reduction and the initiator may add an additional 4d6 points of damage to each attack&apos;s damage roll." compset="PWManuever" summary="Stance: Make a charge attack against a target without provoking attacks of opportunity and at the end of the charge the disciple makes a full attack with deadly force." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="4"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -2040,7 +1898,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWWyFa1" name="Wyrmling&apos;s Fang" description="With a quick flick of his wrist, the disciple hurls a blade deeply into his foe with blinding speed. The initiator must make a ranged attack against a target by throwing a light weapon with a range increment (such as a dagger) or a weapon from an associated Thrashing Dragon weapon group (improvised weapon penalties apply if applicable). If this attack is successful, the attack inflicts an additional 1d6 points of damage." compset="PWManuever" summary="Strike: Thrown weapon inflicts an additional 1d6 points of damage." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="0"/>
     <usesource source="srcPathOfW"/>
     <tag group="AbilType" tag="Extra"/>
@@ -2740,7 +2597,6 @@ August 13, 2013 - Tim Shadow
     <tag group="AbilType" tag="Extra"/>
     </thing>
   <thing id="manPWBrAt1" name="Brawler&apos;s Attitude" description="By using the skill of the empty-handed warriors that came before him, the disciple focuses his will to using his body in less conventional ways in combat. When initiating this boost, the initiator gains a +4 competence bonus to his next CMB check when using his unarmed strike or discipline weapon to perform the following combat maneuvers: dirty trick, disarm, grapple, or trip." compset="PWManuever" summary="+4 to next trip, dirty trick, disarm, or grapple attempt." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <usesource source="srcPathOfW"/>
@@ -2755,7 +2611,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mTarget" tag="You"/>
     </thing>
   <thing id="manPWFlStr" name="Flurry Strike" description="The disciple of the Broken Blade learns to maximize openings in his opponent&apos;s defenses and makes lightning fast attacks whenever possible. As a standard action, the initiator may make two attacks at his full base attack bonus." compset="PWManuever" summary="Make two quick attacks on a target enemy." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <usesource source="srcPathOfW"/>
@@ -2799,7 +2654,6 @@ August 13, 2013 - Tim Shadow
       #applybonus[tACShield, hero.child[ArmorClass], field[abValue].value]]]></eval>
     </thing>
   <thing id="manPWPmBsh" name="Pommel Bash" description="When watching a Broken Blade fighter work his art, most watch for the fists and feet. The disciple knows this, and surprises his foe, catching him unaware. The disciple makes a surprise elbow strike to the foe that leaves them reeling. The initiator makes an unarmed attack against the target&apos;s flat-footed armor class, and the blow inflicts 1d6 points of additional damage. Creatures immune to sneak attacks and critical hits are unaffected by this extra damage." compset="PWManuever" summary="Unarmed attack catches foe flat-footed, does +1d6 damage" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <usesource source="srcPathOfW"/>
@@ -2827,7 +2681,6 @@ August 13, 2013 - Tim Shadow
     <tag group="AbilType" tag="Extra"/>
     </thing>
   <thing id="manPWIrnSt" name="Shards of Iron Strike" description="By mimicking the speed and piercing power of the legendary shattered blade of the founder of this discipline, the disciple makes a hard jabbing strike at his opponent&apos;s vulnerable spots for maximum pain. The initiator makes an attack against his target foe and if successful, the target is staggered for one round in addition to normal damage." compset="PWManuever" summary="Attack foe, if successful they are staggered for one round" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <usesource source="srcPathOfW"/>
@@ -2842,7 +2695,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mTarget" tag="Creature1"/>
     </thing>
   <thing id="manPWBzKn" name="Bronze Knuckle" description="With a spectacular crack of his knuckles, the disciple delivers an extra-potent blow to his foe in the form of a bone-crushing strike. As part of a unarmed attack or a strike from this discipline, the initiator&apos;s attacks for the duration of his turn inflict an additional 2d6 points of damage and these attacks ignore a target&apos;s damage reduction." compset="PWManuever" summary="Your unarmed attacks deal +2d6 damage and ignore DR for the turn" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <usesource source="srcPathOfW"/>
@@ -2941,7 +2793,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefPart"/>
     </thing>
   <thing id="manPWIrDst" name="Iron Dust" description="Knowing the disadvantage of fighting without proper steel in hand, the disciple of the Broken Blade must take advantage of his surroundings and openings in his foe&apos;s defenses as he sees them. As part of a martial strike, he may make a free dirty trick attempt as part of this boost with a +2 competence bonus without provoking attacks of opportunity. The initiator may choose when the effects of this boost are applied (before, during, or after) when using this in conjunction with an attack or a martial strike." compset="PWManuever" summary="Martial strike adds a free dirty trick attempt at +2, no AoO" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -2957,7 +2808,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWStFl" name="Steel Flurry Strike" description="The disciple makes a furious set of attacks upon his foe, hammering through defenses and striking rapidly. The initiator may make three attacks against his foe at full base attack bonus with a -2 penalty to hit. Successful hits inflict an additional 3d6 points of damage per hit." compset="PWManuever" summary="Three attacks at -2 to hit, +3d6 damage" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -2987,7 +2837,6 @@ August 13, 2013 - Tim Shadow
     <tag group="AbilType" tag="Extra"/>
     </thing>
   <thing id="manPWIBkPm" name="Iron-breaking Palm" description="By targeting the very iron, wood, and steel he has eschewed for the simple use of his own limbs as weapons, he reduces his foes effectiveness by shattering their illusion of superiority in combat. The initiator makes a sunder attempt against the opponent&apos;s weapon or shield and inflicts an additional 3d6 points of damage to the targeted item. If the initiator breaks a target&apos;s shield, the target is considered entangled until he spends a standard action to divest himself of the broken shield. This sundering attempt does not provoke an attack of opportunity." compset="PWManuever" summary="Sunder attempt on foe&apos;s weapon/shield with no AoO and +3d6 damage, entangles for if shield broken" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3003,7 +2852,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWIrAxK" name="Iron Axe Kick" description="The disciple leaps up into the air and raises his leg up to hammer it down in a bone-shattering axe kick. The initiator delivers a potent kick (as an unarmed strike) that inflicts an additional 6d6 points of damage. The target must make a Fortitude save (DC 14 + primary initiation modifier) or be dazed for 1d4 rounds." compset="PWManuever" summary="Unarmed attack deals +6d6 damage, can daze foe for 1d4 rounds" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3020,7 +2868,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWIrKn" name="Iron Knuckle" description="By tapping into hidden reserves of martial power locked within his form, the disciple of the Broken Blade makes his attacks strike with the force of a thousand fists. For the duration of the turn this boost is initiated on, unarmed attacks or those made with weapons of the Broken Blade discipline inflict an additional 4d6 points of damage." compset="PWManuever" summary="+4d6 damage with discipline weapons for the turn" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3036,7 +2883,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWIMThr" name="Iron Monger&apos;s Throw" description="Opponents with their deadly blades and powerful spears can harry the disciple who fights with his hands, and the truth that is forgotten by filling one&apos;s hands with iron and steel is that the one with open hands may use them for whatever purpose suits them, and in this case it is for taking a foe and viciously hurling him away to give the disciple room to maneuver and plan his next move. The initiator makes a CMB check with a +4 competence bonus that does not provoke attacks of opportunity, and if successful the initiator rolls into a reverse somersault to hurl his foe up to 20-ft. away from him (the disciple&apos;s player chooses the flight path of the thrown foe) where they land in heavily, taking 6d6 points of damage." compset="PWManuever" summary="CMB check with +4 bonus (no AoO), success throws target up to 20 ft and deals 6d6 damage" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3052,7 +2898,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWShStl" name="Shards of Steel Strike" description="By targeting vital soft tissues with a pointed, viper head-like finger jab, the disciple punctures flesh and releases the vital blood supply of his foe all over the ground in a deluge. The initiator makes an attack at a target creature, and if successful this strike inflicts an additional 8d6 points of damage which ignores damage reduction and the target suffers the bleeding condition, bleeding 2d4 points of damage per round for the initiator&apos;s initiation modifier in rounds. A successful DC 20 Heal check or the application of any effect that cures hit point damage will stop the bleeding." compset="PWManuever" summary="Succesful attack deals +8d6 damage, 2d4 bleed damage for your initation modifier in rounds" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3107,7 +2952,6 @@ August 13, 2013 - Tim Shadow
       hero.childfound[manBullRus].field[Bonus].value += field[mIM].value]]></eval>
     </thing>
   <thing id="manPWFinK" name="Finishing Kick" description="Amidst the flurry of punches, kicks, and elbows that are the hallmarks of the Broken Blade discipline, the disciple who has put his foe through the ropes of learning what it is to underestimate the warrior without weapons may deliver this powerful kick to reduce his foe to a bleeding heap. At the end of a full attack action, the initiator may use this boost to deliver one final extra unarmed attack as he delivers a powerful kick at his full base attack bonus and inflicting an additional 6d6 points of damage." compset="PWManuever" summary="After a full attack, make an extra unarmed attack with +6d6 damage" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3147,7 +2991,6 @@ August 13, 2013 - Tim Shadow
       #situational[hero.child[manDirtTri], "You can make one dirty trick attempt per turn as a swift action, without provoking an AoO", field[thingname].text]]]></eval>
     </thing>
   <thing id="manPWSngSt" name="Singing Steel Strike" description="With a powerful strike to the head of the target, the disciple&apos;s fist hits as hard as meteoric iron and sets the jaw of the target loose and rings the proverbial bell of the unfortunate who was unlucky to face him. The initiator makes a melee attack against the target creature, and if successful, he inflicts an additional 8d6 points of damage and this forces the target to make a Fortitude save (DC 16 + initiation modifier) or be deafened and silenced for 1d4 rounds. If the target makes the save, then the target is only deafened for one round." compset="PWManuever" summary="Attack deals 8d6 points of damage, target is deaf/mute for 1d4 rounds." uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3164,7 +3007,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWStAxK" name="Steel Axe Kick" description="With a sweeping axe kick that strikes as hard as any hammer strike could ever be hoped to, the disciple of the Broken Blade lands a crushing blow that causes even the strongest of opponents to pause in pain. The initiator delivers a devastating spinning kick (as an unarmed strike) that inflicts an additional 10d6 points of damage and potentially dazes the target for 1d3 rounds on a failed Fortitude save (DC 16 + initiation modifier)." compset="PWManuever" summary="Unarmed strike with +10d6 damage, can daze target for 1d3 rounds" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3181,7 +3023,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="FortPart"/>
     </thing>
   <thing id="manPWAdmKn" name="Adamantine Knuckle" description="The sheer ferocity and focus of the disciple&apos;s ability in the unarmed combat area rivals that of the greatest ki wielders in the world. By tightening his knuckles, long since numb with scars and digging deep within, the disciple strikes with steel-shattering force. Once initiated, for the rest of the initiator&apos;s turn all attacks he makes with this boost inflict an additional 6d6 points of damage and ignore the target&apos;s damage reduction or an object&apos;s hardness." compset="PWManuever" summary="Unarmed and discipline weapon strikes deal  +6d6 damage, ignore DR and hardness" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3197,7 +3038,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDuration" tag="Instant"/>
     </thing>
   <thing id="manPWShAdm" name="Shards of Adamantine Strike" description="It is said that masters of the discipline are capable of using their hand in the manner of striking serpent to punch through solid stone as if it were straw, and disciples with this maneuver are those who can. Taking this training to the theater of war, a punch so potent that it can leave the foe sickened with pain is what this art form can deliver. The initiator makes an attack against the target creature and if successful, this attack inflicts an additional 12d6 points of damage that ignores the target&apos;s damage reduction or an object&apos;s hardness. If striking a living creature, the target must make a Fortitude save (DC 17 + initiation modifier) or be nauseated with the pain of the strike for 1d4 rounds." compset="PWManuever" summary="Attack deals +12d6 damage, ignores DR, nauseates target" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3213,7 +3053,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mTarget" tag="CreatOrObj" name="One creature or object"/>
     </thing>
   <thing id="manPWSpFlR" name="Spinning Flurry Rush" description="The disciple of the Broken Blade takes a deep breath when he finds himself surrounded by opponents and hopes that they&apos;ve made peace with the gods, for they will be seeing them soon. The initiator makes two attacks at full base attack bonus per opponent within his reach, and each attack inflicts an additional 4d6 points of damage." compset="PWManuever" summary="Two attacks at full BAB on each opponent, each dealing +4d6 damage" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="2"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3229,7 +3068,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mTarget" tag="AllAdjEnm" name="All Adjacent Enemies"/>
     </thing>
   <thing id="manPWMtThr" name="Meteoric Throw" description="The Broken Blade master has transcended the simple use of his own body as a weapon, and has deigned to use his opponent&apos;s body as a weapon against those who would stand against him. The initiator makes a grapple attempt and if successful, he may hurl his foe up to 25-ft. as a ranged touch attack at either the ground or another target foe. The thrown enemy suffers 12d6 points of damage upon impact, and if thrown at a target creature, that target suffers that damage as well on a failed Reflex saving throw (DC 18 + initiation modifier for half damage). The target of this grapple attempt must be within one size category of the initiator. Large or larger foes being hurled using this method may target the ground beneath multiple targets within the area that creature normally would occupy. (Large creatures, for example, occupy a 10-ft. by 10-ft. space so they would hit all targets within a 10-ft. by 10-ft. area on a failed Reflex save)." compset="PWManuever" summary="Successful grapple check hurls an enemy at the ground or another enemy, deals 12d6 damage" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3246,7 +3084,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mSave" tag="RefHalf"/>
     </thing>
   <thing id="manPWSpAdm" name="Spinning Adamantine Strike" description="The Broken Blade master has transcended the simple use of his own body as a weapon, and has deigned to use his opponent&apos;s body as a weapon against those who would stand against him. The initiator makes a grapple attempt and if successful, he may hurl his foe up to 25-ft. as a ranged touch attack at either the ground or another target foe. The thrown enemy suffers 12d6 points of damage upon impact, and if thrown at a target creature, that target suffers that damage as well on a failed Reflex saving throw (DC 18 + initiation modifier for half damage). The target of this grapple attempt must be within one size category of the initiator. Large or larger foes being hurled using this method may target the ground beneath multiple targets within the area that creature normally would occupy. (Large creatures, for example, occupy a 10-ft. by 10-ft. space so they would hit all targets within a 10-ft. by 10-ft. area on a failed Reflex save)." compset="PWManuever" summary="Unarmed attack on each foe, deals +10d6 damage, ignores DR and knocks enemies prone" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="3"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3277,7 +3114,6 @@ August 13, 2013 - Tim Shadow
     <tag group="Discipline" tag="BrokenBlad"/>
     </thing>
   <thing id="manPWStIFS" name="Storm of Iron Fists Strike" description="The true master of the Broken Blade unleashes a storm of adamantine-hard strikes that rip through the defenses of his unfortunate target and resound as thunder from the force of the blows. Those witnessing this strike implemented rarely forget it, and those that feel it rarely survive it. The initiator makes a full attack and each strike inflicts an additional 4d6 points of damage that ignores damage reduction. After the attacks are made, the target must make a Fortitude save (DC is 19 + initiation modifier). Each successful hit increases Fortitude save by +1 per attack to resist this strike; failure on the Fortitude save indicates that the target is reduced to -1 hit points." compset="PWManuever" summary="Full attack strikes deal +4d6 damage and ignore DR, target must save or be reduced to -1 HP" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="4"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
@@ -3397,7 +3233,6 @@ August 13, 2013 - Tim Shadow
     <tag group="mDescript" tag="Teleport"/>
     </thing>
   <thing id="manPWResSt" name="Resonance Strike" description="By funneling his spiritual power into his attack, the Veiled Moon practitioner may strike an opponent with glowing silvery light on the Material or the Ethereal plane. This strike is resolved as a melee or ranged touch attack, and it inflicts 3d6 + initiator level points of force damage in lieu of normal damage, and this attack may strike incorporeal creatures without suffering reduced damage. This is an Ethereal plane using maneuver." compset="PWManuever" summary="Touch attack deals +3d6 force damage, damages incorporeal creatures normally" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <usesource source="srcPathOfW"/>
@@ -3459,7 +3294,6 @@ August 13, 2013 - Tim Shadow
 doneif (field[abilActive].value = 0)]]></eval>
     </thing>
   <thing id="manPWGhstw" name="Ghostwalk" description="The initiator steps through to the borderland between the Material and the Ethereal planes, becoming an incorporeal figure in both realities for a few moments. Until the beginning of his next turn, the initiator gains the incorporeal subtype. This is an Ethereal plane using maneuver." compset="PWManuever" summary="Become incorporeal until your next turn" uniqueness="useronce">
-    <fieldval field="trkMax" value="1"/>
     <fieldval field="mPreReq" value="1"/>
     <arrayval field="usrArray" index="1" value="Readied"/>
     <arrayval field="usrArray" index="0" value="Not Readied"/>

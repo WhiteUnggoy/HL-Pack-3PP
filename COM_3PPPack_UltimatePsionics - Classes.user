@@ -837,7 +837,7 @@ field[abSumm].text = "Last Respite {i}Mind Switch{/i} save DC " & lrDC & " vs Wi
     <link linkage="helper" thing="cHelpSkn"/>
     </thing>
   <thing id="cSknMindBl" name="Form Mind Blade" description="As a move action, a soulknife can form a semi-solid weapon composed of psychic energy distilled from his own mind.\n\nA soulknife must choose the form of his mind blade at 1st level. He can either form it into a light weapon, a one-handed weapon, or a two-handed weapon. Once chosen, his mind blade stays in this form every time the soulknife forms his mind blade. The light weapon deals 1d6 points of damage, the one-handed weapon deals 1d8 points of damage, and the two-handed weapon deals 2d6 points of damage. All damages are based on a Mediumsized creature wielding Medium-sized weapons; adjust the weapon damage as appropriate for different sized weapons. In all forms, the mind blade has a critical range of 19-20/x2. A soulknife with powerful build or any similar ability forms an appropriately-sized mind blade dealing the size-appropriate amount of damage.\n\nIf the soulknife&apos;s chosen form is a light weapon, he may choose to form two light weapons when forming his mind blade if he so chooses, but he suffers the standard penalties for two-weapon fighting.\n\nRegardless of the weapon form a soulknife has chosen, his mind blade does not have a set damage type. When shaping his weapon and assigning abilities to it, the soulknife chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulknife may change the damage type of an existing mind blade, or may summon a new mind blade with a different damage type, as a full-round action; otherwise, the mind blade retains the last damage type chosen every time it is summoned.\n\nThe blade can be broken (it has hardness 10 and 10 hit points); however, a soulknife can simply create another on his next move action. The moment he relinquishes his grip on his blade, it dissipates (unless he intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon.\n\nA soulknife can use feats such as Power Attack or Combat Expertise in conjunction with the mind blade just as if it were a normal weapon. He can also choose his mind blade for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical.\n\nPowers or spells that upgrade weapons can be used on a mind blade. The soulknife can use feats such as Weapon Finesse that work on light weapons with his mind blade, but such feats only work on mind blades in a light weapon form.\n\nEven in places where psionic effects do not normally function (such as within a {i}null psionics field{/i}), a soulknife can attempt to sustain his mind blade by making a DC 20 Will save. On a successful save, the soulknife maintains his mind blade for a number of rounds equal to his class level before he needs to check again, although the mind blade is treated for all purposes as a non-magical, masterwork weapon while in a place where psionic effects do not normally function. On an unsuccessful attempt, the mind blade vanishes.\n\nAs a move action on her turn, the soulknife can attempt a new Will save to rematerialize his mind blade while he remains within the psionics-negating effect. He gains a bonus on Will saves made to maintain or form his mind blade equal to the total enhancement bonus of his mind blade (see below).\n\nThe soulknife chooses the appearance of his mind blade, although its shape must reflect the selections the soulknife has chosen: a bludgeoning mind blade would be blunt, slashing would have an edge, etc.\n\n{b}Note:{/b} From the two drop down menus you must pick the type of mind blade (ie Light, one-handed, or two-handed) and its damage type (ie Bludgeoning, Piercing, or Slashing). Because these values can be changed often and in combat they display now on the In-Play tab also." compset="ClSpecial" summary="Form a semi-solid weapon composed of psychic energy distilled from your own mind.">
-    <fieldval field="usrCandid1" value="component.Simple &amp; MindBlade.?"/>
+    <fieldval field="usrCandid1" value="component.Simple &amp; MindBlade.? &amp; !MindBlade.Bolt?"/>
     <arrayval field="usrArray" index="0" value="Bludgeoning"/>
     <arrayval field="usrArray" index="1" value="Piercing"/>
     <arrayval field="usrArray" index="2" value="Slashing"/>
@@ -905,7 +905,7 @@ field[abSumm].text = "Last Respite {i}Mind Switch{/i} save DC " & lrDC & " vs Wi
       <containerreq phase="First" priority="499">!Hero.Psionic</containerreq>
       </bootstrap>
     </thing>
-  <thing id="cSknShaMB" name="Shape Mind Blade" description="The soulknife&apos;s mind blade retains the last chosen form every time it is formed until the soulknife reshapes it. If the soulknife chooses to reshape his blade, it requires a full-round action to do so. She may also re-assign the type of damage dealt as part of reshaping his mind blade if he so chooses.{br}{br}A soulknife can reassign the ability or abilities he has added to his mind blade; see below. To do so, he must first spend 8 hours in concentration. These cannot be the normal 8 hours used for rest, even if the soulknife does not require sleep. After that period, the mind blade materializes with the new ability or abilities selected by the soulknife." compset="ClSpecial"></thing>
+  <thing id="cSknShaMB" name="Shape Mind Blade" description="The soulknife&apos;s mind blade retains the last chosen form every time it is formed until the soulknife reshapes it. If the soulknife chooses to reshape his blade, it requires a full-round action to do so. She may also re-assign the type of damage dealt as part of reshaping his mind blade if he so chooses.{br}{br}A soulknife can reassign the ability or abilities he has added to his mind blade; see below. To do so, he must first spend 8 hours in concentration. These cannot be the normal 8 hours used for rest, even if the soulknife does not require sleep. After that period, the mind blade materializes with the new ability or abilities selected by the soulknife." compset="ClSpecial" summary="Change the form of your mind blade, or reassign its abilities"></thing>
   <thing id="cSknThrMB" name="Throw Mind Blade" description="All soulknives have some knowledge of how to throw their mind blades, though the range increment varies by form and the largest of blade forms cannot be thrown. Light weapon mind blades have a range increment of 20 ft. One-handed weapon mind blades have a range increment of 15 ft. Two-handed weapon mind blades cannot be thrown without the Two-Handed Throw blade skill. Whether or not the attack hits, a thrown mind blade then dissipates." compset="ClSpecial" summary="Light 20ft, 1H 15ft, and 2H can&apos;t be thrown.">
     <eval phase="PreLevel" priority="10000"><![CDATA[
 ~we're earlier than the normal test for whether we've reached the correct level, so we'll recreate that test here
@@ -961,23 +961,11 @@ Endif]]></eval>
         #extradamage[eachpick,signed(field[abValue].value) & "d" & field[abValue2].value & " psy",field[name].text]
       nexteach]]></eval>
     </thing>
-  <thing id="cSknBSAltB" name="Alter Blade" description="The soulknife gains the ability to shape her mind blade into different weapon forms. She may change her blade&apos;s form to the light weapon, one-handed weapon, or two-handed weapon forms any time she forms her mind blade. Additionally, the soulknife may choose to form her mind blade into a one-handed weapon and a light weapon instead of two light weapons." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSAltB" name="Alter Mind Blade" description="The soulknife gains the ability to shape her mind blade into different weapon forms. She may change her blade&apos;s form to the light weapon, one-handed weapon, or two-handed weapon forms any time she forms her mind blade. Additionally, the soulknife may choose to form her mind blade into a one-handed weapon and a light weapon instead of two light weapons." compset="CustomSpec" summary="You can reshape your mind blade any time you form it" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
-    <eval phase="First" priority="498"><![CDATA[if (hero.child[cSknMindBl].field[usrChosen1].ischosen <> 0) then
-  if (hero.child[cSknMindBl].field[usrChosen1].chosen.tagis[thingid.wMndBldLt] <> 0) then
-    perform hero.assign[MindBlade.OneHanded]
-    perform hero.assign[MindBlade.TwoHanded]
-  elseif (hero.child[cSknMindBl].field[usrChosen1].chosen.tagis[thingid.wMndBld1H] <> 0) then
-    perform hero.assign[MindBlade.Light]
-    perform hero.assign[MindBlade.TwoHanded]
-  elseif (hero.child[cSknMindBl].field[usrChosen1].chosen.tagis[thingid.iPUMndBl2H] <> 0) then
-    perform hero.assign[MindBlade.Light]
-    perform hero.assign[MindBlade.OneHanded]
-    endif
-  endif]]></eval>
     </thing>
   <thing id="cSknBSBlds" name="Bladestorm" description="As a full attack, when wielding her mind blade, the soulknife can give up her regular attacks and instead throw one mind blade at her full attack bonus at all opponents within 30 feet, ignoring the normal range increments for throwing a mind blade. Regardless of the number of attacks she makes, she only provokes attacks of opportunity as though she made a single ranged attack. The soulknife must possess the Bladewind blade skill to take this ability, this ability may not be used if the mind blade is in a two-handed weapon form, and the soulknife must be at least 16th level to choose this blade skill." compset="CustomSpec" uniqueness="unique">
     <usesource source="pPsiUn"/>
@@ -1794,25 +1782,35 @@ doneif (field[abilActive].value <> 1)
   <thing id="fcPUPwrPnt" name="+1 Power Point" description="+1 Power Point" compset="FavClass" uniqueness="unique">
     <comment><![CDATA[This is bootstrapped to the "Psionic Aptitude" racial ability. This way when the racial ability is bootstrapped to a race this FC comes along for the ride. It then allows for the ability to select +1 Power Point.
 
-This should allow for people making custom races to have it work correctly for them also.]]></comment>
-    <usesource source="pPsiUn"/>
+This should allow for people making custom races to have it work correctly for them also.
+
+Note: This does not work correctly if it is source marked.
+Note2: DO NOT CLICK the "All Characters?" option.]]></comment>
     <tag group="ProductId" tag="PUProdID"/>
-    <tag group="Helper" tag="Bootstrap"/>
-    <eval phase="PostLevel" priority="10000">field[abValue].value += field[fcCount].value    
-#resmax[resPowerPt] += field[abValue].value</eval>
+    <eval phase="PostLevel" priority="10000">
+      ~ Give a bonus to Power Points each time we are taken
+      field[abValue].value += field[fcCount].value    
+      #resmax[resPowerPt] += field[abValue].value
+
+      ~ To correctly show up we need to apply this helper tag.
+      ~ This tag allows this FC to show for any class/race. But
+      ~ as we are only bootstrapped to some races via a Racial
+      ~ Special we are limited to which races/classes get us.
+      perform assign[Helper.Bootstrap]</eval>
     </thing>
   <thing id="arPsicryPs" name="Psicrystal" description="Deprecated" compset="ClassVary" uniqueness="unique">
     <comment>Deprecated</comment>
     <fieldval field="cvArcFStar" value="1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="Helper" tag="NoCompList"/>
     <tag group="Helper" tag="MinionINT6"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="CompList" tag="arPsicryst"/>
-    <bootstrap thing="cArcFClass"></bootstrap>
+    <tag group="Helper" tag="NoCompList"/>
     <bootstrap thing="cArcFNear">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
+    <bootstrap thing="cArcFClass"></bootstrap>
     <link linkage="varies" thing="cHelpPsi"/>
     <exprreq message="Requires Psicrystal Affinity"><![CDATA[#hasfeat[fPUPsicry] <> 0]]></exprreq>
     </thing>
@@ -4616,11 +4614,13 @@ Call PsyWarTrMa</eval>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
-    <eval phase="PreLevel" priority="10000"><![CDATA[  ~ We want to cycle through all weapons on the hero. If that weapon matches our Custom.MindBlade tag, then apply MelAttOpt.aDEX to apply Finesse
-
-  foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
-    perform eachpick.assign[MelAttOpt.aDEX]
-    nexteach]]></eval>
+    <eval phase="PreLevel" priority="10000"><![CDATA[  
+      ~ We want to cycle through all weapons on the hero. 
+      ~ If that weapon matches our Custom.MindBlade tag, 
+      ~ then apply MelAttOpt.aDEX to apply Finesse
+      foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
+        perform eachpick.assign[MelAttOpt.aDEX]
+      nexteach]]></eval>
     </thing>
   <thing id="cSknBSRefB" name="Reflective Blade" description="A soulknife may expend his psychic strike as an immediate action to reflect a spell or power that would strike his back at the caster. The spell or power must be a touch attack spell or power, either ranged or melee, and the level of the spell or power reflected cannot exceed the number of dice of damage expended by psychic strike. The soulknife makes a ranged touch attack to determine if the spell successfully strikes the target. The soulknife must be at least 14th level and have the absorbing blade blade skill to select this blade skill." compset="CustomSpec" uniqueness="unique">
     <usesource source="pPsiUn"/>
@@ -4629,7 +4629,8 @@ Call PsyWarTrMa</eval>
     <tag group="abCategory" tag="PUBladeSk"/>
     <exprreq message="Absorbing Blade Blade Skill required."><![CDATA[#hasability[cSknBSAbsB] <> 0]]></exprreq>
     <prereq message="Soulknife Level 14+ required">
-      <validate><![CDATA[        var classcheck as string
+      <validate><![CDATA[        
+        var classcheck as string
         var levels as number
 
         classcheck = "Soulknife"
@@ -4645,7 +4646,8 @@ Call PsyWarTrMa</eval>
     <tag group="abCategory" tag="PUBladeSk"/>
     <tag group="NotClExpr" tag="cHelpPUA"/>
     <prereq message="Soulknife Level 8+ required">
-      <validate><![CDATA[        var classcheck as string
+      <validate><![CDATA[        
+        var classcheck as string
         var levels as number
 
         classcheck = "Soulknife"
@@ -4678,14 +4680,167 @@ Call PsyWarTrMa</eval>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="abCategory" tag="PUBladeSk"/>
-    <eval phase="PreLevel" priority="10000"><![CDATA[if (hero.childlives[shMTowShld] <> 0) then
-  field[abValue].value += 1
-  ~ Increase/Decrease ACP but don't let the ACP be lowered
-  ~ to more than zero.
-  hero.child[shMTowShld].field[arArmorChk].value = minimum  (hero.child[shMTowShld].field[arArmorChk].value + field[abValue].value, 0)
-endif]]></eval>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      if (hero.childlives[shMTowShld] <> 0) then
+        field[abValue].value += 1
+        ~ Increase/Decrease ACP but don't let the ACP be lowered
+        ~ to more than zero.
+        hero.child[shMTowShld].field[arArmorChk].value = minimum(hero.child[shMTowShld].field[arArmorChk].value + field[abValue].value, 0)
+      endif]]></eval>
     <exprreq message="Tower Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSTowM] <> 0]]></exprreq>
     <exprreq message="Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSMShl] <> 0]]></exprreq>
+    </thing>
+  <thing id="cSknBSAdvT" name="Advanced Talents" description="The soulknife can select an advanced rogue talent from the following list. Confounding Blades, Crippling Strike, Stealthy Sniper. The soulknife can select this blade skill multiple times. The soulknife must have the Covert Training class feature and be at least 10th level before selecting this blade skill." compset="CustomSpec">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <prereq message="Soulknife level 10+ required">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 10)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cSknBSDeaS" name="Deadly Shield" description="The soulknife may choose to empower his mind shield with weapon special abilities, instead of shield special abilities, and may select to apply the enhancement bonus of the mind shield for attacks, rather than for armor. The soulknife must have the Form Mind Shield class feature and be at least 5th level in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <prereq message="Soulknife level 5+ required">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 5)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cSknBSEvsn" name="Evasion" description="The soulknife can avoid even magical and unusual attacks with great agility. If he makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, he instead takes no damage. Evasion can be used only if the soulknife is wearing light armor, medium armor, or no armor. A helpless soulknife does not gain the benefit of evasion. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSFFis" name="Flurry of Fists" description="When making unarmed attacks and making a full attack, the soulknife can make one additional attack at his highest attack bonus, but all attacks in the full attack suffer a -2 penalty to the attack roll. This extra attack does not stack with abilities that grant additional attacks, such as Two-Weapon Fighting, Flurry of Blows, or other such effects. The soulknife must have the Improved Unarmed Strike feat in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSFFIm" name="Flurry of Fists, Improved" description="The soulknife gains an additional attack when using flurry of fists, but at a -5 penalty. The soulknife must be at least 6th level and have the Improved Unarmed Strike feat and the Flurry of Fists blade skill in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <prereq message="Soulknife level 6+ required">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 6)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cSknBSFFGr" name="Flurry of Fists, Greater" description="The soulknife gains an additional attack when using flurry of fists, but at a -10 penalty. The soulknife must be at least 11th level and have the Improved Unarmed Strike feat and the Flurry of Fists and Improved Flurry of Fists blade skills in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <prereq message="Soulknife level 11+ required">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 11)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cSknBSGrSh" name="Grasping Shield" description="The soulknife&apos;s mind shield takes on an adhesive quality. Once per round, he may make a free disarm attempt against any enemy that makes a melee attack that misses her. This disarm attempt counts as an attack of opportunity and does not provoke attacks of opportunity. The soulknife must have the shield block blade skill and the form mind shield class feature to\nchoose this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSImpA" name="Improved Armor" description="The soulknife&apos;s mind armor improves depending on its form. Light form is treated as if not wearing armor, while still gaining the armor bonus to Armor Class. Medium form is treated as a masterwork breastplate. Heavy form is treated as masterwork full plate. The soulknife must have the ability to form mind armor in order to take this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSmpE" name="Improved Evasion" description="This works like evasion, except that while the soulknife still takes no damage on a successful Reflex saving throw against attacks, he henceforth takes only half damage on a failed save. A helpless soulknife does not gain the benefit of improved evasion. A soulknife must have the Evasion blade skill, the Covert Training class feature, and be at least 10th level before selecting this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <prereq message="Soulknife level 10+ required">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 10)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cSknBSInTh" name="Interrupting Throw" description="If an enemy within 10 feet of the soulknife performs an action that would provoke an attack of opportunity, such as casting a spell without casting on the defensive, he may, as an immediate action and by expending psionic focus, throw his mind shield at that enemy as an attack of opportunity. The soulknife may not use this blade skill if his mind shield is in the form of a tower shield. The soulknife must be at least 12th level and have the form mind shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <prereq message="Soulknife level 12+ required">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 12)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cSknBSMtlP" name="Mental Power" description="The soulknife gains an additional power known from the gifted blade power list, up to the maximum power level he can manifest. In addition, the soulknife gains an additional 2 power points. This blade skill can be selected multiple times. Each time, the soulknife gains another power known and 2 additional power points. The soulknife must have manifesting ability from his levels in soulknife in order to select this blade skill." compset="CustomSpec">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSRgSB" name="Ranged Shield Block" description="When using the Shield Block blade skill, the soulknife may block a ranged attack, but not ranged touch attack. The soulknife must have the form mind shield class feature and the shield block blade skill to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSRogT" name="Rogue Talent" description="The soulknife can select a rogue talent from the following list. Befuddling Strike, Fast Stealth, Slow Reactions, Sniper&apos;s Eye, Surprise Attack. The soulknife can select this blade skill multiple times. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSShBl" name="Shield Block" description="As an immediate action and by expending psionic focus, the soulknife may block one melee attack, but not touch attack, against his by making an attack roll. If his attack roll is higher than the attack roll he is attempting to block, the attack misses. The soulknife must have the form mind shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    </thing>
+  <thing id="cSknBSTrpf" name="Trapfinder" description="The soulknife gains the Trapfinding ability of a rogue of his level. In addition, the soulknife treats Disable Device as a class skill. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <eval phase="PreLevel" priority="5000">~Disable Device is always a class skill
+#makeclassskill[skDisable]</eval>
+    </thing>
+  <thing id="cSknBSWhip" name="Whiplash" description="The soulknife can throw his mind shield as a thrown weapon with a range increment of 10. In addition, by expending psionic focus as a free action after making a ranged attack with his mind shield, the soulknife can cause the shield to return back to his hand, hitting any enemy in line of effect from his target and dealing damage as a light shield. Soulknives with the Form Mind Shield class feature instead deal damage as a heavy shield. The soulknife makes a ranged attack roll for each enemy in the line of effect. The soulknife may not use this blade skill if his mind shield is in the form of a tower shield. The soulknife must be at least 8th level and have the form mind shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="SpecSource" tag="cHelpSkn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <prereq message="Soulknife level 8+ required">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 8)]]></validate>
+      </prereq>
     </thing>
   <thing id="cPUSurPPri" name="Survivor&apos;s Path" description="Survivor Path {i}You are capable of surviving in harsh environments and enduring deadly assaults. You recognize the power of the body&apos;s ability to overcome even the most deadly of afflictions.\n\n{/i}{b}Powers:{/b} {i}Catfall{/i}, {i}vigor{/i}\n\n{b}Skills:{/b} Autohypnosis, Heal, Survival \n\n{b}Bonus class skill:{/b} Survival\n\n{b}Note:{/b} You need to correctly set one of the Path&apos;s selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Survivor&apos;s Path" uniqueness="unique">
     <arrayval field="usrArray" index="1" value="Secondary"/>
@@ -4713,7 +4868,7 @@ endif]]></eval>
     <bootstrap thing="cPWaTraSur"></bootstrap>
     <bootstrap thing="cPWaManSur"></bootstrap>
     <eval phase="First">~ Setup the Psychic Warrior Path
-Call PsyWarPath</eval>
+      Call PsyWarPath</eval>
     </thing>
   <thing id="cHelpPU0" name="Aegis" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="10"/>
@@ -4875,53 +5030,52 @@ Call PsyWarPath</eval>
     <link linkage="psiattr" thing="aINT"/>
     <eval phase="PostLevel" priority="600" index="2">var myLevel as number
 
-myLevel += field[cTotalLev].value
+      myLevel += field[cTotalLev].value
 
-~Set configurable points on Aegis Helper in abValue2 field
-if (myLevel = 1) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 3
-elseif (myLevel = 2) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 4
-elseif (myLevel = 3) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 5
-elseif (myLevel = 4) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 7
-elseif (myLevel = 5) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 8
-elseif (myLevel = 6) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 9
-elseif (myLevel = 7) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 10
-elseif (myLevel = 8) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 11
-elseif (myLevel = 9) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 13
-elseif (myLevel = 10) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 14
-elseif (myLevel = 11) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 15
-elseif (myLevel = 12) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 16
-elseif (myLevel = 13) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 17
-elseif (myLevel = 14) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 19
-elseif (myLevel = 15) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 20
-elseif (myLevel = 16) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 21
-elseif (myLevel = 17) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 22
-elseif (myLevel = 18) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 23
-elseif (myLevel = 19) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 25
-elseif (myLevel = 20) then
-  hero.childfound[cPUAegHelp].field[abValue2].value += 26
-endif</eval>
+      ~Set configurable points on Aegis Helper in abValue2 field
+      if (myLevel = 1) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 3
+      elseif (myLevel = 2) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 4
+      elseif (myLevel = 3) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 5
+      elseif (myLevel = 4) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 7
+      elseif (myLevel = 5) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 8
+      elseif (myLevel = 6) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 9
+      elseif (myLevel = 7) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 10
+      elseif (myLevel = 8) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 11
+      elseif (myLevel = 9) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 13
+      elseif (myLevel = 10) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 14
+      elseif (myLevel = 11) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 15
+      elseif (myLevel = 12) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 16
+      elseif (myLevel = 13) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 17
+      elseif (myLevel = 14) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 19
+      elseif (myLevel = 15) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 20
+      elseif (myLevel = 16) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 21
+      elseif (myLevel = 17) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 22
+      elseif (myLevel = 18) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 23
+      elseif (myLevel = 19) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 25
+      elseif (myLevel = 20) then
+        hero.childfound[cPUAegHelp].field[abValue2].value += 26
+      endif</eval>
     <eval phase="PostLevel" priority="500">~Set Aegis level in abValue1 on Aegis Helper Class Special for Configurable reference later
- 
-hero.childfound[cPUAegHelp].field[abValue].value += field[cTotalLev].value</eval>
+      hero.childfound[cPUAegHelp].field[abValue].value += field[cTotalLev].value</eval>
     </thing>
   <thing id="cPUAegis" name="Aegis" description="While the shaper is the master of manipulating ectoplasm and creating any manner of item, the aegis has learned to take ectoplasm and form it into a suit to be worn around his body, granting him a variety of benefits.\n\nThe aegis can shape his astral suit into several different forms and is capable of altering its abilities to suit his needs.\n\n{b}Role:{/b} An aegis is a front-line combatant. His astral suit allows him significant flexibility in handling combat and non-combat situations, and his defensive abilities are considerable.\n\n{b}Alignment:{/b} Any." compset="ClassLevel" maxlimit="20">
     <usesource source="pPsiUn"/>
@@ -4931,8 +5085,8 @@ hero.childfound[cPUAegHelp].field[abValue].value += field[cTotalLev].value</eval
     <bootstrap thing="cHelpPU0"></bootstrap>
     <link linkage="helper" thing="cHelpPU0"/>
     <eval phase="First" priority="50">~ Assign Class helper tag very early on the hero for
-~ testing on the Bootstrap armor Thing.
-perform hero.assign[Custom.AegisLvls]</eval>
+      ~ testing on the Bootstrap armor Thing.
+      perform hero.assign[Custom.AegisLvls]</eval>
     </thing>
   <thing id="cHelpPU1" name="Cryptic" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="8"/>
@@ -9564,20 +9718,21 @@ ClsAllowPs - This tag group is used to setup the Powers that this Path grants. Y
     </thing>
   <thing id="arPUTraceu" name="Traceur" description="You are a mobile fighter and you use techniques that allow you to make the most out of your momentum and your speed. Where many psychic warriors rely on their physical power or agility, you have learned that motion is just as powerful a tool at your disposal." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="277"/>
-    <arrayval field="cvBonFtMod" index="7" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvBonFtMod" index="1" value="-1"/>
+    <arrayval field="cvBonFtMod" index="7" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPWaPathSk"/>
     <tag group="fDisable" tag="fArmLight"/>
     <tag group="fDisable" tag="fArmHeavy"/>
     <tag group="ProductId" tag="PUProdID"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="fDisable" tag="fArmMedium"/>
-    <bootstrap thing="cPUChargeT">
-      <autotag group="ClSpecWhen" tag="2"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPWaPathSk"/>
     <bootstrap thing="cPUQuickSt">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUChargeT">
+      <autotag group="ClSpecWhen" tag="2"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPWa"/>
     </thing>
@@ -10582,12 +10737,17 @@ field[CustDesc].text = "Transfer Wounds (" & field[abValue].value & "d6)"]]></ev
     </thing>
   <thing id="arPUEnlMnk" name="Enlightened Monk" description="A monk&apos;s ki and psionic power have long thought to be linked. Enlightened monks learn how to use their ki to fuel their psionic abilities and ways to harness their psionic power.{br}{br}{b}Class Skills:{/b} The enlightened monk adds Autohypnosis (Wis) as a class skill." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="292"/>
-    <arrayval field="cvBonFtMod" index="6" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
+    <arrayval field="cvBonFtMod" index="1" value="-1"/>
+    <arrayval field="cvBonFtMod" index="5" value="-2"/>
+    <arrayval field="cvBonFtMod" index="9" value="-2"/>
+    <arrayval field="cvBonFtMod" index="13" value="-2"/>
+    <arrayval field="cvBonFtMod" index="17" value="-2"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClassSkill" tag="skPUAhypno"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cMnkSlow"/>
+    <tag group="ClassSkill" tag="skPUAhypno"/>
     <bootstrap thing="cPUAugStFi">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
@@ -10625,16 +10785,14 @@ field[CustDesc].text = "Transfer Wounds (" & field[abValue].value & "d6)"]]></ev
     </thing>
   <thing id="arPUCerInf" name="Cerebral Infiltrator" description="Tapping into psionic power can give rogues insight into the behavior of others as well as the ability to assault the sensory input of their opponents. Cerebral infiltrators focus more on dealing with people and less on dealing with traps and mechanical devices.\n\n{b}Class Skills:{/b} The cerebral infiltrator adds Autohypnosis (Wis) as a class skill.\n\n{b}Recommended Talents:{/b} Major psionics*, minor psionics*, psionic feat* \n\n{b}Recommended Advanced Talents:{/b} Slippery mind, vanish*" compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="291"/>
-    <arrayval field="cvBonFtMod" index="6" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <arrayval field="cvBonFtMod" index="6" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cRogTrapfn"/>
     <tag group="AbReplace" tag="cTrapSense"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="ClassSkill" tag="skPUAhypno"/>
-    <bootstrap thing="cPUCripSen">
-      <autotag group="ClSpecWhen" tag="3"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cRogTrapfn"/>
     <bootstrap thing="cPUCripSen">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
@@ -10646,6 +10804,9 @@ field[CustDesc].text = "Transfer Wounds (" & field[abValue].value & "d6)"]]></ev
       </bootstrap>
     <bootstrap thing="cPUEnSeRog">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUCripSen">
+      <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpRog"/>
     </thing>
@@ -10788,17 +10949,15 @@ hero.childfound[cfgPUPsFtR].field[cfgMaxF1].value += 1</eval>
     </thing>
   <thing id="arPUGaean" name="Gaean" description="Tapping into psionic power can give rogues insight into the behavior of others as well as the ability to assault the sensory input of their opponents. Cerebral infiltrators focus more on dealing with people and less on dealing with traps and mechanical devices.\n\n{b}Class Skills:{/b} The cerebral infiltrator adds Autohypnosis (Wis) as a class skill.\n\n{b}Recommended Talents:{/b} Major psionics*, minor psionics*, psionic feat* \n\n{b}Recommended Advanced Talents:{/b} Slippery mind, vanish*" compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="292"/>
-    <arrayval field="cvBonFtMod" index="6" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <arrayval field="cvBonFtMod" index="6" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cDrdThous"/>
     <tag group="AbReplace" tag="cDrdResNat"/>
     <tag group="AbReplace" tag="cWildEmp"/>
     <tag group="ClassSkill" tag="skPUAhypno"/>
-    <bootstrap thing="cPUGaeaRev">
-      <autotag group="ClSpecWhen" tag="13"/>
-      </bootstrap>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPUStrGaea">
       <autotag group="ClSpecWhen" tag="4"/>
       </bootstrap>
@@ -10807,6 +10966,9 @@ hero.childfound[cfgPUPsFtR].field[cfgMaxF1].value += 1</eval>
       </bootstrap>
     <bootstrap thing="cPUGaeComm">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUGaeaRev">
+      <autotag group="ClSpecWhen" tag="13"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpDrd"/>
     </thing>
@@ -10874,15 +11036,13 @@ hero.child[ArmorClass].field[tACNatural].value += round(armorbonus,0,-1)</eval>
     </thing>
   <thing id="arPUAberra" name="Aberrant" description="Using ectoplasm is the way a typical aegis protects and enhances the physical body. Others have discovered that by directly altering the body, they can achieve similar results, although they might have a more grisly appearance. These aberrants often have misshapen or twisted forms, yet they are equally deadly." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="261"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUCraftsm"/>
     <tag group="AbReplace" tag="cPUMastCr"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cPUAstSuit"/>
     <tag group="AbReplace" tag="cPUAstrRep"/>
-    <bootstrap thing="cPUVim">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUCraftsm"/>
     <bootstrap thing="cPUTranBod">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -10891,6 +11051,9 @@ hero.child[ArmorClass].field[tACNatural].value += round(armorbonus,0,-1)</eval>
       </bootstrap>
     <bootstrap thing="cPUPsiForm">
       <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPUVim">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
     </thing>
@@ -11662,14 +11825,12 @@ else
     </thing>
   <thing id="arPUCryWar" name="Crystal Warrior" description="Some aegii have learned to form a psicrystal and shape their astral suit around the small creature, creating a sentient suit of armor that grants them many benefits at the cost of some flexibility." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="262"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUAstrRep"/>
     <tag group="AbReplace" tag="cPUInvigSu"/>
     <tag group="AbReplace" tag="cPUCanniSu"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPUMissive">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUAstrRep"/>
     <bootstrap thing="cPUPsicryC">
       <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
@@ -11697,13 +11858,16 @@ else
     <bootstrap thing="cPUPsiAff">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
+    <bootstrap thing="cPUMissive">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
-    <eval phase="Final" priority="9999"><![CDATA[#appenddesc[cPUAstSuit,"{b}Modification from Crystal Warrior{/b}: To gain the benefits of some of the additional class features detailed below, the aegis's psicrystal must be physically touching the aegis when the aegis forms his astral suit, and the psicrystal is consumed by the astral suit while the astral suit is active.{br}{br}When the psicrystal is consumed in this fashion, it still grants all the normal benefits for being within 5 ft. of the aegis (Alertness, etc), but the aegis does not gain any of the psicrystal's special abilities (natural armor, hardness, etc.) The aegis may still form his astral suit normally, but he loses those abilities detailed below that rely upon the psicrystal being consumed by the astral suit.{br}{br}In addition, the aegis gains the ranged attack customization as a bonus customization."]
-
-hero.childfound[cPUPerfMer].field[CustDesc].text = "An aegis of 20th level has learned to become one with his suit. His suit cannot be dispelled or removed against his will by any means, although his astral suit ability still does not function within areas where psionics do not work, such as a null psionics field.{br}{br}In addition, the aegis can spend two daily uses of his reconfigure ability, to alter all of the customizations on his astral suit."]]></eval>
     <eval phase="PreLevel" priority="100000" index="2"><![CDATA[~ Disable the 7th level Reconfigure only
 perform hero.findchild[BaseClSpec,"thingid.cPUReconfi & SpecSource.cHelpPU0 & ClSpecWhen.7"].assign[Helper.SpcDisable]
 perform hero.findchild[BaseClSpec,"thingid.cPUReconfi & SpecSource.cHelpPU0 & ClSpecWhen.7"].assign[Helper.SpcReplace]]]></eval>
+    <eval phase="Final" priority="9999"><![CDATA[#appenddesc[cPUAstSuit,"{b}Modification from Crystal Warrior{/b}: To gain the benefits of some of the additional class features detailed below, the aegis's psicrystal must be physically touching the aegis when the aegis forms his astral suit, and the psicrystal is consumed by the astral suit while the astral suit is active.{br}{br}When the psicrystal is consumed in this fashion, it still grants all the normal benefits for being within 5 ft. of the aegis (Alertness, etc), but the aegis does not gain any of the psicrystal's special abilities (natural armor, hardness, etc.) The aegis may still form his astral suit normally, but he loses those abilities detailed below that rely upon the psicrystal being consumed by the astral suit.{br}{br}In addition, the aegis gains the ranged attack customization as a bonus customization."]
+
+hero.childfound[cPUPerfMer].field[CustDesc].text = "An aegis of 20th level has learned to become one with his suit. His suit cannot be dispelled or removed against his will by any means, although his astral suit ability still does not function within areas where psionics do not work, such as a null psionics field.{br}{br}In addition, the aegis can spend two daily uses of his reconfigure ability, to alter all of the customizations on his astral suit."]]></eval>
     </thing>
   <thing id="cPUPsiAff" name="Psicrystal Affinity" description="The aegis gains the Psicrystal Affinity feat as a bonus feat at 1st level. For the purposes of his psicrystal&apos;s abilities and the feat&apos;s prerequisites, the aegis&apos;s class level counts as his manifester level. This ability replaces one of the customization points gained at 1st level." compset="ClSpecial">
     <fieldval field="actName" value="Psicrystal Subsumed"/>
@@ -11855,17 +12019,15 @@ field[livename].text = "Tactical Suit (ML: " & myLvl & ")(" & field[abValue].val
     </thing>
   <thing id="arPUEctArt" name="Ectopic Artisan" description="A shaper and an aegis both use ectoplasm to achieve their desired goals. The rare aegis has learned to blend the tools of the shaper into his own skills, but by doing so he reduces the power of his astral suit. These ectopic artisans gain allies formed of ectoplasm to aid them in battle.{br}{br}{b}Class Skills:{/b} The ectopic adept gains Disable Device as a class skill." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="263"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUAstrRep"/>
     <tag group="AbReplace" tag="cPUAegDR"/>
     <tag group="AbReplace" tag="cPUReconfi"/>
     <tag group="AbReplace" tag="cPUCanniSu"/>
     <tag group="AbReplace" tag="cPUMastCr"/>
     <tag group="ClassSkill" tag="skDisable"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPUAstrMan">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUAstrRep"/>
     <bootstrap thing="cPUAstWarr">
       <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
@@ -11889,6 +12051,9 @@ field[livename].text = "Tactical Suit (ML: " & myLvl & ")(" & field[abValue].val
       </bootstrap>
     <bootstrap thing="cPEctopCre">
       <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPUAstrMan">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
     <eval phase="Final" priority="9999"><![CDATA[hero.childfound[cPUPerfMer].field[CustDesc].text = "An aegis of 20th level has learned to become one with his suit. His suit cannot be dispelled or removed against his will by any means, although his astral suit ability still does not function within areas where psionics do not work, such as a null psionics field.{br}{br}In addition, the aegis can spend two daily uses of his reconfigure ability, to alter all of the customizations on his astral suit."]]></eval>
@@ -11984,17 +12149,15 @@ field[livename].text = "Astral Swarm (" & field[abValue].value & "/day)"]]></eva
     </thing>
   <thing id="arPUTrailb" name="Trailblazer" description="The trailblazer develops skills to aid him in tracking prey and avoiding obstacles, rather than in the learning how to manipulate and craft psionic items. He uses his astral suit to improve his ability to move and handle varied environments, in addition to its use as a form of protection. Where other hunters might find armor to be a hindrance, the trailblazer&apos;s astral suit is an asset, helping him to blend in with his surroundings.{br}{br}{b}Class Skills:{/b} A trailblazer adds Survival as a class skill, but does not count Use Magic Device as a class skill." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="264"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClassSkill" tag="skSurvival"/>
     <tag group="NotClassSk" tag="skUseMagic"/>
     <tag group="AbReplace" tag="cPUCraftsm"/>
     <tag group="AbReplace" tag="cPUReconfi"/>
     <tag group="AbReplace" tag="cPUAugSuit"/>
     <tag group="AbReplace" tag="cPUMastCr"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPURapAdj">
-      <autotag group="ClSpecWhen" tag="3"/>
-      </bootstrap>
+    <tag group="ClassSkill" tag="skSurvival"/>
     <bootstrap thing="cPUUndTra">
       <autotag group="ClSpecWhen" tag="4"/>
       </bootstrap>
@@ -12003,6 +12166,9 @@ field[livename].text = "Astral Swarm (" & field[abValue].value & "/day)"]]></eva
       </bootstrap>
     <bootstrap thing="cPUAegTrk">
       <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <bootstrap thing="cPURapAdj">
+      <autotag group="ClSpecWhen" tag="3"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU0"/>
     </thing>
@@ -12145,20 +12311,21 @@ perform hero.child[xFly].assign[Maneuver.Perfect]]]></eval>
     </thing>
   <thing id="arPUBruDis" name="Brutal Disruptor" description="Brutal disruptors do not simply see patterns, they focus their skills on destroying them. These cryptics tend to be imposing in demeanor and understand the patterns of their opponents to strike fear into their foes.\n\n{b}Skills:{/b} The brutal disruptor adds Intimidate (Cha) as a class skill and loses Disable Device." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="264"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClassSkill" tag="skIntim"/>
     <tag group="NotClassSk" tag="skDisable"/>
     <tag group="AbReplace" tag="cRogTrapfn"/>
     <tag group="AbReplace" tag="cPUTrapmak"/>
     <tag group="AbReplace" tag="cPUSwiftTr"/>
     <tag group="ClVaryName" tag="AppParen"/>
-    <bootstrap thing="cPUIntPatt">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="ClassSkill" tag="skIntim"/>
     <bootstrap thing="cPUUnnerDi">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
     <bootstrap thing="cPUChanDis">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUIntPatt">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
@@ -12183,7 +12350,7 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
     </thing>
   <thing id="arPUCryDis" name="Distorter" description="Distorters understand that altering perception can truly alter reality if done right. These cryptics change the nature of the patterns around them to alter how other creatures see and interact with the world, rather than relying on mental manipulation like a telepath." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="264"/>
-    <arrayval field="cvCustTot" index="5" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="7" value="-1"/>
     <arrayval field="cvCustTot" index="9" value="-2"/>
     <arrayval field="cvCustTot" index="11" value="-2"/>
@@ -12192,14 +12359,12 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
     <arrayval field="cvCustTot" index="17" value="-2"/>
     <arrayval field="cvCustTot" index="19" value="-2"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
+    <arrayval field="cvCustTot" index="5" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="NotClassSk" tag="skDisable"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="ClassSkill" tag="skIntim"/>
     <tag group="AbReplace" tag="cPUScribTa"/>
-    <bootstrap thing="cPUBlurPa">
-      <autotag group="ClSpecWhen" tag="14"/>
-      </bootstrap>
+    <tag group="NotClassSk" tag="skDisable"/>
     <bootstrap thing="cPUSilPat">
       <autotag group="ClSpecWhen" tag="10"/>
       </bootstrap>
@@ -12208,6 +12373,9 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
       </bootstrap>
     <bootstrap thing="cPUAltApp">
       <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUBlurPa">
+      <autotag group="ClSpecWhen" tag="14"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     </thing>
@@ -12231,7 +12399,7 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
   <thing id="arPUCryGra" name="Grammaton" description="For some cryptics, the way bullets travel through the air is a special pattern that can be used and manipulated for deadly attacks and abilities. These grammatons use handguns to destroy patterns and enemies alike.\n\n{b}Weapon and Armor Proficiency:{/b} Grammatons are proficient with all simple weapons, firearms, plus the rapier and shortbow. Grammatons are proficient with light armor but not with shields." compset="ClassVary" uniqueness="unique">
     <fieldval field="cvSpec5thS" value="Deed"/>
     <fieldval field="srcPageNum" value="265"/>
-    <arrayval field="cvCustTot" index="5" value="-2"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="7" value="-2"/>
     <arrayval field="cvCustTot" index="9" value="-2"/>
     <arrayval field="cvCustTot" index="11" value="-2"/>
@@ -12255,13 +12423,11 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
     <arrayval field="cvPsiPowTo" index="18" value="-1"/>
     <arrayval field="cvPsiPowTo" index="19" value="-1"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
+    <arrayval field="cvCustTot" index="5" value="-2"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cPUCrHideP"/>
     <tag group="AbReplace" tag="cPUScribTa"/>
-    <bootstrap thing="cPUGunKata">
-      <autotag group="ClSpecWhen" tag="10"/>
-      </bootstrap>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPUAvoAtt">
       <autotag group="ClSpecWhen" tag="19"/>
       </bootstrap>
@@ -12294,6 +12460,9 @@ field[abValue].value += round(field[xTotalLev].value/2,0,-1)]]></eval>
       </bootstrap>
     <bootstrap thing="cPUAvoAtt">
       <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPUGunKata">
+      <autotag group="ClSpecWhen" tag="10"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     <eval phase="PreLevel" priority="10000"><![CDATA[#appenddesc[cPUDisPatt,"{b}Grammaton:{/b} The grammaton is only able to use the disrupt pattern ability when making ranged attacks with a handgun."]]]></eval>
@@ -12484,7 +12653,7 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     </thing>
   <thing id="arPULstMnd" name="Lost Mind" description="You have seen the patterns inherent in the void, the meaning that hides inside the emptiness of every pattern. Your gaze has lingered upon the twisting tunnels of nothingness that permeates the space between the stars, and you have gazed upon a terrible beauty. In your mind stands a forest of dark trees, endless, their glass-leaves glittering with untold secrets, their bark the wishful thinking of the mad. You are lost in a maze of wonders, their inconceivable, unbelievable notions made real. You tug at the patterns that hold the world together and laugh as it all unravels in a beautiful dance of destruction.\n\n{b}Powers Known:{/b} The lost mind gains {i}know direction and location{/i} as a talent at 1st level." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="265"/>
-    <arrayval field="cvPsiPowTo" index="12" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvPsiPowTo" index="13" value="-1"/>
     <arrayval field="cvPsiPowTo" index="14" value="-1"/>
     <arrayval field="cvPsiPowTo" index="15" value="-1"/>
@@ -12498,14 +12667,12 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     <arrayval field="cvCustTot" index="17" value="-1"/>
     <arrayval field="cvCustTot" index="19" value="-1"/>
     <arrayval field="cvPsiPowTo" index="11" value="-1"/>
+    <arrayval field="cvPsiPowTo" index="12" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="AbReplace" tag="cPUTrapmak"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cRogTrapfn"/>
     <tag group="AbReplace" tag="cPUCrHideP"/>
-    <bootstrap thing="cPUInsMadm">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="AbReplace" tag="cPUTrapmak"/>
     <bootstrap thing="cPUDecSec">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -12517,6 +12684,9 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
       </bootstrap>
     <bootstrap thing="puKnowDL1">
       <autotag group="SpellType" tag="cHelpPU1"/>
+      </bootstrap>
+    <bootstrap thing="cPUInsMadm">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     </thing>
@@ -12774,7 +12944,7 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     </thing>
   <thing id="arPUPattBr" name="Pattern Breaker" description="A pattern is only as strong as its weakest link, and pattern breakers have learned to find that link and exploit it. These cryptics excel at disabling patterns or destroying them entirely." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="266"/>
-    <arrayval field="cvCustTot" index="1" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
     <arrayval field="cvCustTot" index="5" value="-1"/>
     <arrayval field="cvCustTot" index="7" value="-1"/>
@@ -12784,13 +12954,11 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     <arrayval field="cvCustTot" index="15" value="-2"/>
     <arrayval field="cvCustTot" index="17" value="-2"/>
     <arrayval field="cvCustTot" index="19" value="-2"/>
+    <arrayval field="cvCustTot" index="1" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbReplace" tag="cPUHiddenP"/>
     <tag group="AbReplace" tag="cPUSwiftTr"/>
-    <bootstrap thing="cPUDisLock">
-      <autotag group="ClSpecWhen" tag="2"/>
-      </bootstrap>
+    <tag group="ClVaryName" tag="AppParen"/>
     <bootstrap thing="cPUDisWA">
       <autotag group="ClSpecWhen" tag="6"/>
       </bootstrap>
@@ -12799,6 +12967,9 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
       </bootstrap>
     <bootstrap thing="cPUDisAura">
       <autotag group="ClSpecWhen" tag="16"/>
+      </bootstrap>
+    <bootstrap thing="cPUDisLock">
+      <autotag group="ClSpecWhen" tag="2"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpPU1"/>
     </thing>
@@ -13208,7 +13379,7 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     </thing>
   <thing id="arPUNimBla" name="Nimble Blade" description="Raw power is not the only way to overcome enemies in melee, and nimble blades are the proof of that. These soulknives value finesse instead of power to make deadly melee attacks." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="283"/>
-    <arrayval field="cvCustTot" index="1" value="-1"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
     <arrayval field="cvCustTot" index="3" value="-1"/>
     <arrayval field="cvCustTot" index="5" value="-1"/>
     <arrayval field="cvCustTot" index="7" value="-1"/>
@@ -13219,13 +13390,11 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
     <arrayval field="cvCustTot" index="17" value="-1"/>
     <arrayval field="cvCustTot" index="19" value="-1"/>
     <arrayval field="cvBonFtMod" index="0" value="-1"/>
+    <arrayval field="cvCustTot" index="1" value="-1"/>
     <usesource source="pPsiUn"/>
-    <tag group="fDisable" tag="fArmShield"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="fDisable" tag="fArmMedium"/>
-    <bootstrap thing="cPUNBMinFi">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="fDisable" tag="fArmShield"/>
     <bootstrap thing="cPUNBWFin">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -13237,6 +13406,9 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
       </bootstrap>
     <bootstrap thing="cPUNBAdaFo">
       <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPUNBMinFi">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <link linkage="varies" thing="cHelpSkn"/>
     <eval phase="PreLevel" priority="100000"><![CDATA[~ Disable the 7th level Enhanced Mind Blade only
@@ -13274,5 +13446,280 @@ foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
     </thing>
   <thing id="cPUNBAdaFo" name="Adaptive Form" description="Once a nimble blade has reached 10th level, he has learned how to rapidly alter his use of the mind blade to adapt to any particular situation. As an immediate action and by expending psionic focus, the nimble blade can select any one blade skill whose requirements he meets and be treated as having that blade skill. The effect of the blade skill selected lasts until he expends his psionic focus as an immediate action to change it. This replaces the blade skill normally gained at 10th level." compset="ClSpecial">
     <tag group="ProductId" tag="PUProdID"/>
+    </thing>
+  <thing id="arPUSlbolt" name="Soulbolt" description="Some soulknives choose to focus on ranged attacks, launching a mind bolt at their enemies instead of wielding a blade of energy." compset="ClassVary" uniqueness="unique">
+    <fieldval field="srcPageNum" value="283"/>
+    <fieldval field="srcBookInf" value="Ultimate Psionics"/>
+    <usesource source="pPsiUn"/>
+    <tag group="fInclude" tag="fPointBlnk"/>
+    <tag group="fExclude" tag="fPowerAtt"/>
+    <tag group="fExclude" tag="fTwoWep"/>
+    <tag group="fExclude" tag="fWepFocMB"/>
+    <tag group="fInclude" tag="fWepFocMBt"/>
+    <tag group="AbReplace" tag="cSknMindBl"/>
+    <tag group="AbReplace" tag="cSknShaMB"/>
+    <tag group="AbReplace" tag="cSknThrMB"/>
+    <tag group="AbReplace" tag="cSknEnhMB"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClVaryName" tag="AppParen"/>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="5"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="9"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="11"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="13"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="15"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="17"/>
+      </bootstrap>
+    <bootstrap thing="cPUEnhMBlt">
+      <autotag group="ClSpecWhen" tag="19"/>
+      </bootstrap>
+    <bootstrap thing="cPUShpMBlt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUSbMndBt">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPULnchMB">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <link linkage="varies" thing="cHelpSkn"/>
+    <eval phase="Final" priority="999999999999999999999"><![CDATA[      ~ Disallow certain blade skills: Alter Mind Blade, Bladestorm, Bladewind, Dual Imbue, Extended Strike, Furious Charge (and Improved), Gruesome Riposte, Multiple Throw, Reaching Blade, Rending Blades, Trade Blows, Twin Strike, and Two-handed Throw
+      ~ We also disallow Mind Daggers because the Soulbolt has a different version of that ability
+      linkage[varies].field[cCstSpExpr].text &= " & !Ability.cSknBSAltB & !Ability.cSknBSBlds & !Ability.cSknBSBldw & !Ability.cSknBSDua & !Ability.cSknBSExS & !Ability.cSknBSFurC & !Ability.cSknBSFuCI & !Ability.cSknBSGruR & !Ability.cSknBSMulT & !Ability.cSknBSReaB & !Ability.cSknBSRend & !Ability.cSknBSTrad & !Ability.cSknBSTwin & !Ability.cSknBS2HTr & !Ability.cSknBSMDag"]]></eval>
+    </thing>
+  <thing id="cPUSbMndBt" name="Form Mind Bolt" description="At 1st level, as a move action, a soulbolt can form a semi-solid ranged weapon composed of psychic energy distilled from her own mind. This mind bolt appears inside of or enveloping the soulbolt&apos;s hand.\n\nA soulbolt must choose the form of her mind bolt at 1st level. She can either form it into a short range, medium range, or long range bolt which determines the weapon&apos;s range increment and base damage. Once chosen, her mind bolt stays in this form every time the soulknife forms her mind bolt. The long range bolt form is the smallest of forms and deals 1d6 points of damage and has a 100 ft. range increment. The medium range bolt form deals 1d8 points of damage, with a 60 ft. range increment, and the short range bolt form is the largest and heaviest form and deals 1d10 points of damage with a 20 ft. range increment. A soulbolt adds her Strength modifier to damage rolls when using the mind bolt in the short range form. All damages are based on a Medium-sized creature wielding Medium-sized weapons; adjust the weapon damage as appropriate for different sized weapons. A soulbolt with powerful build or any similar ability forms an appropriately-sized mind bolt dealing the size-appropriate amount of damage. Regardless of form, the mind bolt has a 19-20 critical threat range, has a maximum range of 10 range increments, and is treated as a projectile.\n\nThe form of the soulbolt&apos;s mind bolt also determines how many hands must be used to form and manipulate the mind bolt. If the mind bolt is in long range form, both of the soulbolt&apos;s hands remain free to hold other items such as a shield or a weapon. If the mind bolt is in medium range form, the soulbolt must have at least one hand free to form and manipulate the mind bolt. If the mind bolt is in short range form, the soulbolt must have both hands free to wield and launch the mind bolt.\n\nA soulbolt can wield a buckler without penalty regardless of the form of her mind bolt.\n\nRegardless of the weapon form a soulbolt has chosen, her mind bolt does not have a set damage type. When shaping her weapon and assigning abilities to it, the soulbolt chooses whether it will deal bludgeoning, piercing, or slashing damage. The soulbolt may change the damage type of an existing mind bolt, or may summon a new mind bolt with a different damage type, as a full-round action; otherwise, the mind bolt retains the last damage type chosen every time it is summoned.\n\nThe bolt can be broken (it has hardness 10 and 10 hit points); however, a soulbolt can simply create another on her next move action. The moment she relinquishes her grip on her blade, it dissipates (unless she intends to throw it; see below). A mind bolt is considered a magic weapon for the purpose of overcoming damage reduction and is considered a masterwork weapon.\n\nA soulbolt can use feats such as Rapid Shot or Precise Shot in conjunction with the mind bolt just as if it were a normal ranged weapon. She can also choose her mind bolt for feats requiring a specific weapon choice, such as Weapon Focus and Improved Critical. Powers or spells that upgrade weapons can be used on a mind bolt. The soulbolt can use feats such as Weapon Finesse that work on light weapons with her mind bolt, but such feats only work on mind bolts in a light weapon form, such as using the Mind Daggers blade skill.\n\nEven in places where psionic effects do not normally function (such as within a null psionics field), a soulbolt can attempt to sustain her mind bolt by making a DC 20 Will save. On a successful save, the soulbolt maintains her mind bolt for a number of rounds equal to her class level before she needs to check again, although the mind bolt is treated for all purposes as a non-magical, masterwork ranged weapon while in a place where psionic effects do not normally function. On an unsuccessful attempt, the mind bolt vanishes. As a move action on her turn, the soulbolt can attempt a new Will save to rematerialize her mind bolt while she remains within the psionics-negating effect. She gains a bonus on Will saves made to maintain or form her mind bolt equal to the total enhancement bonus of her mind bolt (see below).\n\nThe soulbolt chooses the appearance of her mind bolt, although its shape must reflect the selections the soulbolt has chosen: a bludgeoning mind bolt would be blunt, slashing would have an edge, etc.\n\nThis ability replaces the Form Mind Blade class feature normally gained by soulknives." compset="ClSpecial" summary="Form a semi-solid weapon composed of psychic energy distilled from your own mind.">
+    <fieldval field="usrCandid1" value="component.Simple &amp; MindBlade.Bolt?"/>
+    <arrayval field="usrArray" index="0" value="Bludgeoning"/>
+    <arrayval field="usrArray" index="1" value="Piercing"/>
+    <arrayval field="usrArray" index="2" value="Slashing"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ChooseSrc1" tag="Hero"/>
+    <tag group="Helper" tag="ActivMenu"/>
+    <bootstrap thing="iPUMndBtMR">
+      <containerreq phase="First" priority="99">hero#MindBlade.BoltMed</containerreq>
+      </bootstrap>
+    <bootstrap thing="iPUMndBtSR">
+      <containerreq phase="First" priority="99">hero#MindBlade.BoltShort</containerreq>
+      </bootstrap>
+    <bootstrap thing="iPUMndBtLR">
+      <containerreq phase="First" priority="99">hero#MindBlade.BoltLong</containerreq>
+      </bootstrap>
+    <bootstrap thing="zPUMndBlt1"></bootstrap>
+    <bootstrap thing="zPUMndBlt2"></bootstrap>
+    <bootstrap thing="zPUMndBlt3"></bootstrap>
+    <eval phase="First" priority="50" name="Add Mind Blade Tags"><![CDATA[
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If nothing chosen get out now!
+      doneif (field[usrChosen1].ischosen <> 1)
+
+      perform field[usrChosen1].chosen.pulltags[MindBlade.?]
+      perform hero.pushtags[MindBlade.?]]]></eval>
+    <eval phase="PostLevel" priority="10000" index="2"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we've not chosen anything, get out
+      doneif (field[usrChosen1].ischosen = 0)
+
+      ~ Bludgeoning      
+      if (field[usrIndex].value = 0) then
+        perform assign[wType.B]
+      ~ Piercing
+      elseif (field[usrIndex].value = 1) then
+        perform assign[wType.P]
+      ~ Slashing
+      elseif (field[usrIndex].value = 2) then
+        perform assign[wType.S]
+      endif
+
+      ~ Find all Mindblades and set the damage type tag      
+      foreach pick in hero from BaseWep where "IsWeapon.wMindBlade"
+        perform eachpick.delete[wType.?]
+        perform eachpick.gizmo.delete[wType.?]
+        perform eachpick.pushtags[wType.?]
+        perform eachpick.gizmo.pushtags[wType.?]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cPUShpMBlt" name="Shape Mind Bolt" description="The soulbolt&apos;s mind bolt retains the last chosen form every time it is formed until the soulbolt reshapes it. If the soulbolt chooses to reshape her bolt, it requires a full-round action to do so. She may also reassign the type of damage dealt as part of reshaping her mind bolt if she so chooses. A soulbolt can reassign the ability or abilities she has added to her mind bolt; see below. To do so, she must first spend 8 hours in concentration. These cannot be the normal 8 hours used for rest, even if the soulbolt does not require sleep. After that period, the mind bolt materializes with the new ability or abilities selected by the soulbolt. This ability replaces the Shape Mind Blade class feature normally gained by soulknives." compset="ClSpecial" summary="Change the form of your mind bolt, or reassign its abilities">
+    <tag group="ProductId" tag="GreenRonin"/>
+    </thing>
+  <thing id="cPULnchMB" name="Launch Mind Bolt" description="Soulbolts are greater masters at making ranged attacks with their weapon than their soulknife counterparts. Unlike a soulknife, a soulbolt does not need to reform her mind bolt after throwing it. This means that the soulbolt can make use of all iterative attacks available, or multiple attacks such as those gained from Rapid Shot, without the need for abilities such as the Multiple Throw blade skill.\n\nThis ability replaces the Throw Mind Blade class feature normally gained by soulknives." compset="ClSpecial" summary="Make iterative attacks with your Mind Bolt">
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPUEnhMBlt" name="Enhanced Mind Bolt" description="A soulbolt&apos;s mind bolt improves as the character gains higher levels. At 3rd level and every odd level thereafter, the mind bolt gains a cumulative +1 enhancement bonus that she may spend on an actual enhancement bonus or on weapon special abilities. A soulbolt&apos;s maximum enhancement bonus follows the same progression as a soulknife. The soulbolt may (and must, when her total enhancement is higher than her maximum bonus) apply any special ability from the table below instead of an enhancement bonus, as long as she meets the level requirements. A soulbolt can choose any combination of weapon special abilities and/or enhancement bonus that does not exceed the total allowed by the soulbolt&apos;s level, but she must assign at least a +1 enhancement bonus before assigning any special abilities. If the soulbolt shapes her mind bolt into two items, such as using the Mind Daggers blade skill, the enhancement bonus of her mind bolt (if any) is reduced by 1 (to a minimum of 0). If this would reduce the enhancement bonus on the mind bolt to 0 and weapon special abilities are applied, the soulbolt must reshape her mind bolt to make the options valid. Both mind bolts have the same selection of enhancement bonus and weapon special abilities (if any).\n\n{b}Note:{/b} To ehance your Mind Bolt, go to the {b}Weapons{/b} tab and click on the &quot;Wrench/Hammer&quot; icon.  Then you can make it a +1 Mind Bolt or a +1 Flaming Mind Bolt. Currently the scripts will not error check if you increase the bonus past what you should be allowed or take a invalid item power.  This will come in a future update." compset="ClSpecial" summary="You can enhance your mind bolt with extra power.">
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="Helper" tag="UseOwnLev" name="UseOwnLev" abbrev="UseOwnLev"/>
+    <tag group="AbilType" tag="Super"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+field[abValue].value += field[xCount].value
+
+field[livename].text = "Enhanced Mind Bolt +" & field[abValue].value
+field[abSumm].text = "You can enhance your Mind Bolt with a total enhancement bonus of +" & field[abValue].value & "."
+field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
+    </thing>
+  <thing id="cPUAltMBlt" name="Alter Mind Bolt" description="A soulbolt gains the ability to shape her mind bolt into different weapon forms. She may change her blade&apos;s form to the long range weapon, medium range weapon, or short range weapon forms any time she forms her mind bolt." compset="CustomSpec" summary="You can reshape your mind bolt any time you form it" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPWArrShot" name="Arresting Shot" description="As a standard action, the soulbolt can make a ranged reposition attempt against an enemy within one range increment. If the attempt is successful, the enemy is repositioned to directly adjacent to the soulbolt, occupying the space in the most direct path from the target to the soulbolt. The soulbolt must have the wrenching special ability applied to her mind bolt to use this blade skill. The soulbolt must be at least 12th level to select this blade skill." compset="CustomSpec" summary="Ranged reposition puts the target next to you." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <prereq message="Soulbolt level 12+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 12)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cPUChgShot" name="Charged Shot" description="As a standard action, the soulbolt can make a single ranged attack with her mind bolt. If the attack is successful, the mind bolt bursts with psionic energy upon impact, dealing its base weapon damaging to all creatures within a 5-ft. radius of the creature struck. A successful Reflex save (DC 10 + 1/2 soulbolt level + Wisdom modifier) halves the damage taken." compset="CustomSpec" summary="Successful attack damages all within 5 ft of target" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="abSave" tag="RefHalf"/>
+    <tag group="StandardDC" tag="aWIS"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUClRngEx" name="Close-Range Expert" description="When making ranged attacks with her mind bolt, a soulknife does not provoke attacks of opportunity as long as she maintains psionic focus." compset="CustomSpec" summary="When psi-focused, your mind bolts do not provoke AoO&apos;s." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUCRExpIm" name="Close-Range Expert, Improved" description="The soulbolt threatens adjacent squares when wielding her mind bolt and does not need to maintain psionic focus to gain the benefit of the Close-Range Expert blade skill. The soulbolt must have the Close-Range Expert blade skill and must be at least 12th level to select this blade skill." compset="CustomSpec" summary="Close-Range Expert no longer requires focus, and you threaten squares with your mind bolts." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <pickreq thing="cPUClRngEx"/>
+    <prereq message="Soulbolt level 12+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 12)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cPUDblShot" name="Double Shot" description="As a standard action, a soulbolt can expend her psychic strike to make two ranged attacks with her mind bolt. The attacks do not deal the additional damage from psychic strike." compset="CustomSpec" summary="Make two mind bolt attacks as a standard action." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUFrzBolt" name="Freezing Bolt" description="The soulbolt may, as a free action, have her mind bolt deal cold damage instead of its selected damage type. In this form, the mind bolt bypasses any damage reduction, although it is subject to resistance to cold damage, and is similarly augmented by cold vulnerability. If the mind bolt successfully deals cold damage, the target must make a Fortitude save (DC 10 + 1/2 soulbolt level + Wisdom modifier) or have its speed reduced by half for one round. Multiple attacks with a freezing bolt in the same round do not extend this duration." compset="CustomSpec" summary="Mind bolts can deal cold damage and reduce their target&apos;s speed" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="abSave" tag="RefHalf"/>
+    <tag group="StandardDC" tag="aWIS"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    </thing>
+  <thing id="cPUSkMndDg" name="Mind Daggers" description="If a soulbolt selects the Mind Daggers blade skill, she gains the option to form her mind bolt into dagger form, dealing 1d4 points of damage, with a critical threat range of 19-20, a critical multiplier of x2, and a range increment of 30 ft. When making ranged attacks with the mind bolt in dagger form, a soulbolt adds her Strength modifier to damage rolls. When forming her mind bolt into dagger form, the soulbolt may either make a single mind bolt or a pair of mind bolts, so long as both are in dagger form. The mind bolt suffers the standard penalty for forming two items. The soulbolt may additionally use the mind bolt in dagger form to make melee attacks, but this may render some of the mind bolt&apos;s weapon special abilities non-functioning if they do not apply to melee attacks (such as the Distance special ability; see Enhanced Mind Bolt below)." compset="CustomSpec" summary="The soulbolt may form one or a pair of mind daggers in place of her normal forms" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <bootstrap thing="iPUMndDagg">
+      <containerreq phase="First" priority="99">hero#MindBlade.Dagger</containerreq>
+      </bootstrap>
+    <bootstrap thing="zPUMndBld5"></bootstrap>
+    <bootstrap thing="iPUMndDagg">
+      <containerreq phase="First" priority="99">hero#MindBlade.Dagger</containerreq>
+      </bootstrap>
+    </thing>
+  <thing id="cPURainArr" name="Rain of Arrows" description="As a standard action, the soulbolt may fire off her mind bolt and have deal damage to all creatures within a 10 ft. cube within one range increment. A successful Reflex save (DC 10 + 1/2 soulbolt level + Wis modifier) halves the damage. A soulbolt must have the charged shot blade skill and be at least 10th level in order to select this blade skill." compset="CustomSpec" summary="Deal mind bolt damage to all targets in 10-ft cube" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="abSave" tag="RefHalf"/>
+    <tag group="StandardDC" tag="aWIS"/>
+    <tag group="SpecType" tag="Attack"/>
+    <pickreq thing="cPUChgShot"/>
+    <prereq message="Soulbolt level 10+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 10)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cPU1000Bld" name="Thousand Blades" description="When making a full attack, the soulbolt may expend her psychic strike. She deals no psychic strike damage, but all of her attacks use her highest base attack bonus before factoring in other modifiers to attack rolls. A soulbolt must be at least 12th level in order to select this blade skill." compset="CustomSpec" summary="Make all attacks at highest BAB" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="NotClExpr" tag="cHelpPUA"/>
+    <tag group="SpecSource" tag="arPUSlbolt"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="abCategory" tag="PUBladeSk"/>
+    <tag group="SpecType" tag="Attack"/>
+    <tag group="abAction" tag="FullRd"/>
+    <prereq message="Soulbolt level 12+ required.">
+      <validate><![CDATA[        var classcheck as string
+        var levels as number
+
+        classcheck = "Soulknife"
+
+        call PUPreReqs
+
+        validif (levels >= 12)]]></validate>
+      </prereq>
     </thing>
   </document>

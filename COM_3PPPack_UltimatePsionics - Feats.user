@@ -898,7 +898,6 @@ Tim Shadow March 26, 2014
     <exprreq message="Autohypnosis 4+ ranks required."><![CDATA[#skillranks[skPUAhypno] >= 4]]></exprreq>
     <exprreq message="Psionic Body feat required."><![CDATA[#hasfeat[fPUPsiBody] <> 0]]></exprreq>
     </thing>
-
   <thing id="fPUAcPsTal" name="Access Psionic Talent" description="You are able to manifest minor psionic abilities.\n\n{b}Prerequisite:{/b} Manifester level 1st or Unlocked Talent*.\n\n{b}Benefit:{/b} You gain five talents (see Chapter 5: Powers). These talents can be from any class list.\n\n{b}Special:{/b} This feat may be selected more than once. Each time, you gain five additional psionic talents." compset="Feat" summary="Gain five talents.">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
@@ -1573,8 +1572,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
         hero.child[Attack].field[atmPenalty].value -= field[abValue].value
         hero.child[Damage].field[tDamPower].value += field[abValue2].value
         endif]]></eval>
-    <evalrule phase="Validation" priority="5000" message="Can&apos;t combine with Power Attack" summary="Can&apos;t combine with Power Attack">
-      validif (field[abilActive].value = 0)
+    <evalrule phase="Validation" priority="5000" message="Can&apos;t combine with Power Attack" summary="Can&apos;t combine with Power Attack">validif (field[abilActive].value = 0)
 
       validif (hero.childfound[fPowerAtt].field[abilActive].value = 0)</evalrule>
     <exprreq message="Base Attack bonus +1 required."><![CDATA[#BAB[] >= 1]]></exprreq>
@@ -1706,7 +1704,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="fCategory" tag="Metapsion"/>
     <exprreq message="Spellcraft 10+ ranks required."><![CDATA[#skillranks[skSpellcr] >= 10]]></exprreq>
     </thing>
-  <thing id="fPUSharPwr" name="Shared Power" description="You have learned to extend the range of your personal powers, granting their benefits to your nearby allies.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can manifest a power with a range of personal at any distance up to 30 ft. as a ray, gaining no benefit yourself, but granting it to a willing target. You must succeed on a ranged touch attack for the target to be affected by the power or the power points are lost.{br}{br}Alternatively, the power is treated as having the Network descriptor (see below), rather than making a ranged touch attack.{br}{br}Using this feat increases the power point cost of the power by 4. The power&apos;s total cost cannot exceed your manifester level." compset="Feat">
+  <thing id="fPUSharPwr" name="Shared Power" description="You have learned to extend the range of your personal powers, granting their benefits to your nearby allies.\n\n{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can manifest a power with a range of personal as if the range was instead touch. Using this feat in this manner does not increase the power point cost of the power. \n\nAlternatively, you can expend your psionic focus to treat the power as if it has a range of Close (25 ft. + 5 ft./2 levels) and has the network descriptor. \n\nUsing this feat in this manner increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
     </thing>
@@ -1889,8 +1887,6 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <exprreq message="You can add more talents still." iserror="no"><![CDATA[altpick.field[cfgLeftPw1].value <= 0]]></exprreq>
     <exprreq message="You have added too many talents."><![CDATA[altpick.field[cfgLeftPw1].value >= 0]]></exprreq>
     </thing>
-
-
   <thing id="trPUClairT" name="Clairsentient Talent" description="If you have psionic focus, you can be treated as having detect psionics active, but only effective in the space you occupy. This is a psi-like ability, and you must concentrate on it for a round to glean any more meaningful information than a ‘hunch’. This talent grants no benefit if you do not have the ability to gain psionic focus." compset="Trait">
     <comment>** Need Mechanics **</comment>
     <usesource source="pPsiUn"/>
@@ -1915,7 +1911,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="trCategory" tag="Psionic" name="Psionic"/>
-    <eval phase="PostLevel" priority="10000">      ~ If we are not active or psionic focus get out now!
+    <eval phase="PostLevel" priority="10000">~ If we are not active or psionic focus get out now!
       doneif (hero.tagis[Hero.PsiFocus] = 0)
 
 field[abValue].value += 1
@@ -2128,5 +2124,23 @@ nexteach]]></eval>
     <tag group="trCategory" tag="Racial"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="Race" tag="rXeph"/>
+    </thing>
+  <thing id="fWepFocMBt" name="Weapon Focus (Mind Bolt)" description="{b}Benefit{/b}: You gain a +1 bonus on all attack rolls you make using the Mind Bolt." compset="Feat" summary="You gain a +1 bonus on all attack rolls you make using the Mind Blade.">
+    <usesource source="pPsiUn"/>
+    <tag group="fCategory" tag="Combat" name="Combat" abbrev="Combat"/>
+    <tag group="HasFeat" tag="fWepFoc"/>
+    <bootstrap thing="fWepFoc">
+      <autotag group="Target" tag="wMindBlade"/>
+      <autotag group="Helper" tag="NoRootName"/>
+      </bootstrap>
+    <eval phase="PostAttr" priority="1000" index="2"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~If we've already been taken, hide us
+      perform assign[Helper.FtHide]
+
+      hero.child[fWepFoc].field[actName].text = "Weapon Focus: MindBolt"]]></eval>
+    <exprreq message="Weapon Focus: Mind Bolt already taken.">hero.tagis[WepFocus.wMindBlade] = @ispick</exprreq>
     </thing>
   </document>

@@ -29,6 +29,7 @@
     selectable="yes"
     parent="pCub7Ent"
     sortorder="10"
+    abbrev=" (ToS)"
     description="Tome of Secrets inputted by the HL Community. XML and HL Scripts copyrighted 2010.">
     </source>
 

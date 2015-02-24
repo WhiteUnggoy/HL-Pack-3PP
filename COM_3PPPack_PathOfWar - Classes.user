@@ -2280,7 +2280,7 @@ endif]]></eval>
     <fieldval field="cHDSides" value="12"/>
     <fieldval field="cAbbr" value="DFr"/>
     <fieldval field="cSkills" value="4"/>
-    <tag group="ClassSkill" tag="skSenseMot"/>
+    <usesource source="srcPathOfW"/>
     <tag group="ClassSkill" tag="skSurvival"/>
     <tag group="cFort" tag="Good"/>
     <tag group="cRef" tag="Good"/>
@@ -2294,10 +2294,8 @@ endif]]></eval>
     <tag group="ClassSkill" tag="skPWKnowMa"/>
     <tag group="ClassSkill" tag="skPercep"/>
     <tag group="PathOfWar" tag="Class"/>
-    <bootstrap thing="cCfgPWPC3"></bootstrap>
-    <bootstrap thing="cPWP1Man">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassSkill" tag="skSenseMot"/>
     <bootstrap thing="PWDisLevel"></bootstrap>
     <bootstrap thing="cPW3DrFrTr">
       <autotag group="ClSpecWhen" tag="1"/>
@@ -2337,6 +2335,10 @@ endif]]></eval>
       </bootstrap>
     <bootstrap thing="cPWP3DWGD">
       <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cCfgPWPC3"></bootstrap>
+    <bootstrap thing="cPWP1Man">
+      <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     </thing>
   <thing id="cPWDragFur" name="Dragon Fury" description="The disciple of the Thrashing Dragon discipline knows the controlled fury of the dragon’s rage on the battlefield, the sinuous twists and the lashing claws of that savage beast are engraved in the body of its student. By devoting one’s self to the vicious style, the disciple learns many things on how best to emulate the dragon and its fighting style. The ferocity and grace in each twist of the blade and each leap that he makes hides a fierce power and determination to win. These specialists are known as dragon furies, and a dragon’s deep well of wrath lives within their hearts and pumps its fury to every inch of their body. Most dragon furies hail from the ranks of stalkers and warlords, and some from the occasional bard or ranger. The most terrifying also know of the potency of true primal rage and have a background in the barbarian class." compset="ClassLevel" maxlimit="10">
@@ -2569,7 +2571,6 @@ nexteach]]></validate>
     <tag group="Discipline" tag="PrimalFury"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="PathOfWar" tag="Stance"/>
     <tag group="PathOfWar" tag="StanceClSp"/>
     <tag group="ChargeCalc" tag="AttrUses5"/>
     <tag group="ChargeAttr" tag="aCON"/>
@@ -3448,7 +3449,7 @@ Array 9 = Stances</comment>
     <arrayval field="cMagLevTot" index="9" value="8"/>
     <arrayval field="cBonFtTot" index="3" value="1"/>
     <arrayval field="cBonFtTot" index="7" value="2"/>
-    <tag group="ClassSkill" tag="skPUKnwPsi"/>
+    <usesource source="srcPathOfW"/>
     <tag group="ClassSkill" tag="skSpellcr"/>
     <tag group="ClassSkill" tag="skStealth"/>
     <tag group="cFort" tag="Poor"/>
@@ -3464,12 +3465,8 @@ Array 9 = Stances</comment>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ClassSkill" tag="skDiplo"/>
     <tag group="ClassSkill" tag="skIntim"/>
-    <bootstrap thing="cPWP6StAw2">
-      <autotag group="ClSpecWhen" tag="3"/>
-      </bootstrap>
-    <bootstrap thing="cPWP6StAw3">
-      <autotag group="ClSpecWhen" tag="9"/>
-      </bootstrap>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassSkill" tag="skPUKnwPsi"/>
     <bootstrap thing="cPWP6DFoc">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -3504,6 +3501,12 @@ Array 9 = Stances</comment>
       </bootstrap>
     <bootstrap thing="cPWP6PcMnd">
       <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6StAw2">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <bootstrap thing="cPWP6StAw3">
+      <autotag group="ClSpecWhen" tag="9"/>
       </bootstrap>
     <eval phase="PostLevel" priority="10"><![CDATA[        ~ Have the PrC's maneuver configurator inherit the discipline list of the existing initiator class it follows
         perform hero.childfound[cPWP1Man].field[usrChosen1].chosen.pulltags[Discipline.?]

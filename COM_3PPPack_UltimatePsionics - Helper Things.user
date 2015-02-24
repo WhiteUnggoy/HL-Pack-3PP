@@ -1,43 +1,28 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
   <loadonce key="COM_3PPPack_UltimatePsionics - Helper Things"/>
-
   <fileinfo>
-    <info_author>
-      Tim Shadow (ShadowChemosh)
-    </info_author>
-    <info_history><![CDATA[
+    <info_author>Tim Shadow (ShadowChemosh)</info_author>
+    <info_history>
     January 3, 2015 - Tim Shadow
     -Moved release notes over to COM_3PPPack_UltimatePsionics - Release Notes.user file.
-    -Changed PUPathSk to not use any string processing logic.
-    ]]></info_history>
+    -Changed PUPathSk to not use any string processing logic.</info_history>
     </fileinfo>
-
-
-  <!-- ============================================================================================ -->
-  <!-- New Ultimate Psionics Mechanic                                                               -->
-  <!-- ============================================================================================ -->
   <thing id="mechS2PU" name="Ultimate Psionics Mechanic" compset="Mechanics">
     <usesource source="pPsiUn"/>
-
-    <!-- New Global Tags defined here so they are always available -->
-    <tag group="wRangeInc"  tag="15"         name="15"/>
-    <tag group="ProductId"  tag="PUProdID"   name="Community Created Psionics"/>
-    <tag group="psiClass"   tag="PUVitMetGu" name="Vitalist Method - Guardian"/>
-    <tag group="psiClass"   tag="PUVitMetMe" name="Vitalist Method - Mender"/>
-    <tag group="psiClass"   tag="PUVitMetSo" name="Vitalist Method - Soulthief"/>
-    <tag group="wFtrGroup"  tag="WPMndBld"   name="Weapon Proficiency - Mind Blade" abbrev="WP - Mind Blade"/>
-    <tag group="IsWeapon"   tag="wMindBlade" name="Mind Blade"/>
-    <tag group="WepFocus"   tag="wMindBlade" name="Mind Blade"/>
-    <tag group="Target"     tag="wMindBlade" name="Mind Blade"/>
-    <tag group="abCategory" tag="PUBladeSk"  name="Soulknife Blade Skill" abbrev="Blade Skill"/>
-
-    <!-- Simple Scripts -->
+    <tag group="wRangeInc" tag="15" name="15"/>
+    <tag group="ProductId" tag="PUProdID" name="Community Created Psionics"/>
+    <tag group="psiClass" tag="PUVitMetGu" name="Vitalist Method - Guardian"/>
+    <tag group="psiClass" tag="PUVitMetMe" name="Vitalist Method - Mender"/>
+    <tag group="psiClass" tag="PUVitMetSo" name="Vitalist Method - Soulthief"/>
+    <tag group="wFtrGroup" tag="WPMndBld" name="Weapon Proficiency - Mind Blade" abbrev="WP - Mind Blade"/>
+    <tag group="IsWeapon" tag="wMindBlade" name="Mind Blade"/>
+    <tag group="WepFocus" tag="wMindBlade" name="Mind Blade"/>
+    <tag group="Target" tag="wMindBlade" name="Mind Blade"/>
+    <tag group="abCategory" tag="PUBladeSk" name="Soulknife Blade Skill" abbrev="Blade Skill"/>
     <bootstrap thing="PU0lvlPowe"></bootstrap>
     <bootstrap thing="PUPathSk"></bootstrap>
     <bootstrap thing="PUClassFnd"></bootstrap>
-
-    <!-- Selection Helper Objects -->
     <bootstrap thing="zPUArtiste"></bootstrap>
     <bootstrap thing="zPUBully"></bootstrap>
     <bootstrap thing="zPUFocused"></bootstrap>
@@ -53,66 +38,49 @@
     <bootstrap thing="zPUSneaky"></bootstrap>
     <bootstrap thing="zPUSympath"></bootstrap>
     </thing>
-
-  <!-- ============================================================================================ -->
-  <!-- New Psionic Base Class Headers                                                               -->
-  <!-- ============================================================================================ -->
   <thing id="arHdPUPsi" name="Psion" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Psion" class header.]]></comment>
     <link linkage="varies" thing="cHelpPsi"/>
-  </thing>
+    </thing>
   <thing id="arHdPUPWa" name="Psychic Warrior" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Psychic Warrior" class header.]]></comment>
     <link linkage="varies" thing="cHelpPWa"/>
-  </thing>
+    </thing>
   <thing id="arHdPUSkn" name="Soulknife" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Soulknife" class header.]]></comment>
     <link linkage="varies" thing="cHelpSkn"/>
-  </thing>
+    </thing>
   <thing id="arHdPUWld" name="Wilder" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Wilder" class header.]]></comment>
     <link linkage="varies" thing="cHelpWld"/>
-  </thing>
+    </thing>
   <thing id="arHdPUAeg" name="Aegis" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Aegis" class header.]]></comment>
     <link linkage="varies" thing="cHelpPU0"/>
-  </thing>
+    </thing>
   <thing id="arHdPUCry" name="Cryptic" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Cryptic" class header.]]></comment>
     <link linkage="varies" thing="cHelpPU1"/>
-  </thing>
+    </thing>
   <thing id="arHdPUDrd" name="Dread" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Dread" class header.]]></comment>
     <link linkage="varies" thing="cHelpPU2"/>
-  </thing>
+    </thing>
   <thing id="arHdPUMrk" name="Marksman" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Marksman" class header.]]></comment>
     <link linkage="varies" thing="cHelpPU3"/>
-  </thing>
+    </thing>
   <thing id="arHdPUTac" name="Tactician" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Tactician" class header.]]></comment>
     <link linkage="varies" thing="cHelpPU4"/>
-  </thing>
+    </thing>
   <thing id="arHdPUVit" name="Vitalist" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Vitalist" class header.]]></comment>
     <link linkage="varies" thing="cHelpPU5"/>
-  </thing>
-
-  <!-- ============================================================================================ -->
-  <!-- New Psionic Minion/Hirelings Headers                                                         -->
-  <!-- ============================================================================================ -->
+    </thing>
   <thing id="minHdPUPsc" name="Psicrystals" compset="Minion" isshowonly="yes">
     <tag group="gType" tag="PUPsicrsta" name="Psicrystals"/>
-  </thing>
-
-  <!-- ============================================================================================ -->
-  <!-- Helper Objects                                                                               -->
-  <!-- ============================================================================================ -->
-
-
-  <!-- ============================================================================================ -->
-  <!-- Setup Helper Objects                                                                         -->
-  <!-- ============================================================================================ -->
+    </thing>
   <thing id="PU0lvlPowe" name="Zero Level Powers" description="This makes all zero level powers cost no power points when Psi-Focused." compset="Simple" uniqueness="unique">
     <usesource source="pPsiUn"/>
     <eval phase="PreLevel" priority="10000"><![CDATA[
@@ -124,7 +92,6 @@
         eachpick.field[psiCost].value = 0
       nexteach]]></eval>
     </thing>
-
   <thing id="PUPathSk" name="Path Skills Setup" description="This puts the PathSkill.? tags on skills." compset="Simple" uniqueness="unique">
     <usesource source="pPsiUn"/>
     <eval phase="First" priority="50"><![CDATA[ 
@@ -133,13 +100,11 @@
         perform eachpick.pulltags[ClassSkill.?,PathSkill]
         perform eachpick.pushtags[PathSkill.?]
         perform delete[PathSkill.?]
-      nexteach
-      ]]></eval>
+      nexteach]]></eval>
     </thing>
-
   <thing id="PUClassFnd" name="Psionic Class Found" description="This checks to see if a psionic class has been selected and if found sets the tag Psionics.Class on the hero very early." compset="Simple" uniqueness="unique">
     <usesource source="pPsiUn"/>
-    <eval phase="First" priority="100"><![CDATA[
+    <eval phase="First"><![CDATA[
       var psiLevel as number
       var iX       as number
       ~ Find each Psionic Based class and set a Psionics.Class tag on the hero.
@@ -164,13 +129,8 @@
       while (iX < psiLevel)
         iX += 1
         perform hero.assign[Psionics.Class]
-      loop      
-    ]]></eval>
+      loop]]></eval>
     </thing>
-
-  <!-- ============================================================================================ -->
-  <!-- Helper Selection Objects                                                                     -->
-  <!-- ============================================================================================ -->
   <thing id="zPUArtiste" name="Artiste" description="Psicrystal Personalities helper" compset="Simple">
     <usesource source="pPsiUn"/>
     <tag group="Psicrystal" tag="Personalty" name="Psicrystal Personalty Selector"/>
@@ -269,27 +229,36 @@
     <tag group="PsicrysBon" tag="3"/>
     <tag group="PsicrystID" tag="skSenseMot"/>
     </thing>
-
-  <!-- Mind Blade Selection Helpers -->
   <thing id="zPUMndBld1" name="Mind Blade (Light)" description="Mind Blade Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
     <usesource source="pPsiUn"/>
-    <tag group="MindBlade"  tag="Light"/>
+    <tag group="MindBlade" tag="Light"/>
     </thing>
   <thing id="zPUMndBld2" name="Mind Blade (1H)" description="Mind Blade Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
     <usesource source="pPsiUn"/>
-    <tag group="MindBlade"  tag="OneHanded"/>
+    <tag group="MindBlade" tag="OneHanded"/>
     </thing>
   <thing id="zPUMndBld3" name="Mind Blade (2H)" description="Mind Blade Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
     <usesource source="pPsiUn"/>
-    <tag group="MindBlade"  tag="TwoHanded"/>
+    <tag group="MindBlade" tag="TwoHanded"/>
     </thing>
   <thing id="zPUMndBld4" name="Mind Arrow" description="Mind Blade Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
     <usesource source="pPsiUn"/>
-    <tag group="MindBlade"  tag="Arrow"/>
-    </thing>    
+    <tag group="MindBlade" tag="Arrow"/>
+    </thing>
   <thing id="zPUMndBld5" name="Mind Dagger" description="Mind Blade Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
     <usesource source="pPsiUn"/>
-    <tag group="MindBlade"  tag="Dagger"/>
+    <tag group="MindBlade" tag="Dagger"/>
     </thing>
-
+  <thing id="zPUMndBlt2" name="Mind Bolt (Med. Range)" description="Mind Bolt Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
+    <usesource source="pPsiUn"/>
+    <tag group="MindBlade" tag="BoltMed"/>
+    </thing>
+  <thing id="zPUMndBlt3" name="Mind Bolt (Short Range)" description="Mind Bolt Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
+    <usesource source="pPsiUn"/>
+    <tag group="MindBlade" tag="BoltShort"/>
+    </thing>
+  <thing id="zPUMndBlt1" name="Mind Bolt (Long Range)" description="Mind Bolt Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
+    <usesource source="pPsiUn"/>
+    <tag group="MindBlade" tag="BoltLong"/>
+    </thing>
   </document>

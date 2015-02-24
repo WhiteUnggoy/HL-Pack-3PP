@@ -1508,7 +1508,6 @@ foreach pick in hero from BaseSkill where "Helper.SkCatPerf"
     <tag group="RaceSize" tag="Medium0"/>
     <bootstrap thing="stPUHalfCo"></bootstrap>
     <bootstrap thing="raPsiApt"></bootstrap>
-    <bootstrap thing="fcPUPwrPnt"></bootstrap>
     <bootstrap thing="lPUForgeB"></bootstrap>
     <bootstrap thing="raPUForFea"></bootstrap>
     <bootstrap thing="lCommonND"></bootstrap>
@@ -1620,7 +1619,6 @@ hero.child[svWill].field[Bonus].value += field[abValue].value]]></eval>
     <bootstrap thing="raLowLight"></bootstrap>
     <bootstrap thing="raNatPsion"></bootstrap>
     <bootstrap thing="raPsiApt"></bootstrap>
-    <bootstrap thing="fcPUPwrPnt"></bootstrap>
     <bootstrap thing="lCommon"></bootstrap>
     <bootstrap thing="lPUNoral"></bootstrap>
     <bootstrap thing="stPUNoral"></bootstrap>

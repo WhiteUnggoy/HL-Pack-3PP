@@ -392,4 +392,21 @@
       perform hero.assign[PathOfWar.HeroInit]]]></eval>
     </thing>
 
+  <!-- ============================================================================================ -->
+  <!-- New Psionic Base Class Headers                                                               -->
+  <!-- ============================================================================================ -->
+  <thing id="arHdPWStal" name="Stalker" compset="ClassVary" uniqueness="unique" isshowonly="yes">
+    <comment><![CDATA[This is a helper object for the "Stalker" class header.]]></comment>
+    <link linkage="varies" thing="cHelpPW2"/>
+  </thing>
+  <thing id="arHdPWWard" name="Warder" compset="ClassVary" uniqueness="unique" isshowonly="yes">
+    <comment><![CDATA[This is a helper object for the "Warder" class header.]]></comment>
+    <link linkage="varies" thing="cHelpPW3"/>
+  </thing>
+  <thing id="arHdPWWarl" name="Warlord" compset="ClassVary" uniqueness="unique" isshowonly="yes">
+    <comment><![CDATA[This is a helper object for the "Warlord" class header.]]></comment>
+    <link linkage="varies" thing="cHelpPW1"/>
+  </thing>
+
+
   </document>
