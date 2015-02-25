@@ -122,7 +122,7 @@
     parent="pSGG"
     sortorder="10"
     description="Krazy Kragnar&apos;s Black Market Magic Items (PFRPG) PDF ">
-    </source>	
+    </source> 
 
 
   <!-- New child source of SGG for Classes -->
@@ -231,14 +231,6 @@
     parent="SGGFeatOf"
     sortorder="0"
     description="SGG Feats of Runic Might II.">
-    </source>
-  <source
-    id="src110SPV4"
-    name="RGG - 110 Spell Variants 4"
-    selectable="yes"
-    parent="SGGMagic"
-    sortorder="0"
-    description="SGG 110 Spell Variants Volume 4.">
     </source>
   <source
     id="SGG_HOverP"
@@ -467,6 +459,14 @@
     parent="SGGMagic"
     sortorder="0"
     description="SGG 110 Spell Variants Volume 2.">
+    </source>
+  <source
+    id="src110SPV4"
+    name="RGG - 110 Spell Variants 4"
+    selectable="yes"
+    parent="SGGMagic"
+    sortorder="0"
+    description="SGG 110 Spell Variants Volume 4.">
     </source>
   <source
     id="pHellfire"
