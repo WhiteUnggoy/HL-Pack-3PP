@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Bullet Points Alchemical Bomb Discoveries"/>
   <fileinfo>
-    <info_author>W Birchler
-Asandir - Lone Wolf boards
-Sethvir - Paizo boards
-wwbbsffan68@gmail.com</info_author>
-    <info_history>Ver 1.0
-Initial Functionality
-September/October 2013</info_history>
+    <info_author>
+      W Birchler
+      Asandir - Lone Wolf boards
+      Sethvir - Paizo boards
+      wwbbsffan68@gmail.com</info_author>
+    <info_history>
+      Ver 1.0
+      Initial Functionality
+      September/October 2013</info_history>
     </fileinfo>
   <thing id="cSGBombard" name="Bombard" description="{b}Prerequisites{/b}: Alchemist 4, Explosive Missile, Infusion \n\n{b}Benefit{/b}: As a standard action, the alchemist can infuse a single arrow, crossbow bolt, or onehanded firearm bullet held by an adjacent ally with the power of his bomb. The ammunition retains this power for 1 round/level, or until discharged. When the infused ammunition hits its target, it deals damage normally and detonates as if the alchemist had thrown the bomb at the target. If the explosive missile misses, it does not detonate but is still considered discharged." compset="CustomSpec" uniqueness="unique">
     <tag group="Helper" tag="NoPathSoc"/>

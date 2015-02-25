@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - KK Black Market Magic Items"/>
   <fileinfo>
-    <info_author>W. Birchler
-Asandir - Lone Wolf boards
-Sethvir - Paizo boards
-wwbbsffan68@gmail.com</info_author>
-    <info_history>Ver 1.0
-Initial implementation
-February 2013</info_history>
+    <info_author>
+      W. Birchler
+      Asandir - Lone Wolf boards
+      Sethvir - Paizo boards
+      wwbbsffan68@gmail.com</info_author>
+    <info_history>
+      Ver 1.0
+      Initial implementation
+      February 2013</info_history>
     </fileinfo>
   <thing id="ipSGAllurg" name="Alluring" description="Alluring armor works to make its wearer look as good as possible, making sure any grime appears as mere smudges, keeping lighting even, glinting at dramatic moments, and preventing any cosmetics worn from coming off or smearing. It grants a +5 competence bonus on Diplomacy checks made when worn.\n\nFaint illusion; CL 4th; \n\n{b}Construction Requirements{/b}: Craft Magic Arms and Armor, {i}disguise self{/i}; Price +3,750 gp." compset="ItemPower" summary="grants a +5 competence bonus on Diplomacy checks made when worn.">
     <fieldval field="iCL" value="4"/>

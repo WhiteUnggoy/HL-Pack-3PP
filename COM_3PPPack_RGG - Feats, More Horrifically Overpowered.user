@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Feats, More Horrifically Overpowered"/>
   <fileinfo>
-    <info_author>W Birchler
-Asandir - Lone Wolf boards
-Sethvir - Paizo Boards
-wwbbsffan68@gmail.com</info_author>
-    <info_history>Ver 1.0 
-April 2013
-Initial Functionality</info_history>
+    <info_author>
+      W Birchler
+      Asandir - Lone Wolf boards
+      Sethvir - Paizo Boards
+      wwbbsffan68@gmail.com</info_author>
+    <info_history>
+      Ver 1.0 
+      April 2013
+      Initial Functionality</info_history>
     </fileinfo>
   <thing id="fSGAnimLep" name="Animated Leap" description="You can make vast jumps, well beyond the range of normal mortals.\n\n{b}Prerequisites{/b}: Acrobatic, Run.\n\n{b}Benefit{/b}: You can move your entire movement in a round as one or more jumps without making Acrobatics checks. If you take an action that allows you to move farther than your normal movement rate (such as the run action), you may make this entire movement as a leap or series of leaps. Each leap must be straight, must end on a surface able to support you (though if you have Dandelion Tread, see below, that’s pretty much any surface), and takes you to an altitude equal to 1/3 of the distance jumped. The highest you can jump is equal to 50% of your normal movement rate. You must declare each leap in advance (indicating where you jump from and your planned destination), and cannot change your route if you discover an invisible wall of force in the way, or you suddenly expose yourself to fire from a column of archers with readied actions." compset="Feat" summary="You can make vast jumps, well beyond the range of normal mortals." uniqueness="useronce">
     <usesource source="SGG_MOverP"/>

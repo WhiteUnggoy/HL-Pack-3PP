@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - Feats, Horrifically Overpowered"/>
   <fileinfo>
-    <info_author>W Birchler
-Asandir - Lone Wolf boards
-Sethvir - Paizo boards
-wwbbsffan68@gmail.com</info_author>
-    <info_history>Ver 1.0
-April 2013
-Initial Functionality</info_history>
+    <info_author>
+      W Birchler
+      Asandir - Lone Wolf boards
+      Sethvir - Paizo boards
+      wwbbsffan68@gmail.com</info_author>
+    <info_history>
+      Ver 1.0
+      April 2013
+      Initial Functionality</info_history>
     </fileinfo>
   <thing id="fSGDenied" name="Denied" description="You can simply refuse to be affected by a specific attack, spell, or ability.\n\n{b}Benefit{/b}: Once per day as a free action, you can decide to not be affected by a single attack, combat maneuver, spell, or effect. All its effects on you are immediately negated. This decision must be made as soon as you are aware of the effect you wish to negate. Only a single use of the effect is negated -- if you prevent an ancient red dragon from grappling you, that does not prevent it from making a new grapple check on its next attack. You may use this twice per day at 8th level, and one more time per day for every additional 8 levels you gain, to a maximum of six times per day at 40th level." compset="Feat" summary="You can simply refuse to be affected by a specific attack, spell, or ability." uniqueness="useronce">
     <fieldval field="trkMax" value="1"/>

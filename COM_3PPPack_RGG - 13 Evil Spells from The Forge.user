@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_RGG - 13 Evil Spells from The Forge"/>
   <thing id="spSGBlShk6" name="Blood Shackles" description="You cause blood to erupt from the target of this spell inflicting 3d6 points of damage. This blood instantly transforms into red barbed-iron\nchains and shackles that wrap around and bind the target in place, effectively pinning the subject. You gain a +1 enhancement bonus for every two caster levels to CMB and CMD as they relate to binding your target.\n\nEach round, on its turn, the subject may attempt to escape these bonds, but in doing so causes herself an additional 2d6 points of damage." compset="Spell">
     <fieldval field="sCompDesc" value="(six drops of blood and a small piece of twine)"/>
     <fieldval field="sRange" value="close (25 ft. + 5 ft./2 levels)"/>
