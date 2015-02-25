@@ -1787,8 +1787,7 @@ This should allow for people making custom races to have it work correctly for t
 Note: This does not work correctly if it is source marked.
 Note2: DO NOT CLICK the "All Characters?" option.]]></comment>
     <tag group="ProductId" tag="PUProdID"/>
-    <eval phase="PostLevel" priority="10000">
-      ~ Give a bonus to Power Points each time we are taken
+    <eval phase="PostLevel" priority="10000">~ Give a bonus to Power Points each time we are taken
       field[abValue].value += field[fcCount].value    
       #resmax[resPowerPt] += field[abValue].value
 
@@ -4690,7 +4689,7 @@ Call PsyWarTrMa</eval>
     <exprreq message="Tower Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSTowM] <> 0]]></exprreq>
     <exprreq message="Mind Shield Blade Skill required."><![CDATA[#hasability[cSknBSMShl] <> 0]]></exprreq>
     </thing>
-  <thing id="cSknBSAdvT" name="Advanced Talents" description="The soulknife can select an advanced rogue talent from the following list. Confounding Blades, Crippling Strike, Stealthy Sniper. The soulknife can select this blade skill multiple times. The soulknife must have the Covert Training class feature and be at least 10th level before selecting this blade skill." compset="CustomSpec">
+  <thing id="cSknBSAdvT" name="Advanced Talents" description="Not implemented yet\nThe soulknife can select an advanced rogue talent from the following list. Confounding Blades, Crippling Strike, Stealthy Sniper. The soulknife can select this blade skill multiple times. The soulknife must have the Covert Training class feature and be at least 10th level before selecting this blade skill." compset="CustomSpec">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
@@ -4720,17 +4719,17 @@ Call PsyWarTrMa</eval>
         validif (levels >= 5)]]></validate>
       </prereq>
     </thing>
-  <thing id="cSknBSEvsn" name="Evasion" description="The soulknife can avoid even magical and unusual attacks with great agility. If he makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, he instead takes no damage. Evasion can be used only if the soulknife is wearing light armor, medium armor, or no armor. A helpless soulknife does not gain the benefit of evasion. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSEvsn" name="Evasion" description="Not implemented yet\nThe soulknife can avoid even magical and unusual attacks with great agility. If he makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, he instead takes no damage. Evasion can be used only if the soulknife is wearing light armor, medium armor, or no armor. A helpless soulknife does not gain the benefit of evasion. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSFFis" name="Flurry of Fists" description="When making unarmed attacks and making a full attack, the soulknife can make one additional attack at his highest attack bonus, but all attacks in the full attack suffer a -2 penalty to the attack roll. This extra attack does not stack with abilities that grant additional attacks, such as Two-Weapon Fighting, Flurry of Blows, or other such effects. The soulknife must have the Improved Unarmed Strike feat in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSFFis" name="Flurry of Fists" description="Not implemented yet\nWhen making unarmed attacks and making a full attack, the soulknife can make one additional attack at his highest attack bonus, but all attacks in the full attack suffer a -2 penalty to the attack roll. This extra attack does not stack with abilities that grant additional attacks, such as Two-Weapon Fighting, Flurry of Blows, or other such effects. The soulknife must have the Improved Unarmed Strike feat in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSFFIm" name="Flurry of Fists, Improved" description="The soulknife gains an additional attack when using flurry of fists, but at a -5 penalty. The soulknife must be at least 6th level and have the Improved Unarmed Strike feat and the Flurry of Fists blade skill in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSFFIm" name="Flurry of Fists, Improved" description="Not implemented yet\nThe soulknife gains an additional attack when using flurry of fists, but at a -5 penalty. The soulknife must be at least 6th level and have the Improved Unarmed Strike feat and the Flurry of Fists blade skill in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -4745,7 +4744,7 @@ Call PsyWarTrMa</eval>
         validif (levels >= 6)]]></validate>
       </prereq>
     </thing>
-  <thing id="cSknBSFFGr" name="Flurry of Fists, Greater" description="The soulknife gains an additional attack when using flurry of fists, but at a -10 penalty. The soulknife must be at least 11th level and have the Improved Unarmed Strike feat and the Flurry of Fists and Improved Flurry of Fists blade skills in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSFFGr" name="Flurry of Fists, Greater" description="Not implemented yet\nThe soulknife gains an additional attack when using flurry of fists, but at a -10 penalty. The soulknife must be at least 11th level and have the Improved Unarmed Strike feat and the Flurry of Fists and Improved Flurry of Fists blade skills in order to select this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -4760,17 +4759,17 @@ Call PsyWarTrMa</eval>
         validif (levels >= 11)]]></validate>
       </prereq>
     </thing>
-  <thing id="cSknBSGrSh" name="Grasping Shield" description="The soulknife&apos;s mind shield takes on an adhesive quality. Once per round, he may make a free disarm attempt against any enemy that makes a melee attack that misses her. This disarm attempt counts as an attack of opportunity and does not provoke attacks of opportunity. The soulknife must have the shield block blade skill and the form mind shield class feature to\nchoose this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSGrSh" name="Grasping Shield" description="Not implemented yet\nThe soulknife&apos;s mind shield takes on an adhesive quality. Once per round, he may make a free disarm attempt against any enemy that makes a melee attack that misses her. This disarm attempt counts as an attack of opportunity and does not provoke attacks of opportunity. The soulknife must have the Shield Block blade skill and the Form Mind Shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSImpA" name="Improved Armor" description="The soulknife&apos;s mind armor improves depending on its form. Light form is treated as if not wearing armor, while still gaining the armor bonus to Armor Class. Medium form is treated as a masterwork breastplate. Heavy form is treated as masterwork full plate. The soulknife must have the ability to form mind armor in order to take this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSImpA" name="Improved Armor" description="Not implemented yet\nThe soulknife&apos;s mind armor improves depending on its form. Light form is treated as if not wearing armor, while still gaining the armor bonus to Armor Class. Medium form is treated as a masterwork breastplate. Heavy form is treated as masterwork full plate. The soulknife must have the ability to Form Mind Armor in order to take this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSmpE" name="Improved Evasion" description="This works like evasion, except that while the soulknife still takes no damage on a successful Reflex saving throw against attacks, he henceforth takes only half damage on a failed save. A helpless soulknife does not gain the benefit of improved evasion. A soulknife must have the Evasion blade skill, the Covert Training class feature, and be at least 10th level before selecting this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSmpE" name="Improved Evasion" description="Not implemented yet\nThis works like evasion, except that while the soulknife still takes no damage on a successful Reflex saving throw against attacks, he henceforth takes only half damage on a failed save. A helpless soulknife does not gain the benefit of improved evasion. A soulknife must have the Evasion blade skill, the Covert Training class feature, and be at least 10th level before selecting this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -4785,7 +4784,7 @@ Call PsyWarTrMa</eval>
         validif (levels >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="cSknBSInTh" name="Interrupting Throw" description="If an enemy within 10 feet of the soulknife performs an action that would provoke an attack of opportunity, such as casting a spell without casting on the defensive, he may, as an immediate action and by expending psionic focus, throw his mind shield at that enemy as an attack of opportunity. The soulknife may not use this blade skill if his mind shield is in the form of a tower shield. The soulknife must be at least 12th level and have the form mind shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSInTh" name="Interrupting Throw" description="Not implemented yet\nIf an enemy within 10 feet of the soulknife performs an action that would provoke an attack of opportunity, such as casting a spell without casting on the defensive, he may, as an immediate action and by expending psionic focus, throw his mind shield at that enemy as an attack of opportunity. The soulknife may not use this blade skill if his mind shield is in the form of a tower shield. The soulknife must be at least 12th level and have the Form Mind Shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -4800,34 +4799,34 @@ Call PsyWarTrMa</eval>
         validif (levels >= 12)]]></validate>
       </prereq>
     </thing>
-  <thing id="cSknBSMtlP" name="Mental Power" description="The soulknife gains an additional power known from the gifted blade power list, up to the maximum power level he can manifest. In addition, the soulknife gains an additional 2 power points. This blade skill can be selected multiple times. Each time, the soulknife gains another power known and 2 additional power points. The soulknife must have manifesting ability from his levels in soulknife in order to select this blade skill." compset="CustomSpec">
+  <thing id="cSknBSMtlP" name="Mental Power" description="Not implemented yet\nThe soulknife gains an additional power known from the gifted blade power list, up to the maximum power level he can manifest. In addition, the soulknife gains an additional 2 power points. This blade skill can be selected multiple times. Each time, the soulknife gains another power known and 2 additional power points. The soulknife must have manifesting ability from his levels in soulknife in order to select this blade skill." compset="CustomSpec">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSRgSB" name="Ranged Shield Block" description="When using the Shield Block blade skill, the soulknife may block a ranged attack, but not ranged touch attack. The soulknife must have the form mind shield class feature and the shield block blade skill to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSRgSB" name="Ranged Shield Block" description="Not implemented yet\nWhen using the Shield Block blade skill, the soulknife may block a ranged attack, but not ranged touch attack. The soulknife must have the Form Mind Shield class feature and the Shield Block blade skill to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSRogT" name="Rogue Talent" description="The soulknife can select a rogue talent from the following list. Befuddling Strike, Fast Stealth, Slow Reactions, Sniper&apos;s Eye, Surprise Attack. The soulknife can select this blade skill multiple times. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec">
+  <thing id="cSknBSRogT" name="Rogue Talent" description="Not implemented yet\nThe soulknife can select a rogue talent from the following list. Befuddling Strike, Fast Stealth, Slow Reactions, Sniper&apos;s Eye, Surprise Attack. The soulknife can select this blade skill multiple times. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSShBl" name="Shield Block" description="As an immediate action and by expending psionic focus, the soulknife may block one melee attack, but not touch attack, against his by making an attack roll. If his attack roll is higher than the attack roll he is attempting to block, the attack misses. The soulknife must have the form mind shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSShBl" name="Shield Block" description="Not implemented yet\nAs an immediate action and by expending psionic focus, the soulknife may block one melee attack, but not touch attack, against his by making an attack roll. If his attack roll is higher than the attack roll he is attempting to block, the attack misses. The soulknife must have the Form Mind Shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     </thing>
-  <thing id="cSknBSTrpf" name="Trapfinder" description="The soulknife gains the Trapfinding ability of a rogue of his level. In addition, the soulknife treats Disable Device as a class skill. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSTrpf" name="Trapfinder" description="Not implemented yet\nThe soulknife gains the Trapfinding ability of a rogue of his level. In addition, the soulknife treats Disable Device as a class skill. The soulknife must have the Covert Training class feature to select this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="NoPathSoc"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <eval phase="PreLevel" priority="5000">~Disable Device is always a class skill
 #makeclassskill[skDisable]</eval>
     </thing>
-  <thing id="cSknBSWhip" name="Whiplash" description="The soulknife can throw his mind shield as a thrown weapon with a range increment of 10. In addition, by expending psionic focus as a free action after making a ranged attack with his mind shield, the soulknife can cause the shield to return back to his hand, hitting any enemy in line of effect from his target and dealing damage as a light shield. Soulknives with the Form Mind Shield class feature instead deal damage as a heavy shield. The soulknife makes a ranged attack roll for each enemy in the line of effect. The soulknife may not use this blade skill if his mind shield is in the form of a tower shield. The soulknife must be at least 8th level and have the form mind shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
+  <thing id="cSknBSWhip" name="Whiplash" description="Not implemented yet\nThe soulknife can throw his mind shield as a thrown weapon with a range increment of 10. In addition, by expending psionic focus as a free action after making a ranged attack with his mind shield, the soulknife can cause the shield to return back to his hand, hitting any enemy in line of effect from his target and dealing damage as a light shield. Soulknives with the Form Mind Shield class feature instead deal damage as a heavy shield. The soulknife makes a ranged attack roll for each enemy in the line of effect. The soulknife may not use this blade skill if his mind shield is in the form of a tower shield. The soulknife must be at least 8th level and have the Form Mind Shield class feature to choose this blade skill." compset="CustomSpec" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpSkn"/>
     <tag group="Helper" tag="NoPathSoc"/>
