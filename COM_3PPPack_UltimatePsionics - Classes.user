@@ -6281,24 +6281,25 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
     <tag group="User" tag="Activation"/>
     <tag group="User" tag="Tracker"/>
     <tag group="Usage" tag="Day"/>
-    <eval phase="PostLevel" priority="10000"><![CDATA[var myPts as number
-var myTimes as number
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      var myPts as number
+      var myTimes as number
 
-myPts = #attrbonus1[aINT]
-myTimes = field[xIndex].value
+      myPts = #attrbonus1[aINT]
+      myTimes = field[xIndex].value
 
-~field[listname].text = "Reconfigure " & myPts & " cust. pts (" & ~myTimes & "x/day)"
+      ~field[listname].text = "Reconfigure " & myPts & " cust. pts (" & ~myTimes & "x/day)"
 
-~These calculations should only happen for the first copy
-doneif (tagis[Helper.FirstCopy] = 0)
+      ~These calculations should only happen for the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
 
-~ If we're not shown, just get out now
-doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
 
-field[abValue].value += field[xCount].value
-field[trkMax].value = field[abValue].value
+      field[abValue].value += field[xCount].value
+      field[trkMax].value = field[abValue].value
 
-field[CustDesc].text = "Cannibalize Suit " & myPts & " cust. pts (" & myTimes & "x/day)"]]></eval>
+      field[CustDesc].text = "Cannibalize Suit " & myPts & " cust. pts (" & myTimes & "x/day)"]]></eval>
     </thing>
   <thing id="cPUPerfMer" name="Perfect Merger" description="An aegis of 20th level has learned to become one with his suit. His suit cannot be dispelled or removed against his will by any means, although his astral suit ability still does not function within areas where psionics do not work, such as a null psionics field.\n\nIn addition, the aegis can spend two daily uses of his reconfigure ability, to alter all of the customizations on his astral suit.\n\nFinally, once per day, the aegis can boost his cannibalize suit ability, healing all of his hit point damage, although he cannot reform his suit for ten minutes after using this ability, rather than the standard one minute." compset="ClSpecial">
     <usesource source="pPsiUn"/>
@@ -6308,79 +6309,77 @@ field[CustDesc].text = "Cannibalize Suit " & myPts & " cust. pts (" & myTimes & 
     <tag group="AbilType" tag="Super"/>
     </thing>
   <thing id="cPUAltDef" name="Altered Defense" description="A cryptic learns early on to modify the patterns around her to grant her protection as a swift action. The cryptic chooses from the options below and may only have one such effect active at any given time. The cryptic can use this ability for a number of rounds per day equal to 4 + her Intelligence modifier. The cryptic can maintain this ability as long as she wants as long as she has rounds available, or dismiss it at any time as a free action.\n\n{i}Absorb:{/i} The cryptic gains DR 1/-.\n{i}Deflect:{/i} The cryptic gains a +1 dodge bonus to his AC.\n{i}Retaliate:{/i} The cryptic gains a +1 bonus on his attack rolls against any opponent that successfully hit him since his last turn.\n\nEvery four cryptic levels thereafter, this bonus increases by 1 (to 2 at 5th level, 3 at 9th level, 4 at 13th level, and 5 at 17th level)." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="User" tag="Tracker"/>
-    <tag group="Usage" tag="Day"/>
-    <eval phase="Final" priority="10000"><![CDATA[var myPts as number
-var myTimes as number
-var myLev as number
+    <tag group="Usage" tag="Rounds"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~NOTE:
+      ~ abValue is bonus
+      ~ trkMax is number of rounds
 
-myPts = field[xIndex].value + field[abValue].value
-myTimes = 4 + #attrbonus[aINT]
-myLev = field[xAllLev].value + field[abValue2].value
+      ~ Set the list name
+      field[listname].text = field[thingname].text & " " & field[xIndex].value
 
-field[listname].text = "Altered Defense " & myPts
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-if (myLev < 14) then 
-  field[listname].text &= " (" & myTimes & " rounds)"
-  endif
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " " & field[abValue].value
 
-~These calculations should only happen for the first copy
-doneif (tagis[Helper.FirstCopy] = 0)
+      ~ The following should only happen once on the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
 
-~ If we're not shown, just get out now
-doneif (tagis[Helper.ShowSpec] = 0)
-
-field[abValue].value += field[xCount].value
-field[trkMax].value = field[abValue].value
-field[livename].text = "Altered Defense " & field[abValue].value 
-
-if (myLev < 14) then 
-  field[livename].text &= " (" & myTimes & " rounds)"
-  endif]]></eval>
+      field[trkMax].value += 4 + #attrmod[aINT]
+      ]]></eval>
     </thing>
   <thing id="cPUDisPatt" name="Disrupt Pattern" description="All cryptics are able to disrupt the patterns they can perceive, although the potency of this disruption is based on the cryptic’s focus. When a cryptic gains psionic focus, she selects one creature type as her active type (she does not need to select a subtype). As a standard action, the cryptic can make a ranged touch attack with a range of 30 feet, firing a ray of black energy at the target. If the attack is successful, the cryptic deals 1d6 points of damage + additional damage equal to the cryptic’s Intelligence modifier. This attack deals half damage if the target’s type is not of the cryptic’s active type. Like some other rays, if the attack roll of this ability would indicate a critical hit, the damage is doubled. This ability can only be used once per round, even if an item or other effect would duplicate it." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
+    <fieldval field="abValue2" value="6"/>
     <tag group="AbilType" tag="Super"/>
-    <eval phase="Final" priority="10000"><![CDATA[var myPts as number
-var myTimes as number
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~NOTE:
+      ~abValue holds the number of dice
+      ~abValue2 holds the dice size
+      ~abValue3 holds any plus damage bonus
 
-myPts = field[xIndex].value
-myTimes = 4 + #attrbonus[aINT]
+      ~ Set the list name
+      field[listname].text = field[thingname].text & " " & field[xIndex].value & "d" & field[abValue2].value
 
-field[abValue].value += myPts
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-field[livename].text = "Disrupt Pattern (" & field[abValue].value & "d6+" &  #attrbonus[aINT] & ")"
+      field[abValue].value += field[xCount].value
+      field[abValue3].value += #attrbonus[aINT]
+      field[livename].text = field[thingname].text & " " & field[abValue].value & "d" & field[abValue2].value
 
-~These calculations should only happen for the first copy
-doneif (tagis[Helper.FirstCopy] = 0)
-
-~ If we're not shown, just get out now
-doneif (tagis[Helper.ShowSpec] = 0)
-
-field[listname].text = "Disrupt Pattern (" & field[abValue].value & "d6 + " &  #attrbonus[aINT] & ")"]]></eval>
+      ~ If we have any bonus damage then add to the dice
+      if (field[abValue3].value <> 0) then
+        field[livename].text &= signed(field[abValue3].value)
+      endif
+      ]]></eval>
     </thing>
   <thing id="cPUEnhDisr" name="Enhanced Disruption" description="At 3rd level and every two levels thereafter, the cryptic’s disrupt pattern deals an additional 1d6 points of damage. This additional damage is not multiplied on a critical hit or by using feats such as Vital Strike, but it is halved if the creature struck is not of the cryptic’s active creature type." compset="ClSpecial" summary="Deal additional damage with Disrupt Pattern.">
-    <usesource source="pPsiUn"/>
+    <fieldval field="abValue2" value="6"/>
     <tag group="AbilType" tag="Super"/>
-    <eval phase="PostLevel" priority="10000"><![CDATA[var myPts as number
-var myTimes as number
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ NOTE: 
+      ~ abValue holds the Number of Dice Xd6
+      ~ abValue2 holds the dice size 2dX
+    
+      ~ Set the list name
+      field[listname].text = field[thingname].text & " " & field[xIndex].value & "d" & field[abValue2].value
 
-myPts = field[xIndex].value
-myTimes = 4 + #attrbonus[aINT]
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-field[abValue].value += myPts
-
-field[listname].text = "Enhanced Disruption (+" & field[abValue].value & "d6)"
-
-~These calculations should only happen for the first copy
-doneif (tagis[Helper.FirstCopy] = 0)
-
-~ If we're not shown, just get out now
-doneif (tagis[Helper.ShowSpec] = 0)
-
-field[livename].text = "Enhanced Disruption (+" & field[xCount].value & "d6)"]]></eval>
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " " & field[abValue].value & "d" & field[abValue2].value
+      ]]></eval>
     </thing>
   <thing id="cPULessIns" name="Lesser Insights" description="Cryptics learn minor powers they can use at will to aid them in a variety of ways. The cryptic gains 2 talents from the cryptic talent list." compset="ClSpecial">
     <usesource source="pPsiUn"/>
@@ -6397,47 +6396,49 @@ field[livename].text = "Enhanced Disruption (+" & field[xCount].value & "d6)"]]>
     <eval phase="PostLevel" priority="10000">#skillbonus[skCrafTrap] += field[xAllLev].value</eval>
     </thing>
   <thing id="cPUHiddenP" name="Hidden Pattern" description="A cryptic learns how to recognize patterns in light and sound around her that can help her to mask her presence. At 2nd level, a cryptic gains a +2 competence bonus on all Stealth checks. This bonus increases to +4 at 5th level, and then again to +6 at 8th level. At 10th level, as long as the cryptic maintains psionic focus, she can use the Stealth skill to hide, even while being observed." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="User" tag="Tracker"/>
-    <eval phase="PostLevel" priority="10000"><![CDATA[var myPts as number
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ Set the list name
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value * 2)
 
-myPts = 2*field[xIndex].value
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-field[listname].text = "Hidden Pattern (+" & myPts & ") "
+      field[abValue].value += field[xCount].value * 2
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
 
-~These calculations should only happen for the first copy
-doneif (tagis[Helper.FirstCopy] = 0)
+      ~ The following should only happen once on the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
 
-~ If we're not shown, just get out now
-doneif (tagis[Helper.ShowSpec] = 0)
-
-field[abValue].value += 2*field[xCount].value
-
-#skillbonus[skStealth] += field[abValue].value
-
-field[livename].text = "Hidden Pattern (+" & field[abValue].value & ") "]]></eval>
+      #skillbonus[skStealth] += field[abValue].value
+      ]]></eval>
     </thing>
   <thing id="cPUCrHideP" name="Hide in Plain Sight" description="At 10th level, as long as the cryptic maintains psionic focus, she can use the Stealth skill to hide, even while being observed." compset="ClSpecial" summary="As long as you maintain psionic focus, you can use the Stealth skill to hide, even while being observed."></thing>
   <thing id="cPURapDef" name="Rapid Defense" description="Starting at 4th level, a cryptic can use her altered defense ability as a free action by expending her psionic focus. The cryptic may even do this when it is not her turn." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
     <tag group="AbilType" tag="Super"/>
     </thing>
   <thing id="cPUSwiftTr" name="Swift Trapper" description="At 6th level, a cryptic can create traps with astounding speed. It takes a cryptic half the normal amount of time to create traps." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
     <tag group="AbilType" tag="Extra"/>
     </thing>
   <thing id="cPUEndDef" name="Enduring Defense" description="A cryptic of 14th level can choose any option from the Altered Defense ability and always be under that effect. The cryptic can still change the effect as a swift action, but she is no longer limited to how many rounds per day she can have Altered Defense active." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
     <tag group="User" tag="Tracker"/>
     <tag group="Helper" tag="SpecUp"/>
     </thing>
   <thing id="cPUUncPatt" name="Unchanging Pattern" description="At 18th level, the cryptic gains power resistance equal to 12 + her class level." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
+    <fieldval field="abValue" value="12"/>
     <bootstrap thing="xPwrRes"></bootstrap>
-    <eval phase="PostLevel" priority="1000">var myVal as number
-myVal = 12 + field[xAllLev].value
-#value[xPwrRes] += myVal</eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Give PR of 12 + Level
+      #value[xPwrRes] += field[abValue].value + field[xAllLev].value
+      ]]></eval>
     </thing>
   <thing id="cPUSupIns" name="Supreme Insight" description="At 20th level, the cryptic makes astounding leaps of insight. She immediately learns two normal insights, but also learns a third insight chosen from the list below, representing a truly astounding breakthrough in understanding how patterns work. For many cryptics, the possibility of this sort of discoveries is the driving force for their studying of patterns." compset="ClSpecial">
     <usesource source="pPsiUn"/>
