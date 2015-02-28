@@ -95,7 +95,7 @@ April 10, 2014 - Tim Shadow
       doneif (tagis[Helper.FtDisable] <> 0)
 
       hero.childfound[cHelpPW1].field[cGiveSpec].value += 1]]></eval>
-    <exprreq message="Warlord level 3+ required."><![CDATA[#levelcount[PWWarlord] >= 3]]></exprreq>
+    <exprreq message="Warlord level 3+ required."><![CDATA[#featlevelcount[PWWarlord] >= 3]]></exprreq>
     <exprreq message="Ability to initiate a gambit required."><![CDATA[#hasability[cPW1Gambit] <> 0]]></exprreq>
     <exprreq message="Charisma 13 required."><![CDATA[#attrvalue[aCHA] >= 13]]></exprreq>
     </thing>

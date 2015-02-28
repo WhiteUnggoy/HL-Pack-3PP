@@ -111,10 +111,10 @@ Yliaster Draught - can't find code for extract class ability, using bombs as sub
       <validate><![CDATA[
       validif (childfound[cHelpWit].field[cGiveSpec].value > 0)
 
-      if (#levelcount[Magus] <> 0) then
+      if (#featlevelcount[Magus] <> 0) then
         if (#hasarchetype[arMagHexcr] <> 0) then
           ~ Hexcrafters get the ability to use Hexes at 4th level.
-          validif (#levelcount[Magus] >= 4)
+          validif (#featlevelcount[Magus] >= 4)
           endif
         endif]]></validate>
       </prereq>
