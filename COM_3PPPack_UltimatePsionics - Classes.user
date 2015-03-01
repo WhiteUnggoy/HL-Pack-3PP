@@ -6346,7 +6346,7 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
   <thing id="cPUDisPatt" name="Disrupt Pattern" description="All cryptics are able to disrupt the patterns they can perceive, although the potency of this disruption is based on the cryptic’s focus. When a cryptic gains psionic focus, she selects one creature type as her active type (she does not need to select a subtype). As a standard action, the cryptic can make a ranged touch attack with a range of 30 feet, firing a ray of black energy at the target. If the attack is successful, the cryptic deals 1d6 points of damage + additional damage equal to the cryptic’s Intelligence modifier. This attack deals half damage if the target’s type is not of the cryptic’s active type. Like some other rays, if the attack roll of this ability would indicate a critical hit, the damage is doubled. This ability can only be used once per round, even if an item or other effect would duplicate it." compset="ClSpecial" summary="As a standard action make a ranged touch attack with a range of 30 feet.">
     <fieldval field="abValue2" value="6"/>
     <fieldval field="abRange" value="30"/>
-    <fieldval field="usrCandid1" value="component.BaseType"/>
+    <fieldval field="usrCandid1" value="component.Type"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abRange" tag="Feet"/>
     <tag group="abDuration" tag="Instant"/>
@@ -6358,11 +6358,15 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
     <tag group="abAction" tag="Standard"/>
     <tag group="wCritMult" tag="2"/>
     <tag group="wCritMin" tag="20"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="User" tag="NoAutoName"/>
     <eval phase="PostAttr" priority="10000"><![CDATA[
       ~NOTE:
       ~abValue holds the number of dice
       ~abValue2 holds the dice size
       ~abValue3 holds any plus damage bonus
+      ~abValue5 holds total dice of damage which is needed for feats
+      ~         and custom abilities.
 
       ~ Set the list name
       field[listname].text = field[thingname].text & " " & field[xIndex].value & "d" & field[abValue2].value
@@ -6373,7 +6377,10 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       doneif (tagis[Helper.SpcDisable] <> 0)
 
       field[abValue].value += field[xCount].value
-      field[abValue3].value += #attrbonus[aINT]]]></eval>
+      field[abValue3].value += #attrbonus[aINT]
+
+      ~ Create a HasType tag on us
+      perform field[usrChosen1].chosen.pulltags[thingid.?,HasType]]]></eval>
     <eval phase="Final" priority="10000" index="2"><![CDATA[
       ~ If we're not shown, just get out now
       doneif (tagis[Helper.ShowSpec] <> 1)
@@ -6385,6 +6392,14 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       ~ If we have any bonus damage then add to the dice
       if (field[abValue3].value <> 0) then
         field[wFixRanDam].text &= signed(field[abValue3].value)
+      endif
+
+      ~ Add in our total dice
+      field[abValue5].value += field[abValue].value
+
+      ~Sythesize our name with all valid creature Types
+      if (tagcount[HasType.?] <> 0) then
+        field[livename].text = field[name].text & " (" & tagnames[HasType.?,", "] & ")"
       endif]]></eval>
     </thing>
   <thing id="cPUEnhDisr" name="Enhanced Disruption" description="At 3rd level and every two levels thereafter, the cryptic’s disrupt pattern deals an additional 1d6 points of damage. This additional damage is not multiplied on a critical hit or by using feats such as Vital Strike, but it is halved if the creature struck is not of the cryptic’s active creature type." compset="ClSpecial" summary="Deal additional damage with Disrupt Pattern.">
@@ -6420,6 +6435,14 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       ~ The following should only happen once on the first copy
       doneif (tagis[Helper.FirstCopy] = 0)
       #extradamage[hero.childfound[cPUDisPatt],field[abText].text,field[name].text]]]></eval>
+    <eval phase="Final" priority="10000" index="2"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Add our dice into the Disrupt Total
+      hero.child[cPUDisPatt].field[abValue5].value += field[abValue].value]]></eval>
     </thing>
   <thing id="cPULessIns" name="Lesser Insights" description="Cryptics learn minor powers they can use at will to aid them in a variety of ways. The cryptic gains 2 talents from the cryptic talent list." compset="ClSpecial">
     <usesource source="pPsiUn"/>
@@ -6522,10 +6545,18 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
         validif (levels >= 4)]]></validate>
       </prereq>
     </thing>
-  <thing id="cPUInsBlee" name="Bleeding Pattern" description="A cryptic with this insight can choose to make her disrupt pattern ability deal bleed damage. This attack causes the target to take 1 additional point of damage each round for each die of the cryptic’s disrupt pattern (e.g., 4d6 equals 4 points of bleed). Bleeding creatures take that amount of damage every round at the start of each of their turns. The bleeding can be stopped by a DC 15 Heal check or the application of any effect that heals hit point damage. Bleeding damage from this ability does not stack with itself. Bleeding damage bypasses any damage reduction the creature might possess. A cryptic must be at least 6th level before selecting this insight." compset="CustomSpec" uniqueness="unique">
+  <thing id="cPUInsBlee" name="Bleeding Pattern" description="A cryptic with this insight can choose to make her disrupt pattern ability deal bleed damage. This attack causes the target to take 1 additional point of damage each round for each die of the cryptic’s disrupt pattern (e.g., 4d6 equals 4 points of bleed). Bleeding creatures take that amount of damage every round at the start of each of their turns. The bleeding can be stopped by a DC 15 Heal check or the application of any effect that heals hit point damage. Bleeding damage from this ability does not stack with itself. Bleeding damage bypasses any damage reduction the creature might possess. A cryptic must be at least 6th level before selecting this insight." compset="CustomSpec" summary="Your Disrupt Pattern ability deals bleed damage." uniqueness="unique">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpPU1"/>
     <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <eval phase="Final" priority="10050"><![CDATA[
+
+      ~ Calculate total dice from
+      ~ from Ehanced Disruption and Disrupt Pattern
+      ~ Class Abilities
+      field[abValue].value += hero.childfound[cPUDisPatt].field[abValue5].value
+      field[livename].text = field[name].text & " (" & field[abValue].value & " Bleed)"]]></eval>
     <prereq message="Cryptic level 6 or greater required for this Insight">
       <validate><![CDATA[        var classcheck as string
         var levels as number
@@ -6628,10 +6659,20 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
     <tag group="ChargeAttr" tag="aINT"/>
     <tag group="Usage" tag="Day"/>
     </thing>
-  <thing id="cPUInsExpP" name="Explosive Pattern" description="A cryptic with this insight can cause her disrupt pattern ability to explode upon impact. If the cryptic’s disrupt pattern attack successfully hits, it causes splash damage to nearby creatures. The splash damage is equal to the minimum damage of the disrupt pattern. A cryptic must be at least 6th level to select this insight." compset="CustomSpec" uniqueness="unique">
+  <thing id="cPUInsExpP" name="Explosive Pattern" description="A cryptic with this insight can cause her disrupt pattern ability to explode upon impact. If the cryptic’s disrupt pattern attack successfully hits, it causes splash damage to nearby creatures. The splash damage is equal to the minimum damage of the disrupt pattern. A cryptic must be at least 6th level to select this insight." compset="CustomSpec" summary="Your Disrupt Pattern causes splash damage to nearby creatures." uniqueness="unique">
     <usesource source="pPsiUn"/>
     <tag group="SpecSource" tag="cHelpPU1"/>
     <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <eval phase="Final" priority="10050"><![CDATA[
+
+      ~ Calculate total dice from
+      ~ from Ehanced Disruption and Disrupt Pattern
+      ~ Class Abilities
+      field[abValue].value += hero.childfound[cPUDisPatt].field[abValue5].value
+      field[abValue].value += #value3[cPUDisPatt]
+
+      field[livename].text = field[name].text & " (" & field[abValue].value & " Splash)"]]></eval>
     <prereq message="Cryptic level 6 or greater required for this Insight">
       <validate><![CDATA[        var classcheck as string
         var levels as number

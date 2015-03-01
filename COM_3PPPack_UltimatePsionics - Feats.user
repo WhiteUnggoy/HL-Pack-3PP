@@ -1199,12 +1199,23 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
 hero.childfound[cfgPUAstSu].field[cfgMax2].value += 1</eval>
     <exprreq message="Astral Suit class feature required."><![CDATA[#hasability[cPUAstSuit] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUExDisTy" name="Extra Disruption Type" description="You can have more active creature types with your disrupt pattern.\n\nPrerequisite: Disrupt pattern class feature.\n\nBenefit: When you gain psionic focus, you can select one additional creature type as your active type." compset="Feat">
+  <thing id="fPUExDisTy" name="Extra Disruption Type" description="You can have more active creature types with your disrupt pattern.\n\n{b}Prerequisite:{/b} Disrupt pattern class feature.\n\n{b}Benefit:{/b} When you gain psionic focus, you can select one additional creature type as your active type." compset="Feat" summary="When you gain psionic focus, you can select one additional creature type as your active type." uniqueness="useronce">
+    <fieldval field="usrCandid1" value="component.Type"/>
     <usesource source="pPsiUn"/>
-    <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <eval phase="PostLevel" priority="1000">hero.childfound[cfgPUAstSu].field[cfgLeft2].value += 1
-hero.childfound[cfgPUAstSu].field[cfgMax2].value += 1</eval>
+    <tag group="Helper" tag="ActivMenu"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ChooseSrc1" tag="Thing"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Create a HasType tag on us
+      perform field[usrChosen1].chosen.pulltags[thingid.?,HasType]
+
+      ~ Push all HasType tags to the Disrupt Pattern ability
+      perform hero.childfound[cPUDisPatt].pushtags[HasType.?]]]></eval>
     <exprreq message="Disrupt Pattern class feature required."><![CDATA[#hasability[cPUDisPatt] <> 0]]></exprreq>
     </thing>
   <thing id="fPUExInsig" name="Extra Insight" description="You have unlocked a new insight.\n\nPrerequisite: Insight class feature.\n\nBenefit: You gain one additional insight. You must meet all of the prerequisites for this insight.\n\nSpecial: You can gain Extra Insight multiple times." compset="Feat">
@@ -1348,10 +1359,18 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 12)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUImpDisr" name="Improved Disruption" description="Your disrupt pattern attacks are more destructive.{br}{br}{b}Prerequisites:{/b} Disrupt pattern ability.{br}{br}{b}Benefit:{/b} Your disrupt pattern ability deals one additional point of damage per die of damage." compset="Feat">
+  <thing id="fPUImpDisr" name="Improved Disruption" description="Your disrupt pattern attacks are more destructive.{br}{br}{b}Prerequisites:{/b} Disrupt pattern ability.{br}{br}{b}Benefit:{/b} Your disrupt pattern ability deals one additional point of damage per die of damage." compset="Feat" summary="Your disrupt pattern ability deals one additional point of damage per die of damage." uniqueness="useronce">
     <usesource source="pPsiUn"/>
-    <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <eval phase="Final" priority="9000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Give bonus damage based on the number of dice
+      ~ from Ehanced Disruption and Disrupt Pattern
+      ~ Class Abilities
+      #value3[cPUDisPatt] += #value[cPUEnhDisr] + #value[cPUDisPatt]]]></eval>
     <exprreq message="Astral Suit class feature required."><![CDATA[#hasability[cPUDisPatt] <> 0]]></exprreq>
     </thing>
   <thing id="fPUImpMetm" name="Improved Metamorphosis" description="You gain more versatility when changing your form.{br}{br}{b}Prerequisite:{/b} Ability to manifest {i}minor metamorphosis{/i}, {i}metamorphosis{/i}, {i}greater metamorphosis{/i}, or {i}true metamorphosis{/i}.{br}{br}{b}Benefit:{/b} Any time you manifest {i}minor metamorphosis{/i}, {i}metamorphosis{/i}, {i}greater metamorphosis{/i}, or {i}true metamorphosis{/i}, you gain one additional menu option from either the Ability Menu or Enhancement Menu of the relevant power." compset="Feat">
