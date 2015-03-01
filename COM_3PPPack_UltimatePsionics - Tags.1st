@@ -26,12 +26,17 @@ January 30, 2014 Tim Shadow
     <value id="TwoHanded"   name="mind blade (2H)"/>
     <value id="Arrow"       name="mind arrow"/>
     <value id="Dagger"      name="mind dagger"/>
-	<value id="BoltLong"	name="mind bolt (long)"/>
-	<value id="BoltMed"		name="mind bolt (med)"/>
-	<value id="BoltShort"	name="mind bolt (short)"/>
+    <value id="BoltLong"    name="mind bolt (long)"/>
+    <value id="BoltMed"     name="mind bolt (med)"/>
+    <value id="BoltShort"   name="mind bolt (short)"/>
   </group>
 
-  <!-- Psychic Warrior helper tags -->
+  <!-- Cryptic Class helper tags -->
+  <group id="Cryptic" name="Cryptic Class">
+    <value id="AltDefAct"   name="Altered Defense Active"/>
+  </group>
+
+  <!-- Psychic Warrior Class helper tags -->
   <group id="PsyWarrior" name="Psychic Warrior">
     <value id="PathSkill"   name="Path Skill Bonus"/>
     <value id="PathPower"   name="Path Power"/>

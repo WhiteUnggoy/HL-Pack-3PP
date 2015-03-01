@@ -3,9 +3,9 @@
   <loadonce key="COM_3PPPack_UltimatePsionics - Equipment"/>
   <fileinfo>
     <info_author>TCArknight</info_author>
-    <info_history><![CDATA[
+    <info_history>
       April 2, 2014 - Tim Shadow
-      -Dorje changed to allow selection of Powers and to auto-calc its cost.]]></info_history>
+      -Dorje changed to allow selection of Powers and to auto-calc its cost.</info_history>
     </fileinfo>
   <thing id="mCrysDeep" name="Crystal, Deep" compset="Material">
     <fieldval field="mtDesc" value="Spend 2 power points to add 2d6 to weapon damage."/>
@@ -2427,12 +2427,12 @@ field[gCost].value += field[abValue2].value]]></eval>
     <tag group="Helper" tag="EquipAvail"/>
     <tag group="Hero" tag="EqpWrist"/>
     <tag group="ProductId" tag="PUProdID"/>
-    <eval phase="PreLevel" priority="10000"> 
+    <eval phase="PreLevel" priority="10000">      
       ~ if not equipped get out now!
       doneif (field[gIsEquip].value = 0)
       
       ~ Increase the number of dice of the disrupt pattern
       ~ ability by 2d6.
-      #value[cPUEnhDisr] += 2</eval>
+      #value[cPUDisPatt] += 2</eval>
     </thing>
   </document>

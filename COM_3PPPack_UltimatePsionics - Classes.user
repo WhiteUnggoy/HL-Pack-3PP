@@ -5288,6 +5288,15 @@ Call PsyWarTrMa</eval>
     <bootstrap thing="cPUHiddenP">
       <autotag group="ClSpecWhen" tag="5"/>
       </bootstrap>
+    <bootstrap thing="cPUAltDef1">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUAltDef2">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUAltDef3">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
     <link linkage="psiattr" thing="aINT"/>
     </thing>
   <thing id="cPUCryptic" name="Cryptic" description="The very fabric of the world is visible through the eyes of the cryptic, who sees all things as patterns of energies that can be understood and manipulated. This unique insight allows the cryptic the ability to foresee events and even manipulate the energy of her surroundings to accomplish her tasks. Whether it is knowing where to step to avoid being seen, where to place an attack for maximum effect, or how to temporarily alter the laws of physics, the cryptic is a master of any pattern she sees.\n\n{b}Role:{/b} The cryptic excels as a finder of dangers and at remaining undetected even in the most difficult locations. With modest combat prowess, a cryptic can help her allies defeat enemies, although her limited defensive capabilities means she needs to avoid becoming the main target of her opponents.\n\n{b}Alignment:{/b} Any." compset="ClassLevel" maxlimit="20">
@@ -6312,6 +6321,7 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
     <tag group="AbilType" tag="Super"/>
     <tag group="User" tag="Tracker"/>
     <tag group="Usage" tag="Rounds"/>
+    <tag group="ProductId" tag="PUProdID"/>
     <eval phase="PostAttr" priority="10000"><![CDATA[
       ~NOTE:
       ~ abValue is bonus
@@ -6331,12 +6341,23 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       ~ The following should only happen once on the first copy
       doneif (tagis[Helper.FirstCopy] = 0)
 
-      field[trkMax].value += 4 + #attrmod[aINT]
-      ]]></eval>
+      field[trkMax].value += 4 + #attrmod[aINT]]]></eval>
     </thing>
-  <thing id="cPUDisPatt" name="Disrupt Pattern" description="All cryptics are able to disrupt the patterns they can perceive, although the potency of this disruption is based on the cryptic’s focus. When a cryptic gains psionic focus, she selects one creature type as her active type (she does not need to select a subtype). As a standard action, the cryptic can make a ranged touch attack with a range of 30 feet, firing a ray of black energy at the target. If the attack is successful, the cryptic deals 1d6 points of damage + additional damage equal to the cryptic’s Intelligence modifier. This attack deals half damage if the target’s type is not of the cryptic’s active type. Like some other rays, if the attack roll of this ability would indicate a critical hit, the damage is doubled. This ability can only be used once per round, even if an item or other effect would duplicate it." compset="ClSpecial">
+  <thing id="cPUDisPatt" name="Disrupt Pattern" description="All cryptics are able to disrupt the patterns they can perceive, although the potency of this disruption is based on the cryptic’s focus. When a cryptic gains psionic focus, she selects one creature type as her active type (she does not need to select a subtype). As a standard action, the cryptic can make a ranged touch attack with a range of 30 feet, firing a ray of black energy at the target. If the attack is successful, the cryptic deals 1d6 points of damage + additional damage equal to the cryptic’s Intelligence modifier. This attack deals half damage if the target’s type is not of the cryptic’s active type. Like some other rays, if the attack roll of this ability would indicate a critical hit, the damage is doubled. This ability can only be used once per round, even if an item or other effect would duplicate it." compset="ClSpecial" summary="As a standard action make a ranged touch attack with a range of 30 feet.">
     <fieldval field="abValue2" value="6"/>
+    <fieldval field="abRange" value="30"/>
+    <fieldval field="usrCandid1" value="component.BaseType"/>
     <tag group="AbilType" tag="Super"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="abDuration" tag="Instant"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="Helper" tag="WeaponSpec"/>
+    <tag group="wCategory" tag="RangeProj"/>
+    <tag group="Helper" tag="SingleAtt"/>
+    <tag group="Helper" tag="ActivMenu"/>
+    <tag group="abAction" tag="Standard"/>
+    <tag group="wCritMult" tag="2"/>
+    <tag group="wCritMin" tag="20"/>
     <eval phase="PostAttr" priority="10000"><![CDATA[
       ~NOTE:
       ~abValue holds the number of dice
@@ -6352,25 +6373,33 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       doneif (tagis[Helper.SpcDisable] <> 0)
 
       field[abValue].value += field[xCount].value
-      field[abValue3].value += #attrbonus[aINT]
-      field[livename].text = field[thingname].text & " " & field[abValue].value & "d" & field[abValue2].value
+      field[abValue3].value += #attrbonus[aINT]]]></eval>
+    <eval phase="Final" priority="10000" index="2"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
+      ~ Fill in the Damage Dice
+      field[wFixRanDam].text = field[abValue].value & "d" & field[abValue2].value
       ~ If we have any bonus damage then add to the dice
       if (field[abValue3].value <> 0) then
-        field[livename].text &= signed(field[abValue3].value)
-      endif
-      ]]></eval>
+        field[wFixRanDam].text &= signed(field[abValue3].value)
+      endif]]></eval>
     </thing>
   <thing id="cPUEnhDisr" name="Enhanced Disruption" description="At 3rd level and every two levels thereafter, the cryptic’s disrupt pattern deals an additional 1d6 points of damage. This additional damage is not multiplied on a critical hit or by using feats such as Vital Strike, but it is halved if the creature struck is not of the cryptic’s active creature type." compset="ClSpecial" summary="Deal additional damage with Disrupt Pattern.">
     <fieldval field="abValue2" value="6"/>
     <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="LvNameApp" tag="AppText"/>
+    <tag group="LvNameApp" tag="SignAppVal"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[
       ~ NOTE: 
       ~ abValue holds the Number of Dice Xd6
       ~ abValue2 holds the dice size 2dX
     
       ~ Set the list name
-      field[listname].text = field[thingname].text & " " & field[xIndex].value & "d" & field[abValue2].value
+      field[listname].text = field[thingname].text & " " & signed(field[xIndex].value) & "d" & field[abValue2].value
 
       ~ If we're not shown, just get out now
       doneif (tagis[Helper.ShowSpec] <> 1)
@@ -6378,26 +6407,46 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       doneif (tagis[Helper.SpcDisable] <> 0)
 
       field[abValue].value += field[xCount].value
-      field[livename].text = field[thingname].text & " " & field[abValue].value & "d" & field[abValue2].value
-      ]]></eval>
+
+      ~ Here we set the "abText" then use the LW tags to have this
+      ~ get appended to the livename later. We will then use this 
+      ~ field that could be changed by outside scripts to append
+      ~ to the Disrupt Pattern ability. So only fill in abText if
+      ~ it is empty.
+      if (empty(field[abText].text) = 1) then
+        field[abText].text = signed(field[abValue].value) & "d" & field[abValue2].value
+      endif
+
+      ~ The following should only happen once on the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+      #extradamage[hero.childfound[cPUDisPatt],field[abText].text,field[name].text]]]></eval>
     </thing>
   <thing id="cPULessIns" name="Lesser Insights" description="Cryptics learn minor powers they can use at will to aid them in a variety of ways. The cryptic gains 2 talents from the cryptic talent list." compset="ClSpecial">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="SpecUp"/>
     </thing>
-  <thing id="cPUScribTa" name="Scribe Tattoo" description="At 1st level, cryptics receive Scribe Tattoo as a bonus feat. A cryptic can scribe tattoos of any power she knows (up to 3rd level). The power must be one that can be made into a tattoo. \nThe cryptic does not need to meet the prerequisites for this feat." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
+  <thing id="cPUScribTa" name="Scribe Tattoo" description="At 1st level, cryptics receive Scribe Tattoo as a bonus feat. A cryptic can scribe tattoos of any power she knows (up to 3rd level). The power must be one that can be made into a tattoo. The cryptic does not need to meet the prerequisites for this feat." compset="ClSpecial">
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="Helper" tag="SpecUp"/>
     <bootstrap thing="fPUScrTatt">
+      <containerreq phase="First" priority="500">!AbReplace.cPUScribTa</containerreq>
       <autotag group="thing" tag="skipprereq"/>
       </bootstrap>
     </thing>
   <thing id="cPUTrapmak" name="Trapmaker" description="A cryptic gains a competence bonus on Craft (traps) checks equal to her class level." compset="ClSpecial">
-    <usesource source="pPsiUn"/>
-    <eval phase="PostLevel" priority="10000">#skillbonus[skCrafTrap] += field[xAllLev].value</eval>
+    <tag group="ProductId" tag="PUProdID"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      #skillbonus[skCrafTrap] += field[xAllLev].value]]></eval>
     </thing>
-  <thing id="cPUHiddenP" name="Hidden Pattern" description="A cryptic learns how to recognize patterns in light and sound around her that can help her to mask her presence. At 2nd level, a cryptic gains a +2 competence bonus on all Stealth checks. This bonus increases to +4 at 5th level, and then again to +6 at 8th level. At 10th level, as long as the cryptic maintains psionic focus, she can use the Stealth skill to hide, even while being observed." compset="ClSpecial">
+  <thing id="cPUHiddenP" name="Hidden Pattern" description="A cryptic learns how to recognize patterns in light and sound around her that can help her to mask her presence. At 2nd level, a cryptic gains a +2 competence bonus on all Stealth checks. This bonus increases to +4 at 5th level, and then again to +6 at 8th level. At 10th level, as long as the cryptic maintains psionic focus, she can use the Stealth skill to hide, even while being observed." compset="ClSpecial" summary="You gain a competence bonus on all Stealth checks.">
     <tag group="AbilType" tag="Super"/>
-    <tag group="User" tag="Tracker"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="Helper" tag="SpecUp"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[
       ~ Set the list name
       field[listname].text = field[thingname].text & " " & signed(field[xIndex].value * 2)
@@ -6413,23 +6462,37 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       ~ The following should only happen once on the first copy
       doneif (tagis[Helper.FirstCopy] = 0)
 
-      #skillbonus[skStealth] += field[abValue].value
-      ]]></eval>
+      #skillbonus[skStealth] += field[abValue].value]]></eval>
     </thing>
   <thing id="cPUCrHideP" name="Hide in Plain Sight" description="At 10th level, as long as the cryptic maintains psionic focus, she can use the Stealth skill to hide, even while being observed." compset="ClSpecial" summary="As long as you maintain psionic focus, you can use the Stealth skill to hide, even while being observed."></thing>
-  <thing id="cPURapDef" name="Rapid Defense" description="Starting at 4th level, a cryptic can use her altered defense ability as a free action by expending her psionic focus. The cryptic may even do this when it is not her turn." compset="ClSpecial">
+  <thing id="cPURapDef" name="Rapid Defense" description="Starting at 4th level, a cryptic can use her altered defense ability as a free action by expending her psionic focus. The cryptic may even do this when it is not her turn." compset="ClSpecial" summary="Use your altered defense ability as a free action by expending your psionic focus.">
     <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="PUProdID"/>
     </thing>
-  <thing id="cPUSwiftTr" name="Swift Trapper" description="At 6th level, a cryptic can create traps with astounding speed. It takes a cryptic half the normal amount of time to create traps." compset="ClSpecial">
+  <thing id="cPUSwiftTr" name="Swift Trapper" description="At 6th level, a cryptic can create traps with astounding speed. It takes a cryptic half the normal amount of time to create traps." compset="ClSpecial" summary="It takes a cryptic half the normal amount of time to create traps.">
     <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="PUProdID"/>
     </thing>
-  <thing id="cPUEndDef" name="Enduring Defense" description="A cryptic of 14th level can choose any option from the Altered Defense ability and always be under that effect. The cryptic can still change the effect as a swift action, but she is no longer limited to how many rounds per day she can have Altered Defense active." compset="ClSpecial">
-    <tag group="User" tag="Tracker"/>
-    <tag group="Helper" tag="SpecUp"/>
+  <thing id="cPUEndDef" name="Enduring Defense" description="A cryptic of 14th level can choose any option from the Altered Defense ability and always be under that effect. The cryptic can still change the effect as a swift action, but she is no longer limited to how many rounds per day she can have Altered Defense active." compset="ClSpecial" summary="Altered Defense is usable unlimited amount of time per day.">
+    <tag group="ProductId" tag="PUProdID"/>
+    <eval phase="Final" priority="10000"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      
+      perform hero.child[cPUAltDef].setfocus
+      doneif (state.isfocus = 0)
+      
+      ~ Remove the tracked resource of Altered Defense
+      perform focus.delete[Usage.?]
+      perform focus.delete[User.Tracker]
+      focus.field[trkMax].value = 0]]></eval>
     </thing>
-  <thing id="cPUUncPatt" name="Unchanging Pattern" description="At 18th level, the cryptic gains power resistance equal to 12 + her class level." compset="ClSpecial">
+  <thing id="cPUUncPatt" name="Unchanging Pattern" description="At 18th level, the cryptic gains power resistance equal to 12 + her class level." compset="ClSpecial" summary="Gain power resistance equal to 12 + her class level.">
     <fieldval field="abValue" value="12"/>
-    <bootstrap thing="xPwrRes"></bootstrap>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="Helper" tag="SpecUp"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[
       ~ If we're not shown, just get out now
       doneif (tagis[Helper.ShowSpec] <> 1)
@@ -6437,8 +6500,7 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       doneif (tagis[Helper.SpcDisable] <> 0)
 
       ~ Give PR of 12 + Level
-      #value[xPwrRes] += field[abValue].value + field[xAllLev].value
-      ]]></eval>
+      #value[xPwrRes] += field[abValue].value + field[xAllLev].value]]></eval>
     </thing>
   <thing id="cPUSupIns" name="Supreme Insight" description="At 20th level, the cryptic makes astounding leaps of insight. She immediately learns two normal insights, but also learns a third insight chosen from the list below, representing a truly astounding breakthrough in understanding how patterns work. For many cryptics, the possibility of this sort of discoveries is the driving force for their studying of patterns." compset="ClSpecial">
     <usesource source="pPsiUn"/>
@@ -13721,5 +13783,77 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
 
         validif (levels >= 12)]]></validate>
       </prereq>
+    </thing>
+  <thing id="cPUAltDef1" name="Altered Defense, Absorb" description="A cryptic learns early on to modify the patterns around her to grant her protection as a swift action. The cryptic chooses from the options below and may only have one such effect active at any given time. The cryptic can use this ability for a number of rounds per day equal to 4 + her Intelligence modifier. The cryptic can maintain this ability as long as she wants as long as she has rounds available, or dismiss it at any time as a free action.\n\n{i}Absorb:{/i} The cryptic gains DR 1/-." compset="ClSpecial" summary="The cryptic gains DR 1/-.">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[
+      ~NOTE:
+      ~ abValue is bonus
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += #value[cPUAltDef]
+      field[livename].text = field[thingname].text & " DR " & field[abValue].value & "/-"
+      field[abSumm].text = "The cryptic gains DR " & field[abValue].value & "/-"
+
+      ~ If we're not active, just get out now!
+      doneif (field[abilActive].value = 0)
+
+      perform hero.assign[Cryptic.AltDefAct]
+      #applydr[xDamRd,field[abValue].value]]]></eval>
+    <exprreq message="Only a single Altered Defense can be active at a time."><![CDATA[hero.tagcount[Cryptic.AltDefAct] <= 1]]></exprreq>
+    </thing>
+  <thing id="cPUAltDef2" name="Altered Defense, Deflect" description="A cryptic learns early on to modify the patterns around her to grant her protection as a swift action. The cryptic chooses from the options below and may only have one such effect active at any given time. The cryptic can use this ability for a number of rounds per day equal to 4 + her Intelligence modifier. The cryptic can maintain this ability as long as she wants as long as she has rounds available, or dismiss it at any time as a free action.\n\n{i}Deflect:{/i} The cryptic gains a +1 dodge bonus to her AC." compset="ClSpecial" summary="The cryptic gains a +1 dodge bonus to her AC.">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[
+      ~NOTE:
+      ~ abValue is bonus
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += #value[cPUAltDef]
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+      field[abSumm].text = "The cryptic gains a " & signed(field[abValue].value) & " dodge bonus to her AC."
+
+      ~ If we're not active, just get out now!
+      doneif (field[abilActive].value = 0)
+
+      perform hero.assign[Cryptic.AltDefAct]
+      hero.child[ArmorClass].field[tACDodge].value += field[abValue].value]]></eval>
+    <exprreq message="Only a single Altered Defense can be active at a time."><![CDATA[hero.tagcount[Cryptic.AltDefAct] <= 1]]></exprreq>
+    </thing>
+  <thing id="cPUAltDef3" name="Altered Defense, Retaliate" description="A cryptic learns early on to modify the patterns around her to grant her protection as a swift action. The cryptic chooses from the options below and may only have one such effect active at any given time. The cryptic can use this ability for a number of rounds per day equal to 4 + her Intelligence modifier. The cryptic can maintain this ability as long as she wants as long as she has rounds available, or dismiss it at any time as a free action.\n\n{i}Retaliate:{/i} The cryptic gains a +1 bonus on her attack rolls against any opponent that successfully hit her since her last turn." compset="ClSpecial" summary="+1 bonus on your attack rolls against any opponent that hit you since your last turn.">
+    <tag group="AbilType" tag="Super"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostAttr" priority="11000"><![CDATA[
+      ~NOTE:
+      ~ abValue is bonus
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += #value[cPUAltDef]
+      field[livename].text = field[thingname].text & " " & signed(field[abValue].value)
+      field[abSumm].text = signed(field[abValue].value) & " bonus on your attack rolls against any opponent that hit you since your last turn."
+
+      ~ If we're not active, just get out now!
+      doneif (field[abilActive].value = 0)
+
+      perform hero.assign[Cryptic.AltDefAct]
+      hero.child[Attack].field[Bonus].value += field[abValue].value]]></eval>
+    <exprreq message="Only a single Altered Defense can be active at a time."><![CDATA[hero.tagcount[Cryptic.AltDefAct] <= 1]]></exprreq>
     </thing>
   </document>
