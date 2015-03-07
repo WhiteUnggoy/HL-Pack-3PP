@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>TheIronGolem
+      Email: mail@theirongolem.com</info_author>
+    <info_history>March 6, 2015 - TheIronGolem
+      -Created New
+	  -Added the Cursed Razor Discipline
+	  -Added the Shattered Mirror Discipline</info_history>
+    </fileinfo>
+  <thing id="zPWCrsRazr" name="Cursed Razor" compset="Simple">
+    <usesource source="srcPOWEx"/>
+    <tag group="PathOfWar" tag="selDisc"/>
+    <tag group="Discipline" tag="CurseRazor" name="Cursed Razor"/>
+    <tag group="HasMan" tag="CurseRazor" name="Cursed Razor"/>
+    <tag group="ClassSkill" tag="skSpellcr"/>
+    <tag group="wFtrGroup" tag="BladeHeavy"/>
+    <tag group="wFtrGroup" tag="Spears"/>
+    <tag group="wFtrGroup" tag="BladeLight"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="50">~ Setup the Discipline Class Skill
+      Call PWsetupDSk</eval>
+    </thing>
+  <thing id="dPWCrsRazr" name="Cursed Razor Discipline" compset="SplSchool">
+    <usesource source="srcPOWEx"/>
+    <tag group="PathOfWar" tag="Discipline"/>
+    <tag group="Discipline" tag="CurseRazor" name="Cursed Razor"/>
+    </thing>
+  <thing id="zPWShaMirr" name="Shattered Mirror" compset="Simple">
+    <usesource source="srcPOWEx"/>
+    <tag group="PathOfWar" tag="selDisc"/>
+    <tag group="Discipline" tag="ShaMirror" name="Shattered Mirror"/>
+    <tag group="HasMan" tag="ShaMirror" name="Shattered Mirror"/>
+    <tag group="ClassSkill" tag="skCrafSkul" name="Craft (Sculpture)"/>
+    <tag group="wFtrGroup" tag="BladeHeavy"/>
+    <tag group="wFtrGroup" tag="Close"/>
+    <tag group="wFtrGroup" tag="BladeLight"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClassSkill" tag="skCrafGlas" name="Craft (Glasswork)"/>
+    <tag group="ClassSkill" tag="skCrafPain" name="Craft (Painting)"/>
+    <eval phase="First" priority="50">~ Setup the Discipline Class Skill
+      Call PWsetupDSk</eval>
+    </thing>
+  <thing id="dPWShaMirr" name="Shattered Mirror Discipline" compset="SplSchool">
+    <usesource source="srcPOWEx"/>
+    <tag group="PathOfWar" tag="Discipline"/>
+    <tag group="Discipline" tag="ShaMirror" name="Shattered Mirror"/>
+    </thing>
+  </document>

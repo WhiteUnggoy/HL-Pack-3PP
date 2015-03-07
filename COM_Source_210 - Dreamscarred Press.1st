@@ -2,6 +2,9 @@
 <document signature="Hero Lab Structure">
   <loadonce key="COM_Source_210 - Dreamscarred Press"/>
   <!--
+  March 6, 2015 TheIronGolem
+  -Added tag for Path of War Expanded playtest
+  
   December 23, 2014 Tim Shadow
   -Renamed file when merged into 3PP community package.
   -Merged in both Ultimate Psionics and Path of War sources.
@@ -51,5 +54,13 @@
     sortorder="10"
     description="Path of War for pathfinder.">
     </source>
-
+	
+  <source
+    id="srcPOWEx"
+    name="DSP - Path of War Expanded Playtest"
+    selectable="yes"
+    parent="pDscar"
+    sortorder="10"
+    description="Public playtest for Path of War Expanded.">
+    </source>
   </document>
