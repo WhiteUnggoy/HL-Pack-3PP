@@ -6,8 +6,8 @@
       Email: mail@theirongolem.com</info_author>
     <info_history>March 6, 2015 - TheIronGolem
       -Created New
-	  -Added Cursed Razor maneuvers
-	  -Added Shattered Mirror maneuvers</info_history>
+      -Added Cursed Razor maneuvers
+      -Added Shattered Mirror maneuvers</info_history>
     </fileinfo>
   <thing id="manPWStSt1" name="Stutter Strike" description="With just the faintest edge of dark energies you can afflict your victims with a word-eating curse. When you initiate this maneuver, make a melee attack. If you hit, the attack deals weapon damage as normal and the creature struck suffers a 25% failure chance on spells with a verbal component (note that this is not Arcane Spell Failure and functions perfectly well against divine spells), a -4 penalty to all language-based skill checks, and gains the cursed condition. A successful Will save (DC 11 + your initiation modifier) negates the spell failure and skill check penalty." compset="PWManuever" summary="Make a melee attack, target suffers 25% failure on spells with verbal components, -4 penalty on language-based skill checks" uniqueness="useronce">
     <fieldval field="mDuration" value="1 round/level"/>

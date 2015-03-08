@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
+  <loadonce key="COM_3PPPack_PathOfWarEx - Helper Things"/>
   <fileinfo>
     <info_author>TheIronGolem
       Email: mail@theirongolem.com</info_author>
     <info_history>March 6, 2015 - TheIronGolem
       -Created New
-	  -Added the Cursed Razor Discipline
-	  -Added the Shattered Mirror Discipline</info_history>
+    -Added the Cursed Razor Discipline
+    -Added the Shattered Mirror Discipline</info_history>
     </fileinfo>
   <thing id="zPWCrsRazr" name="Cursed Razor" compset="Simple">
     <usesource source="srcPOWEx"/>
