@@ -2162,4 +2162,14 @@ nexteach]]></eval>
       hero.child[fWepFoc].field[actName].text = "Weapon Focus: MindBolt"]]></eval>
     <exprreq message="Weapon Focus: Mind Bolt already taken.">hero.tagis[WepFocus.wMindBlade] = @ispick</exprreq>
     </thing>
+  <thing id="fPUOnePatt" name="One Pattern" description="Your adventures have taught you that all creatures have a common thread to their patterns, and that they also all have that one loose thread to pull. \n\n{b}Prerequisites:{/b} Disrupt pattern class feature, Knowledge (arcane) 5 ranks, Knowledge (dungeoneering) 5 ranks, Knowledge (nature) 5 ranks, Knowledge (planes) 5 ranks, Knowledge (psionics), and Knowledge (religion) 5 ranks.\n\n{b}Benefit:{/b} Your target no longer needs to match your active creature type to deal full damage with your disrupt pattern ability. If your target does match your active creature type, you inflict an extra 1 point of damage per dice of damage dealt with disrupt pattern. This extra damage is not multiplied on a critical hit." compset="Feat" uniqueness="useronce">
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Psionic"/>
+    <exprreq message="Knowledge (arcana) 5 ranks required"><![CDATA[#skillranks[skKnowArca] >= 5]]></exprreq>
+    <exprreq message="Knowledge (dungeoneering) 5 ranks required"><![CDATA[#skillranks[skKnowDun] >= 5]]></exprreq>
+    <exprreq message="Knowledge (nature) 5 ranks required"><![CDATA[#skillranks[skKnowNat] >= 5]]></exprreq>
+    <exprreq message="Knowledge (planes) 5 ranks required"><![CDATA[#skillranks[skKnowPlan] >= 5]]></exprreq>
+    <exprreq message="Knowledge (psionics) 5 ranks required"><![CDATA[#skillranks[skPUKnwPsi] >= 5]]></exprreq>
+    <exprreq message="Knowledge (religion) 5 ranks required"><![CDATA[#skillranks[skKnowRel] >= 5]]></exprreq>
+    </thing>
   </document>
