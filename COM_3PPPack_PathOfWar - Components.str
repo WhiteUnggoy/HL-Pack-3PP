@@ -239,11 +239,13 @@
       var level as number
 
       ~ If we're a prestige class, make sure we have chosen an existing maneuver list to work from, otherwise don't allow picking any maneuvers yet
-      if (linkage[powClass].tagis[ClassType.Prestige] + hero.childfound[cPWP1Man].field[usrChosen1].ischosen = 1) then
-        linkage[powCfg].field[cfgMax1].value = 0
-        linkage[powCfg].field[cfgMax2].value = 0
-        linkage[powCfg].field[livename].text = linkage[powCfg].tagnames[ClsCountAs.?] & " Maneuvers: Pick Maneuver List on class tab first!"
-        done
+      if (linkage[powClass].tagis[ClassType.Prestige] = 1) then
+	    if (hero.childfound[cPWP1Man].field[usrChosen1].ischosen = 0) then
+          linkage[powCfg].field[cfgMax1].value = 0
+          linkage[powCfg].field[cfgMax2].value = 0
+          linkage[powCfg].field[livename].text = linkage[powCfg].tagnames[ClsCountAs.?] & " Maneuvers: Pick Maneuver List on class tab first!"
+          done
+		endif
       endif
     
       ~ If no disciplines setup then display error and stop!
