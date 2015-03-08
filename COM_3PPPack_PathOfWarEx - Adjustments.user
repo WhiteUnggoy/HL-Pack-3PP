@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <loadonce key="COM_3PPPack_PathOfWar - Adjustments"/>
+  <loadonce key="COM_3PPPack_PathOfWarEx - Adjustments"/>
   <fileinfo>
     <info_author>TheIronGolem
 March 6, 2015</info_author>
     <info_history>March 6, 2015 - TheIronGolem
       -Created New
-	  -Added "Shattered Mirror: Obsidian Reflection Stance"</info_history>
+    -Added "Shattered Mirror: Obsidian Reflection Stance"</info_history>
     </fileinfo>
   <thing id="pPWObRefSt" name="Shattered Mirror: Obsidian Reflection Stance" description="You gain a circumstance bonus or penalty to attack and damage as an effect of another character&apos;s Obsidian Reflection Stance." compset="InPlay">
     <fieldval field="pMinimum" value="-10"/>

@@ -393,7 +393,7 @@
     </thing>
 
   <!-- ============================================================================================ -->
-  <!-- New Psionic Base Class Headers                                                               -->
+  <!-- New Path of War Base Class Headers                                                           -->
   <!-- ============================================================================================ -->
   <thing id="arHdPWStal" name="Stalker" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Stalker" class header.]]></comment>

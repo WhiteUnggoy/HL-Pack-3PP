@@ -28,12 +28,12 @@
     <value id="Stance"      name="Stance"/>
     <value id="StanceOn"    name="Stance Activated"/>    
     <value id="StanceUp"    name="Stance Allowed Up"/>
-	<value id="StanceClSp"	name="Stance From Class Special"/>
-	<value id="ShdwBlade"	name="Shadow Blade"/>
-	<value id="EmbShadow"	name="Embrace the Shadows"/>
-	<value id="StaInnrEye"	name="Stance of the Inner Eye"/>
-	<value id="CstManProg"	name="Custom Maneuver Progression"/>
-	<value id="MartTrad"	name="Martial Tradition"/>
+    <value id="StanceClSp"  name="Stance From Class Special"/>
+    <value id="ShdwBlade"   name="Shadow Blade"/>
+    <value id="EmbShadow"   name="Embrace the Shadows"/>
+    <value id="StaInnrEye"  name="Stance of the Inner Eye"/>
+    <value id="CstManProg"  name="Custom Maneuver Progression"/>
+    <value id="MartTrad"  n ame="Martial Tradition"/>
   </group>
 
   <!-- Martial Discipline custom tags -->
@@ -45,10 +45,12 @@
     <value id="SteelSerp"   name="Steel Serpent"/>
     <value id="ThrashDrag"  name="Thrashing Dragon"/>
     <value id="VeiledMoon"  name="Veiled Moon"/>
-	<value id="IronTort"	name="Iron Tortoise"/>
+    <value id="IronTort"    name="Iron Tortoise"/>
     <value id="BrokenBlad"  name="Broken Blade"/>
     <value id="BlackSerph"  name="Black Seraph"/>
     <value id="SilvrCrane"  name="Silver Crane"/>
+    <value id="CurseRazor"  name="Cursed Razor"/>
+    <value id="ShaMirror"   name="Shattered Mirror"/>
   </group>
 
   <!-- Has Manuever tags inherited from the discipline level group -->
