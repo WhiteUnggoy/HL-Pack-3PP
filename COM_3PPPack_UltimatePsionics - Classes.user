@@ -6485,7 +6485,7 @@ field[livename].text = "Augment Suit (" & myPts & ") (" & myTimes & " rounds)"]]
       ~ The following should only happen once on the first copy
       doneif (tagis[Helper.FirstCopy] = 0)
 
-      #skillbonus[skStealth] += field[abValue].value]]></eval>
+      #competencebonus[hero.child[skStealth], field[abValue].value]]]></eval>
     </thing>
   <thing id="cPUCrHideP" name="Hide in Plain Sight" description="At 10th level, as long as the cryptic maintains psionic focus, she can use the Stealth skill to hide, even while being observed." compset="ClSpecial" summary="As long as you maintain psionic focus, you can use the Stealth skill to hide, even while being observed."></thing>
   <thing id="cPURapDef" name="Rapid Defense" description="Starting at 4th level, a cryptic can use her altered defense ability as a free action by expending her psionic focus. The cryptic may even do this when it is not her turn." compset="ClSpecial" summary="Use your altered defense ability as a free action by expending your psionic focus.">
