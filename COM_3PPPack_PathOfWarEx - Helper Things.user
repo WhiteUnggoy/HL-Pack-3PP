@@ -12,8 +12,8 @@
   <thing id="zPWCrsRazr" name="Cursed Razor" compset="Simple">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="selDisc"/>
-    <tag group="Discipline" tag="CurseRazor" name="Cursed Razor"/>
-    <tag group="HasMan" tag="CurseRazor" name="Cursed Razor"/>
+    <tag group="Discipline" tag="CurseRazor"/>
+    <tag group="HasMan" tag="CurseRazor"/>
     <tag group="ClassSkill" tag="skSpellcr"/>
     <tag group="wFtrGroup" tag="BladeHeavy"/>
     <tag group="wFtrGroup" tag="Spears"/>
@@ -25,26 +25,36 @@
   <thing id="dPWCrsRazr" name="Cursed Razor Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="CurseRazor" name="Cursed Razor"/>
+    <tag group="Discipline" tag="CurseRazor"/>
     </thing>
   <thing id="zPWShaMirr" name="Shattered Mirror" compset="Simple">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="selDisc"/>
-    <tag group="Discipline" tag="ShaMirror" name="Shattered Mirror"/>
-    <tag group="HasMan" tag="ShaMirror" name="Shattered Mirror"/>
-    <tag group="ClassSkill" tag="skCrafSkul" name="Craft (Sculpture)"/>
+    <tag group="Discipline" tag="ShaMirror"/>
+    <tag group="HasMan" tag="ShaMirror"/>
+    <tag group="ClassSkill" tag="skCrafSkul"/>
     <tag group="wFtrGroup" tag="BladeHeavy"/>
     <tag group="wFtrGroup" tag="Close"/>
     <tag group="wFtrGroup" tag="BladeLight"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="ClassSkill" tag="skCrafGlas" name="Craft (Glasswork)"/>
-    <tag group="ClassSkill" tag="skCrafPain" name="Craft (Painting)"/>
+    <tag group="ClassSkill" tag="skCrafGlas"/>
+    <tag group="ClassSkill" tag="skCrafPain"/>
     <eval phase="First" priority="50">~ Setup the Discipline Class Skill
       Call PWsetupDSk</eval>
     </thing>
   <thing id="dPWShaMirr" name="Shattered Mirror Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="ShaMirror" name="Shattered Mirror"/>
+    <tag group="Discipline" tag="ShaMirror"/>
     </thing>
+    
+    
+  <!-- ============================================================================================ -->
+  <!-- New Path of War Expanded Base Class Headers                                                  -->
+  <!-- ============================================================================================ -->
+  <thing id="arHdPWHarb" name="Harbinger" compset="ClassVary" uniqueness="unique" isshowonly="yes">
+    <comment><![CDATA[This is a helper object for the "Harbinger" class header.]]></comment>
+    <link linkage="varies" thing="cHelpPW4"/>
+  </thing>
+
   </document>

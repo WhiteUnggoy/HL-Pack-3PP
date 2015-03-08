@@ -6,7 +6,7 @@
       Email: mail@theirongolem.com</info_author>
     <info_history>March 6, 2015 - TheIronGolem
       -Created New
-	  -Added the Harbinger class</info_history>
+    -Added the Harbinger class</info_history>
     </fileinfo>
   <thing id="cHelpPW4" name="Harbinger" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="8"/>
@@ -130,8 +130,8 @@
     <tag group="ClsCountAs" tag="cHelpPW4"/>
     <tag group="Discipline" tag="PrimalFury"/>
     <tag group="Discipline" tag="VeiledMoon"/>
-    <tag group="Discipline" tag="ShaMirror" name="Shattered Mirror"/>
-    <tag group="Discipline" tag="CurseRazor" name="Cursed Razor"/>
+    <tag group="Discipline" tag="ShaMirror"/>
+    <tag group="Discipline" tag="CurseRazor"/>
     <bootstrap thing="mHelpPW4"></bootstrap>
     <prereq message="You have too many Manuevers Readied.">
       <validate>var ValidManOn as number
@@ -207,10 +207,10 @@
     <arrayval field="cStances" index="19" value="6"/>
     <usesource source="srcPOWEx"/>
     <tag group="Discipline" tag="PrimalFury" name="Primal Fury"/>
-    <tag group="Discipline" tag="CurseRazor" name="Cursed Razor"/>
+    <tag group="Discipline" tag="CurseRazor"/>
     <tag group="Discipline" tag="VeiledMoon" name="Veiled Moon"/>
     <tag group="UseAttr" tag="aINT"/>
-    <tag group="Discipline" tag="ShaMirror" name="Shattered Mirror"/>
+    <tag group="Discipline" tag="ShaMirror"/>
     <link linkage="powClass" thing="cHelpPW4"/>
     <link linkage="powCfg" thing="cCfgPW4"/>
     </thing>
