@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>Author: TheIronGolem
+Email: mail@theirongolem.com</info_author>
+    </fileinfo>
+  <thing id="fPWBatFerv" name="Battle Fervor" description="{b}Prerequisites:{/b} Fervor or Lay on Hands class feature, able to initiate maneuvers\n\n{b}Benefits:{/b} When you use Fervor or Lay on Hands to heal yourself as a swift action, your next strike deals bonus damage equal to 1/2 the amount you healed." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must be able to initiate martial maneuvers"><![CDATA[hero.tagis[PathOfWar.HeroInit] <> 0]]></exprreq>
+    <exprreq message="Lay on Hands or Fervor class feature required"><![CDATA[(#hasability[cPalLayHnd] + #hasability[cWaPFervor]) <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWBlightF" name="Blight Fight" description="The weak crumble before your power.\n\n{b}Prerequisites:{/b} 1 or more maneuvers known from the Cursed Razor, Eternal Guardian and/or Steel Serpent disciplines.\n\n{b}Benefits:{/b} Cursed, diseased, and/or poisoned creatures suffer a -2 penalty to saving throws made against your maneuvers." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must have at least one maneuver from the Cursed Razor, Eternal Guardian or Steel Serpent disciplines."><![CDATA[hero.tagis[HasMan.SteelSerp] + hero.tagis[HasMan.CurseRazor] + hero.tagis[HasMan.EternGuard] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWChanRec" name="Channeled Recovery" description="{b}Prerequisites:{/b} Channel Energy class feature, 1 maneuver of 3rd level or higher known\n\n{b}Benefits:{/b} When you channel energy to heal allies, allies in your channeled energy area may choose to forgo healing and instead recover 1 maneuver as a free action, even if it’s not their turn." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Channel Energy class feature required"><![CDATA[#hasability[xChannel] <> 0]]></exprreq>
+    <prereq message="Maneuver of 3rd level or higher known">
+      <validate><![CDATA[      foreach pick in hero from PWManuever
+        validif (eachpick.tagvalue[mLevel.?] >= 3)
+      nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fPWDkAllur" name="Dark Allure" description="Those Claimed by you are distracted by your presence.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} Creatures Claimed by you suffer a penalty equal to the number of creatures you currently have Claimed on attack rolls made against creatures other than you.\n\n{b}Special:{/b} Characters with the Dark Authority feat may not select this feat (and vice versa)." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must not have the Dark Authority feat">#hasfeat[fPWDrkAuth] = 0</exprreq>
+    <exprreq message="Must be able to Claim creatures"><![CDATA[#hasability[cPW4DrkClm] + #hasability[cPW2SlClm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWDrkAuth" name="Dark Authority" description="Those you have Claimed as your own tremble at the mere thought of defying you.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} Creatures Claimed by you suffer a penalty equal to the number of creatures you currently have Claimed on attack rolls made against creatures other than you.\n\n{b}Special:{/b} Characters with the Dark Authority feat may not select this feat (and vice versa)." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must not have the Dark Allure feat">#hasfeat[fPWDkAllur] = 0</exprreq>
+    <exprreq message="Must be able to Claim creatures"><![CDATA[#hasability[cPW4DrkClm] + #hasability[cPW2SlClm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWDrkPres" name="Dark Presence" description="Those you have Claimed cannot escape your malice.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} Creatures Claimed by you provoke an attack of opportunity from you whenever they make a five foot step into or out of one of your threatened squares." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must be able to Claim creatures"><![CDATA[#hasability[cPW4DrkClm] + #hasability[cPW2SlClm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWDrkAgIn" name="Darksilver Initiate" description="{b}Prerequisite:{/b} Quick Draw, 2 Steel Serpent Maneuvers known, 2 Mithral Current Maneuvers known\n\n{b}Benefit:{/b} Once per encounter, when you initiate a Mithral Current Strike and a Steel Serpent boost in the same round, resolve the Mithral Current maneuver as if you&apos;d drawn your weapon as part of the attack." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Quick Draw feat required">#hasfeat[fQuickDraw] = 0</exprreq>
+    <exprreq message="Must know 2 Steel Serpent maneuvers"><![CDATA[hero.tagis[HasMan.SteelSerp] >= 2]]></exprreq>
+    <exprreq message="Must know 2 Mithral Current maneuvers"><![CDATA[hero.tagis[HasMan.MithCurr] >= 2]]></exprreq>
+    </thing>
+  <thing id="fPWElecMan" name="Electrum Manticore" description="{b}Prerequisite:{/b} 2 Silver Crane Maneuvers known, 2 Golden Lion Maneuvers known\n\n{b}Benefit:{/b} Once per encounter, you may initiate a Golden Lion boost as part of assuming a Silver Crane stance, or initiate a Silver Crane boost as part of assuming a Golden Lion stance." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must know 2 Silver Crane maneuvers"><![CDATA[hero.tagis[HasMan.SilvrCrane] >= 2]]></exprreq>
+    <exprreq message="Must know 2 Golden Lion maneuvers"><![CDATA[hero.tagis[HasMan.GoldenLion] >= 2]]></exprreq>
+    </thing>
+  <thing id="fPWEndProt" name="Enduring Protector" description="{b}Prerequisite:{/b} Combat Reflexes, Martial Power\n\n{b}Benefit:{/b} Whenever you reduce an opponent to 0 Hit Points or fewer with an Attack of Opportunity, you gain temporary Hit Points equal to the slain creatures Hit Dice.  These temporary hit points do not stack and last for 1 round or until lost." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Combat Reflexes feat required"><![CDATA[#hasfeat[fComRef] <> 0]]></exprreq>
+    <exprreq message="Martial Power feat required"><![CDATA[#hasfeat[fPWMartPow] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWElemSun" name="Elemental Sun" description="{b}Prerequisite:{/b} 1 Elemental Flux Stance, 1 Solar Wind Stance\n\n{b}Benefit:{/b} When you initiate a Solar Wind maneuver while in an Elemental Flux stance, half of the damage you deal is the same as your active energy type for Elemental Flux." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must know at least one Solar Wind stance"><![CDATA[hero.tagis[HasStance.SolarWind] >= 1]]></exprreq>
+    <exprreq message="Must know at least one Elemental Flux stance"><![CDATA[hero.tagis[HasStance.ElemFlux] >= 1]]></exprreq>
+    </thing>
+  <thing id="fPWEtHglas" name="Eternal Hourglass" description="{b}Prerequisite:{/b} 2 Riven Hourglass Maneuvers known, 2 Eternal Guardian Maneuvers known\n\n{b}Benefit:{/b} Once per encounter, while in a Riven Hourglass stance, you can initiate an Eternal Guardian counter as a free action, even if it&apos;s not your turn.  This means, for example, that you can initiate a second counter in the same round or use a swift action on your next turn." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must know 2 Riven Hourglass maneuvers"><![CDATA[hero.tagis[HasMan.RivnHglass] >= 2]]></exprreq>
+    <exprreq message="Must know 2 Eternal Guardian maneuvers"><![CDATA[hero.tagis[HasMan.EternGuard] >= 2]]></exprreq>
+    </thing>
+  <thing id="fPWFerGods" name="Feral Goddess" description="{b}Prerequisite:{/b} One Sleeping goddess maneuver known, able to manifest one power that grants natural weapons (such as {i}claws of the beast {/i} or {i}metamorphosis {/i})\n\n{b}Benefit:{/b} All natural weapons created by psionic powers are treated as Sleeping Goddess discipline weapons to you and are treated as magic for the purpose of overcoming damage reduction.\n\n{b}NOTE{/b}: Hero Lab is not able to check the power prequisite, so you will need to take care to make sure you have an appropriate power before selecting this feat." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must know at least one Sleeping Goddess maneuver"><![CDATA[hero.tagis[HasMan.SlpGoddess] >= 1]]></exprreq>
+    </thing>
+  <thing id="fPWFlMtFst" name="Flowing Mithral Fist" description="{b}Prerequisites:{/b} 1 Mithral Current Stance, Improved Unarmed Strike\n\n{b}Benefit:{/b} Your unarmed strikes are now considered Discipline Weapons for Mithral Current.  In addition to sheathing your hands normally, you can sheathe your hands once per round as a free action (even when it is not your turn) that does not provoke attacks of opportunity by placing them in your pockets, under your sleeves or in an otherwise nonthreatening position.\n\n{b}Normal:{/b} Unarmed Strikes are not discipline weapons for Mithral Current.\n\n{b}NOTE:{/b} This feat is not yet functional." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must know at least one Mithral Current maneuver"><![CDATA[hero.tagis[HasMan.MithCurr] >= 1]]></exprreq>
+    <exprreq message="Improved Unarmed Strike required"><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWFotGods" name="Forge of the Goddess" description="{b}Prerequisites:{/b} One Sleeping Goddess maneuver known, able to manifest {i}call weaponry{/i}\n\n{b}Benefit:{/b} You treat any weapon you create with the {i}call weaponry{/i} power as a Sleeping Goddess discipline weapon. In addition, you reduce the power point cost for manifesting {i}call weaponry{/i} by 1 (minimum 0)\n\n{b}NOTE{/b}: Hero Lab is not able to check the power prequisite, so you will need to take care to make sure you have the {i}call weaponry{/i} power before selecting this feat." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Must know at least one Sleeping Goddess maneuver"><![CDATA[hero.tagis[HasMan.SlpGoddess] >= 1]]></exprreq>
+    </thing>
+  <thing id="fPWGrspDrk" name="Grasp of Darkness" description="Your malicious intentions ensnare many creatures at once, placing them under your power.\n\n{b}Prerequisites:{/b} Dark Claim class feature\n\n{b}Benefit:{/b} You may Claim up to 2 additional enemies (for a total of 3 enemies) at one time when using your Dark Claim, recovering an additional maneuver in the process." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Dark Claim class feature required"><![CDATA[#hasability[cPW4DrkClm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWKatExp" name="Katana Expertise" description="{b}Prerequisites:{/b} Proficiency with Katana\n\n{b}Benefits:{/b} Increase the damage die of katanas you wield by one die step.  Additionally, you may treat katanas as light weapons for the purpose of Weapon Finesse." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="5000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Find all katanas on the hero
+      foreach pick in hero from BaseWep where "IsWeapon.wKatana"
+        ~ Mark the weapon as finessable, and increase the damage by a die step
+        perform eachpick.assign[Helper.Finesse]
+        perform eachpick.assign[Helper.DamageUp]
+      nexteach]]></eval>
+    <exprreq message="Katana proficiency required"><![CDATA[tagis[WepProf.wKatana] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWAglDncr" name="Agile Dancer" description="{b}Prerequisites:{/b} Perform (Dance) 3 ranks\n\n{b}Benefits:{/b} You can use Perform (Dance) in place of Acrobatics and can use the higher of your Dexterity or Charisma modifiers for Perform (Dance) checks." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First" priority="10000">~ Allow DEX to be used for Perform (Dance) if higher
+      perform hero.childfound[skPerfDanc].assign[SkillOpt.aDEX]</eval>
+    <prereq message="Perform (Dance) 3 ranks required">
+      <validate><![CDATA[      validif (#skillranks[skPerfDanc] >= 3)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fPWMalevol" name="Malevolence" description="Creatures you have Claimed become cursed.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} Creatures Claimed by you are cursed and suffer a -2 penalty to their CMB and skill checks (the penalty expires when the Claim does, though the cursed condition might not)." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Must be able to Claim creatures"><![CDATA[#hasability[cPW4DrkClm] + #hasability[cPW2SlClm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWMassMdr" name="Mass Murder" description="You are impelled to acts of horrific violence.\n\n{b}Prerequisites:{/b} Massacre class feature 1/encounter or higher\n\n{b}Benefit:{/b} You gain an additional use per encounter of your Massacre ability.\nSpecial: You may take this feat up to twice. Its effects stack." compset="Feat" maxlimit="2">
+    <fieldval field="abValue" value="1"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="fCategory" tag="Combat"/>
+    <eval phase="PostLevel" priority="11000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Add to usage of Massacre
+      hero.childfound[cPW4Masscr].field[trkMax].value += field[abValue].value]]></eval>
+    <exprreq message="Massacre class feature required"><![CDATA[#hasability[cPW4Masscr] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWMirMoon" name="Mirror of the Moon" description="{b}Prerequisite:{/b} 2 Shattered Mirror Maneuvers known, 2 Veiled Moon Maneuvers known, able to initiate maneuvers of 4th level or higher\n\n{b}Benefit:{/b} When you initiate a Veiled Moon Maneuver with a [teleportation] effect that targets yourself, you leave behind a major image of yourself for 1 round.  This major image moves and behaves as if you had been concentrating on it for the round." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Find all appropriate maneuvers and append to the description
+      foreach pick in hero from PWManuever where "Discipline.VeiledMoon & mDescript.Teleport & mTarget.You"
+        eachpick.field[DescAppend].text &= "{b}" & field[thingname].text & "{/b}: When you initiate this maneuver, you leave behind a {i}major image{/i} of yourself for 1 round.  This {i}major image{/i} moves and behaves as if you had been concentrating on it for the round."
+      nexteach]]></eval>
+    <exprreq message="Must know 2 Veiled Moon maneuvers"><![CDATA[hero.tagcount[HasMan.VeiledMoon] >= 2]]></exprreq>
+    <exprreq message="Must know 2 Shattered Mirror maneuvers"><![CDATA[hero.tagcount[HasMan.ShaMirror] >= 2]]></exprreq>
+    <prereq message="Must be able to initiate 4th-level maneuvers">
+      <validate><![CDATA[      ~ It takes an IL of 7 to initiate 4th-level maneuvers
+      foreach pick in hero from PWManList
+          validif (eachpick.field[cIL].value >= 7)
+      nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fPWMltAgSt" name="Molten Silver Strike" description="{b}Prerequisite:{/b} Quick Draw, 2 Solar Wind Maneuvers known, 2 Mithral Current Maneuvers known\n\n{b}Benefit:{/b} You can use Solar Wind Boosts on Mithral Current strikes that allow you to attack enemies at range.\n\n{b}Normal:{/b} Mithral Current strikes use melee attack rolls, which prevents them from being combined with maneuvers that affect ranged attacks." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Find all appropriate maneuvers and append to the description
+      foreach pick in hero from PWManuever where "Discipline.SolarWind & mType.Boost"
+        eachpick.field[DescAppend].text &= "{b}" & field[thingname].text & "{/b}: You can use this boost on Mithral Current strikes that allow you to attack enemies at range."
+      nexteach]]></eval>
+    <exprreq message="Must know 2 Solar Wind maneuvers"><![CDATA[hero.tagcount[HasMan.SolarWind] >= 2]]></exprreq>
+    <exprreq message="Must know 2 Mithral Current maneuvers"><![CDATA[hero.tagcount[HasMan.MithCurr] >= 2]]></exprreq>
+    <exprreq message="Quick Draw feat required"><![CDATA[#hasfeat[fQuickDraw] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWPinArrw" name="Pinning Arrow" description="{b}Prerequisite:{/b} Point-Blank Shot, Precise Shot\n\n{b}Benefit:{/b}  You can attempt a combat maneuver check with a ranged attack to pin a target in place.  The attack is made with your dexterity modifier instead of your strength modifier.  If the combat maneuver check is successful, the target cannot leave their square for 1 round.  They can still take other actions as normal, but cannot leave their square.  Creatures with a fly speed are able to make a fly check (DC equal to your CMB roll) to prevent themselves from falling as a result of having their movement stopped." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Point-Blank Shot feat required"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Precise Shot feat required"><![CDATA[#hasfeat[fPrecShot] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWProdTWF" name="Prodigious Two-Weapon Fighting" description="Your great physical might allows you to wield two large weapons with ease.\n\n{b}Prerequisite:{/b} Strength 13\n\n{b}Benefit:{/b} You may fight with a one-handed weapon in your offhand as if it were a light weapon. In addition, you may use your Strength score instead of your Dexterity score for the purpose of qualifying for Two-Weapon Fighting and any feats with Two-Weapon Fighting as a prerequisite.\n\n{b}NOTE:{/b} Taking this feat will remove the requirements from Two-Weapon Fighting, but unfortunately it will not remove the DEX requirement from other feats in the Two-Weapon Fighting line.  You can use the &quot;Feat, Bonus&quot; adjustment on the Adjust tab to remove the errors from such feats when you take them." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="First" priority="20000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ If we have a one-handed weapon in the off-hand, make it Light
+      foreach pick in hero from BaseWep where "wClass.OneHanded & fieldVal:wIs2nd = 1"
+        perform eachpick.delete[wClass.OneHanded]
+        perform eachpick.assign[wClass.Light]
+      nexteach
+
+      ~ Allow taking TWF feat without the DEX requirement
+      perform hero.childfound[fTwoWep].assign[thing.skipprereq]
+
+      ~ TODO: Try to find some way to remove the DEX requirement from feats that have TWF as a prereq.  Might not be possible, at least not unless we painstakingly go through each and every feat in the line (and even that would be hit and miss)]]></eval>
+    <exprreq message="STR 13 required"><![CDATA[#attrvalue[aSTR] >= 13]]></exprreq>
+    </thing>
+  <thing id="fPWRchShdw" name="Reach through Shadows" description="Drawing on the chains of dark power afflicting them, you strike down those you have Claimed.\n\n{b}Prerequisites:{/b} Grasp of Darkness, Intelligence 15+\n\n{b}Benefit:{/b} You may treat creatures Claimed by you that are 35 or more feet away from you as though they were 30 feet away from you for the purposes of targeting powers, maneuvers, and spells." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Grasp of Darkness feat required"><![CDATA[#hasfeat[fPWGrspDrk] <> 0]]></exprreq>
+    <exprreq message="Intelligence 15+ required"><![CDATA[#attrvalue[aINT] >= 15]]></exprreq>
+    </thing>
+  <thing id="fPWSinEatr" name="Sin Eater" description="You prosper as your enemies fail.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} Whenever a creature Claimed by you is reduced to o or less hit points you gain temporary hit points equal to 2 times the Claimed creature’s hit dice." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Must be able to Claim creatures"><![CDATA[#hasability[cPW4DrkClm] + #hasability[cPW2SlClm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWSeizeOp" name="Seize the Opportunity" description="{b}Prerequisite:{/b} Combat Reflexes, BAB +1\n\n{b}Benefit:{/b} When you make an attack of opportunity, you can use an attack action (like vital strike) or combat maneuver (such as a bull rush, disarm or dirty trick) in place of an attack of opportunity.  You still cannot move when it isn’t your turn." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Base attack bonus +1 required"><![CDATA[#BAB[] >= 1]]></exprreq>
+    <exprreq message="Combat Reflexes feat required"><![CDATA[#hasfeat[fComRef] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWWndsWar" name="Winds of War" description="Those you have Claimed cannot hide, and now they can no longer even run.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} You gain a 5 ft. bonus to your movement speeds. This bonus increases by 5 ft. for each creature you currently have Claimed" compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="5"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="fCategory" tag="Combat"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Get the ability we use to Claim creatures
+      perform hero.childfound[cPW4DrkClm].setfocus
+      if (state.isfocus = 0) then
+        perform hero.childfound[cPW2SlClm].setfocus
+      endif
+      doneif (state.isfocus = 0)
+
+      ~ Speed bonus starts at 5
+      field[abValue2].value = field[abValue].value
+
+      ~ Bonus increases by 5 for each Claimed target
+      field[abValue2].value += (focus.field[actUser].value * field[abValue].value)
+      
+      ~ Apply final bonus to movement speed
+      hero.child[Speed].field[Bonus].value += field[abValue2].value]]></eval>
+    <exprreq message="Must be able to Claim creatures"><![CDATA[#hasability[cPW4DrkClm] + #hasability[cPW2SlClm] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWUnbColl" name="Unbreakable Collective" description="{b}Prerequisites:{/b} Collective class feature, base fortitude save +2\n\n{b}Benefit:{/b} You automatically succeed on your Fortitude save when a member of your collective dies." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="fCategory" tag="Psionic"/>
+    <exprreq message="Fort save bonus +2 required"><![CDATA[hero.child[svFort].field[svBase].value >= 2]]></exprreq>
+    <exprreq message="Collective class feature required"><![CDATA[(#hasability[cPUVitColl] + #hasability[cPUTacColl]) <> 0]]></exprreq>
+    </thing>
+  </document>
