@@ -51,6 +51,11 @@
     <value id="SilvrCrane"  name="Silver Crane"/>
     <value id="CurseRazor"  name="Cursed Razor"/>
     <value id="ShaMirror"   name="Shattered Mirror"/>
+	<value id="ElemFlux"    name="Elemental Flux"/>
+	<value id="EternGuard"  name="Eternal Guardian"/>
+	<value id="MithCurr"    name="Mithral Current"/>
+	<value id="RivnHglass"  name="Riven Hourglass"/>
+	<value id="SlpGoddess"  name="Sleeping Goddess"/>
   </group>
 
   <!-- Has Manuever tags inherited from the discipline level group -->

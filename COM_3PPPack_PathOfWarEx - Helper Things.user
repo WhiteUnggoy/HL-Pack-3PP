@@ -45,7 +45,7 @@
   <thing id="dPWShaMirr" name="Shattered Mirror Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="ShaMirror" name="Shattered Mirror"/>
+    <tag group="Discipline" tag="ShaMirror"/>
     </thing>
   <thing id="arHdPWHarb" name="Harbinger" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Harbinger" class header.]]></comment>
@@ -54,9 +54,9 @@
   <thing id="zPWEtnGrdn" name="Eternal Guardian" compset="Simple">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="selDisc"/>
-    <tag group="Discipline" tag="EternGuard" name="Eternal Guardian"/>
-    <tag group="HasMan" tag="EternGuard" name="Eternal Guardian"/>
-    <tag group="ClassSkill" tag="skIntim" name="Intimidate"/>
+    <tag group="Discipline" tag="EternGuard"/>
+    <tag group="HasMan" tag="EternGuard"/>
+    <tag group="ClassSkill" tag="skIntim"/>
     <tag group="wFtrGroup" tag="BladeHeavy"/>
     <tag group="wFtrGroup" tag="Polearm"/>
     <tag group="wFtrGroup" tag="Hammer"/>
@@ -67,13 +67,13 @@
   <thing id="dPWEtnGrdn" name="Eternal Guardian Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="EternGuard" name="Eternal Guardian"/>
+    <tag group="Discipline" tag="EternGuard"/>
     </thing>
   <thing id="zPWMithCur" name="Mithral Current" compset="Simple">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="selDisc"/>
-    <tag group="Discipline" tag="MithCurr" name="Mithral Current"/>
-    <tag group="HasMan" tag="MithCurr" name="Mithral Current"/>
+    <tag group="Discipline" tag="MithCurr"/>
+    <tag group="HasMan" tag="MithCurr"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="First" priority="50">~ Setup the Discipline Class Skill
       Call PWsetupDSk</eval>
@@ -81,13 +81,13 @@
   <thing id="dPWMithCur" name="MIthral Current Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="MithCurr" name="Mithral Current"/>
+    <tag group="Discipline" tag="MithCurr"/>
     </thing>
   <thing id="zPWRvnHgls" name="Riven Hourglass" compset="Simple">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="selDisc"/>
-    <tag group="Discipline" tag="RivnHglass" name="Riven Hourglass"/>
-    <tag group="HasMan" tag="RivnHglass" name="Riven Hourglass"/>
+    <tag group="Discipline" tag="RivnHglass"/>
+    <tag group="HasMan" tag="RivnHglass"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="First" priority="50">~ Setup the Discipline Class Skill
       Call PWsetupDSk</eval>
@@ -95,35 +95,35 @@
   <thing id="zPWSlpGods" name="Sleeping Goddess" compset="Simple">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="selDisc"/>
-    <tag group="Discipline" tag="SlpGoddess" name="Sleeping Goddess"/>
-    <tag group="HasMan" tag="SlpGoddess" name="Sleeping Goddess"/>
+    <tag group="Discipline" tag="SlpGoddess"/>
+    <tag group="HasMan" tag="SlpGoddess"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="ClassSkill" tag="skPUAhypno" name="Autohypnosis"/>
+    <tag group="ClassSkill" tag="skPUAhypno"/>
     <tag group="wFtrGroup" tag="BladeHeavy"/>
     <tag group="wFtrGroup" tag="Monk"/>
     <tag group="wFtrGroup" tag="Spears"/>
     <tag group="wFtrGroup" tag="Flails"/>
-    <tag group="wFtrGroup" tag="WPMndBld" name="Mind blades"/>
+    <tag group="wFtrGroup" tag="WPMndBld"/>
     <eval phase="First" priority="50">~ Setup the Discipline Class Skill
       Call PWsetupDSk</eval>
     </thing>
   <thing id="dPWSlpGods" name="Sleeping Goddess Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="SlpGoddess" name="Sleeping Goddess"/>
+    <tag group="Discipline" tag="SlpGoddess"/>
     </thing>
   <thing id="dPWRvnHgls" name="Riven Hourglass Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="RivnHglass" name="Riven Hourglass"/>
+    <tag group="Discipline" tag="RivnHglass"/>
     </thing>
   <thing id="zPWElmFlux" name="Elemental Flux" compset="Simple">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="selDisc"/>
-    <tag group="Discipline" tag="ElemFlux" name="Elemental Flux"/>
-    <tag group="HasMan" tag="ElemFlux" name="Elemental Flux"/>
+    <tag group="Discipline" tag="ElemFlux"/>
+    <tag group="HasMan" tag="ElemFlux"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="ClassSkill" tag="skSpellcr" name="Spellcraft"/>
+    <tag group="ClassSkill" tag="skSpellcr"/>
     <tag group="wFtrGroup" tag="BladeLight"/>
     <tag group="wFtrGroup" tag="Monk"/>
     <tag group="wFtrGroup" tag="Thrown"/>
@@ -133,6 +133,6 @@
   <thing id="dPWElmFlux" name="Elemental Flux Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
-    <tag group="Discipline" tag="ElemFlux" name="Elemental Flux"/>
+    <tag group="Discipline" tag="ElemFlux"/>
     </thing>
   </document>
