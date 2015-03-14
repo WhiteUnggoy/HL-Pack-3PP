@@ -13958,4 +13958,47 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
     <tag group="AbReplace" tag="cSknPsyStr"/>
     <link linkage="varies" thing="cHelpSkn"/>
     </thing>
+  <thing id="arPULifeLe" name="Life Leech" description="Not fully implemented yet.\n-----\nLife leeches know that there is more potential from the collective bond than simply transferring healing energy and sharing psionic enhancements. They recognize that the collective can be used to share virtually any debilitating effect, even redirecting the damage of a strike at the moment of impact." compset="ClassVary" uniqueness="unique">
+    <fieldval field="srcPageNum" value="288"/>
+    <usesource source="pPsiUn"/>
+    <tag group="AbReplace" tag="cPUVitTraW"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="ClVaryName" tag="AppParen"/>
+    <tag group="AbReplace" tag="cPUHealthS"/>
+    <tag group="AbReplace" tag="cPUStealHT"/>
+    <tag group="AbReplace" tag="cPUVitExpK"/>
+    <bootstrap thing="cPUTranAil">
+      <autotag group="ClSpecWhen" tag="4"/>
+      </bootstrap>
+    <bootstrap thing="cPUTranAil">
+      <autotag group="ClSpecWhen" tag="7"/>
+      </bootstrap>
+    <bootstrap thing="cPUTranAil">
+      <autotag group="ClSpecWhen" tag="10"/>
+      </bootstrap>
+    <bootstrap thing="cPUTranAil">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPUDrnHlth">
+      <autotag group="ClSpecWhen" tag="3"/>
+      </bootstrap>
+    <link linkage="varies" thing="cHelpPU5"/>
+    </thing>
+  <thing id="cPUTranAil" name="Transfer Ailment" description="A 1st level life leech can transfer the dazed, dazzled, shaken, or staggered condition from one member of his collective to another\nas a standard action. At 4th level, the life leech can transfer the blind, deafened, fatigued, frightened, or sickened condition. At 7th level, the life leech can transfer the exhausted, panicked, nauseated, or paralyzed condition. At 10th level, the life leech can transfer the stunned or unconscious condition (although a creature that receives the unconscious condition from this ability is not reduced to negative hit points by this effect, nor is the original creature brought automatically to positive hit points; such a creature would still have 0 or negative hit points, but would become conscious, stable, and likely given the disabled condition).\nIf this ability is used on an unwilling target and the recipient of the effect makes a successful save (see the Unwilling Participant* feat), the creature with the condition being transferred still suffers from the condition. A life leech may use this ability a number of\ntimes per day equal to 3 + his Wisdom modifier. This ability may only be used on creatures with a Constitution score and may not be used against creatures with a total number of hit dice less than half the life leech’s level. This ability can only be used to transfer temporary conditions. For example, a life leech could not transfer blindness from a creature that has somehow lost its eyes permanently. This ability replaces transfer wounds and the accompanying benefits from the vitalist’s selected method." compset="ClSpecial">
+    <usesource source="pPsiUn"/>
+    <tag group="ChargeCalc" tag="AttrUses3"/>
+    <tag group="ChargeAttr" tag="aWIS"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Tracker"/>
+    </thing>
+  <thing id="cPUUnwPart" name="Unwilling Participant" description="A life leech of 2nd level gains the Unwilling Participant* feat as a bonus feat. In addition, when any creature in the collective against their will makes a save against an effect from over the collective, they suffer a -2 penalty on the save to resist the effect. This ability replaces health sense." compset="ClSpecial">
+    <usesource source="pPsiUn"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    </thing>
+  <thing id="cPUDrnHlth" name="Drain Health" description="A life leech of 3rd level can steal hit points from members of his collective and transfer them as healing to other members of the collective. As a standard action, one member of the collective takes damage equal to double the life leech’s class level + the\nlife leech’s Wisdom modifier and another member of the collective heals the same amount.\nIf used on an unwilling target, a successful Will save halves the amount of damage taken and healed.\nThis ability may only be used on creatures with a Constitution score and may not be used against creatures with a total number of hit dice less than half the life leech’s level.\nThis ability replaces steal health." compset="ClSpecial">
+    <eval phase="PostAttr" priority="10000"><![CDATA[~set abText field for livename
+      field[abValue].value = (#levelcount[Vitalist] * 2) + #attrmod[aWIS]
+      field[listname].text = "Drain Health (+" & field[abValue].value & " dmg transferred to health)"]]></eval>
+    </thing>
+  <thing id="cPUTranAtt" name="Transfer Attack" description="A 9th level life leech can expend his psionic focus as an immediate action to redirect damage being taken by one member of the collective to another member of the collective. Calculate the damage as if the original target would have taken it. The damage transferred is empathic in nature, so damage reduction or other means to block the damage to the final target are not effective. This ability replaces the Expanded Knowledge feat normally gained at 9th level." compset="ClSpecial"></thing>
   </document>
