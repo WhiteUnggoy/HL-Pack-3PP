@@ -927,7 +927,7 @@ hero.childfound[cfgPUPsTal].field[cfgMaxPw1].value += 5]]></eval>
     <eval phase="PreLevel" priority="10000">hero.childfound[cPUVitColl].field[abValue].value += 2</eval>
     <exprreq message="Collective class feature required."><![CDATA[(#hasability[cPUVitColl] + #hasability[cPUTacColl]) <> 0]]></exprreq>
     </thing>
-  <thing id="fPUAdArPth" name="Advanced Archer Path" description="You have expanded expertise at ranged combat.\n\n{b}Prerequisites:{/b} Point-Blank Shot, Precise Shot, Archer path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} Half of the competence bonus from your Archer trance is added to your damage rolls for attacks made with ranged or thrown weapons (natural weapons do not count for this benefit). In addition, when using the Archer maneuver, you may perform a bull rush attempt instead of a trip attempt." compset="Feat">
+  <thing id="fPUAdArPth" name="Advanced Archer Path" description="You have expanded expertise at ranged combat.\n\n{b}Prerequisites:{/b} Point-Blank Shot, Precise Shot, Archer path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} Half of the competence bonus from your Archer trance is added to your damage rolls for attacks made with ranged or thrown weapons (natural weapons do not count for this benefit). In addition, when using the Archer maneuver, you may perform a bull rush attempt instead of a trip attempt." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -940,7 +940,7 @@ hero.childfound[cfgPUPsTal].field[cfgMaxPw1].value += 5]]></eval>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdAscPa" name="Advanced Ascetic Path" description="You are an expert of unarmed combat.{br}{br}{b}Prerequisites:{/b} Dodge, Psionic Dodge, Ascetic path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} The competence bonus of your Ascetic trance now applies to both AC and saves. In addition, when using the Ascetic maneuver, you can deflect one attack as if using the Deflect Arrows feat, although you may alternatively deflect a melee attack." compset="Feat">
+  <thing id="fPUAdAscPa" name="Advanced Ascetic Path" description="You are an expert of unarmed combat.{br}{br}{b}Prerequisites:{/b} Dodge, Psionic Dodge, Ascetic path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} The competence bonus of your Ascetic trance now applies to both AC and saves. In addition, when using the Ascetic maneuver, you can deflect one attack as if using the Deflect Arrows feat, although you may alternatively deflect a melee attack." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -953,7 +953,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdAssPa" name="Advanced Assassin Path" description="Your attacks have become even deadlier.{br}{br}{b}Prerequisites:{/b} Deep Impact, Psionic Weapon, Assassin path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Assassin trance, you deal sneak attack as a rogue of half your psychic warrior level. Your target must be eligible for sneak attack (not immune to precision-based damage, flanked, denied a Dexterity bonus, etc). In addition, when using the Assassin maneuver, your opponent must make a Fortitude save (DC equal to 10 + your base attack bonus) or be staggered for a number of rounds equal to your Wisdom modifier." compset="Feat">
+  <thing id="fPUAdAssPa" name="Advanced Assassin Path" description="Your attacks have become even deadlier.{br}{br}{b}Prerequisites:{/b} Deep Impact, Psionic Weapon, Assassin path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Assassin trance, you deal sneak attack as a rogue of half your psychic warrior level. Your target must be eligible for sneak attack (not immune to precision-based damage, flanked, denied a Dexterity bonus, etc). In addition, when using the Assassin maneuver, your opponent must make a Fortitude save (DC equal to 10 + your base attack bonus) or be staggered for a number of rounds equal to your Wisdom modifier." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -966,7 +966,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdBraPa" name="Advanced Brawling Path" description="Your grappling abilities are particularly effective.{br}{br}{b}Prerequisites:{/b} Improved Grapple, Improved Unarmed Strike, Brawling path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Brawling trance, you gain a +1 competence bonus to your grapple checks for every three psychic warrior levels you have. In addition, when using the Brawling maneuver, the damage you deal can be lethal, instead of non-lethal." compset="Feat">
+  <thing id="fPUAdBraPa" name="Advanced Brawling Path" description="Your grappling abilities are particularly effective.{br}{br}{b}Prerequisites:{/b} Improved Grapple, Improved Unarmed Strike, Brawling path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Brawling trance, you gain a +1 competence bonus to your grapple checks for every three psychic warrior levels you have. In addition, when using the Brawling maneuver, the damage you deal can be lethal, instead of non-lethal." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -979,12 +979,12 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdvCons" name="Advanced Constructs" description="You are especially skilled at creating astral constructs.{br}{br}{b}Prerequisite:{/b} Able to manifest {i}astral construct{/i}.{br}{br}{b}Benefit:{/b} You gain additional menu options for astral constructs," compset="Feat">
+  <thing id="fPUAdvCons" name="Advanced Constructs" description="You are especially skilled at creating astral constructs.\n\n{b}Prerequisite:{/b} Able to manifest {i}astral construct{/i}.\n\n{b}Benefit:{/b} You gain additional menu options for astral constructs, as detailed below.\n\n{b}{i}Menu A{/b}{/i}\n{b}Armor Spikes (Ex):{/b} The construct’s body is covered in spikes, allowing the construct to deal an extra 1d6 points of piercing damage with a successful trample, constrict, bull rush, or grapple attack. The construct also can make a regular melee attack with the spikes, dealing 1d6 points of damage.\n{b}Dodge (Ex):{/b} The astral construct gains the Dodge feat even if it does not meet the prerequisites.\n{b}Psionic Attacks (Su):{/b} The astral construct’s attacks are treated as psionic for the purposes of overcoming damage reduction.\n{b}Might (Ex):{/b} The astral construct’s melee attacks deal an additional +1 point of damage.\n{b}Talons (Ex):{/b} The astral construct replaces its slam attacks with claw attacks that deal either slashing or piercing damage, chosen at time of manifestation.\n{b}Utility (Ex):{/b} Your construct can perform tasks for you. This can include such tasks as cleaning, cooking, or setting up camp, or any other activity that requires a DC 10 or lower skill check. An astral construct with this option does not need to stay close to the manifester and will continue following any given order until given other instructions. You can select this menu option multiple\ntimes. Each time, the DC of skill checks the construct can attempt increases by 2. An astral construct with this option that is not used in combat has a duration of 1 hour / level. If it later enters combat, its duration resets to 1 round / level, but suffers a -2 penalty to its attack rolls.\n\n{b}{i}Menu B{/b}{/i}\n{b}Great Cleave (Ex):{/b} The astral construct gains the Great Cleave feat even if it does not meet the prerequisites.\n{b}Improved Might (Ex):{/b} The astral construct’s melee attacks deal an additional +3 points of damage. This does not stack with the Might menu option.\n{b}Reach (Ex):{/b} The astral construct’s reach increases by 5 feet.\n{b}Stunning Fist (Ex):{/b} The astral construct gains the Stunning Fist feat even if it does not meet the prerequisites. The construct can use Stunning Fist with its slam attack.\n\n{b}{i}Menu C{/b}{/i}\n{b}Greater Might (Ex):{/b} The astral construct’s melee attacks deal an additional +5 points of damage. This does not stack with the Improved Might or Might menu option.\n{b}Tail Slap (Ex):{/b} The astral construct gains a tail, giving it a tail slap secondary attack. A tail slap deals 2d8 points of damage." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
     </thing>
-  <thing id="fPUAdDerPa" name="Advanced Dervish Path" description="You seem to float between enemies, a blur of destruction.{br}{br}{b}Prerequisites:{/b} Dex 15, Double Slice, Two-Weapon Fighting, Dervish path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Dervish trance, the competence bonus applies to your damage as well as your attack rolls. In addition, you can use the Dervish maneuver even if you moved before your attack and you have no limit of how many 5-foot steps you can take while using the Dervish maneuver, as long as you make at least one attack before each 5-foot step. The maximum distance you can move in this round is that of a double move." compset="Feat">
+  <thing id="fPUAdDerPa" name="Advanced Dervish Path" description="You seem to float between enemies, a blur of destruction.{br}{br}{b}Prerequisites:{/b} Dex 15, Double Slice, Two-Weapon Fighting, Dervish path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Dervish trance, the competence bonus applies to your damage as well as your attack rolls. In addition, you can use the Dervish maneuver even if you moved before your attack and you have no limit of how many 5-foot steps you can take while using the Dervish maneuver, as long as you make at least one attack before each 5-foot step. The maximum distance you can move in this round is that of a double move." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -998,7 +998,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdFerPa" name="Advanced Feral Path" description="Your natural attacks are more vicious.\n\n{b}Prerequisites:{/b} Psionic Fist, Unavoidable Strike, Feral path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} The competence bonus from your trance now also applies to damage rolls made with natural attacks. In addition, when using the Feral maneuver, if two natural attacks in the same charge are successful, your natural weapons deal extra damage. This damage is equal to the damage dealt by one natural attack plus 1-1/2 times your Strength modifier (if the two natural attacks deal different amounts of damage, use the lesser of the two)." compset="Feat">
+  <thing id="fPUAdFerPa" name="Advanced Feral Path" description="Your natural attacks are more vicious.\n\n{b}Prerequisites:{/b} Psionic Fist, Unavoidable Strike, Feral path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} The competence bonus from your trance now also applies to damage rolls made with natural attacks. In addition, when using the Feral maneuver, if two natural attacks in the same charge are successful, your natural weapons deal extra damage. This damage is equal to the damage dealt by one natural attack plus 1-1/2 times your Strength modifier (if the two natural attacks deal different amounts of damage, use the lesser of the two)." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -1011,7 +1011,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdInfPa" name="Advanced Infiltrator Path" description="You have a talent for getting wherever you need to go.{br}{br}{b}Prerequisites:{/b} Deceitful, Infiltrator path class feature, manifester level 10th, base attack bonus +6\n\n{b}Benefit:{/b} When using the Infiltrator trance, the competence bonus to Disguise checks also applies to Bluff and Sense Motive checks. In addition, when using the Infiltrator maneuver, for the duration of your {i}metamorphosis{/i} power, you gain the scent extraordinary ability and the competence bonus to Intimidate checks also applies to Survival checks." compset="Feat">
+  <thing id="fPUAdInfPa" name="Advanced Infiltrator Path" description="You have a talent for getting wherever you need to go.{br}{br}{b}Prerequisites:{/b} Deceitful, Infiltrator path class feature, manifester level 10th, base attack bonus +6\n\n{b}Benefit:{/b} When using the Infiltrator trance, the competence bonus to Disguise checks also applies to Bluff and Sense Motive checks. In addition, when using the Infiltrator maneuver, for the duration of your {i}metamorphosis{/i} power, you gain the scent extraordinary ability and the competence bonus to Intimidate checks also applies to Survival checks." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -1023,7 +1023,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdIntPa" name="Advanced Interceptor Path" description="You defend your allies with uncanny expertise.{br}{br}{b}Prerequisites:{/b} Combat Expertise, Interceptor path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Interceptor trance, you can take a penalty to your Armor Class equal to the competence bonus granted by the Interceptor trance to grant a deflection bonus to Armor Class to one ally threatened by an enemy within your melee reach. In addition, when using the Interceptor maneuver, if your attack was successful, you can make a free disarm or trip attempt against the enemy struck." compset="Feat">
+  <thing id="fPUAdIntPa" name="Advanced Interceptor Path" description="You defend your allies with uncanny expertise.{br}{br}{b}Prerequisites:{/b} Combat Expertise, Interceptor path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Interceptor trance, you can take a penalty to your Armor Class equal to the competence bonus granted by the Interceptor trance to grant a deflection bonus to Armor Class to one ally threatened by an enemy within your melee reach. In addition, when using the Interceptor maneuver, if your attack was successful, you can make a free disarm or trip attempt against the enemy struck." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -1035,7 +1035,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdMndPa" name="Advanced Mind Knight Path" description="You have learned enhanced techniques to make sure you are always armed and dangerous \n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Psionic Shot OR Psionic Weapon, Mind Knight path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} As long as you have both Mind Knight path powers, you can manifest both Mind Knight path powers at the same time as a single standard action. Any time you manifest {i}call weaponry{/i}, you may select one other 1st level power you know; you may manifest that power using Martial Power as if it were a Path power, as long as the attack is made using the weapon summoned. In addition, when using the Mind Knight maneuver, you gain a +1 competence bonus on the attack rolls for every four psychic warrior levels you have." compset="Feat">
+  <thing id="fPUAdMndPa" name="Advanced Mind Knight Path" description="You have learned enhanced techniques to make sure you are always armed and dangerous \n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Psionic Shot OR Psionic Weapon, Mind Knight path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} As long as you have both Mind Knight path powers, you can manifest both Mind Knight path powers at the same time as a single standard action. Any time you manifest {i}call weaponry{/i}, you may select one other 1st level power you know; you may manifest that power using Martial Power as if it were a Path power, as long as the attack is made using the weapon summoned. In addition, when using the Mind Knight maneuver, you gain a +1 competence bonus on the attack rolls for every four psychic warrior levels you have." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -1051,7 +1051,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdSurPa" name="Advanced Survivor Path" description="You are capable of withstanding a variety of situations.{br}{br}{b}Prerequisites:{/b} Con 13, Mind Over Body, Toughness, Survivor path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Survivor trance, you gain resistance to your active energy type. The resistance is equal to 5 for every four psychic warrior levels you have. In addition, when using the Survivor maneuver, the bonus to Will saves can instead apply to Fortitude saves." compset="Feat">
+  <thing id="fPUAdSurPa" name="Advanced Survivor Path" description="You are capable of withstanding a variety of situations.{br}{br}{b}Prerequisites:{/b} Con 13, Mind Over Body, Toughness, Survivor path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Survivor trance, you gain resistance to your active energy type. The resistance is equal to 5 for every four psychic warrior levels you have. In addition, when using the Survivor maneuver, the bonus to Will saves can instead apply to Fortitude saves." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -1065,7 +1065,7 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAdWeaPa" name="Advanced Weaponmaster Path" description="You are a particularly dangerous opponent to duel.{br}{br}{b}Prerequisites:{/b} Combat Expertise, Improved Disarm, Weapon Focus, Weaponmaster path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} The competence bonus from your trance now also applies to damage rolls made with a weapon (natural attacks do not count for this purpose). In addition, when using the Weaponmaster maneuver, you can choose to make a free disarm attempt against your attacker in place of the single melee attack. If your disarm attempt is successful, you may then make a single melee attack against your opponent in place of the 5-foot step." compset="Feat">
+  <thing id="fPUAdWeaPa" name="Advanced Weaponmaster Path" description="You are a particularly dangerous opponent to duel.{br}{br}{b}Prerequisites:{/b} Combat Expertise, Improved Disarm, Weapon Focus, Weaponmaster path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} The competence bonus from your trance now also applies to damage rolls made with a weapon (natural attacks do not count for this purpose). In addition, when using the Weaponmaster maneuver, you can choose to make a free disarm attempt against your attacker in place of the single melee attack. If your disarm attempt is successful, you may then make a single melee attack against your opponent in place of the 5-foot step." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -1814,7 +1814,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
       hero.childfound[cfgPUUnTal].field[cfgMaxPw1].value += 1]]></eval>
     <exprreq message="Wild Talent feat required."><![CDATA[#hasfeat[fPUWildTal] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUAssShot" name="Assassin&apos;s Shot" description="You are capable of using your ranged combat training when making ranged sneak attacks.\n\n{b}Prerequisites:{/b} Sniper combat style, sneak attack +1d6\n\n{b}Benefit:{/b} Once per round when making a successful ranged attack that deals sneak attack damage, you can activate any one style ability that requires expending your psionic focus without having to expend your psionic focus." compset="Feat">
+  <thing id="fPUAssShot" name="Assassin&apos;s Shot" description="You are capable of using your ranged combat training when making ranged sneak attacks.\n\n{b}Prerequisites:{/b} Sniper combat style, sneak attack +1d6\n\n{b}Benefit:{/b} Once per round when making a successful ranged attack that deals sneak attack damage, you can activate any one style ability that requires expending your psionic focus without having to expend your psionic focus." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Combat"/>
@@ -1823,7 +1823,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
       <validate><![CDATA[validif (#value[cSneakAtt] >= 1)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUAssVen" name="Assassin&apos;s Venom" description="The poisons you create are more effective.{br}{br}{b}Prerequisites:{/b} Base attack bonus +3, assassin warrior path, {i}prevenom{/i} or {i}prevenom weapon{/i} path power.{br}{br}{b}Benefit:{/b} You gain a bonus on the save DC of {i}prevenom{/i} and {i}prevenom weapon{/i} equal to the competence bonus granted by your trance class feature." compset="Feat">
+  <thing id="fPUAssVen" name="Assassin&apos;s Venom" description="The poisons you create are more effective.{br}{br}{b}Prerequisites:{/b} Base attack bonus +3, assassin warrior path, {i}prevenom{/i} or {i}prevenom weapon{/i} path power.{br}{br}{b}Benefit:{/b} You gain a bonus on the save DC of {i}prevenom{/i} and {i}prevenom weapon{/i} equal to the competence bonus granted by your trance class feature." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
