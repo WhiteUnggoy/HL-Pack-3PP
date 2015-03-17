@@ -19,7 +19,7 @@ January 30, 2014 - Tim Shadow
   <thing id="fAbilFocIm" name="Ability Focus (Implant)" description="One of this creature&apos;s special attacks is particularly difficult to resist.{br}{br}{b}Prerequisite{/b}: Special attack.{br}{br}{b}Benefit{/b}: Choose one of the creature&apos;s special attacks. Add +2 to the DC for all saving throws against the special attack on which the creature focuses.{br}{br}{b}Special{/b}: A creature can gain this feat multiple times. Its effects do not stack. Each time the creature takes the feat, it applies to a different special attack." compset="Feat" summary="You gain a +2 bonus to the DC of a special attack.">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="Helper"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="Final" priority="10000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -34,7 +34,7 @@ January 30, 2014 - Tim Shadow
   <thing id="fAbilFocSa" name="Ability Focus (SapWIll)" description="One of this creature&apos;s special attacks is particularly difficult to resist.{br}{br}{b}Prerequisite{/b}: Special attack.{br}{br}{b}Benefit{/b}: Choose one of the creature&apos;s special attacks. Add +2 to the DC for all saving throws against the special attack on which the creature focuses.{br}{br}{b}Special{/b}: A creature can gain this feat multiple times. Its effects do not stack. Each time the creature takes the feat, it applies to a different special attack." compset="Feat" summary="You gain a +2 bonus to the DC of a special attack.">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="Helper"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="Final" priority="10000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -50,14 +50,14 @@ January 30, 2014 - Tim Shadow
     <usesource source="pPsiUn"/>
     <tag group="fShowWhat" tag="AlignMatch"/>
     <tag group="fCategory" tag="Psionic"/>
-    <tag group="ProductId" tag="PUProdID"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Base attack bonus +6 required." iserror="no"><![CDATA[#BAB[] >= 6]]></exprreq>
     </thing>
   <thing id="fPUAuton" name="Autonomous" description="You have a knack for psionic self-sufficiency.{br}{br}{b}Benefit:{/b} You get a +2 bonus on all Autohypnosis checks and Knowledge (psionics) checks. If you have 10 ranks in either of these skills, your bonus on that skill increases to +4." compset="Feat" summary="You get a +2 bonus on all Autohypnosis checks and Knowledge (Psionics) checks." uniqueness="useronce">
     <usesource source="pPsiUn"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="PreLevel" priority="5000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -72,22 +72,22 @@ January 30, 2014 - Tim Shadow
         #skillbonus[skPUKnwPsi] += 2
         endif]]></eval>
     </thing>
-  <thing id="fPUBdyFuel" name="Body Fuel" description="You can expand your power point total at the expense of your health.\n\n{b}Benefit:{/b} You can recover 2 power points by taking 1 point of ability burn damage to each of your three physical ability scores: Strength, Dexterity, and Constitution.\n\nYou can recover additional power points for a proportional cost to Strength, Dexterity, and Constitution.\n\nThese recovered points are added to your power point reserve as if you had gained them by resting overnight.\n\n{b}Special:{/b} Only living creatures can use this feat. You can take advantage of this feat only while in your own body.\n\n{b}Note:{/b} To track the ability damage go to the &quot;Adjust&quot; tab and then under &quot;Other Adjustments&quot; add &quot;Ability Score Damage&quot; adjustment." compset="Feat" summary="You can expand your power point total at the expense of your health." uniqueness="useronce">
+  <thing id="fPUBdyFuel" name="Body Fuel" description="You can expand your power point total at the expense of your health.\n\n{b}Benefit:{/b} You can recover 2 power points by taking 1 point of ability burn damage to each of your three physical ability scores: Strength, Dexterity, and Constitution.\n\nYou can recover additional power points for a proportional cost to Strength, Dexterity, and Constitution. These recovered points are added to your power point reserve as if you had gained them by resting overnight.\n\n{b}Special:{/b} Only living creatures can use this feat. You can take advantage of this feat only while in your own body.\n\n{b}Note:{/b} To track the ability damage go to the &quot;Adjust&quot; tab and then under &quot;Other Adjustments&quot; add &quot;Ability Score Damage&quot; adjustment." compset="Feat" summary="You can expand your power point total at the expense of your health." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   <thing id="fPUBstCons" name="Boost Construct" description="Your astral constructs have more abilities.{br}{br}{b}Benefit:{/b} When you create an astral construct, you can give it one additional special ability from any menu that the construct currently has an ability from.{br}{br}{b}Special:{/b} This effect stacks with the summoner&apos;s call ability of the shaper." compset="Feat" summary="Your astral constructs have \nmore abilities." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="General"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   <thing id="fPUBurPwr" name="Burrowing Power" description="Your powers sometimes bypass barriers.\n\n{b}Prerequisites:{/b} Spellcraft 8 ranks.\n\n{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can attempt to manifest your powers against targets that are sheltered behind a wall or force effect. Your power briefly skips through the Astral Plane to bypass the barrier.\n\nIf a power requires line of sight (which includes most powers that affect a target or targets instead of an area), you cannot manifest it as a burrowing power unless you can somehow see the target, such as with {i}clairvoyant sense{/i}. Using this feat increases the power point cost of the power by 4. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="Your powers sometimes bypass barriers." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Spellcraft 8+ ranks required."><![CDATA[#skillranks[skSpellcr] >= 8]]></exprreq>
     </thing>
   <thing id="fPUChnPwr" name="Chain Power" description="You can manifest powers that arc to hit other targets in addition to the primary target.\n\n{b}Benefit{/b}: To use this feat, you must expend your psionic focus. You can chain any power that affects a single target and that deals either acid, cold, electricity, fire, or sonic damage. After the primary target is struck, the power can arc to a number of secondary targets equal to your manifester level (maximum twenty). The secondary arcs each strike one target and deal half as much damage as the primary one did (round down).\n\nEach target gets to make a saving throw, if one is allowed by the power. You choose secondary targets as you like, but they must all be within 30 feet of the primary target, and no target can be struck more than once. You can choose to affect fewer secondary targets than the maximum (to avoid allies in the area, for example).\n\nUsing this feat increases the power point cost of the power by 6. The power&apos;s total cost cannot exceed your manifester level.\n\nIf a power requires line of sight (which includes most powers that affect a target or targets instead of an area), you cannot manifest it as a burrowing power unless you can somehow see the target, such as with clairvoyant sense. Using this feat increases the power point cost of the power by 4. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="You can manifest powers that arc to hit other targets\nin addition to the primary target." uniqueness="useronce">
@@ -851,7 +851,7 @@ Tim Shadow March 26, 2014
   <thing id="fAbilFocUn" name="Ability Focus (Unnatural Aura)" description="One of this creature&apos;s special attacks is particularly difficult to resist.{br}{br}{b}Prerequisite{/b}: Special attack.{br}{br}{b}Benefit{/b}: Choose one of the creature&apos;s special attacks. Add +2 to the DC for all saving throws against the special attack on which the creature focuses.{br}{br}{b}Special{/b}: A creature can gain this feat multiple times. Its effects do not stack. Each time the creature takes the feat, it applies to a different special attack." compset="Feat" summary="You gain a +2 bonus to the DC of a special attack.">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="Helper"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="Final" priority="10000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -903,6 +903,7 @@ Tim Shadow March 26, 2014
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <bootstrap thing="cfgPUPsTal"></bootstrap>
     <eval phase="Final" priority="10000"><![CDATA[
 ~ If we're disabled, do nothing
@@ -917,6 +918,7 @@ hero.childfound[cfgPUPsTal].field[cfgMaxPw1].value += 5]]></eval>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="Helper" tag="ProfGroup"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="PreLevel" priority="10000">hero.childfound[cHelpPU2].field[cGiveSpec].value += 1</eval>
     <exprreq message="Terror class feature required."><![CDATA[#hasability[cPUTerrors] <> 0]]></exprreq>
     </thing>
@@ -931,10 +933,11 @@ hero.childfound[cfgPUPsTal].field[cfgMaxPw1].value += 5]]></eval>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Point Blank Shot feat required"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Precise Shot feat required"><![CDATA[#hasfeat[fPrecShot] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 6+ required"><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Archer path class feature required."><![CDATA[#hasability[cPUArcPPri] <> 0]]></exprreq>
+    <exprreq message="Point Blank Shot feat required"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     <prereq message="Manifester level 10 required">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -944,10 +947,11 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Dodge feat required"><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Psionic Dodge feat required"><![CDATA[#hasfeat[fPUPsiDodg] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 6+ required"><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Ascetic path class feature required."><![CDATA[#hasability[cWPaAscPri] <> 0]]></exprreq>
+    <exprreq message="Dodge feat required"><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
     <prereq message="Manifester level 10 required">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -957,10 +961,11 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Deep Impact feat required"><![CDATA[#hasfeat[fPUDeepImp] <> 0]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Psionic Weapon feat required"><![CDATA[#hasfeat[fPUPsiWep] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 6+ required"><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Assassin path class feature required."><![CDATA[#hasability[cWPaAssPri] <> 0]]></exprreq>
+    <exprreq message="Deep Impact feat required"><![CDATA[#hasfeat[fPUDeepImp] <> 0]]></exprreq>
     <prereq message="Manifester level 10 required">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -970,10 +975,11 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Improved Grapple feat required"><![CDATA[#hasfeat[fImpGrapp] <> 0]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Improved Unarmed Strike feat required"><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 6+ required"><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Brawler path class feature required."><![CDATA[#hasability[cWPaBraPri] <> 0]]></exprreq>
+    <exprreq message="Improved Grapple feat required"><![CDATA[#hasfeat[fImpGrapp] <> 0]]></exprreq>
     <prereq message="Manifester level 10 required">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -983,16 +989,18 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   <thing id="fPUAdDerPa" name="Advanced Dervish Path" description="You seem to float between enemies, a blur of destruction.{br}{br}{b}Prerequisites:{/b} Dex 15, Double Slice, Two-Weapon Fighting, Dervish path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Dervish trance, the competence bonus applies to your damage as well as your attack rolls. In addition, you can use the Dervish maneuver even if you moved before your attack and you have no limit of how many 5-foot steps you can take while using the Dervish maneuver, as long as you make at least one attack before each 5-foot step. The maximum distance you can move in this round is that of a double move." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Double Slice feat required"><![CDATA[#hasfeat[fDblSlice] <> 0]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Two Weapon Fighting feat required"><![CDATA[#hasfeat[fTwoWep] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 6+ required"><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Dervish path class feature required."><![CDATA[#hasability[cPUDerPPri] <> 0]]></exprreq>
     <exprreq message="Dexterity 15+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Double Slice feat required"><![CDATA[#hasfeat[fDblSlice] <> 0]]></exprreq>
     <prereq message="Manifester level 10 required">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -1002,10 +1010,11 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Psionic Fist feat required."><![CDATA[#hasfeat[fPUPsiFist] <> 0]]></exprreq>
     <exprreq message="Unavoidable Strike feat required."><![CDATA[#hasfeat[fPUUStrike] <> 0]]></exprreq>
     <exprreq message="Feral Path class feature required."><![CDATA[#hasability[cWPaFWaPri] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <prereq message="Manifester level 10+ required.">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -1015,9 +1024,10 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Deceitful feat required."><![CDATA[#hasfeat[fDeceit] <> 0]]></exprreq>
     <exprreq message="Infiltrator class feature required."><![CDATA[#hasability[cPUInfPPri] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <prereq message="Manifester level 10+ required.">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -1027,9 +1037,10 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Combat Expertise feat required."><![CDATA[#hasfeat[fComExpert] <> 0]]></exprreq>
     <exprreq message="Interceptor Path class feature required."><![CDATA[#hasability[cPUIntPPri] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <prereq message="Manifester level 10+ required.">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -1039,27 +1050,29 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Psionic Meditation feat required."><![CDATA[#hasfeat[fPUPsiMed] <> 0]]></exprreq>
     <exprreq message="Mindknight Path class feature required."><![CDATA[#hasability[cWPaMKnPri] <> 0]]></exprreq>
     <exprreq message="Wisdom 13+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
-    <prereq message="Psionic Shot or Psionic Weapon feat required">
-      <validate><![CDATA[validif (#hasfeat[fPUPsiShot] + #hasfeat[fPUPsiWep] <> 0)]]></validate>
-      </prereq>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <prereq message="Manifester level 10+ required.">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
+      </prereq>
+    <prereq message="Psionic Shot or Psionic Weapon feat required">
+      <validate><![CDATA[validif (#hasfeat[fPUPsiShot] + #hasfeat[fPUPsiWep] <> 0)]]></validate>
       </prereq>
     </thing>
   <thing id="fPUAdSurPa" name="Advanced Survivor Path" description="You are capable of withstanding a variety of situations.{br}{br}{b}Prerequisites:{/b} Con 13, Mind Over Body, Toughness, Survivor path class feature, manifester level 10th, base attack bonus +6 \n\n{b}Benefit:{/b} When using the Survivor trance, you gain resistance to your active energy type. The resistance is equal to 5 for every four psychic warrior levels you have. In addition, when using the Survivor maneuver, the bonus to Will saves can instead apply to Fortitude saves." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Mind Over Body feat required."><![CDATA[#hasfeat[fPUMindBod] <> 0]]></exprreq>
     <exprreq message="Toughness feat required."><![CDATA[#hasfeat[fToughness] <> 0]]></exprreq>
     <exprreq message="Survivor Path class feature required."><![CDATA[#hasability[cPUSurPPri] <> 0]]></exprreq>
     <exprreq message="Constitution 15+ required."><![CDATA[child[aCON].field[aFinalVal].value >= 15]]></exprreq>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <prereq message="Manifester level 10+ required.">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
@@ -1069,29 +1082,32 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Combat Expertise feat required."><![CDATA[#hasfeat[fComExpert] <> 0]]></exprreq>
     <exprreq message="Improved Disarm feat required."><![CDATA[#hasfeat[fImpDis] <> 0]]></exprreq>
     <exprreq message="Weaponmaster Path class feature required."><![CDATA[#hasability[cWPaWpnPri] <> 0]]></exprreq>
     <exprreq message="Weapon Focus feat required."><![CDATA[#hasfeat[fWepFoc] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <prereq message="Manifester level 10+ required.">
       <validate><![CDATA[~check for Manifester level 10
 validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUBroDrea" name="Broken Dreams" description="Your unarmed strikes are empowered by nightmares.{br}{br}{b}Prerequisites:{/b} Devastating touch class feature, Improved Unarmed Strike, Intimidate 3 ranks \n\n{b}Benefit:{/b} When performing an unarmed attack, you can choose to also deliver your devastating touch damage through that attack." compset="Feat">
+  <thing id="fPUBroDrea" name="Broken Dreams" description="Your unarmed strikes are empowered by nightmares.{br}{br}{b}Prerequisites:{/b} Devastating touch class feature, Improved Unarmed Strike, Intimidate 3 ranks \n\n{b}Benefit:{/b} When performing an unarmed attack, you can choose to also deliver your devastating touch damage through that attack." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="fCategory" tag="Style"/>
-    <exprreq message="Improved Unarmed Strike feat required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Devastating Touch class feature required."><![CDATA[#hasability[cPUDevaTou] <> 0]]></exprreq>
     <exprreq message="Intimidate 3+ skill ranks required."><![CDATA[#skillranks[skIntim] >= 3]]></exprreq>
+    <exprreq message="Improved Unarmed Strike feat required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUBurnPwr" name="Burning Power" description="You cause creatures to take extra damage when you affect them with a power that has the acid or fire descriptor.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. The acid or fire effects of the affected power adhere to the creature, causing more damage the next round. When a creature takes acid or fire damage from the affected power, that creature takes damage equal to 2 × the power&apos;s level at the start of its next turn. The damage is acid or fire, as determined by the power&apos;s descriptor.{br}{br}If a burning power has both the fire and acid descriptor, the manifester chooses what kind of damage is dealt by the burning power effect. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not deal fire or acid damage cannot be used with this feat." compset="Feat">
+  <thing id="fPUBurnPwr" name="Burning Power" description="You cause creatures to take extra damage when you affect them with a power that has the acid or fire descriptor.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. The acid or fire effects of the affected power adhere to the creature, causing more damage the next round. When a creature takes acid or fire damage from the affected power, that creature takes damage equal to 2 × the power&apos;s level at the start of its next turn. The damage is acid or fire, as determined by the power&apos;s descriptor.{br}{br}If a burning power has both the fire and acid descriptor, the manifester chooses what kind of damage is dealt by the burning power effect. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not deal fire or acid damage cannot be used with this feat." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   <thing id="fPUConcPwr" name="Concussive Power" description="You cause creatures to be disoriented when you affect them with a power that has the sonic descriptor.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. With sonic damage comes a concussive wave of energy that rattles creatures affected by the power.{br}{br}A concussive power causes creatures that take damage from a power that has the sonic descriptor to take a -2 penalty on attack rolls, saving throws, skill checks, and ability checks for a number of rounds equal to the power level of the power. A concussive power only affects powers with the sonic descriptor. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not deal sonic damage cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1818,6 +1834,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Sniper Combat Style required."><![CDATA[#hasability[cPUMrkSni] <> 0]]></exprreq>
     <prereq message="Sneak Attack 1d6 required.">
       <validate><![CDATA[validif (#value[cSneakAtt] >= 1)]]></validate>
@@ -1827,8 +1844,9 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 3+ required"><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Assassin path class feature required."><![CDATA[#hasability[cWPaAssPri] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus 3+ required"><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
     <prereq message="Prevenom or Prevenom Weapon Path Powers required.">
       <validate><![CDATA[
         ~set our focus to the Psywarrior's Path Power Prevenom 
