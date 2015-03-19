@@ -2118,31 +2118,32 @@ field[abValue].value += 1
     <tag group="trCategory" tag="Racial"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="Race" tag="rOphiduan"/>
-    <eval phase="Final" priority="20000"><![CDATA[~construct the situational text here for consistencey
-var sittext as string
+    <eval phase="Final" priority="20000"><![CDATA[
+      ~construct the situational text here for consistencey
+      var sittext as string
 
-sittext = "+1 trait bonus to all Charisma-based checks against creatures affected by one of your Telepathy powers"
+      sittext = "+1 trait bonus to all Charisma-based checks against creatures affected by one of your Telepathy powers"
 
-~now all the situational bonuses
-var nChaSkill as number
-foreach pick in hero from BaseSkill
-   ~ set Cha based skill flag to FALSE
-   nChaSkill = 0
+      ~now all the situational bonuses
+      var nChaSkill as number
+      foreach pick in hero from BaseSkill
+         ~ set Cha based skill flag to FALSE
+         nChaSkill = 0
 
-   ~ If skill override tag to Cha is found then set flag to TRUE
-   if (eachpick.tagis[SkillOver.aCHA] <> 0) then
-      nChaSkill = 1
+         ~ If skill override tag to Cha is found then set flag to TRUE
+         if (eachpick.tagis[SkillOver.aCHA] <> 0) then
+            nChaSkill = 1
 
-   ~..else check the linkage to see if Cha skill then set flag to TRUE
-   elseif (eachpick.linkage[skillattr].tagis[thingid.aCHA] <> 0) then
-      nChaSkill = 1
-   endif
+         ~..else check the linkage to see if Cha skill then set flag to TRUE
+         elseif (eachpick.linkage[skillattr].tagis[thingid.aCHA] <> 0) then
+            nChaSkill = 1
+         endif
 
-   ~ If we found a valid Cha based skill set the situational text
-   If (nChaSkill <> 0) Then
-      #situational[eachpick,sittext,field[pSource].text]
-   Endif
-nexteach]]></eval>
+         ~ If we found a valid Cha based skill set the situational text
+         If (nChaSkill <> 0) Then
+            #situational[eachpick,sittext,field[pSource].text]
+         Endif
+      nexteach]]></eval>
     </thing>
   <thing id="trPUOphInf" name="Infiltrator" description="You have had extensive dealings with other humanoid races, and have learned to mimic their mannerisms and body language to ease their fears of your kind. You gain a +1 trait bonus to Bluff and Diplomacy checks against non-ophiduan humanoids, and Sense Motive is always a class skill for you." compset="Trait">
     <usesource source="pPsiUn"/>
@@ -2185,16 +2186,16 @@ nexteach]]></eval>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="User" tag="Activation"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <eval phase="Final" priority="10001"><![CDATA[~ If we're disabled, do nothing
+    <eval phase="Final" priority="10001"><![CDATA[
+      ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
-
-~ If not activated get out now
+      ~ If not activated get out now
       doneif (tagis[Helper.Activated] = 0)
 
-~ Add die total of Disrupt Pattern and Enhanced Disruption
+      ~ Add die total of Disrupt Pattern and Enhanced Disruption
       field[abValue].value += #value[cPUDisPatt] + #value[cPUEnhDisr]
 
-~ Display the extra dmg
+      ~ Display the extra dmg
       #extradamage[hero.childfound[cPUDisPatt],field[abText].text & "+" & field[abValue].value,field[name].text]]]></eval>
     <exprreq message="Knowledge (planes) 5 ranks required"><![CDATA[#skillranks[skKnowPlan] >= 5]]></exprreq>
     <exprreq message="Knowledge (psionics) 5 ranks required"><![CDATA[#skillranks[skPUKnwPsi] >= 5]]></exprreq>
@@ -2203,4 +2204,22 @@ nexteach]]></eval>
     <exprreq message="Knowledge (nature) 5 ranks required"><![CDATA[#skillranks[skKnowNat] >= 5]]></exprreq>
     <exprreq message="Knowledge (dungeoneering) 5 ranks required"><![CDATA[#skillranks[skKnowDun] >= 5]]></exprreq>
     </thing>
+  <thing id="fPUFgtBlad" name="Fighter&apos;s Blade" description="Your training with a mind blade is not hindered by dabbling in other studies.\n\n{b}Prerequisite:{/b} Enhanced Mind Blade class feature\n\n{b}Benefit:{/b} Treat your class level as four higher to determine your enhanced mind blade class feature and which blade skills you can select, to a maximum of your character level." compset="Feat" summary="Your training with a mind blade is not hindered by dabbling in other studies." uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] = 1)
+      ~ If Soulknife Enhance Mindblade not live get out now!
+      doneif (hero.childlives[cSknEnhMB] = 0)
+
+      ~ Adds four effective class levels to Mind Blade
+      hero.childfound[cSknEnhMB].field[xExtraLev].value += minimum( #totallevelcount[]-#featlevelcount[Soulknife], 4)]]></eval>
+    <prereq message="Enhanced Mind Blade required">
+      <validate>@valid = #hasability[cSknEnhMB]</validate>
+      </prereq>
+    </thing>
+
   </document>
