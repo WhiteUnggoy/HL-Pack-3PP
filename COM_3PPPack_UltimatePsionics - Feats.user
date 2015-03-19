@@ -2188,8 +2188,8 @@ field[abValue].value += 1
     </thing>
   <thing id="fPUFgtBlad" name="Fighter&apos;s Blade" description="Your training with a mind blade is not hindered by dabbling in other studies.\n\n{b}Prerequisite:{/b} Enhanced Mind Blade class feature\n\n{b}Benefit:{/b} Treat your class level as four higher to determine your enhanced mind blade class feature and which blade skills you can select, to a maximum of your character level." compset="Feat" summary="Your training with a mind blade is not hindered by dabbling in other studies." uniqueness="useronce">
     <usesource source="pPsiUn"/>
-    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
-    <tag group="Helper" tag="NoPathSoc" abbrev="NoPathSoc"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Helper" tag="NoPathSoc"/>
     <tag group="ProductId" tag="PUProdID"/>
     <eval phase="PreLevel" priority="10000"><![CDATA[
       ~ If we're disabled, do nothing
