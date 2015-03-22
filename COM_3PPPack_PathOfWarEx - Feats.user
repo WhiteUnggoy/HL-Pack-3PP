@@ -290,4 +290,375 @@ Email: mail@theirongolem.com</info_author>
     <exprreq message="Fort save bonus +2 required"><![CDATA[hero.child[svFort].field[svBase].value >= 2]]></exprreq>
     <exprreq message="Collective class feature required"><![CDATA[(#hasability[cPUVitColl] + #hasability[cPUTacColl]) <> 0]]></exprreq>
     </thing>
+  <thing id="fPWBBStyle" name="Broken Blade Style" description="Your fists strike harder than any blade\n\n{b}Prerequisites:{/b} 1 or more Broken Blade stances, Improved Unarmed Strike, Acrobatics 3 ranks\n\n{b}Benefit:{/b} Your unarmed strikes ignore DR and hardness equal to 1/2 your character level." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+
+      perform hero.assign[Custom.ActiveStyl]]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Must know one or more Broken Blade stances"><![CDATA[hero.tagcount[HasStance.BrokenBlad] > 0]]></exprreq>
+    <exprreq message="Improved Unarmed Strike feat required"><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <exprreq message="Acrobatics 3+ ranks required"><![CDATA[#skillranks[skAcrobat] >= 3]]></exprreq>
+    </thing>
+  <thing id="fPWBBCrush" name="Broken Blade Crush" description="A blow from your fist crushes armor as easily as bones\n\n{b}Prerequisites:{/b} Broken Blade Style, Acrobatics 7 ranks\n\n{b}Benefit:{/b} Once per round, when you make an unarmed strike against an opponent wearing armor, you may make an unarmed sunder attempt as a free action that does not provoke attacks of opportunity." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <exprreq message="Broken Blade Style feat required"><![CDATA[#hasfeat[fPWBBStyle] <> 0]]></exprreq>
+    <exprreq message="Acrobatics 7+ ranks required"><![CDATA[#skillranks[skAcrobat] >= 7]]></exprreq>
+    </thing>
+  <thing id="fPWBBRythm" name="Broken Blade Rythym" description="Every blow from your fist builds on the last.\n\n{b}Prerequisites:{/b} Broken Blade Crush, Acrobatics 11 ranks\n\n{b}Benefit:{/b} Once per round when you succeed on an attack roll as part of a Broken Blade strike, you can make a free combat maneuver attempt against one opponent in melee range." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <exprreq message="Broken Blade Crush feat required"><![CDATA[#hasfeat[fPWBBCrush] <> 0]]></exprreq>
+    <exprreq message="Acrobatics 11+ ranks required"><![CDATA[#skillranks[skAcrobat] >= 11]]></exprreq>
+    </thing>
+  <thing id="fPWBSStyle" name="Black Seraph Style" description="You laugh off the cowardly assaults of your foes.\n\n{b}Prerequisites:{/b} 1 or more Black Seraph stances, Intimidate 3 ranks\n\n{b}Benefit:{/b} You gain a +1 profane bonus to armor class and saving throws against creatures that are shaken, frightened, panicked, or cowering. This bonus increases by +1 for every 5 character levels." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="1"/>
+    <fieldval field="actName2" value="Attacker under fear effect"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Calculate AC bonus
+      field[abValue].value += round(herofield[tTotLevel].value/5,0,-1)
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      ~ Stop now if we don't have any valid attackers to apply the bonus against
+      doneif (field[abilAct2].value = 0)
+
+      ~ Apply profane bonus to AC
+      #applybonus[BonProfane, hero.child[ArmorClass], field[abValue].value]
+
+      ~ Assign active style tag
+      perform hero.assign[Custom.ActiveStyl]]]></eval>
+    <eval phase="Render" priority="20000" index="2"><![CDATA[      field[livename].text &= " " & signed(field[abValue].value)]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Must know one or more Black Seraph stances"><![CDATA[hero.tagcount[HasStance.BlackSerph] > 0]]></exprreq>
+    <exprreq message="Intimidate 3+ ranks required"><![CDATA[#skillranks[skIntim] >= 3]]></exprreq>
+    </thing>
+  <thing id="fPWBSMalev" name="Black Seraph&apos;s Malevolence" description="You rip into creatures that cannot withstand your terror.\n\n{b}Prerequisites:{/b} Black Seraph Style, Intimidate 7 ranks\n\n{b}Benefit:{/b} You treat creatures that are shaken, frightened, panicked, or cowering as being good-aligned when calculating profane damage you deal against them." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <exprreq message="Black Seraph Style feat required"><![CDATA[#hasfeat[fPWBSStyle] <> 0]]></exprreq>
+    <exprreq message="Intimidate 7+ ranks required"><![CDATA[#skillranks[skIntim] >= 7]]></exprreq>
+    </thing>
+  <thing id="fPWBSAnnil" name="Black Seraph Annihilation" description="You drive your foes before you.\n\n{b}Prerequisites:{/b} Black Seraph’s Malevolence, Intimidate 11 ranks\n\n{b}Benefit:{/b} Creatures within 30 feet of you lose immunity to fear. Creatures that are immune to mind-affecting effects can still be affected by fear, but gain a +5 resistance bonus to any saving throw granted." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <exprreq message="Black Seraph&apos;s Malevolence feat required"><![CDATA[#hasfeat[fPWBSMalev] <> 0]]></exprreq>
+    <exprreq message="Intimidate 11+ ranks required"><![CDATA[#skillranks[skIntim] >= 11]]></exprreq>
+    </thing>
+  <thing id="fPWCRStyle" name="Cursed Razor Style" description="You persecute those under the influence of your dark power.\n\n{b}Prerequisites:{/b} 1 or more Cursed Razor stances, Spellcraft 3 ranks.\n\n{b}Benefit:{/b} Whenever you damage a cursed creature with a melee attack, that creature suffers an additional 2 points of bleed damage, plus 2 points for every 4 character levels you possess. A DC 15 Heal check or the application of magical healing halts this damage." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="actName2" value="Target is cursed"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="Render" priority="20000" index="2"><![CDATA[      field[livename].text &= " (" & signed(field[abValue].value) & " bleed damage)"]]></eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Calculate additional bleed damage
+      field[abValue].value += round(herofield[tTotLevel].value/4,0,-1) * 2
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      ~ Assign active style tag
+      perform hero.assign[Custom.ActiveStyl]
+
+      ~ If we have a cursed target, add bleed damage
+      if (field[abilAct2].value <> 0) then
+        foreach pick in hero from BaseWep 
+          #extradamage[eachpick, signed(field[abValue].value) & " bleed", field[thingname].text]
+        nexteach
+      endif]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Spellcraft 3+ ranks required"><![CDATA[#skillranks[skSpellcr] >= 3]]></exprreq>
+    <exprreq message="Must know one or more Cursed Razor stances"><![CDATA[hero.tagcount[HasStance.CurseRazor] > 0]]></exprreq>
+    </thing>
+  <thing id="fPWCRPlag" name="Cursed Razor Plague" description="Your curses spread amongst your enemies.\n\n{b}Prerequisites:{/b} Cursed Razor Style, Spellcraft 7 ranks\n\n{b}Benefit:{/b} Whenever you cause an opponent to become cursed by an effect other than this feat, you may select an additional opponent within 30 ft.; the additional opponent becomes cursed for the same duration." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Spellcraft 7+ ranks required"><![CDATA[#skillranks[skSpellcr] >= 7]]></exprreq>
+    <exprreq message="Cursed Razor Style feat required"><![CDATA[#hasfeat[fPWCRStyle] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWCRMass" name="Cursed Razor Massacre" description="You tear into your victims like a plague-laced wind.\n\n{b}Prerequisites:{/b} Cursed Razor Plague, Spellcraft 11 ranks\n\n{b}Benefit:{/b} Whenever you strike a cursed creature with a melee attack you may make an additional attack against a different cursed creature within your reach. This additional attack is made at your highest attack bonus and may be made up to once per round." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Spellcraft 11+ ranks required"><![CDATA[#skillranks[skSpellcr] >= 11]]></exprreq>
+    <exprreq message="Cursed Razor Plague feat required"><![CDATA[#hasfeat[fPWCRPlag] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWGLStyle" name="Golden Lion Style" description="You are adept at taking advantage of your allies missed opportunities\n\n{b}Prerequisites:{/b} 1 or more Golden Lion stances, Diplomacy 3 ranks\n\n{b}Benefit:{/b} Whenever an ally who is flanking the same enemy as you misses an attack against that opponent, you can make an attack of opportunity against that opponent." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      ~ Assign active style tag
+      perform hero.assign[Custom.ActiveStyl]]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Must know one or more Golden Lion stances"><![CDATA[hero.tagcount[HasStance.GoldenLion] > 0]]></exprreq>
+    <exprreq message="Diplomacy 3+ ranks required"><![CDATA[#skillranks[skDiplo] >= 3]]></exprreq>
+    </thing>
+  <thing id="fPWGLCharg" name="Golden Lion Charge" description="Your awareness of the battlefield lets you seize opportunity at a moment’s notice\n\n{b}Prerequisites:{/b} Golden Lion Style, Diplomacy 7 ranks\n\n{b}Benefit:{/b} Whenever an opponent within 30 feet attacks an ally and misses, you can expend a readied counter to move up to your speed, provided that movement ends with you adjacent to the opponent that missed your ally, and make a single attack of opportunity against them." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Diplomacy 7+ ranks required"><![CDATA[#skillranks[skDiplo] >= 7]]></exprreq>
+    <exprreq message="Golden Lion Style feat required"><![CDATA[#hasfeat[fPWGLStyle] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWGLComm" name="Golden Lion Charge" description="Your battlefield presence bolsters the will of your allies\n\n{b}Prerequisites:{/b} Golden Lion Charge\n\n{b}Benefit:{/b} You can expend a readied boost maneuver to grant all allies within 30 ft. 5 temporary hit points per attack you make this round.  These temporary hit points stack with themselves and last for up to 1 round or until lost." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Diplomacy 11+ ranks required"><![CDATA[#skillranks[skDiplo] >= 1]]></exprreq>
+    <exprreq message="Golden Lion Charge feat required"><![CDATA[#hasfeat[fPWGLCharg] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWITStyle" name="Iron Tortoise Style" description="You guard yourself and allies with your trusty shield at your side\n\n{b}Prerequisites:{/b} Proficiency with shields, 1 more Iron Tortoise stances, Bluff 3 ranks\n\n{b}Benefit:{/b} You deal damage with shield bash attacks as though you were one size larger than you actually are. This stacks with other effects that increase size." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PreLevel" priority="1000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      ~ Assign active style tag
+      perform hero.assign[Custom.ActiveStyl]
+
+      ~ Increase our shield bash damage by one die step
+      foreach pick in hero from BaseWep where "wCategory.ShieldBash"
+        perform eachpick.assign[Helper.DamageUp]
+      nexteach]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Must know one or more Iron Tortoise stances"><![CDATA[hero.tagcount[HasStance.IronTort] > 0]]></exprreq>
+    <exprreq message="Bluff 3+ ranks required"><![CDATA[#skillranks[skBluff] >= 3]]></exprreq>
+    </thing>
+  <thing id="fPWITShell" name="Iron Tortoise Shell" description="Your shield protects you from more than just physical assaults\n\n{b}Prerequisites:{/b} Iron Tortoise Style, Bluff 7 ranks\n\n{b}Benefit:{/b} Whenever you initiate a counter, you gain the evasion special ability until the end of your next turn." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Iron Tortoise Style feat required"><![CDATA[#hasfeat[fPWITStyle] <> 0]]></exprreq>
+    <exprreq message="Bluff 7+ ranks required"><![CDATA[#skillranks[skBluff] >= 7]]></exprreq>
+    </thing>
+  <thing id="fPWITSnap" name="Iron Tortoise Snap" description="Your sword-and-shield style is brutally efficient.\n\n{b}Prerequisites:{/b} Iron Tortoise Shell, Bluff 13 ranks\n\n{b}Benefit:{/b} You may make an additional attack at your highest attack bonus with a non-shield weapon whenever you hit a creature with a shield bash. This additional attack must be made against the creature struck by your shield bash. You may only make up to two additional attacks per round in this manner." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Iron Tortoise Shell feat required"><![CDATA[#hasfeat[fPWITShell] <> 0]]></exprreq>
+    <exprreq message="Bluff 13+ ranks required"><![CDATA[#skillranks[skBluff] >= 13]]></exprreq>
+    </thing>
+  <thing id="fPWPFStyle" name="Primal Fury Style" description="Your fury drives you to close with your foes so that you can tear into them more easily\n\n{b}Prerequisites:{/b} 1 or more Primal Fury stances, Survival 3 ranks\n\n{b}Benefit:{/b} When you charge a creature, add a +5 ft competence bonus to your charge distance for every 4 character levels." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="5"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Calculate additional speed bonus
+      field[abValue].value += round(herofield[tTotLevel].value/4,0,-1) * 5
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      ~ Assign active style tag
+      perform hero.assign[Custom.ActiveStyl]
+
+      ~ Stop now if we're not charging
+      doneif (hero.childfound[pstChargin].field[pIsOn].value <> 1)
+
+      ~ Add competence bonus to speed
+      #competencebonus[hero.child[Speed], field[abValue].value]]]></eval>
+    <eval phase="Render" priority="10000" index="2"><![CDATA[      field[livename].text &= " (" & signed(field[abValue].value) & " ft)"]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Survival 3+ ranks required"><![CDATA[#skillranks[skSurvival] >= 3]]></exprreq>
+    <exprreq message="Must know one or more Primal Fury stances"><![CDATA[hero.tagcount[HasStance.PrimalFury] > 0]]></exprreq>
+    </thing>
+  <thing id="fPWPFSlash" name="Primal Fury Slash" description="Your swift movements and skill allow you to strike enemies as you close with your target.\n\n{b}Prerequisites:{/b} Primal Fury Style, Survival 7 ranks\n\n{b}Benefit:{/b} When you charge a creature, you can make a single attack against any other creature that is adjacent to you at any point during your movement." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Survival 7+ ranks required"><![CDATA[#skillranks[skSurvival] >= 7]]></exprreq>
+    <exprreq message="Primal Fury Style feat required"><![CDATA[#hasfeat[fPWPFStyle] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWPFSavg" name="Primal Fury Savagery" description="You strike with speed and strength beyond that of any other\n\n{b}Prerequisites:{/b} Primal Fury Slash, Survival 11 ranks\n\n{b}Benefit:{/b} When you charge an opponent, your attack deals 2d6 bleed damage in addition to its normal damage.  This bleed damage is not increased if you make more than one attack against the same target.  The bleed damage lasts until healed by a DC 15 heal check or any amount of magical healing." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="abValue2" value="6"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~if Primal Fury Style is not active, we're done
+      doneif (hero.childfound[fPWPFStyle].field[abilActive].value <> 1)
+
+      ~ Stop now if we're not charging
+      doneif (hero.childfound[pstChargin].field[pIsOn].value <> 1)
+
+      ~ Add bleed damage to attacks
+      foreach pick in hero from BaseWep
+        #extradamage[eachpick, "+" & field[abValue].value & "d" & field[abValue2].value & " bleed", field[thingname].text]
+      nexteach]]></eval>
+    <exprreq message="Survival 11+ ranks required"><![CDATA[#skillranks[skSurvival] >= 11]]></exprreq>
+    <exprreq message="Primal Fury Slash feat required"><![CDATA[#hasfeat[fPWPFSlash] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWSMStyle" name="Shattered Mirror Style" description="You are skilled in the art of reflective combat.\n\n{b}Prerequisites:{/b} 1 or more Shattered Mirror stances, Craft 3 ranks\n\n{b}Benefit:{/b} When wielding one or more Shattered Mirror discipline weapons, increase your shield bonus to AC by +2 (even if you don’t have a shield bonus)." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="2"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Combat"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      perform hero.assign[Custom.ActiveStyl]
+
+      ~ Stop now if we don't have a Shattered Mirror weapon equipped
+      doneif (hero.findchild[BaseWep, "(Hero.MainHand | Hero.OffHand) & (Discipline.ShaMirror | " & hero.childfound[zPWShaMirr].tagids[wFtrGroup.?, " | "] & ")"].tagis[thingid.?] = 0)
+
+      ~ Add AC bonus
+      hero.child[ArmorClass].field[tACShield].value += field[abValue].value]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Must know one or more Shattered Mirror stances"><![CDATA[hero.tagcount[HasStance.ShaMirror] > 0]]></exprreq>
+    <prereq message="Craft 3+ ranks required">
+      <validate><![CDATA[      foreach pick in hero from BaseSkill where "Helper.SkCatCraft"
+        validif (eachpick.field[skRanks].value >= 3)
+      nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fPWSMWaltz" name="Shattered Mirror Waltz" description="Your supernatural swordplay lets you move like an illusion.\n\n{b}Prerequisites:{/b} Shattered Mirror Style, Craft 7 ranks\n\n{b}Benefit:{/b} You ignore movement penalties inflicted by difficult terrain (other forms of penalties, such as damage, still affect you)." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Combat"/>
+    <exprreq message="Shattered Mirror Style feat required"><![CDATA[#hasfeat[fPWSMStyle] <> 0]]></exprreq>
+    <prereq message="Craft 7+ ranks required">
+      <validate><![CDATA[      foreach pick in hero from BaseSkill where "Helper.SkCatCraft"
+        validif (eachpick.field[skRanks].value >= 7)
+      nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fPWSMDual" name="Shattered Mirror Duality" description="Your reality-distorting power reflects your attacks, making it hard to defend against you.\n\n{b}Prerequisites:{/b} Shattered Mirror Waltz, Craft 13 ranks\n\n{b}Benefit:{/b} Once per round, you may expend one of your readied boosts as a swift action. If you do, roll each attack you make this round twice and use the better result." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Combat"/>
+    <exprreq message="Shattered Mirror Waltz feat required"><![CDATA[#hasfeat[fPWSMWaltz] <> 0]]></exprreq>
+    <prereq message="Craft 13+ ranks required">
+      <validate><![CDATA[      foreach pick in hero from BaseSkill where "Helper.SkCatCraft"
+        validif (eachpick.field[skRanks].value >= 13)
+      nexteach]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fPWSTStyle" name="Scarlet Throne Style" description="Your skill with a single blade allows you to strike with the same force as those much stronger than you.\n\n{b}Prerequisites:{/b} 1 or more Scarlet Throne stances, Sense Motive 3 ranks\n\n{b}Benefit:{/b} When wielding your weapon one handed with nothing in your off hand, you treat your weapon as being wielded in two hands for purposes of feats and abilities which would benefit from this change.\n\n{b}NOTE:{/b} Currently, the mechanical effects of this feat cannot be effectively implemented in Hero Lab.  When using this feat, set your weapon to be equipped in both hands when you need to calculate effects." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="2"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Combat"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      perform hero.assign[Custom.ActiveStyl]
+
+      ~ Stop now if we don't have exactly one weapon in exactly one hand
+      doneif (hero.tagcount[Hero.EquipWep] + hero.tagcount[Hero.EquipMain] + hero.tagcount[Hero.EquipOff] <> 2)]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Must know one or more Scarlet Throne stances"><![CDATA[hero.tagcount[HasStance.ScarletThr] > 0]]></exprreq>
+    <exprreq message="Sense Motive 3+ ranks required"><![CDATA[#skillranks[skSenseMot] >= 3]]></exprreq>
+    </thing>
   </document>

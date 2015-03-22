@@ -32,15 +32,18 @@
     <tag group="PathOfWar" tag="selDisc"/>
     <tag group="Discipline" tag="ShaMirror"/>
     <tag group="HasMan" tag="ShaMirror"/>
-    <tag group="ClassSkill" tag="skCrafSkul"/>
+    <tag group="ClassSkill" tag="skCrafScul"/>
     <tag group="wFtrGroup" tag="BladeHeavy"/>
     <tag group="wFtrGroup" tag="Close"/>
     <tag group="wFtrGroup" tag="BladeLight"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="ClassSkill" tag="skCrafGlas"/>
     <tag group="ClassSkill" tag="skCrafPain"/>
-    <eval phase="First" priority="50">~ Setup the Discipline Class Skill
-      Call PWsetupDSk</eval>
+    <eval phase="First" priority="50"><![CDATA[~ Setup the Discipline Class Skill
+      ~Unlike most disciplines, this one has multiple class skills, so we won't use the PWsetupDSk procedure as it can only handle one and we don't want to rewrite it to use a foreach
+      perform hero.childfound[skCrafScul].assign[Discipline.ShaMirror]
+      perform hero.childfound[skCrafGlas].assign[Discipline.ShaMirror]
+      perform hero.childfound[skCrafPain].assign[Discipline.ShaMirror]]]></eval>
     </thing>
   <thing id="dPWShaMirr" name="Shattered Mirror Discipline" compset="SplSchool">
     <usesource source="srcPOWEx"/>
@@ -134,5 +137,14 @@
     <usesource source="srcPOWEx"/>
     <tag group="PathOfWar" tag="Discipline"/>
     <tag group="Discipline" tag="ElemFlux"/>
+    </thing>
+  <thing id="mechPoWEx" name="Path of War Expanded Mechanic" description="This bootstraps the martial disciplines from Path of War Expanded" compset="Mechanics">
+    <bootstrap thing="zPWCrsRazr"></bootstrap>
+    <bootstrap thing="zPWElmFlux"></bootstrap>
+    <bootstrap thing="zPWEtnGrdn"></bootstrap>
+    <bootstrap thing="zPWMithCur"></bootstrap>
+    <bootstrap thing="zPWRvnHgls"></bootstrap>
+    <bootstrap thing="zPWShaMirr"></bootstrap>
+    <bootstrap thing="zPWSlpGods"></bootstrap>
     </thing>
   </document>
