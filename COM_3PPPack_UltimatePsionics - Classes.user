@@ -10682,66 +10682,6 @@ field[livename].text = signed(field[abValue].value) & " save against negative en
 
       hero.childfound[cPUAstrRep].field[abValue].value += field[abValue].value]]></eval>
     </thing>
-  <thing id="mPUAstArCh" name="Astral Chainmail" description="Unlike a chain shirt, which covers only the chest, chainmail protects the wearer with a complete mesh of chain links that cover the torso and arms, and extends below the waist. Multiple interconnected pieces offer additional protection over vital areas. The suit includes gauntlets." compset="Armor">
-    <fieldval field="gWeight" value="40"/>
-    <usesource source="pPsiUn"/>
-    <tag group="ArmorCateg" tag="Gauntlets" name="Includes Gauntlets" abbrev="Gauntlets"/>
-    <tag group="ArmorCateg" tag="Slows" name="Slows" abbrev="Slows"/>
-    <tag group="ArmorCheck" tag="5" name="5" abbrev="5"/>
-    <tag group="ArmorClass" tag="Medium" name="Medium Armor" abbrev="Medium"/>
-    <tag group="ArmorMaxDx" tag="2" name="2" abbrev="2"/>
-    <tag group="ArmorAC" tag="6" name="6" abbrev="6"/>
-    <tag group="ArmorArcFl" tag="30" name="30" abbrev="30"/>
-    <tag group="Helper" tag="AlwaysMast"/>
-    <tag group="Helper" tag="AutoEquip"/>
-    <tag group="Helper" tag="Helper"/>
-    <tag group="Custom" tag="AstArmor" name="Astral Armor"/>
-    </thing>
-  <thing id="mPUAstArBr" name="Astral Breastplate" description="A breastplate protects a wearer&apos;s torso with a single piece of sculpted metal, similar to the core piece of a suit of full plate. Despite its sturdiness, its inflexibility and open back make it inferior to complete suits of metal armor, but still an improvement over most non-metal armors." compset="Armor">
-    <fieldval field="gWeight" value="30"/>
-    <usesource source="pPsiUn"/>
-    <tag group="ArmorCateg" tag="Slows" name="Slows" abbrev="Slows"/>
-    <tag group="ArmorCheck" tag="4" name="4" abbrev="4"/>
-    <tag group="ArmorClass" tag="Medium" name="Medium Armor" abbrev="Medium"/>
-    <tag group="ArmorMaxDx" tag="3" name="3" abbrev="3"/>
-    <tag group="ArmorPiece" tag="PieceTorso" name="This is a piece of torso armor" abbrev="This is a piece of torso armor"/>
-    <tag group="ArmorSet" tag="Fullplate" name="Part of the full plate armor set" abbrev="Part of the full plate armor set"/>
-    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
-    <tag group="Helper" tag="MatCstSuit" name="MatCstSuit" abbrev="MatCstSuit"/>
-    <tag group="Helper" tag="PieceUpMat" name="Piece Material Cost 1 step higher" abbrev="Piece Material Cost 1 step higher"/>
-    <tag group="PieceArcFl" tag="35" name="35" abbrev="35"/>
-    <tag group="ArmorAC" tag="6" name="6" abbrev="6"/>
-    <tag group="Helper" tag="AutoEquip"/>
-    <tag group="Helper" tag="AlwaysMast"/>
-    <tag group="ArmorArcFl" tag="25" name="25" abbrev="25"/>
-    <tag group="Helper" tag="Helper"/>
-    <tag group="Custom" tag="AstArmor"/>
-    <eval phase="PreLevel" priority="5000"><![CDATA[
-      doneif (hero.tagis[source.UCPieceArm] = 0)
-
-      ~ If we're using the piecemeal armor rules then we are 1 step heavier if
-      ~ we have equipped a piece of arm or leg armor.
-      if (hero.tagis[ArmorPiece.PieceArms] + hero.tagis[ArmorPiece.PieceLegs] <> 0) then
-        perform tagreplace[ArmorClass.Medium,ArmorClass.Heavy]
-        perform container.tagreplace[ArmorClass.Medium,ArmorClass.Heavy]
-        endif]]></eval>
-    </thing>
-  <thing id="mPUAstArFP" name="Full plate" description="This metal suit comprises multiple pieces of interconnected and overlaying metal plates, incorporating the benefits of numerous types of lesser armor. A complete suit of full plate (or platemail, as it is often called) includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner at a cost of 200 to 800 (2d4x100) gold pieces." compset="Armor">
-    <fieldval field="gWeight" value="50"/>
-    <usesource source="pPsiUn"/>
-    <tag group="ArmorCateg" tag="Gauntlets" name="Includes Gauntlets" abbrev="Gauntlets"/>
-    <tag group="ArmorCateg" tag="Slows" name="Slows" abbrev="Slows"/>
-    <tag group="ArmorCheck" tag="6" name="6" abbrev="6"/>
-    <tag group="ArmorClass" tag="Heavy" name="Heavy Armor" abbrev="Heavy"/>
-    <tag group="ArmorMaxDx" tag="1" name="1" abbrev="1"/>
-    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
-    <tag group="ArmorAC" tag="9" name="9" abbrev="9"/>
-    <tag group="Helper" tag="AutoEquip"/>
-    <tag group="Helper" tag="AlwaysMast"/>
-    <tag group="ArmorArcFl" tag="35" name="35" abbrev="35"/>
-    <tag group="Custom" tag="AstArmor"/>
-    <tag group="Helper" tag="Helper"/>
-    </thing>
   <thing id="cPUInfPPri" name="Infiltrator&apos;s Path" description="You are adept at changing your form and altering your physiology to meet any situation and strike fear into your enemies.\n\n{b}Powers:{/b} {i}Chameleon{/i}, {i}minor metamorphosis{/i}\n\n{b}Skills:{/b} Disguise, Escape Artist, Intimidate \n\n{b}Bonus Class Skill:{/b} Disguise\n\n{b}Note:{/b} You need to correctly set one of the Path&apos;s selected as your Primary path and the 2nd one as the Secondary path to have everthing calc correctly." compset="CustomSpec" summary="You are a follower of the Infiltrator&apos;s Path" uniqueness="useronce">
     <comment><![CDATA[PathSkill - This tag group is used to setup the skills associated to the Path. These skills will only be allowed to be selection from the "PathSkill" class ability.
 
@@ -12015,21 +11955,6 @@ hero.childfound[cPUAegHelp].field[abValue2].value -=1]]></eval>
       <autotag group="thing" tag="skipprereq"/>
       </bootstrap>
     </thing>
-  <thing id="mPUAstArHP" name="Half-plate" description="Half-plate armor combines elements of full plate and chainmail, incorporating several sizable plates of sculpted metal with an underlying mesh of chain links. While this suit protects vital areas with several layers of armor, it is not sculpted to a single individual&apos;s frame, reducing its wearer&apos;s mobility even more than a suit of full plate. Half-plate armor includes gauntlets and a helm." compset="Armor">
-    <fieldval field="gWeight" value="50"/>
-    <usesource source="pPsiUn"/>
-    <tag group="ArmorCateg" tag="Gauntlets" name="Includes Gauntlets" abbrev="Gauntlets"/>
-    <tag group="ArmorCateg" tag="Slows" name="Slows" abbrev="Slows"/>
-    <tag group="ArmorCheck" tag="7" name="7" abbrev="7"/>
-    <tag group="ArmorClass" tag="Heavy" name="Heavy Armor" abbrev="Heavy"/>
-    <tag group="ArmorMaxDx" tag="0" name="0" abbrev="0"/>
-    <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
-    <tag group="ArmorAC" tag="8" name="8" abbrev="8"/>
-    <tag group="Helper" tag="AlwaysMast"/>
-    <tag group="ArmorArcFl" tag="40" name="40" abbrev="40"/>
-    <tag group="Custom" tag="AstArmor"/>
-    <tag group="Helper" tag="AutoEquip"/>
-    </thing>
   <thing id="cPUEneBlst" name="Energy Blast" description="Starting at 4th level, the aegis gains the energy blast customization when his psicrystal is consumed by the astral suit. This ability replaces one of the customization points normally gained at 4th level." compset="ClSpecial">
     <usesource source="pPsiUn"/>
     <tag group="AbilType" tag="PsiLike"/>
@@ -12940,113 +12865,6 @@ field[abSumm].text = "Gain total concealment (50% miss chance) for " & #attrmod[
 
         validif (levels >= 12)]]></validate>
       </prereq>
-    </thing>
-  <thing id="psSymPai5" name="Symbol of Pain" description="This power functions like {i}symbol of death{/i}, except that each creature within the radius of a symbol of pain instead suffers wracking pains that impose a -4 penalty on attack rolls, skill checks, and ability checks. These effects last for 1 hour after the creature moves farther than 60 feet from the symbol. Unlike {i}symbol of death{/i}, symbol of pain has no hit point limit; once triggered, a symbol of pain simply remains active for 10 minutes per caster level.\n\nNote: Magic traps such as symbol of pain are hard to detect and disable. A rogue (only) can use the Perception skill to find a symbol of pain and Disable Device to thwart it. The DC in each case is 25 + spell level, or 30 for symbol of pain." compset="PsiPower">
-    <fieldval field="sRange" value="0 ft.; see text"/>
-    <fieldval field="sEffect" value="One symbol"/>
-    <fieldval field="sDuration" value="See text"/>
-    <fieldval field="sSave" value="Fortitude negates"/>
-    <fieldval field="sResist" value="Yes"/>
-    <usesource source="pPsiUn"/>
-    <tag group="PsiEff" tag="NegSkill"/>
-    <tag group="DescInfo" tag="spSymbDea8"/>
-    <tag group="sLevel" tag="5"/>
-    <tag group="sCastTime" tag="Minute10"/>
-    <tag group="PsiEff" tag="MiscWrite"/>
-    <tag group="sDuration" tag="SeeText"/>
-    <tag group="sSave" tag="FortNeg"/>
-    <tag group="sDescript" tag="Evil"/>
-    <tag group="PsiEff" tag="NegAtk"/>
-    <tag group="sResist" tag="Yes"/>
-    </thing>
-  <thing id="psSymSle5" name="Symbol of Sleep" description="This spell functions like {i}symbol of death{/i}, except that all creatures of 10 HD or less within 60 feet of the symbol of sleep instead fall into a catatonic slumber for 3d6 x 10 minutes. Unlike with the sleep spell, sleeping creatures cannot be awakened by nonmagical means before this time expires. Unlike {i}symbol of death{/i}, symbol of sleep has no hit point limit; once triggered, a symbol of sleep simply remains active for 10 minutes per caster level.\n\nNote: Magic traps such as symbol of sleep are hard to detect and disable. A rogue (only) can use the Perception skill to find a symbol of sleep and Disable Device to thwart it. The DC in each case is 25 + spell level, or 30 for symbol of sleep." compset="PsiPower">
-    <fieldval field="sRange" value="0 ft.; see text"/>
-    <fieldval field="sEffect" value="One symbol"/>
-    <fieldval field="sDuration" value="See text"/>
-    <fieldval field="sSave" value="Will negates"/>
-    <fieldval field="sResist" value="Yes"/>
-    <usesource source="pPsiUn"/>
-    <tag group="PsiEff" tag="NegSkill"/>
-    <tag group="DescInfo" tag="spSymbDea8"/>
-    <tag group="sLevel" tag="5"/>
-    <tag group="sCastTime" tag="Minute10"/>
-    <tag group="PsiEff" tag="MiscWrite"/>
-    <tag group="sDuration" tag="SeeText"/>
-    <tag group="sDescript" tag="Evil"/>
-    <tag group="PsiEff" tag="NegAtk"/>
-    <tag group="sResist" tag="Yes"/>
-    <tag group="sSave" tag="WillNeg"/>
-    </thing>
-  <thing id="psSymPer6" name="Symbol of Persuasion" description="This spell functions like {i}symbol of death{/i}, except that all creatures within the radius of a symbol of persuasion instead become charmed by the caster (as the charm monster spell) for 1 hour per caster level. Unlike {i}symbol of death{/i}, symbol of persuasion has no hit point limit; once triggered, a symbol of persuasion simply remains active for 10 minutes per caster level.\n\nNote: Magic traps such as symbol of persuasion are hard to detect and disable. A rogue (only) can use the Perception skill to find a symbol of persuasion and Disable Device to thwart it. The DC in each case is 25 + spell level, or 31 for symbol of persuasion." compset="PsiPower">
-    <fieldval field="sRange" value="0 ft.; see text"/>
-    <fieldval field="sEffect" value="One symbol"/>
-    <fieldval field="sDuration" value="See text"/>
-    <fieldval field="sSave" value="Will negates"/>
-    <fieldval field="sResist" value="Yes"/>
-    <usesource source="pPsiUn"/>
-    <tag group="PsiEff" tag="NegSkill"/>
-    <tag group="DescInfo" tag="spSymbDea8"/>
-    <tag group="sLevel" tag="6"/>
-    <tag group="sCastTime" tag="Minute10"/>
-    <tag group="PsiEff" tag="MiscWrite"/>
-    <tag group="sDuration" tag="SeeText"/>
-    <tag group="sDescript" tag="Evil"/>
-    <tag group="PsiEff" tag="NegAtk"/>
-    <tag group="sResist" tag="Yes"/>
-    <tag group="sSave" tag="WillNeg"/>
-    </thing>
-  <thing id="psSymStu7" name="Symbol of Stunning" description="This spell functions like {i}symbol of death{/i}, except that all creatures within 60 feet of a symbol of stunning instead become stunned for 1d6 rounds.\n\nNote: Magic traps such as symbol of stunning are hard to detect and disable. A rogue (only) can use the Perception skill to find a symbol of stunning and Disable Device to thwart it. The DC in each case is 25 + spell level, or 32 for symbol of stunning." compset="PsiPower">
-    <fieldval field="sRange" value="0 ft.; see text"/>
-    <fieldval field="sEffect" value="One symbol"/>
-    <fieldval field="sDuration" value="See text"/>
-    <fieldval field="sSave" value="Will negates"/>
-    <fieldval field="sResist" value="Yes"/>
-    <usesource source="pPsiUn"/>
-    <tag group="PsiEff" tag="NegSkill"/>
-    <tag group="DescInfo" tag="spSymbDea8"/>
-    <tag group="sLevel" tag="7"/>
-    <tag group="sCastTime" tag="Minute10"/>
-    <tag group="PsiEff" tag="MiscWrite"/>
-    <tag group="sDuration" tag="SeeText"/>
-    <tag group="sDescript" tag="Evil"/>
-    <tag group="PsiEff" tag="NegAtk"/>
-    <tag group="sResist" tag="Yes"/>
-    <tag group="sSave" tag="WillNeg"/>
-    </thing>
-  <thing id="psSymIns8" name="Symbol of Insanity" description="This spell functions like {i}symbol of death{/i}, except that all creatures within the radius of the symbol of insanity instead become permanently insane (as the insanity spell). Unlike {i}symbol of death{/i}, symbol of insanity has no hit point limit; once triggered, a symbol of insanity simply remains active for 10 minutes per caster level.\n\nNote: Magic traps such as symbol of insanity are hard to detect and disable. A rogue (only) can use the Perception skill to find a symbol of insanity and Disable Device to thwart it. The DC in each case is 25 + spell level, or 33 for symbol of insanity." compset="PsiPower">
-    <fieldval field="sRange" value="0 ft.; see text"/>
-    <fieldval field="sEffect" value="One symbol"/>
-    <fieldval field="sDuration" value="See text"/>
-    <fieldval field="sSave" value="Will negates"/>
-    <fieldval field="sResist" value="Yes"/>
-    <usesource source="pPsiUn"/>
-    <tag group="PsiEff" tag="NegSkill"/>
-    <tag group="DescInfo" tag="spSymbDea8"/>
-    <tag group="sLevel" tag="8"/>
-    <tag group="sCastTime" tag="Minute10"/>
-    <tag group="PsiEff" tag="MiscWrite"/>
-    <tag group="sDuration" tag="SeeText"/>
-    <tag group="sDescript" tag="Evil"/>
-    <tag group="PsiEff" tag="NegAtk"/>
-    <tag group="sResist" tag="Yes"/>
-    <tag group="sSave" tag="WillNeg"/>
-    </thing>
-  <thing id="psSymDea8" name="Symbol of Death" description="This spell allows you to scribe a potent rune of power upon a surface. When triggered, a {i}symbol of death{/i} kills one or more creatures within 60 feet of the symbol (treat as a burst) whose combined total current hit points do not exceed 150. The {i}symbol of death{/i} affects the closest creatures first, skipping creatures with too many hit points to affect. Once triggered, the {i}symbol{/i} becomes active and glows, lasting for 10 minutes per caster level or until it has affected 150 hit points&apos; worth of creatures, whichever comes first. A creature that enters the area while the {i}symbol of death{/i} is active is subject to its effect, whether or not that creature was in the area when it was triggered. A creature need save against the {i}symbol{/i} only once as long as it remains within the area, though if it leaves the area and returns while the {i}symbol{/i} is still active, it must save again.\n\nUntil it is triggered, the {i}symbol of death{/i} is inactive (though visible and legible at a distance of 60 feet). To be effective, a {i}symbol of death{/i} must always be placed in plain sight and in a prominent location. Covering or hiding the rune renders the {i}symbol of death{/i} ineffective, unless a creature removes the covering, in which case the {i}symbol of death{/i} works normally.\n\nAs a default, a {i}symbol of death{/i} is triggered whenever a creature does one or more of the following, as you select: looks at the rune; reads the rune; touches the rune; passes over the rune; or passes through a portal bearing the rune. Regardless of the trigger method or methods chosen, a creature more than 60 feet from a {i}symbol of death{/i} can&apos;t trigger it (even if it meets one or more of the triggering conditions, such as reading the rune). Once the spell is cast, a {i}symbol of death{/i}&apos;s triggering conditions cannot be changed.\n\nIn this case, &quot;reading&quot; the rune means any attempt to study it, identify it, or fathom its meaning. Throwing a cover over a {i}symbol of death{/i} to render it inoperative triggers it if the symbol reacts to touch. You can&apos;t use a {i}symbol of death{/i} offensively; for instance, a touch-triggered {i}symbol of death{/i} remains untriggered if an item bearing the {i}symbol of death{/i} is used to touch a creature. Likewise, a {i}symbol of death{/i} cannot be placed on a weapon and set to activate when the weapon strikes a foe.\n\nYou can also set special triggering limitations of your own. These can be as simple or elaborate as you desire. Special conditions for triggering a {i}symbol of death{/i} can be based on a creature&apos;s name, identity, or alignment, but otherwise must be based on observable actions or qualities. Intangibles such as level, class, HD, and hit points don&apos;t qualify.\n\nWhen scribing a {i}symbol of death{/i}, you can specify a password or phrase that prevents a creature using it from triggering the symbol&apos;s effect. Anyone using the password remains immune to that particular rune&apos;s effects so long as the creature remains within 60 feet of the rune. If the creature leaves the radius and returns later, it must use the password again.\n\nYou also can attune any number of creatures to the {i}symbol of death{/i}, but doing this can extend the casting time. Attuning one or two creatures takes negligible time, and attuning a small group (as many as 10 creatures) extends the casting time to 1 hour. Attuning a large group (as many as 25 creatures) takes 24 hours. Attuning larger groups takes an additional 24 hours per 25 creatures. Any creature attuned to a {i}symbol of death{/i} cannot trigger it and is immune to its effects, even if within its radius when it is triggered. You are automatically considered attuned to your own {i}symbols of death{/i}, and thus always ignore the effects and cannot inadvertently trigger them.\n\n{i}Read magic{/i} allows you to identify a {i}symbol{/i} with a Spellcraft check (DC 10 + the {i}symbol&apos;s{/i} spell level). Of course, if the {i}symbol{/i} is set to be triggered by reading it, this will trigger the symbol.\n\nA {i}symbol of death{/i} can be removed by a successful {i}dispel magic{/i} targeted solely on the rune. An {i}erase{/i} spell has no effect on a {i}symbol of death{/i}. Destruction of the surface where a {i}symbol of death{/i} is inscribed destroys the {i}symbol{/i} but also triggers it.\n\n{i}Symbol of death{/i} can be made permanent with a {i}permanency{/i} spell. A permanent {i}symbol of death{/i} that is disabled or has affected its maximum number of hit points becomes inactive for 10 minutes, but then can be triggered again as normal.\n\n{i}Note{/i}: Magic traps such as {i}symbol of death{/i} are hard to detect and disable. A rogue (only) can use the Perception skill to find a {i}symbol of death{/i} and Disable Device to thwart it. The DC in each case is 25 + spell level, or 33 for {i}symbol of death{/i}." compset="PsiPower">
-    <fieldval field="sRange" value="0 ft.; see text"/>
-    <fieldval field="sEffect" value="One symbol"/>
-    <fieldval field="sDuration" value="See text"/>
-    <fieldval field="sSave" value="Will negates"/>
-    <fieldval field="sResist" value="Yes"/>
-    <usesource source="pPsiUn"/>
-    <tag group="PsiEff" tag="NegSkill"/>
-    <tag group="sLevel" tag="8"/>
-    <tag group="sCastTime" tag="Minute10"/>
-    <tag group="PsiEff" tag="MiscWrite"/>
-    <tag group="sDuration" tag="SeeText"/>
-    <tag group="sDescript" tag="Evil"/>
-    <tag group="PsiEff" tag="NegAtk"/>
-    <tag group="sResist" tag="Yes"/>
-    <tag group="sSave" tag="WillNeg"/>
     </thing>
   <thing id="arPUPattBr" name="Pattern Breaker" description="A pattern is only as strong as its weakest link, and pattern breakers have learned to find that link and exploit it. These cryptics excel at disabling patterns or destroying them entirely." compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="266"/>
