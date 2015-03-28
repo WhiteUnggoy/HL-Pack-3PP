@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
   <loadonce key="COM_3PPPack_RGG - Class, Dragonrider"/>
   <fileinfo>
@@ -608,7 +608,7 @@ endif
 
 field[livename].text &= " (" & field[abValue].value & "-foot" & effect & energy & ")"]]></eval>
     </thing>
-  <thing id="zSGDrrDrui" name="Dragonrider - Druid Multiclassing" description="For a dragonrider multiclassing into druid, sacrificing the druid&#146;s animal companion ability increases the draconic steed&#146;s level by a number equal to the character&#146;s druid level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
+  <thing id="zSGDrrDrui" name="Dragonrider - Druid Multiclassing" description="For a dragonrider multiclassing into druid, sacrificing the druid’s animal companion ability increases the draconic steed’s level by a number equal to the character’s druid level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
     <usesource source="sggDragRid"/>
     <eval phase="First" priority="449">~ If no druid levels just get out
 doneif (#levelcount[Druid] = 0)
@@ -618,7 +618,7 @@ doneif (hero.childlives[cAnimComp] = 1)
 ~ Give a bonus to animal companion based on druid level - 2 min +1
 hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Druid] - 2,1)</eval>
     </thing>
-  <thing id="minSteeRed" name="Dragon Steed, Red" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeRed" name="Dragon Steed, Red" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -802,7 +802,7 @@ If (master.childlives[cDrrDragon] <> 0) then
    perform master.child[cDrrDragon].pushtags[BloodEner.?]   
 Endif]]></eval>
     </thing>
-  <thing id="raSgSteedB" name="Breath Weapon" description="Every steed deals one kind of damage, and has either a line or a cone. Each breath weapon allows a Reflex save for half damage, the save DC for a dragon steed&#146;s breath weapon is 10 + one-half steed&#146;s hit dice + steed&#146;s Constitution modifier. A dragon steed may use its breath weapon once every four rounds, not to exceed a total number of uses per day equal to 3 + the steed&#146;s Constitution modifier.\n\nAs the dragon steed gains HD, it&#146;s breath weapon deals more dice of damage and gains additional range." compset="RaceSpec">
+  <thing id="raSgSteedB" name="Breath Weapon" description="Every steed deals one kind of damage, and has either a line or a cone. Each breath weapon allows a Reflex save for half damage, the save DC for a dragon steed’s breath weapon is 10 + one-half steed’s hit dice + steed’s Constitution modifier. A dragon steed may use its breath weapon once every four rounds, not to exceed a total number of uses per day equal to 3 + the steed’s Constitution modifier.\n\nAs the dragon steed gains HD, it’s breath weapon deals more dice of damage and gains additional range." compset="RaceSpec">
     <usesource source="sggDragRid"/>
     <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
     <tag group="StandardDC" tag="aCON" name="Constitution" abbrev="Constitution"/>
@@ -879,7 +879,7 @@ field[livename].text &= " (" & breath & "-ft" & effect & energy & ", " & sDice &
     <tag group="AbilType" tag="Extra"/>
     <tag group="Helper" tag="ShowSpec"/>
     </thing>
-  <thing id="raSgSharSp" name="Share Spells" description="The dragonrider may cast a spell with a target of &quot;You&quot; on his dragon steed (as a spell with a range of touch) instead of on himself. A dragonrider may cast spells on his dragon steed even if the spells normally do not affect creatures of the steed&#146;s type (dragon). Spells cast in this way must come from a class that grants a dragon steed. This ability does not allow the steed to share abilities that are not spells, even if they function like spells." compset="RaceSpec">
+  <thing id="raSgSharSp" name="Share Spells" description="The dragonrider may cast a spell with a target of &quot;You&quot; on his dragon steed (as a spell with a range of touch) instead of on himself. A dragonrider may cast spells on his dragon steed even if the spells normally do not affect creatures of the steed’s type (dragon). Spells cast in this way must come from a class that grants a dragon steed. This ability does not allow the steed to share abilities that are not spells, even if they function like spells." compset="RaceSpec">
     <usesource source="sggDragRid"/>
     <tag group="AbilType" tag="Extra"/>
     <tag group="Helper" tag="ShowSpec"/>
@@ -1174,7 +1174,7 @@ field[livename].text &= " (" & breath & "-ft" & effect & energy & ", " & sDice &
     <link linkage="maxsplattr" thing="aCHA"/>
     <link linkage="spellattr" thing="aCHA"/>
     </thing>
-  <thing id="zSGDrrCava" name="Dragonrider - Cavalier Multiclassing" description="For a dragonrider multiclassing into cavalier, sacrificing the cavalier&#146;s mount ability increases the draconic steed&#146;s level by a number equal to the character&#146;s cavalier level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
+  <thing id="zSGDrrCava" name="Dragonrider - Cavalier Multiclassing" description="For a dragonrider multiclassing into cavalier, sacrificing the cavalier’s mount ability increases the draconic steed’s level by a number equal to the character’s cavalier level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
     <usesource source="sggDragRid"/>
     <eval phase="First" priority="449">~ If no druid levels just get out
 doneif (#levelcount[Cavalier] = 0)
@@ -1184,7 +1184,7 @@ doneif (hero.childlives[cAnimComp] = 1)
 ~ Give a bonus to animal companion based on Cavalier level - 2 min +1
 hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Cavalier] - 2,1)</eval>
     </thing>
-  <thing id="zSGDrrPala" name="Dragonrider - Paladin Multiclassing" description="For a dragonrider multiclassing into paladin, sacrificing the paladin&#146;s divine bond ability increases the draconic steed&#146;s level by a number equal to half the character&#146;s paladin level, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
+  <thing id="zSGDrrPala" name="Dragonrider - Paladin Multiclassing" description="For a dragonrider multiclassing into paladin, sacrificing the paladin’s divine bond ability increases the draconic steed’s level by a number equal to half the character’s paladin level, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
     <usesource source="sggDragRid"/>
     <eval phase="First" priority="449"><![CDATA[~ If Paladin levels less then 5 just get out
 doneif (#levelcount[Paladin] < 5)
@@ -1194,7 +1194,7 @@ doneif (hero.childlives[cAnimComp] = 1)
 ~ Give a bonus to animal companion based on Paladin level - 2 min +1
 hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Paladin] - 2,1)]]></eval>
     </thing>
-  <thing id="zSGDrrRang" name="Dragonrider - Ranger Multiclassing" description="For a dragonrider multiclassing into ranger, sacrificing the ranger&#146;s divine bond ability increases the draconic steed&#146;s level by a number equal to half the character&#146;s ranger level, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
+  <thing id="zSGDrrRang" name="Dragonrider - Ranger Multiclassing" description="For a dragonrider multiclassing into ranger, sacrificing the ranger’s divine bond ability increases the draconic steed’s level by a number equal to half the character’s ranger level, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
     <usesource source="sggDragRid"/>
     <eval phase="First" priority="449"><![CDATA[~ If Ranger levels less then 4 just get out
 doneif (#levelcount[Ranger] < 4)
@@ -1204,7 +1204,7 @@ doneif (hero.childlives[cAnimComp] = 1)
 ~ Give a bonus to animal companion based on Ranger level - 2 min +1
 hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Ranger] - 2,1)]]></eval>
     </thing>
-  <thing id="zSGDrrSorc" name="Dragonrider - Sorcerer Multiclassing" description="For a dragonrider multiclassing into wizard (or arcane bloodline sorcerers), sacrificing the arcane bond ability increases the draconic steed&#146;s level by a number equal to the character&#146;s wizard (or sorcerer) level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
+  <thing id="zSGDrrSorc" name="Dragonrider - Sorcerer Multiclassing" description="For a dragonrider multiclassing into wizard (or arcane bloodline sorcerers), sacrificing the arcane bond ability increases the draconic steed’s level by a number equal to the character’s wizard (or sorcerer) level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
     <usesource source="sggDragRid"/>
     <eval phase="First" priority="449">~ If Sorcerer levels 0 just get out
 doneif (#levelcount[Sorcerer] = 0)
@@ -1216,7 +1216,7 @@ doneif (hero.childlives[cArcFClass] = 1)
 ~ Give a bonus to animal companion based on Ranger level - 2 min +1
 hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Sorcerer] - 2,1)</eval>
     </thing>
-  <thing id="zSGDrrWiza" name="Dragonrider - Wizard Multiclassing" description="For a dragonrider multiclassing into wizard (or arcane bloodline sorcerers), sacrificing the arcane bond ability increases the draconic steed&#146;s level by a number equal to the character&#146;s wizard (or sorcerer) level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
+  <thing id="zSGDrrWiza" name="Dragonrider - Wizard Multiclassing" description="For a dragonrider multiclassing into wizard (or arcane bloodline sorcerers), sacrificing the arcane bond ability increases the draconic steed’s level by a number equal to the character’s wizard (or sorcerer) level -2, with a minimum of +1 draconic steed level." compset="Simple" uniqueness="unique">
     <usesource source="sggDragRid"/>
     <eval phase="First" priority="449">~ If Wizard levels 0 just get out
 doneif (#levelcount[Wizard] = 0)
@@ -1227,7 +1227,7 @@ doneif (hero.childlives[cArcFClass] = 1)
 ~ Give a bonus to animal companion based on Wizard level - 2 min +1
 hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Wizard] - 2,1)</eval>
     </thing>
-  <thing id="minSteeBla" name="Dragon Steed, Black" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeBla" name="Dragon Steed, Black" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -1575,7 +1575,7 @@ If (master.childlives[cDrrDragon] <> 0) then
    perform master.child[cDrrDragon].pushtags[BloodEner.?]   
 Endif]]></eval>
     </thing>
-  <thing id="minSteeBlu" name="Dragon Steed, Blue" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeBlu" name="Dragon Steed, Blue" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -1767,7 +1767,7 @@ Endif]]></eval>
     <eval phase="PostAttr" priority="500" index="3">~ Calculate the Dragon steeds skill points
 #resmax[resSkill] += (hero.child[tpSgDragon].field[tpSkillPts].value + hero.child[aINT].field[aModBonus].value) * #totallevelcount[]</eval>
     </thing>
-  <thing id="minSteeGre" name="Dragon Steed, Green" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeGre" name="Dragon Steed, Green" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -1960,7 +1960,7 @@ Endif]]></eval>
     <eval phase="PostAttr" priority="500" index="3">~ Calculate the Dragon steeds skill points
 #resmax[resSkill] += (hero.child[tpSgDragon].field[tpSkillPts].value + hero.child[aINT].field[aModBonus].value) * #totallevelcount[]</eval>
     </thing>
-  <thing id="minSteeWhi" name="Dragon Steed, White" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeWhi" name="Dragon Steed, White" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -2164,7 +2164,7 @@ Endif]]></eval>
     <tag group="SpecType" tag="Attack"/>
     <tag group="AbilType" tag="Super"/>
     </thing>
-  <thing id="minSteeBra" name="Dragon Steed, Brass" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeBra" name="Dragon Steed, Brass" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -2534,7 +2534,7 @@ If (field[anCompLev].value >= 16) then
    #value[raSgDrFocu] += 1
 Endif]]></eval>
     </thing>
-  <thing id="minSteeBro" name="Dragon Steed, Bronze" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeBro" name="Dragon Steed, Bronze" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -2552,7 +2552,7 @@ Endif]]></eval>
     <tag group="AbilType" tag="Super"/>
     <tag group="SpecType" tag="Attack"/>
     </thing>
-  <thing id="minSteeCoo" name="Dragon Steed, Copper" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeCoo" name="Dragon Steed, Copper" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -2564,7 +2564,7 @@ Endif]]></eval>
       </minion>
     </thing>
   <thing id="rSGDrrGold" name="Dragon Steed, Gold" description="This is the Dragonrider class dragon steed mount." compset="Race" uniqueness="unique">
-    <fieldval field="rAC" value="2"/>
+    <fieldval field="rAC" value="7"/>
     <fieldval field="rSTR" value="7"/>
     <fieldval field="rDEX" value="4"/>
     <fieldval field="rCON" value="5"/>
@@ -2738,7 +2738,7 @@ Endif]]></eval>
     <tag group="AbilType" tag="Super"/>
     <tag group="SpecType" tag="Attack"/>
     </thing>
-  <thing id="minSteeGol" name="Dragon Steed, Gold" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeGol" name="Dragon Steed, Gold" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
@@ -2923,7 +2923,7 @@ Endif]]></eval>
     <tag group="AbilType" tag="Super"/>
     <tag group="SpecType" tag="Attack"/>
     </thing>
-  <thing id="minSteeSil" name="Dragon Steed, Silver" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider&#146;s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
+  <thing id="minSteeSil" name="Dragon Steed, Silver" description="The bonded dragon mount for the Dragonrider class.\n\nA dragonrider’s alignment must be within one step of his dragon steed (see Chapter Seven in the Pathfinder Roleplaying game for more information on alignment steps)." compset="Minion" stacking="never" uniqueness="useronce">
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
