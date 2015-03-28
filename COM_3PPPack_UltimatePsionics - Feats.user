@@ -152,11 +152,7 @@ January 30, 2014 - Tim Shadow
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="PUProdID"/>
     </thing>
-  <thing id="fPUExpKn" name="Expanded Knowledge" description="{b}Prerequisites{/b}: Manifester level 3rd.  \n\n{b}Benefit{/b}: Add to your powers known one additional power of any level up to one level lower than the highest-level power you can manifest. You can choose any power, including powers from another discipline&apos;s list or even from another class&apos;s list.\n\n{b}Special{/b}: You can gain this feat multiple times. Each time, you learn one new power at any level up to one less than the highest-level power you can manifest.\n\n{b}Note:{/b} First selection is the class this feat applies too and the second choice is the power you wish to learn. Once these are both selected you need to switch to your Class tab and add the power on the Class tab to your character.  Selecting here on the feat just allows it as a valid choice on the Class." compset="Feat" summary="You learn addtional power.">
-    <comment>15/03/2014 - Fixed 1st selection to allow only psionic classes on the hero.
-
-Tim Shadow March 26, 2014
--Changed scripts as they affected spells and we need to point to powers.</comment>
+  <thing id="fPUExpKn" name="Expanded Knowledge" description="{b}Prerequisites{/b}: Manifester level 3rd.  \n\n{b}Benefit{/b}: Add to your powers known one additional power of any level up to one level lower than the highest-level power you can manifest. You can choose any power, including powers from another discipline&apos;s list or even from another class&apos;s list.\n\n{b}Special{/b}: You can gain this feat multiple times. Each time, you learn one new power at any level up to one less than the highest-level power you can manifest.\n\n{b}Note:{/b} First selection is the class this feat applies too and the second choice is the power you wish to learn. Once these are both selected you need to switch to your Class tab and add the power on the Class tab to your character.  Selecting here on the feat just allows it as a valid choice on the Class." compset="Feat" summary="Add to your powers known one additional power of any level up to one level lower than the highest-level power you can manifest.">
     <fieldval field="usrCandid1" value="component.Class &amp; (Psionics.Class)"/>
     <fieldval field="usrCandid2" value="component.BasePower"/>
     <usesource source="pPsiUn"/>
@@ -2221,5 +2217,4 @@ field[abValue].value += 1
       <validate>@valid = #hasability[cSknEnhMB]</validate>
       </prereq>
     </thing>
-
   </document>
