@@ -2221,7 +2221,6 @@ field[abValue].value += 1
       <validate>@valid = #hasability[cSknEnhMB]</validate>
       </prereq>
     </thing>
-<<<<<<< HEAD
   <thing id="fPUChanRag" name="Channel Rage" description="You have learned to focus your anger to fuel your wild surges.\n\n{b}Prerequisites:{/b} Wild surge class feature, Rage class feature\n\n{b}Benefit:{/b} When you choose to power a manifestation with only your wild surge, you may spend 1 round of your rage instead of expending your psionic focus." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -2239,6 +2238,4 @@ field[abValue].value += 1
     <exprreq message="Improved Critical feat required"><![CDATA[#hasfeat[fImpCrit] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus +8 required"><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
     </thing>
-=======
->>>>>>> 9948e446eea1bf7d66185e4baaa511d36b1c584b
   </document>
