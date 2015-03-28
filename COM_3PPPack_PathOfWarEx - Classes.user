@@ -12,6 +12,7 @@
     <fieldval field="cHDSides" value="8"/>
     <fieldval field="cAbbr" value="Hrb"/>
     <fieldval field="cSkills" value="4"/>
+	<fieldval field="srcBookInf" value=" [PoWEx]"/>
     <fieldval field="cSpecSing" value="Grim News Movement Mode"/>
     <arrayval field="cCustTot" index="8" value="1"/>
     <arrayval field="cCustTot" index="14" value="2"/>

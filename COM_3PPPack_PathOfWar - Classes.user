@@ -15,6 +15,7 @@
     <fieldval field="cSkills" value="4"/>
     <fieldval field="cSpecSing" value="Gambit"/>
     <fieldval field="cHDSides" value="10"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <arrayval field="cBonFtTot" index="5" value="2"/>
     <arrayval field="cBonFtTot" index="9" value="3"/>
     <arrayval field="cBonFtTot" index="13" value="4"/>
@@ -356,6 +357,7 @@
     </thing>
   <thing id="cHelpPW2" name="Stalker" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="8"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <fieldval field="cSkills" value="6"/>
     <fieldval field="cSpecSing" value="Stalker Art"/>
     <fieldval field="cSpecName" value="Stalker Arts"/>
@@ -1280,6 +1282,7 @@ field[abSumm].text = signed(field[abValue].value) & " morale bonus to AC and Wil
     </thing>
   <thing id="cHelpPW3" name="Warder" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="12"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <fieldval field="cAbbr" value="Wdr"/>
     <fieldval field="cSkills" value="4"/>
     <arrayval field="cKnowTot" index="0" value="5"/>
@@ -1709,6 +1712,7 @@ endif]]></eval>
     </thing>
   <thing id="cHelpPWPC1" name="Battle Templar" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="8"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <fieldval field="cAbbr" value="BTm"/>
     <fieldval field="cSkills" value="4"/>
     <arrayval field="cMagLevTot" index="1" value="1"/>
@@ -2048,6 +2052,7 @@ endif]]></eval>
     </thing>
   <thing id="cHelpPWPC2" name="Bladecaster" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="10"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <fieldval field="cAbbr" value="Bcs"/>
     <fieldval field="cSkills" value="4"/>
     <arrayval field="cMagLevTot" index="1" value="1"/>
@@ -2278,6 +2283,7 @@ endif]]></eval>
     </thing>
   <thing id="cHelpPWPC3" name="Dragon Fury" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="12"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <fieldval field="cAbbr" value="DFr"/>
     <fieldval field="cSkills" value="4"/>
     <usesource source="srcPathOfW"/>
@@ -2708,6 +2714,7 @@ nexteach]]></validate>
     <fieldval field="cSkills" value="4"/>
     <fieldval field="cSplMaxLvl" value="6"/>
     <fieldval field="cHDSides" value="8"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <arrayval field="cCastTot" index="1" column="1" value="3"/>
     <arrayval field="cCastTot" index="1" column="2" value="1"/>
     <arrayval field="cCastTot" index="2" column="1" value="3"/>
@@ -3084,6 +3091,7 @@ Array 9 = Stances</comment>
     <fieldval field="cAbbr" value="UBl"/>
     <fieldval field="cSkills" value="4"/>
     <fieldval field="cHDSides" value="10"/>
+	<fieldval field="srcBookInf" value=" [PoW]"/>
     <arrayval field="cKnowTot" index="1" column="7" value="1"/>
     <arrayval field="cKnowTot" index="2" column="7" value="1"/>
     <arrayval field="cKnowTot" index="2" column="8" value="1"/>
@@ -3440,6 +3448,7 @@ Array 9 = Stances</comment>
     <fieldval field="cSkills" value="4"/>
     <fieldval field="cHDSides" value="10"/>
     <arrayval field="cMagLevTot" index="1" value="1"/>
+    <fieldval field="srcBookInf" value=" [PoW]"/>
     <arrayval field="cMagLevTot" index="2" value="2"/>
     <arrayval field="cMagLevTot" index="3" value="3"/>
     <arrayval field="cMagLevTot" index="4" value="4"/>
