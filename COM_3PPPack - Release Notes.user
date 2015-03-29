@@ -8,6 +8,44 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
+<strong>v1.7 March 29, 2015</strong>
+
+<strong>Bug Fixes</strong>
+<ul>
+<li>ShadowChemosh - Misc script fixes through out the package to speed up processing and cause less future issues. Enforced standards through out the Pack.</li>
+<li>Ultimate Psionics (psych777) Added not implemented yet text different Things to help let gamers know what is and is not scripted.</li>
+<li>Ultimate Psionics (ShadowChemosh) Script fixes for cryptic class abilities: Hidden Pattern, Unchanging Pattern, Enhanced Disruption, and Disrupt Pattern.</li>
+<li>Ultimate Psionics (Quintain) added new Bracers of Disruption magic item.</li>
+<li>Ultimate Psionics (ShadowChemosh) This fixed issue #30. Changed Disrupt Pattern to be a weapon that displays on the weapon tab and allows for selecting the creature Type. Changed Enhanced Disruption to give bonus damage correctly to Disrupt Pattern. Changed Altered Defense to have three separate activations display on the In-Play tab.</li>
+<li>Ultimate Psionics (ShadowChemosh) Feats: Improved Disruption, Extra Disruption Type are now scripted.
+<li>Ultimate Psionics (ShadowChemosh) Added scripts to Cryptic Custom Specials: Bleeding Pattern, Explosive Pattern.</li>
+<li>Ultimate Psionics (psych777) Deprecated Create Sounds power level 1 version as no such power in the book/pdf.</li>
+<li>Ultimate Psionics (psych777) Cryptic class (Hidden Pattern) fixed to apply correct competence bonus instead of untyped bonus.</li>
+<li>Ultimate Psionics (psych777) Fixed many feats that where being allowed to be taken more than once.</li>
+<li>Ultimate Psionics (ShadowChemosh) Fixed Vitalist class special "Expanded Knowledge" to correctly add the bonus feats.</li>
+<li>Path of War (TheIronGolem) Fixed a bug causing initiating base class maneuvers known/readied to be zeroed out when a PrC is present. This closes issue #35.</li>
+<li>RGG Class Dragonrider (ShadowChemosh) Corrected Alignment and Natural AC of the gold dragon steed. Fixes issue #16.</li>
+<li>Ultimate Psionics (ShadowChemosh) Aegis is now always Proficient with its armor. Fixes issue #40.</li>
+</ul>
+<strong>New Features</strong>
+<ul>
+<li>Basic Pack updated to v3.9 (ShadowChemosh)</li>
+<li>Path of War Expanded playtest (TheIronGolem) Added Harbinger class. Added Cursed Razor discipline. Added Shattered Mirror discipline.</li>
+<li>Path of War (TheIronGolem) New Disciplines added: Eternal Guardian, Elemental Flux, Mithral Current, Riven Hourglass, Sleeping Goddess (No maneuvers have been added for these disciplines yet).</li>
+<li>Path of War (TheIronGolem) Added feats from the Path of War Expanded playtest (with the exception of the Discipline Style feats).  Some feats are not yet functional.</li>
+<li>Ultimate Psionics (psych777) Added "Gifted Blade" archetype.</li>
+<li>Ultimate Psionics (psych777) Added "Life Leech" archetype.</li>
+<li>Ultimate Psionics (psych777) Added "One Pattern" feat.</li>
+<li>Ultimate Psionics (psych777) Added feats "Channel Rage" and "Critical Refocus".</li>
+</ul>
+<strong>Data File Authoring</strong>
+<ul>
+<li>ShadowChemosh - Changed all Feat pre-req scripts that use #levelcount[] to correctly use #featlevelcount[] instead.</li>
+<li>SKR Games (ShadowChemosh) Removed the extra Construct Type as it was not needed.</li>
+<li>Ultimate Psionics (ShadowChemosh) Changed Altered Defense to have three separate class Things that are able to be turned on for the In-Play tab. These all gain their value from the Altered Defense class Thing. Double checked all class specials and set summary text, removed Source ID, and added Product ID.</li>
+</ul>
+
+
 <strong>v1.5 February 25, 2015</strong>
 
 <strong>Bug Fixes</strong>
