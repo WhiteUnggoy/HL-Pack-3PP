@@ -16,6 +16,8 @@ January 30, 2014 Tim Shadow
   <group id="Psionics" name="Ultimate Psionics">
     <value id="Class"       name="Psionic Class"/>
     <value id="Race"        name="Psionic Race"/>
+    <value id="PsiFocus"    name="Psionic Focus Always"/>
+    <value id="FocusPick"   name="Psionic Focus Pick"/>
   </group>
 
   <!-- Soulknifes Mind Blade weapon tags -->
