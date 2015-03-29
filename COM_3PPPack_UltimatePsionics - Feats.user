@@ -94,26 +94,26 @@ January 30, 2014 - Tim Shadow
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
-  <thing id="fPUClkDnce" name="Cloak Dance" description="You are skilled at using optical tricks to make yourself seem to be where you are not.\n\n{b}Prerequisites{/b}: Perform (Dance) 2 ranks, Stealth 7 ranks\n\n{b}Benefit{/b}: You can take a move action to obscure your exact position. Until your next turn, you have concealment. Alternatively, you can take a full-round action to entirely obscure your exact position. Until your next action, you have total concealment." compset="Feat" summary="You are skilled at using optical tricks to make yourself\nseem to be where you are not.">
+  <thing id="fPUClkDnce" name="Cloak Dance" description="You are skilled at using optical tricks to make yourself seem to be where you are not.\n\n{b}Prerequisites{/b}: Perform (Dance) 2 ranks, Stealth 7 ranks\n\n{b}Benefit{/b}: You can take a move action to obscure your exact position. Until your next turn, you have concealment. Alternatively, you can take a full-round action to entirely obscure your exact position. Until your next action, you have total concealment." compset="Feat" summary="You are skilled at using optical tricks to make yourself\nseem to be where you are not." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="General"/>
-    <tag group="ProductId" tag="PUProdID"/>
-    <exprreq message="Perform (Dance) 2+ ranks required" iserror="no"><![CDATA[#skillranks[skPerfDanc] >= 2]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Stealth 7+ ranks required."><![CDATA[#skillranks[skStealth] >= 7]]></exprreq>
+    <exprreq message="Perform (Dance) 2+ ranks required" iserror="no"><![CDATA[#skillranks[skPerfDanc] >= 2]]></exprreq>
     </thing>
   <thing id="fPUComMan" name="Combat Manifestation" description="You are adept at manifesting powers in combat.\n\n{b}Benefit{/b}: You get a +4 bonus on concentration checks made to manifest a power or use a psi-like ability when manifesting on the defensive or while grappled." compset="Feat" summary="+4 to Concentration checks to manifest power while on the defensive." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
     </thing>
   <thing id="fPUCraftCC" name="Craft Cognizance Crystal" description="You can create psionic {i}cognizance crystals{/i} that store power points.\n\n{b}Prerequisite{/b}: Manifester level 3rd.\n\n{b}Benefit{/b}: You can create a {i}cognizance crystals{/i}. Doing so takes one day for each 1,000 gp in its base price. The base price of a {i}cognizance crystal{/i} is equal to the highest-level power it could manifest using all its stored power points, squared, multiplied by 1,000 gp. To create a {i}cognizance crystal{/i}, you must use up raw materials costing one-half its base price." compset="Feat" summary="You can create psionic {i}cognizance crystals{/i} that store power points." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="ItemCreate"/>
-    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <prereq message="Manifester level 3rd required.">
       <validate><![CDATA[
         validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
@@ -1105,33 +1105,37 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="ProductId" tag="HLCommunit"/>
     </thing>
-  <thing id="fPUConcPwr" name="Concussive Power" description="You cause creatures to be disoriented when you affect them with a power that has the sonic descriptor.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. With sonic damage comes a concussive wave of energy that rattles creatures affected by the power.{br}{br}A concussive power causes creatures that take damage from a power that has the sonic descriptor to take a -2 penalty on attack rolls, saving throws, skill checks, and ability checks for a number of rounds equal to the power level of the power. A concussive power only affects powers with the sonic descriptor. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not deal sonic damage cannot be used with this feat." compset="Feat">
+  <thing id="fPUConcPwr" name="Concussive Power" description="You cause creatures to be disoriented when you affect them with a power that has the sonic descriptor.\n\n{b}Benefit:{/b} To use this feat, you must expend your psionic focus. With sonic damage comes a concussive wave of energy that rattles creatures affected by the power.\n\nA concussive power causes creatures that take damage from a power that has the sonic descriptor to take a -2 penalty on attack rolls, saving throws, skill checks, and ability checks for a number of rounds equal to the power level of the power. A concussive power only affects powers with the sonic descriptor. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.\n\nPowers that do not deal sonic damage cannot be used with this feat." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
-  <thing id="fPUCrysFoc" name="Craft Crystalline Focus" description="You are able to craft crystalline items that focus psionic energy.{br}{br}{b}Prerequisite:{/b} Manifester level 3rd.\n\n{b}Benefit:{/b} You can craft crystalline focus items that harness psionic energy such as that for a mind blade, mind armor, or astral suit. Doing so takes one day for each 1,000 gp in the item&apos;s base price." compset="Feat">
+  <thing id="fPUCrysFoc" name="Craft Crystalline Focus" description="You are able to craft crystalline items that focus psionic energy.{br}{br}{b}Prerequisite:{/b} Manifester level 3rd.\n\n{b}Benefit:{/b} You can craft crystalline focus items that harness psionic energy such as that for a mind blade, mind armor, or astral suit. Doing so takes one day for each 1,000 gp in the item&apos;s base price." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="ItemCreate"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <prereq message="Manifester level 3+ required.">
       <validate><![CDATA[~check for Manifester level 3
 validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUCrippAs" name="Crippling Assault" description="You are able to paralyze the targets of your ranged and thrown attacks.{br}{br}{b}Prerequisites:{/b} Intimidating Shot, Point-Blank Shot, Staggering Shot, base attack bonus +11.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. As a standard action, you can make a ranged attack with a ranged or thrown weapon. If the attack is successful, it deals damage normally and forces the target to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier) or be paralyzed until the beginning of your next turn. This paralysis is only effective against dazed, flat-footed, paralyzed, staggered, stunned, or unconscious foes. If your attack misses, you still expend your psionic focus." compset="Feat">
+  <thing id="fPUCrippAs" name="Crippling Assault" description="You are able to paralyze the targets of your ranged and thrown attacks.{br}{br}{b}Prerequisites:{/b} Intimidating Shot, Point-Blank Shot, Staggering Shot, base attack bonus +11.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. As a standard action, you can make a ranged attack with a ranged or thrown weapon. If the attack is successful, it deals damage normally and forces the target to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier) or be paralyzed until the beginning of your next turn. This paralysis is only effective against dazed, flat-footed, paralyzed, staggered, stunned, or unconscious foes. If your attack misses, you still expend your psionic focus." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Base Attack Bonus 11+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 11]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Intimidating Shot feat required."><![CDATA[#hasfeat[fPUIntimSh] <> 0]]></exprreq>
     <exprreq message="Point-Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     <exprreq message="Staggering Shot feat required."><![CDATA[#hasfeat[fPUStagSho] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus 11+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 11]]></exprreq>
     </thing>
-  <thing id="fPUCushBlo" name="Cushion the Blow" description="You reduce the damage of an attack on an ally.{br}{br}{b}Prerequisite:{/b} Wisdom 15, collective class feature, manifester level 6th.{br}{br}{b}Benefit:{/b} As long as you are maintaining psionic focus, as an immediate action, you can minimize the damage of a single attack with a ranged, melee, or natural weapon or unarmed strike (treat all dice rolled as 1s) on any member of the collective. This ability must be used in response to an attack on a member of the collective.{br}{br}In addition, if you expend your psionic focus, you can reduce any additional damage on the attack (such as bonus damage from a high Strength or sneak attack damage) by your key ability modifier." compset="Feat">
+  <thing id="fPUCushBlo" name="Cushion the Blow" description="You reduce the damage of an attack on an ally.{br}{br}{b}Prerequisite:{/b} Wisdom 15, collective class feature, manifester level 6th.{br}{br}{b}Benefit:{/b} As long as you are maintaining psionic focus, as an immediate action, you can minimize the damage of a single attack with a ranged, melee, or natural weapon or unarmed strike (treat all dice rolled as 1s) on any member of the collective. This ability must be used in response to an attack on a member of the collective.{br}{br}In addition, if you expend your psionic focus, you can reduce any additional damage on the attack (such as bonus damage from a high Strength or sneak attack damage) by your key ability modifier." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Wisdom 15+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 15]]></exprreq>
     <prereq message="Manifester level 6+ required.">
       <validate><![CDATA[~check for Manifester level 6
@@ -1142,6 +1146,7 @@ validif (hero.tagcount[Hero.Manifester] >= 6)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   <thing id="fPUDeadThr" name="Deadly Throw" description="Your skill with thrown weapons allows you to replace power with finesse.{br}{br}{b}Prerequisites:{/b} Dex 15, Point-Blank Shot, base attack bonus +3.{br}{br}{b}Benefit:{/b} As long as you maintain psionic focus, you may add your Dexterity modifier to damage rolls made with thrown weapons instead of using your Strength modifier. You must be within 30 ft. of the target to gain this benefit.{br}{br}{b}Normal:{/b} You add your Strength modifier to damage rolls for attacks made with thrown weapons." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1305,13 +1310,14 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <exprreq message="Devastating Touch class feature required."><![CDATA[#hasability[cPUDevaTou] <> 0]]></exprreq>
     <exprreq message="Psionic Endowment feat required."><![CDATA[#hasfeat[fPUPsiEnd] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUFeralCT" name="Feral Conbat Training" description="You were taught a style of martial arts that relies on the natural weapons from your racial ability or class feature.\n\nPrerequisites: Improved Unarmed Strike, Weapon Focus with selected natural weapon, proficiency with selected weapon, base attack bonus +1.\n\nBenefit: Choose one of your natural weapons. While using the selected natural weapon, you can apply the effects of feats that have Improved Unarmed Strike as a prerequisite, as well as effects that augment an unarmed strike.\n\nSpecial: If you are a monk, you can use the selected natural weapon with your flurry of blows class feature." compset="Feat" maxlimit="2">
+  <thing id="fPUFeralCT" name="Feral Combat Training" description="You were taught a style of martial arts that relies on the natural weapons from your racial ability or class feature.\n\nPrerequisites: Improved Unarmed Strike, Weapon Focus with selected natural weapon, proficiency with selected weapon, base attack bonus +1.\n\nBenefit: Choose one of your natural weapons. While using the selected natural weapon, you can apply the effects of feats that have Improved Unarmed Strike as a prerequisite, as well as effects that augment an unarmed strike.\n\nSpecial: If you are a monk, you can use the selected natural weapon with your flurry of blows class feature." compset="Feat" maxlimit="" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
-    <exprreq message="Improved Unarmed Strike feat required"><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Base Attack Bonus 1+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
+    <exprreq message="Improved Unarmed Strike feat required"><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
     </thing>
   <thing id="fPUFlarPwr" name="Flaring Power" description="You dazzle creatures when you affect them with a power that has the fire, light, or electricity descriptor.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. The electricity, fire, or light effects of the affected power create a flaring that dazzles creatures that take damage from the power. A flare power causes a creature that takes fire, light, or electricity damage from the affected power to become dazzled for a number of rounds equal to the level of the power. A flaring power only affects powers with a fire, light, or electricity descriptor. Using this feat does not increase the power point cost of the power.{br}{br}Powers that do not deal fire, light, or electricity damage cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1509,13 +1515,12 @@ doneif (hero.tagis[Hero.PsiFocus] <> 1)]]></eval>
 validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUMixComb" name="Mixed Combat" description="You are trained at using ranged and melee attacks at the same time.\n\n{b}Prerequisites:{/b} Quick Draw, base attack bonus +6 \n\n{b}Benefit:{/b} You can sheathe your weapons as free actions that do not provoke attacks of opportunity.\n\nIf you use this feat to change from a melee attack to a ranged attack against the same target, your ranged attacks do not provoke attacks of opportunity from that target.\n\n{b}Normal{/b}: Sheathing weapons is a move action that provokes attacks of opportunity. Ranged attacks provoke attacks of opportunity." compset="Feat" maxlimit="2">
+  <thing id="fPUMixComb" name="Mixed Combat" description="You are trained at using ranged and melee attacks at the same time.\n\n{b}Prerequisites:{/b} Quick Draw, base attack bonus +6 \n\n{b}Benefit:{/b} You can sheathe your weapons as free actions that do not provoke attacks of opportunity.\n\nIf you use this feat to change from a melee attack to a ranged attack against the same target, your ranged attacks do not provoke attacks of opportunity from that target.\n\n{b}Normal{/b}: Sheathing weapons is a move action that provokes attacks of opportunity. Ranged attacks provoke attacks of opportunity." compset="Feat" maxlimit="" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Combat"/>
-    <tag group="ChooseSrc1" tag="Hero"/>
-    <tag group="fShowWhat" tag="WeaponsNat"/>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Quick Draw feat required."><![CDATA[#hasfeat[fQuickDraw] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     </thing>
   <thing id="fPUModBlst" name="Modified Blast" description="You have learned to alter the nature of your surge blast by spending your psionic power.\n\n{b}Prerequisites:{/b} Surge blast class feature, manifester level 3rd.\n\n{b}Benefit:{/b} When you activate your surge blast, you gain the following augment options. Like augmenting a power, augmenting a surge blast is limited to your manifester level. You can also choose to invoke a wild surge when using your surge blast, using the power from the wild surge to pay for augments to the surge blast, but suffer the standard risk of psychic enervation for invoking a wild surge.\n\n{b}Augment:{/b} You can augment your surge blast in one of the following ways.\n\n1. If you spend 2 additional power points, your surge blast deals splash damage.\n\n2. If you spend 3 additional power points, your surge blast is instead a 5 ft. emanation centered on you and creatures in the affected area gain a Reflex save (DC 10 + 1/2 your manifester level + your Charisma modifier) to take half damage.\n\n3. If you spend 4 additional power points, your surge blast deals half damage, but damages all creatures in a 30 ft. line.\n\n4. If you spend 4 additional power points, your surge blast is empowered, dealing 50% additional damage.\n\n5. If you spend 4 additional power points, your surge blast is a 15 ft. cone effect instead of a ranged touch attack, and creatures in the affected area gain a Reflex save (DC 10 + 1/2 your manifester level + your Charisma modifier) to take half damage.\n\n6. If you spend 4 additional power points, your surge blast affects all creatures within a 10 ft. radius of the targeted creature and creatures in the affected area gain a Reflex save (DC 10 + 1/2 your manifester level + your Charisma modifier) to take half damage.\n\n7. If you spend 6 additional power points, your surge blast is instead a 10 ft. emanation centered on you and creatures in the affected area gain a Reflex save (DC 10 + 1/2 your manifester level + your Charisma modifier) to take half damage." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
@@ -1796,9 +1801,8 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     </thing>
   <thing id="fPUUnwillP" name="Unwilling Participant" description="You are able to force others into your collective.{br}{br}{b}Prerequisite:{/b} Collective class feature.{br}{br}{b}Benefit:{/b} You may attempt to force a living creature into your collective as a standard action. The target may attempt a Will save (DC 10 + half manifester level level + Wisdom modifier) to resist. If the target fails the save, it may attempt another Will save at the same DC every 24 hours thereafter, but is otherwise unable to leave the collective unless you allow it.{br}{br}If you expend your psionic focus while using this feat, the action required to attempt to force a living creature into your collective is instead a move action.{br}{br}{b}Normal:{/b} Only willing creatures may be added to a collective. Creatures may leave the collective as a free action.{br}{br}{b}Special:{/b} Creatures forced into your collective using Unwilling Participant are considered willing members for any collective-related effects unless they succeed on another Will save at the same DC to resist being forced into the collective. A successful save means the creature resisted the specific effect but is still a member of the collective." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
-    <tag group="ChooseSrc1" tag="Hero"/>
-    <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Collective class feature required."><![CDATA[(#hasability[cPUVitColl] + #hasability[cPUTacColl]) <> 0]]></exprreq>
     </thing>
   <thing id="fPUUrTrack" name="Urban Tracking" description="You can track down the location of missing persons or wanted individuals within communities.{br}{br}{b}Benefit:{/b} To find the trail of an individual or to follow it for 1 hour requires a Diplomacy check to gather information. You must make another Diplomacy check every hour of the search, as well as each time the trail becomes difficult to follow, such as when it moves to a different area of town.{br}{br}The DC of the check, and the number of checks required to track down your quarry, depends on the community size and the conditions. If you fail a Diplomacy check, you can retry after 1 hour of questioning. The game master should roll the number of checks required secretly, so that the player doesn&apos;t know exactly how long the task will require.{br}{br}{b}Normal:{/b} A character without this feat can use Diplomacy to find out information about a particular individual, but each check takes 1d4+1 hours and doesn&apos;t allow effective trailing.{br}{br}{b}Special:{/b} A character with 5 ranks in Knowledge (local) gains a +2 bonus on the Diplomacy checks to gather information to use this feat. You can cut the time between Diplomacy checks to gather information in half (to 30 minutes per check rather than 1 hour), but you take a -5 penalty on the check." compset="Feat" uniqueness="useronce">
@@ -2216,5 +2220,22 @@ field[abValue].value += 1
     <prereq message="Enhanced Mind Blade required">
       <validate>@valid = #hasability[cSknEnhMB]</validate>
       </prereq>
+    </thing>
+  <thing id="fPUChanRag" name="Channel Rage" description="You have learned to focus your anger to fuel your wild surges.\n\n{b}Prerequisites:{/b} Wild surge class feature, Rage class feature\n\n{b}Benefit:{/b} When you choose to power a manifestation with only your wild surge, you may spend 1 round of your rage instead of expending your psionic focus." compset="Feat" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Wild Surge class feature required"><![CDATA[#hasability[cWldWildSu] <> 0]]></exprreq>
+    <exprreq message="Rage class feature required"><![CDATA[#hasability[cBbnRage] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPUCritRef" name="Critical Refocus" description="Your critical hits recharge your expended focus.\n\n{b}Prerequisites:{/b} Improved Critical, proficiency with weapon, base attack bonus +8\n\n{b}Benefit:{/b} When you confirm a critical hit on an attack where you expended psionic focus, you automatically regain your psionic focus after the results of the attack are determined." compset="Feat" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Improved Critical feat required"><![CDATA[#hasfeat[fImpCrit] <> 0]]></exprreq>
+    <exprreq message="Base Attack Bonus +8 required"><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
     </thing>
   </document>
