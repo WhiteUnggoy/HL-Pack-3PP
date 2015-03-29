@@ -2238,4 +2238,13 @@ field[abValue].value += 1
     <exprreq message="Improved Critical feat required"><![CDATA[#hasfeat[fImpCrit] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus +8 required"><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
     </thing>
+  <thing id="fPUPersFoc" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability." compset="Feat" uniqueness="useronce">
+    <usesource source="pPsiUn"/>
+    <tag group="fCategory" tag="Psionic"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <exprreq message="Psionic Meditation feat required"><![CDATA[#hasfeat[fPUPsiMed] <> 0]]></exprreq>
+    <exprreq message="Wis 13 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Autohypnosis 4 ranks required"><![CDATA[#skillranks[skPUAhypno] >= 4]]></exprreq>
+    </thing>
   </document>
