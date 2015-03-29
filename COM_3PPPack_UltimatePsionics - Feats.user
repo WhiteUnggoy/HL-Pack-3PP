@@ -1441,23 +1441,21 @@ if (field[usrChosen1].ischosen <> 0) then
   <thing id="fPUIntuFig" name="Intuitive Fighting" description="Your intuition guides your strikes to be more devastating.{br}{br}{b}Prerequisite:{/b} Blind-Fight.{br}{br}{b}Benefit:{/b} To use this feat you must maintain psionic focus. You add your Wisdom modifier to your melee attack rolls instead of your Strength modifier." compset="Feat" summary="While psionically focused, use Wisdom modifier for melee attack rolls ." maxlimit="" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
-    <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're disabled, do nothing
-doneif (tagis[Helper.FtDisable] <> 0)
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+    ~ If we're disabled, do nothing
+    doneif (tagis[Helper.FtDisable] <> 0)
 
-~ If Not psionically focused get out now
-doneif (hero.tagis[Hero.PsiFocus] <> 1)
+    var v_focus as number
+    call PUPsiFocus
+    ~ If Not psionically focused get out now
+    doneif (v_focus <> 1)
 
-var sm as number
-var wm as number
-
-sm = hero.child[aSTR].field[aModBonus].value
-wm = hero.child[aWIS].field[aModBonus].value
-
-if ( wm > sm ) then
-hero.child[Attack].field[tAtkMelee].value -= hero.child[aSTR].field[aModBonus].value
-hero.child[Attack].field[tAtkMelee].value += hero.child[aWIS].field[aModBonus].value
-
-endif]]></eval>
+    ~ If our wisdom is greater than our strength then apply it to melee attacks
+    ~ instead of our Strength score.
+    if (hero.child[aWIS].field[aModBonus].value > hero.child[aSTR].field[aModBonus].value) then
+      hero.child[Attack].field[tAtkMelee].value -= hero.child[aSTR].field[aModBonus].value
+      hero.child[Attack].field[tAtkMelee].value += hero.child[aWIS].field[aModBonus].value
+    endif]]></eval>
     <exprreq message="Blind Fight feat required"><![CDATA[#hasfeat[fBlindFgt] <> 0]]></exprreq>
     </thing>
   <thing id="fPUIntuSho" name="Intuitive Shot" description="Your intuition allows you to make deadly ranged attacks.\n\n{b}Prerequisites:{/b} Wis 13, Point-Blank Shot, Psionic Shot \n\n{b}Benefit:{/b} As long as you maintain psionic focus, as a standard action, you may make an attack with a ranged or thrown weapon and add your Wisdom modifier to the damage roll. You must be within 30 feet of your target to deal this extra damage. Creatures immune to critical hits and sneak attacks are immune to this extra damage." compset="Feat" maxlimit="2">
@@ -2238,6 +2236,7 @@ field[abValue].value += 1
     <exprreq message="Improved Critical feat required"><![CDATA[#hasfeat[fImpCrit] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus +8 required"><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
     </thing>
+<<<<<<< HEAD
   <thing id="fPUPersFoc" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -2246,5 +2245,22 @@ field[abValue].value += 1
     <exprreq message="Psionic Meditation feat required"><![CDATA[#hasfeat[fPUPsiMed] <> 0]]></exprreq>
     <exprreq message="Wis 13 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
     <exprreq message="Autohypnosis 4 ranks required"><![CDATA[#skillranks[skPUAhypno] >= 4]]></exprreq>
+=======
+  <thing id="fPUPerFocu" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks.\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability.\n\n{B}Note:{/b} This feat is not fully scripted yet. The psionic ability you select will not work if you turn off Psionic Focus on the &quot;Psionics&quot; tab. This will be fixed in the next release." compset="Feat" summary="You are always treated as maintaining psionic focus for one ability." uniqueness="useronce">
+    <fieldval field="usrCandid1" value="component.Ability &amp; !Helper.BaseAbil &amp; !component.FavClass"/>
+    <usesource source="pPsiUn"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="fCategory" tag="Psionic"/>
+    <tag group="ChooseSrc1" tag="Hero"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="First" priority="1000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+      ~ If nothing chosen get out now
+      doneif (field[usrChosen1].ischosen <> 1)
+
+      ~ Set the pick Psionic Focus tag
+      perform field[usrChosen1].chosen.assign[Psionics.PsiFocus]]]></eval>
+>>>>>>> e6973c931dec48ca38d4bbaeb92a48cf863a252a
     </thing>
   </document>

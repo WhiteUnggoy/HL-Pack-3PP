@@ -281,6 +281,9 @@
   <procedure id="PUPreReqs" scripttype="none"><![CDATA[
     ~ IN: classcheck
     ~ OUT: levels
+    ~ This proceadure is designed to correctly count class levels, PrC, and archetypes that
+    ~ cause spell stacking rules. In example Soul Archer PrC levels stack with Soulknife
+    ~ levels for purposes of Pre-Reqs.
 
     var classcheck as string
     var levels as number
@@ -338,5 +341,17 @@
     ]]>
   </procedure>
 
+  <procedure id="PUPsiFocus" context="pick"><![CDATA[
+    ~ Psionic Focus Test
+    ~ This procedure should be called to test for Psionic Focus instea of directly testing
+    ~ the Hero.PsiFocus tag. This is because of unique feats like Persistent Focus that 
+    ~ can cause a specific Pick to be considered Psionic Focus.
 
+    var v_focus as number
+    
+    ~ We want to set our focus variable to be TRUE (1) or FALSE (0). By using
+    ~ minimum we accmplish this.
+    v_focus = minimum(hero.tagis[Hero.PsiFocus] + tagis[Psionics.PsiFocus], 1)
+    ]]>
+  </procedure>
 </document>
