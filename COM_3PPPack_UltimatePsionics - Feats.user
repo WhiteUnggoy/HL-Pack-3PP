@@ -5,16 +5,16 @@
     <info_author>October 21, 2012 - Tim Shadow
 -Broke this off of the main .user file.</info_author>
     <info_history><![CDATA[
-April 2, 2014 - Tim Shadow
--Updated text of "Scribe Tattoo" to the Ultimate Psionics version.
+      April 2, 2014 - Tim Shadow
+      -Updated text of "Scribe Tattoo" to the Ultimate Psionics version.
 
-March 15, 2014 - Matteo Tirelli (Screetch1979)
--Fixed Psicrystal containment requirment.
--Fixed Expanded Knowledge feat to allow selecting a Psi-Class.
+      March 15, 2014 - Matteo Tirelli (Screetch1979)
+      -Fixed Psicrystal containment requirment.
+      -Fixed Expanded Knowledge feat to allow selecting a Psi-Class.
 
-January 30, 2014 - Tim Shadow
--Moved over 2.0 feats file and make it work with the new Psionics.
--Added "Extra Power Known" from Ultimate Psionics.]]></info_history>
+      January 30, 2014 - Tim Shadow
+      -Moved over 2.0 feats file and make it work with the new Psionics.
+      -Added "Extra Power Known" from Ultimate Psionics.]]></info_history>
     </fileinfo>
   <thing id="fAbilFocIm" name="Ability Focus (Implant)" description="One of this creature&apos;s special attacks is particularly difficult to resist.{br}{br}{b}Prerequisite{/b}: Special attack.{br}{br}{b}Benefit{/b}: Choose one of the creature&apos;s special attacks. Add +2 to the DC for all saving throws against the special attack on which the creature focuses.{br}{br}{b}Special{/b}: A creature can gain this feat multiple times. Its effects do not stack. Each time the creature takes the feat, it applies to a different special attack." compset="Feat" summary="You gain a +2 bonus to the DC of a special attack.">
     <usesource source="pPsiUn"/>
@@ -2236,17 +2236,7 @@ field[abValue].value += 1
     <exprreq message="Improved Critical feat required"><![CDATA[#hasfeat[fImpCrit] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus +8 required"><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
     </thing>
-<<<<<<< HEAD
-  <thing id="fPUPersFoc" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability." compset="Feat" uniqueness="useronce">
-    <usesource source="pPsiUn"/>
-    <tag group="fCategory" tag="Psionic"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="Helper" tag="ShowSpec"/>
-    <exprreq message="Psionic Meditation feat required"><![CDATA[#hasfeat[fPUPsiMed] <> 0]]></exprreq>
-    <exprreq message="Wis 13 required"><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
-    <exprreq message="Autohypnosis 4 ranks required"><![CDATA[#skillranks[skPUAhypno] >= 4]]></exprreq>
-=======
-  <thing id="fPUPerFocu" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks.\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability.\n\n{B}Note:{/b} This feat is not fully scripted yet. The psionic ability you select will not work if you turn off Psionic Focus on the &quot;Psionics&quot; tab. This will be fixed in the next release." compset="Feat" summary="You are always treated as maintaining psionic focus for one ability." uniqueness="useronce">
+  <thing id="fPUPersFoc" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks.\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability.\n\n{B}Note:{/b} This feat is not fully scripted yet. The psionic ability you select will not work if you turn off Psionic Focus on the &quot;Psionics&quot; tab. This will be fixed in the next release." compset="Feat" summary="You are always treated as maintaining psionic focus for one ability." uniqueness="useronce">
     <fieldval field="usrCandid1" value="component.Ability &amp; !Helper.BaseAbil &amp; !component.FavClass"/>
     <usesource source="pPsiUn"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -2261,6 +2251,8 @@ field[abValue].value += 1
 
       ~ Set the pick Psionic Focus tag
       perform field[usrChosen1].chosen.assign[Psionics.PsiFocus]]]></eval>
->>>>>>> e6973c931dec48ca38d4bbaeb92a48cf863a252a
+    <exprreq message="Psionic Meditation feat required"><![CDATA[#hasfeat[fPUPsiMed] <> 0]]></exprreq>
+    <exprreq message="Wis 13 required"><![CDATA[#attrmod[aWIS] >= 13]]></exprreq>
+    <exprreq message="Autohypnosis 4 ranks required"><![CDATA[#skillranks[skPUAhypno] >= 4]]></exprreq>
     </thing>
   </document>
