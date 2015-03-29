@@ -6119,7 +6119,7 @@ perform forward[WepProf.?]]]></eval>
     <tag group="ClassSkill" tag="skPercep"/>
     <tag group="ClassSkill" tag="skSenseMot"/>
     <tag group="ClassSkill" tag="skSurvival"/>
-    <tag group="ProductId"  tag="HLCommunit"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <bootstrap thing="fArmLight"></bootstrap>
     <bootstrap thing="fSimple"></bootstrap>
     <bootstrap thing="cPUVitReqA">
@@ -13920,7 +13920,7 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
     <tag group="ProductId" tag="HLCommunit"/>
     <bootstrap thing="fPUUnwillP">
       <containerreq phase="First" priority="500"><![CDATA[
-      count:Classes.Vitalist>= 2]]></containerreq>
+      count:Classes.Vitalist>= 2 & !AbReplace.cPUUnwPart]]></containerreq>
       </bootstrap>
     </thing>
   <thing id="cPUDrnHlth" name="Drain Health" description="A life leech of 3rd level can steal hit points from members of his collective and transfer them as healing to other members of the collective. As a standard action, one member of the collective takes damage equal to double the life leech’s class level + the life leech’s Wisdom modifier and another member of the collective heals the same amount.\nIf used on an unwilling target, a successful Will save halves the amount of damage taken and healed.\nThis ability may only be used on creatures with a Constitution score and may not be used against creatures with a total number of hit dice less than half the life leech’s level.\nThis ability replaces steal health." compset="ClSpecial">
