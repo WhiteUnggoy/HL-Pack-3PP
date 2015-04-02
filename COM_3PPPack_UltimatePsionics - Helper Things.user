@@ -18,6 +18,7 @@
     <tag group="IsWeapon" tag="wMindBlade" name="Mind Blade"/>
     <tag group="WepFocus" tag="wMindBlade" name="Mind Blade"/>
     <tag group="Target" tag="wMindBlade" name="Mind Blade"/>
+    <tag group="abAction" tag="PUExpFocus" name="Expend Psionic Focus"/>
     <tag group="abCategory" tag="PUBladeSk" name="Soulknife Blade Skill" abbrev="Blade Skill"/>
     <bootstrap thing="PU0lvlPowe"></bootstrap>
     <bootstrap thing="PUPathSk"></bootstrap>
