@@ -13817,20 +13817,6 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
   <thing id="arPUGiftBl" name="Gifted Blade" description="There are some soulknives who learn to manifest powers, as well as to form mind blades. These gifted individuals wield both blade and mind with deadly efficiency" compset="ClassVary" uniqueness="unique">
     <fieldval field="srcPageNum" value="282"/>
     <fieldval field="srcBookInf" value="Ultimate Psionics"/>
-    <arrayval field="cvPsiPPTot" index="6" value="5"/>
-    <arrayval field="cvPsiPPTot" index="7" value="7"/>
-    <arrayval field="cvPsiPPTot" index="8" value="9"/>
-    <arrayval field="cvPsiPPTot" index="9" value="11"/>
-    <arrayval field="cvPsiPPTot" index="10" value="14"/>
-    <arrayval field="cvPsiPPTot" index="11" value="17"/>
-    <arrayval field="cvPsiPPTot" index="12" value="20"/>
-    <arrayval field="cvPsiPPTot" index="13" value="24"/>
-    <arrayval field="cvPsiPPTot" index="14" value="28"/>
-    <arrayval field="cvPsiPPTot" index="15" value="32"/>
-    <arrayval field="cvPsiPPTot" index="16" value="37"/>
-    <arrayval field="cvPsiPPTot" index="17" value="42"/>
-    <arrayval field="cvPsiPPTot" index="18" value="47"/>
-    <arrayval field="cvPsiPPTot" index="19" value="52"/>
     <arrayval field="cvPsiPowTo" index="2" value="1"/>
     <arrayval field="cvPsiPowTo" index="3" value="1"/>
     <arrayval field="cvPsiPowTo" index="4" value="1"/>
@@ -13870,10 +13856,25 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
     <arrayval field="cvPsiPPTot" index="3" value="1"/>
     <arrayval field="cvPsiPPTot" index="4" value="2"/>
     <arrayval field="cvPsiPPTot" index="5" value="3"/>
+    <arrayval field="cvPsiPPTot" index="6" value="5"/>
+    <arrayval field="cvPsiPPTot" index="7" value="7"/>
+    <arrayval field="cvPsiPPTot" index="8" value="9"/>
+    <arrayval field="cvPsiPPTot" index="9" value="11"/>
+    <arrayval field="cvPsiPPTot" index="10" value="14"/>
+    <arrayval field="cvPsiPPTot" index="11" value="17"/>
+    <arrayval field="cvPsiPPTot" index="12" value="20"/>
+    <arrayval field="cvPsiPPTot" index="13" value="24"/>
+    <arrayval field="cvPsiPPTot" index="14" value="28"/>
+    <arrayval field="cvPsiPPTot" index="15" value="32"/>
+    <arrayval field="cvPsiPPTot" index="16" value="37"/>
+    <arrayval field="cvPsiPPTot" index="17" value="42"/>
+    <arrayval field="cvPsiPPTot" index="18" value="47"/>
+    <arrayval field="cvPsiPPTot" index="19" value="52"/>
     <usesource source="pPsiUn"/>
+    <tag group="ClVaryName" tag="AppParen"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbReplace" tag="cSknPsyStr"/>
-    <tag group="ClVaryName" tag="AppParen"/>
+    <tag group="PsiAttr" tag="aWIS"/>
     <link linkage="varies" thing="cHelpSkn"/>
     </thing>
   <thing id="arPULifeLe" name="Life Leech" description="Life leeches know that there is more potential from the collective bond than simply transferring healing energy and sharing psionic enhancements. They recognize that the collective can be used to share virtually any debilitating effect, even redirecting the damage of a strike at the moment of impact." compset="ClassVary" uniqueness="unique">
