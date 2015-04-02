@@ -11,40 +11,40 @@
     <tag group="WepProf" tag="wPFDogslic"/>
     <tag group="WepProf" tag="wHorsechop"/>
     <eval phase="First"><![CDATA[
-~ If we're disabled, do nothing
-doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-~assign our weapon proficiencies to the hero
-perform hero.pushtags[WepProf.?]
-perform hero.pushtags[EasyWeapon.?]]]></eval>
+      ~assign our weapon proficiencies to the hero
+      perform hero.pushtags[WepProf.?]
+      perform hero.pushtags[EasyWeapon.?]]]></eval>
     </thing>
   <thing id="raPariah" name="Pariah" description="The appearance of the blue can affect the reactions of those nearby. A blue takes a -1 penalty to Charisma-based skill checks when dealing with nongoblinoid humanoids, but gains a +1 bonus to Charisma-based skill checks while interacting with goblins." compset="RaceSpec">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <eval phase="Final" priority="50000"><![CDATA[
-~ If we're disabled, do nothing
-doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-var ChaSkill as number
-~ Give bonus only to CHA skills
-foreach pick in hero from BaseSkill
-  ChaSkill = 0
-  ~ Check Skill Override
-  if (eachpick.tagis[SkillOver.aCHA] <> 0) then
-    ChaSkill = 1
-  endif
-  ~ If it has a normal linkage to Charisma it also qualifies.
-  if (eachpick.islinkage[skillattr] <> 0) then
-    if (eachpick.linkage[skillattr].tagis[thingid.aCHA] <> 0) then
-      ChaSkill = 1
-    endif
-  endif
-  ~ Yep really a Cha Based Skill
-  if (ChaSkill = 1) then
-    #situational[eachpick,"-1 penalty vs nongoblinoid humanoids.",field[name].text]
-    #situational[eachpick,"+1 bonus vs goblins.",field[name].text]
-  endif
-nexteach]]></eval>
+      var ChaSkill as number
+      ~ Give bonus only to CHA skills
+      foreach pick in hero from BaseSkill
+        ChaSkill = 0
+        ~ Check Skill Override
+        if (eachpick.tagis[SkillOver.aCHA] <> 0) then
+          ChaSkill = 1
+        endif
+        ~ If it has a normal linkage to Charisma it also qualifies.
+        if (eachpick.islinkage[skillattr] <> 0) then
+          if (eachpick.linkage[skillattr].tagis[thingid.aCHA] <> 0) then
+            ChaSkill = 1
+          endif
+        endif
+        ~ Yep really a Cha Based Skill
+        if (ChaSkill = 1) then
+          #situational[eachpick,"-1 penalty vs nongoblinoid humanoids.",field[name].text]
+          #situational[eachpick,"+1 bonus vs goblins.",field[name].text]
+        endif
+      nexteach]]></eval>
     </thing>
   <thing id="raNatPsion" name="Naturally Psionic" description="Members of your race gain the Wild Talent feat as a bonus feat at 1st level. If you take levels in a psionic class, you instead gain the Psionic Talent feat." compset="RaceSpec">
     <tag group="ProductId" tag="PUProdID"/>
@@ -54,22 +54,30 @@ nexteach]]></eval>
     <bootstrap thing="fPUPsiTal">
       <containerreq phase="First" priority="2000"><![CDATA[Psionics.Class & !AbReplace.raNatPsion]]></containerreq>
       </bootstrap>
-    <eval phase="First"><![CDATA[
-~ If we're disabled, do nothing
-doneif (tagis[Helper.SpcDisable] <> 0)
+    <eval phase="First" priority="2000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-~ Set Psionics Race tag on to the hero
-perform hero.assign[Psionics.Race]]]></eval>
+      ~ Set Psionics Race tag on to the hero
+      perform hero.assign[Psionics.Race]
+
+      ~ If we are suppose to be assigning the Wild Talent feat we need to set the
+      ~ Hero.Psionic tag ontot hero before the feat even runs. So do that here.
+      if (tagexpr[!hero#Psionics.Class & !hero#AbReplace.raNatPsion] = 1) then
+        ~ Set Hero.Psionic
+        call SetHeroPsi
+      endif
+      ]]></eval>
     </thing>
   <thing id="raBStealth" name="Stealthy" description="Blues gain a +2 racial bonus on Stealth and Ride." compset="RaceSpec">
     <eval phase="PreLevel" priority="10000"><![CDATA[
-~ If we're disabled, do nothing
-doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
 
-~ +2 to Perception
-#racialbonus[skRide] += 2
-~ +2 to Stealth
-#racialbonus[skStealth] += 2]]></eval>
+      ~ +2 to Perception
+      #racialbonus[skRide] += 2
+      ~ +2 to Stealth
+      #racialbonus[skStealth] += 2]]></eval>
     </thing>
   <thing id="rDromite" name="Dromite" description="Small and insectoid in appearance, dromites stand out in most crowds of humanoids. Their antennae, faceted eyes, carapace, and small stature make them visibly different from most. Hailing from a hivemind-like history, dromites have come to love and appreciate individuality while still continuing to live in a hive and collective environment. This individuality, together with a strong liberal view on life, means that while different, dromites rarely have a problem making friends or finding a place to live or work." compset="Race">
     <fieldval field="rSTR" value="-2"/>

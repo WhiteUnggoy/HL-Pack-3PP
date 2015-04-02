@@ -908,10 +908,10 @@ field[abSumm].text = "Last Respite {i}Mind Switch{/i} save DC " & lrDC & " vs Wi
   <thing id="cSknWldTal" name="Wild Talent" description="The soulknife gains Wild Talent as a bonus feat at 1st level. This provides her with the psionic power necessary to manifest her mind blade. A character who is already psionic instead gains the Psionic Talent feat." compset="ClSpecial">
     <tag group="Helper" tag="SpecUp"/>
     <bootstrap thing="fPUPsiTal">
-      <containerreq phase="First" priority="499">Hero.Psionic</containerreq>
+      <containerreq phase="First" priority="2000">Hero.Psionic</containerreq>
       </bootstrap>
     <bootstrap thing="fPUWildTal">
-      <containerreq phase="First" priority="499">!Hero.Psionic</containerreq>
+      <containerreq phase="First" priority="2000">!Hero.Psionic</containerreq>
       </bootstrap>
     </thing>
   <thing id="cSknShaMB" name="Shape Mind Blade" description="The soulknife&apos;s mind blade retains the last chosen form every time it is formed until the soulknife reshapes it. If the soulknife chooses to reshape his blade, it requires a full-round action to do so. She may also re-assign the type of damage dealt as part of reshaping his mind blade if he so chooses.{br}{br}A soulknife can reassign the ability or abilities he has added to his mind blade; see below. To do so, he must first spend 8 hours in concentration. These cannot be the normal 8 hours used for rest, even if the soulknife does not require sleep. After that period, the mind blade materializes with the new ability or abilities selected by the soulknife." compset="ClSpecial" summary="Change the form of your mind blade, or reassign its abilities"></thing>

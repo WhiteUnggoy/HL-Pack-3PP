@@ -3,8 +3,7 @@
   <loadonce key="COM_3PPPack_UltimatePsionics - Helper Things"/>
   <fileinfo>
     <info_author>Tim Shadow (ShadowChemosh)</info_author>
-    <info_history>
-    January 3, 2015 - Tim Shadow
+    <info_history>January 3, 2015 - Tim Shadow
     -Moved release notes over to COM_3PPPack_UltimatePsionics - Release Notes.user file.
     -Changed PUPathSk to not use any string processing logic.</info_history>
     </fileinfo>
@@ -104,7 +103,7 @@
     </thing>
   <thing id="PUClassFnd" name="Psionic Class Found" description="This checks to see if a psionic class has been selected and if found sets the tag Psionics.Class on the hero very early." compset="Simple" uniqueness="unique">
     <usesource source="pPsiUn"/>
-    <eval phase="First"><![CDATA[
+    <eval phase="First"><![CDATA[   
       var psiLevel as number
       var iX       as number
       ~ Find each Psionic Based class and set a Psionics.Class tag on the hero.
@@ -117,13 +116,13 @@
           perform eachpick.assign[Psionics.Class]
           ~ Total up our Psionic Levels
           psiLevel += eachpick.field[cTotalLev].value
-          ~ If no hero psionic tag already on hero than assign one
-          If (hero.tagis[Hero.Psionic] <> 1) Then
-            ~ Set the Hero.Psionic tag on the hero
-            perform hero.assign[Hero.Psionic]
-          Endif
+          ~ Set hero.Psionic
+          call SetHeroPsi
         Endif
       nexteach
+
+      ~ Total up Soulknife levels as Psionic levels
+      psiLevel += hero.childfound[cHelpSkn].field[cTotalLev].value
       
       ~ Assign the correct number of Psionics.Class tags to the hero
       while (iX < psiLevel)
@@ -260,5 +259,16 @@
   <thing id="zPUMndBlt1" name="Mind Bolt (Long Range)" description="Mind Bolt Selection helper. These are bootstrapped to classes and NOT to a mechanic." compset="Simple">
     <usesource source="pPsiUn"/>
     <tag group="MindBlade" tag="BoltLong"/>
+    </thing>
+  <thing id="abPUPsiTal" name="Psionic Talent" description="This is a helper object for the Psionic Talent feat so that our logic is only done &quot;once&quot; no matter how many times we are added to the hero." compset="Ability" uniqueness="unique">
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PreLevel" priority="10000"><![CDATA[
+      ~ Calculate Bonus points for each feat taken. First time is 2PP
+      ~ but each time after that we should only increase by 1PP.
+      field[abValue].value += 1 + hero.tagcount[Ability.fPUPsiTal]
+      
+      ~ Increase the Power Point resource
+      #resmax[resPowerPt] += field[abValue].value
+      ]]></eval>
     </thing>
   </document>

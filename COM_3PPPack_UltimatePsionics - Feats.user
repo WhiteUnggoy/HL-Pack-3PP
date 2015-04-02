@@ -569,27 +569,12 @@
     <exprreq message="Point Blank Shot required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUPsiTal" name="Psionic Talent" description="You gain additional power points to supplement those you already had.\n\n{b}Prerequisite{/b}: Having a power point reserve.  \n\n{b}Benefit{/b}: When you take this feat for the first time, you gain 2 power points.  \n\n{b}Special{/b}: You can take this feat multiple times. Each time you take the feat after the first time, the number of power points you gain increases by 1." compset="Feat">
+  <thing id="fPUPsiTal" name="Psionic Talent" description="You gain additional power points to supplement those you already had.\n\n{b}Prerequisite{/b}: Having a power point reserve.  \n\n{b}Benefit{/b}: When you take this feat for the first time, you gain 2 power points.  \n\n{b}Special{/b}: You can take this feat multiple times. Each time you take the feat after the first time, the number of power points you gain increases by 1." compset="Feat" summary="Gain 2 or 1 extra power points.">
     <usesource source="pPsiUn"/>
-    <tag group="User" tag="PsionTal" name="PsionTal" abbrev="PsionTal"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <eval phase="PreLevel" priority="10000"><![CDATA[
-      ~ If we're disabled, do nothing
-      doneif (tagis[Helper.FtDisable] <> 0)
-      ~only run the rest for the first copy
-      doneif (tagis[Helper.FirstCopy] = 0)
-
-      ~Bonus points for each taken
-      field[abValue].value += 2 + hero.tagcount[User.PsionTal]
-      field[abSumm].text = "Gain an additional " & field[abValue].value & " power points."
-      #resmax[resPowerPt] += field[abValue].value
-
-      ~ Add the "Psionic Talent" tag to the hero so we know how many times we've
-      ~ run this feat script so far, which we use to control how much we add
-      ~ to our power points every time.
-      perform hero.assign[User.PsionTal]]]></eval>
-    <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
+    <bootstrap thing="abPUPsiTal"></bootstrap>
+    <exprreq message="A power point reserve required."><![CDATA[#resmax[resPowerPt] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiWep" name="Psionic Weapon" description="You can charge your melee weapon with additional damage potential.\n\n{b}Prerequisite:{/b} Str 13.\n\n{b}Benefit:{/b} While you maintain psionic focus, your attacks with a melee weapon deal an extra 1 point of damage.\n\nAdditionally, if you expend your psionic focus as part of an attack with a melee weapon, that attack instead deals an extra 2d6 points of damage. You must decide whether or not to use this feat prior to making an attack. If your attack misses, you still expend your psionic focus." compset="Feat" summary="While focused melee attacks do +1 dmg and expend to deal +2d6 dmg." uniqueness="useronce">
     <comment>abValue = Damage Bonus (+1),abValue2 = # of Dice (Xd6),abValue3 = Die Size (2dX)</comment>
@@ -746,11 +731,8 @@
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
 
-      ~ If we are already not a psionic character assign the Hero Psionic tag
-      If (hero.tagis[Hero.Psionic] <> 1) Then
-        ~ We are a Psionic charcter so let HL know
-        perform hero.assign[Hero.Psionic]
-      Endif
+      ~ Set hero.Psionic
+      call SetHeroPsi
 
       ~ Increase our total amount of Power Points by 2
       #resmax[resPowerPt] += 2]]></eval>
