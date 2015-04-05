@@ -265,11 +265,20 @@
     <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="PreLevel" priority="10000"><![CDATA[
       ~ Calculate Bonus points for each feat taken. First time is 2PP
-      ~ but each time after that we should only increase by 1PP.
-      field[abValue].value += 1 + hero.tagcount[Ability.fPUPsiTal]
+      ~ and second time we get +3 (total of 5PP) and third time
+      ~ we get +4 for a total of 9PP.
+      field[abValue].value += hero.tagcount[Ability.fPUPsiTal]
+
+      var iX as number
+
+      ~ Assign the correct number of Psionics.Class tags to the hero
+      while (iX < field[abValue].value)
+        field[abValue2].value += 2 + iX
+        iX += 1
+      loop
       
       ~ Increase the Power Point resource
-      #resmax[resPowerPt] += field[abValue].value
+      #resmax[resPowerPt] += field[abValue2].value
       ]]></eval>
     </thing>
   </document>

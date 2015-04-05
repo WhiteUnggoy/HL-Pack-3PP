@@ -14124,8 +14124,6 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
       call SetHeroPsi
       ]]></eval>
     <eval phase="PostAttr" priority="10001" index="2"><![CDATA[
-      ~ If we're not shown, just get out now
-      doneif (tagis[Helper.ShowSpec] <> 1)
       ~ If we've been Disabled, get out now
       doneif (tagis[Helper.SpcDisable] <> 0)    
       ~ If we have our ML adjustment level is zero then, get out now
@@ -14146,7 +14144,9 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
       if (root.islinkage[varies] <> 0) then
         ~ Adjust our archetype ML field values down by 2
         root.linkage[varies].field[cMagicLev].value += field[abValue].value
+        root.linkage[varies].field[cMagicLev].value = maximum(root.linkage[varies].field[cMagicLev].value,0)
         root.linkage[varies].field[cCasterLev].value += field[abValue].value
+        root.linkage[varies].field[cCasterLev].value = maximum(root.linkage[varies].field[cCasterLev].value,0)
       ~..We are bootstrapped directly to a class
       else
         ~ Adjust our class ML field values down by 2
@@ -14171,24 +14171,31 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
         perform hero.assign[Psionics.Class]
       loop
 
-      ~ CHANGE POWER POINT SESERVE
+      ~ CHANGE POWER POINT RESERVE
       ~-------------------------------
 
       perform hero.findchild[BaseAttr,root.tagids[PsiAttr.?]].setfocus
       ~ If setfocus failed then get out now!
       doneif (state.isfocus = 0)
 
+debug "ML " & root.linkage[varies].field[cMagicLev].value
+debug "PP Reserve " & #resmax[resPowerPt]
+
       ~ HL still calculated our PP attribute bonus using our full level
       ~ so we need to re-calculate the value and then remove it.
       PP = focus.field[aModBonus].value * root.linkage[varies].field[cTotalLev].value * .5
       PP = round(PP,0,-1)
       #resmax[resPowerPt] -= PP
+debug "PP Reserve " & #resmax[resPowerPt]
+debug "PP -" & PP
 
       ~ Calculate our correct PP Reserve for our current ML add it to our
       ~ Power Point Reserve total.
       PP = focus.field[aModBonus].value * root.linkage[varies].field[cMagicLev].value * .5
       PP = round(PP,0,-1)
       #resmax[resPowerPt] += PP     
+debug "PP Reserve " & #resmax[resPowerPt]
+debug "PP +" & PP
       ]]></eval>
       </thing>
   </document>
