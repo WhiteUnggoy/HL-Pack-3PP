@@ -20,7 +20,7 @@
     <tag group="Target" tag="wMindBlade" name="Mind Blade"/>
     <tag group="abAction" tag="PUExpFocus" name="Expend Psionic Focus"/>
     <tag group="abCategory" tag="PUBladeSk" name="Soulknife Blade Skill" abbrev="Blade Skill"/>
-    <bootstrap thing="PU0lvlPowe"></bootstrap>
+    <tag group="abAction" tag="PUManFocus" name="Maintain Psionic Focus"/>
     <bootstrap thing="PUPathSk"></bootstrap>
     <bootstrap thing="PUClassFnd"></bootstrap>
     <bootstrap thing="zPUArtiste"></bootstrap>
@@ -37,6 +37,7 @@
     <bootstrap thing="zPUSingleM"></bootstrap>
     <bootstrap thing="zPUSneaky"></bootstrap>
     <bootstrap thing="zPUSympath"></bootstrap>
+    <bootstrap thing="PU0lvlPowe"></bootstrap>
     </thing>
   <thing id="arHdPUPsi" name="Psion" compset="ClassVary" uniqueness="unique" isshowonly="yes">
     <comment><![CDATA[This is a helper object for the "Psion" class header.]]></comment>
@@ -278,7 +279,6 @@
       loop
       
       ~ Increase the Power Point resource
-      #resmax[resPowerPt] += field[abValue2].value
-      ]]></eval>
+      #resmax[resPowerPt] += field[abValue2].value]]></eval>
     </thing>
   </document>

@@ -53,6 +53,7 @@
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Base attack bonus +6 required." iserror="no"><![CDATA[#BAB[] >= 6]]></exprreq>
     </thing>
   <thing id="fPUAuton" name="Autonomous" description="You have a knack for psionic self-sufficiency.{br}{br}{b}Benefit:{/b} You get a +2 bonus on all Autohypnosis checks and Knowledge (psionics) checks. If you have 10 ranks in either of these skills, your bonus on that skill increases to +4." compset="Feat" summary="You get a +2 bonus on all Autohypnosis checks and Knowledge (Psionics) checks." uniqueness="useronce">
@@ -88,6 +89,7 @@
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Spellcraft 8+ ranks required."><![CDATA[#skillranks[skSpellcr] >= 8]]></exprreq>
     </thing>
   <thing id="fPUChnPwr" name="Chain Power" description="You can manifest powers that arc to hit other targets in addition to the primary target.\n\n{b}Benefit{/b}: To use this feat, you must expend your psionic focus. You can chain any power that affects a single target and that deals either acid, cold, electricity, fire, or sonic damage. After the primary target is struck, the power can arc to a number of secondary targets equal to your manifester level (maximum twenty). The secondary arcs each strike one target and deal half as much damage as the primary one did (round down).\n\nEach target gets to make a saving throw, if one is allowed by the power. You choose secondary targets as you like, but they must all be within 30 feet of the primary target, and no target can be struck more than once. You can choose to affect fewer secondary targets than the maximum (to avoid allies in the area, for example).\n\nUsing this feat increases the power point cost of the power by 6. The power&apos;s total cost cannot exceed your manifester level.\n\nIf a power requires line of sight (which includes most powers that affect a target or targets instead of an area), you cannot manifest it as a burrowing power unless you can somehow see the target, such as with clairvoyant sense. Using this feat increases the power point cost of the power by 4. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="You can manifest powers that arc to hit other targets\nin addition to the primary target." uniqueness="useronce">
@@ -95,6 +97,7 @@
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUClkDnce" name="Cloak Dance" description="You are skilled at using optical tricks to make yourself seem to be where you are not.\n\n{b}Prerequisites{/b}: Perform (Dance) 2 ranks, Stealth 7 ranks\n\n{b}Benefit{/b}: You can take a move action to obscure your exact position. Until your next turn, you have concealment. Alternatively, you can take a full-round action to entirely obscure your exact position. Until your next action, you have total concealment." compset="Feat" summary="You are skilled at using optical tricks to make yourself\nseem to be where you are not." uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -124,33 +127,38 @@
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="PUProdID"/>
-    <exprreq message="Psionic Weapon required." iserror="no"><![CDATA[#hasfeat[fPUPsiWep] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Base attack bonus +6 required." iserror="no"><![CDATA[#BAB[] >= 6]]></exprreq>
     <exprreq message="Strength 13 required." iserror="no"><![CDATA[#attrmod[aSTR] >= 13]]></exprreq>
+    <exprreq message="Psionic Weapon required." iserror="no"><![CDATA[#hasfeat[fPUPsiWep] <> 0]]></exprreq>
     </thing>
   <thing id="fPUDelPwr" name="Delay Power" description="You can manifest powers that go off up to 5 rounds later.\n\n{b}Benefit{/b}: To use this feat, you must expend your psionic focus. You can manifest a power as a delayed power. A delayed power doesn&apos;t activate immediately. When you manifest the power, you choose one of three trigger mechanisms: (1) The power activates when you take a standard action to activate it; (2) It activates when a creature enters the area that the power will affect (only powers that affect areas can use this trigger condition); or (3) It activates on your turn after 5 rounds pass. If you choose one of the first two triggers and the conditions are not met within 5 rounds, the power activates automatically on the fifth round.\n\nOnly area and personal powers can be delayed.\n\nAny decisions you would make about the delayed power, including attack rolls, designating targets, or determining or shaping an area, are decided when the power is manifested. Any effects resolved by those affected by the power, including saving throws, are decided when the delay period ends.\n\nA delayed power can be dispelled normally during the delay, and can be detected normally in the area or on the target by the use of powers that can detect psionic effects.\n\nUsing this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="You can manifest powers that go off up to 5 rounds\nlater." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUEmpPwr" name="Empower Power" description="You can manifest powers to greater effect.\n\n{b}Benefit{/b}: To use this feat, you must expend your psionic focus. You can empower a power. All variable, numeric effects of an empowered power are increased by one-half. An empowered power deals half again as much damage as normal, cures half again as many hit points, affects half again as many targets, and so forth, as appropriate. Augmented powers can also be empowered (multiply 1-1/2 times the damage total of the augmented power). Saving throws and opposed checks (such as the one you make when you manifest dispel psionics) are not affected, nor are powers without random variables.\n\nUsing this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="Numeric effects of a power are increased 50%. +2 Power Points." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUEndMind" name="Endowed Mind" description="You can make your powers more difficult to resist.\n\n{b}Benefit{/b}: As long as you maintain psionic focus, increase the save DC of any power you manifest by 1 for every 2 power points you spend augmenting the power, provided the augmentation does not already increase the power&apos;s save DC. You may even spend 2 power points to increase a power&apos;s save DC even if the power does not have any augment options." compset="Feat" summary="You can make your powers more difficult to resist." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUManFocus"/>
     </thing>
   <thing id="fPUEnlPwr" name="Enlarge Power" description="You can manifest powers farther than normal.\n\n{b}Benefit{/b}: To use this feat, you must expend your psionic focus. You can alter a power with a range of close, medium, or long to increase its range by 100%. An enlarged power with a range of close has a range of 50 feet + 5 feet per level, a medium-range power has a range of 200 feet + 20 feet per level, and a long-range power has a range of 800 feet + 80 feet per level. \n\nPowers whose ranges are not defined by distance, as well as powers whose ranges are not close, medium, or long, are not affected.\n\nUsing this feat does not increase the power point cost of the power." compset="Feat" summary="You can manifest powers farther than normal." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUExpKn" name="Expanded Knowledge" description="{b}Prerequisites{/b}: Manifester level 3rd.  \n\n{b}Benefit{/b}: Add to your powers known one additional power of any level up to one level lower than the highest-level power you can manifest. You can choose any power, including powers from another discipline&apos;s list or even from another class&apos;s list.\n\n{b}Special{/b}: You can gain this feat multiple times. Each time, you learn one new power at any level up to one less than the highest-level power you can manifest.\n\n{b}Note:{/b} First selection is the class this feat applies too and the second choice is the power you wish to learn. Once these are both selected you need to switch to your Class tab and add the power on the Class tab to your character.  Selecting here on the feat just allows it as a valid choice on the Class." compset="Feat" summary="Add to your powers known one additional power of any level up to one level lower than the highest-level power you can manifest.">
     <fieldval field="usrCandid1" value="component.Class &amp; (Psionics.Class)"/>
@@ -196,6 +204,7 @@
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUExBlst" name="Extended Blast" description="Your surge blast has a farther reach.\n\n{b}Prerequisites:{/b} Surge blast class feature.\n\n{b}Benefit:{/b} Your surge blast has a range of 60 feet.\n\n{b}Normal:{/b} Your surge blast has a range of 30 feet." compset="Feat" summary="Your surge blast has a farther reach." uniqueness="useronce">
     <fieldval field="abValue" value="30"/>
@@ -216,25 +225,28 @@
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="PUProdID"/>
-    <exprreq message="Psionic Shot required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Dexterity 13 required"><![CDATA[#attrmod[aDEX] >= 13]]></exprreq>
     <exprreq message="Base attack bonus +6 required"><![CDATA[#BAB[] >= 6]]></exprreq>
     <exprreq message="Point Blank Shot required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Psionic Shot required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
     </thing>
   <thing id="fPUFocusSu" name="Focused Sunder" description="You can sense the stress points on others&apos; weapons.{br}{br}{b}Prerequisite:{/b} Str 13, Power Attack, Improved Sunder.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. When you strike at an opponent&apos;s weapon, you ignore half of the weapon&apos;s total hardness (round down). Total hardness includes any magical or psionic enhancements possessed by the weapon that increase its hardness.{br}{br}{b}Special:{/b} You can also sense the stress points in any hard construction, such as wooden doors or stone walls, and can ignore half of the object&apos;s total hardness (round down) when attacking that object. You must still expend your psionic focus when using this special option." compset="Feat" summary="Expend psionic focus to ignore half of a weapons hardness (round down)." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="PUProdID"/>
-    <exprreq message="Strength 13 required"><![CDATA[#attrmod[aSTR] >= 13]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Power Attack required." iserror="no"><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
     <exprreq message="Improved Sunder required."><![CDATA[#hasfeat[fImpSunder] <> 0]]></exprreq>
+    <exprreq message="Strength 13 required"><![CDATA[#attrmod[aSTR] >= 13]]></exprreq>
     </thing>
   <thing id="fPUGhostA" name="Ghost Attack" description="Your deadly strikes against incorporeal foes more frequently find their mark.{br}{br}{b}Prerequisite:{/b} Base attack bonus +3.{br}{br}{b}Benefit:{/b} You must be psionically focused to use this feat. When you make a successful melee attack or a ranged attack against an incorporeal creature, your attack deals 75% damage instead of the standard 50% damage.{br}{br}If you expend your psionic focus as part of the attack, your attack deals full damage. You must decide whether or not to use this option prior to making an attack. If your attack misses, you still expend your psionic focus.{br}{br}Your weapon or natural weapon actually appears to become briefly incorporeal as the attack is made." compset="Feat" summary="When psionically focused &amp; hit an incorporeal creature deal 75% instead of 50% dmg." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Base attack bonus +3 required"><![CDATA[#BAB[] >= 3]]></exprreq>
     </thing>
   <thing id="fPUGPwrPen" name="Greater Power Penetration" description="Your powers are especially potent at breaking through power resistance.{br}{br}{b}Prerequisite:{/b} Power Penetration.{br}{br}{b}Benefit:{/b} When you use the Power Penetration feat, the bonus on manifester level checks to overcome a creature&apos;s power resistance increases to +4 when you maintain psionic focus, and +8 when you expend you psionic focus." compset="Feat" summary="Bonus on ML checks vs PR increases to +4 when focused and +8 when you expend." uniqueness="useronce">
@@ -286,6 +298,8 @@
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -294,9 +308,9 @@
       #value[fPUPsiFist] += field[abValue].value
       #value2[fPUPsiFist] += field[abValue2].value
       #value3[fPUPsiFist] += field[abValue3].value]]></eval>
-    <exprreq message="Strength 13+ required." iserror="no"><![CDATA[#attrvalue[aSTR] >= 13]]></exprreq>
-    <exprreq message="Psionic Fist feat required."><![CDATA[#hasfeat[fPUPsiFist] <> 0]]></exprreq>
     <exprreq message="Base attack bonus +6 required."><![CDATA[#BAB[] >= 6]]></exprreq>
+    <exprreq message="Psionic Fist feat required."><![CDATA[#hasfeat[fPUPsiFist] <> 0]]></exprreq>
+    <exprreq message="Strength 13+ required." iserror="no"><![CDATA[#attrvalue[aSTR] >= 13]]></exprreq>
     </thing>
   <thing id="fPUGPsiSht" name="Greater Psionic Shot" description="You can charge your ranged attacks with additional damage potential.{br}{br}{b}Prerequisite:{/b} Point Blank Shot, Psionic Shot, base attack bonus +6.{br}{br}{b}Benefit:{/b} When you use the Psionic Shot feat, your ranged attack deals an extra 2 points of damage instead of 1 point of damage while you maintain psionic focus, and deal an extra 4d6 points of damage instead of an extra 2d6 points when you expend your psionic focus." compset="Feat" summary="Psionic Shot feat does +1 dmg and +2d6 when you expend focus." uniqueness="useronce">
     <fieldval field="abValue" value="1"/>
@@ -304,6 +318,8 @@
     <usesource source="pPsiUn"/>
     <tag group="ProductId" tag="PUProdID"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -311,9 +327,9 @@
       ~ Increase Pisonic Shot by 1
       #value[fPUPsiShot] += field[abValue].value
       #value2[fPUPsiShot] += field[abValue2].value]]></eval>
-    <exprreq message="Point Blank Shot feat required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
-    <exprreq message="Psionic Shot feat required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
     <exprreq message="Base attack bonus +6 required."><![CDATA[#BAB[] >= 6]]></exprreq>
+    <exprreq message="Psionic Shot feat required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
+    <exprreq message="Point Blank Shot feat required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     </thing>
   <thing id="fPUGPsiWep" name="Greater Psionic Weapon" description="You can charge your melee weapon with additional damage potential.{br}{br}{b}Prerequisite:{/b} Str 13, Psionic Weapon, base attack bonus +6.{br}{br}{b}Benefit:{/b} When you use the Psionic Weapon feat, your attack deals an extra 2 points of damage instead of 1 point of damage while you maintain psionic focus, and deal an extra 4d6 points of damage instead of an extra 2d6 points when you expend your psionic focus." compset="Feat" summary="You can charge your melee weapon with additional damage potential." uniqueness="useronce">
     <fieldval field="abValue" value="1"/>
@@ -321,6 +337,8 @@
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -328,9 +346,9 @@
       ~ Increase Pisonic Weapon
       #value[fPUPsiWep] += field[abValue].value
       #value2[fPUPsiWep] += field[abValue2].value]]></eval>
-    <exprreq message="Psionic Weapon required"><![CDATA[#hasfeat[fPUPsiWep] <> 0]]></exprreq>
-    <exprreq message="Base attack bonus +6 required."><![CDATA[#BAB[] >= 6]]></exprreq>
     <exprreq message="Strength 13+ required." iserror="no"><![CDATA[#attrvalue[aSTR] >= 13]]></exprreq>
+    <exprreq message="Base attack bonus +6 required."><![CDATA[#BAB[] >= 6]]></exprreq>
+    <exprreq message="Psionic Weapon required"><![CDATA[#hasfeat[fPUPsiWep] <> 0]]></exprreq>
     </thing>
   <thing id="fPUIPsicry" name="Improved Psicrystal" description="You can upgrade your psicrystal.{br}{br}{b}Prerequisites:{/b} Psicrystal Affinity.{br}{br}{b}Benefit:{/b} You can implant another personality fragment in your psicrystal. You gain the benefits of both psicrystal personalities. Your psicrystal&apos;s personality adjusts and becomes a blend between all implanted personality fragments. From now on, when determining the abilities of your psicrystal, treat your level as one higher than your normal level.{br}{br}{b}Special:{/b} You can gain this feat multiple times. Each time, you implant a new personality fragment in your psicrystal, from which you derive the noted benefits, and you treat your level as one higher for the purpose of determining your psicrystal&apos;s abilities." compset="Feat" summary="You can upgrade your psicrystal." uniqueness="useronce">
     <fieldval field="usrCandid1" value="component.Simple &amp; Psicrystal.Personalty"/>
@@ -372,11 +390,51 @@
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
-  <thing id="fPUMenLeap" name="Mental Leap" description="{b}Prerequisites:{/b} Str 13, Acrobatics 2 ranks.\n\n{b}Benefit:{/b}  While you maintain psionic focus, you gain a +2 enhancement bonus on Acrobatics checks made to jump. \nIf you have at least 10 ranks in Acrobatics, this bonus increases to +4.  \nAdditionally, if you expend your psionic focus, you gain a +10 enhancement bonus on an Acrobatics check made to jump.  If you have at least 10 ranks in Acrobatics, this bonus increases to +20." compset="Feat" summary="You are skilled at using optical tricks to make yourself seem to be where you are not." uniqueness="useronce">
+  <thing id="fPUMenLeap" name="Mental Leap" description="{b}Prerequisites:{/b} Str 13, Acrobatics 2 ranks.\n\n{b}Benefit:{/b}  While you maintain psionic focus, you gain a +2 enhancement bonus on Acrobatics checks made to jump.  If you have at least 10 ranks in Acrobatics, this bonus increases to +4.  Additionally, if you expend your psionic focus, you gain a +10 enhancement bonus on an Acrobatics check made to jump.  If you have at least 10 ranks in Acrobatics, this bonus increases to +20." compset="Feat" summary="You are skilled at using optical tricks to make yourself seem to be where you are not." uniqueness="useronce">
+    <fieldval field="abValue" value="2"/>
+    <fieldval field="abValue2" value="4"/>
+    <fieldval field="abValue3" value="10"/>
+    <fieldval field="abValue4" value="20"/>
+    <fieldval field="actName" value="Expended focus"/>
     <usesource source="pPsiUn"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <eval phase="PostAttr"><![CDATA[      ~Stop now if we're disabled
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Start by assuming no bonus
+      var bon as number
+      bon = 0
+
+      ~ If we've expended focus for the large bonus, handle that
+      if (field[abilActive].value <> 0) then
+        if (#skillranks[skAcrobat] >= 10) then
+          bon = field[abValue4].value
+        else
+          bon = field[abValue3].value
+        endif
+      else
+        var v_focus as number
+        call PUPsiFocus
+      
+        ~ If we are psi-focused, add smaller bonus
+        if (v_focus = 1) then
+          if (#skillranks[skAcrobat] >= 10) then
+            bon = field[abValue2].value
+          else
+            bon = field[abValue].value
+          endif
+        endif
+      endif
+
+      doneif (bon < 1)
+
+      #situational[hero.child[skAcrobat],signed(bon) & " to jump", field[thingname].text]]]></eval>
     <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
     <exprreq message="Acrobatics 2 ranks required." iserror="no"><![CDATA[#skillranks[skAcrobat] >= 2]]></exprreq>
     <prereq message="Dex 13 OR Str 13 required.">
@@ -429,6 +487,7 @@
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="abAction" tag="PUExpFocus"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="Final" priority="50000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -443,6 +502,7 @@
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <eval phase="Final" priority="50000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -450,8 +510,8 @@
       field[abSumm].text = "Touch attack powers deal " & signed(field[abValue].value) & " dmg or expend focus to deal ability bonus damage."
 
       field[livename].text = field[name].text & " " & signed(field[abValue].value) & " dmg"]]></eval>
-    <exprreq message="Weapon Focus (ray) required."><![CDATA[hero.tagis[WepFocus.wRay] <> 0]]></exprreq>
     <exprreq message="manifester level 4th required."><![CDATA[hero.tagcount[Hero.Manifester] >= 4]]></exprreq>
+    <exprreq message="Weapon Focus (ray) required."><![CDATA[hero.tagis[WepFocus.wRay] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsicry" name="Psicrystal Affinity" description="You have created a psicrystal\n\n{b}Prerequisites{/b}: Manifester level 1st.  \n\n{b}Benefit{/b}: This feat allows you to gain a psicrystal.  Should your psicrystal be destroyed, you gain a new one after 24 hours.   A new psicrystal must have the same personality as the original.\n\n{b}Note:{/b} Psicrystals are located on the &quot;Other&quot; tab and added as a Psicrystal minion. This helps prevent conflicts with classes that have Arcane Familiars. Once added switch to your psicrystal minion and select its Personality type." compset="Feat" summary="You have created a psicrystal" uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -496,16 +556,32 @@
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Speed of Thought required."><![CDATA[#hasfeat[fPUSpdThgt] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Dexterity 13+ required." iserror="no"><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
     <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
+    <exprreq message="Speed of Thought required."><![CDATA[#hasfeat[fPUSpdThgt] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUPsiDodg" name="Psionic Dodge" description="{b}Prerequisites{/b}: Dex 13, Dodge.{br}{br}{b}Benefit{/b}: You must be psionically focused to use this feat. You receive a +1 dodge bonus to your Armor Class. This bonus stacks with the bonus from the Dodge feat (but only applies on attacks made by the opponent you have designated)." compset="Feat" summary="You are proficient at dodging blows." uniqueness="useronce">
+  <thing id="fPUPsiDodg" name="Psionic Dodge" description="{b}Prerequisites{/b}: Dex 13, Dodge.\n\n{b}Benefit{/b}: You must be psionically focused to use this feat. You receive a +1 dodge bonus to your Armor Class. This bonus stacks with the bonus from the Dodge feat. You may expend your psionic focus as an immediate action to increase this bonus to a +4 dodge bonus to your Armor Class for a single attack made against you." compset="Feat" summary="+1 AC when psi-focused, expend focus for +4 vs. one attack" uniqueness="useronce">
+    <fieldval field="abValue" value="1"/>
+    <fieldval field="abValue2" value="4"/>
+    <fieldval field="actName" value="Expended Focus (+4 vs one attack)"/>
     <usesource source="pPsiUn"/>
+    <tag group="abAction" tag="Immediate"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
     <tag group="fCategory" tag="Psionic" name="Psionic" abbrev="Psionic"/>
-    <exprreq message="Dodge required." iserror="no"><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~don't proceed if we're disabled
+      doneif (tagis[Helper.FtDisable] <> 0)
+        
+      if (field[abilActive].value = 1) then
+        hero.child[ArmorClass].field[tACDodge].value += field[abValue2].value
+      elseif (hero.tagis[Hero.PsiFocus] + tagis[Psionics.PsiFocus] <> 0) then
+        hero.child[ArmorClass].field[tACDodge].value += field[abValue].value
+      endif]]></eval>
     <exprreq message="Dexterity 13 required." iserror="no"><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Dodge required." iserror="no"><![CDATA[#hasfeat[fDodge] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiEnd" name="Psionic Endowment" description="You can endow your manifestations with more concentrated focus.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You add 1 to the save DC of a power you manifest." compset="Feat" summary="Expend your psionic focus to add 1 to the save DC of a power you manifest." uniqueness="useronce">
     <fieldval field="abValue" value="1"/>
@@ -513,6 +589,7 @@
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="PUProdID"/>
     <tag group="Helper" tag="ShowSpec"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="Final" priority="50000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -532,6 +609,7 @@
     <tag group="fCategory" tag="Psionic" name="Psionic" abbrev="Psionic"/>
     <tag group="User" tag="Activation"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="Final" priority="50000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -559,6 +637,8 @@
     <tag group="ProductId" tag="PUProdID"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <eval phase="Final" priority="50000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -566,8 +646,8 @@
       field[abSumm].text = "Focus ranged attacks deal " & signed(field[abValue].value) & " dmg. Expend focus to do " & signed(field[abValue2].value) & "d6."
       
       field[livename].text = field[name].text & " " & signed(field[abValue].value) & " / " & signed(field[abValue2].value) & "d6"]]></eval>
-    <exprreq message="Point Blank Shot required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
+    <exprreq message="Point Blank Shot required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiTal" name="Psionic Talent" description="You gain additional power points to supplement those you already had.\n\n{b}Prerequisite{/b}: Having a power point reserve.  \n\n{b}Benefit{/b}: When you take this feat for the first time, you gain 2 power points.  \n\n{b}Special{/b}: You can take this feat multiple times. Each time you take the feat after the first time, the number of power points you gain increases by 1." compset="Feat" summary="Gain 2 or 1 extra power points.">
     <usesource source="pPsiUn"/>
@@ -587,6 +667,8 @@
     <tag group="User" tag="Activation"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="Final" priority="50000"><![CDATA[
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
@@ -605,6 +687,7 @@
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion" name="Metapsionic" abbrev="Metapsionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPURapMet" name="Rapid Metabolism" description="{b}Prerequisites{/b}: Con 13.{br}{br}{b}Benefit{/b}: You naturally heal a number of hit points per day equal to the standard healing rate + double your Constitution bonus. You heal even if you do not rest. This healing replaces your normal natural healing. If you are tended successfully by someone with the Heal skill, you instead regain double the normal amount of hit points + double your Constitution bonus." compset="Feat" summary="Your wounds heal rapidly." uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -636,10 +719,11 @@
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Psionic" name="Psionic" abbrev="Psionic"/>
-    <exprreq message="Psionic Shot required." iserror="no"><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Fell Shot required." iserror="no"><![CDATA[#hasfeat[fPUFellSh] <> 0]]></exprreq>
     <exprreq message="Base attack bonus +6 required." iserror="no"><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Point Blank Shot required." iserror="no"><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Psionic Shot required." iserror="no"><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
     </thing>
   <thing id="fPUScrTatt" name="Scribe Tattoo" description="You can create psionic tattoos, which store powers within their designs.{br}{br}{b}Prerequisite:{/b} Manifester level 3rd.{br}{br}{b}Benefit:{/b} You can create a psionic tattoo of any power of 3rd level or lower that you know and that targets one or more creatures. Scribing a psionic tattoo takes one day.{br}{br}When you create a psionic tattoo, you set the manifester level. The manifester level must be sufficient to manifest the power in question and no higher than your own level. The base price of a psionic tattoo is its power level x its manifester level x 50 gp. To scribe a tattoo, you must use up raw materials (special inks, masterwork needles, and so on) costing one-half of this base price.{br}{br}When you create a psionic tattoo, you make any choices that you would normally make when manifesting the power.{br}{br}When its wearer physically activates the tattoo, the wearer is the target of the power." compset="Feat" summary="You can create psionic tattoos, which store powers within their designs." uniqueness="useronce">
     <comment>Updated to UP text 4/2/2014 - Tim Shadow</comment>
@@ -661,6 +745,8 @@
     <tag group="fCategory" tag="Psionic"/>
     <tag group="User" tag="Activation"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[
       ~ If we're wearing heavy armor then we are disabled.
       if (hero.tagis[Hero.HeavyArmor] = 1) then
@@ -670,7 +756,7 @@
       ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
       ~ If we are not active or psionic focus get out now!
-      doneif (hero.tagis[Hero.PsiFocus] + field[abilActive].value = 0)
+      doneif (hero.tagis[Hero.PsiFocus] + tagis[Psionics.PsiFocus] + field[abilActive].value = 0)
 
       ~ If ability active increase speed to 30ft else default to 10ft
       if (field[abilActive].value = 1) then
@@ -686,43 +772,50 @@
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Any other metapsionic feat required."><![CDATA[tagcount[fCategory.Metapsion] >= 1]]></exprreq>
     </thing>
   <thing id="fPUTalent" name="Talented" description="{b}Prerequisites:{/b} Overchannel. \n\n{b}Benefit:{/b} To use this feat, you must expend your psionic focus. When manifesting a power of 3rd level or lower, you do not take damage from overchanneling." compset="Feat" summary="You can overchannel powers with less cost to yourself." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Overchannel feat required."><![CDATA[#hasfeat[fPUOverch] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
+    <exprreq message="Overchannel feat required."><![CDATA[#hasfeat[fPUOverch] <> 0]]></exprreq>
     </thing>
   <thing id="fPUTwinPwr" name="Twin Power" description="{b}Benefit{\b}: To use this feat, you must expend your psionic focus. You can twin a power. Manifesting a power altered by this feat causes the power to take effect twice on the area or target, as if you were simultaneously manifesting the same power two times on the same location or target. Any variables in the power (such as duration, number of targets, and so on) are the same for both of the resulting powers. The target experiences all the effects of both powers individually and receives a saving throw (if applicable) for each. In some cases, such as a twinned {i}psionic charm{/i}, failing both saving throws results in redundant effects (although, in this example, any ally of the target would have to succeed on two dispel attempts to free the target from the charm effect).  \nUsing this feat increases the power point cost of the power by 6. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="You can manifest a power simultaneously with another power just like it." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUUStrike" name="Unavoidable Strike" description="{b}Prerequisites{/b}: Str 13, Psionic Fist, base attack bonus +5.{br}{br}{b}Benefit{/b}: To use this feat, you must expend your psionic focus. You can resolve your unarmed strike or attack with a natural weapon as a touch attack.{br}You must decide whether or not to use this feat prior to making an attack. If your attack misses, you still expend your psionic focus." compset="Feat" summary="You can make an unarmed strike or use a natural weapon against your foe as if delivering a touch attack." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Psionic" name="Psionic" abbrev="Psionic"/>
-    <exprreq message="Psionic Fist required." iserror="no"><![CDATA[#hasfeat[fPUPsiFist] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Base attack bonus +6 required." iserror="no"><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Strength 13 required." iserror="no"><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Psionic Fist required." iserror="no"><![CDATA[#hasfeat[fPUPsiFist] <> 0]]></exprreq>
     </thing>
   <thing id="fPUUncPwr" name="Unconditional Power" description="{b}Benefit{/b}: To use this feat, you must expend your psionic focus. Your mental strength is enough to overcome some otherwise disabling conditions. You can manifest an unconditional power when you are dazed, confused, nauseated, or stunned.{br}Only personal powers and powers that affect your person can be manifested as unconditional powers.{br}Using this feat increases the power point cost of the power by 8. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="Disabling conditions do not hold you back." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion" name="Metapsionic" abbrev="Metapsionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUUpWall" name="Up The Walls" description="{b}Prerequisites{/b}: Wis 13.{br}{br}{b}Benefit{/b}: While you are psionically focused, you can take part of one of your move actions to traverse a wall or other relatively smooth vertical surface if you begin and end your move on a horizontal surface. The height you can achieve on the wall is limited only by this movement restriction. If you do not end your move on a horizontal surface, you fall prone, taking falling damage as appropriate for your distance above the ground. Treat the wall as a normal floor for the purpose of measuring your movement. Passing from floor to wall or wall to floor costs no movement; you can change surfaces freely. Opponents on the ground can make attacks of opportunity as you move up the wall.{br}{br}{b}Special{/b}: You can take other move actions in conjunction with moving along a wall. For instance, the Spring Attack feat allows you to make an attack from the wall against a foe standing on the ground who is within the area you threaten; however, if you are somehow prevented from completing your move, you fall. Likewise, you could tumble along the wall to avoid attacks of opportunity." compset="Feat" summary="You can run on walls for brief distances." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Psionic" name="Psionic" abbrev="Psionic"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Wisdom 13 required." iserror="no"><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
     </thing>
   <thing id="fPUWidPwr" name="Widen Power" description="{b}Benefit{/b}: To use this feat, you must expend your psionic focus. You can alter a burst, emanation, line, or spread-shaped power to increase its area. (Powers that do not have an area of one of these four sorts are not affected by this feat.) Any numeric measurements of the power&apos;s area increase by 100%.{br}Using this feat increases the power point cost of the power by 4. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" summary="You can increase the area of your powers." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion" name="Metapsionic" abbrev="Metapsionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUWildTal" name="Wild Talent" description="Your mind wakes to a previously unrealized talent for psionics.{br}{br}{b}Benefit:{/b} Your latent power of psionics flares to life, conferring upon you the designation of a psionic character. As a psionic character, you gain a reserve of 2 power points and can take psionic feats, metapsionic feats, and psionic item creation feats. You do not, however, gain the ability to manifest powers simply by virtue of having this feat." compset="Feat" summary="You are a psionic character and gain 2 power points." uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -742,10 +835,12 @@
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Base attack bonus +8 required."><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
     <exprreq message="Psionic character required."><![CDATA[hero.tagis[Hero.Psionic] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUMstrFrm" name="Master of All Forms" description="{b}Prerequisites:{/b} Swift Shapeshifter,ability to manifest {i}metamorphosis{/i}\n\n{b}Benefit:{/b}  When you manifest {i}minor metamorphosis{/i}, {i}major metamorphosis{/i} or {i}metamorphosis{/i} the manifestation time is a swift action instead of a standard action." compset="Feat" summary="No longer inhibited by a single form, you are able to\ninstantly change into the perfect shape for your current\ndilemma." uniqueness="useronce">
+  <thing id="fPUMstrFrm" name="Master of All Forms" description="{b}Prerequisites:{/b} Swift Shapeshifter, ability to manifest {i}metamorphosis{/i}\n\n{b}Benefit:{/b}  When you manifest {i}minor metamorphosis{/i}, {i}major metamorphosis{/i} or {i}metamorphosis{/i} the manifestation time is a swift action instead of a standard action." compset="Feat" summary="No longer inhibited by a single form, you are able to\ninstantly change into the perfect shape for your current\ndilemma." uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="Helper" tag="ShowSpec"/>
@@ -768,6 +863,7 @@
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUSurAur" name="Surging Aura" description="{b}Prerequisites:{/b} Wild Surge +1. \n\n{b}Benefit:{/b} You gain a 10&apos; surging aura. When you use your wild surge class feature, you can designate one ally for every +1 of your wild surge within the surging aura to gain an insight bonus to attack rolls equal to your wild surge until the end of their next turn." compset="Feat" summary="Your wild surge enhances the aim of nearby allies." uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -1086,12 +1182,14 @@ validif (hero.tagcount[Hero.Manifester] >= 10)]]></validate>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUConcPwr" name="Concussive Power" description="You cause creatures to be disoriented when you affect them with a power that has the sonic descriptor.\n\n{b}Benefit:{/b} To use this feat, you must expend your psionic focus. With sonic damage comes a concussive wave of energy that rattles creatures affected by the power.\n\nA concussive power causes creatures that take damage from a power that has the sonic descriptor to take a -2 penalty on attack rolls, saving throws, skill checks, and ability checks for a number of rounds equal to the power level of the power. A concussive power only affects powers with the sonic descriptor. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.\n\nPowers that do not deal sonic damage cannot be used with this feat." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUCrysFoc" name="Craft Crystalline Focus" description="You are able to craft crystalline items that focus psionic energy.{br}{br}{b}Prerequisite:{/b} Manifester level 3rd.\n\n{b}Benefit:{/b} You can craft crystalline focus items that harness psionic energy such as that for a mind blade, mind armor, or astral suit. Doing so takes one day for each 1,000 gp in the item&apos;s base price." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -1108,16 +1206,19 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <exprreq message="Intimidating Shot feat required."><![CDATA[#hasfeat[fPUIntimSh] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Point-Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     <exprreq message="Staggering Shot feat required."><![CDATA[#hasfeat[fPUStagSho] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 11+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 11]]></exprreq>
+    <exprreq message="Intimidating Shot feat required."><![CDATA[#hasfeat[fPUIntimSh] <> 0]]></exprreq>
     </thing>
   <thing id="fPUCushBlo" name="Cushion the Blow" description="You reduce the damage of an attack on an ally.{br}{br}{b}Prerequisite:{/b} Wisdom 15, collective class feature, manifester level 6th.{br}{br}{b}Benefit:{/b} As long as you are maintaining psionic focus, as an immediate action, you can minimize the damage of a single attack with a ranged, melee, or natural weapon or unarmed strike (treat all dice rolled as 1s) on any member of the collective. This ability must be used in response to an attack on a member of the collective.{br}{br}In addition, if you expend your psionic focus, you can reduce any additional damage on the attack (such as bonus damage from a high Strength or sneak attack damage) by your key ability modifier." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Wisdom 15+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 15]]></exprreq>
     <prereq message="Manifester level 6+ required.">
       <validate><![CDATA[~check for Manifester level 6
@@ -1129,14 +1230,16 @@ validif (hero.tagcount[Hero.Manifester] >= 6)]]></validate>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
     <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUDeadThr" name="Deadly Throw" description="Your skill with thrown weapons allows you to replace power with finesse.{br}{br}{b}Prerequisites:{/b} Dex 15, Point-Blank Shot, base attack bonus +3.{br}{br}{b}Benefit:{/b} As long as you maintain psionic focus, you may add your Dexterity modifier to damage rolls made with thrown weapons instead of using your Strength modifier. You must be within 30 ft. of the target to gain this benefit.{br}{br}{b}Normal:{/b} You add your Strength modifier to damage rolls for attacks made with thrown weapons." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Dexterity 15+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 15]]></exprreq>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Base Attack Bonus 3+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 3]]></exprreq>
     <exprreq message="Point-Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Dexterity 15+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 15]]></exprreq>
     </thing>
   <thing id="fPUDisFear" name="Disciple of Fear" description="You have studied the intricacies of terror and fear, being able to use this knowledge to further your own powers beyond what would normally be available for you.{br}{br}{b}Prerequisites:{/b} Devastating touch class feature, terrors class feature.{br}{br}{b}Benefit:{/b} For the purpose of your devastating touch and terror class features, your effective class level increases by 4. This benefit can&apos;t increase your effective class level to higher than your Hit Dice. However, even if you can&apos;t benefit from the full bonus immediately, if you later gain Hit Dice in levels of other classes, you might be able to apply the rest of the bonus. This feat does not affect your terrors known or give you further uses of your terrors, but increases it for the purposes of augmentation and save DC&apos;s." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1149,6 +1252,7 @@ validif (hero.tagcount[Hero.Manifester] >= 6)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUExpFavW" name="Expanded Favored Weapon" description="Your mastery of weapons is broader than most.\n\n{b}Prerequisite:{/b} Favored weapon class feature, base attack bonus +6.\n\n{b}Benefit:{/b} Choose one additional weapon group. You gain all the normal benefits of your favored weapon class feature this weapon group in addition to your original weapon group." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1165,10 +1269,11 @@ validif (hero.tagcount[Hero.Manifester] >= 6)]]></validate>
     <eval phase="PreLevel" priority="20000">hero.childfound[cHelpPU4].field[cGiveSp2nd].value += 1</eval>
     <exprreq message="Strategy class feature required."><![CDATA[#hasability[cPUTacStra] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUExpPwr" name="Explosive Power" description="Your powers that normally only affect a single creature\nexplode on impact.\n\nPrerequisite: Manifester level 3rd\n\nBenefit: To use this feat, you must expend your psionic\nfocus. You can cause a power you manifest that deals hit\npoint damage and has a direct target or targets (not an\narea effect) to explode upon impact, dealing its damage\nto all creatures adjacent to the target of the initial power.\nA successful Reflex save halves the damage from this\nexplosion, even if the original power did not allow a\nsave, such as energy ray, in which case calculate the save\nbased upon the level of the power manifested.\n\nUsing this feat does not increase the power point\ncost of the power if only a single creature was targeted\nby the initial effect. For powers that allow the direct\ntargeting of multiple creatures, such as energy missile,\neach additional target of the initial power increases the\ncost of the power by 2 power points. Creatures cannot be\naffected by both the initial power and the explosion, nor\nby overlapping explosions." compset="Feat">
+  <thing id="fPUExpPwr" name="Explosive Power" description="Your powers that normally only affect a single creature explode on impact.\n\n{b}Prerequisite:{/b} Manifester level 3rd\n\n{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can cause a power you manifest that deals hit point damage and has a direct target or targets (not an area effect) to explode upon impact, dealing its damage to all creatures adjacent to the target of the initial power. A successful Reflex save halves the damage from this explosion, even if the original power did not allow a save, such as {i}energy ray{/i}, in which case calculate the save based upon the level of the power manifested.\n\nUsing this feat does not increase the power point cost of the power if only a single creature was targeted by the initial effect. For powers that allow the direct targeting of multiple creatures, such as energy missile, each additional target of the initial power increases the cost of the power by 2 power points. Creatures cannot be affected by both the initial power and the explosion, nor by overlapping explosions." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <prereq message="Manifester level 3+ required.">
       <validate><![CDATA[~check for Manifester level 3
 validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
@@ -1241,19 +1346,19 @@ validif (hero.tagcount[Hero.Manifester] >= 1)]]></validate>
     <exprreq message="Astral Suit class feature required."><![CDATA[#hasability[cPUAstSuit] <> 0]]></exprreq>
     <exprreq message="Reconfigure class feature required."><![CDATA[#hasability[cPUReconfi] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUExStrat" name="Extra Strategy" description="You gain extra daily uses of your strategy ability.\n\nPrerequisite: Strategy class feature\n\nBenefit: You gain two additional daily uses of your strategy class feature.\n\nSpecial: You can gain this feat multiple times. Its effects stack." compset="Feat">
+  <thing id="fPUExStrat" name="Extra Strategy" description="You gain extra daily uses of your strategy ability.\n\n{b}Prerequisite:{/b} Strategy class feature\n\n{b}Benefit:{/b} You gain two additional daily uses of your strategy class feature.\n\n{b}Special:{/b} You can gain this feat multiple times. Its effects stack." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <eval phase="PostLevel" priority="1000">hero.childfound[cPUTacStra].field[trkMax].value += 2</eval>
     <exprreq message="Strategy class feature required."><![CDATA[#hasability[cPUTacStra] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUExTerr" name="Extra Terrors" description="You can use your terrors more than normal.\n\nPrerequisite: Terrors class feature.\n\nBenefit: You gain 3 additional daily uses of your terrors.\n\nSpecial: You can gain Extra Terrors multiple times. Its effects stack. Each time you take the feat, you gain three additional daily uses of your terrors." compset="Feat">
+  <thing id="fPUExTerr" name="Extra Terrors" description="You can use your terrors more than normal.\n\n{b}Prerequisite:{b} Terrors class feature.\n\n{b}Benefit:{b} You gain 3 additional daily uses of your terrors.\n\n{b}Special:{/b} You can gain Extra Terrors multiple times. Its effects stack. Each time you take the feat, you gain three additional daily uses of your terrors." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <eval phase="PostLevel" priority="1000">hero.childfound[cPUTerrors].field[trkMax].value += 3</eval>
     <exprreq message="Terrors class feature required."><![CDATA[#hasability[cPUTerrors] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUExTrans" name="Extra Transfer" description="You can use transfer wounds more often.\n\nPrerequisite: Transfer wounds or sickening touch class feature.\n\nBenefit: You can use transfer wounds or sickening touch two additional times per day.\n\nSpecial: If you have both transfer wounds and sickening touch, choose which ability this feat affects when you take this feat. You may take this feat multiple times, once for each ability." compset="Feat" maxlimit="2">
+  <thing id="fPUExTrans" name="Extra Transfer" description="You can use transfer wounds more often.\n\n{b}Prerequisite:{/b} Transfer wounds or sickening touch class feature.\n\n{b}Benefit:{/b} You can use transfer wounds or sickening touch two additional times per day.\n\n{b}Special:{/b} If you have both transfer wounds and sickening touch, choose which ability this feat affects when you take this feat. You may take this feat multiple times, once for each ability." compset="Feat" maxlimit="2">
     <arrayval field="usrArray" index="0" value="Transfer Wounds"/>
     <arrayval field="usrArray" index="1" value="Sickening Touch"/>
     <usesource source="pPsiUn"/>
@@ -1264,19 +1369,19 @@ validif (hero.tagcount[Hero.Manifester] >= 1)]]></validate>
       <validate><![CDATA[validif (#hasability[cPUVitTraW] +  #hasability[cPUSickTou] <> 0)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUFastAid" name="Fast Aid" description="Requests to you for healing can be made much faster.\n\nPrerequisite: Heal 7 ranks, Spellcraft 7 ranks, request aid class feature.\n\nBenefit: Your allies may choose to request aid as a swift action.\n\nNormal: Request aid costs a standard action to perform." compset="Feat" maxlimit="2">
+  <thing id="fPUFastAid" name="Fast Aid" description="Requests to you for healing can be made much faster.\n\n{b}Prerequisite:{/b} Heal 7 ranks, Spellcraft 7 ranks, request aid class feature.\n\n{b}Benefit:{/b} Your allies may choose to request aid as a swift action.\n\n{b}Normal:{/b} Request aid costs a standard action to perform." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <exprreq message="Heal 7+ ranks required."><![CDATA[#skillranks[skHeal] >= 7]]></exprreq>
     <exprreq message="Spellcraft 7+ ranks required."><![CDATA[#skillranks[skSpellcr] >= 7]]></exprreq>
     <exprreq message="Request Aid class feature required."><![CDATA[#hasability[cPUVitReqA] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUFastSte" name="Fast Step" description="You are able to teleport more easily.\n\nPrerequisite: Nomad’s Step class feature. \n\nBenefit: You may use Nomad’s Step as a move action, instead of as a standard action." compset="Feat" maxlimit="2">
+  <thing id="fPUFastSte" name="Fast Step" description="You are able to teleport more easily.\n\n{b}Prerequisite:{/b} Nomad’s Step class feature. \n\n{b}Benefit:{/b} You may use Nomad’s Step as a move action, instead of as a standard action." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
     <exprreq message="Nomad&apos;s Step class feature required"><![CDATA[#hasability[cPsiNomSte] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUFavEner" name="Favored Energy" description="You prefer a certain energy type over all others.\n\nPrerequisite: Ability to manifest any power that deals fire, cold, electricity, or sonic damage, manifester level 3rd.\n\nBenefit: Choose one type of energy to become your favored energy: cold, electricity, fire, or sonic. Any time you manifest a power that deals damage of your favored energy type, the damage is increased by +1 per die." compset="Feat" maxlimit="2">
+  <thing id="fPUFavEner" name="Favored Energy" description="You prefer a certain energy type over all others.\n\n{b}Prerequisite:{/b} Ability to manifest any power that deals fire, cold, electricity, or sonic damage, manifester level 3rd.\n\n{b}Benefit:{/b} Choose one type of energy to become your favored energy: cold, electricity, fire, or sonic. Any time you manifest a power that deals damage of your favored energy type, the damage is increased by +1 per die." compset="Feat" maxlimit="2">
     <fieldval field="usrCandid1" value="component.SelectHelp &amp; Selection.Energy &amp; (BloodEner.Cold|BloodEner.Elec|BloodEner.Fire|BloodEner.Sonic)"/>
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Thing"/>
@@ -1286,13 +1391,14 @@ validif (hero.tagcount[Hero.Manifester] >= 1)]]></validate>
 validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
       </prereq>
     </thing>
-  <thing id="fPUFearMas" name="Fear Mastery" description="You have walked among true nightmares and seen into the depths of mortal fear and despair - giving you a terrible edge when it comes to weakening your enemies and bringing them to their knees, paralyzed with fear.\n\nPrerequisites: Psionic Endowment, devastating touch class feature.\n\nBenefit: As long as you maintain psionic focus, you receive a +1 insight bonus to the save DCs of all your terrors and powers with the fear descriptor. You can expend your focus while manifesting a power or using a terror to increase this bonus to +2." compset="Feat" maxlimit="2">
+  <thing id="fPUFearMas" name="Fear Mastery" description="You have walked among true nightmares and seen into the depths of mortal fear and despair - giving you a terrible edge when it comes to weakening your enemies and bringing them to their knees, paralyzed with fear.\n\n{b}Prerequisites:{/b} Psionic Endowment, devastating touch class feature.\n\n{b}Benefit:{/b} As long as you maintain psionic focus, you receive a +1 insight bonus to the save DCs of all your terrors and powers with the fear descriptor. You can expend your focus while manifesting a power or using a terror to increase this bonus to +2." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Devastating Touch class feature required."><![CDATA[#hasability[cPUDevaTou] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Psionic Endowment feat required."><![CDATA[#hasfeat[fPUPsiEnd] <> 0]]></exprreq>
+    <exprreq message="Devastating Touch class feature required."><![CDATA[#hasability[cPUDevaTou] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUFeralCT" name="Feral Combat Training" description="You were taught a style of martial arts that relies on the natural weapons from your racial ability or class feature.\n\nPrerequisites: Improved Unarmed Strike, Weapon Focus with selected natural weapon, proficiency with selected weapon, base attack bonus +1.\n\nBenefit: Choose one of your natural weapons. While using the selected natural weapon, you can apply the effects of feats that have Improved Unarmed Strike as a prerequisite, as well as effects that augment an unarmed strike.\n\nSpecial: If you are a monk, you can use the selected natural weapon with your flurry of blows class feature." compset="Feat" maxlimit="" uniqueness="useronce">
+  <thing id="fPUFeralCT" name="Feral Combat Training" description="You were taught a style of martial arts that relies on the natural weapons from your racial ability or class feature.\n\n{b}Prerequisites:{/b} Improved Unarmed Strike, Weapon Focus with selected natural weapon, proficiency with selected weapon, base attack bonus +1.\n\n{b}Benefit:{/b} Choose one of your natural weapons. While using the selected natural weapon, you can apply the effects of feats that have Improved Unarmed Strike as a prerequisite, as well as effects that augment an unarmed strike.\n\n{b}Special:{/b} If you are a monk, you can use the selected natural weapon with your flurry of blows class feature." compset="Feat" maxlimit="" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="ChooseSrc1" tag="Hero"/>
@@ -1304,10 +1410,12 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
   <thing id="fPUFlarPwr" name="Flaring Power" description="You dazzle creatures when you affect them with a power that has the fire, light, or electricity descriptor.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. The electricity, fire, or light effects of the affected power create a flaring that dazzles creatures that take damage from the power. A flare power causes a creature that takes fire, light, or electricity damage from the affected power to become dazzled for a number of rounds equal to the level of the power. A flaring power only affects powers with a fire, light, or electricity descriptor. Using this feat does not increase the power point cost of the power.{br}{br}Powers that do not deal fire, light, or electricity damage cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUFocuPwr" name="Focused Power" description="When you manifest a power that affects more than one creature, one opponent finds it more difficult to resist.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. When manifesting a power that can or does affect or target more than one creature, you can choose one target or creature within the power effect. That creature&apos;s saving throw DC to resist the power is increased by +2.{br}{br}You must choose which target to focus the power on before manifesting the power. Using this feat does not increase the power point cost of the power.{br}{br}Powers that do not require a saving throw to resist or lessen the power&apos;s effect cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUGCushBl" name="Greater Cushion the Blow" description="Your damage prevention protects your ally for longer.{br}{br}{b}Prerequisite:{/b} Wisdom 17, Cushion the Blow*, Improved Cushion the Blow*, Collective class feature, manifester level 18th.{br}{br}{b}Benefit:{/b} When using the Cushion the Blow feat, the effect applies to all damage for that collective member until the beginning of your next turn." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1322,11 +1430,12 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Wisdom 13+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Intuitive Shot feat required."><![CDATA[#hasfeat[fPUIntuSho] <> 0]]></exprreq>
     <exprreq message="Point-Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     <exprreq message="Psionic Shot feat required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <exprreq message="Wisdom 13+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
     </thing>
   <thing id="fPUHarRes" name="Harmonic Resonance" description="You can attune your mind to the subtle inner workings of other psionic beings, and gain a more intimate knowledge of their powers.{br}{br}{b}Prerequisites:{/b} Collective class feature, Spellcraft 3 ranks.{br}{br}{b}Benefit:{/b} To use this feat, you must have an active collective when you choose your powers known for the day or meditate to regain your power point pool. Choose a number of powers equal to your primary manifesting modifier that members of your collective know. If you are psionically focused, you may treat those powers as if they were on your power list for the purposes of manifesting another&apos;s powers known. You may change these powers as often as you change your powers known or regain your power point pool.{br}{br}{b}Special:{/b} The nature of this connection requires constant focus. If you expend your focus during the manifestation (for instance, to add a metapsionic feat to a borrowed power), the manifestation fails. If you have the Psicrystal Containment feat, you can expend your crystal&apos;s focus and maintain your own, and the manifestation will not fail in this way.{br}{br}{b}Normal:{/b} If you try to manifest a power that is not on your power list from another&apos;s powers known, the attempt automatically fails." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1346,6 +1455,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
   <thing id="fPUHusPwr" name="Hustle Power" description="You can hasten the manifesting time of some powers.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You may manifest a power with a manifesting time of one standard action as a move action instead. Powers with manifesting times other than one standard action may not be affected by this feat. You can perform another action, even manifest another power, in the same round that you manifest a hustled power.{br}{br}Using this feat increases the power point cost of the power by 4. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Manifesting a hustled power still provokes attacks of opportunity.{br}{br}{b}Special:{/b} This feat cannot be used on powers that cannot be quickened." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUICushBl" name="Improved Cushion the Blow" description="Your damage prevention blocks multiple attacks.{br}{br}{b}Prerequisite:{/b} Wisdom 15, Cushion the Blow*, Collective class feature, manifester level 12th.{br}{br}{b}Benefit:{/b} When using the Cushion the Blow feat, the effect can be applied to an additional attack with a melee, ranged, or natural weapon in the same round." compset="Feat">
     <usesource source="pPsiUn"/>
@@ -1418,11 +1528,13 @@ if (field[usrChosen1].ischosen <> 0) then
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Point-Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     </thing>
   <thing id="fPUIntuFig" name="Intuitive Fighting" description="Your intuition guides your strikes to be more devastating.{br}{br}{b}Prerequisite:{/b} Blind-Fight.{br}{br}{b}Benefit:{/b} To use this feat you must maintain psionic focus. You add your Wisdom modifier to your melee attack rolls instead of your Strength modifier." compset="Feat" summary="While psionically focused, use Wisdom modifier for melee attack rolls ." maxlimit="" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <eval phase="PostAttr" priority="10000"><![CDATA[
     ~ If we're disabled, do nothing
     doneif (tagis[Helper.FtDisable] <> 0)
@@ -1445,37 +1557,49 @@ if (field[usrChosen1].ischosen <> 0) then
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="Standard"/>
     <eval phase="PostAttr" priority="10000"><![CDATA[~ If we're disabled, do nothing
 doneif (tagis[Helper.FtDisable] <> 0)
 
 ~ If Not psionically focused get out now
-doneif (hero.tagis[Hero.PsiFocus] <> 1)]]></eval>
-    <exprreq message="Wisdom 13+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
-    <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+~doneif (hero.tagis[Hero.PsiFocus] <> 1)
+
+    var v_focus as number
+    call PUPsiFocus
+    ~ If Not psionically focused get out now
+    doneif (v_focus <> 1)]]></eval>
     <exprreq message="Psionic Shot feat required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
+    <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <exprreq message="Wisdom 13+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
     </thing>
   <thing id="fPUKnocSho" name="Knockdown Shot" description="You are capable of knocking down your enemies by psionically empowering your attacks.\n\n{b}Prerequisites:{/b} Dex 15, Point-Blank Shot, Psionic Shot \n\n{b}Benefit:{/b} You can expend your psionic focus and make a single ranged attack as a standard action. If your attack hits, it deals damage normally and the target must make a Reflex save (DC 10 + half your character level + your Wisdom modifier) or be knocked prone." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="Standard"/>
+    <exprreq message="Psionic Shot feat required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
     <exprreq message="Dexterity 15+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 15]]></exprreq>
     <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
-    <exprreq message="Psionic Shot feat required."><![CDATA[#hasfeat[fPUPsiShot] <> 0]]></exprreq>
     </thing>
   <thing id="fPULingPwr" name="Lingering Power" description="Your power clings to existence, slowly fading from the world.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You may cause an instantaneous power that affects an area to persist until the beginning of your next turn. Those already in the area suffer no additional harm, but other creatures or objects entering the area are subject to its effects. A lingering power with a visual manifestation obscures vision, providing concealment (20% miss chance) beyond 5 feet and total concealment (50% miss chance) beyond 20 feet. Using this feat does not increase the power point cost of the power. Powers that do not affect an area cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUMallPwr" name="Malleable Power" description="You are able to shape the effect of your power to exclude targets.{br}{br}{b}Prerequisites:{/b} Selective Power, Spellcraft 10 ranks.{br}{br}{b}Benefit:{/b} To use this feat, you must spend your psionic focus. Doing so lets you manifest a malleable power.{br}{br}This power may exclude any number of 5-foot cubes (5&apos; long by 5&apos; wide by 5&apos; high). The cubes you exclude do not otherwise hamper the power.{br}{br}For example, you may shoot an energy bolt from your fingertips and exclude the first two cubes of the power.{br}{br}The other 110&apos; of the energy bolt would be manifest as normal.{br}{br}Manifesting a malleable power increases the power point cost of the power by 2. The total cost cannot exceed your manifester level.{br}{br}Powers that do not affect an area cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
-    <exprreq message="Spellcraft 10+ ranks required."><![CDATA[#skillranks[skSpellcr] >= 10]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Selective Power feat required."><![CDATA[#hasfeat[fPUSelePwr] <> 0]]></exprreq>
+    <exprreq message="Spellcraft 10+ ranks required."><![CDATA[#skillranks[skSpellcr] >= 10]]></exprreq>
     </thing>
   <thing id="fPUMercPwr" name="Merciful Power" description="Your damaging powers subdue rather than kill.{br}{br}{b}Benefit:{/b} To use this feat, you must maintain your psionic focus, rather than expend it. You can alter powers that inflict hit point damage to inflict nonlethal damage instead. Powers that inflict hit point damage of a particular type (such as fire) inflict nonlethal damage of that same type. Using this feat does not increase the power point cost of the power.{br}{br}Powers that do not deal hit point damage cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUManFocus"/>
     </thing>
   <thing id="fPUMerDesi" name="Merge Designs" description="Your tattoo designs are altered to disguise their nature and to be more compact.{br}{br}{b}Prerequisites:{/b} Scribe Tattoo, pattern designs class feature.{br}{br}{b}Benefit:{/b} Your tattoos cannot be interpreted to determine your powers known. In addition, you can safely wear one additional psionic tattoo on your body.{br}{br}{b}Normal:{/b} Tattoos for the pattern designs class feature can be identified by a Spellcraft check. A character can only safely wear twenty psionic tattoos." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
@@ -1524,6 +1648,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
   <thing id="fPUNetwPwr" name="Network Power" description="You can temporarily alter the nature of certain powers to allow use over a mental link.{br}{br}{b}Prerequisites:{/b} Collective class feature, manifester level 3rd.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can treat a power as if it had the network descriptor. You may only use this feat on powers with a range of personal and a target of you.{br}{br}Using this feat increases the power point cost of the power by 4. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Collective class feature required."><![CDATA[(#hasability[cPUVitColl] + #hasability[cPUTacColl]) <> 0]]></exprreq>
     <prereq message="Manifester level 3+ required.">
       <validate><![CDATA[~check for Manifester level 3
@@ -1553,16 +1678,19 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Terrors class feature required."><![CDATA[#hasability[cPUTerrors] > 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Dread level 10+ required."><![CDATA[#featlevelcount[Dread] >= 10]]></exprreq>
+    <exprreq message="Terrors class feature required."><![CDATA[#hasability[cPUTerrors] > 0]]></exprreq>
     </thing>
   <thing id="fPUPersPwr" name="Persistent Power" description="You can modify a power to become more tenacious when its targets resist its effect.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. Whenever a creature targeted by a persistent power or within its area succeeds on its saving throw against the power, it must make another saving throw against the effect. If a creature fails this second saving throw, it suffers the full effects of the power, as if it had failed its first saving throw.{br}{br}Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not require a saving throw to resist or lessen the power&apos;s effect cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUPierPwr" name="Piercing Power" description="Your studies have helped you develop methods to overcome power resistance.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. When you manifest a piercing power against a target with power resistance, it treats the power resistance of the target as 5 lower than its actual PR. Using this feat does not increase the power point cost of the power." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUPiranha" name="Piranha Strike" description="You make a combination of quick strikes, sacrificing accuracy for multiple, minor wounds that prove exceptionally deadly.\n\n{b}Prerequisites:{/b} Weapon Finesse, base attack bonus +1.\n\n{b}Benefit:{/b} When wielding a light weapon, you can choose to take a –1 penalty on all melee attack rolls and combat maneuver checks to gain a +2 bonus on all melee damage rolls. This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon or secondary natural weapon. When your base attack bonus reaches +4, and for every 4 points thereafter, the penalty increases by –1 and the bonus on damage rolls increases by +2. You must choose to use this feat before the attack roll, and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage. This feat cannot be used in conjunction with the Power Attack feat." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -1605,6 +1733,8 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Improved Bull Rush feat required."><![CDATA[#hasfeat[fImpBull] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiCrit" name="Psionic Critical" description="You can add psionic energy to a perfect weapon strike.{br}{br}{b}Prerequisite:{/b} Improved Critical.{br}{br}{b}Benefit:{/b} While maintaining psionic focus, when you successfully score a critical hit, you deal +1d8 bonus damage. If you expend your psionic focus, you deal an additional +1d8 bonus damage." compset="Feat" maxlimit="2">
@@ -1612,6 +1742,8 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Improved Critical feat required."><![CDATA[#hasfeat[fImpCrit] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiDisa" name="Psionic Disarm" description="You can psionically carry your disarm maneuver&apos;s force through your foe.{br}{br}{b}Prerequisite:{/b} Improved Disarm.{br}{br}{b}Benefit:{/b} While maintaining psionic focus, when you successfully perform a disarm combat maneuver, you also deal damage equal to half your level to the creature disarmed.{br}{br}If you expend your psionic focus when you make a successful disarm combat maneuver, you can also send the disarmed object into any space of your choosing within 25 ft. +5 ft./2 levels. If a creature is in the selected space and has a hand free, it can grab the disarmed object as an immediate action." compset="Feat" maxlimit="2">
@@ -1619,6 +1751,7 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Improved Disarm feat required."><![CDATA[#hasfeat[fImpDis] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiOver" name="Psionic Overrun" description="You can draw on your psionic power to boost the power of an overrun attack.{br}{br}{b}Prerequisites:{/b} Str 13, Improved Overrun, Power Attack, base attack bonus +1.{br}{br}{b}Benefit:{/b} While maintaining psionic focus, when you successfully perform an overrun combat maneuver, you also deal damage equal to half your level to the creature you overrun.{br}{br}If you expend your psionic focus when you perform a successful overrun combat maneuver, you can also push your target up to 5 feet, +5 feet for every four levels you possess." compset="Feat" maxlimit="2">
@@ -1626,27 +1759,32 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Strength 13+ required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
-    <exprreq message="Improved Overrun feat required."><![CDATA[#hasfeat[fImpOver] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Power Attack feat required."><![CDATA[#hasfeat[fPowerAtt] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 1+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
+    <exprreq message="Strength 13+ required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Improved Overrun feat required."><![CDATA[#hasfeat[fImpOver] <> 0]]></exprreq>
     </thing>
-  <thing id="fPUPsiPrec" name="Psionic Precise Shot" description="Your ranged attacks sometimes bypass barriers.{br}{br}{b}Prerequisites:{/b} Dex 19, Improved Precise Shot, Point- Blank Shot, Precise Shot, base attack bonus +11.{br}{br}{b}Benefits:{/b} To use this feat, you must expend your psionic focus. You can attempt to make a single ranged attack as a standard action against a target that is sheltered behind a wall, wall of force effect, or similar barrier. Your attack briefly skips through the Astral Plane to bypass the barrier. You must still have line of sight to the target." compset="Feat" maxlimit="2">
+  <thing id="fPUPsiPrec" name="Psionic Precise Shot" description="Your ranged attacks sometimes bypass barriers.\n\n{b}Prerequisites:{/b} Dex 19, Improved Precise Shot, Point-Blank Shot, Precise Shot, base attack bonus +11.\n\n{b}Benefits:{/b} To use this feat, you must expend your psionic focus. You can attempt to make a single ranged attack as a standard action against a target that is sheltered behind a wall, wall of force effect, or similar barrier. Your attack briefly skips through the Astral Plane to bypass the barrier. You must still have line of sight to the target." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Dexterity 19+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 19]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Precise Shot feat required."><![CDATA[#hasfeat[fPrecShot] <> 0]]></exprreq>
     <exprreq message="Improved Precise Shot feat required."><![CDATA[#hasfeat[fImpPrec] <> 0]]></exprreq>
     <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 11+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 11]]></exprreq>
+    <exprreq message="Dexterity 19+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 19]]></exprreq>
     </thing>
-  <thing id="fPUPsiShiB" name="Psionic Shield Bash" description="Your shield bash attacks can strike both the body and mind of a foe.\n\n{b}Prerequisites:{/b} Improved Shield Bash, Shield Proficiency.\n\n{b}Benefit:{/b} While maintaining psionic focus, when you successfully strike a foe with a shield bash attack, the foe must also make a Will save (DC 10 + one-half your base attack bonus + your Wisdom modifier) or be shaken for 1 round. This is a mindaffecting fear effect.\n\nIf you expend your psionic focus when you make a shield bash, on a successfully attack roll you can instead force the target to make a Will saving throw or be stunned for 1 round." compset="Feat" maxlimit="2">
+  <thing id="fPUPsiShiB" name="Psionic Shield Bash" description="Your shield bash attacks can strike both the body and mind of a foe.\n\n{b}Prerequisites:{/b} Improved Shield Bash, Shield Proficiency.\n\n{b}Benefit:{/b} While maintaining psionic focus, when you successfully strike a foe with a shield bash attack, the foe must also make a Will save (DC 10 + one-half your base attack bonus + your Wisdom modifier) or be shaken for 1 round. This is a mind-affecting fear effect.\n\nIf you expend your psionic focus when you make a shield bash, on a successfully attack roll you can instead force the target to make a Will saving throw or be stunned for 1 round." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Shield Proficiency required."><![CDATA[#hasfeat[fArmShield] <> 0]]></exprreq>
     <exprreq message="Improved Shield Bash feat required."><![CDATA[#hasfeat[fImpShBash] <> 0]]></exprreq>
     </thing>
@@ -1655,51 +1793,62 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Strength 13+ required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
-    <exprreq message="Improved Sunder feat required."><![CDATA[#hasfeat[fImpSunder] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
     <exprreq message="Power Attack feat required."><![CDATA[#hasfeat[fMyPowAtta] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus 1+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
+    <exprreq message="Strength 13+ required."><![CDATA[child[aSTR].field[aFinalVal].value >= 13]]></exprreq>
+    <exprreq message="Improved Sunder feat required."><![CDATA[#hasfeat[fImpSunder] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiTrip" name="Psionic Trip" description="You can draw on your psionic power to boost the power of a trip attack.{br}{br}{b}Prerequisites:{/b} Int 13, Combat Expertise, Improved Trip.{br}{br}{b}Benefit:{/b} While maintaining psionic focus, when you successfully perform a trip combat maneuver, you also deal damage equal to half your level to the creature tripped.{br}{br}If you expend your psionic focus when you perform a successful trip combat maneuver, you can also throw your target up to 5 feet, +5 feet for every four levels you possess, although the creature thrown may not be more than one size category larger than you." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <exprreq message="Improved Trip feat required."><![CDATA[#hasfeat[fImpTrip] <> 0]]></exprreq>
     <exprreq message="Intelligence 13+ required."><![CDATA[child[aINT].field[aFinalVal].value >= 13]]></exprreq>
     <exprreq message="Combat Expertise feat required."><![CDATA[#hasfeat[fComExpert] <> 0]]></exprreq>
-    <exprreq message="Improved Trip feat required."><![CDATA[#hasfeat[fImpTrip] <> 0]]></exprreq>
     </thing>
   <thing id="fPUPsiUnar" name="Psionic Unarmed Strike" description="Your unarmed attacks sometimes bypass barriers.{br}{br}{b}Prerequisites:{/b} Dex 13, Wis 13, Improved Unarmed Strike, Stunning Fist.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can attempt to make a single unarmed melee attack as a standard action against a target that is sheltered behind a wall, wall of force effect, or similar barrier. Your attack briefly skips through the Astral Plane to bypass the barrier. This does not grant you line of sight or extra reach, requiring you to make the attack without being able to see the target or use some other method of seeing the target (such as clairaudience/ clairvoyance) and be within your normal reach for your unarmed attack." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Dexterity 13+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Wisdom 13+ required."><![CDATA[child[aWIS].field[aFinalVal].value >= 13]]></exprreq>
     <exprreq message="Improved Unarmed Strike feat required."><![CDATA[#hasfeat[fImpUnarm] <> 0]]></exprreq>
     <exprreq message="Stunning Fist feat required."><![CDATA[#hasfeat[fStunFist] <> 0]]></exprreq>
+    <exprreq message="Dexterity 13+ required."><![CDATA[child[aDEX].field[aFinalVal].value >= 13]]></exprreq>
     </thing>
-  <thing id="fPUReadyRe" name="Ready Response" description="You can move yourself more quickly through sheer willpower.{br}{br}{b}Benefit:{/b} At the beginning of a surprise round, if you would not normally take an action, you can expend your psionic focus to roll initiative and take a standard action or a move action. If you do move normally in a surprise round, you can expend your psionic focus to take a fullround of action, rather than only a standard or move action.{br}{br}{b}Normal:{/b} A character that is allowed to act in a surprise round can take only a standard action or a move action, not both." compset="Feat" maxlimit="2">
+  <thing id="fPUReadyRe" name="Ready Response" description="You can move yourself more quickly through sheer willpower.\n\n{b}Benefit:{/b} At the beginning of a surprise round, if you would not normally take an action, you can expend your psionic focus to roll initiative and take a standard action or a move action. If you do move normally in a surprise round, you can expend your psionic focus to take a full-round of action, rather than only a standard or move action.\n\n{b}Normal:{/b} A character that is allowed to act in a surprise round can take only a standard action or a move action, not both." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPRRebound" name="Rebounding Throw" description="Your thrown attacks are capable of striking multiple targets.{br}{br}{b}Prerequisites:{/b} Point-blank Shot, base attack bonus +1.{br}{br}{b}Benefit:{/b} You may expend your psionic focus as a free action when one of your thrown attacks successfully hits to rebound the attack at another enemy within one range increment of the original target. This second attack is made at a -4 penalty." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abAction" tag="Free"/>
     </thing>
   <thing id="fPURedirec" name="Redirect Power" description="You can direct a failed power against a different target.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. Whenever a redirecting power targeting a single creature has no effect on its intended target (whether due to power resistance or a successful saving throw) you may, as a swift action, redirect it to target another eligible creature within range. The redirected power behaves in all ways as if its new target were the original target for the power. Powers that affect a target in any way (including a lesser effect from a successful saving throw) may not be redirected in this manner. Using this feat does not increase the power point cost of the power." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUReturn" name="Returning Throw" description="You are able to make your thrown weapons return to your hand.{br}{br}{b}Prerequisites:{/b} Point-Blank Shot, base attack bonus +1.{br}{br}{b}Benefit:{/b} As long as you maintain psionic focus, weapons you throw return to the square from which they were thrown just before your next turn. Catching any returning weapons is a free action. If you can&apos;t catch the weapon, it drops to the ground.{br}{br}You may expend your psionic focus as part of a thrown attack to make the weapon you throw return to your hand immediately after any thrown attack resolves. This effect lasts until the end of your turn, allowing you to attack multiple times with the same thrown weapon if multiple attacks are otherwise available.{br}{br}If the weapon (or shield) being thrown has the ranged, returning, or teleporting special ability, your attacks are treated as if you had expended psionic focus to power this feat." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Base Attack Bonus 1+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 1]]></exprreq>
     <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     </thing>
@@ -1708,21 +1857,25 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
-    <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
+    <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
     </thing>
   <thing id="fPURimePwr" name="Rime Power" description="Creatures damaged by your powers with the cold descriptor become entangled.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. The frost of your cold power clings to the target, impeding it for a short time. A rime power causes creatures that take cold damage from the power to become entangled for a number of rounds equal to the original level of the power.{br}{br}This feat can only be used with powers that have the cold descriptor and deal damage. Using this feat does not increase the power point cost of the power." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUSelePwr" name="Selective Power" description="Your allies need not fear friendly fire.{br}{br}{b}Prerequisite:{/b} Spellcraft 10 ranks.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. When manifesting a selective power with an area effect, you can choose a number of targets in the area equal to your key ability modifier. These targets are excluded from the effects of your power. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not have an area of effect cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     <exprreq message="Spellcraft 10+ ranks required."><![CDATA[#skillranks[skSpellcr] >= 10]]></exprreq>
     </thing>
   <thing id="fPUSharPwr" name="Shared Power" description="You have learned to extend the range of your personal powers, granting their benefits to your nearby allies.\n\n{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can manifest a power with a range of personal as if the range was instead touch. Using this feat in this manner does not increase the power point cost of the power. \n\nAlternatively, you can expend your psionic focus to treat the power as if it has a range of Close (25 ft. + 5 ft./2 levels) and has the network descriptor. \n\nUsing this feat in this manner increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level." compset="Feat" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUShatDre" name="Shattered Dream Strike" description="You sap your opponent&apos;s will with your attacks.\n\n{b}Prerequisites:{/b} Devastating touch class feature, Improved Unarmed Strike, Broken Dreams Style*, Intimidate 6 ranks \n\n{b}Benefit:{/b} While in the broken dreams style, after making a successful unarmed strike empowered with your devastating touch, you can make a free Intimidate check against the target." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
@@ -1737,15 +1890,18 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
   <thing id="fPUSickPwr" name="Sickening Power" description="You can sicken creatures with your powers.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can modify a power to sicken a creature damaged by the power. When a creature takes damage from this power, they become sickened for a number of rounds equal to the level of the power. If the power allows a saving throw, a successful save negates the sickening effect. If the power does not allow a save, the target can make a Fortitude save to negate the sickening effect.{br}{br}If the power effect also causes the creature to become sickened, the duration of this metapsionic effect is added on to the duration of the power. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not inflict damage cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUStagSho" name="Staggering Shot" description="Your ranged and thrown attacks stagger fearful opponents.{br}{br}{b}Prerequisites:{/b} Intimidating Shot, Point-Blank Shot, base attack bonus +6.{br}{br}{b}Benefit:{/b} As long as you maintain psionic focus, as a standard action, you may make a single ranged or thrown attack against an enemy that is frightened, panicked, or shaken. If the attack hits, you deal damage normally and the target is staggered until the end of your next turn unless it makes a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier). This feat has no effect on targets that are staggered." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
     <tag group="ChooseSrc1" tag="Hero"/>
     <tag group="fShowWhat" tag="WeaponsNat"/>
     <tag group="fCategory" tag="Psionic"/>
+    <tag group="abAction" tag="PUManFocus"/>
+    <tag group="abAction" tag="Standard"/>
+    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     <exprreq message="Intimidating Shot feat required."><![CDATA[#hasfeat[fPUIntimSh] <> 0]]></exprreq>
     <exprreq message="Point Blank Shot feat required."><![CDATA[#hasfeat[fPointBlnk] <> 0]]></exprreq>
-    <exprreq message="Base Attack Bonus 6+ required."><![CDATA[child[Attack].field[tAtkBase].value >= 6]]></exprreq>
     </thing>
   <thing id="fPUTerMast" name="Terror Mastery" description="You have learned to activate multiple terrors at a time.\n\n{b}Prerequisite:{/b} 8 terrors known.\n\n{b}Benefit:{/b} When you use your terrors class feature, you can activate two terrors in a single swift action.\n\n{b}Normal:{/b} You can only activate one terror at a time." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
@@ -1757,10 +1913,12 @@ validif (hero.tagcount[Hero.Manifester] >= 3)]]></validate>
   <thing id="fPUThunPwr" name="Thundering Power" description="You can conjure your powers into existence with blaring thunder or fearful shrieks, deafening creatures damaged by their effects.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. You can modify a power to deafen a creature damaged by the power. When a creature takes damage from this power, it becomes deafened for a number of rounds equal to the level of the power. If the power allows a saving throw, a successful save negates the deafening effect. If the power does not allow a save, the target can make a Fortitude save to negate the deafening effect.{br}{br}If the power effect also causes the creature to become deafened, the duration of this metapsionic effect is added to the duration of the power. Using this feat increases the power point cost of the power by 2. The power&apos;s total cost cannot exceed your manifester level.{br}{br}Powers that do not inflict damage cannot be used with this feat." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUToppPwr" name="Toppling Power" description="Your powers with the force descriptor knock the affected creatures prone.{br}{br}{b}Benefit:{/b} To use this feat, you must expend your psionic focus. The impact of your force power is strong enough to knock the target prone. If the target takes damage, fails its saving throw, or is moved by your force power, make a trip check against the target, using your manifester level plus your manifesting ability score bonus (Wisdom for psychic warriors, Intelligence for psions, and so on).{br}{br}This does not provoke an attack of opportunity. If the check fails, the target cannot attempt to trip you or the force effect in response.{br}{br}A toppling power only affects powers with the force descriptor. Using this feat does not increase the power point cost of the power." compset="Feat">
     <usesource source="pPsiUn"/>
     <tag group="fCategory" tag="Metapsion"/>
+    <tag group="abAction" tag="PUExpFocus"/>
     </thing>
   <thing id="fPUTouTerr" name="Touch of Terror" description="Your devastating touch deals additional damage.\n\n{b}Prerequisites:{/b} Devastating touch class feature \n\n{b}Benefit:{/b} Your devastating touch ability deals 1d6 points of damage plus your class level and your Charisma modifier.\n\n{b}Normal:{/b} Devastating touch deals 1d6 points of damage plus your class level." compset="Feat" maxlimit="2">
     <usesource source="pPsiUn"/>
@@ -2218,8 +2376,8 @@ field[abValue].value += 1
     <exprreq message="Improved Critical feat required"><![CDATA[#hasfeat[fImpCrit] <> 0]]></exprreq>
     <exprreq message="Base Attack Bonus +8 required"><![CDATA[child[Attack].field[tAtkBase].value >= 8]]></exprreq>
     </thing>
-  <thing id="fPUPersFoc" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks.\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability.\n\n{B}Note:{/b} This feat is not fully scripted yet. The psionic ability you select will not work if you turn off Psionic Focus on the &quot;Psionics&quot; tab. This will be fixed in the next release." compset="Feat" summary="You are always treated as maintaining psionic focus for one ability." uniqueness="useronce">
-    <fieldval field="usrCandid1" value="component.Ability &amp; !Helper.BaseAbil &amp; !component.FavClass"/>
+  <thing id="fPUPersFoc" name="Persistent Focus" description="You are always treated as maintaining psionic focus for one ability.\n\n{b}Prerequisites:{/b} Wis 13, Psionic Meditation, Autohypnosis 4 ranks.\n\n{b}Benefit:{/b} Choose one psionic ability or psionic feat that requires maintaining psionic focus. From this point forward, you are always considered psionically focused even if you expend your psionic focus for any other ability.\n\n{B}Note:{/b} Some abilities may not yet be scripted to work with this feat.  If you find an ability on your character that requires psionic focus but is not selectable by this feat, please report it on the &quot;Pathfinder Community Packs&quot; thread in the Hero Lab forums." compset="Feat" summary="You are always treated as maintaining psionic focus for one ability." uniqueness="useronce">
+    <fieldval field="usrCandid1" value="component.Ability &amp; !Helper.BaseAbil &amp; !component.FavClass &amp; abAction.PUManFocus"/>
     <usesource source="pPsiUn"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="fCategory" tag="Psionic"/>
@@ -2234,7 +2392,7 @@ field[abValue].value += 1
       ~ Set the pick Psionic Focus tag
       perform field[usrChosen1].chosen.assign[Psionics.PsiFocus]]]></eval>
     <exprreq message="Psionic Meditation feat required"><![CDATA[#hasfeat[fPUPsiMed] <> 0]]></exprreq>
-    <exprreq message="Wis 13 required"><![CDATA[#attrmod[aWIS] >= 13]]></exprreq>
+    <exprreq message="Wis 13 required"><![CDATA[#attrvalue[aWIS] >= 13]]></exprreq>
     <exprreq message="Autohypnosis 4 ranks required"><![CDATA[#skillranks[skPUAhypno] >= 4]]></exprreq>
     </thing>
   </document>
