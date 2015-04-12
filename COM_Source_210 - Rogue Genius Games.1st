@@ -150,6 +150,14 @@
     sortorder="0"
     description="SGG Death Mage base class.">
     </source>
+  <source
+    id="srcMonkTal"
+    name="RGG - Talented Monk"
+    selectable="yes"
+    parent="SGGClass"
+    sortorder="0"
+    description="SGG Death Mage base class.">
+    </source>
 
   <!-- New child source of SGG for Feats Of  -->
   <source
