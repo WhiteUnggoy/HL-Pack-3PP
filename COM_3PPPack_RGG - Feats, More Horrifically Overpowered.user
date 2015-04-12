@@ -146,6 +146,7 @@ validif (#hasfeat[fComCast] <> 0)]]></validate>
     <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   <thing id="fSGEndlsCl" name="Endless Cleave" description="Your weapon attacks are made in wide, lethal arcs.\n\n{b}Prerequisites{/b}: Str 13, Cleave, Cleaving Finish, Great Cleave, Improved Cleaving Finish, Power Attack, base attack bonus +9. \n\nBenefit: Whenever you make a melee attack against a foe within reach, if you hit, you deal damage normally and can make an additional attack (using the same attack bonus as the initial attack) against a foe that is adjacent to the first and also within reach. This is considered a use of the Cleave, Finishing Cleave, Great Cleave, or Improved  Finishing Cleave feat. Each time you make an attack that is not instigated by a “cleave” feat, you cannot hit any given foe more than once with additional cleaving attacks. \n\nAdditionally, you no longer take a –2 penalty to your Armor Class until your next turn when you cleave." compset="Feat" summary="Your weapon attacks are made in wide, lethal arcs." uniqueness="useronce">
+    <usesource source="SGG_MOverP"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="fCategory" tag="Overpowerd"/>
@@ -199,11 +200,12 @@ validif (#hasfeat[fComCast] <> 0)]]></validate>
     <exprreq message="Improved Channel feat is required."><![CDATA[#hasfeat[fImpChan] <> 0]]></exprreq>
     <exprreq message="Alignment Channel feat is required."><![CDATA[#hasfeat[fAlignChan] <> 0]]></exprreq>
     <prereq message="Ability to Channel Energy">
-      <validate><![CDATA[validif (#hasability[cClrChan] <> 0)
-validif (#hasability[cHViChan] <> 0)
-validif (#hasability[cPalChan] <> 0)
-validif (#hasability[cPalHosCha] <> 0)
-validif (#hasability[cAPaChanEn] <> 0)]]></validate>
+      <validate><![CDATA[
+        validif (#hasability[cClrChan] <> 0)
+        validif (#hasability[cHViChan] <> 0)
+        validif (#hasability[cPalChan] <> 0)
+        validif (#hasability[cPalHosCha] <> 0)
+        validif (#hasability[cAPaChanEn] <> 0)]]></validate>
       </prereq>
     </thing>
   <thing id="fSGImplSpl" name="Imperial Spell" description="Your magic can take command of the magic of others.\n\n{b}Benefit{/b}: You can cast a dispel magic, greater dispel magic, or disjunction spell as an Imperial Spell. When you use an imperial spell to counterspell a foe’s spell, you gain control of that spell. On the next round you may cast the spell you counterspelled without expending any spell slots of your own. You make all decisions regarding this spell (area, targets, and so on) and are considered the caster of the spell. If you do not cast the spell by the end of your next turn, it is lost.\n\nAn Imperial Spell takes a spell slot five levels higher than the spell’s actual level." compset="Feat" summary="Your magic can take command of the magic of others." uniqueness="useronce">
@@ -293,9 +295,10 @@ validif (#hasability[cAPaChanEn] <> 0)]]></validate>
     <tag group="ProductId" tag="HLCommunit"/>
     <exprreq message="Magical Apptitude feat is required."><![CDATA[#hasfeat[fMagicApt] <> 0]]></exprreq>
     <prereq message="INT, WIS or CHA of 13 is required.">
-      <validate><![CDATA[validif (hero.child[aINT].field[aFinalVal].value >= 13)
-validif (hero.child[aWIS].field[aFinalVal].value >= 13)
-validif (hero.child[aCHA].field[aFinalVal].value >= 13)]]></validate>
+      <validate><![CDATA[
+        validif (hero.child[aINT].field[aFinalVal].value >= 13)
+        validif (hero.child[aWIS].field[aFinalVal].value >= 13)
+        validif (hero.child[aCHA].field[aFinalVal].value >= 13)]]></validate>
       </prereq>
     </thing>
   <thing id="mmMOSplash" name="Splash Spell" description="Your single-target spell splashes onto a second, adjacent target.\n\nPrerequisites: Int, Wis, or Cha 13, Magical Aptitude.\n\nBenefit: When a splash spell targets only a single creature, and either hits that creature (if an attack roll is required)- or the creature fails its save (if a save is allowed), the spell can also target a creature adjacent to the first target that is an appropriate target of the spell and within the spell’s range. The second\ntarget is affected as if it was the target of the spell. Splash Spell has no effect on spells that affect more than one target, or do not either require an attack roll or allow a saving throw. \n\nA splash spell takes up a spell slot 0 levels higher than the spell’s normal level." compset="Metamagic" summary="Your single-target spell splashes onto a second, adjacent target." uniqueness="unique">
