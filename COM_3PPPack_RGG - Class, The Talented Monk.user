@@ -210,6 +210,8 @@
 
       foreach pick in hero from BaseWep where searchexpr
         perform eachpick.assign[Helper.ExoticProf]
+        perform eachpick.assign[Helper.Proficient]
+        perform eachpick.assign[wSpecial.RGTalMnkAB]
       nexteach]]></eval>
     <eval phase="First" priority="20000" index="2"><![CDATA[
       ~ If nothing chosen then get out now!
@@ -235,6 +237,7 @@
       foreach pick in hero from BaseWep where searchexpr
         perform eachpick.assign[Helper.ExoticProf]
         perform eachpick.assign[Helper.Proficient]
+        perform eachpick.assign[wSpecial.RGTalMnkAB]
       nexteach]]></eval>
     <eval phase="PostLevel" priority="20000" index="4"><![CDATA[
       ~ If nothing chosen then get out now!
@@ -290,32 +293,24 @@
     <tag group="SpecType" tag="Attack"/>
     <tag group="Helper" tag="Improvised"/>
     </thing>
-  <thing id="cRG1Flurry" name="Flurry of Blows" description="When attacking with weapons to which he can apply his special attack bonus, the monk can make a flurry of blows as a full-attack action. When doing so he may make one additional attack using a weapon for which he has taken the fighting style edge or adaptive fighting talent. All the monk&apos;s attacks for the round, including the additional attack, suffer a -2 penalty to their attack rolls. All the attacks the monk makes in the round must be with weapons with which he can use his special attack bonus. The monk may make all the attacks with a single weapon, or may make them interchangeably with any qualifying weapons he is wielding.\n\nAt 8th level, the monk can make a second additional attack when he uses flurry of blows, taking an additional -3 penalty to the attack roll of this additional attack. At 15th level, the monk can make a third additional attack when he uses flurry of blows, taking an additional -7 penalty to the attack roll of this additional attack.\n\nA monk applies his full Strength bonus to his damage rolls for all successful attacks made with flurry of blows, whether the attacks are made unarmed, with an off-hand weapon, or with a weapon wielded in both hands. A monk may substitute disarm, sunder, and trip combat maneuvers for unarmed attacks as part of a flurry of blows.\n\nA monk may only use one edge or talent with flurry in its name on any given round.\n\n{b}Note:{/b} To get this to be added correctly I had to use an archetype.  So a new archtype called &quot;Flurry of Blows&quot; will display on the Classes tab. Please note the only thing it does is add the Flurry of Blows class abilites to the Talented Monk class." compset="CustomSpec" uniqueness="unique">
+  <thing id="cRG1Flurry" name="Flurry of Blows" description="When attacking with weapons to which he can apply his special attack bonus, the monk can make a flurry of blows as a full-attack action. When doing so he may make one additional attack using a weapon for which he has taken the fighting style edge or adaptive fighting talent. All the monk&apos;s attacks for the round, including the additional attack, suffer a -2 penalty to their attack rolls. All the attacks the monk makes in the round must be with weapons with which he can use his special attack bonus. The monk may make all the attacks with a single weapon, or may make them interchangeably with any qualifying weapons he is wielding.\n\nAt 8th level, the monk can make a second additional attack when he uses flurry of blows, taking an additional -3 penalty to the attack roll of this additional attack. At 15th level, the monk can make a third additional attack when he uses flurry of blows, taking an additional -7 penalty to the attack roll of this additional attack.\n\nA monk applies his full Strength bonus to his damage rolls for all successful attacks made with flurry of blows, whether the attacks are made unarmed, with an off-hand weapon, or with a weapon wielded in both hands. A monk may substitute disarm, sunder, and trip combat maneuvers for unarmed attacks as part of a flurry of blows.\n\nA monk may only use one edge or talent with flurry in its name on any given round." compset="CustomSpec" uniqueness="unique">
     <usesource source="srcMonkTal"/>
     <tag group="SpecSource" tag="cHelpRG1"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Helper" tag="SpecUp"/>
     <tag group="AbilType" tag="Extra"/>
-    <bootstrap thing="arRG1MnkTa"></bootstrap>
+    <bootstrap thing="cRG1FlurBl">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cRG1FlurBl">
+      <autotag group="ClSpecWhen" tag="8"/>
+      </bootstrap>
+    <bootstrap thing="cRG1FlurBl">
+      <autotag group="ClSpecWhen" tag="15"/>
+      </bootstrap>
     <eval phase="Final" priority="50000"><![CDATA[
       ~ Add additional text to the core Monk Flurry of Blows
       #appenddesc[cMnkFlurr,"{b}Talented Monk:{/b} A monk may only use one edge or talent with flurry in its name on any given round."]]]></eval>
-    </thing>
-  <thing id="arRG1MnkTa" name="Flurry of Blows" description="This archetype is added as a helper to allow for getting the core &quot;Flurry of Blows&quot; class abilites added to the Talented Monk class. It does not remove any class abilities." compset="ClassVary" uniqueness="unique">
-    <comment>This is a helper object and does not display as an option to be added by a gamer.</comment>
-    <usesource source="srcMonkTal"/>
-    <tag group="Helper" tag="Helper"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <bootstrap thing="cMnkFlurr">
-      <autotag group="ClSpecWhen" tag="15"/>
-      </bootstrap>
-    <bootstrap thing="cMnkFlurr">
-      <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
-    <bootstrap thing="cMnkFlurr">
-      <autotag group="ClSpecWhen" tag="8"/>
-      </bootstrap>
-    <link linkage="varies" thing="cHelpRG1"/>
     </thing>
   <thing id="cRG1FlurMa" name="Flurry of Maneuvers" description="[Maneuver Master] As part of a full-attack action, the monk can make one additional combat maneuver, regardless of whether the maneuver normally replaces a melee attack or requires a standard action. All attack rolls and CMB checks made during the round suffer a -2 penalty.\n\nAt 8th level, the monk can make a second additional maneuver when he uses flurry of maneuvers, taking an additional -3 penalty to CMB checks with this additional maneuver. At 15th level, the monk can make a third additional maneuver when he takes a full-attack routine, taking an additional -7 penalty to the CMB checks of this additional attack.\n\nA monk may only use one edge or talent with &apos;flurry&apos; in its name on any given round." compset="CustomSpec" uniqueness="unique">
     <usesource source="srcMonkTal"/>
@@ -343,6 +338,137 @@
     <tag group="Helper" tag="SpecUp"/>
     <tag group="AbilType" tag="Extra"/>
     <bootstrap thing="cMnkGraGrp">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    </thing>
+  <thing id="cRG1InsMan" name="Insightful Maneuvers" description="[Sensei] The monk may use his Wisdom bonus in lieu of his Strength or Dexterity on all combat maneuver checks." compset="CustomSpec" summary="Use Wis in lieu of Str or Dext on all combat maneuver checks." uniqueness="unique">
+    <usesource source="srcMonkTal"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpRG1"/>
+    <tag group="AbilType" tag="Extra"/>
+    </thing>
+  <thing id="cRG1InsStr" name="Insightful Strike" description="[Sensei] The monk may use his Wisdom bonus in lieu of his Strength or Dexterity on attack rolls and combat maneuver checks with weapon he may use with his special attack bonus." compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcMonkTal"/>
+    <tag group="SpecSource" tag="cHelpRG1"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ find all weapons that get the Specialty Attack Bonus
+      ~ and set to use differences between WIS, STR, and DEX
+      foreach pick in hero from BaseWep where "wSpecial.RGTalMnkAB"
+        perform eachpick.assign[MelAttOpt.aWIS]
+        perform eachpick.assign[RanAttOpt.aWIS]
+      nexteach]]></eval>
+    </thing>
+  <thing id="cRG1FlurBl" name="Flurry of Blows" description="When attacking with weapons to which he can apply his special attack bonus, the monk can make a flurry of blows as a full-attack action. When doing so he may make one additional attack using a weapon for which he has taken the fighting style edge or adaptive fighting talent. All the monk&apos;s attacks for the round, including the additional attack, suffer a -2 penalty to their attack rolls. All the attacks the monk makes in the round must be with weapons with which he can use his special attack bonus. The monk may make all the attacks with a single weapon, or may make them interchangeably with any qualifying weapons he is wielding.\n\nAt 8th level, the monk can make a second additional attack when he uses flurry of blows, taking an additional -3 penalty to the attack roll of this additional attack. At 15th level, the monk can make a third additional attack when he uses flurry of blows, taking an additional -7 penalty to the attack roll of this additional attack.\n\nA monk applies his full Strength bonus to his damage rolls for all successful attacks made with flurry of blows, whether the attacks are made unarmed, with an off-hand weapon, or with a weapon wielded in both hands. A monk may substitute disarm, sunder, and trip combat maneuvers for unarmed attacks as part of a flurry of blows.\n\nA monk may only use one edge or talent with flurry in its name on any given round." compset="ClSpecial" summary="As full-rd action, higher BAB and combo unarmed/monk wep as if two-weapon fighting.">
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="SpecType" tag="Attack" name="Attack" abbrev="Attack"/>
+    <tag group="abAction" tag="FullRd" name="Full rd" abbrev="Full"/>
+    <tag group="abDuration" tag="Instant" name="Instantaneous" abbrev="inst"/>
+    <tag group="abRange" tag="Personal" name="Personal" abbrev="pers"/>
+    <bootstrap thing="aaFlurryBl"></bootstrap>
+    <eval phase="PostLevel" priority="5000" name="Flurry of Blows Calculation"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ The following should only happen once on the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      ~ Add a tags equal to our xCount
+      ~ This tells HL how many flurry attacks to display
+      var iX as number
+      for iX = 1 to field[xCount].value
+        perform hero.assign[Hero.FlurryAtk]
+      next]]></eval>
+    <eval phase="Final" priority="10000" name="Find Flurry Weapons"><![CDATA[
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ The following should only happen once on the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      ~ find all weapons that get the Specialty Attack Bonus
+      ~ and set to show flurry of blows
+      foreach pick in hero from BaseWep where "wSpecial.RGTalMnkAB"
+        perform eachpick.assign[Helper.ShowFlurry]
+      nexteach]]></eval>
+    <eval phase="Render" priority="10000" index="2"><![CDATA[
+      if (field[xIndex].value = 3) then
+        field[listname].text = "Flurry of Blows (Greater Two-Weapon Fighting)"
+      elseif (field[xIndex].value = 2) then
+        field[listname].text = "Flurry of Blows (Improved Two-Weapon Fighting)"
+      else
+        field[listname].text = "Flurry of Blows (Two-Weapon Fighting)"
+        endif
+
+      ~ only run these calculations on the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+
+      var i as number
+      var j as number
+
+      ~ starting at our flurry attack bonus
+      j = hero.child[Attack].field[tAtkFluBas].value - 2
+      ~ on the first pass through
+      i = 1
+      field[livename].text = "Flurry of Blows "
+
+      ~ if we're active, the user has spent a Ki point for an extra attack at
+      ~ the highest rating
+      if (hero.childfound[cMnkKiFlur].field[abilActive].value <> 0) then
+        field[livename].text &= signed(j) & "/"
+        endif
+
+      ~ as long as our value remains above -2 (which would mean that our
+      ~ effective BAB remains above 0 - the normal requirement for getting an
+      ~ extra attack)
+      while (j > -2)
+        ~ add a / if this isn't the first time through
+        if (i > 1) then
+          field[livename].text &= "/"
+          endif
+
+        ~ append our bonus
+        field[livename].text &= signed(j)
+
+        ~ if we've been through this a number of times that's less than or equal
+        ~ to the number of Flurry abilities we've gained, add a second attack
+        ~ at this bonus
+        if (i <= field[xCount].value) then
+          field[livename].text &= "/" & signed(j)
+          endif
+
+        ~ reduce our bonus by 5 and increase our pass count by 1, then go to the
+        ~ next loop
+        j -= 5
+        i += 1
+        loop]]>
+      <after name="Add Class Saves and BAB"/>
+      </eval>
+    </thing>
+  <thing id="cRG1IronMo" name="Iron Monk" description="[Monk of the Sacred Mountain] The monk gains a +1 natural armor bonus." compset="CustomSpec" summary="Gain a +1 natural armor bonus." uniqueness="unique">
+    <fieldval field="abValue" value="1"/>
+    <usesource source="srcMonkTal"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecSource" tag="cHelpRG1"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      hero.child[ArmorClass].field[tACNatural].value += field[abValue].value]]></eval>
+    </thing>
+  <thing id="cRG1IrLiDe" name="Iron Limb Defense" description="[Monk of the Sacred Mountain] The monk can deflect blows with an active defense that complements his bastion stance. If the monk starts and ends his turn in the same space, he gains a +2 shield bonus to AC and CMD until the start of his next turn. As a swift action, he can spend 1 ki point to increase this bonus to +4.\n\nA monk must have a ki pool and the bastion stance talent to select this edge." compset="CustomSpec" uniqueness="unique">
+    <comment>TO-DO: add Pre-Req logic.</comment>
+    <usesource source="srcMonkTal"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpRG1"/>
+    <bootstrap thing="cMnkIronLi">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     </thing>
