@@ -2114,6 +2114,14 @@ field[abValue].value += 1
     <usesource source="pPsiUn"/>
     <tag group="trCategory" tag="Psionic" name="Psionic"/>
     <tag group="Helper" tag="ShowSpec"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+~ adding Use Magic Device as a class skill
+      #makeclassskill[skUseMagic]
+
+~ add a +1 trait bonus to Use Magic Device skill
+      #applybonus[BonTrait, hero.child[skUseMagic], 1]]]></eval>
     </thing>
   <thing id="trPUPsiKna" name="Psionic Knack" description="You are naturally psionically gifted, even if you dabble in other studies. Pick a class with a manifester level when you gain this trait—your manifester level in that class gains a +2 trait bonus as long as this bonus doesn’t raise your manifester level above your current Hit Dice. You must have a level in the class chosen to gain this benefit." compset="Trait">
     <fieldval field="usrCandid1" value="component.Class &amp; Helper.Manifester"/>
