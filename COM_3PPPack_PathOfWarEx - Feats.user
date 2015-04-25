@@ -316,7 +316,6 @@ Email: mail@theirongolem.com</info_author>
     <tag group="fCategory" tag="Combat"/>
     <tag group="fCategory" tag="Style"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <tag group="Custom" tag="ActiveStyl"/>
     <exprreq message="Broken Blade Style feat required"><![CDATA[#hasfeat[fPWBBStyle] <> 0]]></exprreq>
     <exprreq message="Acrobatics 7+ ranks required"><![CDATA[#skillranks[skAcrobat] >= 7]]></exprreq>
     </thing>
@@ -325,7 +324,6 @@ Email: mail@theirongolem.com</info_author>
     <tag group="fCategory" tag="Combat"/>
     <tag group="fCategory" tag="Style"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <tag group="Custom" tag="ActiveStyl"/>
     <exprreq message="Broken Blade Crush feat required"><![CDATA[#hasfeat[fPWBBCrush] <> 0]]></exprreq>
     <exprreq message="Acrobatics 11+ ranks required"><![CDATA[#skillranks[skAcrobat] >= 11]]></exprreq>
     </thing>
@@ -365,8 +363,6 @@ Email: mail@theirongolem.com</info_author>
     <usesource source="srcPOWEx"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <exprreq message="Black Seraph Style feat required"><![CDATA[#hasfeat[fPWBSStyle] <> 0]]></exprreq>
     <exprreq message="Intimidate 7+ ranks required"><![CDATA[#skillranks[skIntim] >= 7]]></exprreq>
@@ -375,8 +371,6 @@ Email: mail@theirongolem.com</info_author>
     <usesource source="srcPOWEx"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <exprreq message="Black Seraph&apos;s Malevolence feat required"><![CDATA[#hasfeat[fPWBSMalev] <> 0]]></exprreq>
     <exprreq message="Intimidate 11+ ranks required"><![CDATA[#skillranks[skIntim] >= 11]]></exprreq>
@@ -417,8 +411,6 @@ Email: mail@theirongolem.com</info_author>
   <thing id="fPWCRPlag" name="Cursed Razor Plague" description="Your curses spread amongst your enemies.\n\n{b}Prerequisites:{/b} Cursed Razor Style, Spellcraft 7 ranks\n\n{b}Benefit:{/b} Whenever you cause an opponent to become cursed by an effect other than this feat, you may select an additional opponent within 30 ft.; the additional opponent becomes cursed for the same duration." compset="Feat" uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
     <exprreq message="Spellcraft 7+ ranks required"><![CDATA[#skillranks[skSpellcr] >= 7]]></exprreq>
@@ -427,8 +419,6 @@ Email: mail@theirongolem.com</info_author>
   <thing id="fPWCRMass" name="Cursed Razor Massacre" description="You tear into your victims like a plague-laced wind.\n\n{b}Prerequisites:{/b} Cursed Razor Plague, Spellcraft 11 ranks\n\n{b}Benefit:{/b} Whenever you strike a cursed creature with a melee attack you may make an additional attack against a different cursed creature within your reach. This additional attack is made at your highest attack bonus and may be made up to once per round." compset="Feat" uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
     <exprreq message="Spellcraft 11+ ranks required"><![CDATA[#skillranks[skSpellcr] >= 11]]></exprreq>
@@ -457,8 +447,6 @@ Email: mail@theirongolem.com</info_author>
   <thing id="fPWGLCharg" name="Golden Lion Charge" description="Your awareness of the battlefield lets you seize opportunity at a moment’s notice\n\n{b}Prerequisites:{/b} Golden Lion Style, Diplomacy 7 ranks\n\n{b}Benefit:{/b} Whenever an opponent within 30 feet attacks an ally and misses, you can expend a readied counter to move up to your speed, provided that movement ends with you adjacent to the opponent that missed your ally, and make a single attack of opportunity against them." compset="Feat" uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
     <exprreq message="Diplomacy 7+ ranks required"><![CDATA[#skillranks[skDiplo] >= 7]]></exprreq>
@@ -467,8 +455,6 @@ Email: mail@theirongolem.com</info_author>
   <thing id="fPWGLComm" name="Golden Lion Charge" description="Your battlefield presence bolsters the will of your allies\n\n{b}Prerequisites:{/b} Golden Lion Charge\n\n{b}Benefit:{/b} You can expend a readied boost maneuver to grant all allies within 30 ft. 5 temporary hit points per attack you make this round.  These temporary hit points stack with themselves and last for up to 1 round or until lost." compset="Feat" uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
     <exprreq message="Diplomacy 11+ ranks required"><![CDATA[#skillranks[skDiplo] >= 1]]></exprreq>
@@ -502,8 +488,6 @@ Email: mail@theirongolem.com</info_author>
   <thing id="fPWITShell" name="Iron Tortoise Shell" description="Your shield protects you from more than just physical assaults\n\n{b}Prerequisites:{/b} Iron Tortoise Style, Bluff 7 ranks\n\n{b}Benefit:{/b} Whenever you initiate a counter, you gain the evasion special ability until the end of your next turn." compset="Feat" uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
     <exprreq message="Iron Tortoise Style feat required"><![CDATA[#hasfeat[fPWITStyle] <> 0]]></exprreq>
@@ -512,8 +496,6 @@ Email: mail@theirongolem.com</info_author>
   <thing id="fPWITSnap" name="Iron Tortoise Snap" description="Your sword-and-shield style is brutally efficient.\n\n{b}Prerequisites:{/b} Iron Tortoise Shell, Bluff 13 ranks\n\n{b}Benefit:{/b} You may make an additional attack at your highest attack bonus with a non-shield weapon whenever you hit a creature with a shield bash. This additional attack must be made against the creature struck by your shield bash. You may only make up to two additional attacks per round in this manner." compset="Feat" uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
     <exprreq message="Iron Tortoise Shell feat required"><![CDATA[#hasfeat[fPWITShell] <> 0]]></exprreq>
@@ -552,7 +534,6 @@ Email: mail@theirongolem.com</info_author>
   <thing id="fPWPFSlash" name="Primal Fury Slash" description="Your swift movements and skill allow you to strike enemies as you close with your target.\n\n{b}Prerequisites:{/b} Primal Fury Style, Survival 7 ranks\n\n{b}Benefit:{/b} When you charge a creature, you can make a single attack against any other creature that is adjacent to you at any point during your movement." compset="Feat" uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="Custom" tag="ActiveStyl"/>
-    <tag group="fCategory" tag="Style"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
     <exprreq message="Survival 7+ ranks required"><![CDATA[#skillranks[skSurvival] >= 7]]></exprreq>
@@ -564,8 +545,6 @@ Email: mail@theirongolem.com</info_author>
     <usesource source="srcPOWEx"/>
     <tag group="fCategory" tag="Combat"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <tag group="fCategory" tag="Style"/>
-    <tag group="Custom" tag="ActiveStyl"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
       doneif (tagis[Helper.FtDisable] <> 0)
 
@@ -616,7 +595,6 @@ Email: mail@theirongolem.com</info_author>
     <tag group="fCategory" tag="Style"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
     <tag group="fCategory" tag="Combat"/>
     <exprreq message="Shattered Mirror Style feat required"><![CDATA[#hasfeat[fPWSMStyle] <> 0]]></exprreq>
     <prereq message="Craft 7+ ranks required">
@@ -630,7 +608,6 @@ Email: mail@theirongolem.com</info_author>
     <tag group="fCategory" tag="Style"/>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="User" tag="Activation"/>
-    <tag group="Custom" tag="ActiveStyl"/>
     <tag group="fCategory" tag="Combat"/>
     <exprreq message="Shattered Mirror Waltz feat required"><![CDATA[#hasfeat[fPWSMWaltz] <> 0]]></exprreq>
     <prereq message="Craft 13+ ranks required">
@@ -660,5 +637,122 @@ Email: mail@theirongolem.com</info_author>
     <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
     <exprreq message="Must know one or more Scarlet Throne stances"><![CDATA[hero.tagcount[HasStance.ScarletThr] > 0]]></exprreq>
     <exprreq message="Sense Motive 3+ ranks required"><![CDATA[#skillranks[skSenseMot] >= 3]]></exprreq>
+    </thing>
+  <thing id="fPWSTDign" name="Scarlet Throne Dignity" description="Noble training has enabled you to withstand attacks that would harm those of lesser breeding.\n\n{b}Prerequisites:{/b} Scarlet Throne Style, Sense Motive 7 ranks\n\n{b}Benefit:{/b} You can expend a readied maneuver as an immediate action to make an opposed attack roll in place of your AC.  If your attack roll is higher than your opponent’s attack roll, you negate the attack and you may move 5 feet as a free action. This movement does not provoke attacks of opportunity and does not count as your 5-foot step." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Combat"/>
+    <exprreq message="Scarlet Throne Style feat required"><![CDATA[#hasfeat[fPWSTStyle] <> 0]]></exprreq>
+    <exprreq message="Sense Motive 7+ ranks required"><![CDATA[#skillranks[skSenseMot] >= 7]]></exprreq>
+    </thing>
+  <thing id="fPWSTRipst" name="Scarlet Throne Riposte" description="You seize opportunity as it comes, taking advantage of your enemy’s poor position after a missed attack.\n\n{b}Prerequisites:{/b} Scarlet Throne Dignity, Sense Motive 11 Ranks\n\n{b}Benefit:{/b} Whenever you successfully negate an attack from an enemy (such as through Scarlet Throne Dignity or a counter), your opponent provokes an attack of opportunity from you. Any given creature can only provoke this attack of opportunity once per round from you." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Combat"/>
+    <exprreq message="Scarlet Throne Dignity  feat required"><![CDATA[#hasfeat[fPWSTDign] <> 0]]></exprreq>
+    <exprreq message="Sense Motive 11+ ranks required"><![CDATA[#skillranks[skSenseMot] >= 11]]></exprreq>
+    </thing>
+  <thing id="fPWSCStyle" name="Silver Crane Style" description="Your mercy shields your allies.\n\n{b}Prerequisites:{/b} 1 or more Silver Crane stances, Perception 3 ranks\n\n{b}Benefit:{/b} As a free action, you may suffer a -1 penalty to your armor class and Reflex saves until the beginning of your next turn. If you do, other allies within 20 ft. gain a +1 bonus to their armor class and Reflex saves until the beginning of your next turn. These bonuses and penalties increase by 1 for every 4 character levels." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="-1"/>
+    <fieldval field="abValue2" value="1"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Style"/>
+    <eval phase="Render" priority="50000" index="2"><![CDATA[      field[livename].text &= " (" & signed(field[abValue].value) & "/" & signed(field[abValue2].value) & ")"]]></eval>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're disabled, do nothing
+      doneif (tagis[Helper.FtDisable] <> 0)
+
+      ~ Calculate additional penalty from levels
+      field[abValue].value -= round(herofield[tTotLevel].value/4,0,-1)
+      field[abValue2].value = absolute(field[abValue].value)
+
+      ~if we're not active, we're done
+      doneif (field[abilActive].value = 0)
+
+      perform hero.assign[Custom.ActiveStyl]
+
+      ~ Apply penalty to AC and Ref save
+      hero.child[ArmorClass].field[Penalty].value += field[abValue].value
+      hero.child[svRef].field[Penalty].value += field[abValue].value]]></eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Perception 3+ ranks required"><![CDATA[#skillranks[skPercep] >= 3]]></exprreq>
+    <exprreq message="Must know one or more Silver Crane stances"><![CDATA[hero.tagcount[HasStance.SilvrCrane] > 0]]></exprreq>
+    </thing>
+  <thing id="pPWSCStyle" name="Silver Crane Style" description="You gain a bonus to your Armor Class and Reflex save from an ally&apos;s use of Silver Crane Style" compset="InPlay">
+    <fieldval field="pMinimum" value="1"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ Stop now if we're not activated
+      doneif (field[pIsOn].value = 0)
+
+      hero.child[ArmorClass].field[Bonus].value += field[pAdjust].value
+      hero.child[svRef].field[Bonus].value += field[pAdjust].value]]></eval>
+    </thing>
+  <thing id="fPWSCFthrs" name="Silver Crane Feathers" description="You sacrifice yourself for others.\n\n{b}Prerequisites:{/b} Silver Crane Style, Perception 7 ranks\n\n{b}Benefit:{/b} As an immediate action, in response to one of your allies within 30 ft. taking ability damage or hit point damage, you may expend one of your readied counters. If you do, you suffer the ability damage and/or hit point damage in place of that ally." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="abAction" tag="Immediate"/>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Silver Crane Style required"><![CDATA[#hasfeat[fPWSCStyle] <> 0]]></exprreq>
+    <exprreq message="Perception 7+ ranks required"><![CDATA[#skillranks[skPercep] >= 7]]></exprreq>
+    </thing>
+  <thing id="fPWSCWing" name="Silver Crane Wing" description="Your sacrifice to others grants you divine protection\n\n{b}Prerequisites:{/b} Silver Crane Feathers, Perception 11 ranks\n\n{b}Benefit:{/b} When you use your Silver Crane Feathers feat, make a Will save (DC equals ability damage dealt + hit point damage dealt). If you succeed, the damage is negated entirely instead of being redirected to you." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Combat"/>
+    <exprreq message="Perception 11+ ranks required"><![CDATA[#skillranks[skPercep] >= 11]]></exprreq>
+    <exprreq message="Silver Crane Feathers required"><![CDATA[#hasfeat[fPWSCFthrs] <> 0]]></exprreq>
+    </thing>
+  <thing id="fPWSGStyle" name="Sleeping Goddess Style" description="You can tap into the dream state to refresh your mind and body.\n\n{b}Prerequisites:{/b} 1 or more Sleeping Goddess stances, Autohypnosis 3 ranks\n\n{b}Benefit:{/b} You can spend a standard action to gain psionic focus and recover a single maneuver.  If you have the Psionic Meditation feat, you can spend a move action to gain psionic focus and recover a single maneuver." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="-1"/>
+    <fieldval field="abValue2" value="1"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="Custom" tag="ActiveStyl"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="fCategory" tag="Style"/>
+    <tag group="abAction" tag="Standard"/>
+    <eval phase="PostAttr" priority="10000">      if (#hasfeat[fPUPsiMed] = 1) then
+        perform tagreplace[abAction.Standard,abAction.Move]
+      endif</eval>
+    <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
+    <exprreq message="Must know one or more Sleeping Goddess stances"><![CDATA[hero.tagcount[HasStance.SlpGoddess] > 0]]></exprreq>
+    <exprreq message="Autohypnosis 3+ ranks required"><![CDATA[#skillranks[skPUAhypno] >= 3]]></exprreq>
+    </thing>
+  <thing id="fPWSGSlmbr" name="Sleeping Goddess Slumber" description="Your attacks drag your opponent’s mind into their dream world.\n\n{b}Prerequisites: Sleeping Goddess Style{/b}, Autohypnosis 7 ranks\n\n{b}Benefit:{/b} When you successfully hit an opponent with a melee attack, you can expend psionic focus to force them to make a Will save (DC 10+1/2 level+ Initiating Modifier) or fall asleep for 1 round. A creature that makes their saving throw cannot be affected by this ability again for 24 hours.\n\n{b}NOTE:{/b} The feat script has no way of knowing what your initiating modifier would be when you use this feat, so we include a dropdown that you can use to tell it which attribute is the initiating attribute." compset="Feat" uniqueness="useronce">
+    <fieldval field="abValue" value="-1"/>
+    <fieldval field="abValue2" value="1"/>
+    <fieldval field="abDuration" value="1"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="abAction" tag="PUExpFocus"/>
+    <tag group="abSave" tag="WillNeg"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="abDuration" tag="Round"/>
+    <tag group="fShowWhat" tag="Attributes"/>
+    <tag group="Helper" tag="ActivMenu"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      doneif (field[usrChosen1].ischosen <> 1)
+
+      field[abDC].value = 10
+      field[abDC].value += round(herofield[tTotLevel].value/2,0,-1)
+      field[abDC].value += field[usrChosen1].chosen.field[aModBonus].value]]></eval>
+    <exprreq message="Sleeping Goddess Style feat required"><![CDATA[#hasfeat[fPWSGStyle] <> 0]]></exprreq>
+    <exprreq message="Autohypnosis 7+ ranks required"><![CDATA[#skillranks[skPUAhypno] >= 7]]></exprreq>
+    </thing>
+  <thing id="fPWSGStrk" name="Sleeping Goddess Strike" description="Your strikes travel through the collective unconscious of the world to strike your foes.\n\n{b}Prerequisites:{/b} Sleeping Goddess Slumber, Autohypnosis 11 ranks\n\n{b}Benefit:{/b}  Whenever you hit an opponent with a melee or ranged attack, it takes a -2 penalty to its saving throws against your maneuvers until the end of its next turn." compset="Feat" uniqueness="useronce">
+    <usesource source="srcPOWEx"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="fCategory" tag="Combat"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <exprreq message="Sleeping Goddess Slumber feat required"><![CDATA[#hasfeat[fPWSGSlmbr] <> 0]]></exprreq>
+    <exprreq message="Autohypnosis 11+ ranks required"><![CDATA[#skillranks[skPUAhypno] >= 11]]></exprreq>
     </thing>
   </document>
