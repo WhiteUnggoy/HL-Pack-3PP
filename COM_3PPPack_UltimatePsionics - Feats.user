@@ -2110,10 +2110,11 @@ field[abValue].value += 1
         eachpick.field[sCL].value += 1
         nexteach]]></eval>
     </thing>
-  <thing id="trPUPsiItm" name="Psionic Item Familiarity" description="You are very familiar with psionic and magic items. Use Magic Device is now a class skill for you, and you gain a +1 trait bonus to Use Magic Device checks. This trait may not be stacked with the Dangerously Curious trait." compset="Trait">
+  <thing id="trPUPsiItm" name="Psionic Item Familiarity" description="You are very familiar with psionic and magic items. Use Magic Device is now a class skill for you, and you gain a +1 trait bonus to Use Magic Device checks. This trait may not be stacked with the Dangerously Curious trait." compset="Trait" uniqueness="useronce">
     <usesource source="pPsiUn"/>
     <tag group="trCategory" tag="Psionic" name="Psionic"/>
     <tag group="Helper" tag="ShowSpec"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="PostAttr" priority="10000"><![CDATA[~ if we've been disabled, get out now
       doneif (tagis[Helper.SpcDisable] <> 0)
 
