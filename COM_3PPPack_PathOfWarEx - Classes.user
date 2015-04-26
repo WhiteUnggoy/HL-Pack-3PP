@@ -535,13 +535,15 @@
   <thing id="arPWCrCoun" name="Crimson Countess" description="All harbingers draw power from their understanding of their negative emotions and the tragedies and evil that afflict all people. Those who become crimson countesses have a different emphasis: rage. These harbingers, consumed by wrath, revenge, frustration, or simple malicious fury, crimson countesses mark their opponents for bloody vengeance and then wreak devastation upon them. While not all permit their rage to consume them, enough do that these blood-splattered warriors have a dark and dangerous reputation that follows them wherever they go." compset="ClassVary" uniqueness="unique">
     <arrayval field="cvCustTot" index="8" value="-1"/>
     <arrayval field="cvCustTot" index="14" value="-2"/>
-    <tag group="AbReplace" tag="cPW4IllTid"/>
+    <usesource source="srcPOWEx"/>
     <tag group="AbReplace" tag="cPW4DkFoc1"/>
     <tag group="AbReplace" tag="cPW4DkFoc3"/>
     <tag group="AbReplace" tag="cPW4DkFoc2"/>
     <tag group="AbReplace" tag="cPW4DkFoc4"/>
     <tag group="ClVaryName" tag="AppParen"/>
     <tag group="AbModify" tag="cPW4GrmNws"/>
+    <tag group="AbReplace" tag="cPW4IllTid"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <bootstrap thing="cPW4CrmClm">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
@@ -553,10 +555,12 @@
   <thing id="cPW4CrmClm" name="Crimson Claim" description="Each round, at the beginning of her turn, the Crimson Countess deals 1d4 points of damage to creatures she has Claimed. This increases to 2d4 at 6th level, 3d4 at 10th level, 4d4 at 14th level, and a maximum of 5d4 at 18th level. This replaces Ill Tidings." compset="ClSpecial" summary="Claimed creatures take damage each round">
     <fieldval field="abValue" value="1"/>
     <fieldval field="abValue2" value="4"/>
-    <tag group="abAction" tag="None"/>
+    <usesource source="srcPOWEx"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="LvNameApp" tag="DieCntVal"/>
     <tag group="LvNameApp" tag="DieSizVal2"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="abAction" tag="None"/>
     <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
       doneif (tagis[Helper.ShowSpec] = 0)
       ~ If we're disabled, just get out now
@@ -582,7 +586,10 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
     <fieldval field="actName" value="Using maneuver"/>
     <fieldval field="actName2" value="Target is Claimed"/>
     <fieldval field="abValue2" value="2"/>
+    <usesource source="srcPOWEx"/>
+    <tag group="AbilType" tag="Super"/>
     <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
     <bootstrap thing="trkPW4Vit"></bootstrap>
     <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
       doneif (tagis[Helper.ShowSpec] = 0)
@@ -632,11 +639,12 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
     <fieldval field="actName" value="Blood Pool Form"/>
     <fieldval field="abValue" value="10"/>
     <fieldval field="abValue2" value="5"/>
-    <tag group="User" tag="Activation"/>
+    <usesource source="srcPOWEx"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abRange" tag="Feet"/>
     <tag group="LvNamePar" tag="IncRange"/>
+    <tag group="User" tag="Activation"/>
     <bootstrap thing="xFastHeal">
       <containerreq phase="First" priority="1000"><![CDATA[fieldVal:abilActive <> 0]]></containerreq>
       </bootstrap>
