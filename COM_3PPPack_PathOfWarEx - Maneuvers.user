@@ -98,7 +98,7 @@
     <tag group="Discipline" tag="CurseRazor"/>
     <tag group="mDuration" tag="Instant"/>
     </thing>
-  <thing id="manPWTtW2" name="Torment the Weak" description="This vicious strike rends its victims and causes those under your dark power to bleed uncontrollably. When you initiate this strike, make a melee attack. If you hit, the attack deals weapon damage as normal, plus an additional 1d6 points of damage. Cursed creatures affected by this strike suffer a further 1d6 points of damage every round for a number of rounds equal to your initiation modifier." compset="PWManuever" summary="Strike – Opponent struck in melee is dealt an additional 1d6 damage, cursed opponents begin to bleed uncontrollably." uniqueness="useronce">
+  <thing id="manPWTtW2" name="Torment the Weak" description="This vicious strike rends its victims and causes those under your dark power to vent their life force. When you initiate this strike, make a melee attack. If you hit, the attack deals weapon damage as normal, plus an additional 1d6 points of damage. Cursed creatures affected by this strike suffer a further 1d6 points of damage every round for a number of rounds equal toyour initiation modifier." compset="PWManuever" summary="Strike – Opponent struck in melee is dealt an additional 1d6 damage, cursed opponents begin to bleed uncontrollably." uniqueness="useronce">
     <fieldval field="mDuration" value="See text"/>
     <usesource source="srcPOWEx"/>
     <tag group="mType" tag="Strike"/>
@@ -110,7 +110,7 @@
     <tag group="AbilType" tag="Super"/>
     <tag group="Discipline" tag="CurseRazor"/>
     </thing>
-  <thing id="manPWMSpt2" name="Murderous Spite" description="You channel your ill will into your attacks. When you initiate this boost you gain an additional 1d6 points of damage on attacks you make with natural and/or manufactured weapons, which improves to an additional 3d6 points of damage against creatures with the cursed condition." compset="PWManuever" summary="Boost - Gain 1d6 bonus damage on attacks for one round, increases to 3d6 against cursed enemies." uniqueness="useronce">
+  <thing id="manPWMSpt2" name="Murderous Spite" description="You channel your ill will into your attacks. When you initiate this boost the next melee attack you make this round against a creature with the cursed condition is considered a touch attack." compset="PWManuever" summary="Boost - Gain 1d6 bonus damage on attacks for one round, increases to 3d6 against cursed enemies." uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="mType" tag="Boost"/>
     <tag group="mLevel" tag="2"/>
@@ -165,7 +165,7 @@
     <tag group="mType" tag="Strike"/>
     <tag group="mSave" tag="WillNeg"/>
     </thing>
-  <thing id="manPWDogp3" name="Dogpile Strike" description="This vicious strike preys upon the weak and persecuted. When you initiate this strike, make a melee attack. If the attack hits, it deals normal weapon damage plus 2d6 additional damage, which improves to 5d8 damage if the creature struck is flanked (note that you do not have to be flanking the creature; the creature need merely be flanked by creatures hostile to it). If the struck creature is cursed it must succeed at a Reflex save (DC 13 + your initiation modifier) or be knocked prone." compset="PWManuever" summary="Strike - Melee attack deals 2d6 additional damage, improves to 5d8 against flanked opponents." uniqueness="useronce">
+  <thing id="manPWDogp3" name="Dogpile Strike" description="This vicious strike preys upon the weak and persecuted. When you initiate this strike, make a melee attack. If the attack hits, it deals normal weapon damage plus 2d6 additional damage, which improves to 4d6 damage if the creature struck is flanked (note that you do not have to be flanking the creature; the creature need merely be flanked by creatures hostile to it). A struck creature must succeed at a Reflex save (DC 13 + your initiation modifier) or be knocked prone." compset="PWManuever" summary="Strike - Melee attack deals 2d6 additional damage, improves to 5d8 against flanked opponents." uniqueness="useronce">
     <fieldval field="mDuration" value="1 round/level"/>
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPOWEx"/>
@@ -292,7 +292,7 @@
     <tag group="mSave" tag="FortNeg"/>
     <tag group="mDuration" tag="1rdLevel" name="1 round/level" abbrev="1 rnd/lvl"/>
     </thing>
-  <thing id="manPWShdP5" name="Shadow Pin" description="By harming the shadow of your enemy you can pin them in place. You may initiate this counter in response to a creature moving any distance. The target stops its movement (you may not stop a creature’s movement within another creature’s space) and drops to the ground if it is flying (taking falling damage as normal). The victim becomes cursed and cannot move from its square for one round." compset="PWManuever" summary="Counter [Curse] - Interrupt opponent’s movement (flying creatures drop to the ground); victim becomes cursed." uniqueness="useronce">
+  <thing id="manPWShdP5" name="Shadow Pin" description="By harming the shadow of your enemy, you can pin them in place. You may initiate this counter in response to a creature leaving its space (including via movement effects such as a gust of wind spell or the bull rush combat maneuver). The target becomes cursed and stops its movement (you may not stop a creature’s movement within another creature’s space), dropping to the ground and taking falling damage as normal if it is flying. The victim cannot move or be moved from its space for one round." compset="PWManuever" summary="Counter [Curse] - Interrupt opponent’s movement (flying creatures drop to the ground); victim becomes cursed." uniqueness="useronce">
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPOWEx"/>
     <tag group="mLevel" tag="5"/>
@@ -338,7 +338,7 @@
     <tag group="mDescript" tag="Curse"/>
     <tag group="mSave" tag="WillNeg"/>
     </thing>
-  <thing id="manPWWBlw6" name="Warlock&apos;s Blow" description="With a savage curse and a lunge, you teleport your enemy into your weapon. When you initiate this strike, the targeted creature is teleported into any space of your choice within your melee reach that is not difficult terrain, and then you make a melee attack. If the attack hits, you deal normal weapon damage, plus an additional 8d6 points of damage." compset="PWManuever" summary="Strike - Opponent within long range is teleported and struck in melee, attack deals an additional 8d6 points of damage." uniqueness="useronce">
+  <thing id="manPWWBlw6" name="Warlock&apos;s Blow" description="With a savage curse and a lunge, you teleport your enemy into your weapon. When you initiate this strike, the target must succeed at a Will save (DC 16 + your initiation modifier) or be teleported to a space of your choice within your melee reach that is not difficult terrain. If you successfully teleport your target, make a melee attack. If the attack hits, you deal normal weapon damage, plus an additional 8d6 points of damage." compset="PWManuever" summary="Strike - Opponent within long range is teleported and struck in melee, attack deals an additional 8d6 points of damage." uniqueness="useronce">
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPOWEx"/>
     <tag group="mLevel" tag="6"/>
@@ -351,8 +351,9 @@
     <tag group="mDescript" tag="Teleport"/>
     <tag group="mRange" tag="Long"/>
     <tag group="mTarget" tag="CrtCurse1" name="One cursed creature" abbrev="1 cursed"/>
+    <tag group="mSave" tag="WillNeg"/>
     </thing>
-  <thing id="manPWScGz6" name="Sorcerer&apos;s Gaze" description="By channeling the magical energies within you pick out the weak places in protections both magical and mundane and strike down those who cower behind them. When you initiate this boost your attacks ignore cover, concealment, deflection bonuses to armor class, and miss chances." compset="PWManuever" summary="Boost - Ignore magical concealment, miss chances, and bonuses to armor class for one round." uniqueness="useronce">
+  <thing id="manPWScGz6" name="Sorcerer&apos;s Gaze" description="By channeling the magical energies within you pick out the weak places in protections both magical and mundane and strike down those who cower behind them. When you initiate this boost your attacks this round ignore the AC bonus granted to targets by cover less than total cover, deflection bonuses to AC, and any miss chance (including the miss chance from total concealment, although you still need to choose the correct square if you cannot see your target). Total cover provides its normal benefits against your attacks." compset="PWManuever" summary="Boost - Ignore magical concealment, miss chances, and bonuses to armor class for one round." uniqueness="useronce">
     <fieldval field="mDuration" value="1 round or special (see text)"/>
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPOWEx"/>
@@ -366,7 +367,7 @@
     <tag group="mRange" tag="Personal"/>
     <tag group="mTarget" tag="You"/>
     </thing>
-  <thing id="manPWE4E6" name="Eye for an Eye" description="With a snarled curse you level vengeance at your enemy. You may activate this counter whenever you are struck by an attack or when you fail a saving throw against a maneuver, power, psi-like ability, spell, or spell-like ability. The creature originating the effect suffers all damage and effects inflicted upon you (with no save), just as if they’d targeted themselves. Eye for an Eye only duplicates the effects on a creature, not the entire effect." compset="PWManuever" summary="Counter - Opponent suffers effects of attack, spell, or power used on you." uniqueness="useronce">
+  <thing id="manPWE4E6" name="Eye for an Eye" description="With a snarled curse you level vengeance at your enemy. You may activate this counter whenever you are struck by an attack or when you fail a saving throw against a maneuver, power, psi-like ability, spell, or spell-like ability. The creature originating the effect suffers all damage and effects inflicted upon you (with no save), just as if they’d targeted themselves. This maneuver only duplicates the effects you suffered on the creature, not the entire effect." compset="PWManuever" summary="Counter - Opponent suffers effects of attack, spell, or power used on you." uniqueness="useronce">
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPOWEx"/>
     <tag group="mLevel" tag="6"/>
@@ -381,7 +382,7 @@
     <tag group="mSave" tag="SeeText"/>
     <tag group="mSave" tag="Special"/>
     </thing>
-  <thing id="manPWTrtR7" name="Traitor&apos;s Roar" description="Channeling dark energies through your blade you poison the loyalty of those you strike. When you initiate this maneuver, make a melee attack. If the attack hits, it deals normal weapon damage and the creature struck must succeed at a Will save (DC 17 + your initiation modifier) or be overwhelmed with feelings of hatred for its allies. The victim of this strike immediately takes a standard action as a free action (even if it’s not the victim’s turn), which must be used to harm or hinder its allies (Traitor’s Roar does not change the creature’s feelings about its enemies; for example, it might cast a fireball that includes both its allies and enemies within the area of the spell). The victim acts as though possessed of true hate for its allies, utilizing whatever it perceives as the most harmful ability possible, and targets them in preference to its enemies. Once the harmful action is taken the creature gains the cursed condition for a number of rounds equal to your initiation modifier and resumes its normal attitude towards its allies." compset="PWManuever" summary=" Strike [Curse] - Opponent struck in melee violently betrays his allies, becomes [Cursed]." uniqueness="useronce">
+  <thing id="manPWTrtR7" name="Traitor&apos;s Roar" description="Channeling dark energies through your blade you poison the loyalty of those you strike. When you initiate this maneuver, make a melee attack. If the attack hits, it deals normal weapon damage and the creature struck must succeed at a Will save (DC 17 + your initiation modifier) or be overwhelmed with feelings of hatred for its allies. The victim of this strike immediately takes a standard action (even if it’s not its turn), which must be used to harm or hinder its allies. The victim acts as though possessed of true hate for its allies, utilizing whatever it perceives as the most harmful ability possible, and targets them in preference to its enemies. Once the harmful action is taken the creature gains the cursed condition for a number of rounds equal to your initiation modifier and resumes its normal attitude towards its allies. This maneuver does not change the creature’s feelings about its enemies; for example, it might cast a fireball that includes both its allies and enemies within the area of the spell." compset="PWManuever" summary=" Strike [Curse] - Opponent struck in melee violently betrays his allies, becomes [Cursed]." uniqueness="useronce">
     <fieldval field="mPreReq" value="3"/>
     <usesource source="srcPOWEx"/>
     <tag group="mLevel" tag="7"/>
@@ -412,7 +413,7 @@
     <tag group="mRange" tag="Personal"/>
     <tag group="mTarget" tag="You"/>
     </thing>
-  <thing id="staPWObAu7" name="Oathbreaker&apos;s Aura" description="This malevolent aura robs its victims of their supernatural edges and interferes with their oaths. Opponents within 30 feet of you lose the benefits of any anarchic, axiomatic, insight, perfection, profane, or sacred bonuses they possess (they regain the benefits of these bonuses when they leave the area or you assume a different stance)." compset="PWManuever" summary="Stance - Opponents within 30 feet cannot benefit from anarchic, axiomatic, insight, morale, perfection, profane, or sacred bonuses." uniqueness="useronce">
+  <thing id="staPWObAu7" name="Oathbreaker&apos;s Aura" description="This malevolent aura robs its victims of their supernatural edges and interferes with their oaths. Opponents within 30 feet of you lose the benefits of any anarchic, axiomatic, insight, perfection, profane, or sacred bonuses they possess (they regain the benefits of these bonuses when they leave the area or you assume a different stance). In addition, creatures struck in melee by your natural and/or manufactured weapons gain the cursed condition for a number of rounds equal to your initiation modifier. This resolves after other effects relating to the attack (such as strikes or weapon properties)." compset="PWManuever" summary="Stance - Opponents within 30 feet cannot benefit from anarchic, axiomatic, insight, morale, perfection, profane, or sacred bonuses." uniqueness="useronce">
     <fieldval field="mPreReq" value="3"/>
     <fieldval field="mArea" value="30-ft emanation centered on you"/>
     <usesource source="srcPOWEx"/>
@@ -454,7 +455,7 @@
     <tag group="mRange" tag="Medium"/>
     <tag group="mTarget" tag="Special"/>
     </thing>
-  <thing id="manPWLkdr8" name="Luckdrinker" description="This cursed aura steals beneficence from your enemies and gifts it to your allies. At the beginning of each round you may select a power, psi-like ability, spell, or spell-like ability affecting a hostile creature within 30 feet. That creature loses the benefits of the selected power, psi-like ability, spell, or spell-like ability and one of your allies within 30 feet gains them for a number of rounds equal to your initiation modifier." compset="PWManuever" summary="Stance - Steal effects from opponents within 30 feet." uniqueness="useronce">
+  <thing id="manPWLkdr8" name="Luckdrinker Aura" description="This cursed aura steals beneficence from your enemies and gifts it to your allies. You supernaturally sense magic around you and can twist it to your advantage. While you maintain this stance, you automatically know which spells, powers, or magical effects are active upon any individual you see within 30 feet.\n\nIn addition, at the beginning of reach round, you may select a power, psi-like ability, spell, or spell-like ability affecting a hostile creature within 30 ft. Make a dispel check (1d20 + your initiator level) against the effect (DC 11 + the effect’s caster or manifester level). If you succeed, the effect is suppressed for a number of rounds equal to your initiation modifier, and one of your allies within 30 feet gains the benefit of that effect for the same duration." compset="PWManuever" summary="Stance - Steal effects from opponents within 30 feet." uniqueness="useronce">
     <fieldval field="mPreReq" value="3"/>
     <fieldval field="mArea" value="30-ft emanation centered on you"/>
     <usesource source="srcPOWEx"/>
@@ -609,7 +610,7 @@
     <tag group="mTarget" tag="You"/>
     <tag group="mDuration" tag="Round1"/>
     </thing>
-  <thing id="manPWObSS2" name="Obsidian Sidestep" description="With an act of will, you distort reality to avoid harm. You may initiate this counter whenever you make a saving throw; roll a Craft check instead of using the appropriate save modifier." compset="PWManuever" summary="Counter – Use Craft check in place of saving throw." uniqueness="useronce">
+  <thing id="manPWObSS2" name="Obsidian Sidestep" description="With an act of will, you distort reality to avoid harm. You may initiate this counter whenever you would make a saving throw. Make a Craft check instead of that saving throw and use the result of that check to determine the save’s success." compset="PWManuever" summary="Counter – Use Craft check in place of saving throw." uniqueness="useronce">
     <usesource source="srcPOWEx"/>
     <tag group="mLevel" tag="2"/>
     <tag group="mInitAct" tag="Immed1"/>
@@ -676,7 +677,7 @@
     <tag group="mTarget" tag="You"/>
     <tag group="mLevel" tag="3"/>
     </thing>
-  <thing id="staPWIMir3" name="Infinity Mirror Stance" description="By bending the light near yourself, you create a deceptive defense against assault. When you assume this stance you gain the benefits of a {i}mirror image{/i} spell as cast by a wizard of your initiator level, with the following exceptions: instead of rolling to determine the number of images generated, you generate (1/4 initiator level, minimum 1) images, and the effect lasts until you assume another stance, at which point any remaining images fade." compset="PWManuever" summary="Stance – Create mirror images of yourself." uniqueness="useronce">
+  <thing id="staPWIMir3" name="Infinity Mirror Stance" description="By bending the light near yourself, you create a deceptive defense against assault. When you assume this stance you gain the benefits of a mirror image spell as if cast by a wizard of your initiator level, with the following exceptions: instead of rolling to determine the number of images generated, you generate one image per four initiator levels, and the effect lasts until you assume another stance, at which point any remaining images fade." compset="PWManuever" summary="Stance – Create mirror images of yourself." uniqueness="useronce">
     <fieldval field="mPreReq" value="1"/>
     <usesource source="srcPOWEx"/>
     <tag group="mInitAct" tag="Swift1"/>
@@ -688,7 +689,7 @@
     <tag group="mLevel" tag="3"/>
     <tag group="mRange" tag="Personal"/>
     <tag group="mTarget" tag="You"/>
-    <eval phase="PostLevel" priority="10000">      ~ Calculate number of images from IL (min 1)
+    <eval phase="PostLevel" priority="10000">~ Calculate number of images from IL (min 1)
       field[abValue].value += round(field[mIL].value/4, 0, -1)
       field[abValue].value = maximum(field[abValue].value, 1)</eval>
     <eval phase="Render" priority="10000" index="2"><![CDATA[      field[livename].text = field[livename].text & " (" & field[abValue].value & " images)"]]></eval>
@@ -708,7 +709,7 @@
     <tag group="mTarget" tag="You"/>
     <tag group="mDescript" tag="Teleport"/>
     </thing>
-  <thing id="manPWBMSt4" name="Blazing Mirror Strike" description="In a flash of bright death, your weapon transforms into light, passing through your foe’s armor and scorching their eyes. When you initiate this maneuver, make a melee touch attack with your weapon. If you hit, the attack deals weapon damage as normal, and the creature struck must succeed at a Fortitude save (DC 14 + your initiation modifier) or be struck blind." compset="PWManuever" summary="Strike – Make a melee attack as a touch attack, struck creature is rendered blind" uniqueness="useronce">
+  <thing id="manPWBMSt4" name="Blazing Mirror Strike" description="In a flash of bright death, your weapon transforms into light, passing through your foe’s armor and scorching their eyes. When you initiate this maneuver, make a melee touch attack with your weapon. If you hit, the attack deals weapon damage as normal, and the creature struck must succeed at a Fortitude save (DC 14 + your initiation modifier) or be struck blind for 1 round per level." compset="PWManuever" summary="Strike – Make a melee attack as a touch attack, struck creature is rendered blind" uniqueness="useronce">
     <fieldval field="mPreReq" value="1"/>
     <fieldval field="mDuration" value="Instantaneous and 1 round/level"/>
     <usesource source="srcPOWEx"/>
@@ -749,7 +750,7 @@
     <tag group="mDuration" tag="Round1"/>
     <tag group="mRange" tag="Personal"/>
     </thing>
-  <thing id="manPWGlIm5" name="Gleaming Imprisonment" description="Twisting the reflections around your blade, you mark an enemy with it and imprison them in a sphere of mirrors. When you initiate this maneuver, make a melee attack. If you hit, it deals normal weapon damage plus an additional 4d6 damage, and a sphere of two-sided mirrors forms around the struck creature for a number of rounds equal to your initiation modifier. While the sphere of mirrors exists, the struck creature cannot move or be moved from its space by any means (including teleportation), target or be targeted by any other creature or object (except for objects it is attending, carrying, or using), and is immune to area-of-effect attacks and effects that originate from outside its space. Such effects originating from the trapped creature affect only its own space." compset="PWManuever" summary="Strike - Make a melee attack, trap struck creature in a sphere of mirrors." uniqueness="useronce">
+  <thing id="manPWGlIm5" name="Gleaming Imprisonment" description="Twisting the reflections around your blade, you mark an enemy with it and imprison them in a sphere of mirrors. When you initiate this maneuver, make a melee attack. If you hit, it deals normal weapon damage plus an additional 4d6 damage, and the struck creature must succeed at a Reflex save (DC 15 + your initiation modifier) or be trapped within a sphere of two-sided mirrors that forms around them for a number of rounds equal to your initiation modifier. While the sphere of mirrors exists, a trapped creature cannot move or be moved from its space by any means (including teleportation), target or be targeted by any other creature or object (except for objects it is attending, carrying, or using), and is immune to area-of-effect attacks and effects that originate from outside its space. Such effects originating from the trapped creature affect only its own space." compset="PWManuever" summary="Strike - Make a melee attack, trap struck creature in a sphere of mirrors." uniqueness="useronce">
     <fieldval field="mPreReq" value="2"/>
     <usesource source="srcPOWEx"/>
     <tag group="mLevel" tag="5"/>
@@ -926,7 +927,7 @@
     <tag group="mDuration" tag="Special"/>
     <tag group="mRange" tag="Close"/>
     </thing>
-  <thing id="staPWShMr8" name="Unholy Mirror Stance" description="Woe and discord are multiplied by your reflective power. While you maintain this stance, you may choose to have any power, psi-like ability, spell, and/or spell-like ability that targets an opponent within 30 feet instead target all opponents within 30 feet (even if it normally could not target that many creatures) while you maintain this stance." compset="PWManuever" summary="Stance – Harmful powers and spells used against opponents affect additional targets." uniqueness="useronce">
+  <thing id="staPWShMr8" name="Unholy Mirror Stance" description="Woe and discord are multiplied by your reflective power. While you maintain this stance, you may choose to have any power, psi-like ability, spell, and/ or spell-like ability that targets an opponent within 30 feet affect a number of secondary targets equal to your initiation modifier. Each secondary target must be within 30 feet, and none can be affected more than once. If the original effect requires an attack roll, make a single roll and use this result for all targets. If the effect deals damage, secondary targets take half as much damage as the primary target, and if it does not deal damage, its save DC is reduced by 4 instead." compset="PWManuever" summary="Stance – Harmful powers and spells used against opponents affect additional targets." uniqueness="useronce">
     <fieldval field="mPreReq" value="3"/>
     <fieldval field="mArea" value="30-foot emanation centered on you"/>
     <usesource source="srcPOWEx"/>
@@ -939,12 +940,12 @@
     <tag group="mTarget" tag="You"/>
     <tag group="mRange" tag="30"/>
     <tag group="mInitAct" tag="Swift1"/>
-    <eval phase="PostLevel" priority="10000">      ~ Calculate number of images from IL (min 1)
+    <eval phase="PostLevel" priority="10000">~ Calculate number of images from IL (min 1)
       field[abValue].value += round(field[mIL].value/4, 0, -1)
       field[abValue].value = maximum(field[abValue].value, 1)</eval>
     <eval phase="Render" priority="10000" index="2"><![CDATA[      field[livename].text = field[livename].text & " (" & field[abValue].value & " images)"]]></eval>
     </thing>
-  <thing id="manPW7yrS9" name="Seven Year Strike" description="The ultimate expression of your reflective power creates a mirror behind your victim just before you strike them with your magic-laced blade, blowing their soul out of their body and into your trap. When you initiate this maneuver, make a melee attack. If you hit, your opponent must succeed at a Will save (DC 19 + your initiation modifier) or die instantly, with their soul becoming trapped for seven years in a small steel mirror that appears somewhere on your person. If they succeed their save, your attack instead deals 13d6 additional damage. Destroying the mirror frees your victim’s soul to pass on to its normal afterlife." compset="PWManuever" summary="Strike - Make a melee attack, struck creature must succeed at a Will save or have their soul trapped in a mirror." uniqueness="useronce">
+  <thing id="manPW7yrS9" name="Septennial Seal" description="The ultimate expression of your reflective power creates a mirror behind your victim just before you strike them with your magic-laced blade, blowing their soul out of their body and into your trap. When you initiate this maneuver, make a melee attack. If you hit, your opponent must succeed at a Will save (DC 19 + your initiation modifier) or die instantly, with their soul becoming trapped for seven years in a small steel mirror that appears somewhere on your person. If they succeed their save, your attack instead deals 13d6 additional damage. Destroying the mirror frees your victim’s soul to pass on to its normal afterlife." compset="PWManuever" summary="Strike - Make a melee attack, struck creature must succeed at a Will save or have their soul trapped in a mirror." uniqueness="useronce">
     <fieldval field="mPreReq" value="4"/>
     <fieldval field="mDuration" value="7 years or instantaneous"/>
     <usesource source="srcPOWEx"/>

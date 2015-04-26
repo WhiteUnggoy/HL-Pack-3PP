@@ -12,7 +12,7 @@
     <fieldval field="cHDSides" value="8"/>
     <fieldval field="cAbbr" value="Hrb"/>
     <fieldval field="cSkills" value="4"/>
-	<fieldval field="srcBookInf" value=" [PoWEx]"/>
+    <fieldval field="srcBookInf" value=" [PoWEx]"/>
     <fieldval field="cSpecSing" value="Grim News Movement Mode"/>
     <arrayval field="cCustTot" index="8" value="1"/>
     <arrayval field="cCustTot" index="14" value="2"/>
@@ -35,7 +35,6 @@
     <tag group="ClassSkill" tag="skKnowNobl"/>
     <tag group="ClassSkill" tag="skKnowRel"/>
     <tag group="ClassSkill" tag="skLinguist"/>
-    <tag group="ClassSkill" tag="skPercep"/>
     <tag group="ClassSkill" tag="skSenseMot"/>
     <tag group="ClassSkill" tag="skSpellcr"/>
     <tag group="ClassSkill" tag="skStealth"/>
@@ -43,20 +42,14 @@
     <tag group="cRef" tag="Poor"/>
     <tag group="PathOfWar" tag="Class"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <bootstrap thing="fArmLight"></bootstrap>
-    <bootstrap thing="fSimple"></bootstrap>
+    <tag group="ClassSkill" tag="Profession"/>
+    <tag group="ClassSkill" tag="skClimb"/>
     <bootstrap thing="cCfgPW4"></bootstrap>
     <bootstrap thing="cPW4DrkClm">
       <autotag group="ClSpecWhen" tag="1"/>
       </bootstrap>
     <bootstrap thing="cPW4AcWil1">
       <autotag group="ClSpecWhen" tag="1"/>
-      </bootstrap>
-    <bootstrap thing="cPW4AcWil2">
-      <autotag group="ClSpecWhen" tag="4"/>
-      </bootstrap>
-    <bootstrap thing="cPW4AcWil3">
-      <autotag group="ClSpecWhen" tag="7"/>
       </bootstrap>
     <bootstrap thing="cPW4AcWil4">
       <autotag group="ClSpecWhen" tag="10"/>
@@ -115,11 +108,12 @@
     <bootstrap thing="cPW4WhsAtr">
       <autotag group="ClSpecWhen" tag="19"/>
       </bootstrap>
+    <bootstrap thing="fArmLight"></bootstrap>
+    <bootstrap thing="fSimple"></bootstrap>
     </thing>
   <thing id="cPWHarbngr" name="Harbinger" description="Like rumors of war or plague-ridden winds, Harbingers move through battlefields and leave only ruin and sorrow in their wake. Empowered from within by a deep connection to sorrow, grief, and wrath, Harbingers channel their negative emotions into a supernatural fighting style that is strange and terrifying to behold. Some accept the darker urges within themselves but leash them, making their wrath serve as a hound might - and others embrace the violence within, becoming killers without restraint or pity." compset="ClassLevel" maxlimit="20">
     <usesource source="srcPOWEx"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="Helper" tag="Playtest"/>
     <tag group="ClassType" tag="Normal"/>
     <bootstrap thing="cHelpPW4"></bootstrap>
     <link linkage="helper" thing="cHelpPW4"/>
@@ -215,7 +209,7 @@
     <link linkage="powClass" thing="cHelpPW4"/>
     <link linkage="powCfg" thing="cCfgPW4"/>
     </thing>
-  <thing id="cPW4DrkClm" name="Dark Claim" description="The Harbinger reaches out with her sorcerous malice, marking foes as her own. As a swift action, the Harbinger may Claim an enemy that she can see (including with special senses such as blindsense or tremorsense) within close range (25 feet plus 5 feet per 2 levels) for a number of rounds equal to 1/2 her class level (minimum 1). The Harbinger automatically knows the position of creatures she has Claimed. Any opponent the Harbinger cannot see has total concealment (50% miss chance) against her, and the Harbinger still has the normal miss chance when attacking foes that have concealment. The Harbinger is still denied her Dexterity bonus to Armor Class against attacks from Claimed creatures she cannot see. Additionally, Claimed creatures using the Withdraw action to leave a square threatened by the Harbinger provoke attacks of opportunity from her. The Harbinger may only have a number of Claimed creatures equal to or less than her Intelligence modifier at any given time, and may not Claim creatures with less than 1 HD." compset="ClSpecial" summary="Claim a creature to know its position and use other Harbinger abilities against it">
+  <thing id="cPW4DrkClm" name="Dark Claim" description="The harbinger reaches out with her sorcerous malice, marking foes as her own. As a swift action, the harbinger may Claim an enemy that she can see (including with special senses such as blindsense or tremorsense) within close range (25 feet plus 5 ft. per 2 levels) for a number of rounds equal to ½ her class level (minimum 1). Additionally, Claimed creatures using the withdraw action to leave a square threatened by the harbinger provoke attacks of opportunity from her. The harbinger may only have a number of Claimed creatures equal to or less than her Intelligence modifier at any given time. The harbinger automatically knows the position of creatures she has Claimed. Any opponent the harbinger cannot see has total concealment (50% miss chance) against her, and the harbinger still has the normal miss chance when attacking foes that have concealment. The harbinger is still denied her Dexterity bonus to Armor Class against attacks from Claimed creatures she cannot see." compset="ClSpecial" summary="Claim a creature to know its position and use other Harbinger abilities against it">
     <fieldval field="abRange" value="25"/>
     <fieldval field="actUserMin" value="0"/>
     <fieldval field="actIncrNam" value="Creatures claimed"/>
@@ -240,10 +234,10 @@
       field[abDuration].value = maximum(halfLev,1)
 
       ~ Max targets = INT mod
-      field[abValue].value = #attrmod[aINT]
+      field[abValue].value = maximum(1,#attrmod[aINT])
       field[actUserMax].value = field[abValue].value]]></eval>
     </thing>
-  <thing id="cPW4AcWil1" name="Accursed Will (Attack Rolls)" description="The Harbinger is not an entirely physical being; the darkness within her supplements her body, impelling her to acts of stunning violence and preternatural resilience. At first level, the Harbinger adds 1/2 her Intelligence modifier as an insight bonus to attack rolls. At fourth level, she adds her Intelligence modifier as an insight bonus to Fortitude and Reflex saves. At seventh level, the Harbinger’s bonus to attack rolls becomes equal to her Intelligence modifier. At tenth level, the Harbinger’s gains an insight bonus to damage rolls equal to her Intelligence modifier." compset="ClSpecial" summary="Add 1/2 your INT bonus to attack rolls as an insight bonus.">
+  <thing id="cPW4AcWil1" name="Accursed Will (Attack Rolls)" description="The harbinger is not an entirely physical being; her comprehension of and attunement to the darkness within her supplements her body, impelling her to acts of stunning violence and preternatural resilience. At 1st level, the harbinger adds ½ her Intelligence modifier  (minimum +0) as an insight bonus to attack rolls. At 10th level, the harbinger gains an insight bonus to damage rolls equal to her Intelligence modifier (minimum +0)." compset="ClSpecial" summary="Add 1/2 your INT bonus to attack rolls as an insight bonus.">
     <tag group="abAction" tag="None"/>
     <tag group="SpecType" tag="Attack"/>
     <tag group="AbilType" tag="Extra"/>
@@ -254,12 +248,12 @@
       doneif (tagis[Helper.SpcDisable] <> 0)
 
       ~ Get 1/2 INT mod
-      field[abValue].value = round(#attrmod[aINT]/2, 0, -1)
+      field[abValue].value = maximum(0,round(#attrmod[aINT]/2, 0, -1))
 
       ~ Add to attack
       #applybonus[BonInsight, hero.child[Attack], field[abValue].value]]]></eval>
     </thing>
-  <thing id="cPW4AcWil2" name="Accursed Will (Defenses)" description="The Harbinger is not an entirely physical being; the darkness within her supplements her body, impelling her to acts of stunning violence and preternatural resilience. At first level, the Harbinger adds 1/2 her Intelligence modifier as an insight bonus to attack rolls. At fourth level, she adds her Intelligence modifier as an insight bonus to Fortitude and Reflex saves. At seventh level, the Harbinger’s bonus to attack rolls becomes equal to her Intelligence modifier. At tenth level, the Harbinger’s gains an insight bonus to damage rolls equal to her Intelligence modifier." compset="ClSpecial" summary="Add your INT bonus to Fort and Ref saves as an insight bonus.">
+  <thing id="cPW4AcWil4" name="Accursed Will (Damage Rolls)" description="The harbinger is not an entirely physical being; her comprehension of and attunement to the darkness within her supplements her body, impelling her to acts of stunning violence and preternatural resilience. At 1st level, the harbinger adds ½ her Intelligence modifier  (minimum +0) as an insight bonus to attack rolls. At 10th level, the harbinger gains an insight bonus to damage rolls equal to her Intelligence modifier (minimum +0)." compset="ClSpecial" summary="Add your INT bonus to damage rolls as an insight bonus.">
     <tag group="abAction" tag="None"/>
     <tag group="SpecType" tag="Defense"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -268,47 +262,13 @@
       ~ If we're disabled, just get out now
       doneif (tagis[Helper.SpcDisable] <> 0)
 
-      ~ Get INT mod
-      field[abValue].value = #attrmod[aINT]
-
-      ~ Add to Fort/Ref saves
-      #applybonus[BonInsight, hero.child[svFort], field[abValue].value]
-      #applybonus[BonInsight, hero.child[svRef], field[abValue].value]]]></eval>
-    </thing>
-  <thing id="cPW4AcWil3" name="Accursed Will (Attack Rolls)" description="The Harbinger is not an entirely physical being; the darkness within her supplements her body, impelling her to acts of stunning violence and preternatural resilience. At first level, the Harbinger adds 1/2 her Intelligence modifier as an insight bonus to attack rolls. At fourth level, she adds her Intelligence modifier as an insight bonus to Fortitude and Reflex saves. At seventh level, the Harbinger’s bonus to attack rolls becomes equal to her Intelligence modifier. At tenth level, the Harbinger’s gains an insight bonus to damage rolls equal to her Intelligence modifier." compset="ClSpecial" summary="Add your INT bonus to attack rolls as an insight bonus.">
-    <tag group="abAction" tag="None"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <tag group="SpecType" tag="Attack"/>
-    <eval phase="PostAttr" priority="9000"><![CDATA[      ~ If we're not shown, just get out now
-      doneif (tagis[Helper.ShowSpec] = 0)
-      ~ If we're disabled, just get out now
-      doneif (tagis[Helper.SpcDisable] <> 0)
-
-      ~ Get INT mod
-      field[abValue].value = #attrmod[aINT]
-
-      ~ Add to attack
-      #applybonus[BonInsight, hero.child[Attack], field[abValue].value]
-
-      ~ Hide the earlier version of this ability
-      perform hero.childfound[cPW4AcWil1].delete[Helper.ShowSpec]]]></eval>
-    </thing>
-  <thing id="cPW4AcWil4" name="Accursed Will (Damage Rolls)" description="The Harbinger is not an entirely physical being; the darkness within her supplements her body, impelling her to acts of stunning violence and preternatural resilience. At first level, the Harbinger adds 1/2 her Intelligence modifier as an insight bonus to attack rolls. At fourth level, she adds her Intelligence modifier as an insight bonus to Fortitude and Reflex saves. At seventh level, the Harbinger’s bonus to attack rolls becomes equal to her Intelligence modifier. At tenth level, the Harbinger’s gains an insight bonus to damage rolls equal to her Intelligence modifier." compset="ClSpecial" summary="Add your INT bonus to damage rolls as an insight bonus.">
-    <tag group="abAction" tag="None"/>
-    <tag group="SpecType" tag="Defense"/>
-    <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
-      doneif (tagis[Helper.ShowSpec] = 0)
-      ~ If we're disabled, just get out now
-      doneif (tagis[Helper.SpcDisable] <> 0)
-
-      ~ Get 1/2 INT mod
-      field[abValue].value = #attrmod[aINT]
+      ~ Get INT mod (min 0)
+      field[abValue].value = maximum(0,#attrmod[aINT])
 
       ~ Add to attack
       #applybonus[BonInsight, hero.child[Damage], field[abValue].value]]]></eval>
     </thing>
-  <thing id="cPW4IllTid" name="Ill Tidings" description="Like unwanted news, the Harbinger travels swiftly. The Harbinger gains a 10 foot competence bonus to her movement speeds. This bonus increases by 10 feet at 10th level." compset="ClSpecial" summary="+10 ft to speed, additional +10 ft at 10th level">
+  <thing id="cPW4IllTid" name="Ill Tidings" description="Like unwanted news, the harbinger travels swiftly. The harbinger gains a 10 foot competence bonus to her movement speeds. This bonus increases by 10 feet at 10th level." compset="ClSpecial" summary="+10 ft to speed, additional +10 ft at 10th level">
     <fieldval field="abValue" value="10"/>
     <tag group="SpecType" tag="Movement"/>
     <tag group="LvNamePar" tag="AppText"/>
@@ -328,7 +288,7 @@
       ~ Apply movement speed bonus
       #applybonus[BonComp, hero.child[Speed], field[abValue].value]]]></eval>
     </thing>
-  <thing id="cPW4DkFoc1" name="Dark Focus" description="Though all Harbingers tap into violence and sorrow, they inevitably specialize in a method of combat that calls to them deep within themselves. At 2nd level, the Harbinger may select one discipline she has access to from her class as her Dark Focus. She gains a +1 competence bonus to attack rolls when initiating strikes and counters from her Dark Focus (this increases by 1 at 5th level and again every four levels thereafter) and gains a +1 competence bonus to the save DCs of her Dark Focus’ maneuvers.\n\nAt 10th level, the Harbinger may select a second discipline as her Dark Focus in addition to her original Dark Focus." compset="ClSpecial" summary="Bonus to attack rolls and manuever DC&apos;s for chosen discipline">
+  <thing id="cPW4DkFoc1" name="Dark Focus" description="Though all harbingers tap into violence and sorrow, they inevitably specialize in a method of combat that calls to them deep within themselves. At 2nd level, the harbinger may select one discipline she has access to from her class as her Dark Focus. She gains a +1 competence bonus to attack rolls when initiating strikes and counters from her Dark Focus (this increases by 1 at 5th level and again every four levels thereafter) and gains a +1 competence bonus to the save DCs of her Dark Focus’ maneuvers.\n\nAt 10th level, the Harbinger may select a second discipline as her Dark Focus in addition to her original Dark Focus." compset="ClSpecial" summary="Bonus to attack rolls and manuever DC&apos;s for chosen discipline">
     <fieldval field="abValue" value="1"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
@@ -368,7 +328,7 @@
     <eval phase="Final" priority="1==00" index="2"><![CDATA[      ~ Restrict selection to disciplines available to the Harbinger
       field[usrCandid1].text = "PathOfWar.Discipline & (" & hero.childfound[mHelpPW4].tagids[Discipline.?, " | "] & ")"]]></eval>
     </thing>
-  <thing id="cPW4DkFoc2" name="Dark Focus (Bonus Feat)" description="At 6th level, the Harbinger gains her choice of Advanced Study, or Discipline Focus in her Dark Focus (in the case of Advanced Study, both maneuvers selected must be from her Dark Focus) as a bonus feat. She need not meet the prerequisites for the chosen feat.\n\n{b}NOTE:{/b} Hero Lab does not enforce the discipline restriction on the bonus feat; you must make sure to select the correct disciplines yourself." compset="ClSpecial" summary="Gain Advanced Study or Discipline Focus as a bonus feat">
+  <thing id="cPW4DkFoc2" name="Dark Focus (Bonus Feat)" description="At 6th level, the harbinger gains her choice of Advanced Study, or Discipline Focus in her Dark Focus (in the case of Advanced Study, both maneuvers selected must be from her Dark Focus) as a bonus feat. She need not meet the prerequisites for the chosen feat.\n\n{b}NOTE:{/b} Hero Lab does not enforce the discipline restriction on the bonus feat; you must make sure to select the correct disciplines yourself." compset="ClSpecial" summary="Gain Advanced Study or Discipline Focus as a bonus feat">
     <arrayval field="usrArray" index="0" value="Advanced Study"/>
     <arrayval field="usrArray" index="1" value="Discipline Focus"/>
     <tag group="ProductId" tag="HLCommunit"/>
@@ -379,10 +339,10 @@
       <containerreq phase="First" priority="100">fieldVal:usrIndex = 1</containerreq>
       </bootstrap>
     </thing>
-  <thing id="cPW4DkFoc3" name="Dark Focus (Adaptation)" description="At 14th level the Harbinger’s dedication bears violent fruit. She may choose and expend a maneuver she has readied and spontaneously initiate any maneuver she knows from her Dark Focus that is one or more levels lower than the expended maneuver, regardless of if she has the Dark Focus maneuver readied. The initiation action of the spontaneously initiated maneuver is unchanged." compset="ClSpecial" summary="Spontaneously initiate maneuvers from your Dark Focus">
+  <thing id="cPW4DkFoc3" name="Dark Focus (Adaptation)" description="At 14th level the harbinger’s dedication bears violent fruit. She may choose and expend a maneuver she has readied and spontaneously initiate any maneuver she knows from her Dark Focus that is one or more levels lower than the expended maneuver, regardless of if she has the Dark Focus maneuver readied. The initiation action of the spontaneously initiated maneuver is unchanged." compset="ClSpecial" summary="Spontaneously initiate maneuvers from your Dark Focus">
     <tag group="ProductId" tag="HLCommunit"/>
     </thing>
-  <thing id="cPW4DkFoc4" name="Dark Focus (Supremacy)" description="At 20th level the Harbinger treats all maneuvers from her Dark Focus as being readied at the beginning of each encounter in addition to her normal pool of readied maneuvers." compset="ClSpecial" summary="Ready all your Dark Focus maneuvers in addition to your usual maneuvers">
+  <thing id="cPW4DkFoc4" name="Dark Focus (Supremacy)" description="At 20th level the harbinger treats all maneuvers from her Dark Focus as being readied at the beginning of each encounter in addition to her normal pool of readied maneuvers." compset="ClSpecial" summary="Ready all your Dark Focus maneuvers in addition to your usual maneuvers">
     <tag group="ProductId" tag="HLCommunit"/>
     <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
       doneif (tagis[Helper.ShowSpec] = 0)
@@ -399,7 +359,7 @@
 
       ~ We don't actually do anything with these tags yet, just putting them here for future use]]></eval>
     </thing>
-  <thing id="cPW4GrmNws" name="Grim News" description="Like a ghost or a rumor, the Harbinger moves with supernatural acumen. Starting at 3rd level, the Harbinger may move up to her speed as a swift action once per encounter. This increases to twice per encounter at 9th level and three times per encounter at 15th level." compset="ClSpecial" summary="Move up to 2x your speed as a swift action">
+  <thing id="cPW4GrmNws" name="Grim News" description="Like a ghost or a rumor, the harbinger moves with supernatural acumen. Starting at 3rd level, the harbinger may move up to her speed as a swift action once per encounter. This increases to twice per encounter at 9th level and three times per encounter at 15th level." compset="ClSpecial" summary="Move up to 2x your speed as a swift action">
     <fieldval field="trkMax" value="1"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="Usage" tag="PWEncounte"/>
@@ -425,7 +385,7 @@
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abCategory" tag="HrbGNMove" name="Harbinger Grim News Movement Mode" abbrev="GrimNewsMove"/>
-    <eval phase="PostAttr" priority="10000">      ~ Set fly speed to base speed
+    <eval phase="PostAttr" priority="10000">~ Set fly speed to base speed
       #value[xFly] += hero.child[Speed].field[tSpeed].value
       
       ~ Set maneuverability to Good
@@ -440,7 +400,7 @@
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abCategory" tag="HrbGNMove" name="Harbinger Grim News Movement Mode" abbrev="GrimNewsMove"/>
     <bootstrap thing="xImmInhPoi"></bootstrap>
-    <eval phase="PostAttr" priority="10000">      ~ Set fly speed to base speed
+    <eval phase="PostAttr" priority="10000">~ Set fly speed to base speed
       #value[xSwim] += hero.child[Speed].field[tSpeed].value</eval>
     </thing>
   <thing id="cPW4SpdBn" name="Spider&apos;s Boon" description="The Harbinger gains a climb speed equal to her base land speed. Additionally, she develops a sticky grip that aids her in battle; she gains a +4 racial bonus on grapple checks, as well as to her CMD." compset="CustomSpec" summary="Gain climb speed at your normal speed, and +4 to grapple and CMD" uniqueness="unique">
@@ -451,7 +411,7 @@
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abCategory" tag="HrbGNMove" name="Harbinger Grim News Movement Mode" abbrev="GrimNewsMove"/>
     <tag group="SpecSource" tag="cHelpPW4"/>
-    <eval phase="PostAttr" priority="10000">      ~ Set climb speed to base speed
+    <eval phase="PostAttr" priority="10000">~ Set climb speed to base speed
       #value[xClimb] += hero.child[Speed].field[tSpeed].value
 
       ~ Add grapple/CMD bonus
@@ -468,7 +428,7 @@
     <tag group="SpecSource" tag="cHelpPW4"/>
     <tag group="abAction" tag="Move"/>
     </thing>
-  <thing id="cPW4Masscr" name="Massacre" description="The scent of blood in the air and the gentle throb of fading life force impels the Harbinger to further heights of violence. Starting at fourth level, the Harbinger may initiate one of her readied strikes (targeting an adjacent creature) as an immediate action once per encounter whenever she reduces an opponent to 0 or fewer hit points. Strikes initiated with Massacre must have an initiation action of one standard action. The Harbinger gains an additional use per encounter of Massacre at 10th level, and again at 16th level." compset="ClSpecial" summary="Initiate a strike as an immediate action when you kill a foe">
+  <thing id="cPW4Masscr" name="Massacre" description="The scent of blood in the air and the gentle throb of fading life force impel the harbinger to further heights of violence. Starting at 4th level, the harbinger may initiate one of her readied strikes (targeting an adjacent creature) as an immediate action once per encounter whenever she reduces an opponent to 0 or fewer hit points. Strikes initiated with Massacre must have an initiation action of one standard action. The harbinger gains an additional use per encounter of Massacre at 10th level, and again at 16th level." compset="ClSpecial" summary="Initiate a strike as an immediate action when you kill a foe">
     <fieldval field="trkMax" value="1"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="User" tag="Tracker"/>
@@ -488,7 +448,7 @@
         field[trkMax].value += 1
       endif]]></eval>
     </thing>
-  <thing id="cPW4EluShd" name="Elusive Shadow" description="The Harbinger’s unnatural alacrity protects her from harm as she shies away from whirling blades and streaking spells alike. Starting at fifth level, the Harbinger gains a +2 dodge bonus to armor class and Reflex saves during any round in which she has moved at least 10 feet." compset="ClSpecial" summary="+2 to AC and Ref saves when you move 10 feet or more">
+  <thing id="cPW4EluShd" name="Elusive Shadow" description="The harbinger’s unnatural alacrity protects her from harm as she shies away from whirling blades and streaking spells alike. Starting at 5th level, the harbinger gains a +2 dodge bonus to armor class and Reflex saves during any round in which she has moved at least 10 feet." compset="ClSpecial" summary="+2 to AC and Ref saves when you move 10 feet or more">
     <fieldval field="abValue" value="2"/>
     <tag group="User" tag="Activation"/>
     <tag group="AbilType" tag="Extra"/>
@@ -506,7 +466,7 @@
       ~ Add bonus to Ref save
       hero.child[svRef].field[Bonus].value += field[abValue].value]]></eval>
     </thing>
-  <thing id="cPW4SrcDec" name="Sorcerous Deception" description="Having become adept at concealing the malice within, the Harbinger also develops the ability to allay the suspicions of those who investigate her with magic. Starting at seventh level, the Harbinger may use {i}magic aura{/i} as a spell-like ability at will. She may only target items and objects she is attending, carrying, wearing, or wielding." compset="ClSpecial" summary="Use {i}magic aura{/i} at will">
+  <thing id="cPW4SrcDec" name="Sorcerous Deception" description="Through her contemplations on the nature of deceit, the harbinger develops the ability to allay the suspicions of those who investigate her with magic. Starting at 7th level, the harbinger may use {i}magic aura{/i} as a spell-like ability at will. She may only target items and objects she is attending, carrying, wearing, or wielding." compset="ClSpecial" summary="Use {i}magic aura{/i} at will">
     <tag group="AbilType" tag="SpellLike"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <bootstrap thing="spMagiAur1">
@@ -514,13 +474,13 @@
       <autotag group="Usage" tag="AtWill"/>
       </bootstrap>
     </thing>
-  <thing id="cPW4IllInt" name="Ill Intentions" description="Those cornered by the Harbinger and her allies feel the weight of her malice pressing down agains them. Starting at eighth level, whenever the Harbinger and one or more of her allies flank a creature, that creature suffers a -2 penalty to saving throws and skill checks." compset="ClSpecial" summary="Foes get -2 to skills and saving throws when you flank them">
+  <thing id="cPW4IllInt" name="Ill Intentions" description="Those cornered by the harbinger and her allies feel the weight of her malice pressing down agains them. Starting at 8th level, whenever the harbinger and one or more of her allies flank a creature, that creature suffers a -2 penalty to saving throws and skill checks." compset="ClSpecial" summary="Foes get -2 to skills and saving throws when you flank them">
     <fieldval field="abValue" value="2"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abAction" tag="None"/>
     </thing>
-  <thing id="cPW4BlkOmn" name="Black Omen" description="Like misfortune, the Harbinger does not seem to move so much as simply arrive. Starting at 11th level, the Harbinger may move up to 1/2 her speed as an immediate action once per encounter." compset="ClSpecial" summary="Move up to 1/2 speed as an immediate action 1/encounter">
+  <thing id="cPW4BlkOmn" name="Black Omen" description="Like misfortune, the harbinger does not seem to move so much as simply arrive. Starting at 11th level, the harbinger may move up to 1/2 her speed as an immediate action once per encounter." compset="ClSpecial" summary="Move up to 1/2 speed as an immediate action 1/encounter">
     <fieldval field="trkMax" value="1"/>
     <tag group="SpecType" tag="Movement"/>
     <tag group="AbilType" tag="Super"/>
@@ -529,12 +489,12 @@
     <tag group="Usage" tag="PWEncounte"/>
     <tag group="abAction" tag="Immediate"/>
     </thing>
-  <thing id="cPW4BlkPr" name="Bleak Prophecy" description="Those claimed by the Harbinger are filled with dreadful visions of their own demise; starting at 12th level, creatures Claimed by the Harbinger are also shaken while the Claim persists" compset="ClSpecial" summary="Your Claimed foes are shaken">
+  <thing id="cPW4BlkPr" name="Bleak Prophecy" description="Those claimed by the harbinger are filled with dreadful visions of their own demise; starting at 12th level, creatures Claimed by the harbinger are also shaken while the Claim persists." compset="ClSpecial" summary="Your Claimed foes are shaken">
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abAction" tag="None"/>
     </thing>
-  <thing id="cPW4TenRch" name="Tenebrous Reach" description="Malice reaches forth, looking for others to vent itself onto, and the Harbinger projects her dark power similarly. Starting at 13th level, the Harbinger may activate her Tenebrous Reach as a swift action once per encounter. For a number of rounds equal to her Intelligence modifier she may treat close range (25 feet + 5 feet per two levels) as her melee reach for the purpose of initiating strikes (this does not increase the area the Harbinger threatens)." compset="ClSpecial" summary="Initiate strikes at range">
+  <thing id="cPW4TenRch" name="Tenebrous Reach" description="Malice reaches forth, looking for others to vent itself onto, and the harbinger projects her dark power in imitation of it. Starting at 13th level, the harbinger may activate her Tenebrous Reach as a swift action once per encounter. For a number of rounds equal to her Intelligence modifier she may treat close range (25 feet + 5 feet per two levels) as her melee reach for the purpose of initiating strikes (this does not increase the area the harbinger threatens)." compset="ClSpecial" summary="Initiate strikes at range">
     <fieldval field="abRange" value="25"/>
     <fieldval field="trkMax" value="1"/>
     <tag group="abAction" tag="Swift"/>
@@ -557,19 +517,145 @@
       ~ Duration = INT mod
       field[abDuration].value = #attrmod[aINT]]]></eval>
     </thing>
-  <thing id="cPW4RmrWar" name="Rumors of War" description="The Harbinger sweeps through her enemies, spreading pain and woe wherever she steps. Starting at 17th level, as a full-round action the Harbinger may move up to her speed and initiate a single strike at any point in the movement." compset="ClSpecial" summary="Initiate a martial strike on the move">
+  <thing id="cPW4RmrWar" name="Rumors of War" description="The harbinger sweeps through her enemies, spreading pain and woe wherever she steps. Starting at 17th level, as a full-round action the harbinger may move up to her speed and initiate a single strike at any point in the movement." compset="ClSpecial" summary="Initiate a martial strike on the move">
     <tag group="abDuration" tag="Round"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abAction" tag="FullRd"/>
     <tag group="AbilType" tag="Extra"/>
     </thing>
-  <thing id="cPW4VoxDrk" name="Voices in the Dark" description="Like a dark voice on the edge of hearing, the Harbinger persecutes her enemies. Starting at 18th level, the Harbinger may initiate a strike whenever she would normally be able to make an attack of opportunity (she still expends the attack of opportunity). Strikes initiated in place of an attack of opportunity must have an initiation action of one standard action." compset="ClSpecial" summary="Use a martial strike as an attack of opportunity">
+  <thing id="cPW4VoxDrk" name="Voices in the Dark" description="Like a dark voice on the edge of hearing, the harbinger persecutes her enemies. Starting at 18th level, the harbinger may initiate a strike whenever she would normally be able to make an attack of opportunity (she still expends the attack of opportunity). Strikes initiated in place of an attack of opportunity must have an initiation action of one standard action." compset="ClSpecial" summary="Use a martial strike as an attack of opportunity">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
     </thing>
-  <thing id="cPW4WhsAtr" name="Whispers of Atrocity" description="There is no resisting the Harbinger’s malice. Starting at 19th level, maneuvers initiated by the Harbinger ignore any and all immunities possessed by their victims." compset="ClSpecial" summary="Your maneuvers ignore all immunities">
+  <thing id="cPW4WhsAtr" name="Whispers of Atrocity" description="There is no resisting the harbinger’s malice. Starting at 19th level, maneuvers initiated by the harbinger ignore any and all immunities possessed by their victims." compset="ClSpecial" summary="Your maneuvers ignore all immunities">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abAction" tag="None"/>
     <tag group="AbilType" tag="Super"/>
+    </thing>
+  <thing id="arPWCrCoun" name="Crimson Countess" description="All harbingers draw power from their understanding of their negative emotions and the tragedies and evil that afflict all people. Those who become crimson countesses have a different emphasis: rage. These harbingers, consumed by wrath, revenge, frustration, or simple malicious fury, crimson countesses mark their opponents for bloody vengeance and then wreak devastation upon them. While not all permit their rage to consume them, enough do that these blood-splattered warriors have a dark and dangerous reputation that follows them wherever they go." compset="ClassVary" uniqueness="unique">
+    <arrayval field="cvCustTot" index="8" value="-1"/>
+    <arrayval field="cvCustTot" index="14" value="-2"/>
+    <tag group="AbReplace" tag="cPW4IllTid"/>
+    <tag group="AbReplace" tag="cPW4DkFoc1"/>
+    <tag group="AbReplace" tag="cPW4DkFoc3"/>
+    <tag group="AbReplace" tag="cPW4DkFoc2"/>
+    <tag group="AbReplace" tag="cPW4DkFoc4"/>
+    <tag group="ClVaryName" tag="AppParen"/>
+    <tag group="AbModify" tag="cPW4GrmNws"/>
+    <bootstrap thing="cPW4CrmClm">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cPW4SngEmp">
+      <autotag group="ClSpecWhen" tag="2"/>
+      </bootstrap>
+    <link linkage="varies" thing="cHelpPW4"/>
+    </thing>
+  <thing id="cPW4CrmClm" name="Crimson Claim" description="Each round, at the beginning of her turn, the Crimson Countess deals 1d4 points of damage to creatures she has Claimed. This increases to 2d4 at 6th level, 3d4 at 10th level, 4d4 at 14th level, and a maximum of 5d4 at 18th level. This replaces Ill Tidings." compset="ClSpecial" summary="Claimed creatures take damage each round">
+    <fieldval field="abValue" value="1"/>
+    <fieldval field="abValue2" value="4"/>
+    <tag group="abAction" tag="None"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="LvNameApp" tag="DieCntVal"/>
+    <tag group="LvNameApp" tag="DieSizVal2"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Add additional damage dice if we are high enough level
+      if (field[xAllLev].value >= 6) then
+        field[abValue].value += 1
+      endif
+      if (field[xAllLev].value >= 10) then
+        field[abValue].value += 1
+      endif
+      if (field[xAllLev].value >= 14) then
+        field[abValue].value += 1
+      endif
+      if (field[xAllLev].value >= 18) then
+        field[abValue].value += 1
+      endif]]></eval>
+    </thing>
+  <thing id="cPW4SngEmp" name="Sanguine Empowerment" description="At 2nd level, the Crimson Countess develops the ability to gain and store Vitae. Whenever the Crimson Countess Claims an enemy, and again each round at the beginning of her turn, she gains Vitae points equal to the number of creatures she has Claimed. She may store a number of Vitae points equal to her class level. The Crimson Countess’s Vitae pool resets to 0 after she has spent 1 minute out of combat.\n\nThe Crimson Countess gains a morale bonus equal to ½ her current number of Vitae points on attack and damage rolls made as part of maneuvers (this bonus increases by 2 when initiating maneuvers against Claimed creatures). Furthermore, she gains a number of other abilities as her Vitae points increase:\n\n{I}Drain{/I} - If she has at least 1 Vitae, the Crimson Countess may spend a move action to deal untyped damage equal to her class level to all creatures she has Claimed. If she has at least 2 Vitae then she also heals 1d6 hp per creature she has Claimed.\n\n{I}Recover{/I} - At 6th level, if she has at least 4 Vitae, the Crimson Countess may spend a move action to recover one of her expended boosts or counters.\n\n{I}Sacrifice{/I} – At 10th level, if she has at least 6 Vitae, the Crimson Countess may activate this ability as an immediate action up to once per encounter when she is dealt ability damage or damage to her hit points. If she does, she chooses a creature she has Claimed; that creature suffers the damage instead of the Crimson Countess. If the target succeeds on a Fortitude save (DC 10 + ½ the Crimson Countess’s class level + her Intelligence modifier) then it instead takes half damage, with the rest being inflicted to the Countess as normal.\n\n{I}Sovereignty{/I} – At 14th level, if she has at least 8 Vitae, the Crimson Countess may activate this ability as a standard action. When she does, creatures she has Claimed must succeed at a Fortitude save (DC 10 + ½ the Crimson Countess’s class level + her Intelligence modifier) or be teleported to a space of the Countess’s choice within 60 feet of the Countess (each must be teleported to a different space, even if they are capable of sharing spaces with one another). Spaces that are intrinsically dangerous (such as those filled with lava, or spaces in the air if the creature does not fly) may not be chosen.\n\n{I}Exsanguinate{/I} – At 20th level, if she has at least 10 Vitae, the Crimson Countess may choose a creature she has Claimed as a standard action up to once per encounter. That creature must succeed at a Fortitude save (DC 10 + ½ the Crimson Countess’s class level + her Intelligence modifier) or die; success on this save indicates that the creature instead suffers 13d6 points of untyped damage. This is a death effect. If the victim of this ability dies, the Crimson Countess heals a number of hp equal to ½ its full maximum total.\n\nThis ability replaces Dark Focus." compset="ClSpecial" summary="You gain a pool of Vitae, and several abilities that use it">
+    <comment>abValue stores the regular bonus
+abValue2 stores the extra bonus vs Claimed targets</comment>
+    <fieldval field="actName" value="Using maneuver"/>
+    <fieldval field="actName2" value="Target is Claimed"/>
+    <fieldval field="abValue2" value="2"/>
+    <tag group="User" tag="Activation"/>
+    <bootstrap thing="trkPW4Vit"></bootstrap>
+    <eval phase="PostLevel" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Stop now if we don't have the Vitae tracker
+      perform hero.childfound[trkPW4Vit].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Max Vitae pool = class level
+      focus.field[trkMax].value += field[xAllLev].value
+
+      ~ Gain attack bonus of 1/2 Vitae on maneuvers, with +2 against Claimed creatures
+      field[abValue].value = round(focus.field[trkUser].value/2,0,-1)
+      doneif (field[abValue].value < 1)
+      if (field[abilAct2].value = 1) then
+        field[abValue].value += field[abValue2].value
+      endif
+
+      ~ Stop now if we aren't using a maneuver
+      doneif (field[abilActive].value = 0)
+      
+      ~ Add morale bonus to attack and damage
+      #applybonus[BonMorale,hero.child[Attack],field[abValue].value]
+      #applybonus[BonMorale,hero.child[Damage],field[abValue].value]]]></eval>
+    </thing>
+  <thing id="trkPW4Vit" name="Vitae Pool" compset="Tracker" uniqueness="unique">
+    <usesource source="srcPOWEx"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Tracker" name="Modern Action Points" abbrev="Modern Action Points"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      var finalname as string
+
+      
+
+      if (empty(finalname) = 0) then
+        finalname = splice(finalname, "Pool", " ")
+        field[livename].text = finalname
+        endif
+
+      if (field[trkMax].value = 0) then
+        perform delete[Helper.ShowCharge]
+        endif]]></eval>
+    </thing>
+  <thing id="cPW4GNwsCC" name="Grim News (Blood Pool Form)" description="At 9th level, the Crimson Countess may transform herself and all of her worn and carried items into a (5 ft. per class level) radius pool of blood or back to her natural form as a swift action. When the Countess reverts to her natural form from her pool form, she may appear in any space that her pool form occupied (this is not a teleportation effect; she re-forms in the chosen space). While in pool form, she gains a number of benefits and drawbacks:\n\n- Immune to bludgeoning, piercing, and slashing damage\n- 10 ft. climb speed\n- May pour herself through any opening that is not watertight\n- Creatures may share the Crimson Countess’s space while she is in pool form. Neither the Countess nor these creatures gain any benefit or penalty from sharing the same space.\n- Does not threaten an area and cannot make attacks of opportunity.\n- Cannot make melee or ranged attacks (and cannot initiate maneuvers that require them).\n- Does not gain Vitae.\n\nAt 15th level, the Crimson Countess gains fast healing equal to her Intelligence modifier while in pool form.\n\nThis ability modifies Grim News." compset="ClSpecial" summary="Turn into a pool of blood, gain several abilities">
+    <fieldval field="actName" value="Blood Pool Form"/>
+    <fieldval field="abValue" value="10"/>
+    <fieldval field="abValue2" value="5"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abRange" tag="Feet"/>
+    <tag group="LvNamePar" tag="IncRange"/>
+    <bootstrap thing="xFastHeal">
+      <containerreq phase="First" priority="1000"><![CDATA[fieldVal:abilActive <> 0]]></containerreq>
+      </bootstrap>
+    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Set radius (5' per class level)
+      field[abRange].value = field[xAllLev].value * field[abValue2].value
+
+      ~ Stop now if we're not activated
+      doneif (field[abilActive].value = 0)
+
+      ~ Set climb speed
+      #value[xClimb] = field[abValue].value
+
+      if (field[xAllLev].value >= 15) then
+        perform hero.childfound[xFastHeal].assignstr["Value." & #attrmod[aINT]]
+      endif]]></eval>
     </thing>
   </document>

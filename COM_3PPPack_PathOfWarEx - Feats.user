@@ -256,7 +256,7 @@ Email: mail@theirongolem.com</info_author>
     <exprreq message="Base attack bonus +1 required"><![CDATA[#BAB[] >= 1]]></exprreq>
     <exprreq message="Combat Reflexes feat required"><![CDATA[#hasfeat[fComRef] <> 0]]></exprreq>
     </thing>
-  <thing id="fPWWndsWar" name="Winds of War" description="Those you have Claimed cannot hide, and now they can no longer even run.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} You gain a 5 ft. bonus to your movement speeds. This bonus increases by 5 ft. for each creature you currently have Claimed" compset="Feat" uniqueness="useronce">
+  <thing id="fPWWndsWar" name="Winds of War" description="Those you have Claimed cannot hide, and now they can no longer even run.\n\n{b}Prerequisites:{/b} Able to Claim creatures\n\n{b}Benefit:{/b} You gain a 5 ft. bonus to your movement speeds. This bonus increases by 5 ft. for each creature you currently have Claimed." compset="Feat" uniqueness="useronce">
     <fieldval field="abValue" value="5"/>
     <usesource source="srcPOWEx"/>
     <tag group="Helper" tag="ShowSpec"/>
@@ -719,7 +719,7 @@ Email: mail@theirongolem.com</info_author>
     <tag group="fCategory" tag="Combat"/>
     <tag group="fCategory" tag="Style"/>
     <tag group="abAction" tag="Standard"/>
-    <eval phase="PostAttr" priority="10000">      if (#hasfeat[fPUPsiMed] = 1) then
+    <eval phase="PostAttr" priority="10000">if (#hasfeat[fPUPsiMed] = 1) then
         perform tagreplace[abAction.Standard,abAction.Move]
       endif</eval>
     <evalrule phase="Validation" priority="5000" message="Too many style feats active." summary="Too many style feats active."><![CDATA[validif (hero.tagcount[Custom.ActiveStyl] <= 1 + hero.tagcount[Custom.MaxActStyl])]]></evalrule>
