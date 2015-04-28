@@ -8259,11 +8259,13 @@ else
  @message = "You may not have more than " & allowed & " copies of this ability."]]></validate>
       </prereq>
     </thing>
-  <thing id="rcPUaHarSh" name="Harness Shard" description="The aegis is able to place a single {i}shard{/i} into the astral suit as a move action. By spending one power point as a standard action, he can gain one use of the {i}shard{/i} without the shard disintegrating. This customization may be selected multiple times. Each time, it allows the aegis to store an additional shard within the astral suit, although each shard must be activated separately." compset="RaceCustom" uniqueness="useronce">
+  <thing id="rcPUaHarSh" name="Harness Shard" description="The aegis is able to place a single {i}shard{/i} into the astral suit as a move action. By spending one power point as a standard action, he can gain one use of the {i}shard{/i} without the shard disintegrating. This customization may be selected multiple times. Each time, it allows the aegis to store an additional shard within the astral suit, although each shard must be activated separately." compset="RaceCustom">
     <usesource source="pPsiUn"/>
     <tag group="Helper" tag="Secondary"/>
     <tag group="CustomCost" tag="1"/>
     <tag group="AllowRCust" tag="cfgPUAstSu"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="User" tag="Activation"/>
     </thing>
   <thing id="rcPUaImpAr" name="Improved Armor" description="The astral suit thickens and strengthens, increasing the aegis&apos;s Armor bonus by +1. This customization can be taken once for every five levels the aegis possesses and stacks with any Armor bonus granted from the astral suit itself. The aegis must be at least 5th level before selecting this customization." compset="RaceCustom" uniqueness="useronce">
     <usesource source="pPsiUn"/>
@@ -14114,15 +14116,14 @@ field[listname].text = "Enhanced Mind Bolt +" & field[xIndex].value]]></eval>
   <thing id="cGiBPUMani" name="Manifesting" description="At 3rd level, a gifted blade gains the ability to manifest a small number of psionic powers, which are drawn from the gifted blade power list.\n\nA gifted blade chooses his powers from the gifted blade power list. At 3rd level, a gifted blade knows one gifted blade power of your choice. He learns new powers as indicated on Table: The Gifted Blade. A gifted blade can manifest any power that has a power point cost equal to or lower than his manifester level. The total number of powers a gifted blade can manifest per day is limited only by his daily power points.\n\nA gifted blade never needs to prepare powers ahead of time; he draws them from his mind when needed. When a gifted blade recovers his daily power points after resting, he may choose to rotate one or more powers he knows for new ones. These powers must always be chosen from the gifted blade power list, and the maximum number of powers the gifted blade may know at any one time in this fashion is listed on Table: The Gifted Blade. If a gifted blade learns a power through other means, such as the Expanded Knowledge feat, the Mental Power blade skill, or {i}psychic chirurgery{/i}, this power is known in addition to his normal powers. He may never exchange it for another power from the gifted blade list when he chooses his powers known, and it doesn&apos;t count against his limit of powers known at any one time.\n\nThe Difficulty Class for saving throws against gifted blade powers is 10 + the power&apos;s level + the gifted blade&apos;s Wisdom modifier.\n\nThrough 2nd level, a gifted blade has no manifester level. At 3rd level and higher, a gifted blade&apos;s manifester level is equal to his soulknife level - 2.\n\nA gifted blade gains the ability to learn 1st-level powers at 3rd level. Every four levels thereafter (7th, 11th, etc), a gifted blade gains the ability to master more complex powers, up to 4th level powers at level 15.\n\nTo learn or manifest a power, a gifted blade must have a Wisdom score of at least 10 + the power&apos;s level.\n\nA gifted blade&apos;s ability to manifest powers is limited by the power points he has available. His base daily allotment of power points is given on Table: Gifted Blade.{br}{br}In addition, he receives bonus power points per day if he has a high Wisdom score. His race may also provide bonus power points per day, as may certain feats and items. If a gifted blade has power points from a different class, those points are pooled together and usable to manifest powers from either class.\n\nThis ability replaces psychic strike. The gifted blade never gains the psychic strike class feature." compset="ClSpecial" summary="You have a reduced ML equal to ML-2.">
     <fieldval field="abValue" value="-2"/>
     <tag group="ProductId" tag="HLCommunit"/>
-    <eval phase="First" priority="1500" index="1"><![CDATA[
+    <eval phase="First" priority="1500"><![CDATA[
       ~we're earlier than the normal test for whether we've reached the correct level, so we'll recreate that test here
       doneif (root.linkage[varies].field[cTotalLev].value + field[xExtraLev].value + field[xEffectLev].value < tagvalue[ClSpecWhen.?])
       ~ If we've been Disabled, get out now
       doneif (tagis[Helper.SpcDisable] <> 0)    
     
       ~ Set hero.Psionic as at this level we are now a full Psionic Character with a ML
-      call SetHeroPsi
-      ]]></eval>
+      call SetHeroPsi]]></eval>
     <eval phase="PostAttr" priority="10001" index="2"><![CDATA[
       ~ If we've been Disabled, get out now
       doneif (tagis[Helper.SpcDisable] <> 0)    
@@ -14195,7 +14196,6 @@ debug "PP -" & PP
       PP = round(PP,0,-1)
       #resmax[resPowerPt] += PP     
 debug "PP Reserve " & #resmax[resPowerPt]
-debug "PP +" & PP
-      ]]></eval>
-      </thing>
+debug "PP +" & PP]]></eval>
+    </thing>
   </document>
