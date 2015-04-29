@@ -702,7 +702,7 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
       ~ Modification for Whispers of Atrocity
       #appenddesc[cPW4WhsAtr,&quot;{b}Addition from Ravenlord{/b}: Maneuvers initiated by the Ravenlord or his Dark Messenger ignore any and all immunities possessed by their victims.&quot;]</eval>
     </thing>
-  <thing id="cPW4DrkMgr" name="Dark Messenger" description="The Ravenlord is served by a raven-like bird which obeys him, known as his Dark Messenger. The Ravenlord treats his Dark Messenger as a bird animal companion (the Ravenlord’s effective druid level is equal to his class level for the purposes of advancing the Dark Messenger), with the following exceptions:\n\n- The Dark Messenger’s Intelligence score is equal to its master’s.\n- The Dark Messenger always acts on the same initiative count as its master.\n- The Ravenlord may communicate telepathically with his Dark Messenger, provided the two are within one mile of each other. The Dark Messenger always obeys the Ravenlord’s orders to the best of its ability and will exercise its own initiative to promote the Ravenlord’s interests and safety.\n- When slain, the Dark Messenger deals 1d6 points of Constitution damage to the Ravenlord, then re-forms 24 hours later, reappearing on its master’s shoulder at full hit points.\n- The Dark Messenger does not gain bonus tricks or the benefits of the Share Spells ability. \n\nThis ability replaces Ill Tidings.\n\nAt 2nd level, the Ravenlord’s Dark Messenger also enjoys the benefits of his Dark Focus ability (in the disciplines he has chosen), with the exception of the bonus feat gained at 6th level.\n\n{B}NOTE:{/B} At this time, Hero Lab does not set the Dark Messenger&apos;s Intelligence score.  You will need to do that manually." compset="ClSpecial">
+  <thing id="cPW4DrkMgr" name="Dark Messenger" description="The Ravenlord is served by a raven-like bird which obeys him, known as his Dark Messenger. The Ravenlord treats his Dark Messenger as a bird animal companion (the Ravenlord’s effective druid level is equal to his class level for the purposes of advancing the Dark Messenger), with the following exceptions:\n\n- The Dark Messenger’s Intelligence score is equal to its master’s.\n- The Dark Messenger always acts on the same initiative count as its master.\n- The Ravenlord may communicate telepathically with his Dark Messenger, provided the two are within one mile of each other. The Dark Messenger always obeys the Ravenlord’s orders to the best of its ability and will exercise its own initiative to promote the Ravenlord’s interests and safety.\n- When slain, the Dark Messenger deals 1d6 points of Constitution damage to the Ravenlord, then re-forms 24 hours later, reappearing on its master’s shoulder at full hit points.\n- The Dark Messenger does not gain bonus tricks or the benefits of the Share Spells ability. \n\nThis ability replaces Ill Tidings.\n\nAt 2nd level, the Ravenlord’s Dark Messenger also enjoys the benefits of his Dark Focus ability (in the disciplines he has chosen), with the exception of the bonus feat gained at 6th level." compset="ClSpecial">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
     <bootstrap thing="cAnimClass"></bootstrap>
@@ -720,9 +720,9 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
           perform field[usrChosen1].chosen.setfocus
         endif
       endif
-      doneif (state.isfocus = 0)
-
-      ~ Set minion's INT to hero's INT (haven't figured out how to do this yet...)]]></eval>
+      doneif (state.isfocus = 0)]]></eval>
+    <eval phase="First" priority="500" index="2"><![CDATA[      ~ Set the raven's INT score to be the same as the hero's INT score
+      hero.childfound[cAnimComp].minion.childfound[anPWRaven].field[anINT].arrayvalue[0] = hero.child[aINT].field[aUser].value - 10]]></eval>
     </thing>
   <thing id="anPWRaven" name="Raven" description="The raven is an omnivorous scavenger that eats carrion, insects, food waste, berries, and even small animals." compset="AnimalComp">
     <fieldval field="rNumHands" value="0"/>
