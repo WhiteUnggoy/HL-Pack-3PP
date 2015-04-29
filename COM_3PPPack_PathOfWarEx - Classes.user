@@ -705,23 +705,42 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
   <thing id="cPW4DrkMgr" name="Dark Messenger" description="The Ravenlord is served by a raven-like bird which obeys him, known as his Dark Messenger. The Ravenlord treats his Dark Messenger as a bird animal companion (the Ravenlord’s effective druid level is equal to his class level for the purposes of advancing the Dark Messenger), with the following exceptions:\n\n- The Dark Messenger’s Intelligence score is equal to its master’s.\n- The Dark Messenger always acts on the same initiative count as its master.\n- The Ravenlord may communicate telepathically with his Dark Messenger, provided the two are within one mile of each other. The Dark Messenger always obeys the Ravenlord’s orders to the best of its ability and will exercise its own initiative to promote the Ravenlord’s interests and safety.\n- When slain, the Dark Messenger deals 1d6 points of Constitution damage to the Ravenlord, then re-forms 24 hours later, reappearing on its master’s shoulder at full hit points.\n- The Dark Messenger does not gain bonus tricks or the benefits of the Share Spells ability. \n\nThis ability replaces Ill Tidings.\n\nAt 2nd level, the Ravenlord’s Dark Messenger also enjoys the benefits of his Dark Focus ability (in the disciplines he has chosen), with the exception of the bonus feat gained at 6th level." compset="ClSpecial">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Extra"/>
+    <tag group="abAction" tag="None"/>
     <bootstrap thing="cAnimClass"></bootstrap>
-    <eval phase="Attr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
-      doneif (tagis[Helper.ShowSpec] = 0)
+    <eval phase="PreLevel" priority="10000" index="2"><![CDATA[      ~ If we're not shown, just get out now
+      ~doneif (tagis[Helper.ShowSpec] = 0)
       ~ If we're disabled, just get out now
       doneif (tagis[Helper.SpcDisable] <> 0)
 
-      ~ Make sure we actually have an animal companion
-      if (hero.childlives[cAnimComp] <> 0) then
-        perform hero.childfound[cAnimComp].setfocus
-      elseif (hero.childlives[cAnimMult] <> 0) then
-        field[usrCandid1].text = "CompIs.cAnimMult"
-        if (field[usrChosen1].ischosen <> 0) then
-          perform field[usrChosen1].chosen.setfocus
-        endif
-      endif
-      doneif (state.isfocus = 0)]]></eval>
-    <eval phase="First" priority="500" index="2"><![CDATA[      ~ Set the raven's INT score to be the same as the hero's INT score
+      perform hero.childfound[cAnimComp].minion.child[aINT].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Copy all INT bonuses and penalties from the hero
+      focus.field[Bonus].value = hero.child[aINT].field[Bonus].value
+      focus.field[Penalty].value = hero.child[aINT].field[Penalty].value
+      focus.field[Racial].value = hero.child[aINT].field[Racial].value
+      focus.field[BonAlch].value = hero.child[aINT].field[BonAlch].value
+      focus.field[ModCirc].value = hero.child[aINT].field[ModCirc].value
+      focus.field[BonComp].value = hero.child[aINT].field[BonComp].value
+      focus.field[PenComp].value = hero.child[aINT].field[PenComp].value
+      focus.field[BonEnhance].value = hero.child[aINT].field[BonEnhance].value
+      focus.field[BonInsight].value = hero.child[aINT].field[BonInsight].value
+      focus.field[BonLuck].value = hero.child[aINT].field[BonLuck].value
+      focus.field[PenLuck].value = hero.child[aINT].field[PenLuck].value
+      focus.field[BonMorale].value = hero.child[aINT].field[BonMorale].value
+      focus.field[PenMorale].value = hero.child[aINT].field[PenMorale].value
+      focus.field[BonProfane].value = hero.child[aINT].field[BonProfane].value
+      focus.field[PenProfane].value = hero.child[aINT].field[PenProfane].value
+      focus.field[BonSacred].value = hero.child[aINT].field[BonSacred].value
+      focus.field[PenSacred].value = hero.child[aINT].field[PenSacred].value
+      focus.field[BonTrait].value = hero.child[aINT].field[BonTrait].value
+      focus.field[PenTrait].value = hero.child[aINT].field[PenTrait].value]]></eval>
+    <eval phase="First" priority="500"><![CDATA[      ~ If we're not shown, just get out now
+      ~doneif (tagis[Helper.ShowSpec] = 0)
+      ~ If we're disabled, just get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Set the raven's INT score to be the same as the hero's INT score
       hero.childfound[cAnimComp].minion.childfound[anPWRaven].field[anINT].arrayvalue[0] = hero.child[aINT].field[aUser].value - 10]]></eval>
     </thing>
   <thing id="anPWRaven" name="Raven" description="The raven is an omnivorous scavenger that eats carrion, insects, food waste, berries, and even small animals." compset="AnimalComp">
@@ -736,15 +755,12 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
     <usesource source="srcPOWEx"/>
     <tag group="RaceSize" tag="Tiny12"/>
     <tag group="SlotSet" tag="selMISAvia" name="Avian" abbrev="Avian"/>
-    <tag group="User" tag="HuntMBird" name="HuntMBird" abbrev="HuntMBird"/>
     <tag group="Alignment" tag="NeutralGE" name="Neutral" abbrev="N"/>
     <tag group="CompList" tag="arPWRvnlrd" name="Ravenlord"/>
     <tag group="Helper" tag="NotHum" name="NotHum" abbrev="NotHum"/>
     <tag group="Alignment" tag="NeutralLC" name="Neutral" abbrev="N"/>
     <tag group="HasType" tag="tpAnimal" name="Animal" abbrev="Animal"/>
-    <bootstrap thing="wBite">
-      <autotag group="wMain" tag="1d3"/>
-      </bootstrap>
+    <tag group="ProductId" tag="HLCommunit"/>
     <bootstrap thing="fWepFin">
       <autotag group="thing" tag="skipprereq"/>
       </bootstrap>
@@ -753,13 +769,19 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
       <autotag group="Value" tag="40"/>
       </bootstrap>
     <bootstrap thing="raLowLight"></bootstrap>
+    <bootstrap thing="fToughness">
+      <containerreq phase="First" priority="1000"><![CDATA[PathOfWar.DarkMessgr <> 0]]></containerreq>
+      </bootstrap>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d3"/>
+      </bootstrap>
     </thing>
   <thing id="cPW4ChnWoe" name="Channel of Woe" description="At 3rd level, the Ravenlord’s Dark Messenger gains the ability to initiate counters and strikes that the Ravenlord has readied. The Dark Messenger’s initiator level is equal to the Ravenlord’s; its initiation modifier is Intelligence. Only either the Ravenlord or the Dark Messenger may initiate a strike in the same round (that is, if the Dark Messenger initiates a strike, the Ravenlord may not initiate a strike in the same round, and vice versa). When either the Ravenlord or his Dark Messenger initiates a strike, the other being generates a 10 ft. radius sphere known as a Gloom around themselves (the Gloom is generated after the strike is resolved); this Gloom is stationary, lasts for 1 round, and grants concealment to the creature that generated it so long as that creature is within its area.\n\nAt 3rd level, hostile creatures within the Gloom are cursed and suffer a -2 penalty on skill checks and Reflex saves.\n\nAt 9th level, hostile creatures within the Gloom also suffer a -4 penalty to AC, attack rolls, and damage rolls.\n\nAt 15th level, hostile creatures within the Gloom also suffer a -2 penalty to Fortitude and Will saves, and may not make attacks of opportunity while within the Gloom.\n\nThese are energy drain effects (which means, among other things, that undead and constructs are not subject to them).\n\nThis ability replaces Grim News." compset="ClSpecial" summary="Dark Messenger can initiate maneuvers, creating an area of Gloom">
     <tag group="AbilType" tag="Super"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="abAction" tag="None"/>
     </thing>
-  <thing id="cPW4SrwShd" name="Sorrow&apos;s Shadow" description="At 4th level, the Dark Messenger’s type changes to magical beast and it gains Toughness as a bonus feat. Do not recalculate its base attack bonus, hit points (except those granted by Toughness), saving throws, or skills. Once per turn, as a free action, the Dark Messenger may increase its size to Medium or revert to its natural size. This increases to Large at 10th level, and Huge at 16th level.\n\nThis ability replaces Massacre.\n\n{b}NOTE:{/b} You will need to add the Toughness feat to the Dark Messenger yourself.  Use the &quot;Feats Allowed&quot; adjustment to add one extra bonus feat, then select Toughness from the Feats tab." compset="ClSpecial" summary="Dark Messenger gains Toughness, can become larger">
+  <thing id="cPW4SrwShd" name="Sorrow&apos;s Shadow" description="At 4th level, the Dark Messenger’s type changes to magical beast and it gains Toughness as a bonus feat. Do not recalculate its base attack bonus, hit points (except those granted by Toughness), saving throws, or skills. Once per turn, as a free action, the Dark Messenger may increase its size to Medium or revert to its natural size. This increases to Large at 10th level, and Huge at 16th level.\n\nThis ability replaces Massacre." compset="ClSpecial" summary="Dark Messenger gains Toughness, can become larger">
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="AbilType" tag="Super"/>
     <eval phase="First" priority="500"><![CDATA[      ~ If we're not shown, just get out now
@@ -770,7 +792,10 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
 
       ~ Change the animal companion's type to Magical Beast
       perform hero.childfound[cAnimComp].minion.delete[TypeAndAug.tpAnimal]
-      perform hero.childfound[cAnimComp].minion.assign[TypeAndAug.tpMagBeast]]]></eval>
+      perform hero.childfound[cAnimComp].minion.assign[TypeAndAug.tpMagBeast]
+
+      ~ Add the Dark Messenger tag, which will allow the animal to bootstrap the Toughness feat
+      perform hero.childfound[cAnimComp].minion.assign[PathOfWar.DarkMessgr]]]></eval>
     </thing>
   <thing id="cPWUnwMssv" name="Unwanted Missive" description="At 11th level, once per encounter as an immediate action, the Ravenlord may exchange places with its Dark Messenger, provided both are within long (400 ft. plus 40 ft. per initiator level) range of each other. If this is used in response to one or more abilities or attacks that target the Ravenlord or the Dark Messenger or include them in an area of effect, each becomes the potential target or victim of the abilities or attacks that targeted the other (for example, the Ravenlord is targeted by a charge attack. The Ravenlord activates this ability and exchanges places with his Dark Messenger. The Dark Messenger is now the target of the charge attack). This is a teleportation effect, and if either the Ravenlord or the Dark Messenger are prevented from teleporting for any reason the ability fails and its use for the encounter is expended. At 17th level, the Ravenlord may use this ability twice per encounter.\n\nThis ability replaces Black Omen and Rumors of War." compset="ClSpecial" summary="As an immediate action, trade places with your Dark Messenger">
     <fieldval field="trkMax" value="1"/>

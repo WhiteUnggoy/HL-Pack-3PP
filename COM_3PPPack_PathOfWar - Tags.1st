@@ -34,6 +34,7 @@
     <value id="StaInnrEye"  name="Stance of the Inner Eye"/>
     <value id="CstManProg"  name="Custom Maneuver Progression"/>
     <value id="MartTrad"    name="Martial Tradition"/>
+	<value id="DarkMessgr"	name="Dark Messenger"/>
   </group>
 
   <!-- Martial Discipline custom tags -->
