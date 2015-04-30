@@ -220,7 +220,7 @@
     ValidStaOn = 1 
 
     ~ Validate the number of stances turned on based on the number we are allowed to have up
-    If (altpick.tagcount[PathOfWar.StanceOn] > altpick.tagcount[PathOfWar.StanceUp]) Then
+    If (hero.tagcount[PathOfWar.StanceOn] > altpick.tagcount[PathOfWar.StanceUp]) Then
        ValidStaOn = 0
 
     Endif]]></procedure>
