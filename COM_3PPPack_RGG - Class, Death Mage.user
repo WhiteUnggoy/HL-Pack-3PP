@@ -717,7 +717,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="SpecSource" tag="cHelpDth" name="Death Mage" abbrev="Death Mage"/>
     <eval phase="UserPostLv" priority="10000">field[trkMax].value += round(field[xTotalLev].value/5, 0, -1)</eval>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
-    <exprreq message="Death Mage level 9 required."><![CDATA[#levelcount[DeathMage] >= 9]]></exprreq>
+    <exprreq message="Death Mage level 9 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 9]]></exprreq>
     </thing>
   <thing id="cDthNighSp" name="Nightmare Spirits" description="Once per day, you may afflict a target attuned to your fetish with nightmares. This functions as the {i}nightmare{/i} spell, but you are always considered to have secondhand knowledge of the target, and a connection at least as strong as a likeness or picture." compset="CustomSpec" summary="Afflict attuned target with nightmares 1/day." uniqueness="unique">
     <fieldval field="trkMax" value="1"/>
@@ -740,7 +740,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="AbilType" tag="Super" name="Supernatural Ability" abbrev=" (Su)"/>
     <tag group="SpInfo" tag="spNondete3"/>
     <tag group="Helper" tag="Tertiary" name="Tertiary" abbrev="Tertiary"/>
-    <exprreq message="Death mage level 9 required."><![CDATA[#levelcount[DeathMage] >= 9]]></exprreq>
+    <exprreq message="Death mage level 9 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 9]]></exprreq>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
     </thing>
   <thing id="cDthGSeekS" name="Seeking Spirits, Greater" description="Once per day, you may use your fetish as a powerful tool of divination. This functions as the spell discern location, but may only be used to locate creatures your fetish is attuned to. A death mage must be at least 15th level and the fetish must already contain seeking spirits to select this power." compset="CustomSpec" summary="Greater locate attuned creatures 1/day." uniqueness="unique">
@@ -755,7 +755,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="SpecSource" tag="cHelpDth" name="Death Mage" abbrev="Death Mage"/>
     <pickreq thing="cDthSeekSp"/>
     <exprreq message="Seeking Spirits required."><![CDATA[#hasability[cDthSeekSp] <> 0]]></exprreq>
-    <exprreq message="Death Mage level 15 required."><![CDATA[#levelcount[DeathMage] >= 15]]></exprreq>
+    <exprreq message="Death Mage level 15 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 15]]></exprreq>
     </thing>
   <thing id="cDthDeatMs" name="Death Mask" description="You can create a temporary fetish by painting symbols on your face and body. This takes one minute, and requires pigments and stains the death mage can gather at no cost. The temporary fetish lasts for one hour per class level. During this time, you do not have to hold your fetish to access its powers." compset="CustomSpec" summary="Access fetish powers without holding it." uniqueness="unique">
     <usesource source="GGDeathMag"/>
@@ -819,7 +819,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="AbilType" tag="SpellLike"/>
     <tag group="SpecSource" tag="cHelpDth" name="Death Mage" abbrev="Death Mage"/>
     <eval phase="PostAttr" priority="10000">field[trkMax].value += round(field[xTotalLev].value/5, 0, -1)</eval>
-    <exprreq message="Death mage level 7 required."><![CDATA[#levelcount[DeathMage] >= 7]]></exprreq>
+    <exprreq message="Death mage level 7 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 7]]></exprreq>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
     </thing>
   <thing id="cDthPhanHa" name="Phantom Haunting" description="You may use phantom haunting as a standard action. This functions as the {i}persistent image{/i} spell, but it is only perceived by creatures of a single type (selected by you each time you use this power) that your fetish is attuned to. You may use this ability once per day for every five full death mage levels you possess.  A death mage must be at least 9th level to select this power." compset="CustomSpec" summary="{i}Persistent image{/i} seen only by attuned creatures." uniqueness="unique">
@@ -833,7 +833,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="Helper" tag="Tertiary" name="Tertiary" abbrev="Tertiary"/>
     <eval phase="PostAttr" priority="10000">field[trkMax].value += round(field[xTotalLev].value/5, 0, -1)</eval>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
-    <exprreq message="Death mage level 9 required."><![CDATA[#levelcount[DeathMage] >= 9]]></exprreq>
+    <exprreq message="Death mage level 9 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 9]]></exprreq>
     </thing>
   <thing id="cDthPhanSc" name="Phantom Scouts" description="You gain a +4 bonus to all Perception checks regarding creatures your fetish is attuned to." compset="CustomSpec" summary="+4 to Perception regarding attuned creatures." uniqueness="unique">
     <usesource source="AHGGV1"/>
@@ -869,7 +869,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="SpInfo" tag="spCharMon3"/>
     <tag group="Helper" tag="Tertiary" name="Tertiary" abbrev="Tertiary"/>
     <eval phase="PostAttr" priority="10000">field[trkMax].value += round(field[xTotalLev].value/5, 0, -1)</eval>
-    <exprreq message="Death mage level 9 required."><![CDATA[#levelcount[DeathMage] >= 9]]></exprreq>
+    <exprreq message="Death mage level 9 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 9]]></exprreq>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
     </thing>
   <thing id="cDthSpirDi" name="Spirits of Disease" description="You may use spirits of disease as a standard action. This functions as the {i}contagion{/i} spell, but it can only target a creature your fetish is attuned to. You may use this ability once per day for every five full death mage levels you possess. A death mage must be at least 9th level to select this power." compset="CustomSpec" summary="{i}Contagion{/i} on attuned target." uniqueness="unique">
@@ -883,7 +883,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="Helper" tag="Tertiary" name="Tertiary" abbrev="Tertiary"/>
     <eval phase="PostAttr" priority="10000">field[trkMax].value += round(field[xTotalLev].value/5, 0, -1)</eval>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
-    <exprreq message="Death mage level 9 required."><![CDATA[#levelcount[DeathMage] >= 9]]></exprreq>
+    <exprreq message="Death mage level 9 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 9]]></exprreq>
     </thing>
   <thing id="cDthSpirFr" name="Spirits of Freedom" description="You may use spirits of freedom as a standard action. This functions as the {i}break enchantment{/i} spell, but it can only target a creature your fetish is attuned to. You may use this ability once per day for every five full death mage levels you possess. A death mage must be at least 9th level to select this power." compset="CustomSpec" summary="{i}Break enchantment{/i} on attuned creature." uniqueness="unique">
     <usesource source="AHGGV1"/>
@@ -895,7 +895,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="SpInfo" tag="spBreaEnc4"/>
     <tag group="Helper" tag="Tertiary" name="Tertiary" abbrev="Tertiary"/>
     <eval phase="PostAttr" priority="10000">field[trkMax].value += round(field[xTotalLev].value/5, 0, -1)</eval>
-    <exprreq message="Death mage level 9 required."><![CDATA[#levelcount[DeathMage] >= 9]]></exprreq>
+    <exprreq message="Death mage level 9 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 9]]></exprreq>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
     </thing>
   <thing id="cDthSpirHe" name="Spirits of Health" description="You may use spirits of health as a standard action. This functions as the {i}heal{/i} spell, but it can only target a creature your fetish is attuned to and it does not restore any hit point damage. You may use this ability once per day for every five full death mage levels you possess. A death mage must be at least 9th level to select this power." compset="CustomSpec" summary="{i}Heal{/i} attuned creature." uniqueness="unique">
@@ -909,7 +909,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="Helper" tag="Tertiary" name="Tertiary" abbrev="Tertiary"/>
     <eval phase="PostAttr" priority="10000">field[trkMax].value += round(field[xTotalLev].value/5, 0, -1)</eval>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
-    <exprreq message="Death mage level 9 required."><![CDATA[#levelcount[DeathMage] >= 9]]></exprreq>
+    <exprreq message="Death mage level 9 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 9]]></exprreq>
     </thing>
   <thing id="cDthVeilAn" name="Veil of Ancestors" description="You may use a veil of ancestors on yourself as a standard action. This functions as the {i}invisibility{/i} spell, but only creatures your fetish is attuned to are unable to see you. You may do this a number of times per day equal to 3 + your Wisdom modifier. A death mage must be at least 7th level to select this ability." compset="CustomSpec" summary="{i}Invisibility{/i} to attuned creatures." uniqueness="unique">
     <usesource source="AHGGV1"/>
@@ -921,7 +921,7 @@ hero.childfound[cHelpDth].field[cGiveSp3rd].value = round(cnt, 0, -1)</eval>
     <tag group="SpInfo" tag="spInvisib2"/>
     <tag group="Helper" tag="Tertiary" name="Tertiary" abbrev="Tertiary"/>
     <eval phase="PostAttr" priority="10000">field[trkMax].value += 3 + hero.child[aWIS].field[aModBonus].value</eval>
-    <exprreq message="Death mage level 7 required."><![CDATA[#levelcount[DeathMage] >= 7]]></exprreq>
+    <exprreq message="Death mage level 7 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 7]]></exprreq>
     <exprreq message="Fetish required."><![CDATA[#hasability[cDthFetish] <> 0]]></exprreq>
     </thing>
   <thing id="cDthWhisSp" name="Whispering Spirits" description="You gain a +4 bonus to all Knowledge and Sense Motive checks regarding creatures your fetish is attuned to." compset="CustomSpec" summary="+4 to Knowledge and Sense Motive checks regarding attuned creatures." uniqueness="unique">
@@ -2864,7 +2864,7 @@ endif]]></eval>
     <bootstrap thing="dDeaEmbrac">
       <autotag group="ClSpecWhen" tag="8"/>
       </bootstrap>
-    <exprreq message="Death Mage level 3 required."><![CDATA[#levelcount[DeathMage] >= 3]]></exprreq>
+    <exprreq message="Death Mage level 3 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 3]]></exprreq>
     </thing>
   <thing id="cdDthRepos" name="Repose" description="{b}Granted Powers{/b}: You see death not as something to be feared, but as a final rest and reward for a life well spent. The taint of undeath is a mockery of what you hold dear." compset="ClerDomain" uniqueness="unique">
     <tag group="SpecSource" tag="cHelpDth"/>
@@ -2874,7 +2874,7 @@ endif]]></eval>
     <bootstrap thing="dRepWard">
       <autotag group="ClSpecWhen" tag="8"/>
       </bootstrap>
-    <exprreq message="Death Mage level 3 required."><![CDATA[#levelcount[DeathMage] >= 3]]></exprreq>
+    <exprreq message="Death Mage level 3 required."><![CDATA[#custspeciallevelcount[DeathMage] >= 3]]></exprreq>
     </thing>
   <thing id="spDthWvEx8" name="Waves of Exhaustion" description="Waves of negative energy cause all living creatures in the spell&apos;s area to become exhausted. This spell has no effect on a creature that is already exhausted." compset="Spell" summary="Several targets become exhausted.">
     <fieldval field="sRange" value="60 ft."/>
@@ -2950,25 +2950,25 @@ endif]]></eval>
   <thing id="fDthlesVig" name="Deathless Vigor" description="Your studies into the power of death and undeath allows you to resist the call of the grave a little longer than most.\n\n{b}Prerequisites{/b}: Death mage level 3rd, Con 13.\n\n{b}Benefit{/b}: You add the level of the highest level necromancy spell you can cast as a class ability to the negative hit point total you can reach before dying. You are disabled (rather than unconscious) when you are at a negative hit point total equal to or less than half the level of the highest level necromantic spell you can cast as a class ability." compset="Feat" summary="Gain a bonus to unconscious and dying negative hit point total." uniqueness="useronce">
     <usesource source="BP4DMF"/>
     <tag group="Helper" tag="ShowSpec"/>
-    <exprreq message="Death Mage level 3rd required."><![CDATA[#levelcount[DeathMage] >= 3]]></exprreq>
+    <exprreq message="Death Mage level 3rd required."><![CDATA[#custspeciallevelcount[DeathMage] >= 3]]></exprreq>
     <exprreq message="Constitution 13 required."><![CDATA[#attrvalue[aCON] >= 13]]></exprreq>
     </thing>
   <thing id="fRevenant" name="Revenant" description="When you die or are near death, spirits loyal to you form an undead body to carry out your bidding.\n\n{b}Prerequisites{/b}: Death mage level 8th, Cha 13.\n\n{b}Benefit{/b}: The first time each day you fall unconscious due to hit point loss or are killed, an undead creature is created to carry out your will.  You must have an onyx gem worth 25 gp per level on your person for this feat to take effect, and it is destroyed. The undead is created one round after you fall, and is a skeleton or zombie created as if you had cast {i}animate dead{/i}. The undead&#146;s body is formed from pure necromantic energy, no actual corpse is used. The undead acts as you would direct if you were  conscious, but cannot speak, write, or communicate words or ideas in any way.  It acts as you would wish, but does not have your skills, feats, or class abilities. The undead remains for 1 minute per level, until destroyed, or until you regain consciousness." compset="Feat" summary="When you die or are near death, spirits loyal to you form an undead body to carry out your bidding." uniqueness="useronce">
     <usesource source="BP4DMF"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
-    <exprreq message="Death Mage level 8th required."><![CDATA[#levelcount[DeathMage] >= 8]]></exprreq>
+    <exprreq message="Death Mage level 8th required."><![CDATA[#custspeciallevelcount[DeathMage] >= 8]]></exprreq>
     <exprreq message="Charisma 13 required."><![CDATA[#attrvalue[aCHA] >= 13]]></exprreq>
     </thing>
   <thing id="fStdntDead" name="Student of the Dead" description="You can use the mystic lore found in corpses to alter your spells.\n\n{b}Prerequisites{/b}: Death mage level 1st, Int 13.\n\n{b}Benefit{/b}: You can use dark secrets you hear in the whispers from the recently dead (which only you hear) to change what spells you have prepared. If you spend 15 minutes with a recent corpse (one that has died within 1 hour per your death mage level) you can change what spells you have prepared for the day (though any spell slot used for a prepared spell you have cast is not available to be filled by new prepared spells).\n\nIf you use this feat with spontaneous spellcasting classes, use this benefit: Once a day\nwhen you spend 15 or more minutes with a recent corpse you can swap out a spell known for a different spell known from your class spell list.  This spell cannot be the highest level spell you know, and it remains swapped out only until you next regain your daily allotment of spells." compset="Feat" summary="You can use the mystic lore found in corpses to alter your spells." uniqueness="useronce">
     <usesource source="BP4DMF"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
-    <exprreq message="Death Mage level 1st required."><![CDATA[#levelcount[DeathMage] >= 1]]></exprreq>
+    <exprreq message="Death Mage level 1st required."><![CDATA[#custspeciallevelcount[DeathMage] >= 1]]></exprreq>
     <exprreq message="Intelligence 13 required."><![CDATA[#attrvalue[aINT] >= 13]]></exprreq>
     </thing>
   <thing id="fVampirSpl" name="Vampiric Spell" description="You can call forge a link between you and the targets of your spells, using it to gain false vitality.\n\n{b}Prerequisites{/b}: Death mage level 1st.\n\n{b}Benefit{/b}: Any spell that has a saving throw of &#147;Fortitude half,&#148; &#147;Fortitude negates,&#148; &#147;Will half,&#148; or &#147;Will negates&#148; can be cast as a vampiric spell.  A vampiric spell&#146;s appearance is altered to be in dark colors (black, grey, purple and similar tones) and is accompanied by a moaning or howling noise (as the caster prefers). For each target that fails a Fort or Will save against the vampiric spell, you gain 1d4 temporary hit points (to a maximum number of hp equal to the spell&#146;s original level).  Temporary hit points from multiple uses of vampiric spells do not stack. A vampiric spell uses up a spell slot one level higher than the spell&#146;s actual level." compset="Feat" summary="Gain temporary hit points for each target failing a save." uniqueness="useronce">
     <usesource source="BP4DMF"/>
     <tag group="Helper" tag="ShowSpec" name="ShowSpec" abbrev="ShowSpec"/>
     <tag group="fCategory" tag="Metamagic"/>
-    <exprreq message="Death Mage level 1st required."><![CDATA[#levelcount[DeathMage] >= 1]]></exprreq>
+    <exprreq message="Death Mage level 1st required."><![CDATA[#custspeciallevelcount[DeathMage] >= 1]]></exprreq>
     </thing>
   </document>

@@ -622,7 +622,7 @@ hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Druid] - 
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Good] + tagis[Alignment.Lawful] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -1231,7 +1231,7 @@ hero.childfound[cDrrSteed].field[abValue].value += maximum(#levelcount[Wizard] -
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Good] + tagis[Alignment.Lawful] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -1579,7 +1579,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Good] + tagis[Alignment.Chaotic] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -1771,7 +1771,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Good] + tagis[Alignment.Chaotic] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -1964,7 +1964,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Good] + tagis[Alignment.Lawful] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -2168,7 +2168,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Evil] + tagis[Alignment.Lawful] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -2538,7 +2538,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Evil] + tagis[Alignment.Chaotic] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -2556,7 +2556,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Evil] + tagis[Alignment.Lawful] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -2742,7 +2742,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Evil] + tagis[Alignment.Lawful] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>
@@ -2927,7 +2927,7 @@ Endif]]></eval>
     <usesource source="sggDragRid"/>
     <tag group="gType" tag="Mounts" name="Mounts, Pets and Related Gear" abbrev="Mounts"/>
     <tag group="Helper" tag="NoPathSoc"/>
-    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#levelcount[Dragonrid] <> 0]]></exprreq>
+    <exprreq message="You must have at least one level in Dragonrider to take this mount."><![CDATA[#custspeciallevelcount[Dragonrid] <> 0]]></exprreq>
     <exprreq message="Wrong alignment to bond to this dragon.">tagis[Alignment.Evil] + tagis[Alignment.Chaotic] = 0</exprreq>
     <minion id="Mount">
       <tag group="Hero" tag="FixedRace" name="FixedRace" abbrev="FixedRace"/>

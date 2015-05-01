@@ -782,7 +782,7 @@
       </bootstrap>
     <exprreq message="Ki Pool edge required."><![CDATA[#hasability[cRG1KiPool] <> 0]]></exprreq>
     <exprreq message="Bastion Stance Talent required."><![CDATA[#hasability[cRG1BasSta] <> 0]]></exprreq>
-    <exprreq message="Monk level 8+ required."><![CDATA[#levelcount[Monk] >= 8]]></exprreq>
+    <exprreq message="Monk level 8+ required."><![CDATA[#custspeciallevelcount[Monk] >= 8]]></exprreq>
     </thing>
   <thing id="cRG1BasSta" name="Bastion Stance" compset="CustomSpec" uniqueness="unique">
     <usesource source="srcMonkTal"/>
