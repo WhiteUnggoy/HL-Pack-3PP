@@ -71,6 +71,7 @@
     <tag group="cAttack" tag="Medium"/>
     <tag group="cFort" tag="Good"/>
     <tag group="abCategory" tag="RGGMnkEdge" name="Talented Monk Edge"/>
+    <tag group="abCategory" tag="RGGMnkTlnt" name="Talented Monk Talent"/>
     <bootstrap thing="fWepMnk"></bootstrap>
     <eval phase="Render" priority="99999" index="2"><![CDATA[
 
@@ -727,14 +728,11 @@
     <tag group="AbilType" tag="Extra"/>
     <tag group="ProductId" tag="HLCommunit"/>
     <tag group="WepProf" tag="wUnarmed"/>
-    <eval phase="First" priority="20000" index="1"><![CDATA[
-
-      ~ Set weapon proficency to the hero
+    <eval phase="First" priority="20000">~ Set weapon proficency to the hero
       perform hero.pushtags[WepProf.?]
 
       ~ Set Talented Monk Attack Bonus tag to our Unarmed Strike
-      perform hero.childfound[wUnarmed].assign[wSpecial.RGTalMnkAB]
-      ]]></eval>
+      perform hero.childfound[wUnarmed].assign[wSpecial.RGTalMnkAB]</eval>
     <eval phase="PostLevel" priority="20000" index="4"><![CDATA[
       ~ Because we need our level count multiple times save it once 
       ~ in a local variable to save CPU time.
@@ -763,7 +761,60 @@
       hero.childfound[wUnarmed].field[wNumAttTbl].arrayvalue[1] = field[abValue3].value
       hero.childfound[wUnarmed].field[wNumAttTbl].arrayvalue[2] = field[abValue3].value
       hero.childfound[wUnarmed].field[wNumAttTbl].arrayvalue[3] = field[abValue3].value
-      hero.childfound[wUnarmed].field[wNumAttTbl].arrayvalue[5] = field[abValue3].value      
-      ]]></eval>
+      hero.childfound[wUnarmed].field[wNumAttTbl].arrayvalue[5] = field[abValue3].value]]></eval>
+    </thing>
+  <thing id="cRG1AdaMnk" name="Adamantine Monk" description="[Monk of the Sacred Mountain] The monk has muscles so strong and skin so resilient that he gains DR 1/ - . This DR increases by 1 at 12th level, and by an additional 1 at 16th level. As a swift action, the monk can spend 1 ki point to double his DR until the beginning of his next turn.\n\nA monk must be at least 8th level, have a ki pool, and have the bastion stance talent to select this talent." compset="CustomSpec" summary="Gain DR &amp; can send 1 Ki point to double this DR until the beginning of your next turn." uniqueness="unique">
+    <usesource source="srcMonkTal"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpRG1"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="abCategory" tag="RGGMnkTlnt"/>
+    <bootstrap thing="cRG1Adaman">
+      <autotag group="ClSpecWhen" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="cRG1Adaman">
+      <autotag group="ClSpecWhen" tag="12"/>
+      </bootstrap>
+    <bootstrap thing="cRG1Adaman">
+      <autotag group="ClSpecWhen" tag="16"/>
+      </bootstrap>
+    <exprreq message="Ki Pool edge required."><![CDATA[#hasability[cRG1KiPool] <> 0]]></exprreq>
+    <exprreq message="Bastion Stance Talent required."><![CDATA[#hasability[cRG1BasSta] <> 0]]></exprreq>
+    <exprreq message="Monk level 8+ required."><![CDATA[#levelcount[Monk] >= 8]]></exprreq>
+    </thing>
+  <thing id="cRG1BasSta" name="Bastion Stance" compset="CustomSpec" uniqueness="unique">
+    <usesource source="srcMonkTal"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <tag group="SpecSource" tag="cHelpRG1"/>
+    <tag group="abCategory" tag="RGGMnkTlnt"/>
+    </thing>
+  <thing id="cRG1Adaman" name="Adamantine Monk" description="[Monk of the Sacred Mountain] The monk has muscles so strong and skin so resilient that he gains DR 1/ - . This DR increases by 1 at 12th level, and by an additional 1 at 16th level. As a swift action, the monk can spend 1 ki point to double his DR until the beginning of his next turn.\n\nA monk must be at least 8th level, have a ki pool, and have the bastion stance talent to select this talent." compset="ClSpecial" summary="Gain DR &amp; can send 1 Ki point to double this DR until the beginning of your next turn.">
+    <fieldval field="actName" value="1 Ki"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="ProductId" tag="HLCommunit"/>
+    <eval phase="PostLevel" priority="10000"><![CDATA[
+      ~ Set the list name
+      field[listname].text = field[thingname].text & " DR " & field[xIndex].value & "/-"
+
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] <> 1)
+      ~ if we've been disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      field[abValue].value += field[xCount].value
+      field[livename].text = field[thingname].text & " DR " & field[abValue].value & "/-"
+
+      ~ The following should only happen once on the first copy
+      doneif (tagis[Helper.FirstCopy] = 0)
+      
+      ~ If ability is active then double its value
+      if (field[abilActive].value = 1) then
+        field[abValue].value *= 2
+      endif
+
+      #applydr[xDamRd, field[abValue].value]]]></eval>
     </thing>
   </document>
