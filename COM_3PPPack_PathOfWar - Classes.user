@@ -846,7 +846,7 @@
       field[trkMax].value += #attrmod[aWIS]
 
       field[abValue].value = field[xAllLev].value]]></eval>
-    <exprreq message="Stalker level 11 required"><![CDATA[#featlevelcount[PWStalker] >= 11]]></exprreq>
+    <exprreq message="Stalker level 11 required"><![CDATA[#custspeciallevelcount[PWStalker] >= 11]]></exprreq>
     </thing>
   <thing id="cPW2MndBnd" name="Mind Bending" description="The stalker&apos;s inner sense learns the workings of another being&apos;s mind, granting him the ability to impose his own will over those weak enough to succumb to this art. As a standard action, the character spends one ki point and must make eye contact with the target creature and begin speaking to them, using his ki to influence his target&apos;s thoughts. The target then must make a Will save (DC 13 + the stalker&apos;s Wisdom modifier) or be subject to a charm monster spell. Minimum stalker level 5th." compset="CustomSpec" summary="Spend ki to charm monster" uniqueness="unique">
     <usesource source="srcPathOfW"/>
@@ -863,7 +863,7 @@
 
       ~ Save DC is 13 + WIS mod
       field[abDC].value = 13 + #attrmod[aWIS]]]></eval>
-    <exprreq message="Stalker level 5 required"><![CDATA[#featlevelcount[PWStalker] >= 5]]></exprreq>
+    <exprreq message="Stalker level 5 required"><![CDATA[#custspeciallevelcount[PWStalker] >= 5]]></exprreq>
     </thing>
   <thing id="cPW2MonWep" name="Monastic Weapon Training" description="The stalker gains the Improved Unarmed Strike feat and gains proficiency with all weapons that are considered monk weapons." compset="CustomSpec" summary="Gain Improved Unarmed Strike and monk proficiencies" uniqueness="unique">
     <usesource source="srcPathOfW"/>
@@ -928,7 +928,7 @@
       field[abDC].value = 15 + #attrmod[aWIS]
       ~ Duration is WIS minutes
       field[abDuration].value = #attrmod[aWIS]]]></eval>
-    <exprreq message="Stalker level 7 required"><![CDATA[#featlevelcount[PWStalker] >= 7]]></exprreq>
+    <exprreq message="Stalker level 7 required"><![CDATA[#custspeciallevelcount[PWStalker] >= 7]]></exprreq>
     </thing>
   <thing id="cPW2PhmRch" name="Phantom Reach" description="The stalker is capable of extending the reach of melee range martial strikes by infusing ki into the maneuver, causing a phantom echo to rush towards the enemy and initiate the attack. As a swift action, the stalker may spend one ki point and initiate a melee martial strike with a range of melee attack as if it instead had a range of close (25-ft. + 5-ft. / 2 levels). Strikes with a range greater than melee attack do not function with this art." compset="CustomSpec" summary="Make martial strikes at range" uniqueness="unique">
     <usesource source="srcPathOfW"/>
