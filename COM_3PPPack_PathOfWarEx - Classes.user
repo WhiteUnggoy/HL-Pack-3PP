@@ -735,8 +735,8 @@ abValue2 stores the extra bonus vs Claimed targets</comment>
       focus.field[PenSacred].value = hero.child[aINT].field[PenSacred].value
       focus.field[BonTrait].value = hero.child[aINT].field[BonTrait].value
       focus.field[PenTrait].value = hero.child[aINT].field[PenTrait].value]]></eval>
-    <eval phase="First" priority="500"><![CDATA[      ~ If we're not shown, just get out now
-      ~doneif (tagis[Helper.ShowSpec] = 0)
+    <eval phase="First" priority="500"><![CDATA[      ~we're earlier than the normal test for whether we've reached the correct level, so we'll recreate that test here
+      doneif (root.linkage[varies].field[cTotalLev].value + field[xExtraLev].value + field[xEffectLev].value < tagvalue[ClSpecWhen.?]) 
       ~ If we're disabled, just get out now
       doneif (tagis[Helper.SpcDisable] <> 0)
 
