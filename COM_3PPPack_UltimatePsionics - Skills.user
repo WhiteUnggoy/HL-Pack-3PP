@@ -11,13 +11,28 @@
     <tag group="ProductId" tag="PUProdID"/>
     <link linkage="skillattr" thing="aWIS"/>
     </thing>
-  <thing id="skPUKnwPsi" name="Knowledge (psionics)" description="You have studied the lore and discipline of Psionics (ancient mysteries, psionic traditions, psychic symbols, cryptic phrases, astral constructs, and psionic races)." compset="Skill" uniqueness="unique">
+  <thing id="skPUKnwPsi" name="Knowledge (psionics)" description="Knowledge (psionics) covers ancient mysteries, psionic traditions, psychic symbols, cryptic phrases, astral constructs, and psionic races. You can use this skill to identify psionic monsters and their special powers or vulnerabilities.\n\n{b}Untrained:{/b} An untrained Knowledge (psionics) check is simply an Intelligence check. Without actual training, you know only common knowledge (DC 10 or lower)." compset="Skill" summary="You have studied the lore and discipline of Psionics (ancient mysteries, psionic traditions, psychic symbols, cryptic phrases, astral constructs, and psionic races)." uniqueness="unique">
     <fieldval field="skShortNm" value="Know (Psionics)"/>
+    <fieldval field="skAbbrev" value="Psionics"/>
+    <arrayval field="skUnlocks" index="4" value="When you successfully identify a creature, you gain one additional piece of information for every 5 ranks you possess in that Knowledge skill."/>
+    <arrayval field="skUnlocks" index="9" value="When you successfully identify a creature, you gain a +1 competence bonus on attack rolls, opposed ability checks, skill checks, and caster level checks against creatures of that kind (e.g., glabrezu demons, but not other demons or evil outsiders) for 1 minute. This bonus increases by 1 for every 5 ranks beyond 10 you possess in that Knowledge skill."/>
+    <arrayval field="skUnlocks" index="14" value="When you fail a Knowledge check, you can reroll the check at a –10 penalty. The competence bonus above also applies to saving throws against exceptional, spell-like, or supernatural abilities used by creatures you identify."/>
+    <arrayval field="skUnlocks" index="19" value="Whenever you attempt a Knowledge check, you can roll twice and take the better result."/>
     <usesource source="pPsiUn"/>
+    <tag group="ClassSkill" tag="Knowledge"/>
     <tag group="Helper" tag="TrainOnly" name="TrainOnly" abbrev="TrainOnly"/>
     <tag group="Helper" tag="ExtraSkill" name="ExtraSkill" abbrev="ExtraSkill"/>
     <tag group="Helper" tag="SkCatKnow" name="Knowledge Skill" abbrev="Knowledge Skill"/>
     <tag group="ProductId" tag="PUProdID"/>
+    <link linkage="skillattr" thing="aINT"/>
+    </thing>
+  <thing id="cskPUPsion" name="Psionics" description="{B}Consolidated Skills are not correctly working for Psionic Characters{/b}\n\n{b}Functions{/b}:  Research into ancient mysteries, psionic traditions, psychic symbols, cryptic phrases, astral constructs, and psionic races. You can use this skill to identify psionic monsters and their special powers or vulnerabilities.\n\n{b}Core Skills{/b}: Knowledge (psionics), Autohypnosis" compset="Skill" uniqueness="unique">
+    <usesource source="PUConsSkil"/>
+    <tag group="ProductId" tag="PUProdID"/>
+    <tag group="Helper" tag="ConsSkill"/>
+    <tag group="IncorpSkl" tag="skPUAhypno"/>
+    <tag group="IncorpSkl" tag="skPUKnwPsi"/>
+    <tag group="Helper" tag="TrainOnly"/>
     <link linkage="skillattr" thing="aINT"/>
     </thing>
   </document>
