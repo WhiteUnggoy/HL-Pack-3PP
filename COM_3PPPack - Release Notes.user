@@ -8,6 +8,48 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
+<strong>v1.8 May 3, 2015</strong>
+
+<strong>Bug Fixes</strong>
+<ul>
+<li>Ultimate Psionics (psych777) - Updated Gifted Blade to count Wisdom for bonus power points.</li>
+<li>Ultimate Psionics (ShadowChemosh) - Fixed issue #44 issue. This should resolve the issue of taking a Psionic Race and Soulknife class.</li>
+<li>Ultimate Psionics (ShadowChemosh) - Fixed issues #45,#42,#43. The "Gifted Blade" Manifester Level should now calculate correctly for being Class Level minus 2 instead of CL equal to ML.</li>
+<li>Ultimate Psionics (ShadowChemosh) - "Psionic Talent" now adds an extra 1PP per time it is taken.</li>
+<li>Ultimate Psionics (ShadowChemosh) - Fixed "Gifted Blade" to calculate PP as if we have a 0ML.</li>
+<li>Ultimate Psionics (psych777) -  This fixed issue #47. "Psionic Item Familiarity" trait now gives UMD as a class skill and adds a +1 trait bonus. Trait set to only be taken once.</li>
+<li>Path of War (TheIronGolem) - Fixed a bug with validating number of maneuvers readied when multiple initiating classes are present (was using IL where it should have used class level).</li>
+<li>Path of War (TheIronGolem) - Fixed validation bug with multiclass initiators having too many stances active.</li>
+<li>RGG - Feats, More Horrifically Overpowered (ShadowChemosh) - Correctly source marked all feats.</li>
+<li>RGG - Air Magic (ShadowChemosh) - Fixed spells "Control Winds" and "Whirlwind" that where doing a Replace Thing ID vs the core spells. This means before if you didn't have "Air Magic" source turned on you could not see these spells.</li>
+</ul>
+<strong>New Features</strong>
+<ul>
+<li>FGG - Fire as She Bears (ShadowChemosh) - Added my Fire As She Bears ship building HL addon from my house-rules file. This is about 85% complete. To build a new ship you turn on the "Fire as She Bears" source and then on the "Background" tab add the race "Fire as She Bears, Ship". NOTE: For those PCs/NPCs turning on "Fire as She Bears" is useful as new Ability displays on the "In-Play" tab allowing for setting "Getting the Gauge" and "Aboard a Moving Ship".</li>
+<li>RGG - The Talented Monk (ShadowChemosh) - Started to add the "Talented Monk" alternate class. Please note this is a work  in progress and is only about 50% entered at this time. What is entered is 100% scripted and working.</li>
+<li>Path of War Expanded (TheIronGolem) - Updated the Harbinger to release, removed Playtest tag.</li>
+<li>Path of War Expanded (TheIronGolem) - Updated maneuvers from Cursed Razor and Shattered Mirror disciplines to match release.</li>
+<li>Path of War Expanded (TheIronGolem) - Added the "Crimson Countess" archetype.</li>
+<li>Path of War Expanded (TheIronGolem) - Added the "Ravenlord archetype" and its animal companion.  Ravenlord's animal companion now gets its INT score set automatically. Not sure if it's intended to include bonuses, so I am assuming "no" while I await confirmation from DSP.</li>
+<li>Path of War Expanded (TheIronGolem) - Added all Discipline Style Feats.</li>
+<li>Path of War Expanded (TheIronGolem) - Added Tempest Gale, Piercing Thunder and Elemental Flux disciplines (just the discipline objects, no maneuvers or stances yet). Added the "Cursed" condition.</li>
+<li>Path of War Expanded (TheIronGolem) - Added the "Cursed" condition when "Path of War Expaned" source is turned on. Many techniques of Cursed Razor cause a creature to gain the cursed condition.</li>
+<li>Ultimate Psionics (psych777) - Added feats: Defensive Tactics, Dispelling Static, Ectoplasmic Power, Efficient Aid, Elemental Blast, Empowered Shot, Enervation Fortitude, Enhanced Steal Life & Enlarged Collective.</li>
+<li>Ultimate Psionics (ShadowChemosh) - The feat "Persistent Focus" was added and the partial logic is in place to support it. So please not this will not work with all abilities.</li>
+</ul>
+<strong>Data File Authoring</strong>
+<ul>
+<li>Ultimate Psionics (ShadowChemosh) - Moved the creation of the abAction.PUExpFocus to be on the PU Mechanic in the 'Helper Things' file.</li>
+<li>Ultimate Psionics (ShadowChemosh) - Made a new class special to do all the adjustments required for lowering the ML of a class by 2. See notes in forum post http://forums.wolflair.com/showpost.php?p=203850&postcount=4</li>
+<li>Ultimate Psionics (TheIronGolem) - New tag: abAction.PUManFocus, this is for abilities that require psionic focus to be maintained to function. Feat effects coded: Mental Leap, Psionic Dodge. Speed of Thought can now benefit from Persistent Focus. Added abAction.PUExpFocus and abAction.PUManFocus tags to feats that require expending or maintaining psi-focus.</li>
+<li>Ultimate Psionics (psych777) - Harness Shard - removed AddOnce, added Herolab Community product ID, made it activateable in InPlay tab as description said each shard had to be activated on their own. Maybe a mechanism needed to differentiate which shard is chosen?</li>
+<li>Ultimate Psionics (ShadowChemosh) - Updated the UP Procedure PUPreReqs to correctly incorporate the new #custspeciallevelcount[] macro logic.</li>
+<li>Path of War (TheIronGolem)- Updated custom class specials to use #custspeciallevelcount instead of #featlevelcount.</li>
+<li>3PP Pack (ShadowChemosh) - Updated Custom Class Specials to use the new #custspeciallevelcount[] macro: Death Mage, Dragonrider, Talented Monk, and UP Classes. </li>
+<li>Unchained Skills 3PP Pack (ShadowChemosh) - Started work on getting some of the Unchained Skill variant rules put into Psionics and Path of War. Multiple issues/errors found and currently "Consolidated Skills" variant rules do not work correctly for 3PP Classes.</li>
+</ul>
+
+
 <strong>v1.7 March 29, 2015</strong>
 
 <strong>Bug Fixes</strong>
