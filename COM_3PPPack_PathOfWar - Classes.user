@@ -1712,7 +1712,7 @@ endif]]></eval>
     </thing>
   <thing id="cHelpPWPC1" name="Battle Templar" compset="Class" uniqueness="unique">
     <fieldval field="cHDSides" value="8"/>
-  <fieldval field="srcBookInf" value=" [PoW]"/>
+    <fieldval field="srcBookInf" value=" [PoW]"/>
     <fieldval field="cAbbr" value="BTm"/>
     <fieldval field="cSkills" value="4"/>
     <arrayval field="cMagLevTot" index="1" value="1"/>
@@ -1937,27 +1937,24 @@ endif]]></eval>
     <tag group="ProductId" tag="HLCommunit"/>
     </thing>
   <thing id="cPWP1MrtHl" name="Martial Healing" description="The battle templar&apos;s divine power is so firmly blended with his martial talents that when he utilizes a martial maneuver, the power of his faith infuses it and aids him and his allies. When the battle templar initiates a martial strike, as a swift action he can heal himself or an ally within close range (25 ft. plus 5 ft. per two initiator levels) for 1d4/maneuver level + the battle templar&apos;s class level in hit points." compset="ClSpecial" summary="Heal self or ally when you initiate a strike">
-    <fieldval field="abValue" value="25"/>
+    <fieldval field="abRange" value="25"/>
     <fieldval field="abValue2" value="5"/>
     <tag group="LvNamePar" tag="AppText"/>
     <tag group="LvNamePar" tag="IncRange"/>
     <tag group="AbilType" tag="Super"/>
     <tag group="abAction" tag="Swift"/>
     <tag group="abRange" tag="Feet"/>
-    <eval phase="PostAttr" priority="10000"><![CDATA[      ~ If we're not shown, just get out now
+    <eval phase="Final" priority="50000"><![CDATA[      
+      ~ If we're not shown, just get out now
       doneif (tagis[Helper.ShowSpec] <> 1)
       ~ if we've been disabled, get out now
       doneif (tagis[Helper.SpcDisable] <> 0)
 
       ~ Range is 25 ft + 5 ft per two initiator levels
-      var halfIL as number
-      var addRange as number
-      field[abRange].value = field[abValue].value
-      halfIL = round(root.field[cCasterLev].value/2, 0, -1)
-      addRange = halfIL * field[abValue2].value
-      field[abRange].value += addRange
+      field[abRange].value += (round(hero.child[mHelpPWPC1].field[cIL].value/2, 0, -1)) * 5
 
-      field[abText].text = #levelcount[PWBtlTmpl] & " + 1d4/maneuver level HP"]]></eval>
+      field[abText].text = field[xTotalLev].value & " + 1d4/maneuver level HP"
+      ]]></eval>
     </thing>
   <thing id="cPWP1DvRec" name="Divine Recovery" description="Beginning at 4th level, a battle templar may channel divine power to recharge his martial maneuvers. As a swift action, the character can recover an expended maneuver by sacrificing a spell with a level equal to or greater than the maneuver&apos;s. If the spell&apos;s level is higher than the maneuver&apos;s level, then additional level &quot;overage&quot; restores 1d8 hit points of damage to the battle templar per excess spell level." compset="ClSpecial" summary="Recover maneuvers by expending spell slots">
     <tag group="ProductId" tag="HLCommunit"/>

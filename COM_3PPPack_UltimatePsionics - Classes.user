@@ -7180,23 +7180,19 @@ field[abSumm].text = "+" & MyBonus & " Insight bonus to Intimidate."]]></eval>
   <thing id="cPUDevaTou" name="Devastating Touch" description="A dread is able to channel psionic energy from fear and nightmares into a touch that causes pain. To use this ability, a dread must make a melee touch attack as a standard action on a living target. If the attack hits, it deals 1d6 points of damage plus 1 point per class level. The dread does not add his Strength modifier to the damage of this attack." compset="ClSpecial">
     <usesource source="pPsiUn"/>
     <tag group="AbilType" tag="Super"/>
-    <eval phase="Final" priority="10000"><![CDATA[var myPts as number
-var myTimes as number
+    <eval phase="Final" priority="10000"><![CDATA[
+      ~ Set the list name
+      field[listname].text = field[name].text & " (" & field[xIndex].value & "d6+" & field[xTotalLev].value & ")"
 
-myPts = field[xIndex].value
-myTimes = 4 + #attrbonus[aINT]
+      ~ If we've been Disabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      ~ If we're not shown, just get out now
+      doneif (tagis[Helper.ShowSpec] = 0)
 
-field[abValue].value += myPts
+      field[abValue].value += field[xCount].value
 
-field[listname].text = "Devastating Touch (" & field[abValue].value & "d6+" & #levelcount[Dread] & ")"
-
-~These calculations should only happen for the first copy
-doneif (tagis[Helper.FirstCopy] = 0)
-
-~ If we're not shown, just get out now
-doneif (tagis[Helper.ShowSpec] = 0)
-
-field[livename].text = "Devastating Touch (" & field[abValue].value & "d6+" & #levelcount[Dread] & ")"]]></eval>
+      field[livename].text = field[name].text & " (" & field[abValue].value & "d6+" & field[xTotalLev].value & ")"
+      ]]></eval>
     </thing>
   <thing id="cPUAuraFea" name="Aura of Fear" description="At 3rd level, a dread radiates a palpably daunting aura that causes all enemies within 10 feet to take a –4 penalty on saving throws against fear effects. Creatures that are normally immune to fear lose that immunity while within 10 feet of a dread with this ability. This ability functions only while the dread remains conscious, not if she is unconscious or dead." compset="ClSpecial">
     <usesource source="pPsiUn"/>
