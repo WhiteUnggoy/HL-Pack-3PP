@@ -8,6 +8,25 @@
       ]]>
       </info_author>
     <info_history><![CDATA[
+<strong>v1.9 May 5, 2015</strong>
+
+<strong>Bug Fixes</strong>
+<ul>
+<li>Fix Load error with Pathfinder v11.2.</li>
+</ul>
+<strong>New Features</strong>
+<ul>
+<li>None</li>
+</ul>
+<strong>Data File Authoring</strong>
+<ul>
+<li>#levelcount[] macro can't be used inside of string operations anymore.</li>
+<li>Syntax error in 'eval' script for Thing 'cPUDevaTou' (Eval Script '#1') on line 9
+  -> Error in right-side expression of assignment
+Syntax error in 'eval' script for Thing 'cPWP1MrtHl' (Eval Script '#1') on line 14
+  -> Error in right-side expression of assignment</li>
+</ul>
+
 <strong>v1.8 May 3, 2015</strong>
 
 <strong>Bug Fixes</strong>
