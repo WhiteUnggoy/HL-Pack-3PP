@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>This file is an unofficial adaptation of content found in Animal Races: Clan of the Raptor from Eric Morton Presents. Animal Races, Clan of the Raptor, and Eric Morton Presents are trademarks of Eric Morton, and are used here with permission.
+
+Clan of the Raptor can be found for purchase at the following link:
+http://www.rpgnow.com/product/146573/Animal-Races-Clan-of-the-Raptor?term=clan+of+the+raptor
+
+Initial HL file created by Bennett Selchow aka WhiteUnggoy, 2015.</info_author>
+    <info_history>Version 1.0 — by Bennett Selchow (WhiteUnggoy), 2015
+    - Initial release</info_history>
+    </fileinfo>
+  <thing id="rcEMPRapMe" name="Medium Size" description="+2 Dexterity, –2 Strength. You receive no other bonuses or penalties due to size." compset="RaceCustom" uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="AllowRCust" tag="rEMPRaptCl"/>
+    <eval phase="First" priority="200"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find our race, and set ability scores
+      perform hero.findchild[BaseRace].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[rSTR].value -= 2
+      focus.field[rDEX].value += 2
+
+      ~ Set Height & Weight info
+      focus.field[rHeightMnF].value = 50
+      focus.field[rHeightMnM].value = 48
+      focus.field[rWeightMnF].value = 75
+      focus.field[rWeightMnM].value = 55
+
+      perform focus.assign[HeightSize.6]
+      perform focus.assign[WeightMult.5]]]></eval>
+    </thing>
+  <thing id="rcEMPRapSm" name="Small Size" description="+2 Dexterity, –2 Strength. You gain a +1 size bonus to Armor Class, a +1 size bonus to attack rolls, a –1 penalty to your Combat Maneuver Bonus and Combat Maneuver Defense due to size, and a +4 size bonus on Stealth checks." compset="RaceCustom" uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="Helper" tag="Secondary"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="AllowRCust" tag="rEMPRaptCl"/>
+    <eval phase="First" priority="200"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      perform hero.findchild[BaseRace].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[rSpeed].value -= 10
+      focus.field[rSTR].value -= 2
+      focus.field[rDEX].value += 2
+
+      ~ Set Height & Weight info
+      focus.field[rHeightMnF].value = 28
+      focus.field[rHeightMnM].value = 24
+      focus.field[rWeightMnF].value = 30
+      focus.field[rWeightMnM].value = 23
+
+      perform focus.assign[WeightMult.1]
+
+      if (hero.tagis[Hero.Female] <> 0) then
+        perform focus.assign[HeightSize.10]
+
+      elseif (hero.tagis[Hero.Male] <> 0) then
+        perform focus.assign[HeightSize.12]
+        endif]]></eval>
+    <eval phase="First" priority="20000" index="2"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      var sizemod as number
+      sizemod = -1
+      call SizeChange]]></eval>
+    </thing>
+  <thing id="rcEMPRapEC" name="Eagle Clan" description="Members of your clan resemble eagles when using their change shape ability. You gain a +2 racial bonus to Charisma, and treat all instances of “lawful good” in the paladin class description as if they read “chaotic good,” instead. Whenever you could select a mercy with the paladin&apos;s mercy class feature, you may instead choose to gain the Raptor Clan Heritage feat as a bonus feat." compset="RaceCustom" summary="Appear as an eagle when you shapechange, gain heritage as CG Paladin." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AllowRCust" tag="rEMPRaptCl"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <eval phase="First" priority="200"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find the race, change name and we get +2 CHA
+      perform hero.findchild[BaseRace].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[livename].text = field[thingname].text
+      focus.field[rCHA].value += 2
+
+      perform state.clearfocus
+
+      ~ Find the paladin class, if any, and change alignment prereqs
+      perform hero.childfound[cHelpPal].setfocus
+      doneif (state.isfocus = 0)
+
+      perform focus.delete[AlgnReq.LawGood]
+      perform focus.assign[AlgnReq.ChaotGood]]]></eval>
+    </thing>
+  <thing id="cPalEMPRap" name="Feat (Raptor Clan Heritage)" description="Gain Raptor Clan Heritage as a bonus feat." compset="CustomSpec">
+    <tag group="SpecSource" tag="cHelpPal" name="Paladin" abbrev="Paladin"/>
+    <tag group="abCategory" tag="PalMercy" name="Paladin Mercy" abbrev="Paladin Mercy"/>
+    <tag group="DescInfo" tag="fEMPRapRCH"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <bootstrap thing="fEMPRapRCH"></bootstrap>
+    <exprreq message="Raptor Clan race required."><![CDATA[#hasrace[rEMPRaptCl] <> 0]]></exprreq>
+    <exprreq message="Eagle Clan heritage required."><![CDATA[#hasability[rcEMPRapEC] <> 0]]></exprreq>
+    <prereq message="May only be taken once, plus once per two character levels.">
+      <validate><![CDATA[      ~Valid when taken at 1st, 2nd, 4th, 6th, 8th, and 10th level
+
+      if (@ispick <> 0) then
+
+        validif ( (hero.tagcount[HasFeat.fEMPRapRCH] - 1) <= round(#totallevelcount[]/2, 0, -1) )
+
+      else
+
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= round(#totallevelcount[]/2, 0, -1) )
+        endif]]></validate>
+      </prereq>
+    <prereq message="May be taken no more than six times.">
+      <validate><![CDATA[      ~Valid up to six times
+
+      if (@ispick <> 0) then
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= 6)
+
+      else
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= 5)
+        endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="raEMPRapNA" name="Natural Armor" description="You gain a +1 natural armor bonus. At character level 10th, this bonus increases to +2." compset="RaceSpec">
+    <usesource source="EMPRaptor"/>
+    <eval phase="UserPostLv" priority="1000"><![CDATA[      doneif (#totallevelcount[] < 10)
+      hero.child[ArmorClass].field[tACNatural].value += 1]]></eval>
+    </thing>
+  <thing id="raEMPRapCS" name="Change Shape" description="Once per day as a standard action that does not provoke attacks of opportunity, you can assume the form of a bird of your size category. The appearance of your bird form is identical every time you use this ability. While in bird form, your base land speed is reduced to 10 feet but you gain a fly speed of 60 feet (average maneuverability). In bird form, you loose any natural weapons other than bite, talon, and wing attacks. Your other statistics are unchanged. You can remain in bird form for up to 1 minute per character level, but can resume your normal form as a standard action. You also resume your normal form if you die. This change shape ability is a polymorph effect (and thus causes your any gear on your person to meld with your body when you are in your bird form)." compset="RaceSpec" summary="Change into a bird of your size, resembling your clan." uniqueness="unique">
+    <fieldval field="trkMax" value="1"/>
+    <fieldval field="abValue" value="60"/>
+    <usesource source="EMPRaptor"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Usage" tag="Day"/>
+    <tag group="User" tag="Activation"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="abDuration" tag="Minute"/>
+    <tag group="LvNamePar" tag="IncDurati"/>
+    <tag group="User" tag="Tracker"/>
+    <eval phase="UserPostLv" priority="1000" index="3"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Duration is equal to 1 min./level
+      field[abDuration].value = #totallevelcount[]]]></eval>
+    <eval phase="First" priority="10000" index="2"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not active, get out now
+      doneif (field[abilActive].value = 0)
+
+      ~ Apply the Fly speed
+      hero.childfound[xFly].field[abValue].value = maximum(hero.childfound[xFly].field[abValue].value, field[abValue].value)]]></eval>
+    <eval phase="First" priority="205"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ If we're not active, get out now
+      doneif (field[abilActive].value = 0)
+
+      perform hero.findchild[BaseRace].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[rSpeed].value = 10]]></eval>
+    </thing>
+  <thing id="cfgEMPRapR" name="Raptor Clan Heritage" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Racial Traits"/>
+    <usesource source="EMPRaptor"/>
+    </thing>
+  <thing id="fEMPRapRCH" name="Raptor Clan Heritage" description="Your anatomy is similar to that of an eagle or hawk.\n\n{b}Prerequisites:{/b} Eagle Clan or Hawk Clan racial trait.\n\n{b}Benefit:{/b} When you gain this feat, choose one of the following additional racial traits: avid shapechanger, improved bite, superior flight, or talons. If you already have all four of these racial traits, you may instead choose raptor&apos;s dive or true shapechanger. You gain the chosen racial trait.\n\n{b}Special:{/b} For every two levels you possess, you can take this feat one additional time (up to a maximum of six times), selecting a different additional racial trait each time." compset="Feat" summary="Your anatomy is similar to that of an eagle or hawk.">
+    <bootstrap thing="cfgEMPRapR"></bootstrap>
+    <eval phase="First" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find the Raptor Clan config, and add 1 to the number of abilities allowed
+      perform hero.childfound[cfgEMPRapR].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[cfgMax1].value += 1]]></eval>
+    <exprreq message="Eagle Clan or Hawk Clan racial trait required."><![CDATA[#hasability[rcEMPRapEC] + #hasability[rcEMPRapHC] <> 0]]></exprreq>
+    <exprreq message="Raptor Clan race required."><![CDATA[#hasrace[rEMPRaptCl] <> 0]]></exprreq>
+    <prereq message="May be taken no more than six times.">
+      <validate><![CDATA[      ~Valid up to six times
+
+      if (@ispick <> 0) then
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= 6)
+
+      else
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= 5)
+        endif]]></validate>
+      </prereq>
+    <prereq message="May only be taken once, plus once per two character levels.">
+      <validate><![CDATA[      ~Valid when taken at 1st, 2nd, 4th, 6th, 8th, and 10th level
+
+      if (@ispick <> 0) then
+
+        validif ( (hero.tagcount[HasFeat.fEMPRapRCH] - 1) <= round(#totallevelcount[]/2, 0, -1) )
+
+      else
+
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= round(#totallevelcount[]/2, 0, -1) )
+        endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="rcEMPRapSc" name="Scent" description="You gain the scent universal monster ability." compset="RaceCustom" uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="Helper" tag="SpecUp" name="SpecUp" abbrev="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="AllowRCust" tag="cfgEMPRapV"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <bootstrap thing="xScent"></bootstrap>
+    </thing>
+  <thing id="rcEMPRapAS" name="Avid Shapechanger" description="You can use your change shape racial trait up to three times per day, and can remain in bird form for up to 1 hour per character level each time." compset="RaceCustom" summary="Improve change shape to 3/day, 1 hour/level." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AllowRCust" tag="cfgEMPRapO"/>
+    <tag group="AllowRCust" tag="cfgEMPRapV"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="AllowRCust" tag="cfgEMPRapR"/>
+    <eval phase="First" priority="500">~ If we&apos;re not enabled get out now
+      doneif (tagis[Helper.SpcDisable] &lt;&gt; 0)
+
+      ~ If we have True Shapechanger, and it’s not disabled, get out
+
+      perform hero.childfound[rcEMPRapTS].setfocus
+      if (state.isfocus &lt;&gt; 0) then
+        doneif (focus.tagis[Helper.SpcDisable] = 0)
+        endif
+
+      perform state.clearfocus
+
+      ~ Find Change Shape
+      perform hero.childfound[raEMPRapCS].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Increase usage to 3, and change duration from minutes to hours
+      focus.field[trkMax].value += 2
+      perform focus.delete[abDuration.Minute]
+      perform focus.assign[abDuration.Hour]
+
+      #appenddesc[raEMPRapCS,&quot;{b}Addition from Avid Shapechanger:{/b}\nYou can use your change shape racial trait up to three times per day, and can remain in bird form for up to 1 hour per character level each time.&quot;]</eval>
+    </thing>
+  <thing id="rcEMPRapIB" name="Improved Bite" description="The damage dealt by your bite attack increases to 1d6 if you are Medium, 1d4 if you are Small." compset="RaceCustom" summary="The damage dealt by your bite attack increases." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="AllowRCust" tag="cfgEMPRapO"/>
+    <tag group="AllowRCust" tag="cfgEMPRapV"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="AllowRCust" tag="cfgEMPRapR"/>
+    <eval phase="First" priority="500"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find Bite
+      perform hero.childfound[wBite].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Upgrade damage of this weapon
+      perform focus.assign[Helper.DamageUp]]]></eval>
+    </thing>
+  <thing id="rcEMPRapTa" name="Talons" description="You gain two talon attacks. Each is a primary natural attack which deals 1d4 points of damage if you are Medium, 1d3 points of damage if you are Small." compset="RaceCustom" summary="Gain two talon attacks." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AllowRCust" tag="cfgEMPRapO"/>
+    <tag group="AllowRCust" tag="cfgEMPRapV"/>
+    <tag group="AllowRCust" tag="cfgEMPRapR"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <bootstrap thing="wTalon">
+      <autotag group="wMain" tag="1d4"/>
+      <autotag group="Value" tag="2"/>
+      </bootstrap>
+    </thing>
+  <thing id="rcEMPRapRD" name="Raptor&apos;s Dive" description="When making a charge attack, you deal double damage if you were 10 or more feet above the target of your charge attack when you began your charge." compset="RaceCustom" summary="Double damage when your charge starts 10 ft. above target." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="AllowRCust" tag="cfgEMPRapO"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="AllowRCust" tag="cfgEMPRapR"/>
+    <exprreq message="Avid Shapechanger racial trait required."><![CDATA[#hasability[rcEMPRapAS] <> 0]]></exprreq>
+    <exprreq message="Improved Bite racial trait required."><![CDATA[#hasability[rcEMPRapIB] <> 0]]></exprreq>
+    <exprreq message="Talons racial trait required."><![CDATA[#hasability[rcEMPRapTa] <> 0]]></exprreq>
+    <prereq message="Stealthy Flight racial trait required.">
+      <validate><![CDATA[      ~Applies to Owls only, so valid otherwise
+      validif (#hasability[rcEMPRapOC] = 0)
+
+      ~Valid if we have Stealthy Flight
+      validif (#hasability[rcEMPRapSt] <> 0)]]></validate>
+      </prereq>
+    <prereq message="Superior Flight racial trait required.">
+      <validate><![CDATA[      ~Applies to Hawks and Eagles only, so valid otherwise
+      validif (#hasability[rcEMPRapEC] + #hasability[rcEMPRapHC] = 0)
+
+      ~Valid if we have Superior Flight
+      validif (#hasability[rcEMPRapSu] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="rcEMPRapTS" name="True Shapechanger" description="You can use your change shape racial trait any number of times per day, and can remain in your bird form indefinitely." compset="RaceCustom" summary="Change shape as long and as often as you want." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AbilType" tag="Super"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AllowRCust" tag="cfgEMPRapO"/>
+    <tag group="AllowRCust" tag="cfgEMPRapV"/>
+    <tag group="AllowRCust" tag="cfgEMPRapR"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <eval phase="First" priority="600"><![CDATA[      ~ If we're not enabled get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find Change Shape
+      perform hero.childfound[raEMPRapCS].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Increase usage to at-will, and duration becomes unlimited
+
+      perform focus.field[trkMax].reset
+      perform focus.delete[abDuration.Minute]
+      perform focus.delete[abDuration.Hour]
+      perform focus.delete[Usage.Day]
+      perform focus.assign[Usage.AtWill]
+
+      #appenddesc[raEMPRapCS,"{b}Addition from True Shapechanger:{/b}\nYou can use your change shape racial trait any number of times per day, and can remain in your bird form indefinitely."]]]></eval>
+    <eval phase="UserPostLv" priority="1500" index="2"><![CDATA[      ~ If we're not enabled get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find Change Shape
+      perform hero.childfound[raEMPRapCS].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Duration becomes unlimited
+      perform focus.field[abDuration].reset]]></eval>
+    <exprreq message="Improved Bite racial trait required."><![CDATA[#hasability[rcEMPRapIB] <> 0]]></exprreq>
+    <exprreq message="Talons racial trait required."><![CDATA[#hasability[rcEMPRapTa] <> 0]]></exprreq>
+    <exprreq message="Avid Shapechanger racial trait required."><![CDATA[#hasability[rcEMPRapAS] <> 0]]></exprreq>
+    <prereq message="Scent racial trait required.">
+      <validate><![CDATA[      ~Applies to Vultures only, so valid otherwise
+      validif (#hasability[rcEMPRapVC] = 0)
+
+      ~Valid if we have Scent
+      validif (#hasability[rcEMPRapSc] <> 0)]]></validate>
+      </prereq>
+    <prereq message="Stealthy Flight racial trait required.">
+      <validate><![CDATA[      ~Applies to Owls only, so valid otherwise
+      validif (#hasability[rcEMPRapOC] = 0)
+
+      ~Valid if we have Scent
+      validif (#hasability[rcEMPRapSt] <> 0)]]></validate>
+      </prereq>
+    <prereq message="Superior Flight racial trait required.">
+      <validate><![CDATA[      ~Applies to Hawks and Eagles only, so valid otherwise
+      validif (#hasability[rcEMPRapEC] + #hasability[rcEMPRapHC] = 0)
+
+      ~Valid if we have Superior Flight
+      validif (#hasability[rcEMPRapSu] <> 0)]]></validate>
+      </prereq>
+    </thing>
+  <thing id="rcEMPRapSu" name="Superior Flight" description="The fly speed you gain when using your change shape racial trait increases by 20 feet." compset="RaceCustom" summary="Increase fly speed for change shape by 20 ft." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="AllowRCust" tag="cfgEMPRapR"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <eval phase="First" priority="500"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find Change Shape
+      perform hero.childfound[raEMPRapCS].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Increase Fly speed by 20
+      focus.field[abValue].value += 20]]></eval>
+    </thing>
+  <thing id="deiEMPHoru" name="Horus" description="The hawk-headed god called Horus is the youngest and most powerful in a long line of elder gods. Horus rose to prominence after striking down his uncle to avenge the death of his father. His older relatives have since declined in prominence and power, accepting Horus as the primary representative of their divine family.\n\nThough best known for his vengeful nature, Horus is compassionate towards the innocent and towards individuals who are truly repentant for their past misdeeds. Those who have been targeted by Horus&apos;s avenging clerics are often surprised to learn that services to Horus make little mention of vengeance and war, focusing instead upon civility, compassion, and personal responsibility.\n\nMost priests of Horus are clerics or inquisitors, but Horus also sponsors a fair number of paladins among the Eagle Clans. Unlike most other creatures, Eagle Clan saurians are able to serve as paladins while maintaining a chaotic good alignment, a blessing bestowed upon their clan by Horus himself. At the GM&apos;s option, certain non-Eagles that earn the favor of Horus may receive a similar boon.\n\n{b}The Eye of Ra:{/b} Horus is one of several deities that share the title, Eye of Ra. When the Eye of Ra title passes to Horus, the hawk god becomes an avatar of the personified Sun for as long as he retains the title.\n\nOther deities which periodically serve as the Eye of Ra include: Amon, god of the Goats Clans; Athor, goddess of the Ox Clans; Ishtar, goddess of the Cat Clans; Sobek, god of the Crocodile Clans; and Uraeus, god of the Snake Clans." compset="Deity" uniqueness="unique">
+    <fieldval field="deiEpithet" value="The Avenger"/>
+    <fieldval field="deiPortfol" value="God of liberty, justice, and freedom"/>
+    <fieldval field="deiSymbol" value="Heiroglyphic depiction of a hawk"/>
+    <usesource source="EMPRaptor"/>
+    <tag group="AllowDom" tag="cdSun" name="Sun" abbrev="Sun"/>
+    <tag group="WepProf" tag="wKhopesh" name="Khopesh" abbrev="Khopesh"/>
+    <tag group="AllowDom" tag="cdGlory"/>
+    <tag group="AllowDom" tag="cdGood"/>
+    <tag group="AllowDom" tag="cdLiberat"/>
+    <tag group="AllowDom" tag="cdWar"/>
+    <tag group="AlignTemp" tag="ChaotGood"/>
+    <tag group="DeityCat" tag="AnimalRace"/>
+    </thing>
+  <thing id="trEMPHaga" name="Haga" description="Two-headed eagles known as hagas are imperious beasts. They are capable of fighting on two fronts at once but are prone to internal conflict. If you select this heraldic symbol in place of your first trait, you gain Two-Weapon Fighting as a bonus feat, but you take a –1 penalty on all Will saves." compset="Trait" summary="Gain Two-Weapon Fighting, but -1 to Will saves." uniqueness="unique">
+    <usesource source="EMPRaptor"/>
+    <tag group="trCategory" tag="Heraldic"/>
+    <bootstrap thing="fTwoWep"></bootstrap>
+    <eval phase="First" priority="5000">#applypenalty[PenTrait, hero.child[svWill], -1]</eval>
+    </thing>
+  <thing id="trEMPEagle" name="Eagle" description="Eagles are imperious animals known for their keen vision and their light, aerodynamic frames. If you select this heraldic symbol in place of your first trait, you gain Eagle Eyes as a bonus feat even if you do not meet its normal prerequisites, but you take a –1 penalty on all Fortitude saves." compset="Trait" summary="Gain Eagle Eyes, but -1 to Fortitude saves." uniqueness="unique">
+    <usesource source="EMPRaptor"/>
+    <tag group="trCategory" tag="Heraldic"/>
+    <bootstrap thing="fEagleEyes">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="First" priority="5000">#applypenalty[PenTrait, hero.child[svFort], -1]</eval>
+    </thing>
+  <thing id="trEMPHawk" name="Hawk" description="Hawks are deft fliers, but are at their best in the air when they are diving along a single, straight path. If you select this heraldic symbol in place of your first trait, you gain Acrobatic as a bonus feat, but you take a –1 penalty on all Reflex saves." compset="Trait" summary="Gain Acrobatic, but -1 to Reflex saves." uniqueness="unique">
+    <usesource source="EMPRaptor"/>
+    <tag group="trCategory" tag="Heraldic"/>
+    <bootstrap thing="fAcrobatic"></bootstrap>
+    <eval phase="First" priority="5000">#applypenalty[PenTrait, hero.child[svRef], -1]</eval>
+    </thing>
+  <thing id="trEMPPhoen" name="Phoenix" description="The phoenix is destined to die, only to rise again from the ashes of its own funeral pyre. If you select this heraldic symbol in place of your first trait, you gain Fight On as a bonus feat, but you take a –1 penalty on all Fortitude saves." compset="Trait" summary="Gain Fight On, but -1 to Fortitude saves." uniqueness="unique">
+    <usesource source="EMPRaptor"/>
+    <tag group="trCategory" tag="Heraldic"/>
+    <bootstrap thing="fFightOn"></bootstrap>
+    <eval phase="First" priority="5000">#applypenalty[PenTrait, hero.child[svFort], -1]</eval>
+    </thing>
+  <thing id="trEMPOwl" name="Owl" description="As ambush predators, owls are adept at navigating the shadows, but are not known for their resolve. If you select this heraldic symbol in place of your first trait, you gain Shadow Strike as a bonus feat even if you do not meet its normal prerequisite, but you take a –1 penalty on all Will saves." compset="Trait" summary="Gain Shadow Strike, but -1 to Will saves." uniqueness="unique">
+    <usesource source="EMPRaptor"/>
+    <tag group="trCategory" tag="Heraldic"/>
+    <bootstrap thing="fShadStr">
+      <autotag group="thing" tag="skipprereq"/>
+      </bootstrap>
+    <eval phase="First" priority="5000">#applypenalty[PenTrait, hero.child[svWill], -1]</eval>
+    </thing>
+  <thing id="trEMPThund" name="Thunderbird" description="Depicted in heraldry as an eagle carrying a bundle of thunderbolts, the thunderbird hovers above stormclouds, raining lightning bolts down upon its foes. If you select this heraldic symbol in place of your first trait, you gain Point Blank Shot as a bonus feat, but you take a –1 penalty on all Reflex saves." compset="Trait" summary="Gain Point-Blank Shot, but -1 to Reflex saves." uniqueness="unique">
+    <usesource source="EMPRaptor"/>
+    <tag group="trCategory" tag="Heraldic"/>
+    <bootstrap thing="fPointBlnk"></bootstrap>
+    <eval phase="First" priority="5000">#applypenalty[PenTrait, hero.child[svRef], -1]</eval>
+    </thing>
+  <thing id="rcEMPRapHC" name="Hawk Clan" description="Members of your clan resemble hawks when using their change shape ability. You gain a +2 racial bonus to Wisdom. Whenever you gain an inquisitor level, if you would normally gain a bonus feat from the teamwork feat class feature on that class level, you may instead choose to gain the Raptor Clan Heritage feat as a bonus feat. You cannot use the teamwork feat class feature to replace Raptor Clan Heritage with a teamwork feat, or vice versa." compset="RaceCustom" summary="Appear as a hawk when you shapechange, gain heritage as inquistor." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AllowRCust" tag="rEMPRaptCl"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <eval phase="First" priority="200"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find the race, change name and we get +2 WIS
+      perform hero.findchild[BaseRace].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[livename].text = field[thingname].text
+      focus.field[rWIS].value += 2
+
+      ~ Find the inquisitor class, if any, and add Raptor Clan Heritage to the bonus feats
+      perform hero.childfound[cHelpInq].setfocus
+      doneif (state.isfocus = 0)
+
+      perform focus.assign[fInclude.fEMPRapRCH]
+      #appenddesc[fEMPRapRCH,"{b}Note:{/b}\nYou cannot use the teamwork feat class feature to replace Raptor Clan Heritage with a teamwork feat, or vice versa."]]]></eval>
+    </thing>
+  <thing id="rcEMPRapOC" name="Owl Clan" description="Members of your clan resemble owls when using their change shape ability. You gain a +2 racial bonus to Wisdom, and can use your Wisdom score (and Wisdom modifier) in place of your Charisma score (and Charisma modifier) for the purpose of any oracle class ability, including revelations and spells. You can select the Owl Clan Heritage feat with the oracle&apos;s revelation ability as if it was a revelation belonging to your chosen oracle mystery." compset="RaceCustom" summary="Appear as an owl when you shapechange, gain heritage as WIS-based oracle." uniqueness="useronce">
+    <comment>When asked exactly how the “use your Wisdom score” effect works. the author had this to say, and therefore this is how I’ve best tried to implement this feature:
+
+Ultimately, it&apos;s whatever interpretation the GM makes that matters.
+
+Taken literally, you can use whichever score is highest at the time as your effective Charisma score for the purpose of oracle class abilities. Note that this effect alters your Charisma score, not the text of the oracle class itself. All of your oracle class features are still Charisma-based; you just get the option of setting your Charisma score equal to Wisdom score for the purpose of those Charisma-based features.
+
+That last point is important because the Core Rules say ability damage &quot;does not actually reduce an ability, but it does apply a penalty to the skills and statistics that are based on that ability.&quot; Since your oracle class features are still technically Charisma-based, Charisma damage would penalize your oracle class features even if you are using your Wisdom score as your effective Charisma score. (Conversely, Wisdom damage would not penalize your oracle class features, because those features, as listed in the class description, are not Wisdom-based, despite your racial trait.)
+
+On the other hand, ability drain and enhancement bonuses do change your ability scores. You apply ability drain and enhancement bonuses to your ability scores before deciding whether or not to use your (adjusted) Wisdom score in place of your (adjusted) Charisma score. So, if you invest in both Wisdom and Charisma, you end up getting a bit of a buffer against Charisma drain (but not against Charisma damage).</comment>
+    <usesource source="EMPRaptor"/>
+    <tag group="AllowRCust" tag="rEMPRaptCl"/>
+    <eval phase="Validation" priority="500" index="3"><![CDATA[      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+
+      ~ Find the oracle class and set focus. If not found, get out
+      perform hero.childfound[cHelpOra].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[cCstS3Expr].text &= " | thingid.cOraEMPOwl"]]></eval>
+    <eval phase="First" priority="200"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find the race,change name and we get +2 WIS
+      perform hero.findchild[BaseRace].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[livename].text = field[thingname].text
+      focus.field[rWIS].value += 2]]></eval>
+    <eval phase="Attr" priority="1000005" index="2">~ If we&apos;re not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] &lt;&gt; 0)
+
+
+      ~ Find the oracle class and set focus. If not found, get out
+      perform hero.childfound[cHelpOra].setfocus
+      doneif (state.isfocus = 0)
+
+      var Wis as number
+      var Cha as number
+
+
+      ~calculate the modifier difference between charisma and wisdom
+      Wis = round (hero.childfound[aWIS].field[aFinalVal].value/2, 0, -1)
+      Cha = round (hero.childfound[aCHA].field[aFinalVal].value/2, 0, -1)
+      field[abValue].value += Wis - Cha
+      field[abValue2].value += hero.childfound[aWIS].field[aFinalVal].value - hero.childfound[aCHA].field[aFinalVal].value
+
+
+      ~ if our score change is 0 or negative, don’t touch
+      doneif (field[abValue2].value &lt;= 0)
+
+
+      ~ modify spellcasting attribute by difference, and allow Wisdom to determine maximum spell level
+      focus.field[cSplAttVal].value += field[abValue2].value
+      perform focus.assign[MaxSplAttr.aWIS]
+
+
+      ~ if our modifier change is 0 or negative, don’t touch
+      doneif (field[abValue].value &lt;= 0)
+
+
+      ~ increase oracle abilities as if using WIS, if higher than CHA
+      foreach pick in hero from BaseCustSp where &quot;CustTaken.cHelpOra &amp; (ChargeAttr.aCHA | StandardDC.aCHA)&quot;
+
+        if (eachpick.tagis[StandardDC.aCHA] &lt;&gt; 0) then
+            eachpick.field[abDC].value += field[abValue].value
+            endif
+
+        if (eachpick.tagis[ChargeAttr.aCHA] &lt;&gt; 0) then
+            eachpick.field[trkMax].value += field[abValue].value
+            endif
+
+        nexteach</eval>
+    </thing>
+  <thing id="rcEMPRapVC" name="Vulture Clan" description="Members of your clan resemble vultures when using their change shape ability. You gain a +2 racial bonus to Intelligence and a +4 racial bonus to all saving throws made against disease. However, the fly speed you gain when using your change shape racial trait is reduced by 10 feet. You can select the Vulture Clan Heritage feat with the witch&apos;s hex ability as if it were an hex." compset="RaceCustom" summary="Appear as an vulture when you shapechange, gain heritage as witch." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AllowRCust" tag="rEMPRaptCl"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <eval phase="First" priority="200"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find the race, change name and we get +2 INT
+      perform hero.findchild[BaseRace].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[livename].text = field[thingname].text
+      focus.field[rINT].value += 2
+
+      ~ Find Change Shape
+      perform hero.childfound[raEMPRapCS].setfocus
+      doneif (state.isfocus = 0)
+
+      ~ Decrease Fly speed by 10
+      focus.field[abValue].value -= 10
+
+      #situational[hero.child[svAll], "+4 vs. disease", field[thingname].text]]]></eval>
+    </thing>
+  <thing id="cfgEMPRapV" name="Vulture Clan Heritage" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Racial Traits"/>
+    <usesource source="EMPRaptor"/>
+    </thing>
+  <thing id="fEMPRapVCH" name="Vulture Clan Heritage" description="Your anatomy is similar to that of a vulture.\n\n{b}Prerequisites:{/b} Vulture Clan racial trait.\n\n{b}Benefit:{/b} When you gain this feat, choose one of the following additional racial traits: avid shapechanger, improved bite, scent, or talons. If you already have all four of these racial traits, you may instead choose scavenger or true shapechanger. You gain the chosen racial trait.\n\n{b}Special:{/b} For every two levels you possess, you can take this feat one additional time (up to a maximum of six times), selecting a different additional racial trait each time." compset="Feat" summary="Your anatomy is similar to that of an vulture.">
+    <bootstrap thing="cfgEMPRapV"></bootstrap>
+    <eval phase="First" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find the Vulture Clan config, and add 1 to the number of abilities allowed
+      perform hero.childfound[cfgEMPRapV].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[cfgMax1].value += 1]]></eval>
+    <exprreq message="Vulture Clan racial trait required."><![CDATA[#hasability[rcEMPRapVC] <> 0]]></exprreq>
+    <exprreq message="Raptor Clan race required."><![CDATA[#hasrace[rEMPRaptCl] <> 0]]></exprreq>
+    <prereq message="May be taken no more than six times.">
+      <validate><![CDATA[      ~Valid up to six times
+
+      if (@ispick <> 0) then
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= 6)
+
+      else
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= 5)
+        endif]]></validate>
+      </prereq>
+    <prereq message="May only be taken once, plus once per two character levels.">
+      <validate><![CDATA[      ~Valid when taken at 1st, 2nd, 4th, 6th, 8th, and 10th level
+
+      if (@ispick <> 0) then
+
+        validif ( (hero.tagcount[HasFeat.fEMPRapRCH] - 1) <= round(#totallevelcount[]/2, 0, -1) )
+
+      else
+
+        validif (hero.tagcount[HasFeat.fEMPRapRCH] <= round(#totallevelcount[]/2, 0, -1) )
+        endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="fEMPRapOCH" name="Owl Clan Heritage" description="Your anatomy is similar to that of an owl.\n\n{b}Prerequisites:{/b} Owl Clan racial trait.\n\n{b}Benefit:{/b} When you gain this feat, choose one of the following additional racial traits: avid shapechanger, improved bite, stealthy flight, or talons. If you already have all four of these racial traits, you may instead choose raptor&apos;s dive or true shapechanger. You gain the chosen racial trait.\n\n{b}Special:{/b} For every two levels you possess, you can take this feat one additional time (up to a maximum of six times), selecting a different additional racial trait each time." compset="Feat" summary="Your anatomy is similar to that of an owl.">
+    <bootstrap thing="cfgEMPRapO"></bootstrap>
+    <eval phase="First" priority="10000"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      ~ Find the Owl Clan config, and add 1 to the number of abilities allowed
+      perform hero.childfound[cfgEMPRapO].setfocus
+      doneif (state.isfocus = 0)
+
+      focus.field[cfgMax1].value += 1]]></eval>
+    <exprreq message="Owl Clan racial trait required."><![CDATA[#hasability[rcEMPRapOC] <> 0]]></exprreq>
+    <exprreq message="Raptor Clan race required."><![CDATA[#hasrace[rEMPRaptCl] <> 0]]></exprreq>
+    <prereq message="May be taken no more than six times.">
+      <validate><![CDATA[      ~Valid up to six times
+
+      if (@ispick <> 0) then
+        validif (hero.tagcount[HasFeat.fEMPRapOCH] <= 6)
+
+      else
+        validif (hero.tagcount[HasFeat.fEMPRapOCH] <= 5)
+        endif]]></validate>
+      </prereq>
+    <prereq message="May only be taken once, plus once per two character levels.">
+      <validate><![CDATA[      ~Valid when taken at 1st, 2nd, 4th, 6th, 8th, and 10th level
+
+      if (@ispick <> 0) then
+
+        validif ( (hero.tagcount[HasFeat.fEMPRapOCH] - 1) <= round(#totallevelcount[]/2, 0, -1) )
+
+      else
+
+        validif (hero.tagcount[HasFeat.fEMPRapOCH] <= round(#totallevelcount[]/2, 0, -1) )
+        endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cfgEMPRapO" name="Owl Clan Heritage" compset="Configure" uniqueness="unique">
+    <fieldval field="cfgObject1" value="Racial Traits"/>
+    <usesource source="EMPRaptor"/>
+    </thing>
+  <thing id="rcEMPRapSt" name="Stealthy Flight" description="Whenever you are flying in darkness, you gain concealment against creatures with darkvision. Whenever you are flying in dim light or moonlight, you gain concealment against creatures with low-light vision." compset="RaceCustom" summary="Concealment from low-light vision when flying in dim light; from darkvision in darkness." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="SpecType" tag="Defense"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="AllowRCust" tag="cfgEMPRapO"/>
+    </thing>
+  <thing id="rcEMPRapS2" name="Scavenger" description="You are immune to all ingested diseases and ingested poisons. You cannot become nauseated or sickened as a result of ingesting something." compset="RaceCustom" summary="Cannot become nauseated, sickened, diseased, or poisoned from ingested source." uniqueness="useronce">
+    <usesource source="EMPRaptor"/>
+    <tag group="AbilType" tag="Extra"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="AllowRCust" tag="cfgEMPRapV"/>
+    <eval phase="First" priority="200"><![CDATA[
+      ~ If we're not enabled, get out now
+      doneif (tagis[Helper.SpcDisable] <> 0)
+
+      #situational[hero.child[svAll], "Immune to diseases, poisons, sickened, and nausea of ingested origin.", field[thingname].text]]]></eval>
+    <exprreq message="Talons racial trait required."><![CDATA[#hasability[rcEMPRapTa] <> 0]]></exprreq>
+    <exprreq message="Avid Shapechanger racial trait required."><![CDATA[#hasability[rcEMPRapAS] <> 0]]></exprreq>
+    <exprreq message="Scent racial trait required."><![CDATA[#hasability[rcEMPRapSc] <> 0]]></exprreq>
+    <exprreq message="Improved Bite racial trait required."><![CDATA[#hasability[rcEMPRapIB] <> 0]]></exprreq>
+    </thing>
+  <thing id="cWitEMPVul" name="Vulture Clan Heritage" description="Gain Vulture Clan Heritage as a bonus feat." compset="CustomSpec">
+    <tag group="SpecSource" tag="cHelpWit" name="Witch" abbrev="Witch"/>
+    <tag group="DescInfo" tag="fEMPRapVCH"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="abCategory" tag="WitHex"/>
+    <bootstrap thing="fEMPRapVCH"></bootstrap>
+    <exprreq message="Vulture Clan heritage required."><![CDATA[#hasability[rcEMPRapVC] <> 0]]></exprreq>
+    <exprreq message="Raptor Clan race required."><![CDATA[#hasrace[rEMPRaptCl] <> 0]]></exprreq>
+    <prereq message="May be taken no more than six times.">
+      <validate><![CDATA[      ~Valid up to six times
+
+      if (@ispick <> 0) then
+        validif (hero.tagcount[HasFeat.fEMPRapVCH] <= 6)
+
+      else
+        validif (hero.tagcount[HasFeat.fEMPRapVCH] <= 5)
+        endif]]></validate>
+      </prereq>
+    <prereq message="May only be taken once, plus once per two character levels.">
+      <validate><![CDATA[      ~Valid when taken at 1st, 2nd, 4th, 6th, 8th, and 10th level
+
+      if (@ispick <> 0) then
+
+        validif ( (hero.tagcount[HasFeat.fEMPRapVCH] - 1) <= round(#totallevelcount[]/2, 0, -1) )
+
+      else
+
+        validif (hero.tagcount[HasFeat.fEMPRapVCH] <= round(#totallevelcount[]/2, 0, -1) )
+        endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="cOraEMPOwl" name="Owl Clan Heritage" description="Gain Owl Clan Heritage as a bonus feat." compset="CustomSpec">
+    <tag group="SpecSource" tag="cHelpOra" name="Oracle" abbrev="Oracle"/>
+    <tag group="DescInfo" tag="fEMPRapOCH"/>
+    <tag group="Helper" tag="SpecUp"/>
+    <tag group="Helper" tag="Tertiary"/>
+    <bootstrap thing="fEMPRapOCH"></bootstrap>
+    <exprreq message="Owl Clan heritage required."><![CDATA[#hasability[rcEMPRapOC] <> 0]]></exprreq>
+    <exprreq message="Raptor Clan race required."><![CDATA[#hasrace[rEMPRaptCl] <> 0]]></exprreq>
+    <prereq message="May be taken no more than six times.">
+      <validate><![CDATA[      ~Valid up to six times
+
+      if (@ispick <> 0) then
+        validif (hero.tagcount[HasFeat.fEMPRapOCH] <= 6)
+
+      else
+        validif (hero.tagcount[HasFeat.fEMPRapOCH] <= 5)
+        endif]]></validate>
+      </prereq>
+    <prereq message="May only be taken once, plus once per two character levels.">
+      <validate><![CDATA[      ~Valid when taken at 1st, 2nd, 4th, 6th, 8th, and 10th level
+
+      if (@ispick <> 0) then
+
+        validif ( (hero.tagcount[HasFeat.fEMPRapOCH] - 1) <= round(#totallevelcount[]/2, 0, -1) )
+
+      else
+
+        validif (hero.tagcount[HasFeat.fEMPRapOCH] <= round(#totallevelcount[]/2, 0, -1) )
+        endif]]></validate>
+      </prereq>
+    </thing>
+  <thing id="rEMPRaptCl" name="Saurian, Raptor Clan" description="Members of the Raptor Clans are one of several related races collectively known as saurians. Each of these humanoids has features resembling those of a particular reptile or bird. Although each saurian race has its own unique appearance and culture, all saurian races belong to a single family tree of ancient origin.\n\nAs their name suggests, members of the Raptor Clans are saurians whose physical features resemble those of various birds of prey—eagles, hawks, owls, and vultures.\n\n{b}Physical Description:{/b} In their natural forms, Raptor Clan saurians are humanoids with bird-like heads. Below the neck, Raptors have few avian features. At most, their fingers and toes resemble bird talons.\n\nDespite their avian nature, Raptors do not have wings when in their humanoid form. Instead, they are capable of assuming the forms of birds. While in bird form, a Raptor saurian retains its size and weight but none of its humanoid characteristics.\n\nMembers of the Vulture Clans are the Raptors most likely to be of average height and weight. Members of the Eagle and Hawk Clans tend to be taller and thinner than average, while members of the Owl Clan tend to be shorter and stockier.\n\n{b}Society:{/b} The saurians of the Raptor Clans are a race of fiercely independent hunters and warriors. They rarely gather to engage in large-scale warfare or conquest, but will ferociously defend their own territory. A typical Raptor Clan claims a stretch of wilderness that might take a few hours to cross on foot. The territory is patrolled by several allied individuals or families.\n\nAlthough independent and territorial, Raptors are not adverse to the idea of an overarching government that includes their lands within its borders. Most Raptors Clans are happy to support such an institution, provided their own personal rights and freedoms are protected by their nation. Conversely, an oppressive regime can expect fierce resistance from any Raptor Clan saurians it attempts to claim as subjects.\n\n{b}Relations:{/b} While not unfriendly, Raptor Clan saurians are warriors first and diplomats second. Raptors do not like being told to do, and will resist any effort made by outsiders to interfere in Raptor Clan internal affairs. They are also quick to confront individuals whom they perceive as intruders in their territory. These confrontations can erupt in open violence if the Raptors involved feel threatened or imposed upon.\n\nDespite the aggressive stance they take with neighbors and unwelcome guests, few Raptors go out of their way to be confrontational or rude. Most are happy to makes friends with non-Raptors who treat them with respect, especially non-Raptors who share their particular worldview.\n\n{b}Alignment and Religion:{/b} Raptor saurians exemplify the chaotic good alignment. Although the Raptor Clans are known for producing proud—and sometimes overenthusiastic—warriors, the targets of Raptor Clan aggression are slavers, tyrants, and other villains known for harming or oppressing the innocent. Raptors fight because they feel warfare is necessary to defend the rights of the innocent, not because they chafe at the idea of peaceful coexistence.\n\nThe warrior deities worshiped by Raptor Clan saurians tend to reflect these values. Most are living symbols of free but responsible existence. These beings promote codes of conduct that rely upon a small number of key principles, such as altruism, fair play, and respect for the rights of others. Followers of these deities are expected to challenge or disregard laws that fail to promote these core principles.\n\nIn addition to respecting deities that uphold these ideals, Raptors admire the founders of their clans. It is said that the souls of these revered ancestors are regularly reincarnated as modern-day Raptors. Few, if any, Raptors retain memories of their past lives, but most contend that the spirits of their clans&apos; founders live on through them in a very literal sense.\n\n{b}Adventurers:{/b} Raptor Clan saurians are aggressive and idealistic, a combination that motivates many to take up an adventuring lifestyle. Raptor Clan adventurers often start their career striking out against villains that threaten their native lands, either alone or with allies.\n\nRaptor Clan adventurers usually have good intentions, but can be openly critical of institutions that do not do enough to combat evil. Particularly chaotic Raptor Clan adventurers may even attempt to undermine complacent governments, or to provoke open warfare between various evil groups.\n\nSuch behavior tends to ruffle the feathers of lawful individuals, earning chaotic and non-good Raptors a reputation as potential demagogues and rebels. When opposing authorities they dislike, adventuring Raptor saurians of all alignments are more than happy to live up to this reputation." compset="Race">
+    <fieldval field="rGiveSpec" value="1"/>
+    <fieldval field="rSpecSing" value="Raptor Clan Heritage"/>
+    <fieldval field="rGiveSp2nd" value="1"/>
+    <fieldval field="rSpec2ndSi" value="Raptor Clan Size"/>
+    <fieldval field="rAgeMin" value="15"/>
+    <fieldval field="rAC" value="1"/>
+    <usesource source="EMPRaptor"/>
+    <tag group="RaceType" tag="MonstClass"/>
+    <tag group="AgeC1Dice" tag="1"/>
+    <tag group="AgeC1Size" tag="4"/>
+    <tag group="AgeC2Dice" tag="1"/>
+    <tag group="AgeC2Size" tag="6"/>
+    <tag group="AgeC3Dice" tag="2"/>
+    <tag group="AgeC3Size" tag="6"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="HasType" tag="tpHumanoid"/>
+    <tag group="HeightDice" tag="2"/>
+    <bootstrap thing="wBite">
+      <autotag group="wMain" tag="1d4"/>
+      <autotag group="Value" tag="1"/>
+      </bootstrap>
+    <bootstrap thing="raLowLight"></bootstrap>
+    <bootstrap thing="raEMPRapCS"></bootstrap>
+    <bootstrap thing="raEMPClNat"></bootstrap>
+    <bootstrap thing="stEMPGarud"></bootstrap>
+    <bootstrap thing="lGaruda"></bootstrap>
+    <bootstrap thing="stShapecha"></bootstrap>
+    </thing>
+  </document>
