@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <fileinfo>
+    <info_author>This file is an unofficial adaptation of content found in Animal Races: Clan of the Raptor from Eric Morton Presents. Animal Races, Clan of the Raptor, and Eric Morton Presents are trademarks of Eric Morton, and are used here with permission.
+
+Clan of the Raptor can be found for purchase at the following link:
+http://www.rpgnow.com/product/146573/Animal-Races-Clan-of-the-Raptor?term=clan+of+the+raptor
+
+Initial HL file created by Bennett Selchow aka WhiteUnggoy, 2015.</info_author>
+    <info_history>Version 1.0 — by Bennett Selchow (WhiteUnggoy), 2015
+    - Initial release</info_history>
+    </fileinfo>
+  <thing id="stEMPGarud" name="Garuda" description="This subtype is applied to garudas and creatures related to garudas." compset="Subtype" uniqueness="unique">
+    <usesource source="EMPRaptor"/>
+    <tag group="Helper" tag="NoPathSoc"/>
+    <tag group="NeedType" tag="tpHumanoid" name="Humanoid" abbrev="Humanoid"/>
+    </thing>
+  <thing id="raEMPClNat" name="Natural Armor" description="You gain a +1 natural armor bonus. At character level 10th, this bonus increases to +2." compset="RaceSpec">
+    <usesource source="EMPRaptor"/>
+    <eval phase="UserPostLv" priority="1000"><![CDATA[      doneif (#totallevelcount[] < 10)
+      hero.child[ArmorClass].field[tACNatural].value += 1]]></eval>
+    </thing>
+  <thing id="deiEMPAnim" name="{bmp npcclass} Animal Races Deities {bmp npcclass}" compset="Deity" uniqueness="unique" isshowonly="yes">
+    <tag group="DeityCat" tag="AnimalRace"/>
+    </thing>
+  <thing id="trEMPHeral" name="Heraldic Symbols" compset="Trait" isshowonly="yes">
+    <usesource source="EMPRaptor"/>
+    <tag group="trCategory" tag="Heraldic" name="Heraldic Symbol"/>
+    </thing>
+  <thing id="rEMPsepAni" name="{bmp extrarace} Animal Clan Races {bmp extrarace}" compset="Race" isshowonly="yes">
+    <usesource source="EMPRaptor"/>
+    <tag group="RaceType" tag="MonstClass"/>
+    </thing>
+  <thing id="raEMPClSce" name="Scent" description="You gain scent with a range of 5 feet. At character level 6th, the range of your scent increases to 30 feet." compset="RaceSpec" summary="Detect opponents within range by sense of smell." uniqueness="unique">
+    <fieldval field="abRange" value="30"/>
+    <usesource source="EMPBear" parent="pEMPAnimal" name="Clan of the Bear"/>
+    <tag group="HasAbility" tag="xScent" name="Scent" abbrev="Scent"/>
+    <tag group="Helper" tag="ShowSpec" name="Show Spec" abbrev="Show Spec"/>
+    <tag group="LvNamePar" tag="IncRange" name="Include Range text" abbrev="Include Range text"/>
+    <tag group="SbNamePar" tag="IncRange" name="Include Range text" abbrev="Include Range text"/>
+    <tag group="SpecType" tag="Sense" name="Sense" abbrev="Sense"/>
+    <tag group="Universal" tag="Universal" name="Universal Monster Ability or Core Rulebook ability" abbrev="Universal Monster Ability or Core Rulebook ability"/>
+    <tag group="abRange" tag="Feet" name="Feet" abbrev="ft."/>
+    <tag group="AbilType" tag="Extra" name="Extraordinary Ability" abbrev=" (Ex)"/>
+    <tag group="DescInfo" tag="xScent" name="Scent" abbrev="Scent"/>
+    <bootstrap thing="aaScent"></bootstrap>
+    <eval phase="UserFinal" priority="10000">~ do nothing unless we’re less than 6th level
+      doneif (#totallevelcount[] &gt;= 6)
+
+      ~ else, edit text to reflect 5 foot range.
+      field[abRange].value = 5</eval>
+    </thing>
+  </document>
