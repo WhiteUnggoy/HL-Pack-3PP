@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Hero Lab Structure">
+
+  <source
+    id="pEMP"
+    name="Eric Morton Presents"
+    selectable="no"
+    parent="p3PPPack"
+    sortorder="10"
+    description="Parent source for Eric Morton Presents products.">
+    </source>
+
+  <source
+    id="pEMPAnimal"
+    name="Animal Races"
+    selectable="no"
+    parent="pEMP"
+    sortorder="10">
+    </source>
+
+  <source
+    id="EMPRaptor"
+    name="Clan of the Raptor"
+    parent="pEMPAnimal"
+    sortorder="10"
+    description="Raptor Clan saurians include Eagle, Hawk, Owl, and Vulture Clans. 4/29/15">
+    </source>
+
+  </document>
